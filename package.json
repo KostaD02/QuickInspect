@@ -1,0 +1,11 @@
+{
+  "name": "QuickInspect",
+  "version": "0.1.0",
+  "description": "Hold Alt and hover any element to see its selectors, box model, styles, accessibility info and events without opening DevTools.",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "Konstantine Datunishvili <konstantineda@datunishvili.ge>",
+  "license": "MIT",
+  "packageManager": "pnpm@10.33.2"
+}
