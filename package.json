@@ -3,9 +3,19 @@
   "version": "0.1.0",
   "description": "Hold Alt and hover any element to see its selectors, box model, styles, accessibility info and events without opening DevTools.",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "prepare": "husky",
+    "format": "pnpm exec prettier --write .",
+    "format:check": "pnpm exec prettier --check ."
+  },
   "keywords": [],
   "author": "Konstantine Datunishvili <konstantineda@datunishvili.ge>",
   "license": "MIT",
-  "packageManager": "pnpm@10.33.2"
+  "packageManager": "pnpm@10.33.2",
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "husky": "^9.1.7",
+    "prettier": "^3.9.10"
+  }
 }
