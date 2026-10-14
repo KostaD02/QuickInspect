@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickInspect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app" class="d-flex flex-col">
+      <header class="header d-flex items-center justify-between">
+        <div class="logo-text d-flex flex-col">
+          <span class="logo-name">QuickInspect</span>
+          <div class="logo-sub d-flex items-center">
+            <span class="logo-tagline">Hover element inspector</span>
+            <span id="version" class="logo-version">vX.X.X</span>
+          </div>
+        </div>
+      </header>
+
+      <div id="shell" class="shell d-flex flex-col">
+        <div class="field-group d-flex flex-col">
+          <label class="field-label d-flex items-center" for="set-modifier">
+            <span class="field-icon">🟢</span> Hold key
+          </label>
+          <select id="set-modifier" class="field-input">
+            <option value="Alt">Alt / Option</option>
+            <option value="Control">Ctrl</option>
+            <option value="Shift">Shift</option>
+            <option value="Meta">Cmd / Win</option>
+          </select>
+          <span class="field-hint">
+            Hold it and hover any element. Release to put the page back.
+          </span>
+        </div>
+
+        <div class="field-group d-flex flex-col">
+          <span class="field-label d-flex items-center">
+            <span class="field-icon">⚡</span> While holding
+          </span>
+          <div class="keys-card">
+            <div class="key-row">
+              <kbd>click</kbd><span>Pin the panel</span>
+            </div>
+            <div class="key-row"><kbd>esc</kbd><span>Close</span></div>
+            <div class="key-row">
+              <kbd>↑</kbd><kbd>↓</kbd><span>Parent / child</span>
+            </div>
+            <div class="key-row">
+              <kbd>S</kbd><span>Copy CSS selector</span>
+            </div>
+            <div class="key-row"><kbd>X</kbd><span>Copy XPath</span></div>
+            <div class="key-row">
+              <kbd>L</kbd><span>Copy Playwright locator</span>
+            </div>
+            <div class="key-row"><kbd>H</kbd><span>Copy HTML</span></div>
+            <div class="key-row"><kbd>T</kbd><span>Copy text</span></div>
+          </div>
+        </div>
+      </div>
+
+      <footer id="app-footer" class="footer">
+        Selectors · Box · Styles · Accessibility · Events
+      </footer>
+    </div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
