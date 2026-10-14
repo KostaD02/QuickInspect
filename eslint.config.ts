@@ -11,6 +11,8 @@ export default defineConfig([
       '.bridge',
       'eslint.config.ts',
       'commitlint.config.js',
+      'vite.config.ts',
+      'manifest.config.ts',
     ],
   },
   {
