@@ -102,7 +102,7 @@
 .panel {
   position: fixed;
   z-index: 2147483647;
-  width: 360px;
+  width: min(360px, calc(100vw - 16px));
   max-height: min(85vh, 760px);
   display: flex;
   flex-direction: column;
@@ -447,6 +447,36 @@
   white-space: nowrap;
   display: inline-block;
   vertical-align: bottom;
+}
+
+@media (max-height: 700px) {
+  .panel {
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 480px), (max-height: 500px) {
+  .panel {
+    max-height: 45vh;
+    font-size: 11px;
+  }
+
+  .row {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 8px 12px 6px;
+  }
+
+  .box-model {
+    gap: 6px;
+  }
+
+  .foot {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
