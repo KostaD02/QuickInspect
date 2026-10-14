@@ -25,6 +25,6 @@ jobs:
       artifact-prefix: QuickInspect
       size-table: files
       footer: |
-        ## 🧪 Try it
+        ## Try it
 
         Unzip the artifact, then load the unzipped folder as an unpacked extension from `chrome://extensions`.

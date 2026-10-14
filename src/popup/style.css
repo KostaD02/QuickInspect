@@ -228,10 +228,6 @@ body {
   text-transform: uppercase;
 }
 
-.field-icon {
-  font-size: 10px;
-}
-
 .field-input {
   width: 100%;
   background: var(--bg-elevated);
