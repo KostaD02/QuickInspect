@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickInspect demo</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f5f7fb;
+        color: #0a192f;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+        background: #0a192f;
+        color: #e6f1ff;
+      }
+      nav a {
+        color: #64ffda;
+        margin-left: 18px;
+        text-decoration: none;
+      }
+      main {
+        max-width: 960px;
+        margin: 32px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e1e6f0;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.2);
+      }
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+      label {
+        display: block;
+        font-size: 13px;
+        margin: 12px 0 4px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px;
+        border: 1px solid #c3ccdc;
+        border-radius: 6px;
+        font: inherit;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      button {
+        padding: 9px 16px;
+        border-radius: 6px;
+        border: 1px solid #08755b;
+        background: #08755b;
+        color: #fff;
+        font: inherit;
+        cursor: pointer;
+      }
+      button.secondary {
+        background: transparent;
+        color: #08755b;
+      }
+      .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        display: block;
+        margin: 8px 0;
+      }
+      ul.items {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul.items li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #e1e6f0;
+      }
+      .pill {
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        background: rgba(8, 117, 91, 0.1);
+        color: #08755b;
+      }
+      footer {
+        text-align: center;
+        padding: 24px;
+        color: #636f87;
+        font-size: 13px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Acme Dashboard</strong>
+      <nav aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#billing">Billing</a>
+        <a href="#settings" data-testid="nav-settings">Settings</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card" aria-labelledby="profile-heading">
+        <h2 id="profile-heading">Profile</h2>
+        <img
+          class="avatar"
+          src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Ccircle cx='48' cy='48' r='48' fill='%2364ffda'/%3E%3Ccircle cx='48' cy='40' r='18' fill='%230a192f'/%3E%3Cellipse cx='48' cy='80' rx='30' ry='18' fill='%230a192f'/%3E%3C/svg%3E"
+          alt="Avatar of Jane Doe"
+          width="96"
+          height="96"
+        />
+        <form id="profile-form">
+          <label for="name">Full name</label>
+          <input id="name" name="name" value="Jane Doe" autocomplete="name" />
+
+          <label for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="you@example.com"
+          />
+
+          <label for="role">Role</label>
+          <select id="role" name="role">
+            <option>Developer</option>
+            <option>QA engineer</option>
+            <option>Designer</option>
+          </select>
+
+          <label for="bio">Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            rows="3"
+            placeholder="A few words"
+          ></textarea>
+
+          <div class="actions">
+            <button type="submit" data-testid="save-profile">
+              Save changes
+            </button>
+            <button type="button" class="secondary">Cancel</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Recent activity</h2>
+        <ul class="items" role="list">
+          <li><span>Deployed v1.4.0</span><span class="pill">prod</span></li>
+          <li>
+            <span>Opened pull request #67</span><span class="pill">review</span>
+          </li>
+          <li>
+            <span>Rotated API token</span><span class="pill">security</span>
+          </li>
+          <li>
+            <span>Updated billing email</span><span class="pill">billing</span>
+          </li>
+        </ul>
+        <div class="actions">
+          <button type="button" aria-label="Refresh activity" title="Refresh">
+            ↻
+          </button>
+          <button type="button" class="secondary">View all</button>
+        </div>
+        <fancy-badge></fancy-badge>
+      </section>
+    </main>
+
+    <footer>Made with QuickInspect · <a href="#">Privacy</a></footer>
+
+    <script>
+      customElements.define(
+        'fancy-badge',
+        class extends HTMLElement {
+          constructor() {
+            super();
+            const root = this.attachShadow({ mode: 'open' });
+            root.innerHTML = `
+              <style>
+                span { display:inline-block; margin-top:16px; padding:6px 12px; border-radius:6px; background:#0a192f; color:#64ffda; font-size:12px; }
+              </style>
+              <span part="label" data-testid="shadow-badge">Inside shadow DOM</span>`;
+          }
+        },
+      );
+      const form = document.getElementById('profile-form');
+      function handleSubmit(event) {
+        event.preventDefault();
+      }
+      form.addEventListener('submit', handleSubmit);
+
+      const cancel = document.querySelector('.actions .secondary');
+      cancel.addEventListener('click', function handleCancel() {
+        form.reset();
+      });
+      cancel.addEventListener(
+        'keydown',
+        (event) => event.key === 'Escape' && form.reset(),
+        { passive: true },
+      );
+      cancel.addEventListener('pointerenter', () => {}, {
+        once: true,
+        capture: true,
+      });
+
+      document.querySelector('[aria-label="Refresh activity"]').onclick =
+        function refresh() {
+          location.reload();
+        };
+
+      const viewAll = document.querySelectorAll('.secondary')[1];
+      viewAll.__reactFiber$demo = {
+        type: 'button',
+        return: { type: function ActivityCard() {} },
+      };
+      viewAll.__reactProps$demo = {
+        onClick: function openActivity() {},
+        onMouseEnterCapture: () => {},
+      };
+    </script>
+  </body>
+</html>
