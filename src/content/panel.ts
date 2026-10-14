@@ -39,6 +39,8 @@ export class Panel {
   private readonly body: HTMLElement;
   private readonly foot: HTMLElement;
   private pinned = false;
+  private drag: { dx: number; dy: number } | null = null;
+
   constructor(
     root: ParentNode,
     private readonly onCopy: (action: CopyAction) => void,
@@ -60,8 +62,36 @@ export class Panel {
       const action = COPY_ACTIONS.find((a) => a.id === button.dataset.action);
       if (action) this.onCopy(action);
     });
+    this.bindDrag();
     root.appendChild(this.element);
     this.renderFoot();
+  }
+
+  private bindDrag(): void {
+    this.head.addEventListener('pointerdown', (event) => {
+      if (!this.pinned || event.button !== 0) return;
+      if ((event.target as HTMLElement).closest('[data-action]')) return;
+      event.preventDefault();
+      const rect = this.element.getBoundingClientRect();
+      this.drag = {
+        dx: event.clientX - rect.left,
+        dy: event.clientY - rect.top,
+      };
+      this.element.classList.add('dragging');
+      if (typeof this.head.setPointerCapture === 'function') {
+        this.head.setPointerCapture(event.pointerId);
+      }
+    });
+    this.head.addEventListener('pointermove', (event) => {
+      if (!this.drag) return;
+      this.place(event.clientX - this.drag.dx, event.clientY - this.drag.dy);
+    });
+    const end = () => {
+      this.drag = null;
+      this.element.classList.remove('dragging');
+    };
+    this.head.addEventListener('pointerup', end);
+    this.head.addEventListener('pointercancel', end);
   }
 
   get visible(): boolean {
@@ -434,6 +464,7 @@ export class Panel {
   private renderFoot(): void {
     const hints: Child[] = [
       h('span', {}, h('kbd', {}, 'click'), this.pinned ? 'unpin' : 'pin'),
+      this.pinned ? h('span', {}, h('kbd', {}, 'drag'), 'move') : null,
       h('span', {}, h('kbd', {}, 'esc'), 'close'),
       h('span', {}, h('kbd', {}, '↑'), h('kbd', {}, '↓'), 'parent / child'),
       ...COPY_ACTIONS.map((action) =>

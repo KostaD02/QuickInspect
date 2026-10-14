@@ -122,6 +122,15 @@
   border-color: var(--accent-line);
 }
 
+.panel.pinned .head {
+  cursor: grab;
+  user-select: none;
+}
+
+.panel.dragging .head {
+  cursor: grabbing;
+}
+
 .panel ::-webkit-scrollbar {
   width: 6px;
 }
