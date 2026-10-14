@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  hub:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: KostaD02/ci/.github/workflows/ci.yml@v1
+    with:
+      test: pnpm test:coverage
+      build: pnpm build
+      artifact-prefix: QuickInspect
+      size-table: files
+      footer: |
+        ## Try it
+
+        Unzip the artifact, then load the unzipped folder as an unpacked extension from `chrome://extensions`.

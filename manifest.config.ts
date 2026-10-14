@@ -14,9 +14,17 @@ export default defineManifest({
     default_icon: {
       48: 'public/logo.png',
     },
+    default_popup: 'src/popup/index.html',
     default_title: 'QuickInspect',
   },
   content_scripts: [
+    {
+      js: ['bridge/bridge.js'],
+      matches: ['https://*/*', 'http://*/*', 'file:///*'],
+      run_at: 'document_start',
+      all_frames: false,
+      world: 'MAIN',
+    },
     {
       js: ['src/content/main.ts'],
       matches: ['https://*/*', 'http://*/*', 'file:///*'],
@@ -24,5 +32,5 @@ export default defineManifest({
       all_frames: false,
     },
   ],
-  permissions: ['storage'],
+  permissions: ['storage', 'clipboardWrite'],
 });

@@ -1,3 +1,17 @@
-import { APP_NAME } from '@/shared/consts/config';
+import { loadSettings, logger, watchSettings } from '@/shared/util';
+import { Inspector } from './inspector';
 
-console.log(`${APP_NAME} ready`);
+const inspector = new Inspector();
+inspector.attach();
+
+loadSettings()
+  .then((settings) => {
+    inspector.setSettings(settings);
+  })
+  .catch((error: unknown) => {
+    logger.warn('Falling back to default settings', error);
+  });
+
+watchSettings((settings) => {
+  inspector.setSettings(settings);
+});

@@ -19,7 +19,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["vite/client", "chrome"]
+    "types": ["vite/client", "chrome", "jest"]
   },
-  "include": ["src"]
+  "include": ["src", "jest.config.ts", "jest.setup.ts", "jest.css-stub.ts"]
 }

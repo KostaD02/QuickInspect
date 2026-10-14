@@ -8,11 +8,12 @@ export default defineConfig([
       'release',
       'coverage',
       'node_modules',
-      '.bridge',
+      'bridge',
       'eslint.config.ts',
       'commitlint.config.js',
       'vite.config.ts',
       'manifest.config.ts',
+      'vite.bridge.config.ts',
     ],
   },
   {
@@ -29,6 +30,19 @@ export default defineConfig([
     rules: {
       '@typescript-eslint/no-floating-promises': 'off',
       '@typescript-eslint/unbound-method': 'off',
+    },
+  },
+  {
+    files: ['**/*.spec.ts'],
+    rules: {
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-invalid-void-type': 'off',
+      '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+      '@typescript-eslint/no-confusing-void-expression': 'off',
     },
   },
 ]);

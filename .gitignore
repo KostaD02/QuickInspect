@@ -5,3 +5,5 @@ node_modules
 dist
 release
 coverage
+# Generated main-world bridge
+bridge
