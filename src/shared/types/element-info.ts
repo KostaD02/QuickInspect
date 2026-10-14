@@ -1,3 +1,5 @@
+import { EventsInfo } from './events';
+
 export interface BoxEdges {
   top: number;
   right: number;
@@ -81,4 +83,5 @@ export interface ElementInfo {
   shadowHost: string | null;
   childCount: number;
   media: MediaInfo | null;
+  events: EventsInfo;
 }

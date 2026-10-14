@@ -19,11 +19,18 @@ export default defineManifest({
   },
   content_scripts: [
     {
+      js: ['bridge/bridge.js'],
+      matches: ['https://*/*', 'http://*/*', 'file:///*'],
+      run_at: 'document_start',
+      all_frames: false,
+      world: 'MAIN',
+    },
+    {
       js: ['src/content/main.ts'],
       matches: ['https://*/*', 'http://*/*', 'file:///*'],
       run_at: 'document_idle',
       all_frames: false,
     },
   ],
-  permissions: ['storage'],
+  permissions: ['storage', 'clipboardWrite'],
 });

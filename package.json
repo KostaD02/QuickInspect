@@ -6,12 +6,13 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "start": "vite",
-    "build": "tsc && vite build",
+    "start": "pnpm build:bridge && vite",
+    "build": "tsc && pnpm build:bridge && vite build",
     "lint": "pnpm exec eslint .",
     "typecheck": "pnpm exec tsc",
     "format": "pnpm exec prettier --write .",
-    "format:check": "pnpm exec prettier --check ."
+    "format:check": "pnpm exec prettier --check .",
+    "build:bridge": "vite build -c vite.bridge.config.ts"
   },
   "author": "Konstantine Datunishvili <konstantineda@datunishvili.ge>",
   "license": "MIT",

@@ -9,6 +9,7 @@ import {
 } from '../../types';
 import { getAccessibility } from '../a11y/a11y';
 import { parentOf } from '../dom/dom';
+import { probeEvents } from '../events/events';
 import {
   isTransparent,
   round,
@@ -230,5 +231,6 @@ export function inspectElement(el: Element): ElementInfo {
       root instanceof ShadowRoot ? getElementSummary(root.host) : null,
     childCount: el.childElementCount,
     media: getMedia(el),
+    events: probeEvents(el),
   };
 }

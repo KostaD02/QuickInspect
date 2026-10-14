@@ -1,6 +1,7 @@
 export * from './a11y/a11y';
 export * from './clipboard/clipboard';
 export * from './dom/dom';
+export * from './events/events';
 export * from './format/format';
 export * from './inspect/inspect';
 export * from './locator/locator';

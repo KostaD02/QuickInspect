@@ -8,11 +8,12 @@ export default defineConfig([
       'release',
       'coverage',
       'node_modules',
-      '.bridge',
+      'bridge',
       'eslint.config.ts',
       'commitlint.config.js',
       'vite.config.ts',
       'manifest.config.ts',
+      'vite.bridge.config.ts',
     ],
   },
   {

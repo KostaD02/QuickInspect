@@ -251,6 +251,18 @@
   color: var(--text-muted);
 }
 
+.source {
+  display: block;
+  font: 400 10.5px/1.45 var(--mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row.wide {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
 .row .key {
   color: var(--text-muted);
   font: 500 11px/1.5 var(--font);

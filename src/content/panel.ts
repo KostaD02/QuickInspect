@@ -164,6 +164,7 @@ export class Panel {
 
     const sections: Child[] = [];
     if (settings.showBox) sections.push(this.box(info));
+    if (settings.showEvents) sections.push(this.events(info));
     if (settings.showStyles) sections.push(this.styles(info.styles));
     if (settings.showAccessibility) sections.push(this.accessibility(info));
     if (settings.showAttributes && info.attributes.length) {
@@ -273,6 +274,55 @@ export class Panel {
       h('span', { class: 'val' }, breakable(locator.code), badge),
       isBest ? this.copyButton(this.action('locator')) : h('span'),
     );
+  }
+
+  private events(info: ElementInfo): HTMLElement {
+    const { listeners, framework } = info.events;
+    const hint = framework
+      ? `${framework.name}${framework.component ? ` · ${framework.component}` : ''}`
+      : listeners.length
+        ? `${listeners.length.toString()} ${listeners.length === 1 ? 'listener' : 'listeners'}`
+        : '';
+
+    if (!listeners.length) {
+      return this.section(
+        'Events',
+        hint,
+        h(
+          'div',
+          { class: 'row wide' },
+          h('span', { class: 'val muted' }, 'no listeners on this element'),
+          h('span'),
+        ),
+      );
+    }
+
+    const rows = listeners.map((listener) =>
+      h(
+        'div',
+        { class: 'row' },
+        h('span', { class: 'key' }, listener.type),
+        h(
+          'span',
+          { class: 'val' },
+          h('span', { class: 'kw' }, listener.name),
+          listener.origin !== 'listener'
+            ? h('span', { class: 'badge' }, listener.origin)
+            : null,
+          ...listener.flags.map((flag) => h('span', { class: 'badge' }, flag)),
+          listener.source
+            ? h(
+                'span',
+                { class: 'source muted' },
+                truncate(listener.source, 110),
+              )
+            : null,
+        ),
+        h('span'),
+      ),
+    );
+
+    return this.section('Events', hint, ...rows);
   }
 
   private box(info: ElementInfo): HTMLElement {
