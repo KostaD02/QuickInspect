@@ -15,10 +15,6 @@
 
 QuickInspect is a Chrome extension that shows the useful 80% of DevTools element inspection without opening DevTools. Hold a modifier key, hover any element, and a floating panel shows its selectors, Playwright locators, box model, computed styles and accessibility information. Release the key and the page is back to normal.
 
-<p align="center">
-  <img src="docs/screenshots/hover-button.png" alt="Hovering a button with Alt held" width="720"/>
-</p>
-
 ## Features
 
 - **Zero friction** - hold `Alt` (configurable) and hover; nothing is injected into the page until you do
