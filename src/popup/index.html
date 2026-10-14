@@ -15,12 +15,47 @@
   <body>
     <div id="app" class="d-flex flex-col">
       <header class="header d-flex items-center justify-between">
-        <div class="logo-text d-flex flex-col">
-          <span class="logo-name">QuickInspect</span>
-          <div class="logo-sub d-flex items-center">
-            <span class="logo-tagline">Hover element inspector</span>
-            <span id="version" class="logo-version">vX.X.X</span>
+        <div class="logo-lockup d-flex items-center">
+          <div class="logo-text d-flex flex-col">
+            <span class="logo-name">QuickInspect</span>
+            <div class="logo-sub d-flex items-center">
+              <span class="logo-tagline">Hover element inspector</span>
+              <span id="version" class="logo-version">vX.X.X</span>
+            </div>
           </div>
+        </div>
+        <div class="header-right d-flex items-center">
+          <button
+            id="settings-btn"
+            class="icon-btn settings-btn d-flex items-center justify-center"
+            type="button"
+            aria-label="QuickInspect settings"
+            title="Settings"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M259.1 73.5C262.1 58.7 275.2 48 290.4 48L349.6 48C364.8 48 377.9 58.7 380.9 73.5L389 113.9C405.9 121 421.6 130.1 435.8 141L475.2 127.9C489.6 123.1 505.4 129.1 513 142.2L542.6 193.4C550.2 206.5 547.5 223.2 536.2 233.3L505.4 260.7C506.7 269.6 507.4 278.7 507.4 288C507.4 297.3 506.7 306.4 505.4 315.3L536.2 342.7C547.5 352.8 550.2 369.5 542.6 382.6L513 433.8C505.4 446.9 489.6 452.9 475.2 448.1L435.8 435C421.6 445.9 405.9 455 389 462.1L380.9 502.5C377.9 517.3 364.8 528 349.6 528L290.4 528C275.2 528 262.1 517.3 259.1 502.5L251 462.1C234.1 455 218.4 445.9 204.2 435L164.8 448.1C150.4 452.9 134.6 446.9 127 433.8L97.4 382.6C89.8 369.5 92.5 352.8 103.8 342.7L134.6 315.3C133.3 306.4 132.6 297.3 132.6 288C132.6 278.7 133.3 269.6 134.6 260.7L103.8 233.3C92.5 223.2 89.8 206.5 97.4 193.4L127 142.2C134.6 129.1 150.4 123.1 164.8 127.9L204.2 141C218.4 130.1 234.1 121 251 113.9L259.1 73.5zM320 368C364.2 368 400 332.2 400 288C400 243.8 364.2 208 320 208C275.8 208 240 243.8 240 288C240 332.2 275.8 368 320 368z"
+              />
+            </svg>
+          </button>
+          <button
+            id="settings-close-btn"
+            class="icon-btn info-close-btn d-flex items-center justify-center"
+            type="button"
+            aria-label="Close settings"
+            hidden
+          >
+            ✕
+          </button>
+          <label class="switch" title="Turn QuickInspect on or off">
+            <input id="set-enabled" type="checkbox" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </label>
         </div>
       </header>
 
@@ -63,6 +98,124 @@
             <div class="key-row"><kbd>T</kbd><span>Copy text</span></div>
           </div>
         </div>
+      </div>
+
+      <div id="settings-panel" class="settings-panel d-flex flex-col" hidden>
+        <p class="settings-intro">
+          Saved automatically and applied to open tabs immediately.
+        </p>
+
+        <span class="settings-heading">Overlay</span>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Box model highlight</span>
+            <span class="setting-hint"
+              >Margin and padding bands around the element</span
+            >
+          </span>
+          <input
+            id="set-show-box-model"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+
+        <span class="settings-heading">Panel sections</span>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Selectors</span>
+            <span class="setting-hint">CSS, XPath and Playwright locators</span>
+          </span>
+          <input
+            id="set-show-selectors"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Box</span>
+            <span class="setting-hint"
+              >Position, size, margin, padding, border</span
+            >
+          </span>
+          <input id="set-show-box" class="setting-checkbox" type="checkbox" />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Styles</span>
+            <span class="setting-hint">Computed values that matter</span>
+          </span>
+          <input
+            id="set-show-styles"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Accessibility</span>
+            <span class="setting-hint"
+              >Role, accessible name, focusability, ARIA</span
+            >
+          </span>
+          <input
+            id="set-show-accessibility"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Attributes</span>
+          </span>
+          <input
+            id="set-show-attributes"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Context</span>
+            <span class="setting-hint">Ancestors, child count, text</span>
+          </span>
+          <input
+            id="set-show-context"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Media</span>
+            <span class="setting-hint"
+              >Image, video, canvas and SVG details</span
+            >
+          </span>
+          <input id="set-show-media" class="setting-checkbox" type="checkbox" />
+        </label>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Events</span>
+            <span class="setting-hint"
+              >Listeners, inline handlers and framework props</span
+            >
+          </span>
+          <input
+            id="set-show-events"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+
+        <button
+          id="reset-btn"
+          class="settings-reset-btn link-underline"
+          type="button"
+        >
+          Reset to defaults
+        </button>
       </div>
 
       <footer id="app-footer" class="footer">
