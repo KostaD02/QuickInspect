@@ -1,0 +1,34 @@
+import { APP_NAME } from '../../consts/config';
+
+export class Logger {
+  readonly console: Console;
+
+  constructor(
+    public readonly prefix: string = APP_NAME,
+    consoleInstance: Console = console,
+  ) {
+    this.console = consoleInstance;
+  }
+
+  log(...args: unknown[]) {
+    this.logger('log', ...args);
+  }
+
+  error(...args: unknown[]) {
+    this.logger('error', ...args);
+  }
+
+  warn(...args: unknown[]) {
+    this.logger('warn', ...args);
+  }
+
+  private logger(method: 'log' | 'error' | 'warn', ...args: unknown[]) {
+    const date = new Date();
+    this.console[method](
+      `[${this.prefix}] [${date.toLocaleDateString()} ${date.toLocaleTimeString()}]`,
+      ...args,
+    );
+  }
+}
+
+export const logger = new Logger();
