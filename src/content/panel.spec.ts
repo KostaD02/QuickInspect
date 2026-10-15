@@ -63,7 +63,16 @@ const info: ElementInfo = {
       },
     ],
     framework: { name: 'React', component: 'SaveButton' },
+    source: null,
   },
+  source: {
+    file: 'src/Save.tsx',
+    line: 12,
+    column: 3,
+    origin: 'react',
+    mapped: true,
+  },
+  devServer: 'vite',
   media: {
     kind: 'image',
     source: 'a.png',
@@ -77,13 +86,15 @@ const info: ElementInfo = {
 describe('panel', () => {
   let root: HTMLElement;
   let onCopy: jest.Mock;
+  let onOpen: jest.Mock;
   let panel: Panel;
 
   beforeEach(() => {
     root = document.createElement('div');
     document.body.append(root);
     onCopy = jest.fn();
-    panel = new Panel(root, onCopy);
+    onOpen = jest.fn();
+    panel = new Panel(root, onCopy, onOpen);
   });
 
   afterEach(() => {
@@ -102,6 +113,9 @@ describe('panel', () => {
     expect(text).toContain('clickhandleSaveoncefunction handleSave() {}');
     expect(text).toContain('mouseenteranonymousReact');
     expect(text).toContain('React · SaveButton');
+    expect(text).toContain('Sourcesrc/\u200BSave.tsx:12:3react');
+    expect(root.querySelector('[data-action="open"]')).not.toBeNull();
+    expect(root.querySelector('.foot')?.textContent).toContain('Oopen source');
     expect(root.querySelector('.section-title span')?.textContent).toBe('Box');
     expect(
       root.querySelector('.section:last-child .section-title span')
@@ -124,7 +138,8 @@ describe('panel', () => {
       {
         ...info,
         media: null,
-        events: { listeners: [], framework: null },
+        events: { listeners: [], framework: null, source: null },
+        source: null,
         attributes: [],
         accessibility: {
           role: '',
@@ -159,6 +174,8 @@ describe('panel', () => {
     expect(onCopy).toHaveBeenCalledWith(
       expect.objectContaining({ id: 'xpath' }),
     );
+    root.querySelector<HTMLElement>('[data-action="open"]')!.click();
+    expect(onOpen).toHaveBeenCalledTimes(1);
     panel.flash(onCopy.mock.calls[0][0] as CopyAction);
     expect(button.classList.contains('done')).toBe(true);
     jest.advanceTimersByTime(900);

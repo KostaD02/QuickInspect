@@ -115,7 +115,13 @@ describe('inspect', () => {
     expect(info.locators[0]?.code).toBe(
       "page.getByRole('button', { name: 'Go' })",
     );
-    expect(info.events).toEqual({ listeners: [], framework: null });
+    expect(info.events).toEqual({
+      listeners: [],
+      framework: null,
+      source: null,
+    });
+    expect(info.source).toBeNull();
+    expect(info.devServer).toBeNull();
     expect(info.accessibility.name).toBe('Go');
     expect(info.childCount).toBe(0);
     expect(info.media).toBeNull();
