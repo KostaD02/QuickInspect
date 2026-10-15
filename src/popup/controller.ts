@@ -1,5 +1,10 @@
 import { DEFAULT_SETTINGS, MODIFIER_KEYS } from '@/shared/consts';
-import { LensSettingBooleanKey, LensSettings } from '@/shared/types';
+import {
+  DEV_SERVER_MESSAGE,
+  DevServer,
+  LensSettingBooleanKey,
+  LensSettings,
+} from '@/shared/types';
 import { loadSettings, saveSettings } from '@/shared/util';
 
 export class PopupController {
@@ -27,6 +32,8 @@ export class PopupController {
     footer: document.getElementById('app-footer') as HTMLElement,
     resetBtn: document.getElementById('reset-btn') as HTMLButtonElement,
     versionLabel: document.getElementById('version') as HTMLSpanElement,
+    editorStatus: document.getElementById('editor-status') as HTMLDivElement,
+    editorLabel: document.getElementById('editor-label') as HTMLSpanElement,
   };
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
@@ -36,6 +43,36 @@ export class PopupController {
     this.settings = await loadSettings();
     this.apply();
     this.bind();
+    this.showEditor(await this.activeDevServer());
+  }
+
+  private async activeDevServer(): Promise<DevServer> {
+    try {
+      const tabs = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+      const tab = tabs.at(0);
+      if (tab?.id === undefined) return null;
+      const reply: unknown = await chrome.tabs.sendMessage(tab.id, {
+        type: DEV_SERVER_MESSAGE,
+      });
+      return reply === 'vite' || reply === 'next' ? reply : null;
+    } catch {
+      return null;
+    }
+  }
+
+  private showEditor(server: DevServer): void {
+    const { editorStatus, editorLabel } = this.domRefs;
+    const labels: Record<Exclude<DevServer, null>, string> = {
+      vite: 'Vite dev server, open in editor available',
+      next: 'Next.js dev server, open in editor available',
+    };
+    editorStatus.classList.toggle('available', server !== null);
+    editorLabel.textContent = server
+      ? labels[server]
+      : 'Not available on this page';
   }
 
   private input(id: string): HTMLInputElement {

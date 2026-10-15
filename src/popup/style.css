@@ -314,6 +314,47 @@ body {
     monospace;
 }
 
+.editor-status {
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.editor-status .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.editor-status.available {
+  color: var(--accent);
+  border-color: #64ffda44;
+  background: #64ffda14;
+}
+
+.editor-status.available .status-dot {
+  background: var(--accent);
+}
+
+.field-hint kbd {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font:
+    600 9.5px/1.3 ui-monospace,
+    'JetBrains Mono',
+    Menlo,
+    monospace;
+}
+
 .settings-panel {
   gap: 0;
   max-height: 470px;

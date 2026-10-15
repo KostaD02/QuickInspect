@@ -26,7 +26,8 @@ describe('popup controller', () => {
       <div id="shell"></div>
       <footer id="app-footer"></footer>
       <button id="reset-btn"></button>
-      <span id="version"></span>`;
+      <span id="version"></span>
+      <div id="editor-status"><span id="editor-label"></span></div>`;
     chrome.runtime.getManifest.mockReturnValue({
       version: '9.9.9',
     } as chrome.runtime.Manifest);
@@ -35,6 +36,33 @@ describe('popup controller', () => {
     });
     chrome.storage.local.set.mockReset();
     (chrome.storage.local.set as jest.Mock).mockResolvedValue(undefined);
+    (chrome.tabs.query as jest.Mock).mockResolvedValue([{ id: 7 }]);
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue('vite');
+  });
+
+  it('shows whether the active tab can open files in the editor', async () => {
+    await new PopupController().init();
+    const status = document.getElementById('editor-status') as HTMLElement;
+    expect(status.classList.contains('available')).toBe(true);
+    expect(status.textContent).toContain('Vite dev server');
+    expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(7, {
+      type: 'quickinspect:dev-server',
+    });
+
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue('next');
+    await new PopupController().init();
+    expect(status.textContent).toContain('Next.js dev server');
+
+    (chrome.tabs.sendMessage as jest.Mock).mockRejectedValue(
+      new Error('no receiver'),
+    );
+    await new PopupController().init();
+    expect(status.classList.contains('available')).toBe(false);
+    expect(status.textContent).toContain('Not available on this page');
+
+    (chrome.tabs.query as jest.Mock).mockResolvedValue([]);
+    await new PopupController().init();
+    expect(status.textContent).toContain('Not available on this page');
   });
 
   it('reflects stored settings and writes changes back', async () => {
