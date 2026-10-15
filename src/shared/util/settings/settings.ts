@@ -48,6 +48,10 @@ export function normaliseSettings(raw: unknown): LensSettings {
     showContext: bool(stored.showContext, DEFAULT_SETTINGS.showContext),
     showMedia: bool(stored.showMedia, DEFAULT_SETTINGS.showMedia),
     showEvents: bool(stored.showEvents, DEFAULT_SETTINGS.showEvents),
+    showEditorStatus: bool(
+      stored.showEditorStatus,
+      DEFAULT_SETTINGS.showEditorStatus,
+    ),
   };
 }
 

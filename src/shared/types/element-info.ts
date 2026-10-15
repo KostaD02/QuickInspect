@@ -1,4 +1,5 @@
 import { EventsInfo } from './events';
+import { DevServer, SourceInfo } from './source';
 
 export interface BoxEdges {
   top: number;
@@ -84,4 +85,6 @@ export interface ElementInfo {
   childCount: number;
   media: MediaInfo | null;
   events: EventsInfo;
+  source: SourceInfo | null;
+  devServer: DevServer;
 }

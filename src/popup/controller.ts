@@ -1,5 +1,10 @@
 import { DEFAULT_SETTINGS, MODIFIER_KEYS } from '@/shared/consts';
-import { LensSettingBooleanKey, LensSettings } from '@/shared/types';
+import {
+  DEV_SERVER_MESSAGE,
+  EditorAvailability,
+  LensSettingBooleanKey,
+  LensSettings,
+} from '@/shared/types';
 import { loadSettings, saveSettings } from '@/shared/util';
 
 export class PopupController {
@@ -14,6 +19,7 @@ export class PopupController {
     showContext: this.input('set-show-context'),
     showMedia: this.input('set-show-media'),
     showEvents: this.input('set-show-events'),
+    showEditorStatus: this.input('set-show-editor-status'),
   };
 
   private readonly domRefs = {
@@ -27,6 +33,9 @@ export class PopupController {
     footer: document.getElementById('app-footer') as HTMLElement,
     resetBtn: document.getElementById('reset-btn') as HTMLButtonElement,
     versionLabel: document.getElementById('version') as HTMLSpanElement,
+    editorGroup: document.getElementById('editor-group') as HTMLDivElement,
+    editorStatus: document.getElementById('editor-status') as HTMLDivElement,
+    editorLabel: document.getElementById('editor-label') as HTMLSpanElement,
   };
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
@@ -36,6 +45,42 @@ export class PopupController {
     this.settings = await loadSettings();
     this.apply();
     this.bind();
+    this.showEditor(await this.activeEditor());
+  }
+
+  private async activeEditor(): Promise<EditorAvailability> {
+    const none: EditorAvailability = { server: null, sources: false };
+    try {
+      const tabs = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+      const tab = tabs.at(0);
+      if (tab?.id === undefined) return none;
+      const reply = await chrome.tabs.sendMessage<
+        { type: string },
+        Partial<EditorAvailability> | undefined
+      >(tab.id, { type: DEV_SERVER_MESSAGE });
+      const server =
+        reply?.server === 'vite' || reply?.server === 'next'
+          ? reply.server
+          : null;
+      return { server, sources: server !== null && reply?.sources === true };
+    } catch {
+      return none;
+    }
+  }
+
+  private showEditor({ server, sources }: EditorAvailability): void {
+    const { editorStatus, editorLabel } = this.domRefs;
+    const name = server === 'vite' ? 'Vite' : 'Next.js';
+    editorStatus.classList.toggle('available', sources);
+    editorStatus.classList.toggle('partial', server !== null && !sources);
+    editorLabel.textContent = !server
+      ? 'Not available on this page'
+      : sources
+        ? `${name} dev server, element sources available`
+        : `${name} dev server, but this page exposes no element sources`;
   }
 
   private input(id: string): HTMLInputElement {
@@ -50,6 +95,7 @@ export class PopupController {
       box.checked = this.settings[key];
     }
     this.domRefs.modifier.value = this.settings.modifier;
+    this.domRefs.editorGroup.hidden = !this.settings.showEditorStatus;
   }
 
   private bind(): void {

@@ -13,6 +13,7 @@ const ids = [
   'set-show-context',
   'set-show-media',
   'set-show-events',
+  'set-show-editor-status',
 ];
 
 describe('popup controller', () => {
@@ -26,7 +27,8 @@ describe('popup controller', () => {
       <div id="shell"></div>
       <footer id="app-footer"></footer>
       <button id="reset-btn"></button>
-      <span id="version"></span>`;
+      <span id="version"></span>
+      <div id="editor-group"><div id="editor-status"><span id="editor-label"></span></div></div>`;
     chrome.runtime.getManifest.mockReturnValue({
       version: '9.9.9',
     } as chrome.runtime.Manifest);
@@ -35,6 +37,54 @@ describe('popup controller', () => {
     });
     chrome.storage.local.set.mockReset();
     (chrome.storage.local.set as jest.Mock).mockResolvedValue(undefined);
+    (chrome.tabs.query as jest.Mock).mockResolvedValue([{ id: 7 }]);
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue({
+      server: 'vite',
+      sources: true,
+    });
+  });
+
+  it('shows whether the active tab can open files in the editor', async () => {
+    await new PopupController().init();
+    const status = document.getElementById('editor-status') as HTMLElement;
+    expect(status.classList.contains('available')).toBe(true);
+    expect(status.textContent).toContain('Vite dev server, element sources');
+    const group = document.getElementById('editor-group') as HTMLElement;
+    expect(group.hidden).toBe(false);
+    const toggle = document.getElementById(
+      'set-show-editor-status',
+    ) as HTMLInputElement;
+    toggle.checked = false;
+    toggle.dispatchEvent(new Event('change'));
+    expect(group.hidden).toBe(true);
+    expect(chrome.storage.local.set).toHaveBeenLastCalledWith({
+      [SETTINGS_STORAGE_KEY]: expect.objectContaining({
+        showEditorStatus: false,
+      }),
+    });
+    expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(7, {
+      type: 'quickinspect:dev-server',
+    });
+
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue({
+      server: 'next',
+      sources: false,
+    });
+    await new PopupController().init();
+    expect(status.classList.contains('available')).toBe(false);
+    expect(status.classList.contains('partial')).toBe(true);
+    expect(status.textContent).toContain('exposes no element sources');
+
+    (chrome.tabs.sendMessage as jest.Mock).mockRejectedValue(
+      new Error('no receiver'),
+    );
+    await new PopupController().init();
+    expect(status.classList.contains('available')).toBe(false);
+    expect(status.textContent).toContain('Not available on this page');
+
+    (chrome.tabs.query as jest.Mock).mockResolvedValue([]);
+    await new PopupController().init();
+    expect(status.textContent).toContain('Not available on this page');
   });
 
   it('reflects stored settings and writes changes back', async () => {

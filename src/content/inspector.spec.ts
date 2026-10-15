@@ -130,6 +130,33 @@ describe('inspector', () => {
     expect(writeText).toHaveBeenCalledTimes(2);
   });
 
+  it('opens the source in the editor with O when a dev server is present', async () => {
+    const fetchMock = jest.fn(() => Promise.resolve({ ok: true } as Response));
+    Object.defineProperty(globalThis, 'fetch', {
+      value: fetchMock,
+      configurable: true,
+    });
+    hold();
+    const event = key('keydown', { code: 'KeyO', key: 'o', altKey: true });
+    expect(event.defaultPrevented).toBe(true);
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    const stamped = document.createElement('a');
+    stamped.setAttribute('data-qwik-inspector', 'src/routes/index.tsx:3:1');
+    document.body.append(stamped);
+    (document.elementFromPoint as jest.Mock).mockReturnValue(stamped);
+    document.head.innerHTML =
+      '<script type="module" src="/@vite/client"></script>';
+    mouse('mousemove', { clientX: 12, clientY: 12 });
+    flush();
+    key('keydown', { code: 'KeyO', key: 'o', altKey: true });
+    await Promise.resolve();
+    expect(fetchMock).toHaveBeenCalledWith(
+      '/__open-in-editor?file=src%2Froutes%2Findex.tsx%3A3%3A1',
+    );
+    document.head.innerHTML = '';
+  });
+
   it('navigates to the parent and child and pins while doing so', () => {
     hold();
     key('keydown', { code: 'ArrowUp', key: 'ArrowUp' });

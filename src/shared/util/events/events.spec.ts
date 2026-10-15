@@ -50,7 +50,11 @@ describe('probeEvents', () => {
   it('returns an empty result without a bridge or with garbage', () => {
     const el = document.createElement('button');
     document.body.append(el);
-    expect(probeEvents(el)).toEqual({ listeners: [], framework: null });
+    expect(probeEvents(el)).toEqual({
+      listeners: [],
+      framework: null,
+      source: null,
+    });
     document.addEventListener(
       PROBE_EVENT,
       () => {
@@ -58,6 +62,10 @@ describe('probeEvents', () => {
       },
       { capture: true, once: true },
     );
-    expect(probeEvents(el)).toEqual({ listeners: [], framework: null });
+    expect(probeEvents(el)).toEqual({
+      listeners: [],
+      framework: null,
+      source: null,
+    });
   });
 });

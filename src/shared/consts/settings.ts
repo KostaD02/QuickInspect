@@ -12,6 +12,7 @@ export const DEFAULT_SETTINGS: LensSettings = {
   showContext: true,
   showMedia: true,
   showEvents: true,
+  showEditorStatus: true,
 };
 
 export const MODIFIER_KEYS = ['Alt', 'Control', 'Shift', 'Meta'] as const;

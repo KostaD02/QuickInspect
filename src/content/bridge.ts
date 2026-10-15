@@ -4,6 +4,7 @@ import type {
   EventsInfo,
   FrameworkInfo,
 } from '@/shared/types/events';
+import type { SourceInfo } from '@/shared/types/source';
 import {
   PROBE_EVENT,
   REPLY_ATTRIBUTE,
@@ -199,6 +200,16 @@ function reactInfo(el: Element): {
   return { listeners, framework: { name: 'React', component } };
 }
 
+function vueOwner(el: Element): Bag | null {
+  let current: Element | null = el;
+  for (let hops = 0; current && hops < 40; hops += 1) {
+    const bag = current as unknown as Bag;
+    if (bag.__vueParentComponent || bag.__vue__) return bag;
+    current = current.parentElement;
+  }
+  return null;
+}
+
 function vueInfo(el: Element): {
   listeners: EventListenerInfo[];
   framework: FrameworkInfo | null;
@@ -219,8 +230,9 @@ function vueInfo(el: Element): {
     }
   }
 
-  const parent = bag.__vueParentComponent as Bag | undefined;
-  const legacy = bag.__vue__ as Bag | undefined;
+  const owner = vueOwner(el);
+  const parent = owner?.__vueParentComponent as Bag | undefined;
+  const legacy = owner?.__vue__ as Bag | undefined;
   let component = '';
   if (parent) {
     const type = parent.type as Bag | undefined;
@@ -256,6 +268,7 @@ function otherFramework(el: Element): FrameworkInfo | null {
       component: svelte.loc?.file?.split('/').pop() ?? '',
     };
   }
+  if (el.closest('[q\\:container]')) return { name: 'Qwik', component: '' };
   return null;
 }
 
@@ -286,6 +299,83 @@ function jqueryListeners(el: Element): EventListenerInfo[] {
   return result;
 }
 
+const STACK_FRAME = /\((?:https?:\/\/[^/]+)?\/(.+?)(?:\?[^)]*?)?:(\d+):(\d+)\)/;
+const PRERENDER_FRAME =
+  /\(about:\/\/React\/Prerender\/file:\/\/([^):?]+)(?:\?[^):]*)?:(\d+):(\d+)\)/;
+const INTERNAL_FRAME =
+  /node_modules|\/@vite\/|\/@react-refresh|react-dom|react-jsx|react-server-dom|next_dist|react-stack-top-frame/;
+
+function reactStackSource(stack: string): SourceInfo | null {
+  for (const frame of stack.split('\n')) {
+    if (INTERNAL_FRAME.test(frame)) continue;
+    const prerender = PRERENDER_FRAME.exec(frame);
+    const match = prerender ?? STACK_FRAME.exec(frame);
+    if (!match?.[1]) continue;
+    return {
+      file: prerender ? decodeURIComponent(match[1]) : match[1],
+      line: Number(match[2]),
+      column: Number(match[3]),
+      origin: 'react',
+      mapped: false,
+    };
+  }
+  return null;
+}
+
+function reactSource(el: Element): SourceInfo | null {
+  const bag = el as unknown as Bag;
+  const fiberKey = Object.keys(bag).find((k) => k.startsWith('__reactFiber$'));
+  let fiber = (fiberKey ? bag[fiberKey] : null) as Bag | null;
+  let hops = 0;
+  while (fiber && hops < 30) {
+    const debug = fiber._debugSource as Bag | undefined;
+    if (debug && typeof debug.fileName === 'string') {
+      return {
+        file: debug.fileName,
+        line: typeof debug.lineNumber === 'number' ? debug.lineNumber : null,
+        column:
+          typeof debug.columnNumber === 'number' ? debug.columnNumber : null,
+        origin: 'react',
+        mapped: true,
+      };
+    }
+    const stack = fiber._debugStack as { stack?: unknown } | undefined;
+    if (stack && typeof stack.stack === 'string') {
+      const parsed = reactStackSource(stack.stack);
+      if (parsed) return parsed;
+    }
+    fiber = fiber.return as Bag | null;
+    hops += 1;
+  }
+  return null;
+}
+
+function svelteSource(el: Element): SourceInfo | null {
+  const meta = (el as unknown as Bag).__svelte_meta as
+    { loc?: { file?: unknown; line?: unknown; column?: unknown } } | undefined;
+  const loc = meta?.loc;
+  if (!loc || typeof loc.file !== 'string') return null;
+  return {
+    file: loc.file,
+    line: typeof loc.line === 'number' ? loc.line : null,
+    column: typeof loc.column === 'number' ? loc.column : null,
+    origin: 'svelte',
+    mapped: true,
+  };
+}
+
+function vueSource(el: Element): SourceInfo | null {
+  const parent = vueOwner(el)?.__vueParentComponent as Bag | undefined;
+  const file = (parent?.type as Bag | undefined)?.__file;
+  return typeof file === 'string'
+    ? { file, line: null, column: null, origin: 'vue', mapped: true }
+    : null;
+}
+
+export function collectSource(el: Element): SourceInfo | null {
+  return svelteSource(el) ?? reactSource(el) ?? vueSource(el);
+}
+
 export function collectEvents(el: Element): EventsInfo {
   const react = reactInfo(el);
   const vue = vueInfo(el);
@@ -297,7 +387,7 @@ export function collectEvents(el: Element): EventsInfo {
     ...jqueryListeners(el),
   ];
   const framework = react.framework ?? vue.framework ?? otherFramework(el);
-  return { listeners, framework };
+  return { listeners, framework, source: collectSource(el) };
 }
 
 nativeAdd.call(
@@ -306,11 +396,11 @@ nativeAdd.call(
   (event: Event) => {
     const target = event.composedPath()[0];
     if (!(target instanceof Element)) return;
-    let payload = '{"listeners":[],"framework":null}';
+    let payload = '{"listeners":[],"framework":null,"source":null}';
     try {
       payload = JSON.stringify(collectEvents(target));
     } catch {
-      payload = '{"listeners":[],"framework":null}';
+      payload = '{"listeners":[],"framework":null,"source":null}';
     }
     document.documentElement.setAttribute(REPLY_ATTRIBUTE, payload);
     target.dispatchEvent(new CustomEvent(REPLY_EVENT, { detail: payload }));

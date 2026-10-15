@@ -3,9 +3,14 @@ import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
   copyText,
   deepElementFromPoint,
+  formatSource,
   inspectElement,
   isOwnNode,
+  mapToOriginal,
+  openInEditor,
+  resolveNextFrame,
   truncate,
+  viteBase,
 } from '@/shared/util';
 import { actionByCode, CopyAction } from './actions';
 import { LensHost } from './host';
@@ -24,9 +29,15 @@ export class Inspector {
   private readonly host = new LensHost();
   private readonly overlay = new Overlay(this.host.root);
   private readonly toast = new Toast(this.host.root);
-  private readonly panel = new Panel(this.host.root, (action) => {
-    this.copy(action);
-  });
+  private readonly panel = new Panel(
+    this.host.root,
+    (action) => {
+      this.copy(action);
+    },
+    () => {
+      this.openSource();
+    },
+  );
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
   private holding = false;
@@ -109,6 +120,12 @@ export class Inspector {
     if (event.code === 'ArrowUp' || event.code === 'ArrowDown') {
       this.swallow(event);
       this.navigate(event.code === 'ArrowUp' ? 'parent' : 'child');
+      return;
+    }
+
+    if (event.code === 'KeyO' && !event.ctrlKey && !event.metaKey) {
+      this.swallow(event);
+      this.openSource();
       return;
     }
 
@@ -211,6 +228,7 @@ export class Inspector {
       return;
     }
     this.info = inspectElement(target);
+    this.resolveSource(target, this.info);
     this.overlay.show(target, this.info.box, this.info.summary);
     this.panel.render(this.info, this.settings);
     this.panel.show();
@@ -260,6 +278,39 @@ export class Inspector {
     this.panel.hide();
     this.current = null;
     this.info = null;
+  }
+
+  private resolveSource(target: Element, info: ElementInfo): void {
+    const source = info.source;
+    if (!source || source.mapped || !info.devServer) return;
+    const pending =
+      info.devServer === 'vite'
+        ? mapToOriginal(source, viteBase())
+        : resolveNextFrame(source);
+    pending.then((mapped) => {
+      if (!mapped || this.current !== target || this.info !== info) return;
+      info.source = { ...mapped, mapped: true };
+      this.panel.render(info, this.settings);
+    });
+  }
+
+  private openSource(): void {
+    const source = this.info?.source;
+    if (!source) {
+      this.toast.show('No source location for this element');
+      return;
+    }
+    const location = formatSource(source);
+    if (!this.info?.devServer) {
+      this.toast.show('No dev server to open the editor', location);
+      return;
+    }
+    openInEditor(source, this.info.devServer).then((opened) => {
+      this.toast.show(
+        opened ? 'Opened in editor' : 'Editor did not open',
+        location,
+      );
+    });
   }
 
   private copy(action: CopyAction): void {

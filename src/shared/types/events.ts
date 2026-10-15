@@ -1,3 +1,5 @@
+import { SourceInfo } from './source';
+
 export type EventOrigin = 'listener' | 'inline' | 'React' | 'Vue' | 'jQuery';
 
 export interface EventListenerInfo {
@@ -16,6 +18,7 @@ export interface FrameworkInfo {
 export interface EventsInfo {
   listeners: EventListenerInfo[];
   framework: FrameworkInfo | null;
+  source: SourceInfo | null;
 }
 
 export const PROBE_EVENT = 'quickinspect:probe';
