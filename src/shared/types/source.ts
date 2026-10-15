@@ -10,3 +10,8 @@ export interface SourceInfo {
 }
 
 export type DevServer = 'vite' | 'next' | null;
+
+export interface EditorAvailability {
+  server: DevServer;
+  sources: boolean;
+}

@@ -1,12 +1,15 @@
 import {
   detectDevServer,
+  editorAvailability,
   editorUrl,
   formatSource,
   getAttributeSource,
   openInEditor,
+  pageHasSources,
   parseLocation,
   resolveNextFrame,
 } from './source';
+import { PROBE_EVENT, REPLY_EVENT } from '@/shared/types/events';
 
 function make(html: string): Element {
   document.body.innerHTML = html;
@@ -112,6 +115,42 @@ describe('source markers', () => {
     document.head.innerHTML =
       '<script type="module" src="/app/@vite/client"></script>';
     expect(detectDevServer()).toBe('vite');
+  });
+
+  it('tells whether the page exposes element sources', () => {
+    document.body.innerHTML = '<main><p>plain</p></main>';
+    expect(pageHasSources()).toBe(false);
+    expect(editorAvailability()).toEqual({ server: null, sources: false });
+
+    document.head.innerHTML =
+      '<script type="module" src="/@vite/client"></script>';
+    expect(editorAvailability()).toEqual({ server: 'vite', sources: false });
+
+    document.body.innerHTML = '<main data-qwik-inspector="a.tsx:1:1"></main>';
+    expect(editorAvailability()).toEqual({ server: 'vite', sources: true });
+
+    document.body.innerHTML = '<main><p>plain</p></main>';
+    const reply = JSON.stringify({
+      listeners: [],
+      framework: null,
+      source: {
+        file: 'App.svelte',
+        line: 1,
+        column: 1,
+        origin: 'svelte',
+        mapped: true,
+      },
+    });
+    document.addEventListener(
+      PROBE_EVENT,
+      (event) => {
+        (event.composedPath()[0] as Element).dispatchEvent(
+          new CustomEvent(REPLY_EVENT, { detail: reply }),
+        );
+      },
+      { capture: true, once: true },
+    );
+    expect(pageHasSources()).toBe(true);
   });
 
   it('builds editor urls per server and formats locations', () => {

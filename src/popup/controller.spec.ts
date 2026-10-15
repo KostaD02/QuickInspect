@@ -37,21 +37,29 @@ describe('popup controller', () => {
     chrome.storage.local.set.mockReset();
     (chrome.storage.local.set as jest.Mock).mockResolvedValue(undefined);
     (chrome.tabs.query as jest.Mock).mockResolvedValue([{ id: 7 }]);
-    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue('vite');
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue({
+      server: 'vite',
+      sources: true,
+    });
   });
 
   it('shows whether the active tab can open files in the editor', async () => {
     await new PopupController().init();
     const status = document.getElementById('editor-status') as HTMLElement;
     expect(status.classList.contains('available')).toBe(true);
-    expect(status.textContent).toContain('Vite dev server');
+    expect(status.textContent).toContain('Vite dev server, element sources');
     expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(7, {
       type: 'quickinspect:dev-server',
     });
 
-    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue('next');
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue({
+      server: 'next',
+      sources: false,
+    });
     await new PopupController().init();
-    expect(status.textContent).toContain('Next.js dev server');
+    expect(status.classList.contains('available')).toBe(false);
+    expect(status.classList.contains('partial')).toBe(true);
+    expect(status.textContent).toContain('exposes no element sources');
 
     (chrome.tabs.sendMessage as jest.Mock).mockRejectedValue(
       new Error('no receiver'),

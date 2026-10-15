@@ -1,5 +1,11 @@
-import { DevServer, SourceInfo, SourceOrigin } from '../../types';
+import {
+  DevServer,
+  EditorAvailability,
+  SourceInfo,
+  SourceOrigin,
+} from '../../types';
 import { parentOf } from '../dom/dom';
+import { probeEvents } from '../events/events';
 
 const LOCATION = /^(.*?):(\d+)(?::(\d+))?(?::[^:]*)?$/;
 const ANCESTOR_LIMIT = 4;
@@ -82,6 +88,24 @@ export function detectDevServer(): DevServer {
   if (viteClient()) return 'vite';
   if (document.querySelector('script[src*="/_next/static/"]')) return 'next';
   return null;
+}
+
+const MARKERS =
+  '[data-qwik-inspector], [data-v-inspector], [data-insp-path], [data-astro-source-file], [data-inspector-relative-path]';
+const SAMPLE = 24;
+
+export function pageHasSources(): boolean {
+  if (document.querySelector(MARKERS)) return true;
+  const elements = Array.from(document.body.querySelectorAll('*')).slice(
+    0,
+    SAMPLE,
+  );
+  return elements.some((el) => probeEvents(el).source !== null);
+}
+
+export function editorAvailability(): EditorAvailability {
+  const server = detectDevServer();
+  return { server, sources: server !== null && pageHasSources() };
 }
 
 export function formatSource(source: SourceInfo): string {

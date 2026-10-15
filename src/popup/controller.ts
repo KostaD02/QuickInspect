@@ -1,7 +1,7 @@
 import { DEFAULT_SETTINGS, MODIFIER_KEYS } from '@/shared/consts';
 import {
   DEV_SERVER_MESSAGE,
-  DevServer,
+  EditorAvailability,
   LensSettingBooleanKey,
   LensSettings,
 } from '@/shared/types';
@@ -43,36 +43,42 @@ export class PopupController {
     this.settings = await loadSettings();
     this.apply();
     this.bind();
-    this.showEditor(await this.activeDevServer());
+    this.showEditor(await this.activeEditor());
   }
 
-  private async activeDevServer(): Promise<DevServer> {
+  private async activeEditor(): Promise<EditorAvailability> {
+    const none: EditorAvailability = { server: null, sources: false };
     try {
       const tabs = await chrome.tabs.query({
         active: true,
         currentWindow: true,
       });
       const tab = tabs.at(0);
-      if (tab?.id === undefined) return null;
-      const reply: unknown = await chrome.tabs.sendMessage(tab.id, {
-        type: DEV_SERVER_MESSAGE,
-      });
-      return reply === 'vite' || reply === 'next' ? reply : null;
+      if (tab?.id === undefined) return none;
+      const reply = await chrome.tabs.sendMessage<
+        { type: string },
+        Partial<EditorAvailability> | undefined
+      >(tab.id, { type: DEV_SERVER_MESSAGE });
+      const server =
+        reply?.server === 'vite' || reply?.server === 'next'
+          ? reply.server
+          : null;
+      return { server, sources: server !== null && reply?.sources === true };
     } catch {
-      return null;
+      return none;
     }
   }
 
-  private showEditor(server: DevServer): void {
+  private showEditor({ server, sources }: EditorAvailability): void {
     const { editorStatus, editorLabel } = this.domRefs;
-    const labels: Record<Exclude<DevServer, null>, string> = {
-      vite: 'Vite dev server, open in editor available',
-      next: 'Next.js dev server, open in editor available',
-    };
-    editorStatus.classList.toggle('available', server !== null);
-    editorLabel.textContent = server
-      ? labels[server]
-      : 'Not available on this page';
+    const name = server === 'vite' ? 'Vite' : 'Next.js';
+    editorStatus.classList.toggle('available', sources);
+    editorStatus.classList.toggle('partial', server !== null && !sources);
+    editorLabel.textContent = !server
+      ? 'Not available on this page'
+      : sources
+        ? `${name} dev server, element sources available`
+        : `${name} dev server, but this page exposes no element sources`;
   }
 
   private input(id: string): HTMLInputElement {

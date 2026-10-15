@@ -342,6 +342,10 @@ body {
   background: var(--accent);
 }
 
+.editor-status.partial .status-dot {
+  background: var(--warning);
+}
+
 .field-hint kbd {
   padding: 1px 4px;
   border-radius: 3px;

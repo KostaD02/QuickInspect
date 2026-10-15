@@ -1,6 +1,6 @@
 import { DEV_SERVER_MESSAGE } from '@/shared/types';
 import {
-  detectDevServer,
+  editorAvailability,
   loadSettings,
   logger,
   watchSettings,
@@ -24,6 +24,6 @@ watchSettings((settings) => {
 
 chrome.runtime.onMessage.addListener(
   (message: { type?: unknown }, _sender, sendResponse) => {
-    if (message.type === DEV_SERVER_MESSAGE) sendResponse(detectDevServer());
+    if (message.type === DEV_SERVER_MESSAGE) sendResponse(editorAvailability());
   },
 );
