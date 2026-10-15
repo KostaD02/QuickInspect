@@ -5,7 +5,7 @@ import {
   REPLY_EVENT,
 } from '../../types/events';
 
-const EMPTY: EventsInfo = { listeners: [], framework: null };
+const EMPTY: EventsInfo = { listeners: [], framework: null, source: null };
 
 function parse(raw: unknown): EventsInfo | null {
   if (typeof raw !== 'string') return null;
@@ -14,6 +14,7 @@ function parse(raw: unknown): EventsInfo | null {
     return {
       listeners: Array.isArray(parsed.listeners) ? parsed.listeners : [],
       framework: parsed.framework ?? null,
+      source: parsed.source ?? null,
     };
   } catch {
     return null;

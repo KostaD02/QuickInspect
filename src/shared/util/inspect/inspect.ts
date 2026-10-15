@@ -10,6 +10,7 @@ import {
 import { getAccessibility } from '../a11y/a11y';
 import { parentOf } from '../dom/dom';
 import { probeEvents } from '../events/events';
+import { detectDevServer, getAttributeSource } from '../source/source';
 import {
   isTransparent,
   round,
@@ -212,6 +213,7 @@ export function getMedia(el: Element): MediaInfo | null {
 export function inspectElement(el: Element): ElementInfo {
   const style = getComputedStyle(el);
   const root = el.getRootNode();
+  const events = probeEvents(el);
 
   return {
     tag: el.localName,
@@ -231,6 +233,8 @@ export function inspectElement(el: Element): ElementInfo {
       root instanceof ShadowRoot ? getElementSummary(root.host) : null,
     childCount: el.childElementCount,
     media: getMedia(el),
-    events: probeEvents(el),
+    events,
+    source: getAttributeSource(el) ?? events.source,
+    devServer: detectDevServer(),
   };
 }

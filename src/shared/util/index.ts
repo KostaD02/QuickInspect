@@ -8,4 +8,6 @@ export * from './locator/locator';
 export * from './logger/logger';
 export * from './selector/selector';
 export * from './settings/settings';
+export * from './source/source';
+export * from './sourcemap/sourcemap';
 export * from './xpath/xpath';
