@@ -13,6 +13,7 @@ const ids = [
   'set-show-context',
   'set-show-media',
   'set-show-events',
+  'set-show-editor-status',
 ];
 
 describe('popup controller', () => {
@@ -27,7 +28,7 @@ describe('popup controller', () => {
       <footer id="app-footer"></footer>
       <button id="reset-btn"></button>
       <span id="version"></span>
-      <div id="editor-status"><span id="editor-label"></span></div>`;
+      <div id="editor-group"><div id="editor-status"><span id="editor-label"></span></div></div>`;
     chrome.runtime.getManifest.mockReturnValue({
       version: '9.9.9',
     } as chrome.runtime.Manifest);
@@ -48,6 +49,19 @@ describe('popup controller', () => {
     const status = document.getElementById('editor-status') as HTMLElement;
     expect(status.classList.contains('available')).toBe(true);
     expect(status.textContent).toContain('Vite dev server, element sources');
+    const group = document.getElementById('editor-group') as HTMLElement;
+    expect(group.hidden).toBe(false);
+    const toggle = document.getElementById(
+      'set-show-editor-status',
+    ) as HTMLInputElement;
+    toggle.checked = false;
+    toggle.dispatchEvent(new Event('change'));
+    expect(group.hidden).toBe(true);
+    expect(chrome.storage.local.set).toHaveBeenLastCalledWith({
+      [SETTINGS_STORAGE_KEY]: expect.objectContaining({
+        showEditorStatus: false,
+      }),
+    });
     expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(7, {
       type: 'quickinspect:dev-server',
     });

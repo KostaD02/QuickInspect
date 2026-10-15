@@ -14,6 +14,7 @@ export interface LensSettings {
   showContext: boolean;
   showMedia: boolean;
   showEvents: boolean;
+  showEditorStatus: boolean;
 }
 
 export type LensSettingKey = keyof LensSettings;

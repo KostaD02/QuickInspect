@@ -314,6 +314,11 @@ body {
     monospace;
 }
 
+.editor-group {
+  margin-top: 6px;
+  gap: 8px;
+}
+
 .editor-status {
   gap: 8px;
   padding: 9px 12px;

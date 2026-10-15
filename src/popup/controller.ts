@@ -19,6 +19,7 @@ export class PopupController {
     showContext: this.input('set-show-context'),
     showMedia: this.input('set-show-media'),
     showEvents: this.input('set-show-events'),
+    showEditorStatus: this.input('set-show-editor-status'),
   };
 
   private readonly domRefs = {
@@ -32,6 +33,7 @@ export class PopupController {
     footer: document.getElementById('app-footer') as HTMLElement,
     resetBtn: document.getElementById('reset-btn') as HTMLButtonElement,
     versionLabel: document.getElementById('version') as HTMLSpanElement,
+    editorGroup: document.getElementById('editor-group') as HTMLDivElement,
     editorStatus: document.getElementById('editor-status') as HTMLDivElement,
     editorLabel: document.getElementById('editor-label') as HTMLSpanElement,
   };
@@ -93,6 +95,7 @@ export class PopupController {
       box.checked = this.settings[key];
     }
     this.domRefs.modifier.value = this.settings.modifier;
+    this.domRefs.editorGroup.hidden = !this.settings.showEditorStatus;
   }
 
   private bind(): void {

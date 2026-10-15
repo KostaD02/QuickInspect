@@ -25,6 +25,9 @@ describe('settings', () => {
       }),
     ).toMatchObject({ enabled: false, modifier: 'Control', showEvents: false });
     expect(
+      normaliseSettings({ showEditorStatus: false }).showEditorStatus,
+    ).toBe(false);
+    expect(
       normaliseSettings({ modifier: 'Hyper', showBox: 'yes' }),
     ).toMatchObject({
       modifier: 'Alt',

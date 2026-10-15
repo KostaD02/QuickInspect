@@ -97,7 +97,7 @@
           </div>
         </div>
 
-        <div class="field-group d-flex flex-col">
+        <div id="editor-group" class="field-group editor-group d-flex flex-col">
           <span class="field-label d-flex items-center"> Editor </span>
           <div id="editor-status" class="editor-status d-flex items-center">
             <span class="status-dot"></span>
@@ -214,6 +214,21 @@
           </span>
           <input
             id="set-show-events"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
+
+        <span class="settings-heading">Popup</span>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Editor availability</span>
+            <span class="setting-hint"
+              >Whether this page can open sources in your editor</span
+            >
+          </span>
+          <input
+            id="set-show-editor-status"
             class="setting-checkbox"
             type="checkbox"
           />
