@@ -2,6 +2,7 @@ import { ElementInfo, LensSettings, Locator, StyleEntry } from '@/shared/types';
 import {
   bestLocator,
   formatDuration,
+  formatSource,
   STRATEGY_LABELS,
   truncate,
 } from '@/shared/util';
@@ -39,11 +40,13 @@ export class Panel {
   private readonly body: HTMLElement;
   private readonly foot: HTMLElement;
   private pinned = false;
+  private hasSource = false;
   private drag: { dx: number; dy: number } | null = null;
 
   constructor(
     root: ParentNode,
     private readonly onCopy: (action: CopyAction) => void,
+    private readonly onOpen: () => void,
   ) {
     this.element = document.createElement('div');
     this.element.className = 'panel';
@@ -59,6 +62,10 @@ export class Panel {
       if (!button) return;
       event.preventDefault();
       event.stopPropagation();
+      if (button.dataset.action === 'open') {
+        this.onOpen();
+        return;
+      }
       const action = COPY_ACTIONS.find((a) => a.id === button.dataset.action);
       if (action) this.onCopy(action);
     });
@@ -176,6 +183,10 @@ export class Panel {
 
     this.body.replaceChildren(...sections.filter((s): s is Node => !!s));
     this.body.scrollTop = 0;
+    if (this.hasSource !== Boolean(info.source)) {
+      this.hasSource = Boolean(info.source);
+      this.renderFoot();
+    }
   }
 
   private summary(info: ElementInfo): Child[] {
@@ -478,6 +489,25 @@ export class Panel {
     return this.section(
       'Context',
       `${info.childCount.toString()} ${info.childCount === 1 ? 'child' : 'children'}`,
+      info.source
+        ? this.row(
+            'Source',
+            h(
+              'span',
+              {},
+              breakable(formatSource(info.source)),
+              h('span', { class: 'badge' }, info.source.origin),
+            ),
+            info.devServer
+              ? h(
+                  'button',
+                  { class: 'copy', type: 'button', 'data-action': 'open' },
+                  h('kbd', {}, 'O'),
+                  'open',
+                )
+              : undefined,
+          )
+        : null,
       crumbs,
       info.text
         ? this.row(
@@ -517,6 +547,7 @@ export class Panel {
       this.pinned ? h('span', {}, h('kbd', {}, 'drag'), 'move') : null,
       h('span', {}, h('kbd', {}, 'esc'), 'close'),
       h('span', {}, h('kbd', {}, '↑'), h('kbd', {}, '↓'), 'parent / child'),
+      this.hasSource ? h('span', {}, h('kbd', {}, 'O'), 'open source') : null,
       ...COPY_ACTIONS.map((action) =>
         h('span', {}, h('kbd', {}, action.key), action.label),
       ),
