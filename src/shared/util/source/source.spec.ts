@@ -1,5 +1,6 @@
 import {
   detectDevServer,
+  displayPath,
   editorAvailability,
   editorUrl,
   formatSource,
@@ -151,6 +152,22 @@ describe('source markers', () => {
       { capture: true, once: true },
     );
     expect(pageHasSources()).toBe(true);
+  });
+
+  it('strips the vite filesystem prefix for display and editors', () => {
+    expect(displayPath('/@fs/D:/Github/app/src/x.tsx')).toBe(
+      'D:/Github/app/src/x.tsx',
+    );
+    expect(displayPath('@fs/home/me/app/src/x.tsx')).toBe(
+      'home/me/app/src/x.tsx',
+    );
+    expect(displayPath('src/x.tsx')).toBe('src/x.tsx');
+    const source = parseLocation('/@fs/D:/Github/app/src/x.tsx:12:5', 'qwik')!;
+    expect(source.file).toBe('/@fs/D:/Github/app/src/x.tsx');
+    expect(formatSource(source)).toBe('D:/Github/app/src/x.tsx:12:5');
+    expect(editorUrl(source, 'vite')).toBe(
+      `/__open-in-editor?file=${encodeURIComponent('D:/Github/app/src/x.tsx:12:5')}`,
+    );
   });
 
   it('builds editor urls per server and formats locations', () => {

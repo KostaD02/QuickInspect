@@ -108,8 +108,14 @@ export function editorAvailability(): EditorAvailability {
   return { server, sources: server !== null && pageHasSources() };
 }
 
+const VITE_FS = /^\/?@fs\//;
+
+export function displayPath(file: string): string {
+  return file.replace(VITE_FS, '');
+}
+
 export function formatSource(source: SourceInfo): string {
-  const parts = [source.file];
+  const parts = [displayPath(source.file)];
   if (source.line !== null) parts.push(source.line.toString());
   if (source.column !== null) parts.push(source.column.toString());
   return parts.join(':');
@@ -124,7 +130,7 @@ export function editorUrl(
   }
   if (server === 'next') {
     const params = new URLSearchParams({
-      file: source.file,
+      file: displayPath(source.file),
       lineNumber: (source.line ?? 1).toString(),
       column: (source.column ?? 1).toString(),
     });

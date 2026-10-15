@@ -299,12 +299,11 @@ function jqueryListeners(el: Element): EventListenerInfo[] {
   return result;
 }
 
-const STACK_FRAME =
-  /\((?:https?:\/\/[^/]+)?\/([^):?]+)(?:\?[^):]*)?:(\d+):(\d+)\)/;
+const STACK_FRAME = /\((?:https?:\/\/[^/]+)?\/(.+?)(?:\?[^)]*?)?:(\d+):(\d+)\)/;
 const PRERENDER_FRAME =
   /\(about:\/\/React\/Prerender\/file:\/\/([^):?]+)(?:\?[^):]*)?:(\d+):(\d+)\)/;
 const INTERNAL_FRAME =
-  /node_modules|\/@fs\/|\/@vite\/|\/@react-refresh|react-dom|react-jsx|react-server-dom|next_dist|react-stack-top-frame/;
+  /node_modules|\/@vite\/|\/@react-refresh|react-dom|react-jsx|react-server-dom|next_dist|react-stack-top-frame/;
 
 function reactStackSource(stack: string): SourceInfo | null {
   for (const frame of stack.split('\n')) {
