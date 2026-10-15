@@ -26,6 +26,7 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Context** - ancestor chain, child count, text content, and the shadow host when the element lives inside an open shadow root
 - **Media** - natural size, source, alt text and duration for images, video, audio, canvas and SVG
 - **Events** - listeners registered with `addEventListener` (with capture, once and passive flags), inline `on*` handlers, React props, Vue invokers and jQuery handlers, plus the owning React, Vue, Angular or Svelte component when one can be found
+- **Source** - on a dev server the Context section shows where the element was written and `O` opens that line in your editor. Reads the markers Qwik, Astro, Nuxt and code-inspector-plugin stamp on elements, Svelte's dev metadata, React's debug source or owner stack, then calls the Vite or Next.js open-in-editor endpoint. Production builds carry none of this, so the row only appears in development
 - **Copy anything** - one key per payload while hovering: `S` selector, `X` XPath, `L` best Playwright locator, `H` outer HTML, `T` text
 - **Pin and navigate** - click to pin the panel so it becomes scrollable, clickable and draggable by its head, `↑` / `↓` to walk to the parent or first child, `Esc` to close
 - **Shadow DOM aware** - hit testing descends into open shadow roots, selectors are scoped to the element's root, and locator counts pierce shadow roots like Playwright does
@@ -39,15 +40,16 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 3. Press a copy key, or **click** to pin the panel and use the copy buttons
 4. Release **Alt** to hide everything, or press **Esc** when pinned
 
-| Key             | Action                                   |
-| --------------- | ---------------------------------------- |
-| hold `Alt`      | Inspect the element under the cursor     |
-| `click`         | Pin or unpin the panel                   |
-| drag the head   | Move a pinned panel                      |
-| `Esc`           | Close                                    |
-| `↑` / `↓`       | Move to the parent / first child (pins)  |
-| `S` / `X` / `L` | Copy CSS selector / XPath / best locator |
-| `H` / `T`       | Copy outer HTML / text content           |
+| Key             | Action                                                    |
+| --------------- | --------------------------------------------------------- |
+| hold `Alt`      | Inspect the element under the cursor                      |
+| `click`         | Pin or unpin the panel                                    |
+| drag the head   | Move a pinned panel                                       |
+| `Esc`           | Close                                                     |
+| `↑` / `↓`       | Move to the parent / first child (pins)                   |
+| `S` / `X` / `L` | Copy CSS selector / XPath / best locator                  |
+| `H` / `T`       | Copy outer HTML / text content                            |
+| `O`             | Open the element's source in the editor (dev server only) |
 
 ## Settings
 
