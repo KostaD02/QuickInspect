@@ -52,7 +52,38 @@
           >
             ✕
           </button>
-          <label class="switch" title="Turn QuickInspect on or off">
+          <button
+            id="info-btn"
+            class="icon-btn info-btn d-flex items-center justify-center"
+            type="button"
+            aria-label="About QuickInspect"
+            title="About QuickInspect"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM288 224C288 206.3 302.3 192 320 192C337.7 192 352 206.3 352 224C352 241.7 337.7 256 320 256C302.3 256 288 241.7 288 224zM280 288L328 288C341.3 288 352 298.7 352 312L352 400L360 400C373.3 400 384 410.7 384 424C384 437.3 373.3 448 360 448L280 448C266.7 448 256 437.3 256 424C256 410.7 266.7 400 280 400L304 400L304 336L280 336C266.7 336 256 325.3 256 312C256 298.7 266.7 288 280 288z"
+              />
+            </svg>
+          </button>
+          <button
+            id="info-close-btn"
+            class="icon-btn info-close-btn d-flex items-center justify-center"
+            type="button"
+            aria-label="Close info"
+            hidden
+          >
+            ✕
+          </button>
+          <label
+            id="enabled-switch"
+            class="switch"
+            title="Turn QuickInspect on or off"
+          >
             <input id="set-enabled" type="checkbox" />
             <span class="switch-track"><span class="switch-thumb"></span></span>
           </label>
@@ -114,6 +145,33 @@
         <p class="settings-intro">
           Saved automatically and applied to open tabs immediately.
         </p>
+
+        <span class="settings-heading">Editing</span>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Allow edits</span>
+            <span class="setting-hint"
+              >Click values in a pinned panel to change styles, attributes and
+              text on the page</span
+            >
+          </span>
+          <input id="set-allow-edit" class="setting-checkbox" type="checkbox" />
+        </label>
+
+        <span class="settings-heading">Popup</span>
+        <label class="setting-row d-flex items-center justify-between">
+          <span class="setting-text d-flex flex-col">
+            <span class="setting-label">Editor availability</span>
+            <span class="setting-hint"
+              >Whether this page can open sources in your editor</span
+            >
+          </span>
+          <input
+            id="set-show-editor-status"
+            class="setting-checkbox"
+            type="checkbox"
+          />
+        </label>
 
         <span class="settings-heading">Overlay</span>
         <label class="setting-row d-flex items-center justify-between">
@@ -219,21 +277,6 @@
           />
         </label>
 
-        <span class="settings-heading">Popup</span>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Editor availability</span>
-            <span class="setting-hint"
-              >Whether this page can open sources in your editor</span
-            >
-          </span>
-          <input
-            id="set-show-editor-status"
-            class="setting-checkbox"
-            type="checkbox"
-          />
-        </label>
-
         <button
           id="reset-btn"
           class="settings-reset-btn link-underline"
@@ -241,6 +284,96 @@
         >
           Reset to defaults
         </button>
+      </div>
+
+      <div id="info-panel" class="info-panel d-flex flex-col" hidden>
+        <p class="info-desc">
+          QuickInspect shows what you need to know about any element without
+          opening DevTools: <strong>selectors</strong>, the
+          <strong>box model</strong>, <strong>computed styles</strong>,
+          <strong>accessibility</strong>, <strong>attributes</strong>,
+          <strong>events</strong> and the <strong>source file</strong> it came
+          from.
+        </p>
+
+        <ol class="info-steps d-flex flex-col">
+          <li>
+            <span
+              >Hold <kbd id="info-modifier">Alt / Option</kbd> and hover any
+              element to inspect it, release to put the page back. Pick a
+              different key under <strong>Hold key</strong> on the main
+              screen.</span
+            >
+          </li>
+          <li>
+            <span
+              ><strong>Click</strong> while holding to pin the panel, then drag
+              its header to move it. Use <kbd>↑</kbd> <kbd>↓</kbd> for the
+              parent or child.</span
+            >
+          </li>
+          <li>
+            <span
+              >Press <kbd>S</kbd> <kbd>X</kbd> <kbd>L</kbd> <kbd>H</kbd>
+              <kbd>T</kbd> to copy the selector, XPath, Playwright locator, HTML
+              or text.</span
+            >
+          </li>
+          <li>
+            <span
+              >In a pinned panel, <strong>click any value</strong> to edit
+              styles, box, attributes or text. <kbd>Enter</kbd> applies,
+              <kbd>Esc</kbd> cancels and <strong>reset</strong> undoes it all.
+              Edits stay in the page until you reload.</span
+            >
+          </li>
+          <li>
+            <span
+              >On a <strong>Vite</strong> or <strong>Next.js</strong> dev
+              server, press <kbd>O</kbd> to open the element's source in your
+              editor.</span
+            >
+          </li>
+        </ol>
+
+        <div class="info-links d-flex flex-col items-center">
+          <div class="info-link-row d-flex items-baseline">
+            <a
+              href="https://github.com/KostaD02/QuickInspect"
+              target="_blank"
+              rel="noopener"
+              class="link-underline repo-link"
+              >GitHub Repository</a
+            >
+            <a
+              href="https://github.com/KostaD02/QuickInspect/stargazers"
+              target="_blank"
+              rel="noopener"
+              class="link-underline star-link"
+              >Star on GitHub</a
+            >
+          </div>
+          <div class="info-link-row d-flex items-baseline">
+            <a
+              href="https://github.com/KostaD02/QuickInspect/issues/new"
+              target="_blank"
+              rel="noopener"
+              class="link-underline issue-link"
+              >Report Issue / Feature</a
+            >
+          </div>
+        </div>
+
+        <p class="info-credit">
+          Created by
+          <a
+            href="https://konstantinedatunishvili.com/"
+            target="_blank"
+            rel="noopener"
+            class="link-underline website-link"
+            >Konstantine Datunishvili</a
+          >
+        </p>
       </div>
 
       <footer id="app-footer" class="footer">

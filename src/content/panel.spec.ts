@@ -87,6 +87,9 @@ describe('panel', () => {
   let root: HTMLElement;
   let onCopy: jest.Mock;
   let onOpen: jest.Mock;
+  let read: jest.Mock;
+  let write: jest.Mock;
+  let revert: jest.Mock;
   let panel: Panel;
 
   beforeEach(() => {
@@ -94,7 +97,208 @@ describe('panel', () => {
     document.body.append(root);
     onCopy = jest.fn();
     onOpen = jest.fn();
-    panel = new Panel(root, onCopy, onOpen);
+    read = jest.fn(() => 'block');
+    write = jest.fn(() => true);
+    revert = jest.fn();
+    panel = new Panel(root, {
+      copy: onCopy,
+      open: onOpen,
+      read,
+      write,
+      revert,
+    });
+  });
+
+  function editableIn(row: string): HTMLElement {
+    const match = Array.from(root.querySelectorAll<HTMLElement>('.row')).find(
+      (el) => el.querySelector('.key')?.textContent === row,
+    );
+    return match!.querySelector<HTMLElement>('.editable')!;
+  }
+
+  function input(): HTMLInputElement {
+    return root.querySelector<HTMLInputElement>('input.edit')!;
+  }
+
+  function press(key: string): KeyboardEvent {
+    const event = new KeyboardEvent('keydown', {
+      key,
+      bubbles: true,
+      cancelable: true,
+    });
+    input().dispatchEvent(event);
+    return event;
+  }
+
+  it('edits a value in place only while pinned', () => {
+    panel.render(info, DEFAULT_SETTINGS);
+    editableIn('display').click();
+    expect(root.querySelector('input.edit')).toBeNull();
+    expect(root.querySelector('.add')).toBeNull();
+
+    panel.setPinned(true);
+    panel.render(info, DEFAULT_SETTINGS);
+    expect(root.querySelector('.foot')?.textContent).toContain(
+      'click valueedit',
+    );
+    editableIn('display').click();
+    expect(panel.editing).toBe(true);
+    expect(read).toHaveBeenCalledWith({ kind: 'style', property: 'display' });
+    expect(input().value).toBe('block');
+
+    const outside = jest.fn();
+    document.addEventListener('keydown', outside);
+    input().value = 'flex';
+    press('Enter');
+    document.removeEventListener('keydown', outside);
+    expect(outside).not.toHaveBeenCalled();
+    expect(write).toHaveBeenCalledWith(
+      { kind: 'style', property: 'display' },
+      'flex',
+    );
+    expect(panel.editing).toBe(false);
+    expect(root.querySelector('input.edit')).toBeNull();
+    expect(editableIn('display').textContent).toBe('block');
+  });
+
+  it('offers no edits when editing is turned off in settings', () => {
+    panel.setPinned(true);
+    const settings = { ...DEFAULT_SETTINGS, allowEdit: false };
+    panel.render({ ...info, attributes: [], childCount: 0 }, settings, {
+      edited: true,
+    });
+    const node = root.querySelector('.panel')!;
+    expect(node.classList.contains('can-edit')).toBe(false);
+    editableIn('display').click();
+    expect(panel.editing).toBe(false);
+    expect(root.querySelector('.add')).toBeNull();
+    expect(root.querySelector('[data-action="remove"]')).toBeNull();
+    expect(root.textContent).not.toContain('Attributes');
+    expect(root.querySelector('.foot')?.textContent).not.toContain(
+      'click value',
+    );
+    expect(root.querySelector('[data-action="revert"]')).not.toBeNull();
+
+    panel.render(info, DEFAULT_SETTINGS);
+    expect(node.classList.contains('can-edit')).toBe(true);
+    expect(root.querySelector('.foot')?.textContent).toContain('click value');
+  });
+
+  it('keeps an invalid value open, cancels on escape and defers renders', () => {
+    panel.setPinned(true);
+    panel.render(info, DEFAULT_SETTINGS);
+    write.mockReturnValue(false);
+    editableIn('color').click();
+    input().value = 'nope';
+    press('Enter');
+    expect(panel.editing).toBe(true);
+    expect(input().classList.contains('invalid')).toBe(true);
+    expect(input().getAttribute('aria-invalid')).toBe('true');
+    input().dispatchEvent(new Event('input'));
+    expect(input().classList.contains('invalid')).toBe(false);
+
+    panel.render({ ...info, tag: 'section' }, DEFAULT_SETTINGS, {
+      keepScroll: true,
+    });
+    expect(root.querySelector('.summary .tag')?.textContent).toBe('button');
+    press('Escape');
+    expect(panel.editing).toBe(false);
+    expect(root.querySelector('.summary .tag')?.textContent).toBe('section');
+
+    editableIn('display').click();
+    input().value = 'grid';
+    input().dispatchEvent(new FocusEvent('blur'));
+    expect(panel.editing).toBe(false);
+
+    editableIn('display').click();
+    write.mockClear();
+    press('Enter');
+    expect(write).not.toHaveBeenCalled();
+    expect(panel.editing).toBe(false);
+
+    editableIn('display').click();
+    panel.hide();
+    expect(panel.editing).toBe(false);
+  });
+
+  it('adds, removes and resets through the pinned panel', () => {
+    panel.setPinned(true);
+    panel.render({ ...info, childCount: 0, text: '' }, DEFAULT_SETTINGS, {
+      edited: true,
+    });
+
+    root.querySelector<HTMLElement>('[data-action="revert"]')!.click();
+    expect(revert).toHaveBeenCalledTimes(1);
+
+    root.querySelector<HTMLElement>('[data-action="remove"]')!.click();
+    expect(write).toHaveBeenCalledWith(
+      { kind: 'attribute', name: 'data-0' },
+      null,
+    );
+
+    const adders = root.querySelectorAll<HTMLElement>('.add');
+    expect(Array.from(adders, (a) => a.textContent)).toEqual([
+      '+ style',
+      '+ attribute',
+    ]);
+    adders[1]!.click();
+    expect(input().placeholder).toBe('name="value"');
+    expect(input().value).toBe('');
+    input().value = 'data-x="1"';
+    press('Enter');
+    expect(write).toHaveBeenLastCalledWith(
+      { kind: 'new-attribute' },
+      'data-x="1"',
+    );
+
+    root.querySelector<HTMLElement>('.cell.m .editable')!.click();
+    expect(read).toHaveBeenLastCalledWith({
+      kind: 'style',
+      property: 'margin',
+      lengths: true,
+    });
+    press('Escape');
+
+    editableIn('Text').click();
+    expect(read).toHaveBeenLastCalledWith({ kind: 'text' });
+    press('Escape');
+
+    editableIn('Size').click();
+    expect(read).toHaveBeenLastCalledWith({
+      kind: 'style',
+      property: 'width',
+      lengths: true,
+    });
+    press('Escape');
+
+    editableIn('Name').click();
+    expect(read).toHaveBeenLastCalledWith({
+      kind: 'attribute',
+      name: 'aria-label',
+    });
+    press('Escape');
+
+    editableIn('Source').click();
+    press('Escape');
+    editableIn('Alt').click();
+    expect(read).toHaveBeenLastCalledWith({ kind: 'attribute', name: 'alt' });
+    press('Escape');
+
+    panel.render(
+      {
+        ...info,
+        attributes: [],
+        media: { kind: 'svg', source: '' },
+      },
+      DEFAULT_SETTINGS,
+    );
+    editableIn('Source').click();
+    expect(read).toHaveBeenLastCalledWith({
+      kind: 'attribute',
+      name: 'viewBox',
+    });
+    press('Escape');
+    expect(root.textContent).toContain('+ attribute');
   });
 
   afterEach(() => {

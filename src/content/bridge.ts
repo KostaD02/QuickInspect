@@ -39,45 +39,47 @@ const proto = EventTarget.prototype;
 const nativeAdd = proto.addEventListener;
 const nativeRemove = proto.removeEventListener;
 
-proto.addEventListener = function patchedAdd(
-  this: EventTarget,
-  type: string,
-  listener: EventListenerOrEventListenerObject | null,
-  options?: boolean | AddEventListenerOptions,
-) {
-  if (listener && !OWN.has(type)) {
-    const flags = flagsOf(options);
-    let byType = registry.get(this);
-    if (!byType) {
-      byType = new Map();
-      registry.set(this, byType);
+function patchListeners(): void {
+  proto.addEventListener = function patchedAdd(
+    this: EventTarget,
+    type: string,
+    listener: EventListenerOrEventListenerObject | null,
+    options?: boolean | AddEventListenerOptions,
+  ) {
+    if (listener && !OWN.has(type)) {
+      const flags = flagsOf(options);
+      let byType = registry.get(this);
+      if (!byType) {
+        byType = new Map();
+        registry.set(this, byType);
+      }
+      const entries = byType.get(type) ?? [];
+      const duplicate = entries.some(
+        (e) => e.listener === listener && e.capture === flags.capture,
+      );
+      if (!duplicate) entries.push({ listener, ...flags });
+      byType.set(type, entries);
     }
-    const entries = byType.get(type) ?? [];
-    const duplicate = entries.some(
-      (e) => e.listener === listener && e.capture === flags.capture,
-    );
-    if (!duplicate) entries.push({ listener, ...flags });
-    byType.set(type, entries);
-  }
-  nativeAdd.call(this, type, listener, options);
-};
+    nativeAdd.call(this, type, listener, options);
+  };
 
-proto.removeEventListener = function patchedRemove(
-  this: EventTarget,
-  type: string,
-  listener: EventListenerOrEventListenerObject | null,
-  options?: boolean | EventListenerOptions,
-) {
-  const entries = registry.get(this)?.get(type);
-  if (entries && listener) {
-    const capture = flagsOf(options).capture;
-    const index = entries.findIndex(
-      (e) => e.listener === listener && e.capture === capture,
-    );
-    if (index >= 0) entries.splice(index, 1);
-  }
-  nativeRemove.call(this, type, listener, options);
-};
+  proto.removeEventListener = function patchedRemove(
+    this: EventTarget,
+    type: string,
+    listener: EventListenerOrEventListenerObject | null,
+    options?: boolean | EventListenerOptions,
+  ) {
+    const entries = registry.get(this)?.get(type);
+    if (entries && listener) {
+      const capture = flagsOf(options).capture;
+      const index = entries.findIndex(
+        (e) => e.listener === listener && e.capture === capture,
+      );
+      if (index >= 0) entries.splice(index, 1);
+    }
+    nativeRemove.call(this, type, listener, options);
+  };
+}
 
 function str(value: unknown): string {
   return typeof value === 'string' ? value : '';
@@ -300,19 +302,25 @@ function jqueryListeners(el: Element): EventListenerInfo[] {
 }
 
 const STACK_FRAME = /\((?:https?:\/\/[^/]+)?\/(.+?)(?:\?[^)]*?)?:(\d+):(\d+)\)/;
-const PRERENDER_FRAME =
-  /\(about:\/\/React\/Prerender\/file:\/\/([^):?]+)(?:\?[^):]*)?:(\d+):(\d+)\)/;
+const SERVER_FRAME =
+  /(?:about|rsc):\/\/React\/[^/]+\/(.+?)(?:\?\d+)?:(\d+):(\d+)\)?$/;
 const INTERNAL_FRAME =
   /node_modules|\/@vite\/|\/@react-refresh|react-dom|react-jsx|react-server-dom|next_dist|react-stack-top-frame/;
+
+function serverFile(encoded: string): string {
+  const file = decodeURIComponent(encoded);
+  if (!file.startsWith('file://')) return file;
+  return file.slice('file://'.length).replace(/^\/([A-Za-z]:)/, '$1');
+}
 
 function reactStackSource(stack: string): SourceInfo | null {
   for (const frame of stack.split('\n')) {
     if (INTERNAL_FRAME.test(frame)) continue;
-    const prerender = PRERENDER_FRAME.exec(frame);
-    const match = prerender ?? STACK_FRAME.exec(frame);
+    const server = SERVER_FRAME.exec(frame);
+    const match = server ?? STACK_FRAME.exec(frame);
     if (!match?.[1]) continue;
     return {
-      file: prerender ? decodeURIComponent(match[1]) : match[1],
+      file: server ? serverFile(match[1]) : match[1],
       line: Number(match[2]),
       column: Number(match[3]),
       origin: 'react',
@@ -358,7 +366,7 @@ function svelteSource(el: Element): SourceInfo | null {
   return {
     file: loc.file,
     line: typeof loc.line === 'number' ? loc.line : null,
-    column: typeof loc.column === 'number' ? loc.column : null,
+    column: typeof loc.column === 'number' ? loc.column + 1 : null,
     origin: 'svelte',
     mapped: true,
   };
@@ -390,20 +398,31 @@ export function collectEvents(el: Element): EventsInfo {
   return { listeners, framework, source: collectSource(el) };
 }
 
-nativeAdd.call(
-  document,
-  PROBE_EVENT,
-  (event: Event) => {
-    const target = event.composedPath()[0];
-    if (!(target instanceof Element)) return;
-    let payload = '{"listeners":[],"framework":null,"source":null}';
-    try {
-      payload = JSON.stringify(collectEvents(target));
-    } catch {
-      payload = '{"listeners":[],"framework":null,"source":null}';
-    }
-    document.documentElement.setAttribute(REPLY_ATTRIBUTE, payload);
-    target.dispatchEvent(new CustomEvent(REPLY_EVENT, { detail: payload }));
-  },
-  true,
-);
+function answerProbes(): void {
+  nativeAdd.call(
+    document,
+    PROBE_EVENT,
+    (event: Event) => {
+      const target = event.composedPath()[0];
+      if (!(target instanceof Element)) return;
+      let payload = '{"listeners":[],"framework":null,"source":null}';
+      try {
+        payload = JSON.stringify(collectEvents(target));
+      } catch {
+        payload = '{"listeners":[],"framework":null,"source":null}';
+      }
+      document.documentElement.setAttribute(REPLY_ATTRIBUTE, payload);
+      target.dispatchEvent(new CustomEvent(REPLY_EVENT, { detail: payload }));
+    },
+    true,
+  );
+}
+
+const INSTALLED = Symbol.for('quickinspect.bridge');
+const scope = window as unknown as Record<symbol, boolean | undefined>;
+
+if (!scope[INSTALLED]) {
+  scope[INSTALLED] = true;
+  patchListeners();
+  answerProbes();
+}

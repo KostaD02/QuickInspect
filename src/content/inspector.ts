@@ -13,6 +13,13 @@ import {
   viteBase,
 } from '@/shared/util';
 import { actionByCode, CopyAction } from './actions';
+import {
+  EditField,
+  hasEdits,
+  readField,
+  revertEdits,
+  writeField,
+} from './edits';
 import { LensHost } from './host';
 import { Overlay } from './overlay';
 import { Panel } from './panel';
@@ -29,20 +36,25 @@ export class Inspector {
   private readonly host = new LensHost();
   private readonly overlay = new Overlay(this.host.root);
   private readonly toast = new Toast(this.host.root);
-  private readonly panel = new Panel(
-    this.host.root,
-    (action) => {
+  private readonly panel = new Panel(this.host.root, {
+    copy: (action) => {
       this.copy(action);
     },
-    () => {
+    open: () => {
       this.openSource();
     },
-  );
+    read: (field) => (this.current ? readField(this.current, field) : ''),
+    write: (field, value) => this.write(field, value),
+    revert: () => {
+      this.revert();
+    },
+  });
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
   private holding = false;
   private pinned = false;
   private current: Element | null = null;
+  private shown: Element | null = null;
   private info: ElementInfo | null = null;
   private pointer = { x: -1, y: -1 };
   private frame = 0;
@@ -98,7 +110,7 @@ export class Inspector {
   }
 
   private readonly onKeyDown = (event: KeyboardEvent): void => {
-    if (!this.settings.enabled) return;
+    if (!this.settings.enabled || this.panel.editing) return;
 
     if (event.key === this.settings.modifier) {
       if (!this.holding) {
@@ -227,11 +239,32 @@ export class Inspector {
       this.hideAll();
       return;
     }
+    const keepScroll = target === this.shown;
+    this.shown = target;
     this.info = inspectElement(target);
     this.resolveSource(target, this.info);
     this.overlay.show(target, this.info.box, this.info.summary);
-    this.panel.render(this.info, this.settings);
+    this.panel.render(this.info, this.settings, {
+      edited: hasEdits(target),
+      keepScroll,
+    });
     this.panel.show();
+  }
+
+  private write(field: EditField, value: string | null): boolean {
+    const target = this.current;
+    if (!target || !this.pinned || !this.settings.allowEdit) return false;
+    const written = writeField(target, field, value);
+    if (written) this.refresh();
+    return written;
+  }
+
+  private revert(): void {
+    const target = this.current;
+    if (!target) return;
+    revertEdits(target);
+    this.refresh();
+    this.toast.show('Edits reset', this.info?.summary ?? '');
   }
 
   private navigate(direction: 'parent' | 'child'): void {
@@ -277,6 +310,7 @@ export class Inspector {
     this.overlay.hide();
     this.panel.hide();
     this.current = null;
+    this.shown = null;
     this.info = null;
   }
 
@@ -290,7 +324,10 @@ export class Inspector {
     pending.then((mapped) => {
       if (!mapped || this.current !== target || this.info !== info) return;
       info.source = { ...mapped, mapped: true };
-      this.panel.render(info, this.settings);
+      this.panel.render(info, this.settings, {
+        edited: hasEdits(target),
+        keepScroll: true,
+      });
     });
   }
 

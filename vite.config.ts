@@ -9,7 +9,12 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, 'src'),
     },
   },
-  plugins: [crx({ manifest })],
+  plugins: [
+    crx({
+      manifest,
+      contentScripts: { standaloneFiles: ['bridge/bridge.js'] },
+    }),
+  ],
   server: {
     cors: {
       origin: [/chrome-extension:\/\//],

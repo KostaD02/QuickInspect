@@ -5,9 +5,28 @@ import {
   logger,
   watchSettings,
 } from '@/shared/util';
+import { claimPage } from './handover';
 import { Inspector } from './inspector';
 
 const inspector = new Inspector();
+
+const onMessage = (
+  message: { type?: unknown },
+  _sender: chrome.runtime.MessageSender,
+  sendResponse: (response: unknown) => void,
+) => {
+  if (message.type === DEV_SERVER_MESSAGE) sendResponse(editorAvailability());
+};
+
+claimPage(() => {
+  inspector.detach();
+  try {
+    chrome.runtime.onMessage.removeListener(onMessage);
+  } catch (error: unknown) {
+    logger.warn('Extension context is gone', error);
+  }
+});
+
 inspector.attach();
 
 loadSettings()
@@ -22,8 +41,4 @@ watchSettings((settings) => {
   inspector.setSettings(settings);
 });
 
-chrome.runtime.onMessage.addListener(
-  (message: { type?: unknown }, _sender, sendResponse) => {
-    if (message.type === DEV_SERVER_MESSAGE) sendResponse(editorAvailability());
-  },
-);
+chrome.runtime.onMessage.addListener(onMessage);

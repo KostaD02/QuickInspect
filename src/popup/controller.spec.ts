@@ -14,6 +14,7 @@ const ids = [
   'set-show-media',
   'set-show-events',
   'set-show-editor-status',
+  'set-allow-edit',
 ];
 
 describe('popup controller', () => {
@@ -21,9 +22,13 @@ describe('popup controller', () => {
     document.body.innerHTML = `
       ${ids.map((id) => `<input id="${id}" type="checkbox">`).join('')}
       <select id="set-modifier"><option>Alt</option><option>Control</option></select>
+      <label id="enabled-switch"></label>
       <button id="settings-btn"></button>
       <button id="settings-close-btn" hidden></button>
       <div id="settings-panel" hidden></div>
+      <button id="info-btn"></button>
+      <button id="info-close-btn" hidden></button>
+      <div id="info-panel" hidden><kbd id="info-modifier"></kbd></div>
       <div id="shell"></div>
       <footer id="app-footer"></footer>
       <button id="reset-btn"></button>
@@ -31,7 +36,13 @@ describe('popup controller', () => {
       <div id="editor-group"><div id="editor-status"><span id="editor-label"></span></div></div>`;
     chrome.runtime.getManifest.mockReturnValue({
       version: '9.9.9',
-    } as chrome.runtime.Manifest);
+      content_scripts: [{ js: ['main.js'], matches: ['<all_urls>'] }],
+    } as unknown as chrome.runtime.Manifest);
+    Object.assign(chrome, {
+      scripting: {
+        executeScript: jest.fn(() => Promise.reject(new Error('blocked'))),
+      },
+    });
     (chrome.storage.local.get as jest.Mock).mockResolvedValue({
       [SETTINGS_STORAGE_KEY]: { enabled: false, modifier: 'Control' },
     });
@@ -87,6 +98,26 @@ describe('popup controller', () => {
     expect(status.textContent).toContain('Not available on this page');
   });
 
+  it('starts QuickInspect on a tab that does not answer yet', async () => {
+    const executeScript = jest.fn(() => Promise.resolve([]));
+    Object.assign(chrome, { scripting: { executeScript } });
+    (chrome.tabs.sendMessage as jest.Mock)
+      .mockRejectedValueOnce(new Error('no receiver'))
+      .mockResolvedValue({ server: 'vite', sources: true });
+    await new PopupController().init();
+    expect(executeScript).toHaveBeenCalledWith({
+      target: { tabId: 7 },
+      files: ['main.js'],
+      world: 'ISOLATED',
+    });
+    const status = document.getElementById('editor-status') as HTMLElement;
+    expect(status.textContent).toContain('Vite dev server, element sources');
+
+    (chrome.tabs.query as jest.Mock).mockRejectedValue(new Error('gone'));
+    await new PopupController().init();
+    expect(status.textContent).toContain('Not available on this page');
+  });
+
   it('reflects stored settings and writes changes back', async () => {
     await new PopupController().init();
 
@@ -127,15 +158,75 @@ describe('popup controller', () => {
     });
   });
 
-  it('swaps the shell for the settings panel', async () => {
+  function el(id: string): HTMLElement {
+    return document.getElementById(id) as HTMLElement;
+  }
+
+  function header(): Record<string, boolean> {
+    return Object.fromEntries(
+      [
+        'settings-btn',
+        'settings-close-btn',
+        'info-btn',
+        'info-close-btn',
+        'enabled-switch',
+        'shell',
+        'app-footer',
+      ].map((id) => [id, el(id).hidden === true]),
+    );
+  }
+
+  it('swaps the shell and header controls for the settings panel', async () => {
     await new PopupController().init();
-    const panel = document.getElementById('settings-panel') as HTMLElement;
-    const shell = document.getElementById('shell') as HTMLElement;
-    document.getElementById('settings-btn')?.click();
-    expect(panel.hidden).toBe(false);
-    expect(shell.hidden).toBe(true);
-    document.getElementById('settings-close-btn')?.click();
-    expect(panel.hidden).toBe(true);
-    expect(shell.hidden).toBe(false);
+    el('settings-btn').click();
+    expect(el('settings-panel').hidden).toBe(false);
+    expect(el('info-panel').hidden).toBe(true);
+    expect(header()).toEqual({
+      'settings-btn': true,
+      'settings-close-btn': false,
+      'info-btn': true,
+      'info-close-btn': true,
+      'enabled-switch': true,
+      shell: true,
+      'app-footer': true,
+    });
+    el('settings-close-btn').click();
+    expect(el('settings-panel').hidden).toBe(true);
+    expect(header()).toEqual({
+      'settings-btn': false,
+      'settings-close-btn': true,
+      'info-btn': false,
+      'info-close-btn': true,
+      'enabled-switch': false,
+      shell: false,
+      'app-footer': false,
+    });
+  });
+
+  it('opens the info panel with only a close button and the current hold key', async () => {
+    await new PopupController().init();
+    expect(el('info-modifier').textContent).toBe('Ctrl');
+    el('info-btn').click();
+    expect(el('info-panel').hidden).toBe(false);
+    expect(el('settings-panel').hidden).toBe(true);
+    expect(header()).toMatchObject({
+      'settings-btn': true,
+      'info-btn': true,
+      'info-close-btn': false,
+      'settings-close-btn': true,
+      'enabled-switch': true,
+      shell: true,
+    });
+    el('info-close-btn').click();
+    expect(el('info-panel').hidden).toBe(true);
+    expect(el('enabled-switch').hidden).toBe(false);
+
+    const allowEdit = el('set-allow-edit') as HTMLInputElement;
+    expect(allowEdit.checked).toBe(true);
+    allowEdit.checked = false;
+    allowEdit.dispatchEvent(new Event('change'));
+    expect(chrome.storage.local.set).toHaveBeenLastCalledWith({
+      [SETTINGS_STORAGE_KEY]: expect.objectContaining({ allowEdit: false }),
+    });
   });
 });

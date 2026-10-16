@@ -1,11 +1,21 @@
 import { DEFAULT_SETTINGS, MODIFIER_KEYS } from '@/shared/consts';
 import {
-  DEV_SERVER_MESSAGE,
   EditorAvailability,
   LensSettingBooleanKey,
   LensSettings,
+  ModifierKey,
 } from '@/shared/types';
 import { loadSettings, saveSettings } from '@/shared/util';
+import { connectTab } from './page';
+
+const MODIFIER_LABELS: Record<ModifierKey, string> = {
+  Alt: 'Alt / Option',
+  Control: 'Ctrl',
+  Shift: 'Shift',
+  Meta: 'Cmd / Win',
+};
+
+type PopupPanel = 'settings' | 'info';
 
 export class PopupController {
   private readonly toggles: Record<LensSettingBooleanKey, HTMLInputElement> = {
@@ -20,15 +30,23 @@ export class PopupController {
     showMedia: this.input('set-show-media'),
     showEvents: this.input('set-show-events'),
     showEditorStatus: this.input('set-show-editor-status'),
+    allowEdit: this.input('set-allow-edit'),
   };
 
   private readonly domRefs = {
     modifier: document.getElementById('set-modifier') as HTMLSelectElement,
+    enabledSwitch: document.getElementById('enabled-switch') as HTMLElement,
     settingsBtn: document.getElementById('settings-btn') as HTMLButtonElement,
     settingsCloseBtn: document.getElementById(
       'settings-close-btn',
     ) as HTMLButtonElement,
     settingsPanel: document.getElementById('settings-panel') as HTMLDivElement,
+    infoBtn: document.getElementById('info-btn') as HTMLButtonElement,
+    infoCloseBtn: document.getElementById(
+      'info-close-btn',
+    ) as HTMLButtonElement,
+    infoPanel: document.getElementById('info-panel') as HTMLDivElement,
+    infoModifier: document.getElementById('info-modifier') as HTMLElement,
     shell: document.getElementById('shell') as HTMLDivElement,
     footer: document.getElementById('app-footer') as HTMLElement,
     resetBtn: document.getElementById('reset-btn') as HTMLButtonElement,
@@ -49,25 +67,14 @@ export class PopupController {
   }
 
   private async activeEditor(): Promise<EditorAvailability> {
-    const none: EditorAvailability = { server: null, sources: false };
     try {
       const tabs = await chrome.tabs.query({
         active: true,
         currentWindow: true,
       });
-      const tab = tabs.at(0);
-      if (tab?.id === undefined) return none;
-      const reply = await chrome.tabs.sendMessage<
-        { type: string },
-        Partial<EditorAvailability> | undefined
-      >(tab.id, { type: DEV_SERVER_MESSAGE });
-      const server =
-        reply?.server === 'vite' || reply?.server === 'next'
-          ? reply.server
-          : null;
-      return { server, sources: server !== null && reply?.sources === true };
+      return await connectTab(tabs.at(0));
     } catch {
-      return none;
+      return { server: null, sources: false };
     }
   }
 
@@ -95,11 +102,20 @@ export class PopupController {
       box.checked = this.settings[key];
     }
     this.domRefs.modifier.value = this.settings.modifier;
+    this.domRefs.infoModifier.textContent =
+      MODIFIER_LABELS[this.settings.modifier];
     this.domRefs.editorGroup.hidden = !this.settings.showEditorStatus;
   }
 
   private bind(): void {
-    const { modifier, settingsBtn, settingsCloseBtn, resetBtn } = this.domRefs;
+    const {
+      modifier,
+      settingsBtn,
+      settingsCloseBtn,
+      infoBtn,
+      infoCloseBtn,
+      resetBtn,
+    } = this.domRefs;
 
     for (const [key, box] of Object.entries(this.toggles) as [
       LensSettingBooleanKey,
@@ -118,10 +134,16 @@ export class PopupController {
     });
 
     settingsBtn.addEventListener('click', () => {
-      this.showSettings(true);
+      this.showPanel('settings');
     });
     settingsCloseBtn.addEventListener('click', () => {
-      this.showSettings(false);
+      this.showPanel(null);
+    });
+    infoBtn.addEventListener('click', () => {
+      this.showPanel('info');
+    });
+    infoCloseBtn.addEventListener('click', () => {
+      this.showPanel(null);
     });
 
     resetBtn.addEventListener('click', () => {
@@ -131,12 +153,26 @@ export class PopupController {
     });
   }
 
-  private showSettings(open: boolean): void {
-    const { settingsPanel, settingsBtn, settingsCloseBtn, shell, footer } =
-      this.domRefs;
-    settingsPanel.hidden = !open;
+  private showPanel(panel: PopupPanel | null): void {
+    const {
+      settingsPanel,
+      settingsBtn,
+      settingsCloseBtn,
+      infoPanel,
+      infoBtn,
+      infoCloseBtn,
+      enabledSwitch,
+      shell,
+      footer,
+    } = this.domRefs;
+    const open = panel !== null;
+    settingsPanel.hidden = panel !== 'settings';
+    infoPanel.hidden = panel !== 'info';
+    settingsCloseBtn.hidden = panel !== 'settings';
+    infoCloseBtn.hidden = panel !== 'info';
     settingsBtn.hidden = open;
-    settingsCloseBtn.hidden = !open;
+    infoBtn.hidden = open;
+    enabledSwitch.hidden = open;
     shell.hidden = open;
     footer.hidden = open;
   }

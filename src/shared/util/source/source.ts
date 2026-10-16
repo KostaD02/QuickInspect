@@ -74,14 +74,19 @@ export function getAttributeSource(el: Element): SourceInfo | null {
 }
 
 export function viteBase(): string {
-  const src = viteClient()?.getAttribute('src') ?? '/@vite/client';
+  const src = viteClient() ?? '/@vite/client';
   return src.slice(0, src.indexOf('@vite/client'));
 }
 
-function viteClient(): HTMLScriptElement | null {
-  return document.querySelector<HTMLScriptElement>(
+function viteClient(): string | null {
+  const script = document.querySelector<HTMLScriptElement>(
     'script[src*="/@vite/client"]',
   );
+  if (script) return script.getAttribute('src');
+  const loaded = performance
+    .getEntriesByType('resource')
+    .find((entry) => entry.name.includes('/@vite/client'));
+  return loaded?.name ?? null;
 }
 
 export function detectDevServer(): DevServer {
@@ -92,15 +97,19 @@ export function detectDevServer(): DevServer {
 
 const MARKERS =
   '[data-qwik-inspector], [data-v-inspector], [data-insp-path], [data-astro-source-file], [data-inspector-relative-path]';
-const SAMPLE = 24;
+const NOISE =
+  'script, style, link, template, noscript, nextjs-portal, next-route-announcer, svg *';
+const SAMPLE = 32;
 
 export function pageHasSources(): boolean {
   if (document.querySelector(MARKERS)) return true;
-  const elements = Array.from(document.body.querySelectorAll('*')).slice(
-    0,
-    SAMPLE,
+  const elements = Array.from(document.body.querySelectorAll('*')).filter(
+    (el) => !el.closest(NOISE),
   );
-  return elements.some((el) => probeEvents(el).source !== null);
+  const step = Math.ceil(elements.length / SAMPLE);
+  return elements.some(
+    (el, index) => index % step === 0 && probeEvents(el).source !== null,
+  );
 }
 
 export function editorAvailability(): EditorAvailability {
@@ -108,10 +117,12 @@ export function editorAvailability(): EditorAvailability {
   return { server, sources: server !== null && pageHasSources() };
 }
 
-const VITE_FS = /^\/?@fs\//;
+const VITE_FS = /^\/?@fs\/+/;
 
 export function displayPath(file: string): string {
-  return file.replace(VITE_FS, '');
+  if (!VITE_FS.test(file)) return file;
+  const rest = file.replace(VITE_FS, '');
+  return /^[A-Za-z]:/.test(rest) ? rest : `/${rest}`;
 }
 
 export function formatSource(source: SourceInfo): string {
@@ -129,10 +140,14 @@ export function editorUrl(
     return `${viteBase()}__open-in-editor?file=${encodeURIComponent(formatSource(source))}`;
   }
   if (server === 'next') {
+    const line = (source.line ?? 1).toString();
+    const column = (source.column ?? 1).toString();
     const params = new URLSearchParams({
       file: displayPath(source.file),
-      lineNumber: (source.line ?? 1).toString(),
-      column: (source.column ?? 1).toString(),
+      line1: line,
+      column1: column,
+      lineNumber: line,
+      column,
     });
     return `/__nextjs_launch-editor?${params.toString()}`;
   }
