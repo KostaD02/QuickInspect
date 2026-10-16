@@ -1,6 +1,6 @@
 import { PROBE_EVENT, REPLY_EVENT } from '@/shared/types/events';
 import type { EventsInfo } from '@/shared/types/events';
-import { collectEvents } from './bridge';
+import { collectEvents, collectSource } from './bridge';
 
 type Bag = Record<string, unknown>;
 
@@ -119,6 +119,16 @@ describe('bridge', () => {
       name: 'Svelte',
       component: 'Card.svelte',
     });
+    svelte.__svelte_meta = {
+      loc: { file: 'src/lib/Card.svelte', line: 11, column: 1 },
+    };
+    expect(collectSource(svelte as unknown as Element)).toEqual({
+      file: 'src/lib/Card.svelte',
+      line: 11,
+      column: 2,
+      origin: 'svelte',
+      mapped: true,
+    });
 
     const jq = button();
     (window as unknown as Bag).jQuery = {
@@ -136,6 +146,20 @@ describe('bridge', () => {
       }),
     ]);
     expect(info.framework).toBeNull();
+  });
+
+  it('installs only once when the bridge is injected again', async () => {
+    const add = EventTarget.prototype.addEventListener;
+    await jest.isolateModulesAsync(async () => {
+      await import('./bridge');
+    });
+    expect(EventTarget.prototype.addEventListener).toBe(add);
+    const el = button();
+    const replies = jest.fn();
+    el.addEventListener(REPLY_EVENT, replies);
+    el.dispatchEvent(new CustomEvent(PROBE_EVENT, { composed: true }));
+    expect(replies).toHaveBeenCalledTimes(1);
+    document.documentElement.removeAttribute('data-quickinspect-reply');
   });
 
   it('answers probes with a JSON reply on the target', () => {

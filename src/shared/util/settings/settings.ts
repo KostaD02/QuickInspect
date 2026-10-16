@@ -52,6 +52,7 @@ export function normaliseSettings(raw: unknown): LensSettings {
       stored.showEditorStatus,
       DEFAULT_SETTINGS.showEditorStatus,
     ),
+    allowEdit: bool(stored.allowEdit, DEFAULT_SETTINGS.allowEdit),
   };
 }
 

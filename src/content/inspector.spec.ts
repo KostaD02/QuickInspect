@@ -196,6 +196,51 @@ describe('inspector', () => {
     flush();
   });
 
+  it('edits the pinned element, pauses shortcuts while typing and resets', () => {
+    inspector.detach();
+    const attach = Element.prototype.attachShadow;
+    jest.spyOn(Element.prototype, 'attachShadow').mockImplementation(function (
+      this: Element,
+      init,
+    ) {
+      return attach.call(this, { ...init, mode: 'open' });
+    });
+    inspector = new Inspector();
+    inspector.attach();
+    inspector.setSettings({ ...DEFAULT_SETTINGS });
+    jest.restoreAllMocks();
+
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    const row = Array.from(shadow.querySelectorAll('.row')).find(
+      (el) => el.querySelector('.key')?.textContent === 'display',
+    )!;
+    row.querySelector<HTMLElement>('.editable')!.click();
+    const field = shadow.querySelector<HTMLInputElement>('input.edit')!;
+
+    const copy = key('keydown', { code: 'KeyS', key: 's' });
+    const esc = key('keydown', { code: 'Escape', key: 'Escape' });
+    expect(copy.defaultPrevented).toBe(false);
+    expect(esc.defaultPrevented).toBe(false);
+    expect(writeText).not.toHaveBeenCalled();
+
+    field.value = 'flex';
+    field.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
+    );
+    expect(button.style.display).toBe('flex');
+    expect(shadow.querySelector('input.edit')).toBeNull();
+
+    shadow.querySelector<HTMLElement>('[data-action="revert"]')!.click();
+    expect(button.getAttribute('style')).toBeNull();
+    expect(shadow.querySelector('[data-action="revert"]')).toBeNull();
+    expect(shadow.querySelector('.toast')?.textContent).toContain(
+      'Edits reset',
+    );
+  });
+
   it('respects a different modifier', () => {
     inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Control' });
     key('keydown', { key: 'Alt' });

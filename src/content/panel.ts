@@ -7,6 +7,31 @@ import {
   truncate,
 } from '@/shared/util';
 import { COPY_ACTIONS, CopyAction } from './actions';
+import { EditField } from './edits';
+
+export interface PanelHandlers {
+  copy: (action: CopyAction) => void;
+  open: () => void;
+  read: (field: EditField) => string;
+  write: (field: EditField, value: string | null) => boolean;
+  revert: () => void;
+}
+
+export interface RenderOptions {
+  edited?: boolean;
+  keepScroll?: boolean;
+}
+
+interface Editable {
+  field: EditField;
+  placeholder: string;
+}
+
+interface Editor extends Editable {
+  input: HTMLInputElement;
+  target: HTMLElement;
+  initial: string;
+}
 
 const OFFSET = 18;
 const EDGE = 8;
@@ -40,13 +65,16 @@ export class Panel {
   private readonly body: HTMLElement;
   private readonly foot: HTMLElement;
   private pinned = false;
+  private allowEdit = true;
   private hasSource = false;
   private drag: { dx: number; dy: number } | null = null;
+  private readonly editables = new WeakMap<HTMLElement, Editable>();
+  private editor: Editor | null = null;
+  private pending: [ElementInfo, LensSettings, RenderOptions] | null = null;
 
   constructor(
     root: ParentNode,
-    private readonly onCopy: (action: CopyAction) => void,
-    private readonly onOpen: () => void,
+    private readonly handlers: PanelHandlers,
   ) {
     this.element = document.createElement('div');
     this.element.className = 'panel';
@@ -56,22 +84,160 @@ export class Panel {
     this.foot = h('div', { class: 'foot' });
     this.element.append(this.head, this.body, this.foot);
     this.element.addEventListener('click', (event) => {
-      const button = (event.target as HTMLElement).closest<HTMLElement>(
-        '[data-action]',
-      );
-      if (!button) return;
-      event.preventDefault();
-      event.stopPropagation();
-      if (button.dataset.action === 'open') {
-        this.onOpen();
-        return;
-      }
-      const action = COPY_ACTIONS.find((a) => a.id === button.dataset.action);
-      if (action) this.onCopy(action);
+      this.onClick(event);
     });
     this.bindDrag();
     root.appendChild(this.element);
     this.renderFoot();
+  }
+
+  private get canEdit(): boolean {
+    return this.pinned && this.allowEdit;
+  }
+
+  get editing(): boolean {
+    return this.editor !== null;
+  }
+
+  private onClick(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const editable = target.closest<HTMLElement>('.editable');
+    const button = target.closest<HTMLElement>('[data-action]');
+    if (!editable && !button) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (editable) {
+      const entry = this.editables.get(editable);
+      if (entry && this.canEdit) this.edit(editable, entry);
+      return;
+    }
+    const id = button?.dataset.action;
+    if (id === 'open') {
+      this.handlers.open();
+      return;
+    }
+    if (id === 'revert') {
+      this.handlers.revert();
+      return;
+    }
+    if (id === 'remove' && button) {
+      const entry = this.editables.get(button);
+      if (entry) this.handlers.write(entry.field, null);
+      return;
+    }
+    const action = COPY_ACTIONS.find((a) => a.id === id);
+    if (action) this.handlers.copy(action);
+  }
+
+  private edit(target: HTMLElement, entry: Editable): void {
+    if (this.editor) return;
+    const fresh =
+      entry.field.kind === 'new-style' || entry.field.kind === 'new-attribute';
+    const initial = fresh ? '' : this.handlers.read(entry.field);
+    const input = h('input', {
+      class: 'edit',
+      type: 'text',
+      spellcheck: 'false',
+      autocomplete: 'off',
+      placeholder: entry.placeholder,
+      'aria-label': entry.placeholder || 'value',
+    }) as HTMLInputElement;
+    input.value = initial;
+    this.editor = { ...entry, input, target, initial };
+    const stop = (event: Event) => {
+      event.stopPropagation();
+    };
+    input.addEventListener('keydown', (event) => {
+      event.stopPropagation();
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.commit(false);
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        this.close();
+      }
+    });
+    input.addEventListener('keyup', stop);
+    input.addEventListener('keypress', stop);
+    input.addEventListener('input', () => {
+      input.classList.remove('invalid');
+      input.removeAttribute('aria-invalid');
+    });
+    input.addEventListener('blur', () => {
+      if (this.editor?.input === input) this.commit(true);
+    });
+    target.replaceWith(input);
+    input.focus();
+    input.select();
+  }
+
+  private commit(leaving: boolean): void {
+    const editor = this.editor;
+    if (!editor) return;
+    const value = editor.input.value;
+    if (value === editor.initial || this.handlers.write(editor.field, value)) {
+      this.close();
+      return;
+    }
+    if (leaving) {
+      this.close();
+      return;
+    }
+    editor.input.classList.add('invalid');
+    editor.input.setAttribute('aria-invalid', 'true');
+  }
+
+  private close(): void {
+    const editor = this.editor;
+    if (!editor) return;
+    this.editor = null;
+    const pending = this.pending;
+    this.pending = null;
+    if (pending) {
+      this.render(...pending);
+    } else if (editor.input.isConnected) {
+      editor.input.replaceWith(editor.target);
+    }
+  }
+
+  private editable(
+    display: Child,
+    field: EditField,
+    placeholder = '',
+  ): HTMLElement {
+    const node = h('span', { class: 'editable' }, display);
+    this.editables.set(node, { field, placeholder });
+    return node;
+  }
+
+  private adder(label: string, field: EditField, placeholder: string): Child {
+    if (!this.canEdit) return null;
+    const button = h(
+      'button',
+      { class: 'editable add', type: 'button' },
+      label,
+    );
+    this.editables.set(button, { field, placeholder });
+    return h('div', { class: 'row wide' }, button, h('span'));
+  }
+
+  private remover(name: string): Child {
+    if (!this.canEdit) return h('span');
+    const button = h(
+      'button',
+      {
+        class: 'copy remove',
+        type: 'button',
+        'data-action': 'remove',
+        title: `Remove ${name}`,
+      },
+      '×',
+    );
+    this.editables.set(button, {
+      field: { kind: 'attribute', name },
+      placeholder: '',
+    });
+    return button;
   }
 
   private bindDrag(): void {
@@ -110,12 +276,15 @@ export class Panel {
   }
 
   hide(): void {
+    this.editor = null;
+    this.pending = null;
     this.element.hidden = true;
   }
 
   setPinned(pinned: boolean): void {
     this.pinned = pinned;
     this.element.classList.toggle('pinned', pinned);
+    this.element.classList.toggle('can-edit', this.canEdit);
     this.renderFoot();
   }
 
@@ -155,7 +324,20 @@ export class Panel {
     }
   }
 
-  render(info: ElementInfo, settings: LensSettings): void {
+  render(
+    info: ElementInfo,
+    settings: LensSettings,
+    options: RenderOptions = {},
+  ): void {
+    if (this.editor) {
+      this.pending = [info, settings, options];
+      return;
+    }
+    if (this.allowEdit !== settings.allowEdit) {
+      this.allowEdit = settings.allowEdit;
+      this.element.classList.toggle('can-edit', this.canEdit);
+      this.renderFoot();
+    }
     const head = h(
       'div',
       {},
@@ -165,6 +347,18 @@ export class Panel {
         { class: 'dims' },
         `${info.box.width.toString()} × ${info.box.height.toString()}`,
       ),
+      options.edited
+        ? h(
+            'button',
+            {
+              class: 'copy revert',
+              type: 'button',
+              'data-action': 'revert',
+              title: 'Undo every edit on this element',
+            },
+            'reset',
+          )
+        : null,
       this.pinned ? h('span', { class: 'pin' }, 'pinned') : null,
     );
     this.head.replaceChildren(...Array.from(head.childNodes));
@@ -174,15 +368,16 @@ export class Panel {
     if (settings.showEvents) sections.push(this.events(info));
     if (settings.showStyles) sections.push(this.styles(info.styles));
     if (settings.showAccessibility) sections.push(this.accessibility(info));
-    if (settings.showAttributes && info.attributes.length) {
+    if (settings.showAttributes && (info.attributes.length || this.canEdit)) {
       sections.push(this.attributes(info));
     }
     if (settings.showMedia && info.media) sections.push(this.media(info));
     if (settings.showContext) sections.push(this.context(info));
     if (settings.showSelectors) sections.push(this.selectors(info));
 
+    const scroll = this.body.scrollTop;
     this.body.replaceChildren(...sections.filter((s): s is Node => !!s));
-    this.body.scrollTop = 0;
+    this.body.scrollTop = options.keepScroll ? scroll : 0;
     if (this.hasSource !== Boolean(info.source)) {
       this.hasSource = Boolean(info.source);
       this.renderFoot();
@@ -338,12 +533,27 @@ export class Panel {
 
   private box(info: ElementInfo): HTMLElement {
     const { box } = info;
-    const edges = (name: string, cls: string, e: typeof box.margin) =>
+    const edges = (
+      name: string,
+      cls: string,
+      property: string,
+      e: typeof box.margin,
+    ) =>
       h(
         'div',
         { class: `cell ${cls}` },
-        h('span', {}, name),
-        `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
+        h('span', { class: 'label' }, name),
+        this.editable(
+          `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
+          { kind: 'style', property, lengths: true },
+          `${name}: top right bottom left`,
+        ),
+      );
+    const length = (property: string, value: number) =>
+      this.editable(
+        h('span', { class: 'num' }, value.toString()),
+        { kind: 'style', property, lengths: true },
+        property,
       );
 
     return this.section(
@@ -364,17 +574,17 @@ export class Panel {
         h(
           'span',
           {},
-          h('span', { class: 'num' }, box.width.toString()),
+          length('width', box.width),
           ' × ',
-          h('span', { class: 'num' }, box.height.toString()),
+          length('height', box.height),
         ),
       ),
       h(
         'div',
         { class: 'box-model' },
-        edges('margin', 'm', box.margin),
-        edges('padding', 'p', box.padding),
-        edges('border', 'b', box.border),
+        edges('margin', 'm', 'margin', box.margin),
+        edges('padding', 'p', 'padding', box.padding),
+        edges('border', 'b', 'border-width', box.border),
       ),
     );
   }
@@ -386,19 +596,24 @@ export class Panel {
       ...styles.map((style) =>
         this.row(
           style.property,
-          h(
-            'span',
-            {},
-            style.color
-              ? h('span', {
-                  class: 'swatch',
-                  style: `background:${style.color}`,
-                })
-              : null,
-            truncate(style.value, 90),
+          this.editable(
+            h(
+              'span',
+              {},
+              style.color
+                ? h('span', {
+                    class: 'swatch',
+                    style: `background:${style.color}`,
+                  })
+                : null,
+              truncate(style.value, 90),
+            ),
+            { kind: 'style', property: style.property },
+            style.property,
           ),
         ),
       ),
+      this.adder('+ style', { kind: 'new-style' }, 'property: value'),
     );
   }
 
@@ -407,15 +622,23 @@ export class Panel {
     const rows: Child[] = [
       this.row(
         'Role',
-        accessibility.role
-          ? h('span', { class: 'kw' }, accessibility.role)
-          : h('span', { class: 'muted' }, 'generic'),
+        this.editable(
+          accessibility.role
+            ? h('span', { class: 'kw' }, accessibility.role)
+            : h('span', { class: 'muted' }, 'generic'),
+          { kind: 'attribute', name: 'role' },
+          accessibility.role || 'role',
+        ),
       ),
       this.row(
         'Name',
-        accessibility.name
-          ? truncate(accessibility.name, 90)
-          : h('span', { class: 'muted' }, 'none'),
+        this.editable(
+          accessibility.name
+            ? truncate(accessibility.name, 90)
+            : h('span', { class: 'muted' }, 'none'),
+          { kind: 'attribute', name: 'aria-label' },
+          accessibility.name || 'aria-label',
+        ),
       ),
       this.row(
         'Focusable',
@@ -443,7 +666,11 @@ export class Panel {
             { class: 'val' },
             h('span', { class: 'attr' }, attr.name),
             '=',
-            h('span', { class: 'value' }, `"${attr.value}"`),
+            this.editable(
+              h('span', { class: 'value' }, `"${attr.value}"`),
+              { kind: 'attribute', name: attr.name },
+              attr.name,
+            ),
           ),
           h('span'),
         ),
@@ -454,7 +681,7 @@ export class Panel {
 
   private attributes(info: ElementInfo): HTMLElement {
     const shown = info.attributes.slice(0, 12);
-    const rows = shown.map((attr) =>
+    const rows: Child[] = shown.map((attr) =>
       h(
         'div',
         { class: 'row wide' },
@@ -462,11 +689,20 @@ export class Panel {
           'span',
           { class: 'val' },
           h('span', { class: 'attr' }, attr.name),
-          attr.value ? '=' : '',
-          attr.value ? h('span', { class: 'value' }, `"${attr.value}"`) : null,
+          '=',
+          this.editable(
+            attr.value
+              ? h('span', { class: 'value' }, `"${attr.value}"`)
+              : h('span', { class: 'muted' }, '""'),
+            { kind: 'attribute', name: attr.name },
+            attr.name,
+          ),
         ),
-        h('span'),
+        this.remover(attr.name),
       ),
+    );
+    rows.push(
+      this.adder('+ attribute', { kind: 'new-attribute' }, 'name="value"'),
     );
     const hidden = info.attributes.length - shown.length;
     return this.section(
@@ -509,12 +745,21 @@ export class Panel {
           )
         : null,
       crumbs,
-      info.text
-        ? this.row(
-            'Text',
-            h('span', { class: 'muted' }, truncate(info.text, 120)),
-          )
-        : null,
+      this.textRow(info),
+    );
+  }
+
+  private textRow(info: ElementInfo): Child {
+    const leaf = info.childCount === 0;
+    if (!info.text && !(leaf && this.canEdit)) return null;
+    const display = h(
+      'span',
+      { class: 'muted' },
+      info.text ? truncate(info.text, 120) : 'empty',
+    );
+    return this.row(
+      'Text',
+      leaf ? this.editable(display, { kind: 'text' }, 'text') : display,
     );
   }
 
@@ -522,8 +767,25 @@ export class Panel {
     const media = info.media;
     if (!media) return h('div');
     const rows: Child[] = [this.row('Kind', media.kind)];
-    if (media.source)
-      rows.push(this.row('Source', truncate(media.source, 160)));
+    const sourceAttribute =
+      media.kind === 'svg' ? 'viewBox' : media.kind === 'canvas' ? null : 'src';
+    if (media.source || (sourceAttribute && this.canEdit)) {
+      const display = media.source
+        ? truncate(media.source, 160)
+        : h('span', { class: 'muted' }, 'none');
+      rows.push(
+        this.row(
+          'Source',
+          sourceAttribute
+            ? this.editable(
+                display,
+                { kind: 'attribute', name: sourceAttribute },
+                sourceAttribute,
+              )
+            : display,
+        ),
+      );
+    }
     if (media.naturalWidth !== undefined && media.naturalHeight !== undefined) {
       rows.push(
         this.row(
@@ -536,7 +798,14 @@ export class Panel {
       rows.push(this.row('Duration', formatDuration(media.duration)));
     if (media.alt !== undefined)
       rows.push(
-        this.row('Alt', media.alt || h('span', { class: 'muted' }, 'empty')),
+        this.row(
+          'Alt',
+          this.editable(
+            media.alt || h('span', { class: 'muted' }, 'empty'),
+            { kind: 'attribute', name: 'alt' },
+            'alt',
+          ),
+        ),
       );
     return this.section('Media', '', ...rows);
   }
@@ -545,6 +814,7 @@ export class Panel {
     const hints: Child[] = [
       h('span', {}, h('kbd', {}, 'click'), this.pinned ? 'unpin' : 'pin'),
       this.pinned ? h('span', {}, h('kbd', {}, 'drag'), 'move') : null,
+      this.canEdit ? h('span', {}, h('kbd', {}, 'click value'), 'edit') : null,
       h('span', {}, h('kbd', {}, 'esc'), 'close'),
       h('span', {}, h('kbd', {}, '↑'), h('kbd', {}, '↓'), 'parent / child'),
       this.hasSource ? h('span', {}, h('kbd', {}, 'O'), 'open source') : null,

@@ -17,8 +17,41 @@ function make(html: string): Element {
   return document.body.firstElementChild!;
 }
 
+const SOURCE_REPLY = JSON.stringify({
+  listeners: [],
+  framework: null,
+  source: {
+    file: 'App.svelte',
+    line: 1,
+    column: 1,
+    origin: 'svelte',
+    mapped: true,
+  },
+});
+
+let stopBridge = (): void => undefined;
+
+function answerProbes(answers: (el: Element) => boolean): Element[] {
+  const probed: Element[] = [];
+  const onProbe = (event: Event) => {
+    const target = event.composedPath()[0] as Element;
+    probed.push(target);
+    if (answers(target)) {
+      target.dispatchEvent(
+        new CustomEvent(REPLY_EVENT, { detail: SOURCE_REPLY }),
+      );
+    }
+  };
+  document.addEventListener(PROBE_EVENT, onProbe, true);
+  stopBridge = () => {
+    document.removeEventListener(PROBE_EVENT, onProbe, true);
+  };
+  return probed;
+}
+
 describe('source markers', () => {
   afterEach(() => {
+    stopBridge();
     document.head.innerHTML = '';
     document.body.innerHTML = '';
   });
@@ -118,9 +151,41 @@ describe('source markers', () => {
     expect(detectDevServer()).toBe('vite');
   });
 
-  it('tells whether the page exposes element sources', () => {
-    document.body.innerHTML = '<main><p>plain</p></main>';
+  it('detects vite from a dynamically imported client', () => {
+    document.head.innerHTML = '';
+    const entries = jest
+      .spyOn(performance, 'getEntriesByType')
+      .mockReturnValue([
+        { name: 'http://localhost:5174/@vite/client' } as PerformanceEntry,
+      ]);
+    expect(detectDevServer()).toBe('vite');
+    expect(
+      editorUrl(
+        {
+          file: 'src/routes/+layout.svelte',
+          line: 16,
+          column: 1,
+          origin: 'svelte',
+          mapped: true,
+        },
+        'vite',
+      ),
+    ).toBe(
+      `http://localhost:5174/__open-in-editor?file=${encodeURIComponent('src/routes/+layout.svelte:16:1')}`,
+    );
+    expect(entries).toHaveBeenCalledWith('resource');
+    entries.mockRestore();
+  });
+
+  it('reports no element sources when no probe answers', () => {
+    document.body.innerHTML = `<main>${'<p>plain</p>'.repeat(199)}</main>`;
+    const elements = Array.from(document.body.querySelectorAll('*'));
+    const probed = answerProbes(() => false);
     expect(pageHasSources()).toBe(false);
+    expect(probed.length).toBeGreaterThanOrEqual(24);
+    expect(probed.length).toBeLessThanOrEqual(32);
+    expect(probed[0]).toBe(elements[0]);
+    expect(elements.indexOf(probed.at(-1)!)).toBeGreaterThan(180);
     expect(editorAvailability()).toEqual({ server: null, sources: false });
 
     document.head.innerHTML =
@@ -129,37 +194,35 @@ describe('source markers', () => {
 
     document.body.innerHTML = '<main data-qwik-inspector="a.tsx:1:1"></main>';
     expect(editorAvailability()).toEqual({ server: 'vite', sources: true });
+  });
 
+  it('reports element sources when the bridge answers a probe', () => {
     document.body.innerHTML = '<main><p>plain</p></main>';
-    const reply = JSON.stringify({
-      listeners: [],
-      framework: null,
-      source: {
-        file: 'App.svelte',
-        line: 1,
-        column: 1,
-        origin: 'svelte',
-        mapped: true,
-      },
-    });
-    document.addEventListener(
-      PROBE_EVENT,
-      (event) => {
-        (event.composedPath()[0] as Element).dispatchEvent(
-          new CustomEvent(REPLY_EVENT, { detail: reply }),
-        );
-      },
-      { capture: true, once: true },
-    );
+    answerProbes(() => true);
     expect(pageHasSources()).toBe(true);
+  });
+
+  it('looks past leading script and svg noise for element sources', () => {
+    const noise =
+      '<script></script>'.repeat(10) +
+      '<svg><path></path><path></path><path></path><path></path></svg>'.repeat(
+        4,
+      );
+    document.body.innerHTML = `${noise}<main><section><p id="real">real</p></section></main>`;
+    const probed = answerProbes((el) => el.id === 'real');
+    expect(pageHasSources()).toBe(true);
+    expect(probed.some((el) => el.matches('script, svg *'))).toBe(false);
   });
 
   it('strips the vite filesystem prefix for display and editors', () => {
     expect(displayPath('/@fs/D:/Github/app/src/x.tsx')).toBe(
       'D:/Github/app/src/x.tsx',
     );
-    expect(displayPath('@fs/home/me/app/src/x.tsx')).toBe(
-      'home/me/app/src/x.tsx',
+    expect(displayPath('/@fs/tmp/fw/qwik-lib/hero.tsx')).toBe(
+      '/tmp/fw/qwik-lib/hero.tsx',
+    );
+    expect(displayPath('/@fs//home/me/app/src/x.tsx')).toBe(
+      '/home/me/app/src/x.tsx',
     );
     expect(displayPath('src/x.tsx')).toBe('src/x.tsx');
     const source = parseLocation('/@fs/D:/Github/app/src/x.tsx:12:5', 'qwik')!;
@@ -189,8 +252,11 @@ describe('source markers', () => {
     expect(editorUrl(source, 'vite')).toBe(
       '/__open-in-editor?file=src%2FApp.tsx%3A4%3A2',
     );
+    expect(editorUrl(source, 'next')).toBe(
+      '/__nextjs_launch-editor?file=src%2FApp.tsx&line1=4&column1=2&lineNumber=4&column=2',
+    );
     expect(editorUrl({ ...source, line: null, column: null }, 'next')).toBe(
-      '/__nextjs_launch-editor?file=src%2FApp.tsx&lineNumber=1&column=1',
+      '/__nextjs_launch-editor?file=src%2FApp.tsx&line1=1&column1=1&lineNumber=1&column=1',
     );
     expect(editorUrl(source, null)).toBeNull();
   });

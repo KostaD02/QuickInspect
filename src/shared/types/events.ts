@@ -24,3 +24,4 @@ export interface EventsInfo {
 export const PROBE_EVENT = 'quickinspect:probe';
 export const REPLY_EVENT = 'quickinspect:reply';
 export const REPLY_ATTRIBUTE = 'data-quickinspect-reply';
+export const HANDOVER_EVENT = 'quickinspect:handover';

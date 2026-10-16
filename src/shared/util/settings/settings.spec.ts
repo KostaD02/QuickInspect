@@ -27,6 +27,8 @@ describe('settings', () => {
     expect(
       normaliseSettings({ showEditorStatus: false }).showEditorStatus,
     ).toBe(false);
+    expect(normaliseSettings({}).allowEdit).toBe(true);
+    expect(normaliseSettings({ allowEdit: false }).allowEdit).toBe(false);
     expect(
       normaliseSettings({ modifier: 'Hyper', showBox: 'yes' }),
     ).toMatchObject({

@@ -32,5 +32,5 @@ export default defineManifest({
       all_frames: false,
     },
   ],
-  permissions: ['storage', 'clipboardWrite'],
+  permissions: ['storage', 'clipboardWrite', 'scripting', 'activeTab'],
 });

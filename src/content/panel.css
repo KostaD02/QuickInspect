@@ -29,6 +29,12 @@
   --margin: rgba(255, 209, 102, 0.28);
   --padding: rgba(100, 255, 218, 0.22);
   --content: rgba(130, 170, 255, 0.28);
+  --bg-input: #0a192f;
+  --border-focus: #64ffda;
+  --danger-soft: rgba(255, 99, 99, 0.1);
+  --selection-bg: #233554;
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --duration-fast: 0.2s;
 }
 
 *,
@@ -365,7 +371,7 @@
   border: 1px solid var(--border);
 }
 
-.box-model .cell span {
+.box-model .cell .label {
   display: block;
   font: 600 8.5px/1 var(--font);
   letter-spacing: 0.6px;
@@ -374,14 +380,110 @@
   margin-bottom: 5px;
 }
 
-.box-model .cell.m span {
+.box-model .cell.m .label {
   color: var(--warning);
 }
-.box-model .cell.p span {
+.box-model .cell.p .label {
   color: var(--accent);
 }
-.box-model .cell.b span {
+.box-model .cell.b .label {
   color: var(--attr);
+}
+
+.editable {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.box-model .cell .editable {
+  display: block;
+}
+
+.panel.can-edit .editable {
+  cursor: text;
+  border-radius: 4px;
+  transition:
+    background var(--duration-fast) var(--easing),
+    box-shadow var(--duration-fast) var(--easing);
+}
+
+.panel.can-edit .editable:hover {
+  background: var(--bg-hover);
+  box-shadow: 0 0 0 2px var(--bg-hover);
+}
+
+.edit {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 2px 6px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: var(--bg-input);
+  color: var(--text-bright);
+  font: 400 11.5px/1.5 var(--mono);
+  caret-color: var(--accent);
+  outline: none;
+  transition:
+    border-color var(--duration-fast) var(--easing),
+    box-shadow var(--duration-fast) var(--easing),
+    background var(--duration-fast) var(--easing);
+}
+
+.edit::placeholder {
+  color: var(--text-muted);
+}
+
+.edit::selection {
+  background: var(--selection-bg);
+  color: var(--accent);
+}
+
+.edit:focus {
+  border-color: var(--border-focus);
+}
+
+.edit.invalid {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px var(--danger-soft);
+}
+
+.add {
+  all: unset;
+  cursor: pointer;
+  justify-self: start;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px dashed var(--border-strong);
+  color: var(--text-muted);
+  font: 600 9.5px/1.4 var(--font);
+  letter-spacing: 0.3px;
+  transition:
+    color var(--duration-fast) var(--easing),
+    border-color var(--duration-fast) var(--easing),
+    background var(--duration-fast) var(--easing);
+}
+
+.panel.can-edit .add:hover {
+  color: var(--accent);
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  box-shadow: none;
+}
+
+.copy.remove {
+  padding: 0 6px;
+  font: 600 12px/1.4 var(--font);
+}
+
+.panel.can-edit .copy.remove:hover {
+  color: var(--danger);
+  border-color: rgba(255, 99, 99, 0.4);
+  background: var(--danger-soft);
+}
+
+.head .revert {
+  flex-shrink: 0;
 }
 
 .crumbs {
