@@ -3,6 +3,7 @@ import {
   countMatches,
   deepElementFromPoint,
   HOST_TAG,
+  isEditable,
   isOwnNode,
   parentOf,
   rootOf,
@@ -67,5 +68,24 @@ describe('dom', () => {
     expect(rootOf(host)).toBe(document);
     expect(parentOf(root.firstElementChild!)).toBe(host);
     expect(parentOf(document.documentElement)).toBeNull();
+  });
+
+  it('recognises elements that take typed text', () => {
+    document.body.innerHTML = `
+      <input id="text"><input id="check" type="checkbox"><textarea></textarea>
+      <select></select><button></button>
+      <div contenteditable><b id="inner"></b></div>
+      <div contenteditable="false" id="off"></div>`;
+    const byId = (id: string) => document.getElementById(id);
+
+    expect(isEditable(byId('text'))).toBe(true);
+    expect(isEditable(byId('check'))).toBe(false);
+    expect(isEditable(document.querySelector('textarea'))).toBe(true);
+    expect(isEditable(document.querySelector('select'))).toBe(true);
+    expect(isEditable(document.querySelector('button'))).toBe(false);
+    expect(isEditable(byId('inner'))).toBe(true);
+    expect(isEditable(byId('off'))).toBe(false);
+    expect(isEditable(window)).toBe(false);
+    expect(isEditable(null)).toBe(false);
   });
 });
