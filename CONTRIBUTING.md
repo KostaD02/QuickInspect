@@ -36,8 +36,6 @@ src/
         ├── settings/    # Load, save, watch, normalise
         ├── clipboard/
         └── logger/
-
-demo/index.html          # Page for manual testing: forms, test ids, media, listeners, shadow DOM
 ```
 
 ## Setting up for local development
@@ -55,7 +53,7 @@ Then load the unpacked extension in Chrome:
 2. Enable **Developer mode**
 3. Click **Load unpacked** and select the `dist/` folder
 
-The extension hot-reloads while `pnpm start` is running. Open `demo/index.html` through any static server to try it on a page with forms, test ids, media and a shadow DOM component.
+The extension hot-reloads while `pnpm start` is running.
 
 ## Build, lint and test
 

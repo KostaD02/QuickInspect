@@ -15,6 +15,17 @@ function key(
   return event;
 }
 
+function typeInto(field: Element, init: KeyboardEventInit): KeyboardEvent {
+  const event = new KeyboardEvent('keydown', {
+    bubbles: true,
+    cancelable: true,
+    composed: true,
+    ...init,
+  });
+  field.dispatchEvent(event);
+  return event;
+}
+
 function mouse(
   type: string,
   init: MouseEventInit = {},
@@ -251,5 +262,62 @@ describe('inspector', () => {
     expect(host()).not.toBeNull();
     const click = mouse('click', { ctrlKey: true });
     expect(click.defaultPrevented).toBe(true);
+  });
+
+  it('copies with letter keys while holding Ctrl or Cmd', () => {
+    inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Control' });
+    mouse('mousemove', { clientX: 10, clientY: 10 });
+    key('keydown', { key: 'Control', ctrlKey: true });
+    flush();
+    const ctrl = key('keydown', { code: 'KeyS', key: 's', ctrlKey: true });
+    expect(ctrl.defaultPrevented).toBe(true);
+    expect(writeText).toHaveBeenCalledWith('#go');
+    const cmd = key('keydown', {
+      code: 'KeyS',
+      key: 's',
+      ctrlKey: true,
+      metaKey: true,
+    });
+    expect(cmd.defaultPrevented).toBe(false);
+    key('keyup', { key: 'Control' });
+
+    inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Meta' });
+    key('keydown', { key: 'Meta', metaKey: true });
+    flush();
+    const meta = key('keydown', { code: 'KeyX', key: 'x', metaKey: true });
+    expect(meta.defaultPrevented).toBe(true);
+    expect(writeText).toHaveBeenLastCalledWith('//*[@id="go"]');
+  });
+
+  it('never inspects from a text field when the hold key is Shift', () => {
+    inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Shift' });
+    const field = document.createElement('input');
+    document.body.append(field);
+    mouse('mousemove', { clientX: 10, clientY: 10 });
+    typeInto(field, { key: 'Shift', shiftKey: true });
+    flush();
+    expect(host()).toBeNull();
+
+    key('keydown', { key: 'Shift', shiftKey: true });
+    flush();
+    expect(host()).not.toBeNull();
+    const letter = typeInto(field, { code: 'KeyH', key: 'H', shiftKey: true });
+    expect(letter.defaultPrevented).toBe(false);
+    expect(writeText).not.toHaveBeenCalled();
+  });
+
+  it('lets plain keys reach a text field while the panel is pinned', () => {
+    const field = document.createElement('textarea');
+    document.body.append(field);
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+
+    const plain = typeInto(field, { code: 'KeyS', key: 's' });
+    expect(plain.defaultPrevented).toBe(false);
+    expect(writeText).not.toHaveBeenCalled();
+    const held = typeInto(field, { code: 'KeyS', key: 'ß', altKey: true });
+    expect(held.defaultPrevented).toBe(true);
+    expect(writeText).toHaveBeenCalledWith('#go');
   });
 });

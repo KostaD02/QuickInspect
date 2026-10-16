@@ -5,6 +5,7 @@ import {
   deepElementFromPoint,
   formatSource,
   inspectElement,
+  isEditable,
   isOwnNode,
   mapToOriginal,
   openInEditor,
@@ -25,7 +26,10 @@ import { Overlay } from './overlay';
 import { Panel } from './panel';
 import { Toast } from './toast';
 
-const MODIFIER_FLAG: Record<ModifierKey, keyof MouseEvent> = {
+const MODIFIER_FLAG: Record<
+  ModifierKey,
+  'altKey' | 'ctrlKey' | 'shiftKey' | 'metaKey'
+> = {
   Alt: 'altKey',
   Control: 'ctrlKey',
   Shift: 'shiftKey',
@@ -110,7 +114,9 @@ export class Inspector {
   }
 
   private readonly onKeyDown = (event: KeyboardEvent): void => {
-    if (!this.settings.enabled || this.panel.editing) return;
+    if (!this.settings.enabled || this.panel.editing || this.typing(event)) {
+      return;
+    }
 
     if (event.key === this.settings.modifier) {
       if (!this.holding) {
@@ -135,14 +141,16 @@ export class Inspector {
       return;
     }
 
-    if (event.code === 'KeyO' && !event.ctrlKey && !event.metaKey) {
+    if (this.browserShortcut(event)) return;
+
+    if (event.code === 'KeyO') {
       this.swallow(event);
       this.openSource();
       return;
     }
 
     const action = actionByCode(event.code);
-    if (action && !event.ctrlKey && !event.metaKey) {
+    if (action) {
       this.swallow(event);
       this.copy(action);
     }
@@ -198,8 +206,23 @@ export class Inspector {
     if (!this.pinned) this.hideAll();
   };
 
-  private modifierHeld(event: MouseEvent): boolean {
-    return Boolean(event[MODIFIER_FLAG[this.settings.modifier]]);
+  private modifierHeld(event: MouseEvent | KeyboardEvent): boolean {
+    return event[MODIFIER_FLAG[this.settings.modifier]];
+  }
+
+  private typing(event: KeyboardEvent): boolean {
+    if (!isEditable(event.composedPath().at(0) ?? null)) return false;
+    // ? Shift is part of normal typing, so it never inspects from a text field
+    if (this.settings.modifier === 'Shift') return true;
+    return event.key !== this.settings.modifier && !this.modifierHeld(event);
+  }
+
+  private browserShortcut(event: KeyboardEvent): boolean {
+    const { modifier } = this.settings;
+    return (
+      (event.ctrlKey && modifier !== 'Control') ||
+      (event.metaKey && modifier !== 'Meta')
+    );
   }
 
   private swallow(event: Event): void {

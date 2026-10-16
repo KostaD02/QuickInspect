@@ -13,6 +13,31 @@ export function isOwnNode(node: Node | null): boolean {
   return false;
 }
 
+const NON_TEXT_INPUTS = new Set([
+  'button',
+  'checkbox',
+  'image',
+  'radio',
+  'reset',
+  'submit',
+]);
+
+export function isEditable(target: EventTarget | null): boolean {
+  if (target instanceof HTMLInputElement) {
+    return !NON_TEXT_INPUTS.has(target.type);
+  }
+  if (
+    target instanceof HTMLTextAreaElement ||
+    target instanceof HTMLSelectElement
+  ) {
+    return true;
+  }
+  return (
+    target instanceof Element &&
+    target.closest('[contenteditable]:not([contenteditable="false"])') !== null
+  );
+}
+
 export function deepElementFromPoint(x: number, y: number): Element | null {
   let root: Document | ShadowRoot = document;
   let found: Element | null = null;
