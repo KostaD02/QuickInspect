@@ -13,7 +13,7 @@ export default defineConfig({
     copyPublicDir: false,
     minify: false,
     lib: {
-      entry: 'src/content/bridge.ts',
+      entry: 'src/content/bridge/bridge.ts',
       formats: ['iife'],
       name: 'ElementLensBridge',
       fileName: () => 'bridge.js',

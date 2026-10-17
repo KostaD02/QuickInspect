@@ -6,10 +6,13 @@ export class Toast {
 
   constructor(root: ParentNode) {
     this.element = document.createElement('div');
-    this.element.className = 'toast';
+    // ? the first class is a hook; the rest are @kostad/brand classes
+    this.element.className =
+      'toast kd-pos-fixed kd-px-3 kd-py-2 kd-radius-md kd-bg-base kd-border-1 kd-border-accent-line kd-shadow-md kd-text-accent kd-fs-xxxs kd-fw-semibold kd-pointer-none kd-transition-fast';
     this.message = document.createElement('span');
     this.code = document.createElement('span');
-    this.code.className = 'code';
+    this.code.className =
+      'code kd-d-inline-block kd-ml-2 kd-font-mono kd-fs-micro kd-fw-regular kd-text-secondary kd-text-ellipsis';
     this.element.append(this.message, this.code);
     root.appendChild(this.element);
   }

@@ -4,30 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuickInspect</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body>
-    <div id="app" class="d-flex flex-col">
-      <header class="header d-flex items-center justify-between">
-        <div class="logo-lockup d-flex items-center">
-          <div class="logo-text d-flex flex-col">
-            <span class="logo-name">QuickInspect</span>
-            <div class="logo-sub d-flex items-center">
-              <span class="logo-tagline">Hover element inspector</span>
-              <span id="version" class="logo-version">vX.X.X</span>
-            </div>
-          </div>
+  <body class="kd-min-h-0">
+    <div id="app" class="kd-d-flex kd-flex-column kd-gap-2 kd-px-3 kd-pb-3">
+      <header
+        class="kd-d-flex kd-items-center kd-justify-between kd-pos-sticky kd-top-0 kd-z-sticky kd-bg-base kd-py-3"
+      >
+        <div class="kd-d-flex kd-flex-column kd-gap-1">
+          <span
+            class="kd-font-primary kd-fs-lg kd-fw-bold kd-lh-sm kd-text-bright"
+            >QuickInspect</span
+          >
+          <span class="kd-d-flex kd-items-center kd-gap-2 kd-fs-micro">
+            <span>Hover element inspector</span>
+            <span id="version" class="kd-font-mono kd-opacity-75">vX.X.X</span>
+          </span>
         </div>
-        <div class="header-right d-flex items-center">
+        <div class="kd-d-flex kd-items-center kd-gap-2">
           <button
             id="settings-btn"
-            class="icon-btn settings-btn d-flex items-center justify-center"
+            class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
+            style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
             aria-label="QuickInspect settings"
             title="Settings"
@@ -45,16 +42,29 @@
           </button>
           <button
             id="settings-close-btn"
-            class="icon-btn info-close-btn d-flex items-center justify-center"
+            class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
+            style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
             aria-label="Close settings"
+            title="Close"
             hidden
           >
-            ✕
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
           </button>
           <button
             id="info-btn"
-            class="icon-btn info-btn d-flex items-center justify-center"
+            class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
+            style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
             aria-label="About QuickInspect"
             title="About QuickInspect"
@@ -72,222 +82,399 @@
           </button>
           <button
             id="info-close-btn"
-            class="icon-btn info-close-btn d-flex items-center justify-center"
+            class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
+            style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
             aria-label="Close info"
+            title="Close"
             hidden
           >
-            ✕
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 4l8 8M12 4l-8 8" />
+            </svg>
           </button>
           <label
             id="enabled-switch"
-            class="switch"
+            class="kd-toggle kd-pos-relative"
             title="Turn QuickInspect on or off"
           >
-            <input id="set-enabled" type="checkbox" />
-            <span class="switch-track"><span class="switch-thumb"></span></span>
+            <input
+              id="set-enabled"
+              class="kd-toggle__input"
+              type="checkbox"
+              aria-label="Turn QuickInspect on or off"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
           </label>
         </div>
       </header>
 
-      <div id="shell" class="shell d-flex flex-col">
-        <div class="field-group d-flex flex-col">
-          <label class="field-label d-flex items-center" for="set-modifier">
-            Hold key
-          </label>
-          <select id="set-modifier" class="field-input">
+      <div id="shell" class="kd-d-flex kd-flex-column kd-gap-3">
+        <div class="kd-field">
+          <label class="kd-field__label" for="set-modifier">Hold key</label>
+          <select id="set-modifier" class="kd-field__input">
             <option value="Alt">Alt / Option</option>
             <option value="Control">Ctrl</option>
             <option value="Shift">Shift</option>
             <option value="Meta">Cmd / Win</option>
           </select>
-          <span class="field-hint">
+          <span class="kd-field__hint">
             Hold it and hover any element. Release to put the page back.
           </span>
         </div>
 
-        <div class="field-group d-flex flex-col">
-          <span class="field-label d-flex items-center"> While holding </span>
-          <div class="keys-card">
-            <div class="key-row">
-              <kbd>click</kbd><span>Pin the panel</span>
+        <div class="kd-field">
+          <span class="kd-field__label">While holding</span>
+          <div
+            class="kd-card kd-card--surface kd-grid-auto kd-p-3"
+            style="--kd-grid-min: 8rem; --kd-grid-gap: var(--kd-space-2)"
+          >
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">click</kbd
+              ><span class="kd-text-ellipsis">Pin the panel</span>
             </div>
-            <div class="key-row"><kbd>esc</kbd><span>Close</span></div>
-            <div class="key-row">
-              <kbd>↑</kbd><kbd>↓</kbd><span>Parent / child</span>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">esc</kbd
+              ><span class="kd-text-ellipsis">Close</span>
             </div>
-            <div class="key-row">
-              <kbd>S</kbd><span>Copy CSS selector</span>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">↑</kbd
+              ><kbd class="kd-chip kd-font-mono">↓</kbd
+              ><span class="kd-text-ellipsis">Parent / child</span>
             </div>
-            <div class="key-row"><kbd>X</kbd><span>Copy XPath</span></div>
-            <div class="key-row">
-              <kbd>L</kbd><span>Copy Playwright locator</span>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">S</kbd
+              ><span class="kd-text-ellipsis">Copy CSS selector</span>
             </div>
-            <div class="key-row"><kbd>H</kbd><span>Copy HTML</span></div>
-            <div class="key-row"><kbd>T</kbd><span>Copy text</span></div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">X</kbd
+              ><span class="kd-text-ellipsis">Copy XPath</span>
+            </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">L</kbd
+              ><span class="kd-text-ellipsis">Copy Playwright locator</span>
+            </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">H</kbd
+              ><span class="kd-text-ellipsis">Copy HTML</span>
+            </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">T</kbd
+              ><span class="kd-text-ellipsis">Copy text</span>
+            </div>
           </div>
         </div>
 
-        <div id="editor-group" class="field-group editor-group d-flex flex-col">
-          <span class="field-label d-flex items-center"> Editor </span>
-          <div id="editor-status" class="editor-status d-flex items-center">
-            <span class="status-dot"></span>
+        <div id="editor-group" class="kd-field">
+          <span class="kd-field__label">Editor</span>
+          <div
+            id="editor-status"
+            class="kd-card kd-card--surface kd-flex-row kd-items-center kd-gap-2 kd-fs-xxs"
+            style="--kd-card-padding: 0.5rem 0.75rem"
+          >
+            <span
+              id="editor-dot"
+              class="kd-fs-micro kd-text-muted"
+              aria-hidden="true"
+              >●</span
+            >
             <span id="editor-label">Checking this page</span>
           </div>
-          <span class="field-hint">
-            Press <kbd>O</kbd> on an element with a source location to open it
-            in your editor.
+          <span class="kd-field__hint">
+            Press <kbd class="kd-chip kd-font-mono">O</kbd> on an element with a
+            source location to open it in your editor.
           </span>
         </div>
       </div>
 
-      <div id="settings-panel" class="settings-panel d-flex flex-col" hidden>
-        <p class="settings-intro">
+      <div
+        id="settings-panel"
+        class="kd-d-flex kd-flex-column kd-animate-fade-up"
+        hidden
+      >
+        <p class="kd-fs-xxxs">
           Saved automatically and applied to open tabs immediately.
         </p>
 
-        <span class="settings-heading">Editing</span>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Allow edits</span>
-            <span class="setting-hint"
+        <span
+          class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          >Editing</span
+        >
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+              >Allow edits</span
+            >
+            <span class="kd-fs-micro"
               >Click values in a pinned panel to change styles, attributes and
               text on the page</span
             >
           </span>
-          <input id="set-allow-edit" class="setting-checkbox" type="checkbox" />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-allow-edit"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
 
-        <span class="settings-heading">Popup</span>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Editor availability</span>
-            <span class="setting-hint"
+        <span
+          class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          >Popup</span
+        >
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+              >Editor availability</span
+            >
+            <span class="kd-fs-micro"
               >Whether this page can open sources in your editor</span
             >
           </span>
-          <input
-            id="set-show-editor-status"
-            class="setting-checkbox"
-            type="checkbox"
-          />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-editor-status"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
 
-        <span class="settings-heading">Overlay</span>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Box model highlight</span>
-            <span class="setting-hint"
+        <span
+          class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          >Overlay</span
+        >
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+              >Box model highlight</span
+            >
+            <span class="kd-fs-micro"
               >Margin and padding bands around the element</span
             >
           </span>
-          <input
-            id="set-show-box-model"
-            class="setting-checkbox"
-            type="checkbox"
-          />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-box-model"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
 
-        <span class="settings-heading">Panel sections</span>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Selectors</span>
-            <span class="setting-hint">CSS, XPath and Playwright locators</span>
+        <span
+          class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          >Panel sections</span
+        >
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Selectors</span>
+            <span class="kd-fs-micro">CSS, XPath and Playwright locators</span>
           </span>
-          <input
-            id="set-show-selectors"
-            class="setting-checkbox"
-            type="checkbox"
-          />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-selectors"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Box</span>
-            <span class="setting-hint"
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Box</span>
+            <span class="kd-fs-micro"
               >Position, size, margin, padding, border</span
             >
           </span>
-          <input id="set-show-box" class="setting-checkbox" type="checkbox" />
-        </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Styles</span>
-            <span class="setting-hint">Computed values that matter</span>
+          <span class="kd-toggle kd-pos-relative">
+            <input id="set-show-box" class="kd-toggle__input" type="checkbox" />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
           </span>
-          <input
-            id="set-show-styles"
-            class="setting-checkbox"
-            type="checkbox"
-          />
         </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Accessibility</span>
-            <span class="setting-hint"
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Styles</span>
+            <span class="kd-fs-micro">Computed values that matter</span>
+          </span>
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-styles"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
+        </label>
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+              >Accessibility</span
+            >
+            <span class="kd-fs-micro"
               >Role, accessible name, focusability, ARIA</span
             >
           </span>
-          <input
-            id="set-show-accessibility"
-            class="setting-checkbox"
-            type="checkbox"
-          />
-        </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Attributes</span>
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-accessibility"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
           </span>
-          <input
-            id="set-show-attributes"
-            class="setting-checkbox"
-            type="checkbox"
-          />
         </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Context</span>
-            <span class="setting-hint">Ancestors, child count, text</span>
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+              >Attributes</span
+            >
           </span>
-          <input
-            id="set-show-context"
-            class="setting-checkbox"
-            type="checkbox"
-          />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-attributes"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Media</span>
-            <span class="setting-hint"
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Context</span>
+            <span class="kd-fs-micro">Ancestors, child count, text</span>
+          </span>
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-context"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
+        </label>
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Media</span>
+            <span class="kd-fs-micro"
               >Image, video, canvas and SVG details</span
             >
           </span>
-          <input id="set-show-media" class="setting-checkbox" type="checkbox" />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-media"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
-        <label class="setting-row d-flex items-center justify-between">
-          <span class="setting-text d-flex flex-col">
-            <span class="setting-label">Events</span>
-            <span class="setting-hint"
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Events</span>
+            <span class="kd-fs-micro"
               >Listeners, inline handlers and framework props</span
             >
           </span>
-          <input
-            id="set-show-events"
-            class="setting-checkbox"
-            type="checkbox"
-          />
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-show-events"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
         </label>
 
         <button
           id="reset-btn"
-          class="settings-reset-btn link-underline"
+          class="kd-btn kd-btn--ghost kd-btn--sm kd-self-start kd-mt-3"
           type="button"
         >
           Reset to defaults
         </button>
       </div>
 
-      <div id="info-panel" class="info-panel d-flex flex-col" hidden>
-        <p class="info-desc">
+      <div
+        id="info-panel"
+        class="kd-d-flex kd-flex-column kd-gap-3 kd-animate-fade-up"
+        hidden
+      >
+        <p class="kd-fs-xxs kd-lh-xxl kd-text-secondary">
           QuickInspect shows what you need to know about any element without
           opening DevTools: <strong>selectors</strong>, the
           <strong>box model</strong>, <strong>computed styles</strong>,
@@ -296,87 +483,88 @@
           from.
         </p>
 
-        <ol class="info-steps d-flex flex-col">
+        <ul class="kd-list" style="margin-top: 0">
           <li>
             <span
-              >Hold <kbd id="info-modifier">Alt / Option</kbd> and hover any
-              element to inspect it, release to put the page back. Pick a
-              different key under <strong>Hold key</strong> on the main
+              >Hold
+              <kbd id="info-modifier" class="kd-chip kd-font-mono"
+                >Alt / Option</kbd
+              >
+              and hover any element to inspect it, release to put the page back.
+              Pick a different key under <strong>Hold key</strong> on the main
               screen.</span
             >
           </li>
           <li>
             <span
               ><strong>Click</strong> while holding to pin the panel, then drag
-              its header to move it. Use <kbd>↑</kbd> <kbd>↓</kbd> for the
-              parent or child.</span
+              its header to move it. Use
+              <kbd class="kd-chip kd-font-mono">↑</kbd>
+              <kbd class="kd-chip kd-font-mono">↓</kbd> for the parent or
+              child.</span
             >
           </li>
           <li>
             <span
-              >Press <kbd>S</kbd> <kbd>X</kbd> <kbd>L</kbd> <kbd>H</kbd>
-              <kbd>T</kbd> to copy the selector, XPath, Playwright locator, HTML
-              or text.</span
+              >Press <kbd class="kd-chip kd-font-mono">S</kbd>
+              <kbd class="kd-chip kd-font-mono">X</kbd>
+              <kbd class="kd-chip kd-font-mono">L</kbd>
+              <kbd class="kd-chip kd-font-mono">H</kbd>
+              <kbd class="kd-chip kd-font-mono">T</kbd> to copy the selector,
+              XPath, Playwright locator, HTML or text.</span
             >
           </li>
           <li>
             <span
               >In a pinned panel, <strong>click any value</strong> to edit
-              styles, box, attributes or text. <kbd>Enter</kbd> applies,
-              <kbd>Esc</kbd> cancels and <strong>reset</strong> undoes it all.
-              Edits stay in the page until you reload.</span
+              styles, box, attributes or text.
+              <kbd class="kd-chip kd-font-mono">Enter</kbd> applies,
+              <kbd class="kd-chip kd-font-mono">Esc</kbd> cancels and
+              <strong>reset</strong> undoes it all. Edits stay in the page until
+              you reload.</span
             >
           </li>
           <li>
             <span
               >On a <strong>Vite</strong> or <strong>Next.js</strong> dev
-              server, press <kbd>O</kbd> to open the element's source in your
-              editor.</span
+              server, press <kbd class="kd-chip kd-font-mono">O</kbd> to open
+              the element's source in your editor.</span
             >
           </li>
-        </ol>
+        </ul>
 
-        <div class="info-links d-flex flex-col items-center">
-          <div class="info-link-row d-flex items-baseline">
-            <a
-              href="https://github.com/KostaD02/QuickInspect"
-              target="_blank"
-              rel="noopener"
-              class="link-underline repo-link"
-              >GitHub Repository</a
-            >
-            <a
-              href="https://github.com/KostaD02/QuickInspect/stargazers"
-              target="_blank"
-              rel="noopener"
-              class="link-underline star-link"
-              >Star on GitHub</a
-            >
-          </div>
-          <div class="info-link-row d-flex items-baseline">
-            <a
-              href="https://github.com/KostaD02/QuickInspect/issues/new"
-              target="_blank"
-              rel="noopener"
-              class="link-underline issue-link"
-              >Report Issue / Feature</a
-            >
-          </div>
+        <div class="kd-d-flex kd-justify-center kd-gap-4 kd-fs-xxs">
+          <a
+            href="https://github.com/KostaD02/QuickInspect"
+            class="info-link"
+            style="--link: #6e5494"
+            target="_blank"
+            rel="noopener"
+            >GitHub Repository</a
+          >
+          <a
+            href="https://github.com/KostaD02/QuickInspect/issues/new"
+            class="info-link"
+            style="--link: var(--kd-color-red)"
+            target="_blank"
+            rel="noopener"
+            >Report Issue / Feature</a
+          >
         </div>
 
-        <p class="info-credit">
+        <p class="kd-pt-2 kd-border-t-1 kd-fs-xxs kd-text-center">
           Created by
           <a
             href="https://konstantinedatunishvili.com/"
+            class="info-link"
             target="_blank"
             rel="noopener"
-            class="link-underline website-link"
             >Konstantine Datunishvili</a
           >
         </p>
       </div>
 
-      <footer id="app-footer" class="footer">
+      <footer id="app-footer" class="kd-mt-2 kd-fs-micro kd-text-center">
         Selectors · Box · Styles · Accessibility · Events
       </footer>
     </div>

@@ -1,0 +1,210 @@
+// Only the parts of @kostad/brand the panel uses; the --kd-* tokens are declared on :host by tokens.ts
+@use 'pkg:@kostad/brand/scss/base/reset';
+@use 'pkg:@kostad/brand/scss/components/button';
+@use 'pkg:@kostad/brand/scss/components/card';
+@use 'pkg:@kostad/brand/scss/components/chip';
+@use 'pkg:@kostad/brand/scss/components/field';
+@use 'pkg:@kostad/brand/scss/components/pill';
+@use 'pkg:@kostad/brand/scss/utilities/index';
+
+// What follows is only what the brand has no class for: placement, the row grid, syntax colours and states
+
+// ? the host element lives in the page, where a rule like `* { scrollbar-color: … }` beats a plain
+// :host reset; only an important declaration from inside the shadow tree wins
+:host {
+  all: initial !important;
+  color-scheme: dark !important;
+  // ? the panel cannot load the brand fonts, so a system face stands in for Poppins
+  --kd-font-secondary: 'Poppins', system-ui, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.overlay {
+  z-index: 2147483646;
+  transition:
+    transform 60ms linear,
+    width 60ms linear,
+    height 60ms linear;
+}
+
+.overlay-margin {
+  background: color-mix(in srgb, var(--kd-warning) 28%, transparent);
+}
+
+.overlay-padding {
+  background: color-mix(in srgb, var(--kd-accent) 22%, transparent);
+}
+
+.overlay-content {
+  background: color-mix(in srgb, var(--kd-code-storage) 28%, transparent);
+  outline: 1px solid var(--kd-accent);
+  outline-offset: -1px;
+}
+
+.overlay-label {
+  transform: translateY(calc(-100% - 4px));
+
+  &.below {
+    top: 100%;
+    transform: translateY(4px);
+  }
+}
+
+.panel {
+  --panel-max: min(85vh, 760px);
+
+  z-index: 2147483647;
+  width: min(clamp(240px, 60vw, 360px), calc(100vw - 16px));
+  // --room is set by the panel when it has to sit above or below the pointer
+  max-height: min(var(--panel-max), var(--room, 100vh));
+  container-type: inline-size;
+  -webkit-font-smoothing: antialiased;
+
+  &.pinned {
+    pointer-events: auto;
+  }
+
+  &.pinned .head {
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+  }
+
+  &.dragging .head {
+    cursor: grabbing;
+  }
+
+  &.can-edit .editable:hover {
+    background: var(--kd-bg-elevated-hover);
+    box-shadow: 0 0 0 2px var(--kd-bg-elevated-hover);
+  }
+}
+
+.body {
+  overscroll-behavior: contain;
+}
+
+.section:last-child {
+  border-bottom: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 14px;
+  padding: 4px 0;
+
+  &.wide {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+}
+
+.tag {
+  color: var(--kd-code-type);
+}
+.id {
+  color: var(--kd-code-function);
+}
+.class,
+.value {
+  color: var(--kd-code-string);
+}
+.attr {
+  color: var(--kd-code-variable);
+}
+.num {
+  color: var(--kd-code-number);
+  font-variant-numeric: tabular-nums;
+}
+.kw {
+  color: var(--kd-code-control);
+}
+
+.swatch {
+  width: 10px;
+  height: 10px;
+  vertical-align: -1px;
+}
+
+.copy.done {
+  --kd-btn-color: var(--kd-accent);
+  --kd-btn-border-color: var(--kd-accent-line);
+  --kd-btn-bg: var(--kd-accent-soft);
+}
+
+.box-model {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cell {
+  --kd-card-padding: 8px 10px;
+
+  gap: 0;
+}
+
+.toast {
+  z-index: 2147483647;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 8px);
+  opacity: 0;
+
+  &.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .code {
+    max-width: 420px;
+    vertical-align: bottom;
+  }
+}
+
+@media (max-height: 700px) {
+  .panel {
+    --panel-max: 60vh;
+  }
+}
+
+@media (max-width: 480px), (max-height: 500px) {
+  .panel {
+    --panel-max: 45vh;
+  }
+
+  .row {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .foot {
+    display: none;
+  }
+}
+
+@container (max-width: 340px) {
+  .box-model {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cell {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .cell .label {
+    margin-bottom: 0;
+  }
+
+  .cell .editable {
+    display: inline-block;
+    text-align: right;
+  }
+}

@@ -7,7 +7,7 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^(\\.{1,2}/.*)\\.js$': '$1',
-    '\\.css\\?inline$': '<rootDir>/jest.css-stub.ts',
+    '\\.s?css\\?inline$': '<rootDir>/jest.css-stub.ts',
   },
   transform: {
     '^.+\\.tsx?$': [

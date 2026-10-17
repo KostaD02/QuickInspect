@@ -6,8 +6,8 @@ import {
   STRATEGY_LABELS,
   truncate,
 } from '@/shared/util';
-import { COPY_ACTIONS, CopyAction } from './actions';
-import { EditField } from './edits';
+import { COPY_ACTIONS, CopyAction } from '../actions/actions';
+import { EditField } from '../edits/edits';
 
 export interface PanelHandlers {
   copy: (action: CopyAction) => void;
@@ -39,6 +39,62 @@ const EDGE = 8;
 function breakable(value: string): string {
   return value.replace(/([/>])/g, '$1\u200B');
 }
+
+// ? the first class of each entry is a hook for code and tests; the rest are @kostad/brand classes
+const CLS = {
+  panel:
+    'panel kd-pos-fixed kd-d-flex kd-flex-column kd-overflow-hidden kd-bg-elevated kd-text-primary kd-border-1 kd-radius-lg kd-shadow-md kd-font-secondary kd-fs-xxs kd-lh-lg kd-pointer-none',
+  head: 'head kd-d-flex kd-items-center kd-gap-2 kd-px-3 kd-py-2 kd-bg-surface kd-border-b-1',
+  summary:
+    'summary kd-grow-1 kd-min-w-0 kd-font-mono kd-fs-xs kd-fw-semibold kd-text-ellipsis',
+  dims: 'dims kd-chip kd-chip--accent kd-chip--pill kd-shrink-0 kd-font-mono kd-fs-xxxs',
+  pin: 'pin kd-shrink-0 kd-fs-micro kd-fw-semibold kd-text-uppercase kd-text-accent',
+  body: 'body kd-overflow-y-auto',
+  section: 'section kd-px-3 kd-py-2 kd-border-b-1',
+  sectionTitle:
+    'section-title kd-d-flex kd-items-center kd-justify-between kd-mb-2 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent',
+  hint: 'hint kd-fw-medium kd-text-none kd-text-muted',
+  subhead:
+    'subhead kd-mt-2 kd-mb-1 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-muted',
+  row: 'row',
+  rowWide: 'row wide',
+  key: 'key kd-fs-xxxs kd-fw-medium kd-text-muted kd-whitespace-nowrap',
+  val: 'val kd-min-w-0 kd-font-mono kd-fs-xxxs kd-text-primary kd-break-break-all',
+  valMuted:
+    'val kd-min-w-0 kd-font-mono kd-fs-xxxs kd-text-muted kd-break-break-all',
+  muted: 'muted kd-text-muted',
+  source:
+    'source kd-d-block kd-font-mono kd-fs-micro kd-text-muted kd-text-ellipsis',
+  swatch: 'swatch kd-d-inline-block kd-radius-sm kd-border-1 kd-mr-1',
+  badge: 'badge kd-chip kd-chip--pill kd-fs-micro kd-ml-1',
+  unique: 'badge kd-status-pill kd-status-pill--active kd-ml-1',
+  matches: 'badge kd-status-pill kd-status-pill--warning kd-ml-1',
+  copy: 'copy kd-btn kd-btn--ghost kd-btn--sm kd-shrink-0 kd-px-2 kd-py-1 kd-fs-micro',
+  revert:
+    'copy revert kd-btn kd-btn--outline kd-btn--sm kd-shrink-0 kd-px-2 kd-py-1 kd-fs-micro',
+  remove: 'copy remove kd-btn kd-btn--danger kd-btn--sm kd-px-2 kd-py-1',
+  add: 'editable add kd-btn kd-btn--ghost kd-btn--sm kd-border-dashed kd-px-2 kd-py-1 kd-fs-micro',
+  adderRow: 'kd-d-flex kd-py-1',
+  kbd: 'kd-d-inline-block kd-px-1 kd-mr-1 kd-radius-sm kd-bg-elevated-hover kd-font-mono kd-fs-micro kd-fw-semibold kd-text-secondary',
+  boxModel: 'box-model kd-mt-2 kd-font-mono kd-fs-xxxs kd-fw-medium',
+  cell: 'cell kd-card kd-card--surface',
+  cellLabel:
+    'label kd-d-block kd-mb-1 kd-fs-micro kd-fw-semibold kd-text-uppercase',
+  editable: 'editable kd-d-inline-block kd-max-w-100',
+  editableLive:
+    'editable kd-d-inline-block kd-max-w-100 kd-cursor-text kd-radius-sm kd-transition-fast',
+  edit: 'edit kd-field__input kd-w-100 kd-font-mono kd-fs-xxxs kd-py-1 kd-px-2',
+  crumbs: 'crumbs kd-d-flex kd-flex-wrap kd-font-mono kd-fs-xxxs',
+  sep: 'sep kd-text-muted kd-mx-1',
+  current: 'current kd-text-bright kd-fw-semibold',
+  foot: 'foot kd-d-flex kd-flex-wrap kd-gap-2 kd-px-3 kd-py-2 kd-bg-surface kd-border-t-1 kd-fs-micro kd-fw-medium kd-text-muted',
+};
+
+const CELL_TONE: Record<string, string> = {
+  m: 'kd-text-warning',
+  p: 'kd-text-accent',
+  b: 'kd-text-secondary',
+};
 
 type Child = Node | string | null | undefined | false;
 
@@ -77,11 +133,11 @@ export class Panel {
     private readonly handlers: PanelHandlers,
   ) {
     this.element = document.createElement('div');
-    this.element.className = 'panel';
+    this.element.className = CLS.panel;
     this.element.hidden = true;
-    this.head = h('div', { class: 'head' });
-    this.body = h('div', { class: 'body' });
-    this.foot = h('div', { class: 'foot' });
+    this.head = h('div', { class: CLS.head });
+    this.body = h('div', { class: CLS.body });
+    this.foot = h('div', { class: CLS.foot });
     this.element.append(this.head, this.body, this.foot);
     this.element.addEventListener('click', (event) => {
       this.onClick(event);
@@ -135,7 +191,7 @@ export class Panel {
       entry.field.kind === 'new-style' || entry.field.kind === 'new-attribute';
     const initial = fresh ? '' : this.handlers.read(entry.field);
     const input = h('input', {
-      class: 'edit',
+      class: CLS.edit,
       type: 'text',
       spellcheck: 'false',
       autocomplete: 'off',
@@ -160,7 +216,7 @@ export class Panel {
     input.addEventListener('keyup', stop);
     input.addEventListener('keypress', stop);
     input.addEventListener('input', () => {
-      input.classList.remove('invalid');
+      input.classList.remove('invalid', 'kd-invalid');
       input.removeAttribute('aria-invalid');
     });
     input.addEventListener('blur', () => {
@@ -183,7 +239,7 @@ export class Panel {
       this.close();
       return;
     }
-    editor.input.classList.add('invalid');
+    editor.input.classList.add('invalid', 'kd-invalid');
     editor.input.setAttribute('aria-invalid', 'true');
   }
 
@@ -205,20 +261,20 @@ export class Panel {
     field: EditField,
     placeholder = '',
   ): HTMLElement {
-    const node = h('span', { class: 'editable' }, display);
+    const node = h(
+      'span',
+      { class: this.canEdit ? CLS.editableLive : CLS.editable },
+      display,
+    );
     this.editables.set(node, { field, placeholder });
     return node;
   }
 
   private adder(label: string, field: EditField, placeholder: string): Child {
     if (!this.canEdit) return null;
-    const button = h(
-      'button',
-      { class: 'editable add', type: 'button' },
-      label,
-    );
+    const button = h('button', { class: CLS.add, type: 'button' }, label);
     this.editables.set(button, { field, placeholder });
-    return h('div', { class: 'row wide' }, button, h('span'));
+    return h('div', { class: CLS.adderRow }, button);
   }
 
   private remover(name: string): Child {
@@ -226,7 +282,7 @@ export class Panel {
     const button = h(
       'button',
       {
-        class: 'copy remove',
+        class: CLS.remove,
         type: 'button',
         'data-action': 'remove',
         title: `Remove ${name}`,
@@ -355,17 +411,17 @@ export class Panel {
     const head = h(
       'div',
       {},
-      h('span', { class: 'summary' }, ...this.summary(info)),
+      h('span', { class: CLS.summary }, ...this.summary(info)),
       h(
         'span',
-        { class: 'dims' },
+        { class: CLS.dims },
         `${info.box.width.toString()} × ${info.box.height.toString()}`,
       ),
       options.edited
         ? h(
             'button',
             {
-              class: 'copy revert',
+              class: CLS.revert,
               type: 'button',
               'data-action': 'revert',
               title: 'Undo every edit on this element',
@@ -373,7 +429,7 @@ export class Panel {
             'reset',
           )
         : null,
-      this.pinned ? h('span', { class: 'pin' }, 'pinned') : null,
+      this.pinned ? h('span', { class: CLS.pin }, 'pinned') : null,
     );
     this.head.replaceChildren(...Array.from(head.childNodes));
 
@@ -408,7 +464,7 @@ export class Panel {
       parts.push(
         h(
           'span',
-          { class: 'muted' },
+          { class: CLS.muted },
           ` +${(info.classes.length - 3).toString()}`,
         ),
       );
@@ -419,12 +475,12 @@ export class Panel {
   private section(title: string, hint: string, ...rows: Child[]): HTMLElement {
     return h(
       'div',
-      { class: 'section' },
+      { class: CLS.section },
       h(
         'div',
-        { class: 'section-title' },
+        { class: CLS.sectionTitle },
         h('span', {}, title),
-        hint ? h('span', { class: 'hint' }, hint) : null,
+        hint ? h('span', { class: CLS.hint }, hint) : null,
       ),
       ...rows,
     );
@@ -433,8 +489,8 @@ export class Panel {
   private copyButton(action: CopyAction): HTMLElement {
     return h(
       'button',
-      { class: 'copy', type: 'button', 'data-action': action.id },
-      h('kbd', {}, action.key),
+      { class: CLS.copy, type: 'button', 'data-action': action.id },
+      h('kbd', { class: CLS.kbd }, action.key),
       'copy',
     );
   }
@@ -442,9 +498,9 @@ export class Panel {
   private row(key: string, value: Child, extra?: Child): HTMLElement {
     return h(
       'div',
-      { class: 'row' },
-      h('span', { class: 'key' }, key),
-      h('span', { class: 'val' }, value),
+      { class: CLS.row },
+      h('span', { class: CLS.key }, key),
+      h('span', { class: CLS.val }, value),
       extra ?? h('span'),
     );
   }
@@ -466,7 +522,7 @@ export class Panel {
         breakable(info.xpath),
         this.copyButton(this.action('xpath')),
       ),
-      h('div', { class: 'subhead' }, 'Playwright'),
+      h('div', { class: CLS.subhead }, 'Playwright'),
     ];
 
     for (const locator of info.locators) {
@@ -484,25 +540,24 @@ export class Panel {
     const unique = locator.matches === 1;
     const badge = h(
       'span',
-      { class: `badge ${unique ? 'ok' : 'warn'}` },
+      { class: unique ? CLS.unique : CLS.matches },
       unique ? 'unique' : `${locator.matches.toString()} matches`,
     );
     return h(
       'div',
-      { class: 'row' },
-      h('span', { class: 'key' }, STRATEGY_LABELS[locator.strategy]),
-      h('span', { class: 'val' }, breakable(locator.code), badge),
+      { class: CLS.row },
+      h('span', { class: CLS.key }, STRATEGY_LABELS[locator.strategy]),
+      h('span', { class: CLS.val }, breakable(locator.code), badge),
       isBest ? this.copyButton(this.action('locator')) : h('span'),
     );
   }
 
   private events(info: ElementInfo): HTMLElement {
-    const { listeners, framework } = info.events;
-    const hint = framework
-      ? `${framework.name}${framework.component ? ` · ${framework.component}` : ''}`
-      : listeners.length
-        ? `${listeners.length.toString()} ${listeners.length === 1 ? 'listener' : 'listeners'}`
-        : '';
+    const { listeners } = info.events;
+    const count = listeners.length;
+    const hint = count
+      ? `${count.toString()} ${count === 1 ? 'listener' : 'listeners'}`
+      : '';
 
     if (!listeners.length) {
       return this.section(
@@ -510,8 +565,8 @@ export class Panel {
         hint,
         h(
           'div',
-          { class: 'row wide' },
-          h('span', { class: 'val muted' }, 'no listeners on this element'),
+          { class: CLS.rowWide },
+          h('span', { class: CLS.valMuted }, 'no listeners on this element'),
           h('span'),
         ),
       );
@@ -520,22 +575,20 @@ export class Panel {
     const rows = listeners.map((listener) =>
       h(
         'div',
-        { class: 'row' },
-        h('span', { class: 'key' }, listener.type),
+        { class: CLS.row },
+        h('span', { class: CLS.key }, listener.type),
         h(
           'span',
-          { class: 'val' },
+          { class: CLS.val },
           h('span', { class: 'kw' }, listener.name),
           listener.origin !== 'listener'
-            ? h('span', { class: 'badge' }, listener.origin)
+            ? h('span', { class: CLS.badge }, listener.origin)
             : null,
-          ...listener.flags.map((flag) => h('span', { class: 'badge' }, flag)),
+          ...listener.flags.map((flag) =>
+            h('span', { class: CLS.badge }, flag),
+          ),
           listener.source
-            ? h(
-                'span',
-                { class: 'source muted' },
-                truncate(listener.source, 110),
-              )
+            ? h('span', { class: CLS.source }, truncate(listener.source, 110))
             : null,
         ),
         h('span'),
@@ -555,8 +608,8 @@ export class Panel {
     ) =>
       h(
         'div',
-        { class: `cell ${cls}` },
-        h('span', { class: 'label' }, name),
+        { class: `${CLS.cell} ${cls}` },
+        h('span', { class: `${CLS.cellLabel} ${CELL_TONE[cls] ?? ''}` }, name),
         this.editable(
           `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
           { kind: 'style', property, lengths: true },
@@ -595,7 +648,7 @@ export class Panel {
       ),
       h(
         'div',
-        { class: 'box-model' },
+        { class: CLS.boxModel },
         edges('margin', 'm', 'margin', box.margin),
         edges('padding', 'p', 'padding', box.padding),
         edges('border', 'b', 'border-width', box.border),
@@ -616,7 +669,7 @@ export class Panel {
               {},
               style.color
                 ? h('span', {
-                    class: 'swatch',
+                    class: CLS.swatch,
                     style: `background:${style.color}`,
                   })
                 : null,
@@ -639,7 +692,7 @@ export class Panel {
         this.editable(
           accessibility.role
             ? h('span', { class: 'kw' }, accessibility.role)
-            : h('span', { class: 'muted' }, 'generic'),
+            : h('span', { class: CLS.muted }, 'generic'),
           { kind: 'attribute', name: 'role' },
           accessibility.role || 'role',
         ),
@@ -649,7 +702,7 @@ export class Panel {
         this.editable(
           accessibility.name
             ? truncate(accessibility.name, 90)
-            : h('span', { class: 'muted' }, 'none'),
+            : h('span', { class: CLS.muted }, 'none'),
           { kind: 'attribute', name: 'aria-label' },
           accessibility.name || 'aria-label',
         ),
@@ -663,7 +716,7 @@ export class Panel {
           accessibility.tabIndex !== null
             ? h(
                 'span',
-                { class: 'muted' },
+                { class: CLS.muted },
                 ` · tabindex ${accessibility.tabIndex.toString()}`,
               )
             : null,
@@ -674,10 +727,10 @@ export class Panel {
       rows.push(
         h(
           'div',
-          { class: 'row wide' },
+          { class: CLS.rowWide },
           h(
             'span',
-            { class: 'val' },
+            { class: CLS.val },
             h('span', { class: 'attr' }, attr.name),
             '=',
             this.editable(
@@ -698,16 +751,16 @@ export class Panel {
     const rows: Child[] = shown.map((attr) =>
       h(
         'div',
-        { class: 'row wide' },
+        { class: CLS.rowWide },
         h(
           'span',
-          { class: 'val' },
+          { class: CLS.val },
           h('span', { class: 'attr' }, attr.name),
           '=',
           this.editable(
             attr.value
               ? h('span', { class: 'value' }, `"${attr.value}"`)
-              : h('span', { class: 'muted' }, '""'),
+              : h('span', { class: CLS.muted }, '""'),
             { kind: 'attribute', name: attr.name },
             attr.name,
           ),
@@ -727,14 +780,15 @@ export class Panel {
   }
 
   private context(info: ElementInfo): HTMLElement {
-    const crumbs = h('div', { class: 'crumbs' });
+    const crumbs = h('div', { class: CLS.crumbs });
     for (const ancestor of [...info.ancestors].reverse()) {
       crumbs.append(
-        h('span', { class: 'muted' }, ancestor.summary),
-        h('span', { class: 'sep' }, '›'),
+        h('span', { class: CLS.muted }, ancestor.summary),
+        h('span', { class: CLS.sep }, '›'),
       );
     }
-    crumbs.append(h('span', { class: 'current' }, info.summary));
+    crumbs.append(h('span', { class: CLS.current }, info.summary));
+    const { framework } = info.events;
 
     return this.section(
       'Context',
@@ -746,18 +800,22 @@ export class Panel {
               'span',
               {},
               breakable(formatSource(info.source)),
-              h('span', { class: 'badge' }, info.source.origin),
+              h('span', { class: CLS.badge }, info.source.origin),
             ),
             info.devServer
               ? h(
                   'button',
-                  { class: 'copy', type: 'button', 'data-action': 'open' },
-                  h('kbd', {}, 'O'),
+                  { class: CLS.copy, type: 'button', 'data-action': 'open' },
+                  h('kbd', { class: CLS.kbd }, 'O'),
                   'open',
                 )
               : undefined,
           )
         : null,
+      framework
+        ? this.row('Framework', h('span', { class: 'kw' }, framework.name))
+        : null,
+      framework?.component ? this.row('Component', framework.component) : null,
       crumbs,
       this.textRow(info),
     );
@@ -768,7 +826,7 @@ export class Panel {
     if (!info.text && !(leaf && this.canEdit)) return null;
     const display = h(
       'span',
-      { class: 'muted' },
+      { class: CLS.muted },
       info.text ? truncate(info.text, 120) : 'empty',
     );
     return this.row(
@@ -786,7 +844,7 @@ export class Panel {
     if (media.source || (sourceAttribute && this.canEdit)) {
       const display = media.source
         ? truncate(media.source, 160)
-        : h('span', { class: 'muted' }, 'none');
+        : h('span', { class: CLS.muted }, 'none');
       rows.push(
         this.row(
           'Source',
@@ -815,7 +873,7 @@ export class Panel {
         this.row(
           'Alt',
           this.editable(
-            media.alt || h('span', { class: 'muted' }, 'empty'),
+            media.alt || h('span', { class: CLS.muted }, 'empty'),
             { kind: 'attribute', name: 'alt' },
             'alt',
           ),
@@ -826,14 +884,31 @@ export class Panel {
 
   private renderFoot(): void {
     const hints: Child[] = [
-      h('span', {}, h('kbd', {}, 'click'), this.pinned ? 'unpin' : 'pin'),
-      this.pinned ? h('span', {}, h('kbd', {}, 'drag'), 'move') : null,
-      this.canEdit ? h('span', {}, h('kbd', {}, 'click value'), 'edit') : null,
-      h('span', {}, h('kbd', {}, 'esc'), 'close'),
-      h('span', {}, h('kbd', {}, '↑'), h('kbd', {}, '↓'), 'parent / child'),
-      this.hasSource ? h('span', {}, h('kbd', {}, 'O'), 'open source') : null,
+      h(
+        'span',
+        {},
+        h('kbd', { class: CLS.kbd }, 'click'),
+        this.pinned ? 'unpin' : 'pin',
+      ),
+      this.pinned
+        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'drag'), 'move')
+        : null,
+      this.canEdit
+        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'click value'), 'edit')
+        : null,
+      h('span', {}, h('kbd', { class: CLS.kbd }, 'esc'), 'close'),
+      h(
+        'span',
+        {},
+        h('kbd', { class: CLS.kbd }, '↑'),
+        h('kbd', { class: CLS.kbd }, '↓'),
+        'parent / child',
+      ),
+      this.hasSource
+        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'O'), 'open source')
+        : null,
       ...COPY_ACTIONS.map((action) =>
-        h('span', {}, h('kbd', {}, action.key), action.label),
+        h('span', {}, h('kbd', { class: CLS.kbd }, action.key), action.label),
       ),
     ];
     this.foot.replaceChildren(...hints.filter((x): x is Node => !!x));

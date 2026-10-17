@@ -6,4 +6,5 @@ dist
 release
 coverage
 # Generated main-world bridge
-bridge
+/bridge/
+

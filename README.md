@@ -23,9 +23,9 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Box model** - position, size, margin, padding and border, with DevTools-style margin and padding bands drawn on the page
 - **Styles** - the computed values that matter: display, position, typography, colors with swatches, and anything that deviates from the default such as `z-index`, `opacity`, `border-radius`, `box-shadow`, flex and grid properties
 - **Accessibility** - computed role, accessible name, focusability, `tabindex` and every `aria-*` attribute
-- **Context** - ancestor chain, child count, text content, and the shadow host when the element lives inside an open shadow root
+- **Context** - ancestor chain, child count, text content, the shadow host when the element lives inside an open shadow root, and the owning React, Vue, Angular or Svelte component when one can be found (minified production names are left out)
 - **Media** - natural size, source, alt text and duration for images, video, audio, canvas and SVG
-- **Events** - listeners registered with `addEventListener` (with capture, once and passive flags), inline `on*` handlers, React props, Vue invokers and jQuery handlers, plus the owning React, Vue, Angular or Svelte component when one can be found
+- **Events** - listeners registered with `addEventListener` (with capture, once and passive flags), inline `on*` handlers, React props, Vue invokers and jQuery handlers
 - **Source** - on a dev server the Context section shows where the element was written and `O` opens that line in your editor. Reads the markers Qwik, Astro, Nuxt and code-inspector-plugin stamp on elements, Svelte's dev metadata, React's debug source or owner stack, then calls the Vite or Next.js open-in-editor endpoint. Production builds carry none of this, so the row only appears in development
 - **Copy anything** - one key per payload while hovering: `S` selector, `X` XPath, `L` best Playwright locator, `H` outer HTML, `T` text
 - **Pin and navigate** - click to pin the panel so it becomes scrollable, clickable and draggable by its head, `↑` / `↓` to walk to the parent or first child, `Esc` to close
