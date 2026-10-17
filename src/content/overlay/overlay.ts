@@ -13,7 +13,9 @@ export class Overlay {
 
   constructor(root: ParentNode) {
     this.element = document.createElement('div');
-    this.element.className = 'overlay';
+    // ? the first class is a hook; the rest are @kostad/brand classes
+    this.element.className =
+      'overlay kd-pos-fixed kd-top-0 kd-left-0 kd-pointer-none';
     this.element.hidden = true;
 
     this.margin = this.box('overlay-margin');
@@ -21,10 +23,11 @@ export class Overlay {
     this.content = this.box('overlay-content');
 
     this.label = document.createElement('div');
-    this.label.className = 'overlay-label';
+    this.label.className =
+      'overlay-label kd-pos-absolute kd-top-0 kd-left-0 kd-px-2 kd-py-1 kd-radius-sm kd-bg-base kd-border-1 kd-shadow-md kd-text-primary kd-font-mono kd-fs-xxxs kd-fw-medium kd-whitespace-nowrap';
     this.labelText = document.createElement('span');
     this.labelDims = document.createElement('span');
-    this.labelDims.className = 'dims';
+    this.labelDims.className = 'dims kd-ml-2 kd-text-muted';
     this.label.append(this.labelText, this.labelDims);
 
     this.element.append(this.margin, this.padding, this.content, this.label);
@@ -82,7 +85,7 @@ export class Overlay {
 
   private box(className: string): HTMLDivElement {
     const div = document.createElement('div');
-    div.className = `overlay-box ${className}`;
+    div.className = `overlay-box ${className} kd-pos-absolute kd-pointer-none`;
     return div;
   }
 

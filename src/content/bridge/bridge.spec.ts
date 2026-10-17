@@ -77,6 +77,28 @@ describe('bridge', () => {
     ]);
   });
 
+  it('drops minified React component names and prefers displayName', () => {
+    const el = button() as unknown as Bag;
+    el.__reactFiber$x = {
+      type: 'button',
+      return: { type: function li() {}, return: { type: 'nav', return: null } },
+    };
+    expect(collectEvents(el as unknown as Element).framework).toEqual({
+      name: 'React',
+      component: '',
+    });
+
+    const named = function t() {};
+    (named as unknown as Bag).displayName = 'NavItem';
+    el.__reactFiber$x = {
+      type: 'button',
+      return: { type: { render: named }, return: null },
+    };
+    expect(collectEvents(el as unknown as Element).framework?.component).toBe(
+      'NavItem',
+    );
+  });
+
   it('reads Vue invokers and component names', () => {
     const el = button() as unknown as Bag;
     el._vei = {
@@ -93,6 +115,29 @@ describe('bridge', () => {
     expect(
       collectEvents(legacy as unknown as Element).framework?.component,
     ).toBe('Legacy');
+  });
+
+  it('detects Angular anywhere under its root and names the owning component', () => {
+    document.body.innerHTML =
+      '<app-root ng-version="18.0.0"><main><p id="deep">x</p></main></app-root>';
+    const deep = document.getElementById('deep')!;
+    (window as unknown as Bag).ng = {
+      getComponent: () => null,
+      getOwningComponent: () =>
+        new (class HomeComponent {
+          id = 1;
+        })(),
+    };
+    expect(collectEvents(deep).framework).toEqual({
+      name: 'Angular',
+      component: 'HomeComponent',
+    });
+    delete (window as unknown as Bag).ng;
+    expect(collectEvents(deep).framework).toEqual({
+      name: 'Angular',
+      component: '',
+    });
+    document.body.innerHTML = '';
   });
 
   it('detects Angular, Svelte and jQuery', () => {

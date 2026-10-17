@@ -13,18 +13,18 @@ import {
   truncate,
   viteBase,
 } from '@/shared/util';
-import { actionByCode, CopyAction } from './actions';
+import { actionByCode, CopyAction } from '../actions/actions';
 import {
   EditField,
   hasEdits,
   readField,
   revertEdits,
   writeField,
-} from './edits';
-import { LensHost } from './host';
-import { Overlay } from './overlay';
-import { Panel } from './panel';
-import { Toast } from './toast';
+} from '../edits/edits';
+import { LensHost } from '../host/host';
+import { Overlay } from '../overlay/overlay';
+import { Panel } from '../panel/panel';
+import { Toast } from '../toast/toast';
 
 type FrameWork = 'retarget' | 'refresh' | 'move';
 

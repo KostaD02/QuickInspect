@@ -1,6 +1,6 @@
 import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo } from '@/shared/types';
-import { CopyAction } from './actions';
+import { CopyAction } from '../actions/actions';
 import { Panel } from './panel';
 
 const info: ElementInfo = {
@@ -316,7 +316,9 @@ describe('panel', () => {
     expect(text).toContain('Playwright');
     expect(text).toContain('clickhandleSaveoncefunction handleSave() {}');
     expect(text).toContain('mouseenteranonymousReact');
-    expect(text).toContain('React · SaveButton');
+    expect(text).toContain('Events2 listeners');
+    expect(text).toContain('FrameworkReact');
+    expect(text).toContain('ComponentSaveButton');
     expect(text).toContain('Sourcesrc/\u200BSave.tsx:12:3react');
     expect(root.querySelector('[data-action="open"]')).not.toBeNull();
     expect(root.querySelector('.foot')?.textContent).toContain('Oopen source');

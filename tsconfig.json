@@ -10,6 +10,7 @@
       "@/*": ["./src/*"]
     },
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,

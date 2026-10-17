@@ -6,7 +6,7 @@ import {
   ModifierKey,
 } from '@/shared/types';
 import { loadSettings, saveSettings } from '@/shared/util';
-import { connectTab } from './page';
+import { connectTab } from '../page/page';
 
 const MODIFIER_LABELS: Record<ModifierKey, string> = {
   Alt: 'Alt / Option',
@@ -16,6 +16,14 @@ const MODIFIER_LABELS: Record<ModifierKey, string> = {
 };
 
 type PopupPanel = 'settings' | 'info';
+
+// ? the editor box lights up in accent when sources can be opened
+const STATUS_BOX = [
+  'kd-border-accent-line',
+  'kd-bg-accent-soft',
+  'kd-text-accent',
+];
+const DOT_TONES = ['kd-text-accent', 'kd-text-warning', 'kd-text-muted'];
 
 export class PopupController {
   private readonly toggles: Record<LensSettingBooleanKey, HTMLInputElement> = {
@@ -53,6 +61,7 @@ export class PopupController {
     versionLabel: document.getElementById('version') as HTMLSpanElement,
     editorGroup: document.getElementById('editor-group') as HTMLDivElement,
     editorStatus: document.getElementById('editor-status') as HTMLDivElement,
+    editorDot: document.getElementById('editor-dot') as HTMLSpanElement,
     editorLabel: document.getElementById('editor-label') as HTMLSpanElement,
   };
 
@@ -79,15 +88,22 @@ export class PopupController {
   }
 
   private showEditor({ server, sources }: EditorAvailability): void {
-    const { editorStatus, editorLabel } = this.domRefs;
+    const { editorStatus, editorDot, editorLabel } = this.domRefs;
     const name = server === 'vite' ? 'Vite' : 'Next.js';
-    editorStatus.classList.toggle('available', sources);
-    editorStatus.classList.toggle('partial', server !== null && !sources);
+    const dot = sources
+      ? 'kd-text-accent'
+      : server
+        ? 'kd-text-warning'
+        : 'kd-text-muted';
+    for (const cls of STATUS_BOX) editorStatus.classList.toggle(cls, sources);
+    for (const cls of DOT_TONES) editorDot.classList.toggle(cls, cls === dot);
+    // ? without a dev server there is no state to signal, so no dot
+    editorDot.hidden = !server;
     editorLabel.textContent = !server
       ? 'Not available on this page'
       : sources
         ? `${name} dev server, element sources available`
-        : `${name} dev server, but this page exposes no element sources`;
+        : `${name} dev server, no element sources here`;
   }
 
   private input(id: string): HTMLInputElement {

@@ -5,8 +5,8 @@ import {
   logger,
   watchSettings,
 } from '@/shared/util';
-import { claimPage } from './handover';
-import { Inspector } from './inspector';
+import { claimPage } from './handover/handover';
+import { Inspector } from './inspector/inspector';
 
 const inspector = new Inspector();
 

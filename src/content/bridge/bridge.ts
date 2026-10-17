@@ -165,6 +165,28 @@ function reactEventName(prop: string): { type: string; capture: boolean } {
   return { type: special[base] ?? base.toLowerCase(), capture };
 }
 
+// ? production builds minify component functions to names like "li"; only PascalCase names of 3+ characters are shown
+const READABLE_NAME = /^[A-Z][A-Za-z0-9_$]{2,}$/;
+
+function readable(name: unknown): string {
+  return typeof name === 'string' && READABLE_NAME.test(name) ? name : '';
+}
+
+function reactName(type: unknown): string {
+  if (typeof type === 'function') {
+    return (
+      readable((type as unknown as Bag).displayName) || readable(type.name)
+    );
+  }
+  if (type && typeof type === 'object') {
+    const wrapper = type as Bag;
+    return (
+      readable(wrapper.displayName) || reactName(wrapper.render ?? wrapper.type)
+    );
+  }
+  return '';
+}
+
 function reactInfo(el: Element): {
   listeners: EventListenerInfo[];
   framework: FrameworkInfo | null;
@@ -189,12 +211,7 @@ function reactInfo(el: Element): {
   let fiber = (fiberKey ? bag[fiberKey] : null) as Bag | null;
   let hops = 0;
   while (fiber && hops < 30 && !component) {
-    const type = fiber.type as Handler | Bag | string | null | undefined;
-    if (typeof type === 'function' && type.name) component = type.name;
-    else if (type && typeof type === 'object') {
-      const inner = type.render ?? type.type;
-      if (typeof inner === 'function' && inner.name) component = inner.name;
-    }
+    component = reactName(fiber.type);
     fiber = fiber.return as Bag | null;
     hops += 1;
   }
@@ -251,13 +268,19 @@ function vueInfo(el: Element): {
 
 function otherFramework(el: Element): FrameworkInfo | null {
   const bag = el as unknown as Bag;
-  if ('__ngContext__' in bag) {
+  // ? Angular stamps ng-version on its root host; __ngContext__ only reaches a component's direct children
+  if ('__ngContext__' in bag || el.closest('[ng-version]')) {
     const ng = (window as unknown as Bag).ng as Bag | undefined;
     const getComponent = ng?.getComponent as Handler | undefined;
+    const getOwner = ng?.getOwningComponent as Handler | undefined;
     let component = '';
     try {
-      const instance = getComponent ? (getComponent(el) as Bag | null) : null;
-      component = instance ? (instance.constructor as Handler).name : '';
+      // ? a component host names its own component; anything else names the component whose template holds it
+      const instance = ((getComponent ? getComponent(el) : null) ??
+        (getOwner ? getOwner(el) : null)) as Bag | null;
+      component = instance
+        ? readable((instance.constructor as Handler).name)
+        : '';
     } catch {
       component = '';
     }

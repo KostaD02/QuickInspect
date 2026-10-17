@@ -33,7 +33,7 @@ describe('popup controller', () => {
       <footer id="app-footer"></footer>
       <button id="reset-btn"></button>
       <span id="version"></span>
-      <div id="editor-group"><div id="editor-status"><span id="editor-label"></span></div></div>`;
+      <div id="editor-group"><div id="editor-status"><span id="editor-dot"></span><span id="editor-label"></span></div></div>`;
     chrome.runtime.getManifest.mockReturnValue({
       version: '9.9.9',
       content_scripts: [{ js: ['main.js'], matches: ['<all_urls>'] }],
@@ -58,7 +58,18 @@ describe('popup controller', () => {
   it('shows whether the active tab can open files in the editor', async () => {
     await new PopupController().init();
     const status = document.getElementById('editor-status') as HTMLElement;
-    expect(status.classList.contains('available')).toBe(true);
+    const dot = document.getElementById('editor-dot') as HTMLElement;
+    const tone = () =>
+      [
+        status.classList.contains('kd-bg-accent-soft') ? 'box' : '',
+        ...Array.from(dot.classList).filter((name) =>
+          name.startsWith('kd-text-'),
+        ),
+      ]
+        .filter(Boolean)
+        .join(' ');
+    expect(tone()).toBe('box kd-text-accent');
+    expect(dot.hidden).toBe(false);
     expect(status.textContent).toContain('Vite dev server, element sources');
     const group = document.getElementById('editor-group') as HTMLElement;
     expect(group.hidden).toBe(false);
@@ -82,15 +93,15 @@ describe('popup controller', () => {
       sources: false,
     });
     await new PopupController().init();
-    expect(status.classList.contains('available')).toBe(false);
-    expect(status.classList.contains('partial')).toBe(true);
-    expect(status.textContent).toContain('exposes no element sources');
+    expect(tone()).toBe('kd-text-warning');
+    expect(status.textContent).toContain('no element sources');
 
     (chrome.tabs.sendMessage as jest.Mock).mockRejectedValue(
       new Error('no receiver'),
     );
     await new PopupController().init();
-    expect(status.classList.contains('available')).toBe(false);
+    expect(tone()).toBe('kd-text-muted');
+    expect(dot.hidden).toBe(true);
     expect(status.textContent).toContain('Not available on this page');
 
     (chrome.tabs.query as jest.Mock).mockResolvedValue([]);
