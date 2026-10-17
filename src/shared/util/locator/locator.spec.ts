@@ -69,6 +69,74 @@ describe('locator', () => {
     expect(codes).toContain(`page.getByText('It\\'s "ok"', { exact: true })`);
   });
 
+  it('adds exact only when it narrows a case-insensitive substring match', () => {
+    document.body.innerHTML = `
+      <button>Save</button><button>Save draft</button>
+      <input placeholder="Search"><input placeholder="search docs">`;
+    const [save, draft] = Array.from(document.querySelectorAll('button'));
+    const role = (el: Element) =>
+      getLocators(el).find((l) => l.strategy === 'role');
+
+    expect(role(save)).toEqual({
+      strategy: 'role',
+      code: "page.getByRole('button', { name: 'Save', exact: true })",
+      matches: 1,
+    });
+    expect(role(draft)).toEqual({
+      strategy: 'role',
+      code: "page.getByRole('button', { name: 'Save draft' })",
+      matches: 1,
+    });
+    expect(
+      getLocators(pick('input')).find((l) => l.strategy === 'placeholder'),
+    ).toEqual({
+      strategy: 'placeholder',
+      code: "page.getByPlaceholder('Search', { exact: true })",
+      matches: 1,
+    });
+  });
+
+  it('shortens long names at a word boundary instead of adding an ellipsis', () => {
+    const words = Array.from({ length: 20 }, (_, i) => `word${i.toString()}`);
+    document.body.innerHTML = `<a href="/guide">a ${words.join(' ')}</a>`;
+    const role = getLocators(pick('a')).find((l) => l.strategy === 'role');
+    expect(role).toEqual({
+      strategy: 'role',
+      code: `page.getByRole('link', { name: 'a ${words.slice(0, 12).join(' ')}' })`,
+      matches: 1,
+    });
+  });
+
+  it('leaves elements hidden from assistive tech out of role counts', () => {
+    document.body.innerHTML = `
+      <button>Menu</button>
+      <button hidden>Menu</button>
+      <div aria-hidden="true"><button>Menu</button></div>
+      <div style="visibility: hidden"><button>Menu</button></div>`;
+    const role = getLocators(pick('button')).find((l) => l.strategy === 'role');
+    expect(role?.matches).toBe(1);
+  });
+
+  it('takes labels from label elements and aria, never from placeholders', () => {
+    document.body.innerHTML =
+      '<input placeholder="Search"><input aria-label="Query">';
+    const strategies = getLocators(pick('input')).map((l) => l.strategy);
+    expect(strategies).not.toContain('label');
+    expect(getLocators(pick('[aria-label]')).map((l) => l.code)).toContain(
+      "page.getByLabel('Query')",
+    );
+  });
+
+  it('leaves the name out for roles that do not take it from content', () => {
+    document.body.innerHTML = '<nav><a href="/">Home</a></nav>';
+    const role = getLocators(pick('nav')).find((l) => l.strategy === 'role');
+    expect(role).toEqual({
+      strategy: 'role',
+      code: "page.getByRole('navigation')",
+      matches: 1,
+    });
+  });
+
   it('falls back to the first locator when none is unique', () => {
     expect(bestLocator([])).toBeUndefined();
     const two = { strategy: 'css' as const, code: 'x', matches: 2 };

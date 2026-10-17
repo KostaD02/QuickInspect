@@ -1,5 +1,39 @@
 import { AccessibilityInfo, AttributeEntry } from '../../types';
+import { parentOf, rootOf } from '../dom/dom';
 import { squash } from '../format/format';
+
+// ? roles whose accessible name may come from their content, per ARIA and Playwright
+const NAME_FROM_CONTENT = new Set([
+  'button',
+  'cell',
+  'checkbox',
+  'columnheader',
+  'gridcell',
+  'heading',
+  'link',
+  'menuitem',
+  'menuitemcheckbox',
+  'menuitemradio',
+  'option',
+  'radio',
+  'row',
+  'rowheader',
+  'switch',
+  'tab',
+  'tooltip',
+  'treeitem',
+]);
+
+const PLACEHOLDER_INPUTS = new Set([
+  'email',
+  'password',
+  'search',
+  'tel',
+  'text',
+  'url',
+]);
+
+const NEVER_RENDERED = new Set(['noscript', 'script', 'style', 'template']);
 
 const INPUT_ROLES: Record<string, string> = {
   button: 'button',
@@ -111,20 +145,80 @@ function textOf(el: Element): string {
   return squash(el.textContent);
 }
 
-function labelledBy(el: Element): string {
+function hiddenItself(el: Element, style: CSSStyleDeclaration): boolean {
+  return (
+    NEVER_RENDERED.has(el.localName) ||
+    el.getAttribute('aria-hidden') === 'true' ||
+    style.display === 'none'
+  );
+}
+
+export function isHiddenForAria(el: Element): boolean {
+  if (getComputedStyle(el).visibility !== 'visible') return true;
+  for (let node: Element | null = el; node; node = parentOf(node)) {
+    if (hiddenItself(node, getComputedStyle(node))) return true;
+  }
+  return false;
+}
+
+function renderedChildren(el: Element): Node[] {
+  if (el instanceof HTMLSlotElement) {
+    const assigned = el.assignedNodes({ flatten: true });
+    if (assigned.length) return assigned;
+  }
+  return Array.from((el.shadowRoot ?? el).childNodes);
+}
+
+function childName(el: Element): string {
+  const label = el.getAttribute('aria-label');
+  if (label?.trim()) return label;
+  if (el.localName === 'img' || el.localName === 'area') {
+    return el.getAttribute('alt') ?? '';
+  }
+  if (el.localName === 'svg') {
+    const title = el.querySelector(':scope > title');
+    return title ? title.textContent : '';
+  }
+  return contentText(el);
+}
+
+function contentText(el: Element): string {
+  let text = '';
+  for (const child of renderedChildren(el)) {
+    if (child.nodeType === Node.TEXT_NODE) {
+      text += child.nodeValue ?? '';
+      continue;
+    }
+    if (!(child instanceof Element)) continue;
+    const style = getComputedStyle(child);
+    if (hiddenItself(child, style) || style.visibility !== 'visible') continue;
+    const name = childName(child);
+    // ? block-level children read as separate words, as in Chrome and Playwright
+    const inline = (style.display || 'inline') === 'inline';
+    text += inline && child.localName !== 'br' ? name : ` ${name} `;
+  }
+  return text;
+}
+
+function idRefs(el: Element): Element[] {
   const ids = el.getAttribute('aria-labelledby');
-  if (!ids) return '';
+  if (!ids) return [];
+  const root = rootOf(el);
+  return ids
+    .split(/\s+/)
+    .map((id) => (id ? root.getElementById(id) : null))
+    .filter((node): node is HTMLElement => node !== null);
+}
+
+function labelledBy(el: Element): string {
   return squash(
-    ids
-      .split(/\s+/)
-      .map((id) => document.getElementById(id))
-      .filter((node): node is HTMLElement => node !== null)
+    idRefs(el)
       .map((node) => node.getAttribute('aria-label') ?? textOf(node))
       .join(' '),
   );
 }
 
-function fromLabels(el: Element): string {
+function labelElements(el: Element): HTMLLabelElement[] {
   if (
     el instanceof HTMLInputElement ||
     el instanceof HTMLTextAreaElement ||
@@ -134,15 +228,25 @@ function fromLabels(el: Element): string {
     el instanceof HTMLOutputElement ||
     el instanceof HTMLProgressElement
   ) {
-    const labels = el.labels;
-    if (labels && labels.length) {
-      return squash(Array.from(labels).map(textOf).join(' '));
-    }
+    return Array.from(el.labels ?? []);
   }
-  return '';
+  return [];
 }
 
-export function getAccessibleName(el: Element): string {
+function fromLabels(el: Element): string {
+  return squash(labelElements(el).map(textOf).join(' '));
+}
+
+// ? the texts Playwright's getByLabel matches: aria-labelledby, else aria-label, else <label>
+export function getLabels(el: Element): string[] {
+  const refs = idRefs(el);
+  if (refs.length) return refs.map(textOf);
+  const ariaLabel = el.getAttribute('aria-label');
+  if (ariaLabel?.trim()) return [squash(ariaLabel)];
+  return labelElements(el).map(textOf);
+}
+
+export function getAccessibleName(el: Element, role = getRole(el)): string {
   const fromIds = labelledBy(el);
   if (fromIds) return fromIds;
 
@@ -167,12 +271,14 @@ export function getAccessibleName(el: Element): string {
       );
     }
     if (type === 'image') return squash(input.alt || input.value || 'Submit');
-    return squash(input.placeholder || input.title);
+    return squash(
+      input.title || (PLACEHOLDER_INPUTS.has(type) ? input.placeholder : ''),
+    );
   }
 
   if (tag === 'textarea') {
     const area = el as HTMLTextAreaElement;
-    return squash(area.placeholder || area.title);
+    return squash(area.title || area.placeholder);
   }
 
   if (tag === 'svg') {
@@ -195,8 +301,10 @@ export function getAccessibleName(el: Element): string {
     if (caption) return textOf(caption);
   }
 
-  const content = textOf(el);
-  if (content) return content;
+  if (NAME_FROM_CONTENT.has(role)) {
+    const content = squash(contentText(el));
+    if (content) return content;
+  }
 
   return squash(el.getAttribute('title') ?? '');
 }

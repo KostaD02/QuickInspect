@@ -19,7 +19,7 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 
 - **Zero friction** - hold `Alt` (configurable) and hover; nothing is injected into the page until you do
 - **Selectors** - a short unique CSS selector and an XPath for the element
-- **Playwright locators** - every applicable strategy ranked the way Playwright codegen ranks them (`getByTestId`, `getByRole`, `getByLabel`, `getByPlaceholder`, `getByAltText`, `getByTitle`, `getByText`, CSS fallback), each with a live match count so you can see which one is unique. JS/TS syntax
+- **Playwright locators** - every applicable strategy ranked the way Playwright codegen ranks them (`getByTestId`, `getByRole`, `getByLabel`, `getByPlaceholder`, `getByAltText`, `getByTitle`, `getByText`, CSS fallback), each with a live match count so you can see which one is unique. Counts follow Playwright's own matching: case-insensitive substrings by default, `exact: true` only when it narrows the match, long names cut at a word boundary, and elements hidden from assistive tech left out of `getByRole`. JS/TS syntax
 - **Box model** - position, size, margin, padding and border, with DevTools-style margin and padding bands drawn on the page
 - **Styles** - the computed values that matter: display, position, typography, colors with swatches, and anything that deviates from the default such as `z-index`, `opacity`, `border-radius`, `box-shadow`, flex and grid properties
 - **Accessibility** - computed role, accessible name, focusability, `tabindex` and every `aria-*` attribute

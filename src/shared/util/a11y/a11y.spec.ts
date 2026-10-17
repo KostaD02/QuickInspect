@@ -2,8 +2,10 @@ import {
   getAccessibility,
   getAccessibleName,
   getAriaAttributes,
+  getLabels,
   getRole,
   isFocusable,
+  isHiddenForAria,
 } from './a11y';
 
 function make(html: string): Element {
@@ -90,6 +92,99 @@ describe('a11y names', () => {
       'Save it',
     );
     expect(getAccessibleName(make('<div title="Tip"></div>'))).toBe('Tip');
+  });
+
+  it('takes names from content only for roles that allow it', () => {
+    expect(getAccessibleName(make('<nav><a href="/">Home</a></nav>'))).toBe('');
+    expect(getAccessibleName(make('<ul><li>One</li></ul>'))).toBe('');
+    expect(getAccessibleName(make('<div>Text</div>'))).toBe('');
+    expect(getAccessibleName(make('<nav title="Main">Home</nav>'))).toBe(
+      'Main',
+    );
+    expect(getAccessibleName(make('<h2>Title</h2>'))).toBe('Title');
+    expect(getAccessibleName(make('<a href="/">Docs</a>'))).toBe('Docs');
+  });
+
+  it('reads content the way assistive tech does', () => {
+    expect(
+      getAccessibleName(
+        make('<button><span aria-hidden="true">close</span>Close</button>'),
+      ),
+    ).toBe('Close');
+    expect(
+      getAccessibleName(
+        make(
+          '<button>Save<span hidden>draft</span><script>x</script></button>',
+        ),
+      ),
+    ).toBe('Save');
+    expect(
+      getAccessibleName(make('<button><img alt="Gear"> Settings</button>')),
+    ).toBe('Gear Settings');
+    expect(
+      getAccessibleName(make('<a href="/"><div>Read</div><div>more</div></a>')),
+    ).toBe('Read more');
+    expect(
+      getAccessibleName(
+        make('<button><svg><title>Delete</title></svg></button>'),
+      ),
+    ).toBe('Delete');
+    expect(
+      getAccessibleName(make('<button><i aria-label="Search"></i></button>')),
+    ).toBe('Search');
+  });
+
+  it('reads shadow content and slotted nodes', () => {
+    const host = make('<div role="button">Light</div>');
+    host.attachShadow({ mode: 'open' }).innerHTML = '<b>Buy</b> <slot></slot>';
+    expect(getAccessibleName(host)).toBe('Buy Light');
+  });
+
+  it('prefers title over placeholder and only uses placeholders on text fields', () => {
+    expect(
+      getAccessibleName(make('<input title="Find" placeholder="Search">')),
+    ).toBe('Find');
+    expect(
+      getAccessibleName(make('<input type="number" placeholder="Qty">')),
+    ).toBe('');
+  });
+
+  it('resolves aria-labelledby inside a shadow root', () => {
+    const host = make('<div></div>');
+    const root = host.attachShadow({ mode: 'open' });
+    root.innerHTML =
+      '<span id="t">Title</span><div role="dialog" aria-labelledby="t"></div>';
+    expect(getAccessibleName(root.querySelector('[role]')!)).toBe('Title');
+  });
+});
+
+describe('a11y labels and visibility', () => {
+  it('collects the texts getByLabel matches', () => {
+    make(`
+      <label for="a">Email</label><input id="a" placeholder="x">
+      <span id="n">Name</span><input id="b" aria-labelledby="n" aria-label="x">
+      <input id="c" aria-label=" Query "><input id="d" placeholder="Search">`);
+    const labelsOf = (id: string) => getLabels(document.getElementById(id)!);
+    expect(labelsOf('a')).toEqual(['Email']);
+    expect(labelsOf('b')).toEqual(['Name']);
+    expect(labelsOf('c')).toEqual(['Query']);
+    expect(labelsOf('d')).toEqual([]);
+  });
+
+  it('detects elements hidden from assistive tech', () => {
+    make(`
+      <button id="shown">v</button>
+      <div aria-hidden="true"><b id="aria">a</b></div>
+      <div style="display: none"><b id="none">n</b></div>
+      <div style="visibility: hidden"><b id="invisible">i</b></div>
+      <template id="tpl"></template>`);
+    const hidden = (id: string) =>
+      isHiddenForAria(document.getElementById(id)!);
+    expect(hidden('shown')).toBe(false);
+    expect(hidden('aria')).toBe(true);
+    expect(hidden('none')).toBe(true);
+    expect(hidden('invisible')).toBe(true);
+    expect(hidden('tpl')).toBe(true);
   });
 });
 

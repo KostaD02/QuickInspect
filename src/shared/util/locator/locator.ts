@@ -1,7 +1,12 @@
 import { Locator, LocatorStrategy } from '../../types';
-import { getAccessibleName, getRole } from '../a11y/a11y';
+import {
+  getAccessibleName,
+  getLabels,
+  getRole,
+  isHiddenForAria,
+} from '../a11y/a11y';
 import { countDeep, cssEscape, walkDeep } from '../dom/dom';
-import { squash, truncate } from '../format/format';
+import { squash } from '../format/format';
 import { getCssSelector, TEST_ID_ATTRIBUTES } from '../selector/selector';
 
 const MAX_TEXT = 80;
@@ -27,6 +32,19 @@ export const STRATEGY_LABELS: Record<LocatorStrategy, string> = {
   text: 'Text',
   css: 'CSS',
 };
+
+interface Counts {
+  loose: number;
+  exact: number;
+}
+
+interface Choice {
+  value: string;
+  exact: boolean;
+  matches: number;
+}
+
+type Values = (node: Element) => string[];
 
 function quote(value: string): string {
   const json = JSON.stringify(value);
@@ -71,12 +89,66 @@ function countByText(text: string): number {
   return count;
 }
 
-function countByRole(role: string, name: string): number {
+// ? Playwright matches a case-insensitive substring unless exact: true asks for the whole value
+function tally(
+  wanted: string,
+  values: Values,
+  options: { normalise: boolean; visibleOnly?: boolean },
+): Counts {
+  const clean = (value: string) => (options.normalise ? squash(value) : value);
+  const target = clean(wanted);
+  const lower = target.toLowerCase();
+  const counts = { loose: 0, exact: 0 };
+  for (const node of walkDeep(document.body)) {
+    const found = values(node).map(clean);
+    if (!found.some((value) => value.toLowerCase().includes(lower))) continue;
+    if (options.visibleOnly && isHiddenForAria(node)) continue;
+    counts.loose += 1;
+    if (found.includes(target)) counts.exact += 1;
+  }
+  return counts;
+}
+
+function trimToWord(value: string, max: number): string {
+  if (value.length <= max) return value;
+  const cut = value.slice(0, max);
+  const space = cut.lastIndexOf(' ');
+  const boundary = /\s/.test(value.charAt(max)) || space < 1;
+  return (boundary ? cut : cut.slice(0, space)).trimEnd();
+}
+
+// ? like codegen: the plain form unless exact: true narrows the match, and a word-trimmed prefix for long values
+function choose(value: string, count: (wanted: string) => Counts): Choice {
+  if (value.length > MAX_TEXT) {
+    const prefix = trimToWord(value, MAX_TEXT);
+    return { value: prefix, exact: false, matches: count(prefix).loose };
+  }
+  const { loose, exact } = count(value);
+  return exact < loose
+    ? { value, exact: true, matches: exact }
+    : { value, exact: false, matches: loose };
+}
+
+function exactly(choice: Choice): Record<string, boolean> {
+  return choice.exact ? { exact: true } : {};
+}
+
+function attributeValues(name: string): Values {
+  return (node) => {
+    const value = node.getAttribute(name);
+    return value === null ? [] : [value];
+  };
+}
+
+function roleNames(role: string): Values {
+  return (node) =>
+    getRole(node) === role ? [getAccessibleName(node, role)] : [];
+}
+
+function countByRole(role: string): number {
   let count = 0;
   for (const node of walkDeep(document.body)) {
-    if (getRole(node) !== role) continue;
-    if (name && getAccessibleName(node) !== name) continue;
-    count += 1;
+    if (getRole(node) === role && !isHiddenForAria(node)) count += 1;
   }
   return count;
 }
@@ -84,18 +156,26 @@ function countByRole(role: string, name: string): number {
 const LABELLED =
   'input, textarea, select, button, meter, output, progress, [aria-label], [aria-labelledby]';
 
-function countByLabel(label: string): number {
-  let count = 0;
-  for (const node of walkDeep(document.body)) {
-    if (node.matches(LABELLED) && getAccessibleName(node) === label) count += 1;
-  }
-  return count;
+function labels(node: Element): string[] {
+  return node.matches(LABELLED) ? getLabels(node) : [];
 }
 
 export function getLocators(el: Element): Locator[] {
   const found: Locator[] = [];
   const push = (strategy: LocatorStrategy, code: string, matches: number) => {
     found.push({ strategy, code, matches });
+  };
+  const byAttribute = (strategy: LocatorStrategy, name: string) => {
+    const value = el.getAttribute(name);
+    if (!value) return;
+    const choice = choose(value, (wanted) =>
+      tally(wanted, attributeValues(name), { normalise: false }),
+    );
+    push(
+      strategy,
+      call(strategy, choice.value, exactly(choice)),
+      choice.matches,
+    );
   };
 
   for (const attribute of TEST_ID_ATTRIBUTES) {
@@ -111,43 +191,36 @@ export function getLocators(el: Element): Locator[] {
   }
 
   const role = getRole(el);
-  const name = truncate(getAccessibleName(el), MAX_TEXT);
   if (role && role !== 'presentation' && role !== 'none') {
-    const options: Record<string, string> = name ? { name } : {};
-    push('role', call('role', role, options), countByRole(role, name));
+    const name = getAccessibleName(el, role);
+    if (name) {
+      const choice = choose(name, (wanted) =>
+        tally(wanted, roleNames(role), { normalise: true, visibleOnly: true }),
+      );
+      push(
+        'role',
+        call('role', role, { name: choice.value, ...exactly(choice) }),
+        choice.matches,
+      );
+    } else {
+      push('role', call('role', role), countByRole(role));
+    }
   }
 
   const isField = el.matches('input, textarea, select');
-  if (isField && name) {
-    push('label', call('label', name), countByLabel(name));
+  const label = isField ? getLabels(el).find(Boolean) : undefined;
+  if (label) {
+    const choice = choose(label, (wanted) =>
+      tally(wanted, labels, { normalise: true }),
+    );
+    push('label', call('label', choice.value, exactly(choice)), choice.matches);
   }
 
-  const placeholder = el.getAttribute('placeholder');
-  if (placeholder) {
-    push(
-      'placeholder',
-      call('placeholder', placeholder),
-      countDeep(`[placeholder="${cssEscape(placeholder)}"]`),
-    );
+  byAttribute('placeholder', 'placeholder');
+  if (el.localName === 'img' || el.localName === 'area') {
+    byAttribute('altText', 'alt');
   }
-
-  const alt = el.getAttribute('alt');
-  if (alt && (el.localName === 'img' || el.localName === 'area')) {
-    push(
-      'altText',
-      call('altText', alt),
-      countDeep(`[alt="${cssEscape(alt)}"]`),
-    );
-  }
-
-  const title = el.getAttribute('title');
-  if (title) {
-    push(
-      'title',
-      call('title', title),
-      countDeep(`[title="${cssEscape(title)}"]`),
-    );
-  }
+  byAttribute('title', 'title');
 
   const text = ownText(el);
   if (text && text.length <= MAX_TEXT && !isField && el.children.length === 0) {
