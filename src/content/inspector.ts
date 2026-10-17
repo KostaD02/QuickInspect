@@ -26,6 +26,8 @@ import { Overlay } from './overlay';
 import { Panel } from './panel';
 import { Toast } from './toast';
 
+type FrameWork = 'retarget' | 'refresh' | 'move';
+
 const MODIFIER_FLAG: Record<
   ModifierKey,
   'altKey' | 'ctrlKey' | 'shiftKey' | 'metaKey'
@@ -62,6 +64,7 @@ export class Inspector {
   private info: ElementInfo | null = null;
   private pointer = { x: -1, y: -1 };
   private frame = 0;
+  private readonly work = new Set<FrameWork>();
 
   attach(): void {
     const options = { capture: true };
@@ -75,11 +78,11 @@ export class Inspector {
     window.addEventListener('click', this.onClick, options);
     window.addEventListener('auxclick', this.onMouseDown, options);
     window.addEventListener('contextmenu', this.onMouseDown, options);
-    window.addEventListener('scroll', this.onViewportChange, {
+    window.addEventListener('scroll', this.onScroll, {
       capture: true,
       passive: true,
     });
-    window.addEventListener('resize', this.onViewportChange, { passive: true });
+    window.addEventListener('resize', this.onResize, { passive: true });
     window.addEventListener('blur', this.onBlur);
   }
 
@@ -92,8 +95,8 @@ export class Inspector {
     window.removeEventListener('click', this.onClick, options);
     window.removeEventListener('auxclick', this.onMouseDown, options);
     window.removeEventListener('contextmenu', this.onMouseDown, options);
-    window.removeEventListener('scroll', this.onViewportChange, options);
-    window.removeEventListener('resize', this.onViewportChange);
+    window.removeEventListener('scroll', this.onScroll, options);
+    window.removeEventListener('resize', this.onResize);
     window.removeEventListener('blur', this.onBlur);
     this.close();
     this.host.unmount();
@@ -120,9 +123,9 @@ export class Inspector {
 
     if (event.key === this.settings.modifier) {
       if (!this.holding) {
-        this.holding = true;
+        this.setHolding(true);
         this.host.mount();
-        this.schedule();
+        this.schedule('retarget');
       }
       return;
     }
@@ -160,21 +163,17 @@ export class Inspector {
     if (event.key !== this.settings.modifier || !this.holding) return;
     // ? a lone Alt keyup focuses the Chrome menu bar on Windows and Linux
     event.preventDefault();
-    this.holding = false;
+    this.setHolding(false);
     if (!this.pinned) this.hideAll();
   };
 
   private readonly onMouseMove = (event: MouseEvent): void => {
     this.pointer = { x: event.clientX, y: event.clientY };
-    if (this.holding && !this.pinned) this.schedule();
+    if (this.holding && !this.pinned) this.schedule('retarget');
   };
 
   private readonly onMouseDown = (event: MouseEvent): void => {
-    if (
-      this.modifierHeld(event) &&
-      this.visible &&
-      !isOwnNode(event.target as Node)
-    ) {
+    if (this.held(event) && this.visible && !isOwnNode(event.target as Node)) {
       this.swallow(event);
     }
   };
@@ -182,13 +181,15 @@ export class Inspector {
   private readonly onClick = (event: MouseEvent): void => {
     if (isOwnNode(event.target as Node)) return;
 
-    if (this.modifierHeld(event) && this.visible) {
+    if (this.held(event) && this.visible) {
       this.swallow(event);
       if (this.pinned) {
         this.unpin();
-      } else if (this.current) {
-        this.pin();
+        return;
       }
+      const moved = this.targetClick(event);
+      if (this.current) this.pin();
+      if (moved) this.panel.position(this.pointer.x, this.pointer.y);
       return;
     }
 
@@ -197,17 +198,66 @@ export class Inspector {
     }
   };
 
-  private readonly onViewportChange = (): void => {
-    if (this.visible && this.current) this.schedule(true);
+  // ? a quick tap clicks before the frame that would inspect the touched element
+  private targetClick(event: MouseEvent): boolean {
+    if (event.detail === 0) return false;
+    const target = deepElementFromPoint(event.clientX, event.clientY);
+    if (!target || isOwnNode(target) || target === this.current) return false;
+    this.pointer = { x: event.clientX, y: event.clientY };
+    this.current = target;
+    return true;
+  }
+
+  // ? scrolling moves the element but changes none of its values
+  private readonly onScroll = (): void => {
+    if (this.visible && this.current) this.schedule('move');
+  };
+
+  private readonly onResize = (): void => {
+    if (this.visible && this.current) this.schedule('refresh');
   };
 
   private readonly onBlur = (): void => {
-    this.holding = false;
+    this.setHolding(false);
     if (!this.pinned) this.hideAll();
   };
 
+  private readonly onTouch = (event: TouchEvent): void => {
+    const touch = event.touches.item(0);
+    if (!touch || isOwnNode(event.target as Node)) return;
+    this.pointer = { x: touch.clientX, y: touch.clientY };
+    if (this.pinned) return;
+    // ? keep the page still so the finger inspects instead of scrolling
+    if (event.type === 'touchmove' && event.cancelable) event.preventDefault();
+    this.schedule('retarget');
+  };
+
+  // ? touch listeners only exist while the key is held, so normal scrolling never waits on them
+  private setHolding(holding: boolean): void {
+    if (this.holding === holding) return;
+    this.holding = holding;
+    if (holding) {
+      window.addEventListener('touchstart', this.onTouch, {
+        capture: true,
+        passive: true,
+      });
+      window.addEventListener('touchmove', this.onTouch, {
+        capture: true,
+        passive: false,
+      });
+    } else {
+      window.removeEventListener('touchstart', this.onTouch, { capture: true });
+      window.removeEventListener('touchmove', this.onTouch, { capture: true });
+    }
+  }
+
   private modifierHeld(event: MouseEvent | KeyboardEvent): boolean {
     return event[MODIFIER_FLAG[this.settings.modifier]];
+  }
+
+  // ? the click after a tap may not report the key, so holding it counts too
+  private held(event: MouseEvent): boolean {
+    return this.holding || this.modifierHeld(event);
   }
 
   private typing(event: KeyboardEvent): boolean {
@@ -230,30 +280,52 @@ export class Inspector {
     event.stopImmediatePropagation();
   }
 
-  private schedule(keepTarget = false): void {
+  private schedule(work: FrameWork): void {
+    this.work.add(work);
     if (this.frame) return;
     this.frame = requestAnimationFrame(() => {
       this.frame = 0;
-      if (keepTarget || this.pinned) {
-        this.refresh();
-      } else {
-        this.inspectUnderPointer();
-      }
+      this.runFrame();
     });
   }
 
-  private inspectUnderPointer(): void {
+  private runFrame(): void {
+    const work = new Set(this.work);
+    this.work.clear();
+    if (work.has('retarget') && !this.pinned && this.inspectUnderPointer()) {
+      return;
+    }
+    if (work.has('refresh')) {
+      this.refresh();
+    } else if (work.has('move')) {
+      this.move();
+    }
+  }
+
+  // ? true when it inspected a different element
+  private inspectUnderPointer(): boolean {
     const { x, y } = this.pointer;
-    if (x < 0 || y < 0) return;
+    if (x < 0 || y < 0) return false;
     const target = deepElementFromPoint(x, y);
-    if (!target || isOwnNode(target)) return;
+    if (!target || isOwnNode(target)) return false;
     if (target === this.current && this.panel.visible) {
       this.panel.position(x, y);
-      return;
+      return false;
     }
     this.current = target;
     this.refresh();
     this.panel.position(x, y);
+    return true;
+  }
+
+  private move(): void {
+    const target = this.current;
+    if (!target || !this.info) return;
+    if (!target.isConnected) {
+      this.hideAll();
+      return;
+    }
+    this.overlay.show(target, this.info.box, this.info.summary);
   }
 
   private refresh(): void {
@@ -312,7 +384,7 @@ export class Inspector {
     this.pinned = false;
     this.panel.setPinned(false);
     if (this.holding) {
-      this.schedule();
+      this.schedule('retarget');
     } else {
       this.hideAll();
     }
@@ -320,7 +392,7 @@ export class Inspector {
 
   private close(): void {
     this.pinned = false;
-    this.holding = false;
+    this.setHolding(false);
     this.panel.setPinned(false);
     this.hideAll();
   }
@@ -329,6 +401,7 @@ export class Inspector {
     if (this.frame) {
       cancelAnimationFrame(this.frame);
       this.frame = 0;
+      this.work.clear();
     }
     this.overlay.hide();
     this.panel.hide();

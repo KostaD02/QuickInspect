@@ -106,10 +106,13 @@
 }
 
 .panel {
+  --panel-max: min(85vh, 760px);
   position: fixed;
   z-index: 2147483647;
-  width: min(360px, calc(100vw - 16px));
-  max-height: min(85vh, 760px);
+  width: min(clamp(240px, 60vw, 360px), calc(100vw - 16px));
+  /* --room is set by the panel when it has to sit above or below the pointer */
+  max-height: min(var(--panel-max), var(--room, 100vh));
+  container-type: inline-size;
   display: flex;
   flex-direction: column;
   background: var(--bg);
@@ -131,6 +134,7 @@
 .panel.pinned .head {
   cursor: grab;
   user-select: none;
+  touch-action: none;
 }
 
 .panel.dragging .head {
@@ -565,13 +569,13 @@
 
 @media (max-height: 700px) {
   .panel {
-    max-height: 60vh;
+    --panel-max: 60vh;
   }
 }
 
 @media (max-width: 480px), (max-height: 500px) {
   .panel {
-    max-height: 45vh;
+    --panel-max: 45vh;
     font-size: 11px;
   }
 
@@ -590,6 +594,29 @@
 
   .foot {
     display: none;
+  }
+}
+
+@container (max-width: 340px) {
+  .box-model {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .box-model .cell {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 6px 10px;
+  }
+
+  .box-model .cell .label {
+    margin-bottom: 0;
+  }
+
+  .box-model .cell .editable {
+    display: inline-block;
+    text-align: right;
   }
 }
 

@@ -291,15 +291,29 @@ export class Panel {
   position(x: number, y: number): void {
     const { innerWidth, innerHeight } = window;
     const width = this.element.offsetWidth || 360;
+    const right = x + OFFSET;
+    const left = x - OFFSET - width;
+    const fitsRight = right + width + EDGE <= innerWidth;
+
+    if (fitsRight || left >= EDGE) {
+      this.element.style.removeProperty('--room');
+      const height = this.element.offsetHeight || 300;
+      let top = y + OFFSET;
+      if (top + height + EDGE > innerHeight) top = y - OFFSET - height;
+      this.place(fitsRight ? right : left, top);
+      return;
+    }
+
+    // ? no room beside the pointer: sit above or below it and shrink to that space
+    const below = innerHeight - y - OFFSET - EDGE;
+    const above = y - OFFSET - EDGE;
+    const room = Math.floor(Math.max(below, above));
+    this.element.style.setProperty('--room', `${room.toString()}px`);
     const height = this.element.offsetHeight || 300;
-
-    let left = x + OFFSET;
-    let top = y + OFFSET;
-
-    if (left + width + EDGE > innerWidth) left = x - OFFSET - width;
-    if (top + height + EDGE > innerHeight) top = y - OFFSET - height;
-
-    this.place(left, top);
+    this.place(
+      x - width / 2,
+      below >= above ? y + OFFSET : y - OFFSET - height,
+    );
   }
 
   private place(left: number, top: number): void {

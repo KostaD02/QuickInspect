@@ -433,6 +433,33 @@ describe('panel', () => {
     expect(parseInt(node.style.left)).toBeGreaterThan(100);
   });
 
+  it('sits above or below the pointer when there is no room beside it', () => {
+    Object.defineProperty(window, 'innerWidth', {
+      value: 500,
+      configurable: true,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      value: 800,
+      configurable: true,
+    });
+    panel.show();
+    const node = root.querySelector<HTMLElement>('.panel')!;
+    Object.defineProperty(node, 'offsetWidth', { value: 300 });
+
+    panel.position(250, 300);
+    expect(node.style.getPropertyValue('--room')).toBe('474px');
+    expect(node.style.left).toBe('100px');
+    expect(node.style.top).toBe('318px');
+
+    panel.position(250, 700);
+    expect(node.style.getPropertyValue('--room')).toBe('674px');
+    expect(node.style.top).toBe('382px');
+
+    panel.position(100, 300);
+    expect(node.style.getPropertyValue('--room')).toBe('');
+    expect(node.style.left).toBe('118px');
+  });
+
   it('positions itself inside the viewport and tracks pinned state', () => {
     Object.defineProperty(window, 'innerWidth', {
       value: 800,
@@ -450,6 +477,8 @@ describe('panel', () => {
     panel.position(790, 590);
     expect(parseInt(node.style.left)).toBeLessThan(790);
     expect(parseInt(node.style.top)).toBeLessThan(590);
+
+    expect(node.style.getPropertyValue('--room')).toBe('');
 
     panel.setPinned(true);
     panel.render(info, DEFAULT_SETTINGS);
