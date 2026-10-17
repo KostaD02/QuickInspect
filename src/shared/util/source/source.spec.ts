@@ -327,10 +327,19 @@ describe('source markers', () => {
       line1: null,
       column1: null,
     };
-    expect(await resolveNextFrame(server)).toBeNull();
+    expect(await resolveNextFrame(server)).toMatchObject({ line: 23 });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(await resolveNextFrame({ ...server, line: 103 })).toBeNull();
     expect(await resolveNextFrame({ ...server, line: null })).toBeNull();
-    fetchMock.mockImplementation(() => Promise.reject(new Error('down')));
-    expect(await resolveNextFrame(server)).toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(3);
+
+    const later = { ...server, line: 104 };
+    fetchMock.mockImplementationOnce(() => Promise.reject(new Error('down')));
+    expect(await resolveNextFrame(later)).toBeNull();
+    expect(await resolveNextFrame(later)).toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(5);
+    expect(await resolveNextFrame(later)).toBeNull();
+    expect(fetchMock).toHaveBeenCalledTimes(5);
   });
 
   it('opens through fetch and reports the outcome', async () => {

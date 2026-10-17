@@ -164,45 +164,62 @@ interface NextFrameResult {
   };
 }
 
-export async function resolveNextFrame(
-  source: SourceInfo,
+async function requestNextFrame(
+  file: string,
+  line: number,
+  column: number,
 ): Promise<SourceInfo | null> {
-  if (source.line === null || source.column === null) return null;
-  const isClient = source.file.startsWith('_next/');
+  const isClient = file.startsWith('_next/');
   const frame = {
-    file: isClient ? `/${source.file}` : source.file,
-    line1: source.line,
-    column1: source.column,
-    lineNumber: source.line,
-    column: source.column,
+    file: isClient ? `/${file}` : file,
+    line1: line,
+    column1: column,
+    lineNumber: line,
+    column,
     methodName: '',
     arguments: [],
   };
-  try {
-    const response = await fetch('/__nextjs_original-stack-frames', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        frames: [frame],
-        isServer: !isClient,
-        isEdgeServer: false,
-        isAppDirectory: true,
-      }),
+  const response = await fetch('/__nextjs_original-stack-frames', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      frames: [frame],
+      isServer: !isClient,
+      isEdgeServer: false,
+      isAppDirectory: true,
+    }),
+  });
+  if (!response.ok) return null;
+  const results = (await response.json()) as NextFrameResult[];
+  const original = results.at(0)?.value?.originalStackFrame;
+  if (!original?.file || typeof original.line1 !== 'number') return null;
+  return {
+    file: original.file,
+    line: original.line1,
+    column: typeof original.column1 === 'number' ? original.column1 : null,
+    origin: 'react',
+    mapped: true,
+  };
+}
+
+const nextFrames = new Map<string, Promise<SourceInfo | null>>();
+
+// ? one request per stack frame; a failed request is dropped so a later refresh retries it
+export function resolveNextFrame(
+  source: SourceInfo,
+): Promise<SourceInfo | null> {
+  const { file, line, column } = source;
+  if (line === null || column === null) return Promise.resolve(null);
+  const key = `${file}:${line.toString()}:${column.toString()}`;
+  let pending = nextFrames.get(key);
+  if (!pending) {
+    pending = requestNextFrame(file, line, column).catch(() => {
+      nextFrames.delete(key);
+      return null;
     });
-    if (!response.ok) return null;
-    const results = (await response.json()) as NextFrameResult[];
-    const original = results.at(0)?.value?.originalStackFrame;
-    if (!original?.file || typeof original.line1 !== 'number') return null;
-    return {
-      file: original.file,
-      line: original.line1,
-      column: typeof original.column1 === 'number' ? original.column1 : null,
-      origin: 'react',
-      mapped: true,
-    };
-  } catch {
-    return null;
+    nextFrames.set(key, pending);
   }
+  return pending;
 }
 
 export async function openInEditor(

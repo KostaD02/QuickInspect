@@ -26,6 +26,19 @@ function typeInto(field: Element, init: KeyboardEventInit): KeyboardEvent {
   return event;
 }
 
+function touch(type: 'touchstart' | 'touchmove', x: number, y: number): Event {
+  const event = new Event(type, {
+    bubbles: true,
+    cancelable: true,
+    composed: true,
+  });
+  Object.defineProperty(event, 'touches', {
+    value: { item: () => ({ clientX: x, clientY: y }) },
+  });
+  document.body.dispatchEvent(event);
+  return event;
+}
+
 function mouse(
   type: string,
   init: MouseEventInit = {},
@@ -82,6 +95,22 @@ describe('inspector', () => {
     mouse('mousemove', { clientX: 10, clientY: 10 });
     key('keydown', { key: 'Alt' });
     flush();
+  }
+
+  // ? rebuilds the inspector with an open shadow root so tests can look inside
+  function reopen(): void {
+    inspector.detach();
+    const attach = Element.prototype.attachShadow;
+    jest.spyOn(Element.prototype, 'attachShadow').mockImplementation(function (
+      this: Element,
+      init,
+    ) {
+      return attach.call(this, { ...init, mode: 'open' });
+    });
+    inspector = new Inspector();
+    inspector.attach();
+    inspector.setSettings({ ...DEFAULT_SETTINGS });
+    jest.restoreAllMocks();
   }
 
   it('does nothing until the modifier is held', () => {
@@ -178,7 +207,30 @@ describe('inspector', () => {
     expect(writeText).toHaveBeenLastCalledWith('Go');
   });
 
-  it('re-renders on scroll, hides on blur and when disabled', () => {
+  it('only moves the highlight on scroll and re-inspects on resize', () => {
+    reopen();
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    const overlay = shadow.querySelector<HTMLElement>('.overlay')!;
+    const summary = () => shadow.querySelector('.head .summary')?.textContent;
+    expect(summary()).toBe('button#go');
+
+    button.id = 'moved';
+    button.getBoundingClientRect = () =>
+      ({ left: 0, top: 40, width: 10, height: 10 }) as DOMRect;
+    window.dispatchEvent(new Event('scroll'));
+    flush();
+    expect(overlay.style.transform).toBe('translate(0px, 40px)');
+    expect(summary()).toBe('button#go');
+
+    window.dispatchEvent(new Event('resize'));
+    flush();
+    expect(summary()).toBe('button#moved');
+  });
+
+  it('moves on scroll, hides on blur and when disabled', () => {
     hold();
     window.dispatchEvent(new Event('scroll'));
     flush();
@@ -208,19 +260,7 @@ describe('inspector', () => {
   });
 
   it('edits the pinned element, pauses shortcuts while typing and resets', () => {
-    inspector.detach();
-    const attach = Element.prototype.attachShadow;
-    jest.spyOn(Element.prototype, 'attachShadow').mockImplementation(function (
-      this: Element,
-      init,
-    ) {
-      return attach.call(this, { ...init, mode: 'open' });
-    });
-    inspector = new Inspector();
-    inspector.attach();
-    inspector.setSettings({ ...DEFAULT_SETTINGS });
-    jest.restoreAllMocks();
-
+    reopen();
     hold();
     mouse('click', { altKey: true });
     key('keyup', { key: 'Alt' });
@@ -304,6 +344,60 @@ describe('inspector', () => {
     const letter = typeInto(field, { code: 'KeyH', key: 'H', shiftKey: true });
     expect(letter.defaultPrevented).toBe(false);
     expect(writeText).not.toHaveBeenCalled();
+  });
+
+  it('follows a finger while the key is held and pins with a plain tap', () => {
+    reopen();
+    const link = document.createElement('a');
+    link.href = '#';
+    document.body.append(link);
+    (document.elementFromPoint as jest.Mock).mockImplementation((x: number) =>
+      x > 50 ? link : button,
+    );
+    expect(touch('touchmove', 10, 10).defaultPrevented).toBe(false);
+    expect(host()).toBeNull();
+
+    key('keydown', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    const summary = () => shadow.querySelector('.head .summary')?.textContent;
+    touch('touchstart', 10, 10);
+    flush();
+    expect(summary()).toBe('button#go');
+    expect(touch('touchmove', 60, 10).defaultPrevented).toBe(true);
+    flush();
+    expect(summary()).toBe('a');
+
+    const tap = mouse('click', {}, link);
+    expect(tap.defaultPrevented).toBe(true);
+    expect(shadow.querySelector('.panel')!.classList).toContain('pinned');
+    expect(touch('touchmove', 10, 10).defaultPrevented).toBe(false);
+    key('keyup', { key: 'Alt' });
+    expect(touch('touchmove', 10, 10).defaultPrevented).toBe(false);
+    expect(summary()).toBe('a');
+  });
+
+  it('pins the tapped element even before the next frame inspects it', () => {
+    reopen();
+    const link = document.createElement('a');
+    link.href = '#';
+    document.body.append(link);
+    (document.elementFromPoint as jest.Mock).mockImplementation((x: number) =>
+      x > 50 ? link : button,
+    );
+    hold();
+    const shadow = host()!.shadowRoot!;
+    const summary = () => shadow.querySelector('.head .summary')?.textContent;
+    expect(summary()).toBe('button#go');
+
+    touch('touchstart', 60, 10);
+    mouse('click', { clientX: 60, clientY: 10, detail: 1 }, link);
+    expect(shadow.querySelector('.panel')!.classList).toContain('pinned');
+    expect(summary()).toBe('a');
+
+    mouse('click', { altKey: true }, link);
+    expect(shadow.querySelector('.panel')!.classList).not.toContain('pinned');
+    mouse('click', { altKey: true, clientX: 60, clientY: 10 }, link);
+    expect(summary()).toBe('a');
   });
 
   it('lets plain keys reach a text field while the panel is pinned', () => {
