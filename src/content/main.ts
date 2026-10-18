@@ -11,11 +11,17 @@ import { Inspector } from './inspector/inspector';
 const inspector = new Inspector();
 
 const onMessage = (
-  message: { type?: unknown },
+  message: { type?: unknown; scan?: unknown },
   _sender: chrome.runtime.MessageSender,
   sendResponse: (response: unknown) => void,
 ) => {
-  if (message.type === DEV_SERVER_MESSAGE) sendResponse(editorAvailability());
+  if (message.type !== DEV_SERVER_MESSAGE) return;
+  // ? the popup skips the scan while its editor row is off and only checks that this script runs
+  sendResponse(
+    message.scan === true
+      ? editorAvailability()
+      : { server: null, sources: false },
+  );
 };
 
 claimPage(() => {

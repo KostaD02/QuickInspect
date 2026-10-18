@@ -76,9 +76,11 @@ describe('popup controller', () => {
     const toggle = document.getElementById(
       'set-show-editor-status',
     ) as HTMLInputElement;
+    const asked = (chrome.tabs.sendMessage as jest.Mock).mock.calls.length;
     toggle.checked = false;
     toggle.dispatchEvent(new Event('change'));
     expect(group.hidden).toBe(true);
+    expect(chrome.tabs.sendMessage).toHaveBeenCalledTimes(asked);
     expect(chrome.storage.local.set).toHaveBeenLastCalledWith({
       [SETTINGS_STORAGE_KEY]: expect.objectContaining({
         showEditorStatus: false,
@@ -86,6 +88,7 @@ describe('popup controller', () => {
     });
     expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(7, {
       type: 'quickinspect:dev-server',
+      scan: true,
     });
 
     (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue({
@@ -107,6 +110,34 @@ describe('popup controller', () => {
     (chrome.tabs.query as jest.Mock).mockResolvedValue([]);
     await new PopupController().init();
     expect(status.textContent).toContain('Not available on this page');
+  });
+
+  it('leaves the page unscanned while the editor row is off', async () => {
+    (chrome.storage.local.get as jest.Mock).mockResolvedValue({
+      [SETTINGS_STORAGE_KEY]: { showEditorStatus: false },
+    });
+    (chrome.tabs.sendMessage as jest.Mock).mockReset();
+    (chrome.tabs.sendMessage as jest.Mock)
+      .mockResolvedValueOnce({ server: null, sources: false })
+      .mockResolvedValue({ server: 'vite', sources: true });
+    await new PopupController().init();
+    expect(chrome.tabs.sendMessage).toHaveBeenLastCalledWith(7, {
+      type: 'quickinspect:dev-server',
+      scan: false,
+    });
+
+    const toggle = document.getElementById(
+      'set-show-editor-status',
+    ) as HTMLInputElement;
+    toggle.checked = true;
+    toggle.dispatchEvent(new Event('change'));
+    await new Promise((resolve) => setTimeout(resolve, 0));
+    expect(chrome.tabs.sendMessage).toHaveBeenLastCalledWith(7, {
+      type: 'quickinspect:dev-server',
+      scan: true,
+    });
+    const status = document.getElementById('editor-status') as HTMLElement;
+    expect(status.textContent).toContain('Vite dev server, element sources');
   });
 
   it('starts QuickInspect on a tab that does not answer yet', async () => {

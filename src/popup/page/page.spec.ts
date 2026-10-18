@@ -32,12 +32,23 @@ describe('page connection', () => {
       server: 'next',
       sources: true,
     });
-    expect(await connectTab(tab(3, 'https://a.test/'))).toEqual({
+    expect(await connectTab(tab(3, 'https://a.test/'), true)).toEqual({
       server: 'next',
       sources: true,
     });
     expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(3, {
       type: DEV_SERVER_MESSAGE,
+      scan: true,
+    });
+    expect(executeScript).not.toHaveBeenCalled();
+  });
+
+  it('tells the page not to scan when the editor row is off', async () => {
+    (chrome.tabs.sendMessage as jest.Mock).mockResolvedValue(none);
+    expect(await connectTab(tab(3, 'https://a.test/'), false)).toEqual(none);
+    expect(chrome.tabs.sendMessage).toHaveBeenCalledWith(3, {
+      type: DEV_SERVER_MESSAGE,
+      scan: false,
     });
     expect(executeScript).not.toHaveBeenCalled();
   });
@@ -48,7 +59,7 @@ describe('page connection', () => {
       .mockRejectedValueOnce(new Error('still loading'))
       .mockResolvedValue({ server: 'vite', sources: false });
     jest.useFakeTimers();
-    const pending = connectTab(tab(4, 'http://b.test/'));
+    const pending = connectTab(tab(4, 'http://b.test/'), true);
     await jest.advanceTimersByTimeAsync(300);
     expect(await pending).toEqual({ server: 'vite', sources: false });
     expect(executeScript.mock.calls).toEqual([
@@ -62,10 +73,10 @@ describe('page connection', () => {
       new Error('no receiver'),
     );
     executeScript.mockRejectedValueOnce(new Error('Cannot access the page'));
-    expect(await connectTab(tab(5))).toEqual(none);
+    expect(await connectTab(tab(5), true)).toEqual(none);
 
     jest.useFakeTimers();
-    const pending = connectTab(tab(5, 'file:///x.html'));
+    const pending = connectTab(tab(5, 'file:///x.html'), true);
     await jest.advanceTimersByTimeAsync(5000);
     expect(await pending).toEqual(none);
     expect(executeScript).toHaveBeenCalledTimes(3);
@@ -75,8 +86,10 @@ describe('page connection', () => {
     (chrome.tabs.sendMessage as jest.Mock).mockRejectedValue(
       new Error('no receiver'),
     );
-    expect(await connectTab(tab(6, 'chrome://extensions/'))).toEqual(none);
-    expect(await connectTab(undefined)).toEqual(none);
+    expect(await connectTab(tab(6, 'chrome://extensions/'), true)).toEqual(
+      none,
+    );
+    expect(await connectTab(undefined, true)).toEqual(none);
     expect(executeScript).not.toHaveBeenCalled();
   });
 });
