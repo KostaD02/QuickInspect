@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.0](https://github.com/KostaD02/QuickInspect/compare/v1.0.0...v1.1.0) (2026-10-18)
+
+### Bug Fixes
+
+* forget dropped listeners and prepare the manifest for the Chrome Web Store ([#10](https://github.com/KostaD02/QuickInspect/issues/10)) ([1ece02d](https://github.com/KostaD02/QuickInspect/commit/1ece02d7f0434c6277f0b2a349cc897304d8abd1))
+
 ## 1.0.0 (2026-10-18)
 
 ### Features
