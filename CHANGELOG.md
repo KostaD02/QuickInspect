@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.1.1](https://github.com/KostaD02/QuickInspect/compare/v1.1.0...v1.1.1) (2026-10-18)
+
+### Bug Fixes
+
+* open qwik sources relative to the project root ([6b1a80f](https://github.com/KostaD02/QuickInspect/commit/6b1a80f888e96fff2cede495c8d8e00d58711526))
+
 ## [1.1.0](https://github.com/KostaD02/QuickInspect/compare/v1.0.0...v1.1.0) (2026-10-18)
 
 ### Bug Fixes
