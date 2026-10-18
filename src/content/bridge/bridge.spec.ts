@@ -45,6 +45,55 @@ describe('bridge', () => {
     ]);
   });
 
+  it('forgets once and aborted listeners when the browser drops them', () => {
+    const el = button();
+    const names = () => collectEvents(el).listeners.map((l) => l.name);
+    const controller = new AbortController();
+    el.addEventListener('click', function fired() {}, { once: true });
+    el.addEventListener('click', function aborted() {}, {
+      signal: controller.signal,
+    });
+    el.addEventListener('click', function never() {}, {
+      signal: AbortSignal.abort(),
+    });
+    el.addEventListener('click', function stays() {});
+    expect(names()).toEqual(['fired', 'aborted', 'stays']);
+
+    el.click();
+    controller.abort();
+    expect(names()).toEqual(['stays']);
+  });
+
+  it('keeps a once listener that did not run', () => {
+    const el = button();
+    const names = () => collectEvents(el).listeners.map((l) => l.name);
+    el.addEventListener('click', function stop(event) {
+      event.stopImmediatePropagation();
+    });
+    el.addEventListener('click', function later() {}, { once: true });
+    el.click();
+    expect(names()).toEqual(['stop', 'later']);
+  });
+
+  it('stops watching a once listener the page removed itself', () => {
+    const el = button();
+    function toggle() {}
+    el.addEventListener('click', toggle, { once: true });
+    el.removeEventListener('click', toggle);
+    el.addEventListener('click', toggle);
+    el.click();
+    expect(collectEvents(el).listeners.map((l) => l.name)).toEqual(['toggle']);
+  });
+
+  it('accepts null options like the native call', () => {
+    const el = button();
+    const options = null as unknown as boolean;
+    expect(() => {
+      el.addEventListener('click', function go() {}, options);
+    }).not.toThrow();
+    expect(collectEvents(el).listeners.map((l) => l.name)).toEqual(['go']);
+  });
+
   it('reports inline handlers', () => {
     const el = button();
     el.onclick = function refresh() {};

@@ -16,6 +16,7 @@ interface Entry {
   capture: boolean;
   once: boolean;
   passive: boolean;
+  unwatch?: () => void;
 }
 
 type Handler = (...args: unknown[]) => unknown;
@@ -24,20 +25,86 @@ type Bag = Record<string, unknown>;
 const OWN = new Set<string>([PROBE_EVENT, REPLY_EVENT]);
 const registry = new WeakMap<EventTarget, Map<string, Entry[]>>();
 
+// ? null is a valid options value for the native call, so only real objects are read
 function flagsOf(options?: boolean | AddEventListenerOptions) {
-  if (typeof options === 'object') {
+  if (options && typeof options === 'object') {
     return {
       capture: Boolean(options.capture),
       once: Boolean(options.once),
       passive: Boolean(options.passive),
+      signal: options.signal,
     };
   }
-  return { capture: Boolean(options), once: false, passive: false };
+  return {
+    capture: Boolean(options),
+    once: false,
+    passive: false,
+    signal: undefined,
+  };
 }
 
 const proto = EventTarget.prototype;
 const nativeAdd = proto.addEventListener;
 const nativeRemove = proto.removeEventListener;
+
+function drop(entries: Entry[], entry: Entry): void {
+  const index = entries.indexOf(entry);
+  if (index >= 0) entries.splice(index, 1);
+  entry.unwatch?.();
+}
+
+// ? the browser removes once and aborted listeners itself, without calling removeEventListener
+function watchRemoval(
+  target: EventTarget,
+  type: string,
+  entries: Entry[],
+  entry: Entry,
+  signal: AbortSignal | undefined,
+): void {
+  if (!entry.once && !signal) return;
+  const forget = () => {
+    drop(entries, entry);
+  };
+  // ? added right before the page's listener, so it runs exactly when that one does
+  if (entry.once) {
+    nativeAdd.call(target, type, forget, {
+      capture: entry.capture,
+      once: true,
+      passive: true,
+    });
+  }
+  if (signal) nativeAdd.call(signal, 'abort', forget, { once: true });
+  entry.unwatch = () => {
+    if (entry.once) nativeRemove.call(target, type, forget, entry.capture);
+    if (signal) nativeRemove.call(signal, 'abort', forget);
+  };
+}
+
+function track(
+  target: EventTarget,
+  type: string,
+  listener: EventListenerOrEventListenerObject,
+  options?: boolean | AddEventListenerOptions,
+): void {
+  const { signal, ...flags } = flagsOf(options);
+  // ? the browser never adds a listener whose signal has already aborted
+  if (signal?.aborted) return;
+  let byType = registry.get(target);
+  if (!byType) {
+    byType = new Map();
+    registry.set(target, byType);
+  }
+  const entries = byType.get(type) ?? [];
+  byType.set(type, entries);
+  // ? nor one that is already registered for the same phase
+  const duplicate = entries.some(
+    (e) => e.listener === listener && e.capture === flags.capture,
+  );
+  if (duplicate) return;
+  const entry: Entry = { listener, ...flags };
+  entries.push(entry);
+  watchRemoval(target, type, entries, entry, signal);
+}
 
 function patchListeners(): void {
   proto.addEventListener = function patchedAdd(
@@ -47,18 +114,12 @@ function patchListeners(): void {
     options?: boolean | AddEventListenerOptions,
   ) {
     if (listener && !OWN.has(type)) {
-      const flags = flagsOf(options);
-      let byType = registry.get(this);
-      if (!byType) {
-        byType = new Map();
-        registry.set(this, byType);
+      // ? this runs inside every page, so a bookkeeping failure must never stop the page's own listener
+      try {
+        track(this, type, listener, options);
+      } catch {
+        // the listener just goes unlisted
       }
-      const entries = byType.get(type) ?? [];
-      const duplicate = entries.some(
-        (e) => e.listener === listener && e.capture === flags.capture,
-      );
-      if (!duplicate) entries.push({ listener, ...flags });
-      byType.set(type, entries);
     }
     nativeAdd.call(this, type, listener, options);
   };
@@ -72,10 +133,10 @@ function patchListeners(): void {
     const entries = registry.get(this)?.get(type);
     if (entries && listener) {
       const capture = flagsOf(options).capture;
-      const index = entries.findIndex(
+      const entry = entries.find(
         (e) => e.listener === listener && e.capture === capture,
       );
-      if (index >= 0) entries.splice(index, 1);
+      if (entry) drop(entries, entry);
     }
     nativeRemove.call(this, type, listener, options);
   };

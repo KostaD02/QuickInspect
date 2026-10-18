@@ -66,13 +66,22 @@ export class PopupController {
   };
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
+  private editorCheck = 0;
 
   async init(): Promise<void> {
     this.domRefs.versionLabel.textContent = `v${chrome.runtime.getManifest().version}`;
     this.settings = await loadSettings();
     this.apply();
     this.bind();
-    this.showEditor(await this.activeEditor());
+    await this.checkEditor();
+  }
+
+  // ? only the latest check may paint, so a slow one cannot overwrite a newer answer
+  private async checkEditor(): Promise<void> {
+    this.editorCheck += 1;
+    const check = this.editorCheck;
+    const availability = await this.activeEditor();
+    if (check === this.editorCheck) this.showEditor(availability);
   }
 
   private async activeEditor(): Promise<EditorAvailability> {
@@ -81,7 +90,7 @@ export class PopupController {
         active: true,
         currentWindow: true,
       });
-      return await connectTab(tabs.at(0));
+      return await connectTab(tabs.at(0), this.settings.showEditorStatus);
     } catch {
       return { server: null, sources: false };
     }
@@ -163,9 +172,7 @@ export class PopupController {
     });
 
     resetBtn.addEventListener('click', () => {
-      this.settings = { ...DEFAULT_SETTINGS };
-      this.apply();
-      saveSettings(this.settings);
+      this.replace({ ...DEFAULT_SETTINGS });
     });
   }
 
@@ -194,8 +201,16 @@ export class PopupController {
   }
 
   private update(patch: Partial<LensSettings>): void {
-    this.settings = { ...this.settings, ...patch };
+    this.replace({ ...this.settings, ...patch });
+  }
+
+  private replace(next: LensSettings): void {
+    const revealsEditor =
+      next.showEditorStatus && !this.settings.showEditorStatus;
+    this.settings = next;
     this.apply();
     saveSettings(this.settings);
+    // ? the page is only scanned while the editor row is on, so turning it on needs a fresh check
+    if (revealsEditor) this.checkEditor();
   }
 }
