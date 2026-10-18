@@ -133,6 +133,26 @@ describe('source markers', () => {
     });
   });
 
+  it('resolves qwik root urls against the project root', () => {
+    const source = getAttributeSource(
+      make(
+        '<div data-qwik-inspector="/src/components/starter/hero/hero.tsx:7:5"></div>',
+      ),
+    )!;
+    expect(source.file).toBe('src/components/starter/hero/hero.tsx');
+    expect(formatSource(source)).toBe(
+      'src/components/starter/hero/hero.tsx:7:5',
+    );
+    expect(editorUrl(source, 'vite')).toBe(
+      `/__open-in-editor?file=${encodeURIComponent('src/components/starter/hero/hero.tsx:7:5')}`,
+    );
+    expect(
+      getAttributeSource(
+        make('<div data-qwik-inspector="/@fs/D:/lib/hero.tsx:3:1"></div>'),
+      )?.file,
+    ).toBe('/@fs/D:/lib/hero.tsx');
+  });
+
   it('walks a few ancestors and gives up after that', () => {
     const root = make(
       '<section data-qwik-inspector="a.tsx:1:1"><div><p><b><i><u id="deep"></u></i></b></p></div></section>',

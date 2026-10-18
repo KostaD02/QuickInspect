@@ -9,6 +9,7 @@ import { probeEvents } from '../events/events';
 
 const LOCATION = /^(.*?):(\d+)(?::(\d+))?(?::[^:]*)?$/;
 const ANCESTOR_LIMIT = 4;
+const VITE_FS = /^\/?@fs\/+/;
 
 export function parseLocation(
   value: string,
@@ -31,9 +32,14 @@ export function parseLocation(
   };
 }
 
+// ? qwik stamps vite urls: /src/x.tsx sits under the project root, /@fs/... is absolute
+function rootRelative(url: string): string {
+  return VITE_FS.test(url) ? url : url.replace(/^\/(?!\/)/, '');
+}
+
 function readMarker(el: Element): SourceInfo | null {
   const qwik = el.getAttribute('data-qwik-inspector');
-  if (qwik) return parseLocation(qwik, 'qwik');
+  if (qwik) return parseLocation(rootRelative(qwik), 'qwik');
 
   const vue = el.getAttribute('data-v-inspector');
   if (vue) return parseLocation(vue, 'vue');
@@ -116,8 +122,6 @@ export function editorAvailability(): EditorAvailability {
   const server = detectDevServer();
   return { server, sources: server !== null && pageHasSources() };
 }
-
-const VITE_FS = /^\/?@fs\/+/;
 
 export function displayPath(file: string): string {
   if (!VITE_FS.test(file)) return file;
