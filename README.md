@@ -8,8 +8,6 @@
 </p>
 
 <p align="center">
-  <a href="CONTRIBUTING.md">Contributing Guidelines</a>
-  ·
   <a href="https://github.com/KostaD02/QuickInspect/issues">Submit an Issue</a>
 </p>
 
@@ -33,6 +31,13 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Shadow DOM aware** - hit testing descends into open shadow roots, selectors are scoped to the element's root, and locator counts pierce shadow roots like Playwright does
 - **Main-world bridge** - a tiny script injected at `document_start` wraps `addEventListener` so listeners can be listed without the debugger API; nothing else runs in the page world
 - **Framework agnostic** - works on any page; nothing leaves the browser
+
+## Install
+
+1. Download `QuickInspect-<version>.zip` from the [latest release](https://github.com/KostaD02/QuickInspect/releases/latest)
+2. Unzip it
+3. Open `chrome://extensions` and enable **Developer mode**
+4. Click **Load unpacked** and select the unzipped folder
 
 ## Usage
 
@@ -78,10 +83,6 @@ Open the popup from the toolbar icon. The pill toggles the extension on and off,
 | `activeTab`      | Access the current tab when you open the popup, so QuickInspect can start there                 |
 
 The content scripts are registered for every `http`, `https` and `file` page so the hold key works anywhere, which Chrome lists as access to all sites. `file://` pages also need **Allow access to file URLs** on the extension's details page.
-
-## Development
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, structure and testing.
 
 ## License
 

@@ -22,6 +22,7 @@ jobs:
     with:
       test: pnpm test:coverage
       build: pnpm build
+      pr-version: true
       artifact-prefix: QuickInspect
       size-table: files
       footer: |
