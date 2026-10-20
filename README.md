@@ -8,7 +8,16 @@
 </p>
 
 <p align="center">
+  <a href="CONTRIBUTING.md">Contributing Guidelines</a>
+  ·
   <a href="https://github.com/KostaD02/QuickInspect/issues">Submit an Issue</a>
+  ·
+  <a href="https://chromewebstore.google.com/detail/quickinspect/hgbhpnaeebhlnfmocmfgekfklcnmadno">Chrome Web Store</a>
+  <br>
+</p>
+
+<p align="center">
+  <a href="https://github.com/KostaD02/QuickInspect/actions/workflows/ci.yml"><img src="https://github.com/KostaD02/QuickInspect/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 </p>
 
 QuickInspect is a Chrome extension that shows the useful 80% of DevTools element inspection without opening DevTools. Hold a modifier key, hover any element, and a floating panel shows its selectors, Playwright locators, box model, computed styles and accessibility information. Release the key and the page is back to normal.
@@ -33,6 +42,10 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Framework agnostic** - works on any page; nothing leaves the browser
 
 ## Install
+
+Install QuickInspect from the [Chrome Web Store](https://chromewebstore.google.com/detail/quickinspect/hgbhpnaeebhlnfmocmfgekfklcnmadno).
+
+To load the production bundle by hand instead:
 
 1. Download `QuickInspect-<version>.zip` from the [latest release](https://github.com/KostaD02/QuickInspect/releases/latest)
 2. Unzip it
@@ -83,6 +96,16 @@ Open the popup from the toolbar icon. The pill toggles the extension on and off,
 | `activeTab`      | Access the current tab when you open the popup, so QuickInspect can start there                 |
 
 The content scripts are registered for every `http`, `https` and `file` page so the hold key works anywhere, which Chrome lists as access to all sites. `file://` pages also need **Allow access to file URLs** on the extension's details page.
+
+## Contributing
+
+Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/KostaD02/QuickInspect/issues).
+
+Please refer to our [Contributing Guidelines](CONTRIBUTING.md) for details on our code of conduct, development setup, and the process for submitting pull requests to us.
+
+## Security
+
+Please review our [Security Policy](SECURITY.md) for information on supported versions and details regarding how to responsibly report security vulnerabilities.
 
 ## License
 
