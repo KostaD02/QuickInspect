@@ -207,6 +207,80 @@ describe('inspector', () => {
     expect(writeText).toHaveBeenLastCalledWith('Go');
   });
 
+  it('walks back down the path it came up and forgets it on the next pin', () => {
+    document.body.innerHTML =
+      '<div class="a"><div class="b"><div class="c">C</div></div><div class="d">D</div></div>';
+    const a = document.querySelector('.a')!;
+    const d = document.querySelector('.d')!;
+    const up = () => key('keydown', { code: 'ArrowUp', key: 'ArrowUp' });
+    const down = () => key('keydown', { code: 'ArrowDown', key: 'ArrowDown' });
+    const text = () => {
+      key('keydown', { code: 'KeyT', key: 't' });
+      return writeText.mock.lastCall?.[0] as string;
+    };
+
+    document.elementFromPoint = jest.fn(() => d);
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    up();
+    expect(text()).toBe('CD');
+    up();
+    down();
+    down();
+    expect(text()).toBe('D');
+    down();
+    expect(text()).toBe('D');
+    up();
+    expect(text()).toBe('CD');
+
+    document.elementFromPoint = jest.fn(() => a);
+    hold();
+    mouse('click', { altKey: true });
+    flush();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    down();
+    expect(text()).toBe('C');
+  });
+
+  it('steps between siblings with left and right and keeps the trail', () => {
+    document.body.innerHTML =
+      '<div class="a"><div class="b"><i>B</i><div class="c">C</div></div><div class="d">D</div></div>';
+    const c = document.querySelector('.c')!;
+    const press = (code: string) => key('keydown', { code, key: code });
+    const text = () => {
+      key('keydown', { code: 'KeyT', key: 't' });
+      return writeText.mock.lastCall?.[0] as string;
+    };
+
+    // ? only a pinned panel walks sideways, so holding Alt alone leaves Alt+Left to the browser
+    document.elementFromPoint = jest.fn(() => c);
+    hold();
+    expect(press('ArrowLeft').defaultPrevented).toBe(false);
+    expect(text()).toBe('C');
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    expect(press('ArrowLeft').defaultPrevented).toBe(true);
+    expect(text()).toBe('B');
+    press('ArrowLeft');
+    expect(text()).toBe('B');
+    press('ArrowRight');
+    expect(text()).toBe('C');
+    press('ArrowRight');
+    expect(text()).toBe('C');
+
+    // ? b's first child is <i>, so landing back on c proves the trail survived the sideways steps
+    press('ArrowUp');
+    expect(text()).toBe('BC');
+    press('ArrowRight');
+    expect(text()).toBe('D');
+    press('ArrowLeft');
+    expect(text()).toBe('BC');
+    press('ArrowDown');
+    expect(text()).toBe('C');
+  });
+
   it('only moves the highlight on scroll and re-inspects on resize', () => {
     reopen();
     hold();

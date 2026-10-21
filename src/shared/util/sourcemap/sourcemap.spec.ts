@@ -45,7 +45,7 @@ describe('sourcemap', () => {
 
   it('reads inline and external source map references', () => {
     const inline = `code();\n//# sourceMappingURL=data:application/json;base64,${btoa(JSON.stringify(map))}`;
-    expect(parseSourceMap(inline)?.sources).toEqual(['App.tsx']);
+    expect(parseSourceMap(inline)).toMatchObject({ sources: ['App.tsx'] });
     expect(
       parseSourceMap('//# sourceMappingURL=data:application/json;base64,@@@'),
     ).toBeNull();

@@ -3,6 +3,7 @@ export * from './clipboard/clipboard';
 export * from './dom/dom';
 export * from './events/events';
 export * from './format/format';
+export * from './gaps/gaps';
 export * from './inspect/inspect';
 export * from './locator/locator';
 export * from './logger/logger';

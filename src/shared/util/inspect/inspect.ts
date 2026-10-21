@@ -10,6 +10,7 @@ import {
 import { getAccessibility } from '../a11y/a11y';
 import { parentOf } from '../dom/dom';
 import { probeEvents } from '../events/events';
+import { getGaps, readGap } from '../gaps/gaps';
 import { detectDevServer, getAttributeSource } from '../source/source';
 import {
   isTransparent,
@@ -86,14 +87,18 @@ function edges(
 
 export function getBox(el: Element, style: CSSStyleDeclaration): BoxInfo {
   const rect = el.getBoundingClientRect();
+  const padding = edges(style, 'padding');
+  const border = edges(style, 'border', '-width');
   return {
     x: round(rect.left + window.scrollX),
     y: round(rect.top + window.scrollY),
     width: round(rect.width),
     height: round(rect.height),
     margin: edges(style, 'margin'),
-    padding: edges(style, 'padding'),
-    border: edges(style, 'border', '-width'),
+    padding,
+    border,
+    gap: readGap(style),
+    gaps: getGaps(el, style, { rect, border, padding }),
   };
 }
 

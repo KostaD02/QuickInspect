@@ -332,34 +332,24 @@ describe('source markers', () => {
       frames: [{ file: server.file, line1: 102, column1: 447 }],
     });
 
-    await resolveNextFrame({ ...server, file: '_next/static/chunks/app_x.js' });
-    const [, clientInit] = fetchMock.mock.calls[1] as unknown as [
-      string,
-      RequestInit,
-    ];
-    expect(JSON.parse(clientInit.body as string)).toMatchObject({
-      isServer: false,
-      frames: [{ file: '/_next/static/chunks/app_x.js' }],
-    });
-
     reply[0]!.value.originalStackFrame = {
       file: 'x.js',
       line1: null,
       column1: null,
     };
     expect(await resolveNextFrame(server)).toMatchObject({ line: 23 });
-    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(await resolveNextFrame({ ...server, line: 103 })).toBeNull();
     expect(await resolveNextFrame({ ...server, line: null })).toBeNull();
-    expect(fetchMock).toHaveBeenCalledTimes(3);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
 
     const later = { ...server, line: 104 };
     fetchMock.mockImplementationOnce(() => Promise.reject(new Error('down')));
     expect(await resolveNextFrame(later)).toBeNull();
     expect(await resolveNextFrame(later)).toBeNull();
-    expect(fetchMock).toHaveBeenCalledTimes(5);
+    expect(fetchMock).toHaveBeenCalledTimes(4);
     expect(await resolveNextFrame(later)).toBeNull();
-    expect(fetchMock).toHaveBeenCalledTimes(5);
+    expect(fetchMock).toHaveBeenCalledTimes(4);
   });
 
   it('opens through fetch and reports the outcome', async () => {

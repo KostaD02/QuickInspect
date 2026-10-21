@@ -390,6 +390,8 @@ const SERVER_FRAME =
   /(?:about|rsc):\/\/React\/[^/]+\/(.+?)(?:\?\d+)?:(\d+):(\d+)\)?$/;
 const INTERNAL_FRAME =
   /node_modules|\/@vite\/|\/@react-refresh|react-dom|react-jsx|react-server-dom|next_dist|react-stack-top-frame/;
+// ? turbopack bundles React's jsx runtime into the component's own chunk, so its frame is only recognisable by name
+const JSX_FRAME = /\bat (?:[\w$]+\.)*(?:jsxDEV|jsxs?|createElement) \(/;
 
 function serverFile(encoded: string): string {
   const file = decodeURIComponent(encoded);
@@ -399,7 +401,7 @@ function serverFile(encoded: string): string {
 
 function reactStackSource(stack: string): SourceInfo | null {
   for (const frame of stack.split('\n')) {
-    if (INTERNAL_FRAME.test(frame)) continue;
+    if (INTERNAL_FRAME.test(frame) || JSX_FRAME.test(frame)) continue;
     const server = SERVER_FRAME.exec(frame);
     const match = server ?? STACK_FRAME.exec(frame);
     if (!match?.[1]) continue;
@@ -456,10 +458,88 @@ function svelteSource(el: Element): SourceInfo | null {
   };
 }
 
+type TracedPosition = [file: string, line: number, column: number];
+
+const VUE_HOPS = 40;
+const LIBRARY_FILE = /(?:^|\/)node_modules\//;
+
+function vueParents(instance: unknown): Bag[] {
+  const chain: Bag[] = [];
+  let current = instance as Bag | null | undefined;
+  while (current && chain.length < VUE_HOPS) {
+    chain.push(current);
+    current = current.parent as Bag | null | undefined;
+  }
+  return chain;
+}
+
+function vueFile(owner: Bag): string | null {
+  const file = (owner.type as Bag | undefined)?.__file;
+  return typeof file === 'string' ? file : null;
+}
+
+// ? Nuxt DevTools' component inspector (vite-plugin-vue-tracer) keys each compiled vnode's props to its template position instead of stamping the DOM
+function tracedPosition(vnode: unknown): TracedPosition | null {
+  const tracer = (globalThis as unknown as Bag).__vue_tracer__ as
+    | { vnodeToPos?: { get?: (key: object) => unknown } }
+    | undefined;
+  const props = (vnode as Bag | null | undefined)?.props;
+  if (typeof tracer?.vnodeToPos?.get !== 'function') return null;
+  if (!props || typeof props !== 'object') return null;
+  const pos = tracer.vnodeToPos.get(props);
+  if (!Array.isArray(pos) || typeof pos[0] !== 'string') return null;
+  if (typeof pos[1] !== 'number' || typeof pos[2] !== 'number') return null;
+  if (LIBRARY_FILE.test(pos[0])) return null;
+  return pos as TracedPosition;
+}
+
+// ? the tracer names files from the workspace root while Vite opens them from its cwd, so the absolute __file of the component that wrote it is preferred
+function tracedSource(pos: TracedPosition, owners: Bag[]): SourceInfo {
+  const [file, line, column] = pos;
+  const absolute = owners
+    .map(vueFile)
+    .find((own) => own !== null && own.endsWith(`/${file}`));
+  return {
+    file: absolute ?? file,
+    line,
+    column: column + 1,
+    origin: 'vue',
+    mapped: true,
+  };
+}
+
+function vueTracerSource(el: Element): SourceInfo | null {
+  let owner: Bag | undefined;
+  let current: Element | null = el;
+  for (let hops = 0; current && hops < VUE_HOPS; hops += 1) {
+    const bag = current as unknown as Bag;
+    const instance = bag.__vueParentComponent as Bag | undefined;
+    // ? static content and render-function elements have no position, so the nearest element of the same component answers
+    if (instance && owner && instance !== owner) break;
+    // ? slot content keeps the position of the file it was written in, which its __vueParentComponent does not
+    const own = tracedPosition(bag.__vnode);
+    if (own) return tracedSource(own, vueParents(instance ?? owner));
+    owner ??= instance;
+    current = current.parentElement;
+  }
+  // ? an element whose component owns no positioned element, like RouterLink's <a>, points at where that component was used
+  const owners = vueParents(owner);
+  for (const parent of owners) {
+    const pos = tracedPosition(parent.vnode);
+    if (pos) return tracedSource(pos, owners);
+  }
+  return null;
+}
+
 function vueSource(el: Element): SourceInfo | null {
-  const parent = vueOwner(el)?.__vueParentComponent as Bag | undefined;
-  const file = (parent?.type as Bag | undefined)?.__file;
-  return typeof file === 'string'
+  const traced = vueTracerSource(el);
+  if (traced) return traced;
+  // ? NuxtLink, ClientOnly, NuxtLayout and vue-router's components are plain .js without __file, so the nearest SFC up the chain answers
+  const files = vueParents(vueOwner(el)?.__vueParentComponent)
+    .map(vueFile)
+    .filter((file): file is string => file !== null);
+  const file = files.find((own) => !LIBRARY_FILE.test(own)) ?? files.at(0);
+  return file
     ? { file, line: null, column: null, origin: 'vue', mapped: true }
     : null;
 }

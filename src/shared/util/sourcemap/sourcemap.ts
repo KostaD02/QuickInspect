@@ -12,6 +12,13 @@ interface RawSourceMap {
   mappings: string;
 }
 
+// ? turbopack serves index maps: one map per module, each starting at its offset in the chunk
+interface IndexSourceMap {
+  sections: { offset: { line: number; column: number }; map: SourceMap }[];
+}
+
+type SourceMap = RawSourceMap | IndexSourceMap;
+
 interface Segment {
   generatedColumn: number;
   source: number;
@@ -61,11 +68,40 @@ export function decodeMappings(mappings: string): Segment[][] {
   return lines;
 }
 
-export function originalPosition(
-  map: RawSourceMap,
+function sectionPosition(
+  map: IndexSourceMap,
   generatedLine: number,
   generatedColumn: number,
 ): { file: string; line: number; column: number } | null {
+  const line = generatedLine - 1;
+  let found: IndexSourceMap['sections'][number] | undefined;
+  for (const section of map.sections) {
+    const { offset } = section;
+    if (
+      offset.line > line ||
+      (offset.line === line && offset.column > generatedColumn - 1)
+    ) {
+      break;
+    }
+    found = section;
+  }
+  if (!found) return null;
+  const { offset } = found;
+  return originalPosition(
+    found.map,
+    generatedLine - offset.line,
+    offset.line === line ? generatedColumn - offset.column : generatedColumn,
+  );
+}
+
+export function originalPosition(
+  map: SourceMap,
+  generatedLine: number,
+  generatedColumn: number,
+): { file: string; line: number; column: number } | null {
+  if ('sections' in map) {
+    return sectionPosition(map, generatedLine, generatedColumn);
+  }
   const segments = decodeMappings(map.mappings).at(generatedLine - 1) ?? [];
   let best: Segment | undefined;
   for (const segment of segments) {
@@ -82,11 +118,11 @@ export function originalPosition(
   };
 }
 
-export function parseSourceMap(moduleText: string): RawSourceMap | null {
+export function parseSourceMap(moduleText: string): SourceMap | null {
   const inline = INLINE_MAP.exec(moduleText);
   if (!inline?.[1]) return null;
   try {
-    return JSON.parse(atob(inline[1])) as RawSourceMap;
+    return JSON.parse(atob(inline[1])) as SourceMap;
   } catch {
     return null;
   }
@@ -96,7 +132,18 @@ export function externalMapUrl(moduleText: string): string | null {
   return EXTERNAL_MAP.exec(moduleText.trimEnd())?.[1] ?? null;
 }
 
+// ? turbopack names sources file:///abs/path or turbopack:///[project]/relative/path
+const TURBOPACK_PROJECT = /^turbopack:\/\/\/?\[project\]\//;
+
 function resolveSourcePath(moduleFile: string, mapped: string): string {
+  if (mapped.startsWith('file://')) {
+    return decodeURIComponent(mapped.slice('file://'.length)).replace(
+      /^\/([A-Za-z]:)/,
+      '$1',
+    );
+  }
+  if (TURBOPACK_PROJECT.test(mapped))
+    return mapped.replace(TURBOPACK_PROJECT, '');
   if (mapped.startsWith('/') || /^[A-Za-z]:/.test(mapped)) return mapped;
   const dir = moduleFile.includes('/')
     ? moduleFile.slice(0, moduleFile.lastIndexOf('/') + 1)
@@ -110,9 +157,9 @@ function resolveSourcePath(moduleFile: string, mapped: string): string {
   return out.join('/');
 }
 
-const cache = new Map<string, Promise<RawSourceMap | null>>();
+const cache = new Map<string, Promise<SourceMap | null>>();
 
-async function loadMap(url: string): Promise<RawSourceMap | null> {
+async function loadMap(url: string): Promise<SourceMap | null> {
   const response = await fetch(url);
   if (!response.ok) return null;
   const text = await response.text();
@@ -120,8 +167,9 @@ async function loadMap(url: string): Promise<RawSourceMap | null> {
   if (inline) return inline;
   const external = externalMapUrl(text);
   if (!external) return null;
-  const mapResponse = await fetch(new URL(external, url).toString());
-  return mapResponse.ok ? ((await mapResponse.json()) as RawSourceMap) : null;
+  const mapUrl = new URL(external, new URL(url, location.href));
+  const mapResponse = await fetch(mapUrl.toString());
+  return mapResponse.ok ? ((await mapResponse.json()) as SourceMap) : null;
 }
 
 export async function mapToOriginal(

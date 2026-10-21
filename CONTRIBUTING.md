@@ -40,10 +40,11 @@ src/
         ├── xpath/          # XPath generation
         ├── locator/        # Playwright locator ranking and match counting
         ├── inspect/        # Builds ElementInfo (box, styles, attributes, media)
+        ├── gaps/           # Gap areas between the items of flex and grid containers
         ├── dom/            # Shadow-aware hit testing and querying
         ├── events/         # Asks the main-world bridge for an element's listeners
         ├── source/         # Source markers, dev server detection and open-in-editor
-        ├── sourcemap/      # Maps Vite dev server positions back to the original file
+        ├── sourcemap/      # Maps Vite and Next.js client positions back to the original file
         ├── format/         # px, hex colors, truncation
         ├── settings/       # Load, save, watch, normalise
         ├── clipboard/      # Clipboard writes
