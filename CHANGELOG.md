@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/KostaD02/QuickInspect/compare/v1.1.1...v1.2.0) (2026-10-21)
+
+### Features
+
+* show gaps, keep the panel off the element and fix next and nuxt sources ([#12](https://github.com/KostaD02/QuickInspect/issues/12)) ([71b1b1c](https://github.com/KostaD02/QuickInspect/commit/71b1b1c00b9c3c70f446483daad2abe3d9fc1b88))
+
+### Documentations
+
+* update extension link after release ([f4f7d00](https://github.com/KostaD02/QuickInspect/commit/f4f7d00f4839a3ba334fb55da0c36838798ce74f))
+
 ## [1.1.1](https://github.com/KostaD02/QuickInspect/compare/v1.1.0...v1.1.1) (2026-10-18)
 
 ### Bug Fixes
