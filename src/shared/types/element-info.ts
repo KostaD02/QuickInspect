@@ -8,6 +8,13 @@ export interface BoxEdges {
   left: number;
 }
 
+export interface Rect {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
 export interface BoxInfo {
   x: number;
   y: number;
@@ -16,6 +23,10 @@ export interface BoxInfo {
   margin: BoxEdges;
   padding: BoxEdges;
   border: BoxEdges;
+  // ? row and column gap of a flex or grid container, null for any other element
+  gap: { row: number; column: number } | null;
+  // ? the gap areas between items, relative to the element's border box
+  gaps: Rect[];
 }
 
 export interface StyleEntry {

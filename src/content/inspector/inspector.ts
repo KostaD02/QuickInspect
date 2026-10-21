@@ -27,6 +27,14 @@ import { Panel } from '../panel/panel';
 import { Toast } from '../toast/toast';
 
 type FrameWork = 'retarget' | 'refresh' | 'move';
+type Direction = 'parent' | 'child' | 'previous' | 'next';
+
+const ARROWS: Partial<Record<string, Direction>> = {
+  ArrowUp: 'parent',
+  ArrowDown: 'child',
+  ArrowLeft: 'previous',
+  ArrowRight: 'next',
+};
 
 const MODIFIER_FLAG: Record<
   ModifierKey,
@@ -63,6 +71,8 @@ export class Inspector {
   private shown: Element | null = null;
   private info: ElementInfo | null = null;
   private pointer = { x: -1, y: -1 };
+  // ? the elements walked up from since the pin, so walking down retraces them before falling back to the first child
+  private trail: Element[] = [];
   private frame = 0;
   private readonly work = new Set<FrameWork>();
 
@@ -138,9 +148,12 @@ export class Inspector {
       return;
     }
 
-    if (event.code === 'ArrowUp' || event.code === 'ArrowDown') {
+    const direction = ARROWS[event.code];
+    // ? left and right wait for a pin, so holding Alt alone leaves Alt+Left and Alt+Right to the browser's back and forward
+    const sideways = direction === 'previous' || direction === 'next';
+    if (direction && (this.pinned || !sideways)) {
       this.swallow(event);
-      this.navigate(event.code === 'ArrowUp' ? 'parent' : 'child');
+      this.navigate(direction);
       return;
     }
 
@@ -189,7 +202,13 @@ export class Inspector {
       }
       const moved = this.targetClick(event);
       if (this.current) this.pin();
-      if (moved) this.panel.position(this.pointer.x, this.pointer.y);
+      if (moved && this.current) {
+        this.panel.position(
+          this.pointer.x,
+          this.pointer.y,
+          this.current.getBoundingClientRect(),
+        );
+      }
       return;
     }
 
@@ -309,12 +328,12 @@ export class Inspector {
     const target = deepElementFromPoint(x, y);
     if (!target || isOwnNode(target)) return false;
     if (target === this.current && this.panel.visible) {
-      this.panel.position(x, y);
+      this.panel.position(x, y, target.getBoundingClientRect());
       return false;
     }
     this.current = target;
     this.refresh();
-    this.panel.position(x, y);
+    this.panel.position(x, y, target.getBoundingClientRect());
     return true;
   }
 
@@ -362,26 +381,39 @@ export class Inspector {
     this.toast.show('Edits reset', this.info?.summary ?? '');
   }
 
-  private navigate(direction: 'parent' | 'child'): void {
-    if (!this.current) return;
-    const next =
-      direction === 'parent'
-        ? this.current.parentElement
-        : this.current.firstElementChild;
+  // ? a sideways step keeps the trail, which still leads back down once the walk returns to its parent
+  private navigate(direction: Direction): void {
+    const from = this.current;
+    if (!from) return;
+    const back = direction === 'child' ? this.trail.at(-1) : undefined;
+    const retrace = back?.parentElement === from ? back : null;
+    const next = {
+      parent: from.parentElement,
+      child: retrace ?? from.firstElementChild,
+      previous: from.previousElementSibling,
+      next: from.nextElementSibling,
+    }[direction];
     if (!next || next === document.documentElement || isOwnNode(next)) return;
     this.current = next;
     if (!this.pinned) this.pin();
+    if (direction === 'parent') this.trail.push(from);
+    if (direction === 'child') {
+      if (retrace) this.trail.pop();
+      else this.trail = [];
+    }
     this.refresh();
   }
 
   private pin(): void {
     this.pinned = true;
+    this.trail = [];
     this.panel.setPinned(true);
     this.refresh();
   }
 
   private unpin(): void {
     this.pinned = false;
+    this.trail = [];
     this.panel.setPinned(false);
     if (this.holding) {
       this.schedule('retarget');
@@ -408,6 +440,7 @@ export class Inspector {
     this.current = null;
     this.shown = null;
     this.info = null;
+    this.trail = [];
   }
 
   private resolveSource(target: Element, info: ElementInfo): void {

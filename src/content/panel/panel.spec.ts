@@ -23,6 +23,8 @@ const info: ElementInfo = {
     margin: { top: 0, right: 0, bottom: 0, left: 0 },
     padding: { top: 1, right: 2, bottom: 3, left: 4 },
     border: { top: 0, right: 0, bottom: 0, left: 0 },
+    gap: null,
+    gaps: [],
   },
   styles: [
     { property: 'display', value: 'block' },
@@ -329,6 +331,7 @@ describe('panel', () => {
     ).toBe('Selectors');
     expect(text).toContain("page.locator('#save')unique");
     expect(text).toContain('1 2 3 4');
+    expect(root.querySelector('.cell.g')).toBeNull();
     expect(root.querySelector('.swatch')).not.toBeNull();
     expect(text).toContain('aria-pressed="true"');
     expect(text).toContain('+2 more');
@@ -337,6 +340,16 @@ describe('panel', () => {
     expect(text).toContain('1:01');
     expect(text).toContain('empty');
     expect(root.querySelectorAll('[data-action="locator"]')).toHaveLength(1);
+  });
+
+  it('shows an editable gap cell for flex and grid containers', () => {
+    panel.render(
+      { ...info, box: { ...info.box, gap: { row: 8, column: 12 } } },
+      DEFAULT_SETTINGS,
+    );
+    const cell = root.querySelector('.cell.g')!;
+    expect(cell.textContent).toBe('gap8 12');
+    expect(cell.querySelector('.label')?.classList.contains('kw')).toBe(true);
   });
 
   it('hides sections per settings and shows generic fallbacks', () => {
@@ -460,6 +473,39 @@ describe('panel', () => {
     panel.position(100, 300);
     expect(node.style.getPropertyValue('--room')).toBe('');
     expect(node.style.left).toBe('118px');
+  });
+
+  it('sits beside the inspected element instead of over it', () => {
+    Object.defineProperty(window, 'innerWidth', {
+      value: 1200,
+      configurable: true,
+    });
+    Object.defineProperty(window, 'innerHeight', {
+      value: 800,
+      configurable: true,
+    });
+    panel.show();
+    const node = root.querySelector<HTMLElement>('.panel')!;
+    Object.defineProperty(node, 'offsetWidth', { value: 300 });
+    Object.defineProperty(node, 'offsetHeight', { value: 400 });
+    const rect = (left: number, top: number, right: number, bottom: number) =>
+      ({ left, top, right, bottom }) as DOMRect;
+    const at = () => [node.style.left, node.style.top];
+
+    panel.position(150, 300, rect(100, 250, 400, 350));
+    expect(at()).toEqual(['418px', '282px']);
+
+    panel.position(1000, 300, rect(800, 250, 1150, 350));
+    expect(at()).toEqual(['482px', '282px']);
+
+    panel.position(600, 100, rect(0, 50, 1200, 150));
+    expect(at()).toEqual(['450px', '168px']);
+
+    panel.position(600, 700, rect(0, 650, 1200, 760));
+    expect(at()).toEqual(['450px', '232px']);
+
+    panel.position(600, 400, rect(0, 0, 1200, 800));
+    expect(at()).toEqual(['618px', '8px']);
   });
 
   it('positions itself inside the viewport and tracks pinned state', () => {

@@ -332,15 +332,13 @@ describe('source markers', () => {
       frames: [{ file: server.file, line1: 102, column1: 447 }],
     });
 
-    await resolveNextFrame({ ...server, file: '_next/static/chunks/app_x.js' });
-    const [, clientInit] = fetchMock.mock.calls[1] as unknown as [
-      string,
-      RequestInit,
-    ];
-    expect(JSON.parse(clientInit.body as string)).toMatchObject({
-      isServer: false,
-      frames: [{ file: '/_next/static/chunks/app_x.js' }],
-    });
+    expect(
+      await resolveNextFrame({
+        ...server,
+        file: '_next/static/chunks/app_x.js',
+      }),
+    ).toBeNull();
+    expect(fetchMock).toHaveBeenLastCalledWith('/_next/static/chunks/app_x.js');
 
     reply[0]!.value.originalStackFrame = {
       file: 'x.js',
@@ -360,6 +358,80 @@ describe('source markers', () => {
     expect(fetchMock).toHaveBeenCalledTimes(5);
     expect(await resolveNextFrame(later)).toBeNull();
     expect(fetchMock).toHaveBeenCalledTimes(5);
+  });
+
+  it('reads the frame fields Next 15 answers with', async () => {
+    const fetchMock = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () =>
+          Promise.resolve([
+            {
+              status: 'fulfilled',
+              value: {
+                originalStackFrame: {
+                  file: 'app/page.tsx',
+                  lineNumber: 7,
+                  column: 3,
+                },
+              },
+            },
+          ]),
+      } as Response),
+    );
+    Object.defineProperty(globalThis, 'fetch', {
+      value: fetchMock,
+      configurable: true,
+    });
+    expect(
+      await resolveNextFrame({
+        file: '/tmp/app/.next/server/chunks/ssr/next15.js',
+        line: 40,
+        column: 12,
+        origin: 'react',
+        mapped: false,
+      }),
+    ).toMatchObject({ file: 'app/page.tsx', line: 7, column: 3 });
+  });
+
+  it('maps next client chunks through their own source map', async () => {
+    const chunk = 'code();\n//# sourceMappingURL=page._.js.map\n';
+    const map = {
+      version: 3,
+      sections: [
+        {
+          offset: { line: 0, column: 0 },
+          map: { sources: ['file:///C:/app/app/probe.tsx'], mappings: 'AAAA' },
+        },
+      ],
+    };
+    const fetchMock = jest.fn((url: string) =>
+      Promise.resolve({
+        ok: true,
+        text: () => Promise.resolve(chunk),
+        json: () => Promise.resolve(url.endsWith('.map') ? map : []),
+      } as Response),
+    );
+    Object.defineProperty(globalThis, 'fetch', {
+      value: fetchMock,
+      configurable: true,
+    });
+    expect(
+      await resolveNextFrame({
+        file: 'docs/_next/static/chunks/page._.js',
+        line: 1,
+        column: 1,
+        origin: 'react',
+        mapped: false,
+      }),
+    ).toMatchObject({ file: 'C:/app/app/probe.tsx', line: 1, column: 1 });
+    expect(fetchMock).toHaveBeenCalledWith(
+      '/docs/_next/static/chunks/page._.js',
+    );
+    expect(fetchMock).not.toHaveBeenCalledWith(
+      '/__nextjs_original-stack-frames',
+      expect.anything(),
+    );
   });
 
   it('opens through fetch and reports the outcome', async () => {

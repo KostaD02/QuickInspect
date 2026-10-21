@@ -1,11 +1,13 @@
-import { BoxInfo } from '@/shared/types';
+import { BoxEdges, BoxInfo, Rect } from '@/shared/types';
 import { px } from '@/shared/util';
 
 export class Overlay {
   private readonly element: HTMLDivElement;
   private readonly margin: HTMLDivElement;
+  private readonly border: HTMLDivElement;
   private readonly padding: HTMLDivElement;
   private readonly content: HTMLDivElement;
+  private readonly gaps: HTMLDivElement[] = [];
   private readonly label: HTMLDivElement;
   private readonly labelText: HTMLSpanElement;
   private readonly labelDims: HTMLSpanElement;
@@ -19,6 +21,7 @@ export class Overlay {
     this.element.hidden = true;
 
     this.margin = this.box('overlay-margin');
+    this.border = this.box('overlay-border');
     this.padding = this.box('overlay-padding');
     this.content = this.box('overlay-content');
 
@@ -30,19 +33,26 @@ export class Overlay {
     this.labelDims.className = 'dims kd-ml-2 kd-text-muted';
     this.label.append(this.labelText, this.labelDims);
 
-    this.element.append(this.margin, this.padding, this.content, this.label);
+    this.element.append(
+      this.margin,
+      this.border,
+      this.padding,
+      this.content,
+      this.label,
+    );
     root.appendChild(this.element);
   }
 
   setBoxModel(enabled: boolean): void {
     this.showBoxModel = enabled;
     this.margin.hidden = !enabled;
+    this.border.hidden = !enabled;
     this.padding.hidden = !enabled;
   }
 
   show(target: Element, box: BoxInfo, summary: string): void {
     const rect = target.getBoundingClientRect();
-    const { margin, padding } = box;
+    const { margin, border, padding } = box;
 
     const left = rect.left - margin.left;
     const top = rect.top - margin.top;
@@ -55,13 +65,20 @@ export class Overlay {
     this.element.style.height = px(height);
 
     this.place(this.margin, 0, 0, width, height);
-    this.place(this.padding, margin.left, margin.top, rect.width, rect.height);
+    this.place(this.border, margin.left, margin.top, rect.width, rect.height);
+    const inner = {
+      x: margin.left + border.left,
+      y: margin.top + border.top,
+      width: Math.max(0, rect.width - border.left - border.right),
+      height: Math.max(0, rect.height - border.top - border.bottom),
+    };
+    this.place(this.padding, inner.x, inner.y, inner.width, inner.height);
     this.place(
       this.content,
-      margin.left + padding.left,
-      margin.top + padding.top,
-      Math.max(0, rect.width - padding.left - padding.right),
-      Math.max(0, rect.height - padding.top - padding.bottom),
+      inner.x + padding.left,
+      inner.y + padding.top,
+      Math.max(0, inner.width - padding.left - padding.right),
+      Math.max(0, inner.height - padding.top - padding.bottom),
     );
 
     if (!this.showBoxModel) {
@@ -73,6 +90,7 @@ export class Overlay {
         rect.height,
       );
     }
+    this.showGaps(this.showBoxModel ? box.gaps : [], margin);
 
     this.labelText.textContent = summary;
     this.labelDims.textContent = `${box.width.toString()} × ${box.height.toString()}`;
@@ -81,6 +99,28 @@ export class Overlay {
 
   hide(): void {
     this.element.hidden = true;
+  }
+
+  // ? gap boxes are reused between elements and the spares hidden
+  private showGaps(gaps: Rect[], margin: BoxEdges): void {
+    while (this.gaps.length < gaps.length) {
+      const gap = this.box('overlay-gap');
+      this.element.insertBefore(gap, this.label);
+      this.gaps.push(gap);
+    }
+    this.gaps.forEach((node, index) => {
+      const gap = gaps.at(index);
+      node.hidden = !gap;
+      if (gap) {
+        this.place(
+          node,
+          margin.left + gap.x,
+          margin.top + gap.y,
+          gap.width,
+          gap.height,
+        );
+      }
+    });
   }
 
   private box(className: string): HTMLDivElement {

@@ -66,9 +66,9 @@ const CLS = {
   source:
     'source kd-d-block kd-font-mono kd-fs-micro kd-text-muted kd-text-ellipsis',
   swatch: 'swatch kd-d-inline-block kd-radius-sm kd-border-1 kd-mr-1',
-  badge: 'badge kd-chip kd-chip--pill kd-fs-micro kd-ml-1',
-  unique: 'badge kd-status-pill kd-status-pill--active kd-ml-1',
-  matches: 'badge kd-status-pill kd-status-pill--warning kd-ml-1',
+  badge: 'badge kd-chip kd-chip--pill kd-fs-micro kd-fw-regular kd-ml-1',
+  unique: 'badge kd-status-pill kd-status-pill--active kd-fw-regular kd-ml-1',
+  matches: 'badge kd-status-pill kd-status-pill--warning kd-fw-regular kd-ml-1',
   copy: 'copy kd-btn kd-btn--ghost kd-btn--sm kd-shrink-0 kd-px-2 kd-py-1 kd-fs-micro',
   revert:
     'copy revert kd-btn kd-btn--outline kd-btn--sm kd-shrink-0 kd-px-2 kd-py-1 kd-fs-micro',
@@ -79,7 +79,7 @@ const CLS = {
   boxModel: 'box-model kd-mt-2 kd-font-mono kd-fs-xxxs kd-fw-medium',
   cell: 'cell kd-card kd-card--surface',
   cellLabel:
-    'label kd-d-block kd-mb-1 kd-fs-micro kd-fw-semibold kd-text-uppercase',
+    'label kd-d-block kd-mb-1 kd-fs-micro kd-fw-regular kd-text-uppercase',
   editable: 'editable kd-d-inline-block kd-max-w-100',
   editableLive:
     'editable kd-d-inline-block kd-max-w-100 kd-cursor-text kd-radius-sm kd-transition-fast',
@@ -94,6 +94,8 @@ const CELL_TONE: Record<string, string> = {
   m: 'kd-text-warning',
   p: 'kd-text-accent',
   b: 'kd-text-secondary',
+  // ? the brand has no purple text class; kw is the panel's own --kd-code-control colour
+  g: 'kw',
 };
 
 type Child = Node | string | null | undefined | false;
@@ -344,7 +346,11 @@ export class Panel {
     this.renderFoot();
   }
 
-  position(x: number, y: number): void {
+  // ? beside the inspected element when a side has room for the whole panel, so it never hides it; otherwise beside the pointer
+  position(x: number, y: number, avoid?: DOMRect): void {
+    this.element.style.removeProperty('--room');
+    if (avoid && this.besideElement(x, y, avoid)) return;
+
     const { innerWidth, innerHeight } = window;
     const width = this.element.offsetWidth || 360;
     const right = x + OFFSET;
@@ -352,7 +358,6 @@ export class Panel {
     const fitsRight = right + width + EDGE <= innerWidth;
 
     if (fitsRight || left >= EDGE) {
-      this.element.style.removeProperty('--room');
       const height = this.element.offsetHeight || 300;
       let top = y + OFFSET;
       if (top + height + EDGE > innerHeight) top = y - OFFSET - height;
@@ -370,6 +375,39 @@ export class Panel {
       x - width / 2,
       below >= above ? y + OFFSET : y - OFFSET - height,
     );
+  }
+
+  // ? right, left, below, then above the element; the side spots keep the head level with the pointer
+  private besideElement(x: number, y: number, avoid: DOMRect): boolean {
+    const { innerWidth, innerHeight } = window;
+    const width = this.element.offsetWidth || 360;
+    const height = this.element.offsetHeight || 300;
+    const spots: [fits: boolean, left: number, top: number][] = [
+      [
+        avoid.right + OFFSET + width + EDGE <= innerWidth,
+        avoid.right + OFFSET,
+        y - OFFSET,
+      ],
+      [
+        avoid.left - OFFSET - width >= EDGE,
+        avoid.left - OFFSET - width,
+        y - OFFSET,
+      ],
+      [
+        avoid.bottom + OFFSET + height + EDGE <= innerHeight,
+        x - width / 2,
+        avoid.bottom + OFFSET,
+      ],
+      [
+        avoid.top - OFFSET - height >= EDGE,
+        x - width / 2,
+        avoid.top - OFFSET - height,
+      ],
+    ];
+    const spot = spots.find(([fits]) => fits);
+    if (!spot) return false;
+    this.place(spot[1], spot[2]);
+    return true;
   }
 
   private place(left: number, top: number): void {
@@ -600,21 +638,35 @@ export class Panel {
 
   private box(info: ElementInfo): HTMLElement {
     const { box } = info;
-    const edges = (
+    const cell = (
       name: string,
       cls: string,
       property: string,
-      e: typeof box.margin,
+      value: string,
+      placeholder: string,
     ) =>
       h(
         'div',
         { class: `${CLS.cell} ${cls}` },
         h('span', { class: `${CLS.cellLabel} ${CELL_TONE[cls] ?? ''}` }, name),
         this.editable(
-          `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
+          value,
           { kind: 'style', property, lengths: true },
-          `${name}: top right bottom left`,
+          placeholder,
         ),
+      );
+    const edges = (
+      name: string,
+      cls: string,
+      property: string,
+      e: typeof box.margin,
+    ) =>
+      cell(
+        name,
+        cls,
+        property,
+        `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
+        `${name}: top right bottom left`,
       );
     const length = (property: string, value: number) =>
       this.editable(
@@ -652,6 +704,14 @@ export class Panel {
         edges('margin', 'm', 'margin', box.margin),
         edges('padding', 'p', 'padding', box.padding),
         edges('border', 'b', 'border-width', box.border),
+        box.gap &&
+          cell(
+            'gap',
+            'g',
+            'gap',
+            `${box.gap.row.toString()} ${box.gap.column.toString()}`,
+            'gap: row column',
+          ),
       ),
     );
   }
@@ -903,6 +963,13 @@ export class Panel {
         h('kbd', { class: CLS.kbd }, '↑'),
         h('kbd', { class: CLS.kbd }, '↓'),
         'parent / child',
+      ),
+      h(
+        'span',
+        {},
+        h('kbd', { class: CLS.kbd }, '←'),
+        h('kbd', { class: CLS.kbd }, '→'),
+        'sibling',
       ),
       this.hasSource
         ? h('span', {}, h('kbd', { class: CLS.kbd }, 'O'), 'open source')

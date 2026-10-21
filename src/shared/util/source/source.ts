@@ -6,6 +6,7 @@ import {
 } from '../../types';
 import { parentOf } from '../dom/dom';
 import { probeEvents } from '../events/events';
+import { mapToOriginal } from '../sourcemap/sourcemap';
 
 const LOCATION = /^(.*?):(\d+)(?::(\d+))?(?::[^:]*)?$/;
 const ANCESTOR_LIMIT = 4;
@@ -164,6 +165,9 @@ interface NextFrameResult {
       file?: string | null;
       line1?: number | null;
       column1?: number | null;
+      // ? Next 15 names them lineNumber and column
+      lineNumber?: number | null;
+      column?: number | null;
     } | null;
   };
 }
@@ -173,9 +177,8 @@ async function requestNextFrame(
   line: number,
   column: number,
 ): Promise<SourceInfo | null> {
-  const isClient = file.startsWith('_next/');
   const frame = {
-    file: isClient ? `/${file}` : file,
+    file,
     line1: line,
     column1: column,
     lineNumber: line,
@@ -188,7 +191,7 @@ async function requestNextFrame(
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
       frames: [frame],
-      isServer: !isClient,
+      isServer: true,
       isEdgeServer: false,
       isAppDirectory: true,
     }),
@@ -196,17 +199,21 @@ async function requestNextFrame(
   if (!response.ok) return null;
   const results = (await response.json()) as NextFrameResult[];
   const original = results.at(0)?.value?.originalStackFrame;
-  if (!original?.file || typeof original.line1 !== 'number') return null;
+  const originalLine = original?.line1 ?? original?.lineNumber;
+  const originalColumn = original?.column1 ?? original?.column;
+  if (!original?.file || typeof originalLine !== 'number') return null;
   return {
     file: original.file,
-    line: original.line1,
-    column: typeof original.column1 === 'number' ? original.column1 : null,
+    line: originalLine,
+    column: typeof originalColumn === 'number' ? originalColumn : null,
     origin: 'react',
     mapped: true,
   };
 }
 
 const nextFrames = new Map<string, Promise<SourceInfo | null>>();
+// ? Next maps a client chunk only by its path inside .next, which the page never sees, so its own source map is read instead
+const CLIENT_CHUNK = /(?:^|\/)_next\/static\//;
 
 // ? one request per stack frame; a failed request is dropped so a later refresh retries it
 export function resolveNextFrame(
@@ -214,6 +221,7 @@ export function resolveNextFrame(
 ): Promise<SourceInfo | null> {
   const { file, line, column } = source;
   if (line === null || column === null) return Promise.resolve(null);
+  if (CLIENT_CHUNK.test(file)) return mapToOriginal(source);
   const key = `${file}:${line.toString()}:${column.toString()}`;
   let pending = nextFrames.get(key);
   if (!pending) {

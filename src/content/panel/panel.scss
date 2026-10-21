@@ -34,8 +34,21 @@
   background: color-mix(in srgb, var(--kd-warning) 28%, transparent);
 }
 
+.overlay-border {
+  background: color-mix(in srgb, var(--kd-text-secondary) 40%, transparent);
+}
+
 .overlay-padding {
   background: color-mix(in srgb, var(--kd-accent) 22%, transparent);
+}
+
+// ? hatched like DevTools, so a gap reads as space between items rather than another box
+.overlay-gap {
+  background: repeating-linear-gradient(
+    -45deg,
+    color-mix(in srgb, var(--kd-code-control) 55%, transparent) 0 2px,
+    color-mix(in srgb, var(--kd-code-control) 12%, transparent) 2px 6px
+  );
 }
 
 .overlay-content {
@@ -54,7 +67,7 @@
 }
 
 .panel {
-  --panel-max: min(85vh, 760px);
+  --panel-max: min(85vh, 500px);
 
   z-index: 2147483647;
   width: min(clamp(240px, 60vw, 360px), calc(100vw - 16px));
@@ -138,7 +151,7 @@
 
 .box-model {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }
 
