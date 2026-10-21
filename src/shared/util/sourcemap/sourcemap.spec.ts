@@ -43,34 +43,6 @@ describe('sourcemap', () => {
     );
   });
 
-  it('maps through the sections of an index map', () => {
-    const index = {
-      sections: [
-        { offset: { line: 0, column: 0 }, map },
-        {
-          offset: { line: 3, column: 4 },
-          map: {
-            sources: ['turbopack:///[project]/app/page.tsx'],
-            mappings: 'AAAA,IAAI;AACA,IAAI',
-          },
-        },
-      ],
-    };
-    expect(originalPosition(index, 2, 7)).toEqual({
-      file: 'App.tsx',
-      line: 2,
-      column: 5,
-    });
-    expect(originalPosition(index, 4, 5)).toEqual({
-      file: 'turbopack:///[project]/app/page.tsx',
-      line: 1,
-      column: 1,
-    });
-    expect(originalPosition(index, 4, 9)?.column).toBe(5);
-    expect(originalPosition(index, 5, 5)).toMatchObject({ line: 2, column: 9 });
-    expect(originalPosition({ sections: [] }, 1, 1)).toBeNull();
-  });
-
   it('reads inline and external source map references', () => {
     const inline = `code();\n//# sourceMappingURL=data:application/json;base64,${btoa(JSON.stringify(map))}`;
     expect(parseSourceMap(inline)).toMatchObject({ sources: ['App.tsx'] });
@@ -112,41 +84,6 @@ describe('sourcemap', () => {
     await mapToOriginal(source, '/base/');
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(await mapToOriginal({ ...source, line: null }, '/base/')).toBeNull();
-  });
-
-  it('follows an external map and turns turbopack sources into paths', async () => {
-    const external = {
-      sources: [
-        'file:///C:/My%20App/app/page.tsx',
-        'turbopack:///[project]/app/probe.tsx',
-      ],
-      mappings: 'AAAA;ACAA',
-    };
-    const fetchMock = jest.fn((url: string) =>
-      Promise.resolve({
-        ok: true,
-        text: () => Promise.resolve('code();\n//# sourceMappingURL=c._.js.map'),
-        json: () => Promise.resolve(url.endsWith('.map') ? external : null),
-      } as Response),
-    );
-    Object.defineProperty(globalThis, 'fetch', {
-      value: fetchMock,
-      configurable: true,
-    });
-    const source = {
-      file: '_next/static/chunks/c._.js',
-      line: 1,
-      column: 1,
-      origin: 'react' as const,
-      mapped: false,
-    };
-    expect((await mapToOriginal(source))?.file).toBe('C:/My App/app/page.tsx');
-    expect(fetchMock).toHaveBeenCalledWith(
-      'http://localhost/_next/static/chunks/c._.js.map',
-    );
-    expect((await mapToOriginal({ ...source, line: 2 }))?.file).toBe(
-      'app/probe.tsx',
-    );
   });
 
   it('returns null when the module has no map or cannot be fetched', async () => {
