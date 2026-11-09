@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Podržte Alt a prejdite na prvok: selektory, box model, štýly, prístupnosť a udalosti bez otvárania DevTools."
+  },
+  "appTagline": {
+    "message": "Inšpektor prvkov"
+  },
+  "settingsOpenLabel": {
+    "message": "Nastavenia QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Nastavenia"
+  },
+  "settingsCloseLabel": {
+    "message": "Zavrieť nastavenia"
+  },
+  "closeTitle": {
+    "message": "Zavrieť"
+  },
+  "infoOpenLabel": {
+    "message": "O QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Zavrieť informácie"
+  },
+  "enabledToggleLabel": {
+    "message": "Zapnúť alebo vypnúť QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Podržaný kláves"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Podržte ho a prejdite na prvok. Uvoľnením vrátite stránku do pôvodného stavu."
+  },
+  "whileHoldingLabel": {
+    "message": "Pri podržaní"
+  },
+  "kbdClick": {
+    "message": "klik"
+  },
+  "shortcutPin": {
+    "message": "Pripnúť panel"
+  },
+  "shortcutClose": {
+    "message": "Zavrieť"
+  },
+  "shortcutParentChild": {
+    "message": "Rodič/potomok"
+  },
+  "shortcutSibling": {
+    "message": "Súrodenec"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopírovať selektor"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopírovať XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopírovať lokátor Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopírovať HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopírovať text"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "Kontrola stránky"
+  },
+  "editorHint": {
+    "message": "Stlačte <kbd class=\"kd-chip kd-font-mono\">O</kbd> na prvku so známym umiestnením v zdroji a otvorte ho v editore."
+  },
+  "editorUnavailable": {
+    "message": "Na tejto stránke nie je k dispozícii"
+  },
+  "editorSources": {
+    "message": "Dev server $SERVER$, zdroje prvkov k dispozícii",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev server $SERVER$, zdroje prvkov tu nie sú",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Ukladá sa automaticky a hneď sa použije na otvorené karty."
+  },
+  "settingsEditing": {
+    "message": "Úpravy"
+  },
+  "settingAllowEdit": {
+    "message": "Povoliť úpravy"
+  },
+  "settingAllowEditHint": {
+    "message": "Klikaním na hodnoty v pripnutom paneli meňte štýly, atribúty a text na stránke"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Dostupnosť editora"
+  },
+  "settingEditorStatusHint": {
+    "message": "Či táto stránka vie otvárať zdroje vo vašom editore"
+  },
+  "settingsOverlay": {
+    "message": "Prekrytie"
+  },
+  "settingBoxModel": {
+    "message": "Zvýraznenie box modelu"
+  },
+  "settingBoxModelHint": {
+    "message": "Pásy margin, border, padding a gap"
+  },
+  "settingsSections": {
+    "message": "Sekcie panela"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Pozícia, veľkosť, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Udalosti"
+  },
+  "settingEventsHint": {
+    "message": "Listenery, inline handlery a props frameworku"
+  },
+  "sectionStyles": {
+    "message": "Štýly"
+  },
+  "settingStylesHint": {
+    "message": "Vypočítané hodnoty, na ktorých záleží"
+  },
+  "sectionAccessibility": {
+    "message": "Prístupnosť"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rola, prístupný názov, zameriavateľnosť, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atribúty"
+  },
+  "settingAttributesHint": {
+    "message": "Všetky atribúty prvku"
+  },
+  "sectionMedia": {
+    "message": "Médiá"
+  },
+  "settingMediaHint": {
+    "message": "Podrobnosti o obrázkoch, videu, canvase a SVG"
+  },
+  "sectionContext": {
+    "message": "Kontext"
+  },
+  "settingContextHint": {
+    "message": "Zdrojový súbor, framework, predkovia a text"
+  },
+  "sectionSelectors": {
+    "message": "Selektory"
+  },
+  "settingSelectorsHint": {
+    "message": "Lokátory CSS, XPath a Playwright"
+  },
+  "settingsReset": {
+    "message": "Obnoviť predvolené"
+  },
+  "infoIntro": {
+    "message": "QuickInspect ukáže, čo o prvku potrebujete vedieť, bez otvárania DevTools: <strong>selektory</strong>, <strong>box model</strong>, <strong>vypočítané štýly</strong>, <strong>prístupnosť</strong>, <strong>atribúty</strong>, <strong>udalosti</strong> a <strong>zdrojový súbor</strong>, z ktorého pochádza."
+  },
+  "infoStep1": {
+    "message": "Podržte <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> a prejdite na prvok, ktorý chcete preskúmať; uvoľnením vrátite stránku. Iný kláves vyberiete v poli <strong>Podržaný kláves</strong> na hlavnej obrazovke."
+  },
+  "infoStep2": {
+    "message": "<strong>Kliknutím</strong> pri podržaní panel pripnete a potom ho presuniete za záhlavie. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> prejdú na rodiča alebo potomka, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> na súrodencov."
+  },
+  "infoStep3": {
+    "message": "Stlačením <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> skopírujete selektor, XPath, lokátor Playwright, HTML alebo text."
+  },
+  "infoStep4": {
+    "message": "V pripnutom paneli <strong>kliknite na ľubovoľnú hodnotu</strong> a upravte štýly, box, atribúty alebo text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> potvrdí, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> zruší a <strong>reset</strong> vráti všetko späť. Úpravy zostanú na stránke do jej obnovenia."
+  },
+  "infoStep5": {
+    "message": "Na dev serveri <strong>Vite</strong> alebo <strong>Next.js</strong> stlačte <kbd class=\"kd-chip kd-font-mono\">O</kbd> a otvorte zdroj prvku v editore."
+  },
+  "infoGithub": {
+    "message": "Repozitár na GitHube"
+  },
+  "infoReport": {
+    "message": "Nahlásiť chybu / nápad"
+  },
+  "infoCreatedBy": {
+    "message": "Autor:"
+  },
+  "footerSections": {
+    "message": "Selektory · Box · Štýly · Prístupnosť · Udalosti"
+  },
+  "panelPinned": {
+    "message": "pripnuté"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Vrátiť späť všetky úpravy tohto prvku"
+  },
+  "panelCopy": {
+    "message": "kopírovať"
+  },
+  "panelOpen": {
+    "message": "otvoriť"
+  },
+  "panelRemoveAttribute": {
+    "message": "Odstrániť $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "hodnota"
+  },
+  "boxHint": {
+    "message": "hore vpravo dole vľavo"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: hore vpravo dole vľavo",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: riadok stĺpec"
+  },
+  "stylesHint": {
+    "message": "vypočítané"
+  },
+  "shadowHostHint": {
+    "message": "vnútri shadow rootu prvku $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ ďalší",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "+$COUNT$ ďalšie",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ ďalších",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ listenery",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listenerov",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ potomok",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ potomkovia",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ potomkov",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ zhoda",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ zhody",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ zhôd",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "jedinečný"
+  },
+  "noListeners": {
+    "message": "na tomto prvku nie sú žiadne listenery"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonymná"
+  },
+  "rowPosition": {
+    "message": "Pozícia"
+  },
+  "rowSize": {
+    "message": "Veľkosť"
+  },
+  "rowRole": {
+    "message": "Rola"
+  },
+  "rowName": {
+    "message": "Názov"
+  },
+  "rowFocusable": {
+    "message": "Zameriavateľný"
+  },
+  "rowSource": {
+    "message": "Zdroj"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Komponent"
+  },
+  "rowText": {
+    "message": "Text"
+  },
+  "rowKind": {
+    "message": "Druh"
+  },
+  "rowNatural": {
+    "message": "Pôvodná veľkosť"
+  },
+  "rowDuration": {
+    "message": "Dĺžka"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Rola"
+  },
+  "strategyLabel": {
+    "message": "Popis"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt text"
+  },
+  "strategyTitle": {
+    "message": "Titulok"
+  },
+  "strategyText": {
+    "message": "Text"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "áno"
+  },
+  "valueNo": {
+    "message": "nie"
+  },
+  "valueNone": {
+    "message": "žiadny"
+  },
+  "valueEmpty": {
+    "message": "prázdne"
+  },
+  "mediaLive": {
+    "message": "naživo"
+  },
+  "addStyle": {
+    "message": "+ štýl"
+  },
+  "addStylePlaceholder": {
+    "message": "vlastnosť: hodnota"
+  },
+  "addAttribute": {
+    "message": "+ atribút"
+  },
+  "addAttributePlaceholder": {
+    "message": "názov=\"hodnota\""
+  },
+  "kbdDrag": {
+    "message": "ťahať"
+  },
+  "kbdClickValue": {
+    "message": "klik na hodnotu"
+  },
+  "footPin": {
+    "message": "pripnúť"
+  },
+  "footUnpin": {
+    "message": "odopnúť"
+  },
+  "footMove": {
+    "message": "presunúť"
+  },
+  "footEdit": {
+    "message": "upraviť"
+  },
+  "footClose": {
+    "message": "zavrieť"
+  },
+  "footParentChild": {
+    "message": "rodič / potomok"
+  },
+  "footSibling": {
+    "message": "súrodenec"
+  },
+  "footOpenSource": {
+    "message": "otvoriť zdroj"
+  },
+  "actionSelector": {
+    "message": "selektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokátor"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "text"
+  },
+  "toastEditsReset": {
+    "message": "Úpravy vrátené"
+  },
+  "toastNoSource": {
+    "message": "Tento prvok nemá umiestnenie v zdroji"
+  },
+  "toastNoDevServer": {
+    "message": "Žiadny dev server, ktorý by otvoril editor"
+  },
+  "toastOpened": {
+    "message": "Otvorené v editore"
+  },
+  "toastNotOpened": {
+    "message": "Editor sa neotvoril"
+  },
+  "toastNothingToCopy": {
+    "message": "Nie je čo kopírovať: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Skopírované: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Nepodarilo sa skopírovať: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

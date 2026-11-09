@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "按住 Alt 并悬停在元素上，无需打开 DevTools 即可查看选择器、盒模型、样式、无障碍信息和事件。"
+  },
+  "appTagline": {
+    "message": "悬停式元素检查器"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect 设置"
+  },
+  "settingsOpenTitle": {
+    "message": "设置"
+  },
+  "settingsCloseLabel": {
+    "message": "关闭设置"
+  },
+  "closeTitle": {
+    "message": "关闭"
+  },
+  "infoOpenLabel": {
+    "message": "关于 QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "关闭信息"
+  },
+  "enabledToggleLabel": {
+    "message": "开启或关闭 QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "按住的键"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "按住此键并悬停在任意元素上。松开即可恢复页面。"
+  },
+  "whileHoldingLabel": {
+    "message": "按住时"
+  },
+  "kbdClick": {
+    "message": "点击"
+  },
+  "shortcutPin": {
+    "message": "固定面板"
+  },
+  "shortcutClose": {
+    "message": "关闭"
+  },
+  "shortcutParentChild": {
+    "message": "父级 / 子级"
+  },
+  "shortcutSibling": {
+    "message": "同级元素"
+  },
+  "shortcutCopySelector": {
+    "message": "复制 CSS 选择器"
+  },
+  "shortcutCopyXpath": {
+    "message": "复制 XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "复制 Playwright 定位器"
+  },
+  "shortcutCopyHtml": {
+    "message": "复制 HTML"
+  },
+  "shortcutCopyText": {
+    "message": "复制文本"
+  },
+  "editorLabel": {
+    "message": "编辑器"
+  },
+  "editorChecking": {
+    "message": "正在检查此页面"
+  },
+  "editorHint": {
+    "message": "在有源码位置的元素上按 <kbd class=\"kd-chip kd-font-mono\">O</kbd>，即可在编辑器中打开它。"
+  },
+  "editorUnavailable": {
+    "message": "此页面不可用"
+  },
+  "editorSources": {
+    "message": "$SERVER$ 开发服务器，元素源码可用",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ 开发服务器，此处没有元素源码",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "自动保存，并立即应用到已打开的标签页。"
+  },
+  "settingsEditing": {
+    "message": "编辑"
+  },
+  "settingAllowEdit": {
+    "message": "允许编辑"
+  },
+  "settingAllowEditHint": {
+    "message": "点击已固定面板中的值，即可更改页面上的样式、属性和文本"
+  },
+  "settingsPopup": {
+    "message": "弹出窗口"
+  },
+  "settingEditorStatus": {
+    "message": "编辑器可用性"
+  },
+  "settingEditorStatusHint": {
+    "message": "此页面能否在你的编辑器中打开源码"
+  },
+  "settingsOverlay": {
+    "message": "叠加层"
+  },
+  "settingBoxModel": {
+    "message": "高亮盒模型"
+  },
+  "settingBoxModelHint": {
+    "message": "margin、border、padding 和 gap 色带"
+  },
+  "settingsSections": {
+    "message": "面板分区"
+  },
+  "sectionBox": {
+    "message": "盒模型"
+  },
+  "settingBoxHint": {
+    "message": "位置、尺寸、margin、padding、border、gap"
+  },
+  "sectionEvents": {
+    "message": "事件"
+  },
+  "settingEventsHint": {
+    "message": "监听器、内联处理程序和框架 props"
+  },
+  "sectionStyles": {
+    "message": "样式"
+  },
+  "settingStylesHint": {
+    "message": "重要的计算值"
+  },
+  "sectionAccessibility": {
+    "message": "无障碍"
+  },
+  "settingAccessibilityHint": {
+    "message": "角色、无障碍名称、可聚焦性、ARIA"
+  },
+  "sectionAttributes": {
+    "message": "属性"
+  },
+  "settingAttributesHint": {
+    "message": "元素上的所有属性"
+  },
+  "sectionMedia": {
+    "message": "媒体"
+  },
+  "settingMediaHint": {
+    "message": "图片、视频、canvas 和 SVG 详情"
+  },
+  "sectionContext": {
+    "message": "上下文"
+  },
+  "settingContextHint": {
+    "message": "源文件、框架、祖先元素和文本"
+  },
+  "sectionSelectors": {
+    "message": "选择器"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS、XPath 和 Playwright 定位器"
+  },
+  "settingsReset": {
+    "message": "恢复默认值"
+  },
+  "infoIntro": {
+    "message": "QuickInspect 无需打开 DevTools 即可显示元素的关键信息：<strong>选择器</strong>、<strong>盒模型</strong>、<strong>计算样式</strong>、<strong>无障碍</strong>、<strong>属性</strong>、<strong>事件</strong>以及它所在的<strong>源文件</strong>。"
+  },
+  "infoStep1": {
+    "message": "按住 <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> 并悬停在任意元素上即可检查，松开即可恢复页面。可在主界面的<strong>按住的键</strong>中选择其他按键。"
+  },
+  "infoStep2": {
+    "message": "按住时<strong>点击</strong>可固定面板，然后拖动标题栏移动它。用 <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> 切换父级或子级，用 <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> 切换同级元素。"
+  },
+  "infoStep3": {
+    "message": "按 <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> 可复制选择器、XPath、Playwright 定位器、HTML 或文本。"
+  },
+  "infoStep4": {
+    "message": "在已固定的面板中<strong>点击任意值</strong>即可编辑样式、盒模型、属性或文本。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 应用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 撤销全部。编辑会保留在页面上，直到重新加载。"
+  },
+  "infoStep5": {
+    "message": "在 <strong>Vite</strong> 或 <strong>Next.js</strong> 开发服务器上，按 <kbd class=\"kd-chip kd-font-mono\">O</kbd> 可在编辑器中打开元素的源码。"
+  },
+  "infoGithub": {
+    "message": "GitHub 仓库"
+  },
+  "infoReport": {
+    "message": "报告问题 / 功能建议"
+  },
+  "infoCreatedBy": {
+    "message": "作者："
+  },
+  "footerSections": {
+    "message": "选择器 · 盒模型 · 样式 · 无障碍 · 事件"
+  },
+  "panelPinned": {
+    "message": "已固定"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "撤销对此元素的所有编辑"
+  },
+  "panelCopy": {
+    "message": "复制"
+  },
+  "panelOpen": {
+    "message": "打开"
+  },
+  "panelRemoveAttribute": {
+    "message": "移除 $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "值"
+  },
+  "boxHint": {
+    "message": "上 右 下 左"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: 上 右 下 左",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: 行 列"
+  },
+  "stylesHint": {
+    "message": "计算值"
+  },
+  "shadowHostHint": {
+    "message": "位于 $HOST$ 的 shadow root 内",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "还有 $COUNT$ 个",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ 个监听器",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ 个子元素",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ 个匹配",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "唯一"
+  },
+  "noListeners": {
+    "message": "此元素上没有监听器"
+  },
+  "eventOriginInline": {
+    "message": "内联"
+  },
+  "eventAnonymous": {
+    "message": "匿名"
+  },
+  "rowPosition": {
+    "message": "位置"
+  },
+  "rowSize": {
+    "message": "尺寸"
+  },
+  "rowRole": {
+    "message": "角色"
+  },
+  "rowName": {
+    "message": "名称"
+  },
+  "rowFocusable": {
+    "message": "可聚焦"
+  },
+  "rowSource": {
+    "message": "来源"
+  },
+  "rowFramework": {
+    "message": "框架"
+  },
+  "rowComponent": {
+    "message": "组件"
+  },
+  "rowText": {
+    "message": "文本"
+  },
+  "rowKind": {
+    "message": "类型"
+  },
+  "rowNatural": {
+    "message": "原始尺寸"
+  },
+  "rowDuration": {
+    "message": "时长"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "角色"
+  },
+  "strategyLabel": {
+    "message": "标签"
+  },
+  "strategyPlaceholder": {
+    "message": "占位符"
+  },
+  "strategyAltText": {
+    "message": "alt 文本"
+  },
+  "strategyTitle": {
+    "message": "标题"
+  },
+  "strategyText": {
+    "message": "文本"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "是"
+  },
+  "valueNo": {
+    "message": "否"
+  },
+  "valueNone": {
+    "message": "无"
+  },
+  "valueEmpty": {
+    "message": "空"
+  },
+  "mediaLive": {
+    "message": "直播"
+  },
+  "addStyle": {
+    "message": "+ 样式"
+  },
+  "addStylePlaceholder": {
+    "message": "属性名: 值"
+  },
+  "addAttribute": {
+    "message": "+ 属性"
+  },
+  "addAttributePlaceholder": {
+    "message": "名称=\"值\""
+  },
+  "kbdDrag": {
+    "message": "拖动"
+  },
+  "kbdClickValue": {
+    "message": "点击值"
+  },
+  "footPin": {
+    "message": "固定"
+  },
+  "footUnpin": {
+    "message": "取消固定"
+  },
+  "footMove": {
+    "message": "移动"
+  },
+  "footEdit": {
+    "message": "编辑"
+  },
+  "footClose": {
+    "message": "关闭"
+  },
+  "footParentChild": {
+    "message": "父级 / 子级"
+  },
+  "footSibling": {
+    "message": "同级"
+  },
+  "footOpenSource": {
+    "message": "打开源码"
+  },
+  "actionSelector": {
+    "message": "选择器"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "定位器"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "文本"
+  },
+  "toastEditsReset": {
+    "message": "已撤销编辑"
+  },
+  "toastNoSource": {
+    "message": "此元素没有源码位置"
+  },
+  "toastNoDevServer": {
+    "message": "没有可打开编辑器的开发服务器"
+  },
+  "toastOpened": {
+    "message": "已在编辑器中打开"
+  },
+  "toastNotOpened": {
+    "message": "编辑器未打开"
+  },
+  "toastNothingToCopy": {
+    "message": "没有可复制的内容：$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "已复制$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "无法复制$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

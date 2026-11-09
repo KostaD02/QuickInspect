@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt nyomva tartásával egy elem fölött: szelektorok, dobozmodell, stílusok, akadálymentesség és események DevTools nélkül."
+  },
+  "appTagline": {
+    "message": "Elemvizsgáló rámutatásra"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect beállításai"
+  },
+  "settingsOpenTitle": {
+    "message": "Beállítások"
+  },
+  "settingsCloseLabel": {
+    "message": "Beállítások bezárása"
+  },
+  "closeTitle": {
+    "message": "Bezárás"
+  },
+  "infoOpenLabel": {
+    "message": "A QuickInspect névjegye"
+  },
+  "infoCloseLabel": {
+    "message": "Információ bezárása"
+  },
+  "enabledToggleLabel": {
+    "message": "A QuickInspect be- vagy kikapcsolása"
+  },
+  "holdKeyLabel": {
+    "message": "Nyomva tartott billentyű"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Tartsa lenyomva, és mutasson egy elemre. Elengedéskor az oldal visszaáll."
+  },
+  "whileHoldingLabel": {
+    "message": "Nyomva tartás közben"
+  },
+  "kbdClick": {
+    "message": "kattintás"
+  },
+  "shortcutPin": {
+    "message": "Rögzítés"
+  },
+  "shortcutClose": {
+    "message": "Bezárás"
+  },
+  "shortcutParentChild": {
+    "message": "Szülő/gyermek"
+  },
+  "shortcutSibling": {
+    "message": "Testvérelem"
+  },
+  "shortcutCopySelector": {
+    "message": "Szelektor másolása"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath másolása"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright-lokátor másolása"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML másolása"
+  },
+  "shortcutCopyText": {
+    "message": "Szöveg másolása"
+  },
+  "editorLabel": {
+    "message": "Szerkesztő"
+  },
+  "editorChecking": {
+    "message": "Az oldal ellenőrzése"
+  },
+  "editorHint": {
+    "message": "Nyomja meg az <kbd class=\"kd-chip kd-font-mono\">O</kbd> billentyűt egy forráshellyel rendelkező elemen a szerkesztőben való megnyitáshoz."
+  },
+  "editorUnavailable": {
+    "message": "Ezen az oldalon nem érhető el"
+  },
+  "editorSources": {
+    "message": "$SERVER$ dev szerver, elemforrások elérhetők",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ dev szerver, nincs elemforrás",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Automatikusan mentődik, és azonnal érvényes a nyitott lapokon."
+  },
+  "settingsEditing": {
+    "message": "Szerkesztés"
+  },
+  "settingAllowEdit": {
+    "message": "Szerkesztés engedélyezése"
+  },
+  "settingAllowEditHint": {
+    "message": "Kattintson a rögzített panel értékeire a stílusok, attribútumok és szövegek módosításához az oldalon"
+  },
+  "settingsPopup": {
+    "message": "Felugró ablak"
+  },
+  "settingEditorStatus": {
+    "message": "Szerkesztő elérhetősége"
+  },
+  "settingEditorStatusHint": {
+    "message": "Nyithat-e az oldal forrásokat a szerkesztőben"
+  },
+  "settingsOverlay": {
+    "message": "Kiemelés"
+  },
+  "settingBoxModel": {
+    "message": "Dobozmodell kiemelése"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin, border, padding és gap sávok"
+  },
+  "settingsSections": {
+    "message": "Panelszakaszok"
+  },
+  "sectionBox": {
+    "message": "Doboz"
+  },
+  "settingBoxHint": {
+    "message": "Pozíció, méret, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Események"
+  },
+  "settingEventsHint": {
+    "message": "Figyelők, inline kezelők és keretrendszer-propok"
+  },
+  "sectionStyles": {
+    "message": "Stílusok"
+  },
+  "settingStylesHint": {
+    "message": "A számított értékek, amelyek számítanak"
+  },
+  "sectionAccessibility": {
+    "message": "Akadálymentesség"
+  },
+  "settingAccessibilityHint": {
+    "message": "Szerep, akadálymentes név, fókuszálhatóság, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Attribútumok"
+  },
+  "settingAttributesHint": {
+    "message": "Az elem összes attribútuma"
+  },
+  "sectionMedia": {
+    "message": "Média"
+  },
+  "settingMediaHint": {
+    "message": "Kép, videó, canvas és SVG részletei"
+  },
+  "sectionContext": {
+    "message": "Kontextus"
+  },
+  "settingContextHint": {
+    "message": "Forrásfájl, keretrendszer, ősök és szöveg"
+  },
+  "sectionSelectors": {
+    "message": "Szelektorok"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- és Playwright-lokátorok"
+  },
+  "settingsReset": {
+    "message": "Alapértelmezés visszaállítása"
+  },
+  "infoIntro": {
+    "message": "A QuickInspect a DevTools megnyitása nélkül mutatja meg, amit egy elemről tudni kell: a <strong>szelektorokat</strong>, a <strong>dobozmodellt</strong>, a <strong>számított stílusokat</strong>, az <strong>akadálymentességet</strong>, az <strong>attribútumokat</strong>, az <strong>eseményeket</strong> és a <strong>forrásfájlt</strong>, ahonnan származik."
+  },
+  "infoStep1": {
+    "message": "Tartsa lenyomva a(z) <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> billentyűt, és mutasson egy elemre a vizsgálathoz; elengedéskor az oldal visszaáll. Másik billentyűt a főképernyő <strong>Nyomva tartott billentyű</strong> mezőjében választhat."
+  },
+  "infoStep2": {
+    "message": "Nyomva tartás közben <strong>kattintson</strong> a panel rögzítéséhez, majd húzza a fejlécénél fogva. A <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> a szülőre vagy gyermekre, a <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> a testvérelemekre lép."
+  },
+  "infoStep3": {
+    "message": "Nyomja meg az <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> billentyűt a szelektor, az XPath, a Playwright-lokátor, a HTML vagy a szöveg másolásához."
+  },
+  "infoStep4": {
+    "message": "Rögzített panelen <strong>kattintson bármelyik értékre</strong> a stílusok, a doboz, az attribútumok vagy a szöveg szerkesztéséhez. Az <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> alkalmaz, az <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> elvet, a <strong>reset</strong> mindent visszavon. A módosítások újratöltésig az oldalon maradnak."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> vagy <strong>Next.js</strong> fejlesztői szerveren az <kbd class=\"kd-chip kd-font-mono\">O</kbd> billentyű megnyitja az elem forrását a szerkesztőben."
+  },
+  "infoGithub": {
+    "message": "GitHub-tároló"
+  },
+  "infoReport": {
+    "message": "Hiba / ötlet bejelentése"
+  },
+  "infoCreatedBy": {
+    "message": "Készítette:"
+  },
+  "footerSections": {
+    "message": "Szelektorok · Doboz · Stílusok · Akadálymentesség · Események"
+  },
+  "panelPinned": {
+    "message": "rögzítve"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Az elem összes módosításának visszavonása"
+  },
+  "panelCopy": {
+    "message": "másolás"
+  },
+  "panelOpen": {
+    "message": "megnyitás"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ eltávolítása",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "érték"
+  },
+  "boxHint": {
+    "message": "fent jobb lent bal"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: fent jobb lent bal",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: sor oszlop"
+  },
+  "stylesHint": {
+    "message": "számított"
+  },
+  "shadowHostHint": {
+    "message": "a(z) $HOST$ shadow rootjában",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ további",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ további",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ figyelő",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ figyelő",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ gyermek",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ gyermek",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ találat",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ találat",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "egyedi"
+  },
+  "noListeners": {
+    "message": "nincs figyelő ezen az elemen"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "névtelen"
+  },
+  "rowPosition": {
+    "message": "Pozíció"
+  },
+  "rowSize": {
+    "message": "Méret"
+  },
+  "rowRole": {
+    "message": "Szerep"
+  },
+  "rowName": {
+    "message": "Név"
+  },
+  "rowFocusable": {
+    "message": "Fókuszálható"
+  },
+  "rowSource": {
+    "message": "Forrás"
+  },
+  "rowFramework": {
+    "message": "Keretrendszer"
+  },
+  "rowComponent": {
+    "message": "Komponens"
+  },
+  "rowText": {
+    "message": "Szöveg"
+  },
+  "rowKind": {
+    "message": "Fajta"
+  },
+  "rowNatural": {
+    "message": "Természetes"
+  },
+  "rowDuration": {
+    "message": "Időtartam"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Szerep"
+  },
+  "strategyLabel": {
+    "message": "Címke"
+  },
+  "strategyPlaceholder": {
+    "message": "Helyőrző"
+  },
+  "strategyAltText": {
+    "message": "Alt szöveg"
+  },
+  "strategyTitle": {
+    "message": "Cím"
+  },
+  "strategyText": {
+    "message": "Szöveg"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "igen"
+  },
+  "valueNo": {
+    "message": "nem"
+  },
+  "valueNone": {
+    "message": "nincs"
+  },
+  "valueEmpty": {
+    "message": "üres"
+  },
+  "mediaLive": {
+    "message": "élő"
+  },
+  "addStyle": {
+    "message": "+ stílus"
+  },
+  "addStylePlaceholder": {
+    "message": "tulajdonság: érték"
+  },
+  "addAttribute": {
+    "message": "+ attribútum"
+  },
+  "addAttributePlaceholder": {
+    "message": "név=\"érték\""
+  },
+  "kbdDrag": {
+    "message": "húzás"
+  },
+  "kbdClickValue": {
+    "message": "kattintás értékre"
+  },
+  "footPin": {
+    "message": "rögzítés"
+  },
+  "footUnpin": {
+    "message": "feloldás"
+  },
+  "footMove": {
+    "message": "mozgatás"
+  },
+  "footEdit": {
+    "message": "szerkesztés"
+  },
+  "footClose": {
+    "message": "bezárás"
+  },
+  "footParentChild": {
+    "message": "szülő / gyermek"
+  },
+  "footSibling": {
+    "message": "testvér"
+  },
+  "footOpenSource": {
+    "message": "forrás megnyitása"
+  },
+  "actionSelector": {
+    "message": "szelektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokátor"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "szöveg"
+  },
+  "toastEditsReset": {
+    "message": "Módosítások visszavonva"
+  },
+  "toastNoSource": {
+    "message": "Ehhez az elemhez nincs forráshely"
+  },
+  "toastNoDevServer": {
+    "message": "Nincs fejlesztői szerver a szerkesztő megnyitásához"
+  },
+  "toastOpened": {
+    "message": "Megnyitva a szerkesztőben"
+  },
+  "toastNotOpened": {
+    "message": "A szerkesztő nem nyílt meg"
+  },
+  "toastNothingToCopy": {
+    "message": "Nincs mit másolni: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Másolva: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Nem sikerült másolni: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

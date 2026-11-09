@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Giữ Alt và di chuột lên phần tử để xem bộ chọn, box model, kiểu, khả năng tiếp cận và sự kiện mà không cần mở DevTools."
+  },
+  "appTagline": {
+    "message": "Trình kiểm tra phần tử khi di chuột"
+  },
+  "settingsOpenLabel": {
+    "message": "Cài đặt QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Cài đặt"
+  },
+  "settingsCloseLabel": {
+    "message": "Đóng cài đặt"
+  },
+  "closeTitle": {
+    "message": "Đóng"
+  },
+  "infoOpenLabel": {
+    "message": "Giới thiệu QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Đóng thông tin"
+  },
+  "enabledToggleLabel": {
+    "message": "Bật hoặc tắt QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Phím giữ"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Giữ phím và di chuột lên một phần tử. Thả ra để trang trở lại như cũ."
+  },
+  "whileHoldingLabel": {
+    "message": "Trong khi giữ"
+  },
+  "kbdClick": {
+    "message": "nhấp"
+  },
+  "shortcutPin": {
+    "message": "Ghim bảng"
+  },
+  "shortcutClose": {
+    "message": "Đóng"
+  },
+  "shortcutParentChild": {
+    "message": "Cha / con"
+  },
+  "shortcutSibling": {
+    "message": "Anh em"
+  },
+  "shortcutCopySelector": {
+    "message": "Sao chép bộ chọn"
+  },
+  "shortcutCopyXpath": {
+    "message": "Sao chép XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Sao chép locator Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Sao chép HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Sao chép văn bản"
+  },
+  "editorLabel": {
+    "message": "Trình soạn thảo"
+  },
+  "editorChecking": {
+    "message": "Đang kiểm tra trang này"
+  },
+  "editorHint": {
+    "message": "Nhấn <kbd class=\"kd-chip kd-font-mono\">O</kbd> trên phần tử có vị trí nguồn để mở nó trong trình soạn thảo của bạn."
+  },
+  "editorUnavailable": {
+    "message": "Không khả dụng trên trang này"
+  },
+  "editorSources": {
+    "message": "Máy chủ dev $SERVER$, có sẵn nguồn phần tử",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Máy chủ dev $SERVER$, không có nguồn phần tử ở đây",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Tự động lưu và áp dụng ngay cho các thẻ đang mở."
+  },
+  "settingsEditing": {
+    "message": "Chỉnh sửa"
+  },
+  "settingAllowEdit": {
+    "message": "Cho phép chỉnh sửa"
+  },
+  "settingAllowEditHint": {
+    "message": "Nhấp vào giá trị trong bảng đã ghim để thay đổi kiểu, thuộc tính và văn bản trên trang"
+  },
+  "settingsPopup": {
+    "message": "Cửa sổ bật lên"
+  },
+  "settingEditorStatus": {
+    "message": "Tình trạng trình soạn thảo"
+  },
+  "settingEditorStatusHint": {
+    "message": "Trang này có thể mở nguồn trong trình soạn thảo"
+  },
+  "settingsOverlay": {
+    "message": "Lớp phủ"
+  },
+  "settingBoxModel": {
+    "message": "Tô sáng box model"
+  },
+  "settingBoxModelHint": {
+    "message": "Các dải margin, border, padding và gap"
+  },
+  "settingsSections": {
+    "message": "Các mục của bảng"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Vị trí, kích thước, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Sự kiện"
+  },
+  "settingEventsHint": {
+    "message": "Listener, handler inline và props của framework"
+  },
+  "sectionStyles": {
+    "message": "Kiểu"
+  },
+  "settingStylesHint": {
+    "message": "Các giá trị đã tính quan trọng"
+  },
+  "sectionAccessibility": {
+    "message": "Tiếp cận"
+  },
+  "settingAccessibilityHint": {
+    "message": "Vai trò, tên tiếp cận, khả năng focus, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Thuộc tính"
+  },
+  "settingAttributesHint": {
+    "message": "Mọi thuộc tính của phần tử"
+  },
+  "sectionMedia": {
+    "message": "Phương tiện"
+  },
+  "settingMediaHint": {
+    "message": "Chi tiết hình ảnh, video, canvas và SVG"
+  },
+  "sectionContext": {
+    "message": "Ngữ cảnh"
+  },
+  "settingContextHint": {
+    "message": "Tệp nguồn, framework, phần tử tổ tiên và văn bản"
+  },
+  "sectionSelectors": {
+    "message": "Bộ chọn"
+  },
+  "settingSelectorsHint": {
+    "message": "Locator CSS, XPath và Playwright"
+  },
+  "settingsReset": {
+    "message": "Đặt lại mặc định"
+  },
+  "infoIntro": {
+    "message": "QuickInspect cho bạn thấy những gì cần biết về bất kỳ phần tử nào mà không cần mở DevTools: <strong>bộ chọn</strong>, <strong>box model</strong>, <strong>kiểu đã tính</strong>, <strong>khả năng tiếp cận</strong>, <strong>thuộc tính</strong>, <strong>sự kiện</strong> và <strong>tệp nguồn</strong> của nó."
+  },
+  "infoStep1": {
+    "message": "Giữ <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> và di chuột lên một phần tử để kiểm tra, thả ra để trang trở lại như cũ. Chọn phím khác trong <strong>Phím giữ</strong> ở màn hình chính."
+  },
+  "infoStep2": {
+    "message": "<strong>Nhấp</strong> trong khi giữ để ghim bảng, rồi kéo phần đầu để di chuyển. Dùng <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> cho cha hoặc con và <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> cho các phần tử anh em."
+  },
+  "infoStep3": {
+    "message": "Nhấn <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> để sao chép bộ chọn, XPath, locator Playwright, HTML hoặc văn bản."
+  },
+  "infoStep4": {
+    "message": "Trong bảng đã ghim, <strong>nhấp vào bất kỳ giá trị nào</strong> để chỉnh sửa kiểu, box, thuộc tính hoặc văn bản. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> áp dụng, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> hủy và <strong>reset</strong> hoàn tác tất cả. Các chỉnh sửa giữ nguyên trên trang cho đến khi tải lại."
+  },
+  "infoStep5": {
+    "message": "Trên máy chủ dev <strong>Vite</strong> hoặc <strong>Next.js</strong>, nhấn <kbd class=\"kd-chip kd-font-mono\">O</kbd> để mở nguồn của phần tử trong trình soạn thảo của bạn."
+  },
+  "infoGithub": {
+    "message": "Kho GitHub"
+  },
+  "infoReport": {
+    "message": "Báo lỗi / đề xuất tính năng"
+  },
+  "infoCreatedBy": {
+    "message": "Tạo bởi"
+  },
+  "footerSections": {
+    "message": "Bộ chọn · Box · Kiểu · Tiếp cận · Sự kiện"
+  },
+  "panelPinned": {
+    "message": "đã ghim"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Hoàn tác mọi chỉnh sửa trên phần tử này"
+  },
+  "panelCopy": {
+    "message": "sao chép"
+  },
+  "panelOpen": {
+    "message": "mở"
+  },
+  "panelRemoveAttribute": {
+    "message": "Xóa $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "giá trị"
+  },
+  "boxHint": {
+    "message": "trên phải dưới trái"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: trên phải dưới trái",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: hàng cột"
+  },
+  "stylesHint": {
+    "message": "đã tính"
+  },
+  "shadowHostHint": {
+    "message": "bên trong shadow root của $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ nữa",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ con",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ kết quả khớp",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "duy nhất"
+  },
+  "noListeners": {
+    "message": "không có listener trên phần tử này"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "ẩn danh"
+  },
+  "rowPosition": {
+    "message": "Vị trí"
+  },
+  "rowSize": {
+    "message": "Kích thước"
+  },
+  "rowRole": {
+    "message": "Vai trò"
+  },
+  "rowName": {
+    "message": "Tên"
+  },
+  "rowFocusable": {
+    "message": "Focus được"
+  },
+  "rowSource": {
+    "message": "Nguồn"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Component"
+  },
+  "rowText": {
+    "message": "Văn bản"
+  },
+  "rowKind": {
+    "message": "Loại"
+  },
+  "rowNatural": {
+    "message": "Kích thước gốc"
+  },
+  "rowDuration": {
+    "message": "Thời lượng"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Vai trò"
+  },
+  "strategyLabel": {
+    "message": "Nhãn"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Văn bản alt"
+  },
+  "strategyTitle": {
+    "message": "Tiêu đề"
+  },
+  "strategyText": {
+    "message": "Văn bản"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "có"
+  },
+  "valueNo": {
+    "message": "không"
+  },
+  "valueNone": {
+    "message": "không có"
+  },
+  "valueEmpty": {
+    "message": "trống"
+  },
+  "mediaLive": {
+    "message": "trực tiếp"
+  },
+  "addStyle": {
+    "message": "+ kiểu"
+  },
+  "addStylePlaceholder": {
+    "message": "thuộc tính CSS: giá trị"
+  },
+  "addAttribute": {
+    "message": "+ thuộc tính"
+  },
+  "addAttributePlaceholder": {
+    "message": "tên=\"giá trị\""
+  },
+  "kbdDrag": {
+    "message": "kéo"
+  },
+  "kbdClickValue": {
+    "message": "nhấp giá trị"
+  },
+  "footPin": {
+    "message": "ghim"
+  },
+  "footUnpin": {
+    "message": "bỏ ghim"
+  },
+  "footMove": {
+    "message": "di chuyển"
+  },
+  "footEdit": {
+    "message": "sửa"
+  },
+  "footClose": {
+    "message": "đóng"
+  },
+  "footParentChild": {
+    "message": "cha / con"
+  },
+  "footSibling": {
+    "message": "anh em"
+  },
+  "footOpenSource": {
+    "message": "mở nguồn"
+  },
+  "actionSelector": {
+    "message": "bộ chọn"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "văn bản"
+  },
+  "toastEditsReset": {
+    "message": "Đã đặt lại các chỉnh sửa"
+  },
+  "toastNoSource": {
+    "message": "Phần tử này không có vị trí nguồn"
+  },
+  "toastNoDevServer": {
+    "message": "Không có máy chủ dev để mở trình soạn thảo"
+  },
+  "toastOpened": {
+    "message": "Đã mở trong trình soạn thảo"
+  },
+  "toastNotOpened": {
+    "message": "Trình soạn thảo không mở"
+  },
+  "toastNothingToCopy": {
+    "message": "Không có gì để sao chép: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Đã sao chép $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Không thể sao chép $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Tahan Alt dan tuding pada elemen: pemilih, box model, gaya, kebolehcapaian dan event tanpa membuka DevTools."
+  },
+  "appTagline": {
+    "message": "Pemeriksa elemen semasa hover"
+  },
+  "settingsOpenLabel": {
+    "message": "Tetapan QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Tetapan"
+  },
+  "settingsCloseLabel": {
+    "message": "Tutup tetapan"
+  },
+  "closeTitle": {
+    "message": "Tutup"
+  },
+  "infoOpenLabel": {
+    "message": "Perihal QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Tutup maklumat"
+  },
+  "enabledToggleLabel": {
+    "message": "Hidupkan atau matikan QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Kekunci tahan"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Tahan kekunci dan tuding pada elemen. Lepaskan untuk memulihkan halaman."
+  },
+  "whileHoldingLabel": {
+    "message": "Semasa menahan"
+  },
+  "kbdClick": {
+    "message": "klik"
+  },
+  "shortcutPin": {
+    "message": "Semat panel"
+  },
+  "shortcutClose": {
+    "message": "Tutup"
+  },
+  "shortcutParentChild": {
+    "message": "Induk / anak"
+  },
+  "shortcutSibling": {
+    "message": "Adik-beradik"
+  },
+  "shortcutCopySelector": {
+    "message": "Salin pemilih CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "Salin XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Salin locator Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Salin HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Salin teks"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "Menyemak halaman ini"
+  },
+  "editorHint": {
+    "message": "Tekan <kbd class=\"kd-chip kd-font-mono\">O</kbd> pada elemen yang mempunyai lokasi sumber untuk membukanya dalam editor anda."
+  },
+  "editorUnavailable": {
+    "message": "Tidak tersedia pada halaman ini"
+  },
+  "editorSources": {
+    "message": "Pelayan dev $SERVER$, sumber elemen tersedia",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Pelayan dev $SERVER$, tiada sumber elemen di sini",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Disimpan secara automatik dan digunakan serta-merta pada tab yang terbuka."
+  },
+  "settingsEditing": {
+    "message": "Penyuntingan"
+  },
+  "settingAllowEdit": {
+    "message": "Benarkan suntingan"
+  },
+  "settingAllowEditHint": {
+    "message": "Klik nilai dalam panel yang disemat untuk menukar gaya, atribut dan teks pada halaman"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Ketersediaan editor"
+  },
+  "settingEditorStatusHint": {
+    "message": "Adakah halaman ini membuka sumber dalam editor"
+  },
+  "settingsOverlay": {
+    "message": "Tindanan"
+  },
+  "settingBoxModel": {
+    "message": "Sorotan box model"
+  },
+  "settingBoxModelHint": {
+    "message": "Jalur margin, border, padding dan gap"
+  },
+  "settingsSections": {
+    "message": "Bahagian panel"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Kedudukan, saiz, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Event"
+  },
+  "settingEventsHint": {
+    "message": "Listener, pengendali inline dan props framework"
+  },
+  "sectionStyles": {
+    "message": "Gaya"
+  },
+  "settingStylesHint": {
+    "message": "Nilai terhitung yang penting"
+  },
+  "sectionAccessibility": {
+    "message": "Kebolehcapaian"
+  },
+  "settingAccessibilityHint": {
+    "message": "Peranan, nama boleh capai, kebolehfokusan, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atribut"
+  },
+  "settingAttributesHint": {
+    "message": "Setiap atribut pada elemen"
+  },
+  "sectionMedia": {
+    "message": "Media"
+  },
+  "settingMediaHint": {
+    "message": "Butiran imej, video, canvas dan SVG"
+  },
+  "sectionContext": {
+    "message": "Konteks"
+  },
+  "settingContextHint": {
+    "message": "Fail sumber, framework, leluhur dan teks"
+  },
+  "sectionSelectors": {
+    "message": "Pemilih"
+  },
+  "settingSelectorsHint": {
+    "message": "Locator CSS, XPath dan Playwright"
+  },
+  "settingsReset": {
+    "message": "Tetapkan semula kepada lalai"
+  },
+  "infoIntro": {
+    "message": "QuickInspect menunjukkan perkara yang anda perlu tahu tentang mana-mana elemen tanpa membuka DevTools: <strong>pemilih</strong>, <strong>box model</strong>, <strong>gaya terhitung</strong>, <strong>kebolehcapaian</strong>, <strong>atribut</strong>, <strong>event</strong> dan <strong>fail sumber</strong> asalnya."
+  },
+  "infoStep1": {
+    "message": "Tahan <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> dan tuding pada elemen untuk memeriksanya; lepaskan untuk memulihkan halaman. Pilih kekunci lain di bawah <strong>Kekunci tahan</strong> pada skrin utama."
+  },
+  "infoStep2": {
+    "message": "<strong>Klik</strong> semasa menahan untuk menyemat panel, kemudian seret pengepalanya untuk mengalihkannya. Gunakan <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> untuk induk atau anak dan <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> untuk adik-beradik."
+  },
+  "infoStep3": {
+    "message": "Tekan <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> untuk menyalin pemilih, XPath, locator Playwright, HTML atau teks."
+  },
+  "infoStep4": {
+    "message": "Dalam panel yang disemat, <strong>klik mana-mana nilai</strong> untuk menyunting gaya, box, atribut atau teks. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> menggunakan, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> membatalkan dan <strong>reset</strong> membuat asal semuanya. Suntingan kekal pada halaman sehingga dimuat semula."
+  },
+  "infoStep5": {
+    "message": "Pada pelayan dev <strong>Vite</strong> atau <strong>Next.js</strong>, tekan <kbd class=\"kd-chip kd-font-mono\">O</kbd> untuk membuka sumber elemen dalam editor anda."
+  },
+  "infoGithub": {
+    "message": "Repositori GitHub"
+  },
+  "infoReport": {
+    "message": "Laporkan isu / ciri"
+  },
+  "infoCreatedBy": {
+    "message": "Dicipta oleh"
+  },
+  "footerSections": {
+    "message": "Pemilih · Box · Gaya · Kebolehcapaian · Event"
+  },
+  "panelPinned": {
+    "message": "disemat"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Buat asal semua suntingan pada elemen ini"
+  },
+  "panelCopy": {
+    "message": "salin"
+  },
+  "panelOpen": {
+    "message": "buka"
+  },
+  "panelRemoveAttribute": {
+    "message": "Alih keluar $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "nilai"
+  },
+  "boxHint": {
+    "message": "atas kanan bawah kiri"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: atas kanan bawah kiri",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: baris lajur"
+  },
+  "stylesHint": {
+    "message": "terhitung"
+  },
+  "shadowHostHint": {
+    "message": "dalam shadow root $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ lagi",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ anak",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ padanan",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unik"
+  },
+  "noListeners": {
+    "message": "tiada listener pada elemen ini"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "tanpa nama"
+  },
+  "rowPosition": {
+    "message": "Kedudukan"
+  },
+  "rowSize": {
+    "message": "Saiz"
+  },
+  "rowRole": {
+    "message": "Peranan"
+  },
+  "rowName": {
+    "message": "Nama"
+  },
+  "rowFocusable": {
+    "message": "Boleh fokus"
+  },
+  "rowSource": {
+    "message": "Sumber"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Komponen"
+  },
+  "rowText": {
+    "message": "Teks"
+  },
+  "rowKind": {
+    "message": "Jenis"
+  },
+  "rowNatural": {
+    "message": "Saiz asal"
+  },
+  "rowDuration": {
+    "message": "Tempoh"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Peranan"
+  },
+  "strategyLabel": {
+    "message": "Label"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Teks alt"
+  },
+  "strategyTitle": {
+    "message": "Tajuk"
+  },
+  "strategyText": {
+    "message": "Teks"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ya"
+  },
+  "valueNo": {
+    "message": "tidak"
+  },
+  "valueNone": {
+    "message": "tiada"
+  },
+  "valueEmpty": {
+    "message": "kosong"
+  },
+  "mediaLive": {
+    "message": "langsung"
+  },
+  "addStyle": {
+    "message": "+ gaya"
+  },
+  "addStylePlaceholder": {
+    "message": "sifat: nilai"
+  },
+  "addAttribute": {
+    "message": "+ atribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "nama=\"nilai\""
+  },
+  "kbdDrag": {
+    "message": "seret"
+  },
+  "kbdClickValue": {
+    "message": "klik nilai"
+  },
+  "footPin": {
+    "message": "semat"
+  },
+  "footUnpin": {
+    "message": "nyahsemat"
+  },
+  "footMove": {
+    "message": "alih"
+  },
+  "footEdit": {
+    "message": "sunting"
+  },
+  "footClose": {
+    "message": "tutup"
+  },
+  "footParentChild": {
+    "message": "induk / anak"
+  },
+  "footSibling": {
+    "message": "adik-beradik"
+  },
+  "footOpenSource": {
+    "message": "buka sumber"
+  },
+  "actionSelector": {
+    "message": "pemilih"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "teks"
+  },
+  "toastEditsReset": {
+    "message": "Suntingan ditetapkan semula"
+  },
+  "toastNoSource": {
+    "message": "Tiada lokasi sumber untuk elemen ini"
+  },
+  "toastNoDevServer": {
+    "message": "Tiada pelayan dev untuk membuka editor"
+  },
+  "toastOpened": {
+    "message": "Dibuka dalam editor"
+  },
+  "toastNotOpened": {
+    "message": "Editor tidak dibuka"
+  },
+  "toastNothingToCopy": {
+    "message": "Tiada apa untuk disalin bagi $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$ disalin",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Tidak dapat menyalin $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

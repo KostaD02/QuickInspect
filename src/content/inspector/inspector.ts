@@ -10,6 +10,7 @@ import {
   mapToOriginal,
   openInEditor,
   resolveNextFrame,
+  t,
   truncate,
   viteBase,
 } from '@/shared/util';
@@ -378,7 +379,7 @@ export class Inspector {
     if (!target) return;
     revertEdits(target);
     this.refresh();
-    this.toast.show('Edits reset', this.info?.summary ?? '');
+    this.toast.show(t('toastEditsReset'), this.info?.summary ?? '');
   }
 
   // ? a sideways step keeps the trail, which still leads back down once the walk returns to its parent
@@ -463,32 +464,30 @@ export class Inspector {
   private openSource(): void {
     const source = this.info?.source;
     if (!source) {
-      this.toast.show('No source location for this element');
+      this.toast.show(t('toastNoSource'));
       return;
     }
     const location = formatSource(source);
     if (!this.info?.devServer) {
-      this.toast.show('No dev server to open the editor', location);
+      this.toast.show(t('toastNoDevServer'), location);
       return;
     }
     openInEditor(source, this.info.devServer).then((opened) => {
-      this.toast.show(
-        opened ? 'Opened in editor' : 'Editor did not open',
-        location,
-      );
+      this.toast.show(t(opened ? 'toastOpened' : 'toastNotOpened'), location);
     });
   }
 
   private copy(action: CopyAction): void {
     if (!this.current || !this.info) return;
     const value = action.value(this.info, this.current);
+    const label = t(action.labelKey);
     if (!value) {
-      this.toast.show(`Nothing to copy for ${action.label}`);
+      this.toast.show(t('toastNothingToCopy', [label]));
       return;
     }
     copyText(value).then((copied) => {
       this.toast.show(
-        copied ? `Copied ${action.label}` : `Could not copy ${action.label}`,
+        t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
         copied ? truncate(value.replace(/\s+/g, ' '), 100) : '',
       );
       if (copied) this.panel.flash(action);

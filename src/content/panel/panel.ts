@@ -1,10 +1,19 @@
-import { ElementInfo, LensSettings, Locator, StyleEntry } from '@/shared/types';
+import {
+  ElementInfo,
+  LensSettings,
+  Locator,
+  LocatorStrategy,
+  StyleEntry,
+} from '@/shared/types';
 import {
   bestLocator,
   formatDuration,
   formatSource,
-  STRATEGY_LABELS,
+  plural,
+  t,
+  textDirection,
   truncate,
+  uiLanguage,
 } from '@/shared/util';
 import { COPY_ACTIONS, CopyAction } from '../actions/actions';
 import { EditField } from '../edits/edits';
@@ -36,8 +45,19 @@ interface Editor extends Editable {
 const OFFSET = 18;
 const EDGE = 8;
 
+const STRATEGY_KEYS: Record<LocatorStrategy, string> = {
+  testId: 'strategyTestId',
+  role: 'strategyRole',
+  label: 'strategyLabel',
+  placeholder: 'strategyPlaceholder',
+  altText: 'strategyAltText',
+  title: 'strategyTitle',
+  text: 'strategyText',
+  css: 'strategyCss',
+};
+
 function breakable(value: string): string {
-  return value.replace(/([/>])/g, '$1\u200B');
+  return value.replace(/([/>])/g, '$1​');
 }
 
 // ? the first class of each entry is a hook for code and tests; the rest are @kostad/brand classes
@@ -117,6 +137,11 @@ function h(
   return node;
 }
 
+// ? code and page text keep their own direction inside a right-to-left panel
+function code(...children: Child[]): HTMLElement {
+  return h('bdi', {}, ...children);
+}
+
 export class Panel {
   private readonly element: HTMLDivElement;
   private readonly head: HTMLElement;
@@ -137,6 +162,9 @@ export class Panel {
     this.element = document.createElement('div');
     this.element.className = CLS.panel;
     this.element.hidden = true;
+    // ? the closed shadow tree never sees the page's dir, so the panel carries the UI language's own
+    this.element.lang = uiLanguage();
+    this.element.dir = textDirection();
     this.head = h('div', { class: CLS.head });
     this.body = h('div', { class: CLS.body });
     this.foot = h('div', { class: CLS.foot });
@@ -198,7 +226,7 @@ export class Panel {
       spellcheck: 'false',
       autocomplete: 'off',
       placeholder: entry.placeholder,
-      'aria-label': entry.placeholder || 'value',
+      'aria-label': entry.placeholder || t('editValue'),
     }) as HTMLInputElement;
     input.value = initial;
     this.editor = { ...entry, input, target, initial };
@@ -287,7 +315,7 @@ export class Panel {
         class: CLS.remove,
         type: 'button',
         'data-action': 'remove',
-        title: `Remove ${name}`,
+        title: t('panelRemoveAttribute', [name]),
       },
       '×',
     );
@@ -449,11 +477,11 @@ export class Panel {
     const head = h(
       'div',
       {},
-      h('span', { class: CLS.summary }, ...this.summary(info)),
+      h('span', { class: CLS.summary }, code(...this.summary(info))),
       h(
         'span',
         { class: CLS.dims },
-        `${info.box.width.toString()} × ${info.box.height.toString()}`,
+        code(`${info.box.width.toString()} × ${info.box.height.toString()}`),
       ),
       options.edited
         ? h(
@@ -462,12 +490,12 @@ export class Panel {
               class: CLS.revert,
               type: 'button',
               'data-action': 'revert',
-              title: 'Undo every edit on this element',
+              title: t('panelResetTitle'),
             },
-            'reset',
+            t('panelReset'),
           )
         : null,
-      this.pinned ? h('span', { class: CLS.pin }, 'pinned') : null,
+      this.pinned ? h('span', { class: CLS.pin }, t('panelPinned')) : null,
     );
     this.head.replaceChildren(...Array.from(head.childNodes));
 
@@ -529,7 +557,7 @@ export class Panel {
       'button',
       { class: CLS.copy, type: 'button', 'data-action': action.id },
       h('kbd', { class: CLS.kbd }, action.key),
-      'copy',
+      t('panelCopy'),
     );
   }
 
@@ -538,7 +566,7 @@ export class Panel {
       'div',
       { class: CLS.row },
       h('span', { class: CLS.key }, key),
-      h('span', { class: CLS.val }, value),
+      h('span', { class: CLS.val }, code(value)),
       extra ?? h('span'),
     );
   }
@@ -568,8 +596,8 @@ export class Panel {
     }
 
     return this.section(
-      'Selectors',
-      info.shadowHost ? `inside shadow root of ${info.shadowHost}` : '',
+      t('sectionSelectors'),
+      info.shadowHost ? t('shadowHostHint', [info.shadowHost]) : '',
       ...rows,
     );
   }
@@ -579,13 +607,13 @@ export class Panel {
     const badge = h(
       'span',
       { class: unique ? CLS.unique : CLS.matches },
-      unique ? 'unique' : `${locator.matches.toString()} matches`,
+      unique ? t('locatorUnique') : plural('locatorMatches', locator.matches),
     );
     return h(
       'div',
       { class: CLS.row },
-      h('span', { class: CLS.key }, STRATEGY_LABELS[locator.strategy]),
-      h('span', { class: CLS.val }, breakable(locator.code), badge),
+      h('span', { class: CLS.key }, t(STRATEGY_KEYS[locator.strategy])),
+      h('span', { class: CLS.val }, code(breakable(locator.code)), badge),
       isBest ? this.copyButton(this.action('locator')) : h('span'),
     );
   }
@@ -593,18 +621,16 @@ export class Panel {
   private events(info: ElementInfo): HTMLElement {
     const { listeners } = info.events;
     const count = listeners.length;
-    const hint = count
-      ? `${count.toString()} ${count === 1 ? 'listener' : 'listeners'}`
-      : '';
+    const hint = count ? plural('listeners', count) : '';
 
     if (!listeners.length) {
       return this.section(
-        'Events',
+        t('sectionEvents'),
         hint,
         h(
           'div',
           { class: CLS.rowWide },
-          h('span', { class: CLS.valMuted }, 'no listeners on this element'),
+          h('span', { class: CLS.valMuted }, t('noListeners')),
           h('span'),
         ),
       );
@@ -618,22 +644,34 @@ export class Panel {
         h(
           'span',
           { class: CLS.val },
-          h('span', { class: 'kw' }, listener.name),
+          listener.name
+            ? code(h('span', { class: 'kw' }, listener.name))
+            : h('span', { class: CLS.muted }, t('eventAnonymous')),
           listener.origin !== 'listener'
-            ? h('span', { class: CLS.badge }, listener.origin)
+            ? h(
+                'span',
+                { class: CLS.badge },
+                listener.origin === 'inline'
+                  ? t('eventOriginInline')
+                  : listener.origin,
+              )
             : null,
           ...listener.flags.map((flag) =>
             h('span', { class: CLS.badge }, flag),
           ),
           listener.source
-            ? h('span', { class: CLS.source }, truncate(listener.source, 110))
+            ? h(
+                'span',
+                { class: CLS.source },
+                code(truncate(listener.source, 110)),
+              )
             : null,
         ),
         h('span'),
       ),
     );
 
-    return this.section('Events', hint, ...rows);
+    return this.section(t('sectionEvents'), hint, ...rows);
   }
 
   private box(info: ElementInfo): HTMLElement {
@@ -650,7 +688,7 @@ export class Panel {
         { class: `${CLS.cell} ${cls}` },
         h('span', { class: `${CLS.cellLabel} ${CELL_TONE[cls] ?? ''}` }, name),
         this.editable(
-          value,
+          code(value),
           { kind: 'style', property, lengths: true },
           placeholder,
         ),
@@ -666,7 +704,7 @@ export class Panel {
         cls,
         property,
         `${e.top.toString()} ${e.right.toString()} ${e.bottom.toString()} ${e.left.toString()}`,
-        `${name}: top right bottom left`,
+        t('boxEdgesPlaceholder', [name]),
       );
     const length = (property: string, value: number) =>
       this.editable(
@@ -676,10 +714,10 @@ export class Panel {
       );
 
     return this.section(
-      'Box',
-      'top right bottom left',
+      t('sectionBox'),
+      t('boxHint'),
       this.row(
-        'Position',
+        t('rowPosition'),
         h(
           'span',
           {},
@@ -689,7 +727,7 @@ export class Panel {
         ),
       ),
       this.row(
-        'Size',
+        t('rowSize'),
         h(
           'span',
           {},
@@ -710,7 +748,7 @@ export class Panel {
             'g',
             'gap',
             `${box.gap.row.toString()} ${box.gap.column.toString()}`,
-            'gap: row column',
+            t('boxGapPlaceholder'),
           ),
       ),
     );
@@ -718,8 +756,8 @@ export class Panel {
 
   private styles(styles: StyleEntry[]): HTMLElement {
     return this.section(
-      'Styles',
-      'computed',
+      t('sectionStyles'),
+      t('stylesHint'),
       ...styles.map((style) =>
         this.row(
           style.property,
@@ -740,7 +778,11 @@ export class Panel {
           ),
         ),
       ),
-      this.adder('+ style', { kind: 'new-style' }, 'property: value'),
+      this.adder(
+        t('addStyle'),
+        { kind: 'new-style' },
+        t('addStylePlaceholder'),
+      ),
     );
   }
 
@@ -748,7 +790,7 @@ export class Panel {
     const { accessibility } = info;
     const rows: Child[] = [
       this.row(
-        'Role',
+        t('rowRole'),
         this.editable(
           accessibility.role
             ? h('span', { class: 'kw' }, accessibility.role)
@@ -758,21 +800,21 @@ export class Panel {
         ),
       ),
       this.row(
-        'Name',
+        t('rowName'),
         this.editable(
           accessibility.name
             ? truncate(accessibility.name, 90)
-            : h('span', { class: CLS.muted }, 'none'),
+            : h('span', { class: CLS.muted }, t('valueNone')),
           { kind: 'attribute', name: 'aria-label' },
           accessibility.name || 'aria-label',
         ),
       ),
       this.row(
-        'Focusable',
+        t('rowFocusable'),
         h(
           'span',
           {},
-          accessibility.focusable ? 'yes' : 'no',
+          accessibility.focusable ? t('valueYes') : t('valueNo'),
           accessibility.tabIndex !== null
             ? h(
                 'span',
@@ -791,19 +833,21 @@ export class Panel {
           h(
             'span',
             { class: CLS.val },
-            h('span', { class: 'attr' }, attr.name),
-            '=',
-            this.editable(
-              h('span', { class: 'value' }, `"${attr.value}"`),
-              { kind: 'attribute', name: attr.name },
-              attr.name,
+            code(
+              h('span', { class: 'attr' }, attr.name),
+              '=',
+              this.editable(
+                h('span', { class: 'value' }, `"${attr.value}"`),
+                { kind: 'attribute', name: attr.name },
+                attr.name,
+              ),
             ),
           ),
           h('span'),
         ),
       );
     }
-    return this.section('Accessibility', '', ...rows);
+    return this.section(t('sectionAccessibility'), '', ...rows);
   }
 
   private attributes(info: ElementInfo): HTMLElement {
@@ -815,47 +859,54 @@ export class Panel {
         h(
           'span',
           { class: CLS.val },
-          h('span', { class: 'attr' }, attr.name),
-          '=',
-          this.editable(
-            attr.value
-              ? h('span', { class: 'value' }, `"${attr.value}"`)
-              : h('span', { class: CLS.muted }, '""'),
-            { kind: 'attribute', name: attr.name },
-            attr.name,
+          code(
+            h('span', { class: 'attr' }, attr.name),
+            '=',
+            this.editable(
+              attr.value
+                ? h('span', { class: 'value' }, `"${attr.value}"`)
+                : h('span', { class: CLS.muted }, '""'),
+              { kind: 'attribute', name: attr.name },
+              attr.name,
+            ),
           ),
         ),
         this.remover(attr.name),
       ),
     );
     rows.push(
-      this.adder('+ attribute', { kind: 'new-attribute' }, 'name="value"'),
+      this.adder(
+        t('addAttribute'),
+        { kind: 'new-attribute' },
+        t('addAttributePlaceholder'),
+      ),
     );
     const hidden = info.attributes.length - shown.length;
     return this.section(
-      'Attributes',
-      hidden > 0 ? `+${hidden.toString()} more` : '',
+      t('sectionAttributes'),
+      hidden > 0 ? plural('attributesMore', hidden) : '',
       ...rows,
     );
   }
 
   private context(info: ElementInfo): HTMLElement {
     const crumbs = h('div', { class: CLS.crumbs });
+    const separator = textDirection() === 'rtl' ? '‹' : '›';
     for (const ancestor of [...info.ancestors].reverse()) {
       crumbs.append(
-        h('span', { class: CLS.muted }, ancestor.summary),
-        h('span', { class: CLS.sep }, '›'),
+        h('span', { class: CLS.muted }, code(ancestor.summary)),
+        h('span', { class: CLS.sep }, separator),
       );
     }
-    crumbs.append(h('span', { class: CLS.current }, info.summary));
+    crumbs.append(h('span', { class: CLS.current }, code(info.summary)));
     const { framework } = info.events;
 
     return this.section(
-      'Context',
-      `${info.childCount.toString()} ${info.childCount === 1 ? 'child' : 'children'}`,
+      t('sectionContext'),
+      plural('children', info.childCount),
       info.source
         ? this.row(
-            'Source',
+            t('rowSource'),
             h(
               'span',
               {},
@@ -867,15 +918,20 @@ export class Panel {
                   'button',
                   { class: CLS.copy, type: 'button', 'data-action': 'open' },
                   h('kbd', { class: CLS.kbd }, 'O'),
-                  'open',
+                  t('panelOpen'),
                 )
               : undefined,
           )
         : null,
       framework
-        ? this.row('Framework', h('span', { class: 'kw' }, framework.name))
+        ? this.row(
+            t('rowFramework'),
+            h('span', { class: 'kw' }, framework.name),
+          )
         : null,
-      framework?.component ? this.row('Component', framework.component) : null,
+      framework?.component
+        ? this.row(t('rowComponent'), framework.component)
+        : null,
       crumbs,
       this.textRow(info),
     );
@@ -887,10 +943,10 @@ export class Panel {
     const display = h(
       'span',
       { class: CLS.muted },
-      info.text ? truncate(info.text, 120) : 'empty',
+      info.text ? truncate(info.text, 120) : t('valueEmpty'),
     );
     return this.row(
-      'Text',
+      t('rowText'),
       leaf ? this.editable(display, { kind: 'text' }, 'text') : display,
     );
   }
@@ -898,16 +954,16 @@ export class Panel {
   private media(info: ElementInfo): HTMLElement {
     const media = info.media;
     if (!media) return h('div');
-    const rows: Child[] = [this.row('Kind', media.kind)];
+    const rows: Child[] = [this.row(t('rowKind'), media.kind)];
     const sourceAttribute =
       media.kind === 'svg' ? 'viewBox' : media.kind === 'canvas' ? null : 'src';
     if (media.source || (sourceAttribute && this.canEdit)) {
       const display = media.source
         ? truncate(media.source, 160)
-        : h('span', { class: CLS.muted }, 'none');
+        : h('span', { class: CLS.muted }, t('valueNone'));
       rows.push(
         this.row(
-          'Source',
+          t('rowSource'),
           sourceAttribute
             ? this.editable(
                 display,
@@ -921,25 +977,33 @@ export class Panel {
     if (media.naturalWidth !== undefined && media.naturalHeight !== undefined) {
       rows.push(
         this.row(
-          'Natural',
+          t('rowNatural'),
           `${media.naturalWidth.toString()} × ${media.naturalHeight.toString()}`,
         ),
       );
     }
-    if (media.duration !== undefined)
-      rows.push(this.row('Duration', formatDuration(media.duration)));
+    if (media.duration !== undefined) {
+      rows.push(
+        this.row(
+          t('rowDuration'),
+          Number.isFinite(media.duration)
+            ? formatDuration(media.duration)
+            : t('mediaLive'),
+        ),
+      );
+    }
     if (media.alt !== undefined)
       rows.push(
         this.row(
-          'Alt',
+          t('rowAlt'),
           this.editable(
-            media.alt || h('span', { class: CLS.muted }, 'empty'),
+            media.alt || h('span', { class: CLS.muted }, t('valueEmpty')),
             { kind: 'attribute', name: 'alt' },
             'alt',
           ),
         ),
       );
-    return this.section('Media', '', ...rows);
+    return this.section(t('sectionMedia'), '', ...rows);
   }
 
   private renderFoot(): void {
@@ -947,35 +1011,50 @@ export class Panel {
       h(
         'span',
         {},
-        h('kbd', { class: CLS.kbd }, 'click'),
-        this.pinned ? 'unpin' : 'pin',
+        h('kbd', { class: CLS.kbd }, t('kbdClick')),
+        this.pinned ? t('footUnpin') : t('footPin'),
       ),
       this.pinned
-        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'drag'), 'move')
+        ? h(
+            'span',
+            {},
+            h('kbd', { class: CLS.kbd }, t('kbdDrag')),
+            t('footMove'),
+          )
         : null,
       this.canEdit
-        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'click value'), 'edit')
+        ? h(
+            'span',
+            {},
+            h('kbd', { class: CLS.kbd }, t('kbdClickValue')),
+            t('footEdit'),
+          )
         : null,
-      h('span', {}, h('kbd', { class: CLS.kbd }, 'esc'), 'close'),
+      h('span', {}, h('kbd', { class: CLS.kbd }, 'esc'), t('footClose')),
       h(
         'span',
         {},
         h('kbd', { class: CLS.kbd }, '↑'),
         h('kbd', { class: CLS.kbd }, '↓'),
-        'parent / child',
+        t('footParentChild'),
       ),
       h(
         'span',
         {},
         h('kbd', { class: CLS.kbd }, '←'),
         h('kbd', { class: CLS.kbd }, '→'),
-        'sibling',
+        t('footSibling'),
       ),
       this.hasSource
-        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'O'), 'open source')
+        ? h('span', {}, h('kbd', { class: CLS.kbd }, 'O'), t('footOpenSource'))
         : null,
       ...COPY_ACTIONS.map((action) =>
-        h('span', {}, h('kbd', { class: CLS.kbd }, action.key), action.label),
+        h(
+          'span',
+          {},
+          h('kbd', { class: CLS.kbd }, action.key),
+          t(action.labelKey),
+        ),
       ),
     ];
     this.foot.replaceChildren(...hints.filter((x): x is Node => !!x));

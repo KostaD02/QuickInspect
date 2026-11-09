@@ -22,17 +22,6 @@ const METHODS: Record<LocatorStrategy, string> = {
   css: 'locator',
 };
 
-export const STRATEGY_LABELS: Record<LocatorStrategy, string> = {
-  testId: 'Test id',
-  role: 'Role',
-  label: 'Label',
-  placeholder: 'Placeholder',
-  altText: 'Alt text',
-  title: 'Title',
-  text: 'Text',
-  css: 'CSS',
-};
-
 interface Counts {
   loose: number;
   exact: number;

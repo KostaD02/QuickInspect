@@ -5,14 +5,14 @@ import {
   LensSettings,
   ModifierKey,
 } from '@/shared/types';
-import { loadSettings, saveSettings } from '@/shared/util';
+import { loadSettings, saveSettings, t } from '@/shared/util';
 import { connectTab } from '../page/page';
 
-const MODIFIER_LABELS: Record<ModifierKey, string> = {
-  Alt: 'Alt / Option',
-  Control: 'Ctrl',
-  Shift: 'Shift',
-  Meta: 'Cmd / Win',
+const MODIFIER_MESSAGES: Record<ModifierKey, string> = {
+  Alt: 'modifierAlt',
+  Control: 'modifierControl',
+  Shift: 'modifierShift',
+  Meta: 'modifierMeta',
 };
 
 type PopupPanel = 'settings' | 'info';
@@ -109,10 +109,8 @@ export class PopupController {
     // ? without a dev server there is no state to signal, so no dot
     editorDot.hidden = !server;
     editorLabel.textContent = !server
-      ? 'Not available on this page'
-      : sources
-        ? `${name} dev server, element sources available`
-        : `${name} dev server, no element sources here`;
+      ? t('editorUnavailable')
+      : t(sources ? 'editorSources' : 'editorNoSources', [name]);
   }
 
   private input(id: string): HTMLInputElement {
@@ -127,8 +125,9 @@ export class PopupController {
       box.checked = this.settings[key];
     }
     this.domRefs.modifier.value = this.settings.modifier;
-    this.domRefs.infoModifier.textContent =
-      MODIFIER_LABELS[this.settings.modifier];
+    this.domRefs.infoModifier.textContent = t(
+      MODIFIER_MESSAGES[this.settings.modifier],
+    );
     this.domRefs.editorGroup.hidden = !this.settings.showEditorStatus;
   }
 

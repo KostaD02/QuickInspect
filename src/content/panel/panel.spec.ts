@@ -1,3 +1,4 @@
+import { chrome } from 'jest-chrome';
 import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo } from '@/shared/types';
 import { CopyAction } from '../actions/actions';
@@ -59,7 +60,7 @@ const info: ElementInfo = {
       {
         type: 'mouseenter',
         origin: 'React',
-        name: 'anonymous',
+        name: '',
         source: '',
         flags: [],
       },
@@ -340,6 +341,65 @@ describe('panel', () => {
     expect(text).toContain('1:01');
     expect(text).toContain('empty');
     expect(root.querySelectorAll('[data-action="locator"]')).toHaveLength(1);
+  });
+
+  it('words the data of the bridge and the locator strategies in the UI language', () => {
+    panel.render(
+      {
+        ...info,
+        locators: [
+          { strategy: 'testId', code: "page.getByTestId('save')", matches: 1 },
+          {
+            strategy: 'altText',
+            code: "page.getByAltText('Save')",
+            matches: 3,
+          },
+        ],
+        events: {
+          ...info.events,
+          listeners: [
+            {
+              type: 'click',
+              origin: 'inline',
+              name: 'onclick',
+              source: '',
+              flags: [],
+            },
+          ],
+        },
+        media: { kind: 'video', source: 'live.m3u8', duration: Infinity },
+      },
+      DEFAULT_SETTINGS,
+    );
+    const text = root.textContent;
+    expect(text).toContain("Test idpage.getByTestId('save')unique");
+    expect(text).toContain("Alt textpage.getByAltText('Save')3 matches");
+    expect(text).toContain('Events1 listener');
+    expect(text).toContain('clickonclickinline');
+    expect(text).toContain('Durationlive');
+    expect(root.querySelector('.panel')?.getAttribute('lang')).toBe('en');
+    expect(root.querySelector('.panel')?.getAttribute('dir')).toBe('ltr');
+    expect(root.querySelector('.sep')?.textContent).toBe('›');
+  });
+
+  it('mirrors itself for a right-to-left UI language and keeps code readable', () => {
+    chrome.i18n.getUILanguage.mockReturnValue('ar');
+    const mirrored = new Panel(root, {
+      copy: onCopy,
+      open: onOpen,
+      read,
+      write,
+      revert,
+    });
+    mirrored.render(info, DEFAULT_SETTINGS);
+    const node = root.querySelectorAll<HTMLElement>('.panel')[1]!;
+    expect(node.lang).toBe('ar');
+    expect(node.dir).toBe('rtl');
+    expect(node.querySelector('.sep')?.textContent).toBe('‹');
+    expect(node.querySelector('.summary bdi')?.textContent).toBe(
+      'button#save.a.b.c +1',
+    );
+    expect(node.querySelector('.val > bdi')).not.toBeNull();
   });
 
   it('shows an editable gap cell for flex and grid containers', () => {

@@ -1,3 +1,5 @@
+import { textDirection, uiLanguage } from '@/shared/util';
+
 export class Toast {
   private readonly element: HTMLDivElement;
   private readonly message: HTMLSpanElement;
@@ -13,6 +15,11 @@ export class Toast {
     this.code = document.createElement('span');
     this.code.className =
       'code kd-d-inline-block kd-ml-2 kd-font-mono kd-fs-micro kd-fw-regular kd-text-secondary kd-text-ellipsis';
+    // ? the closed shadow tree never sees the page's dir, so the toast carries the UI language's own
+    this.element.lang = uiLanguage();
+    this.element.dir = textDirection();
+    // ? selectors stay left-to-right and page text keeps its own direction
+    this.code.dir = 'auto';
     this.element.append(this.message, this.code);
     root.appendChild(this.element);
   }

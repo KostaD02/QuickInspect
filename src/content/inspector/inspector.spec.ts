@@ -62,6 +62,11 @@ function flush(): void {
   jest.advanceTimersByTime(20);
 }
 
+// ? copyText awaits the clipboard before the toast shows, so one microtask is not enough
+async function settled(): Promise<void> {
+  for (let tick = 0; tick < 4; tick += 1) await Promise.resolve();
+}
+
 describe('inspector', () => {
   let inspector: Inspector;
   let button: HTMLButtonElement;
@@ -159,11 +164,15 @@ describe('inspector', () => {
   });
 
   it('copies with letter keys and shows a toast', async () => {
+    reopen();
     hold();
     const event = key('keydown', { code: 'KeyS', key: 's', altKey: true });
     expect(event.defaultPrevented).toBe(true);
     expect(writeText).toHaveBeenCalledWith('#go');
-    await Promise.resolve();
+    await settled();
+    const toast = host()!.shadowRoot!.querySelector('.toast')!;
+    expect(toast.textContent).toBe('Copied selector#go');
+    expect(toast.classList).toContain('show');
     key('keydown', { code: 'KeyH', key: 'h', altKey: true });
     expect(writeText).toHaveBeenLastCalledWith('<button id="go">Go</button>');
     key('keydown', { code: 'KeyS', key: 's', ctrlKey: true });

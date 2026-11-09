@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt를 누른 채 요소 위에 마우스를 올리면 DevTools를 열지 않고 선택자, 박스 모델, 스타일, 접근성, 이벤트를 볼 수 있습니다."
+  },
+  "appTagline": {
+    "message": "호버로 요소 검사"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect 설정"
+  },
+  "settingsOpenTitle": {
+    "message": "설정"
+  },
+  "settingsCloseLabel": {
+    "message": "설정 닫기"
+  },
+  "closeTitle": {
+    "message": "닫기"
+  },
+  "infoOpenLabel": {
+    "message": "QuickInspect 정보"
+  },
+  "infoCloseLabel": {
+    "message": "정보 닫기"
+  },
+  "enabledToggleLabel": {
+    "message": "QuickInspect 켜기 또는 끄기"
+  },
+  "holdKeyLabel": {
+    "message": "누르고 있을 키"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "키를 누른 채 요소 위에 마우스를 올리세요. 키를 놓으면 페이지가 원래대로 돌아갑니다."
+  },
+  "whileHoldingLabel": {
+    "message": "누르고 있는 동안"
+  },
+  "kbdClick": {
+    "message": "클릭"
+  },
+  "shortcutPin": {
+    "message": "패널 고정"
+  },
+  "shortcutClose": {
+    "message": "닫기"
+  },
+  "shortcutParentChild": {
+    "message": "부모 / 자식"
+  },
+  "shortcutSibling": {
+    "message": "형제 요소"
+  },
+  "shortcutCopySelector": {
+    "message": "CSS 선택자 복사"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath 복사"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright 로케이터 복사"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML 복사"
+  },
+  "shortcutCopyText": {
+    "message": "텍스트 복사"
+  },
+  "editorLabel": {
+    "message": "에디터"
+  },
+  "editorChecking": {
+    "message": "이 페이지 확인 중"
+  },
+  "editorHint": {
+    "message": "소스 위치가 있는 요소에서 <kbd class=\"kd-chip kd-font-mono\">O</kbd>를 누르면 에디터에서 엽니다."
+  },
+  "editorUnavailable": {
+    "message": "이 페이지에서는 사용할 수 없음"
+  },
+  "editorSources": {
+    "message": "$SERVER$ 개발 서버, 요소 소스 사용 가능",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ 개발 서버, 여기에는 요소 소스 없음",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "자동으로 저장되며 열려 있는 탭에 즉시 적용됩니다."
+  },
+  "settingsEditing": {
+    "message": "편집"
+  },
+  "settingAllowEdit": {
+    "message": "편집 허용"
+  },
+  "settingAllowEditHint": {
+    "message": "고정된 패널의 값을 클릭해 페이지의 스타일, 속성, 텍스트를 변경합니다"
+  },
+  "settingsPopup": {
+    "message": "팝업"
+  },
+  "settingEditorStatus": {
+    "message": "에디터 사용 가능 여부"
+  },
+  "settingEditorStatusHint": {
+    "message": "이 페이지가 에디터에서 소스를 열 수 있는지 여부"
+  },
+  "settingsOverlay": {
+    "message": "오버레이"
+  },
+  "settingBoxModel": {
+    "message": "박스 모델 강조"
+  },
+  "settingBoxModelHint": {
+    "message": "margin, border, padding, gap 띠"
+  },
+  "settingsSections": {
+    "message": "패널 섹션"
+  },
+  "sectionBox": {
+    "message": "박스"
+  },
+  "settingBoxHint": {
+    "message": "위치, 크기, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "이벤트"
+  },
+  "settingEventsHint": {
+    "message": "리스너, 인라인 핸들러, 프레임워크 props"
+  },
+  "sectionStyles": {
+    "message": "스타일"
+  },
+  "settingStylesHint": {
+    "message": "중요한 계산된 값"
+  },
+  "sectionAccessibility": {
+    "message": "접근성"
+  },
+  "settingAccessibilityHint": {
+    "message": "역할, 접근 가능한 이름, 포커스 가능 여부, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "속성"
+  },
+  "settingAttributesHint": {
+    "message": "요소의 모든 속성"
+  },
+  "sectionMedia": {
+    "message": "미디어"
+  },
+  "settingMediaHint": {
+    "message": "이미지, 비디오, canvas, SVG 세부 정보"
+  },
+  "sectionContext": {
+    "message": "컨텍스트"
+  },
+  "settingContextHint": {
+    "message": "소스 파일, 프레임워크, 상위 요소, 텍스트"
+  },
+  "sectionSelectors": {
+    "message": "선택자"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath, Playwright 로케이터"
+  },
+  "settingsReset": {
+    "message": "기본값으로 재설정"
+  },
+  "infoIntro": {
+    "message": "QuickInspect는 DevTools를 열지 않고도 요소에 대해 알아야 할 것을 보여 줍니다: <strong>선택자</strong>, <strong>박스 모델</strong>, <strong>계산된 스타일</strong>, <strong>접근성</strong>, <strong>속성</strong>, <strong>이벤트</strong>, 그리고 요소가 나온 <strong>소스 파일</strong>."
+  },
+  "infoStep1": {
+    "message": "<kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd>를 누른 채 요소 위에 마우스를 올려 검사하고, 놓으면 페이지가 원래대로 돌아갑니다. 메인 화면의 <strong>누르고 있을 키</strong>에서 다른 키를 선택할 수 있습니다."
+  },
+  "infoStep2": {
+    "message": "누른 채 <strong>클릭</strong>하면 패널이 고정되고 헤더를 끌어서 옮길 수 있습니다. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd>로 부모나 자식으로, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd>로 형제 요소로 이동합니다."
+  },
+  "infoStep3": {
+    "message": "<kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>를 누르면 선택자, XPath, Playwright 로케이터, HTML, 텍스트를 복사합니다."
+  },
+  "infoStep4": {
+    "message": "고정된 패널에서 <strong>값을 클릭</strong>해 스타일, 박스, 속성, 텍스트를 편집합니다. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd>는 적용, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd>는 취소, <strong>reset</strong>은 모두 되돌립니다. 편집 내용은 페이지를 새로 고칠 때까지 유지됩니다."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> 또는 <strong>Next.js</strong> 개발 서버에서 <kbd class=\"kd-chip kd-font-mono\">O</kbd>를 누르면 요소의 소스를 에디터에서 엽니다."
+  },
+  "infoGithub": {
+    "message": "GitHub 저장소"
+  },
+  "infoReport": {
+    "message": "문제 / 기능 제보"
+  },
+  "infoCreatedBy": {
+    "message": "만든 사람:"
+  },
+  "footerSections": {
+    "message": "선택자 · 박스 · 스타일 · 접근성 · 이벤트"
+  },
+  "panelPinned": {
+    "message": "고정됨"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "이 요소의 모든 편집 되돌리기"
+  },
+  "panelCopy": {
+    "message": "복사"
+  },
+  "panelOpen": {
+    "message": "열기"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ 제거",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "값"
+  },
+  "boxHint": {
+    "message": "위 오른쪽 아래 왼쪽"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: 위 오른쪽 아래 왼쪽",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: 행 열"
+  },
+  "stylesHint": {
+    "message": "계산됨"
+  },
+  "shadowHostHint": {
+    "message": "$HOST$의 shadow root 내부",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$개 더",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "리스너 $COUNT$개",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "자식 $COUNT$개",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$개 일치",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "고유"
+  },
+  "noListeners": {
+    "message": "이 요소에 리스너가 없습니다"
+  },
+  "eventOriginInline": {
+    "message": "인라인"
+  },
+  "eventAnonymous": {
+    "message": "익명"
+  },
+  "rowPosition": {
+    "message": "위치"
+  },
+  "rowSize": {
+    "message": "크기"
+  },
+  "rowRole": {
+    "message": "역할"
+  },
+  "rowName": {
+    "message": "이름"
+  },
+  "rowFocusable": {
+    "message": "포커스 가능"
+  },
+  "rowSource": {
+    "message": "소스"
+  },
+  "rowFramework": {
+    "message": "프레임워크"
+  },
+  "rowComponent": {
+    "message": "컴포넌트"
+  },
+  "rowText": {
+    "message": "텍스트"
+  },
+  "rowKind": {
+    "message": "종류"
+  },
+  "rowNatural": {
+    "message": "원본 크기"
+  },
+  "rowDuration": {
+    "message": "길이"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "역할"
+  },
+  "strategyLabel": {
+    "message": "레이블"
+  },
+  "strategyPlaceholder": {
+    "message": "플레이스홀더"
+  },
+  "strategyAltText": {
+    "message": "alt 텍스트"
+  },
+  "strategyTitle": {
+    "message": "제목"
+  },
+  "strategyText": {
+    "message": "텍스트"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "예"
+  },
+  "valueNo": {
+    "message": "아니요"
+  },
+  "valueNone": {
+    "message": "없음"
+  },
+  "valueEmpty": {
+    "message": "비어 있음"
+  },
+  "mediaLive": {
+    "message": "라이브"
+  },
+  "addStyle": {
+    "message": "+ 스타일"
+  },
+  "addStylePlaceholder": {
+    "message": "CSS 속성: 값"
+  },
+  "addAttribute": {
+    "message": "+ 속성"
+  },
+  "addAttributePlaceholder": {
+    "message": "이름=\"값\""
+  },
+  "kbdDrag": {
+    "message": "드래그"
+  },
+  "kbdClickValue": {
+    "message": "값 클릭"
+  },
+  "footPin": {
+    "message": "고정"
+  },
+  "footUnpin": {
+    "message": "고정 해제"
+  },
+  "footMove": {
+    "message": "이동"
+  },
+  "footEdit": {
+    "message": "편집"
+  },
+  "footClose": {
+    "message": "닫기"
+  },
+  "footParentChild": {
+    "message": "부모 / 자식"
+  },
+  "footSibling": {
+    "message": "형제"
+  },
+  "footOpenSource": {
+    "message": "소스 열기"
+  },
+  "actionSelector": {
+    "message": "선택자"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "로케이터"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "텍스트"
+  },
+  "toastEditsReset": {
+    "message": "편집을 되돌렸습니다"
+  },
+  "toastNoSource": {
+    "message": "이 요소에는 소스 위치가 없습니다"
+  },
+  "toastNoDevServer": {
+    "message": "에디터를 열 개발 서버가 없습니다"
+  },
+  "toastOpened": {
+    "message": "에디터에서 열었습니다"
+  },
+  "toastNotOpened": {
+    "message": "에디터가 열리지 않았습니다"
+  },
+  "toastNothingToCopy": {
+    "message": "복사할 내용 없음: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "복사됨: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "복사 실패: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

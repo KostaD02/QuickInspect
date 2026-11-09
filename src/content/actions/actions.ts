@@ -5,7 +5,7 @@ export interface CopyAction {
   id: 'selector' | 'xpath' | 'locator' | 'html' | 'text';
   code: string;
   key: string;
-  label: string;
+  labelKey: string;
   value: (info: ElementInfo, el: Element) => string;
 }
 
@@ -14,35 +14,35 @@ export const COPY_ACTIONS: readonly CopyAction[] = [
     id: 'selector',
     code: 'KeyS',
     key: 'S',
-    label: 'selector',
+    labelKey: 'actionSelector',
     value: (info) => info.selector,
   },
   {
     id: 'xpath',
     code: 'KeyX',
     key: 'X',
-    label: 'XPath',
+    labelKey: 'actionXpath',
     value: (info) => info.xpath,
   },
   {
     id: 'locator',
     code: 'KeyL',
     key: 'L',
-    label: 'locator',
+    labelKey: 'actionLocator',
     value: (info) => bestLocator(info.locators)?.code ?? info.selector,
   },
   {
     id: 'html',
     code: 'KeyH',
     key: 'H',
-    label: 'HTML',
+    labelKey: 'actionHtml',
     value: (_, el) => el.outerHTML,
   },
   {
     id: 'text',
     code: 'KeyT',
     key: 'T',
-    label: 'text',
+    labelKey: 'actionText',
     value: (_, el) => el.textContent.trim(),
   },
 ];

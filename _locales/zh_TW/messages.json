@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "按住 Alt 並將滑鼠移到元素上，無需開啟 DevTools 即可查看選擇器、盒模型、樣式、無障礙資訊和事件。"
+  },
+  "appTagline": {
+    "message": "懸停式元素檢查器"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect 設定"
+  },
+  "settingsOpenTitle": {
+    "message": "設定"
+  },
+  "settingsCloseLabel": {
+    "message": "關閉設定"
+  },
+  "closeTitle": {
+    "message": "關閉"
+  },
+  "infoOpenLabel": {
+    "message": "關於 QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "關閉資訊"
+  },
+  "enabledToggleLabel": {
+    "message": "開啟或關閉 QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "按住的按鍵"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "按住此鍵並將滑鼠移到任一元素上。放開即可還原頁面。"
+  },
+  "whileHoldingLabel": {
+    "message": "按住時"
+  },
+  "kbdClick": {
+    "message": "點擊"
+  },
+  "shortcutPin": {
+    "message": "釘選面板"
+  },
+  "shortcutClose": {
+    "message": "關閉"
+  },
+  "shortcutParentChild": {
+    "message": "父層 / 子層"
+  },
+  "shortcutSibling": {
+    "message": "同層元素"
+  },
+  "shortcutCopySelector": {
+    "message": "複製 CSS 選擇器"
+  },
+  "shortcutCopyXpath": {
+    "message": "複製 XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "複製 Playwright 定位器"
+  },
+  "shortcutCopyHtml": {
+    "message": "複製 HTML"
+  },
+  "shortcutCopyText": {
+    "message": "複製文字"
+  },
+  "editorLabel": {
+    "message": "編輯器"
+  },
+  "editorChecking": {
+    "message": "正在檢查此頁面"
+  },
+  "editorHint": {
+    "message": "在有原始碼位置的元素上按 <kbd class=\"kd-chip kd-font-mono\">O</kbd>，即可在編輯器中開啟。"
+  },
+  "editorUnavailable": {
+    "message": "此頁面無法使用"
+  },
+  "editorSources": {
+    "message": "$SERVER$ 開發伺服器，元素原始碼可用",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ 開發伺服器，此處沒有元素原始碼",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "自動儲存，並立即套用到已開啟的分頁。"
+  },
+  "settingsEditing": {
+    "message": "編輯"
+  },
+  "settingAllowEdit": {
+    "message": "允許編輯"
+  },
+  "settingAllowEditHint": {
+    "message": "點擊已釘選面板中的值，即可更改頁面上的樣式、屬性和文字"
+  },
+  "settingsPopup": {
+    "message": "彈出視窗"
+  },
+  "settingEditorStatus": {
+    "message": "編輯器可用性"
+  },
+  "settingEditorStatusHint": {
+    "message": "此頁面能否在你的編輯器中開啟原始碼"
+  },
+  "settingsOverlay": {
+    "message": "疊加層"
+  },
+  "settingBoxModel": {
+    "message": "標示盒模型"
+  },
+  "settingBoxModelHint": {
+    "message": "margin、border、padding 和 gap 色帶"
+  },
+  "settingsSections": {
+    "message": "面板區段"
+  },
+  "sectionBox": {
+    "message": "盒模型"
+  },
+  "settingBoxHint": {
+    "message": "位置、尺寸、margin、padding、border、gap"
+  },
+  "sectionEvents": {
+    "message": "事件"
+  },
+  "settingEventsHint": {
+    "message": "監聽器、行內處理常式和框架 props"
+  },
+  "sectionStyles": {
+    "message": "樣式"
+  },
+  "settingStylesHint": {
+    "message": "重要的計算值"
+  },
+  "sectionAccessibility": {
+    "message": "無障礙"
+  },
+  "settingAccessibilityHint": {
+    "message": "角色、無障礙名稱、可聚焦性、ARIA"
+  },
+  "sectionAttributes": {
+    "message": "屬性"
+  },
+  "settingAttributesHint": {
+    "message": "元素上的所有屬性"
+  },
+  "sectionMedia": {
+    "message": "媒體"
+  },
+  "settingMediaHint": {
+    "message": "圖片、影片、canvas 和 SVG 詳細資料"
+  },
+  "sectionContext": {
+    "message": "脈絡"
+  },
+  "settingContextHint": {
+    "message": "原始檔、框架、祖先元素和文字"
+  },
+  "sectionSelectors": {
+    "message": "選擇器"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS、XPath 和 Playwright 定位器"
+  },
+  "settingsReset": {
+    "message": "還原預設值"
+  },
+  "infoIntro": {
+    "message": "QuickInspect 無需開啟 DevTools 即可顯示元素的關鍵資訊：<strong>選擇器</strong>、<strong>盒模型</strong>、<strong>計算樣式</strong>、<strong>無障礙</strong>、<strong>屬性</strong>、<strong>事件</strong>以及它所在的<strong>原始檔</strong>。"
+  },
+  "infoStep1": {
+    "message": "按住 <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> 並將滑鼠移到任一元素上即可檢查，放開即可還原頁面。可在主畫面的<strong>按住的按鍵</strong>中選擇其他按鍵。"
+  },
+  "infoStep2": {
+    "message": "按住時<strong>點擊</strong>可釘選面板，然後拖曳標題列移動它。用 <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> 切換父層或子層，用 <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> 切換同層元素。"
+  },
+  "infoStep3": {
+    "message": "按 <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> 可複製選擇器、XPath、Playwright 定位器、HTML 或文字。"
+  },
+  "infoStep4": {
+    "message": "在已釘選的面板中<strong>點擊任一值</strong>即可編輯樣式、盒模型、屬性或文字。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 套用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 復原全部。編輯會保留在頁面上，直到重新載入。"
+  },
+  "infoStep5": {
+    "message": "在 <strong>Vite</strong> 或 <strong>Next.js</strong> 開發伺服器上，按 <kbd class=\"kd-chip kd-font-mono\">O</kbd> 可在編輯器中開啟元素的原始碼。"
+  },
+  "infoGithub": {
+    "message": "GitHub 存放庫"
+  },
+  "infoReport": {
+    "message": "回報問題 / 功能建議"
+  },
+  "infoCreatedBy": {
+    "message": "作者："
+  },
+  "footerSections": {
+    "message": "選擇器 · 盒模型 · 樣式 · 無障礙 · 事件"
+  },
+  "panelPinned": {
+    "message": "已釘選"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "復原對此元素的所有編輯"
+  },
+  "panelCopy": {
+    "message": "複製"
+  },
+  "panelOpen": {
+    "message": "開啟"
+  },
+  "panelRemoveAttribute": {
+    "message": "移除 $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "值"
+  },
+  "boxHint": {
+    "message": "上 右 下 左"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: 上 右 下 左",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: 列 欄"
+  },
+  "stylesHint": {
+    "message": "計算值"
+  },
+  "shadowHostHint": {
+    "message": "位於 $HOST$ 的 shadow root 內",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "還有 $COUNT$ 個",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ 個監聽器",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ 個子元素",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ 個符合",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "唯一"
+  },
+  "noListeners": {
+    "message": "此元素上沒有監聽器"
+  },
+  "eventOriginInline": {
+    "message": "行內"
+  },
+  "eventAnonymous": {
+    "message": "匿名"
+  },
+  "rowPosition": {
+    "message": "位置"
+  },
+  "rowSize": {
+    "message": "尺寸"
+  },
+  "rowRole": {
+    "message": "角色"
+  },
+  "rowName": {
+    "message": "名稱"
+  },
+  "rowFocusable": {
+    "message": "可聚焦"
+  },
+  "rowSource": {
+    "message": "來源"
+  },
+  "rowFramework": {
+    "message": "框架"
+  },
+  "rowComponent": {
+    "message": "元件"
+  },
+  "rowText": {
+    "message": "文字"
+  },
+  "rowKind": {
+    "message": "類型"
+  },
+  "rowNatural": {
+    "message": "原始尺寸"
+  },
+  "rowDuration": {
+    "message": "長度"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "角色"
+  },
+  "strategyLabel": {
+    "message": "標籤"
+  },
+  "strategyPlaceholder": {
+    "message": "預留文字"
+  },
+  "strategyAltText": {
+    "message": "alt 文字"
+  },
+  "strategyTitle": {
+    "message": "標題"
+  },
+  "strategyText": {
+    "message": "文字"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "是"
+  },
+  "valueNo": {
+    "message": "否"
+  },
+  "valueNone": {
+    "message": "無"
+  },
+  "valueEmpty": {
+    "message": "空"
+  },
+  "mediaLive": {
+    "message": "直播"
+  },
+  "addStyle": {
+    "message": "+ 樣式"
+  },
+  "addStylePlaceholder": {
+    "message": "屬性名稱: 值"
+  },
+  "addAttribute": {
+    "message": "+ 屬性"
+  },
+  "addAttributePlaceholder": {
+    "message": "名稱=\"值\""
+  },
+  "kbdDrag": {
+    "message": "拖曳"
+  },
+  "kbdClickValue": {
+    "message": "點擊值"
+  },
+  "footPin": {
+    "message": "釘選"
+  },
+  "footUnpin": {
+    "message": "取消釘選"
+  },
+  "footMove": {
+    "message": "移動"
+  },
+  "footEdit": {
+    "message": "編輯"
+  },
+  "footClose": {
+    "message": "關閉"
+  },
+  "footParentChild": {
+    "message": "父層 / 子層"
+  },
+  "footSibling": {
+    "message": "同層"
+  },
+  "footOpenSource": {
+    "message": "開啟原始碼"
+  },
+  "actionSelector": {
+    "message": "選擇器"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "定位器"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "文字"
+  },
+  "toastEditsReset": {
+    "message": "已復原編輯"
+  },
+  "toastNoSource": {
+    "message": "此元素沒有原始碼位置"
+  },
+  "toastNoDevServer": {
+    "message": "沒有可開啟編輯器的開發伺服器"
+  },
+  "toastOpened": {
+    "message": "已在編輯器中開啟"
+  },
+  "toastNotOpened": {
+    "message": "編輯器未開啟"
+  },
+  "toastNothingToCopy": {
+    "message": "沒有可複製的內容：$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "已複製$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "無法複製$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

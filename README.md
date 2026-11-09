@@ -40,6 +40,7 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Shadow DOM aware** - hit testing descends into open shadow roots, selectors are scoped to the element's root, and locator counts pierce shadow roots like Playwright does
 - **Main-world bridge** - a tiny script injected at `document_start` wraps `addEventListener` so listeners can be listed without the debugger API; nothing else runs in the page world
 - **Framework agnostic** - works on any page; nothing leaves the browser
+- **42 languages** - the popup, the panel and its toasts follow the browser's UI language, with a right-to-left layout for Arabic, Hebrew and Persian; see [Languages](#languages)
 
 ## Install
 
@@ -86,6 +87,57 @@ Open the popup from the toolbar icon. The pill toggles the extension on and off,
 | **Editor availability** | On      | Show in the popup whether the current page can open sources in your editor       |
 | **Box model highlight** | On      | Margin, border, padding and gap bands around the hovered element                 |
 | **Panel sections**      | All on  | Toggle Box, Events, Styles, Accessibility, Attributes, Media, Context, Selectors |
+
+## Languages
+
+The popup, the panel, its footer hints and every toast follow the browser's UI language, the way Chrome's [i18n API](https://developer.chrome.com/docs/extensions/reference/api/i18n) resolves it: the exact locale first (`pt_BR`), then the language alone (`pt`), then English. Arabic, Hebrew and Persian also switch the popup and the panel to a right-to-left layout.
+
+| Code     | Language                |
+| -------- | ----------------------- |
+| `en`     | English (default)       |
+| `ar`     | Arabic                  |
+| `bg`     | Bulgarian               |
+| `ca`     | Catalan                 |
+| `cs`     | Czech                   |
+| `da`     | Danish                  |
+| `de`     | German                  |
+| `el`     | Greek                   |
+| `es`     | Spanish                 |
+| `es_419` | Spanish (Latin America) |
+| `et`     | Estonian                |
+| `fa`     | Persian                 |
+| `fi`     | Finnish                 |
+| `fr`     | French                  |
+| `he`     | Hebrew                  |
+| `hi`     | Hindi                   |
+| `hr`     | Croatian                |
+| `hu`     | Hungarian               |
+| `id`     | Indonesian              |
+| `it`     | Italian                 |
+| `ja`     | Japanese                |
+| `ko`     | Korean                  |
+| `lt`     | Lithuanian              |
+| `lv`     | Latvian                 |
+| `ms`     | Malay                   |
+| `nl`     | Dutch                   |
+| `no`     | Norwegian               |
+| `pl`     | Polish                  |
+| `pt_BR`  | Portuguese (Brazil)     |
+| `pt_PT`  | Portuguese (Portugal)   |
+| `ro`     | Romanian                |
+| `ru`     | Russian                 |
+| `sk`     | Slovak                  |
+| `sl`     | Slovenian               |
+| `sr`     | Serbian (Cyrillic)      |
+| `sv`     | Swedish                 |
+| `th`     | Thai                    |
+| `tr`     | Turkish                 |
+| `uk`     | Ukrainian               |
+| `vi`     | Vietnamese              |
+| `zh_CN`  | Chinese (Simplified)    |
+| `zh_TW`  | Chinese (Traditional)   |
+
+Copied selectors, XPath, locators, HTML and text are the page's own data and stay as they are, as do tag names, CSS property names and pixel values in the panel. To add a language, copy `_locales/en/messages.json` to `_locales/<code>/messages.json` and translate the `message` values; see [CONTRIBUTING.md](CONTRIBUTING.md#translations).
 
 ## Permissions
 

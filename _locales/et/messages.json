@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Hoia Alt all ja osuta elemendile: selektorid, kastimudel, stiilid, ligipääsetavus ja sündmused ilma DevToolsita."
+  },
+  "appTagline": {
+    "message": "Elemendiinspektor"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspecti seaded"
+  },
+  "settingsOpenTitle": {
+    "message": "Seaded"
+  },
+  "settingsCloseLabel": {
+    "message": "Sulge seaded"
+  },
+  "closeTitle": {
+    "message": "Sulge"
+  },
+  "infoOpenLabel": {
+    "message": "QuickInspecti teave"
+  },
+  "infoCloseLabel": {
+    "message": "Sulge teave"
+  },
+  "enabledToggleLabel": {
+    "message": "Lülita QuickInspect sisse või välja"
+  },
+  "holdKeyLabel": {
+    "message": "Allhoitav klahv"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Hoia seda all ja osuta elemendile. Lahtilaskmisel taastub leht."
+  },
+  "whileHoldingLabel": {
+    "message": "Klahvi all hoides"
+  },
+  "kbdClick": {
+    "message": "klõps"
+  },
+  "shortcutPin": {
+    "message": "Kinnita paneel"
+  },
+  "shortcutClose": {
+    "message": "Sulge"
+  },
+  "shortcutParentChild": {
+    "message": "Vanem / laps"
+  },
+  "shortcutSibling": {
+    "message": "Naaber"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopeeri CSS-selektor"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopeeri XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopeeri Playwrighti lokaator"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopeeri HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopeeri tekst"
+  },
+  "editorLabel": {
+    "message": "Redaktor"
+  },
+  "editorChecking": {
+    "message": "Lehe kontrollimine"
+  },
+  "editorHint": {
+    "message": "Vajuta <kbd class=\"kd-chip kd-font-mono\">O</kbd> lähteasukohaga elemendil, et see redaktoris avada."
+  },
+  "editorUnavailable": {
+    "message": "Sellel lehel pole saadaval"
+  },
+  "editorSources": {
+    "message": "$SERVER$ arendusserver, lähted saadaval",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ arendusserver, lähteid siin pole",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Salvestatakse automaatselt ja rakendub kohe avatud vahekaartidele."
+  },
+  "settingsEditing": {
+    "message": "Muutmine"
+  },
+  "settingAllowEdit": {
+    "message": "Luba muudatused"
+  },
+  "settingAllowEditHint": {
+    "message": "Klõpsa kinnitatud paneeli väärtustel, et muuta lehe stiile, atribuute ja teksti"
+  },
+  "settingsPopup": {
+    "message": "Hüpikaken"
+  },
+  "settingEditorStatus": {
+    "message": "Redaktori saadavus"
+  },
+  "settingEditorStatusHint": {
+    "message": "Kas see leht saab avada lähtefaile sinu redaktoris"
+  },
+  "settingsOverlay": {
+    "message": "Esiletõst"
+  },
+  "settingBoxModel": {
+    "message": "Kastimudeli esiletõst"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin-, border-, padding- ja gap-ribad"
+  },
+  "settingsSections": {
+    "message": "Paneeli jaotised"
+  },
+  "sectionBox": {
+    "message": "Kast"
+  },
+  "settingBoxHint": {
+    "message": "Asukoht, suurus, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Sündmused"
+  },
+  "settingEventsHint": {
+    "message": "Kuulajad, inline-käsitlejad ja raamistiku propsid"
+  },
+  "sectionStyles": {
+    "message": "Stiilid"
+  },
+  "settingStylesHint": {
+    "message": "Olulised arvutatud väärtused"
+  },
+  "sectionAccessibility": {
+    "message": "Ligipääsetavus"
+  },
+  "settingAccessibilityHint": {
+    "message": "Roll, ligipääsetav nimi, fookustatavus, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atribuudid"
+  },
+  "settingAttributesHint": {
+    "message": "Elemendi kõik atribuudid"
+  },
+  "sectionMedia": {
+    "message": "Meedia"
+  },
+  "settingMediaHint": {
+    "message": "Pildi, video, canvase ja SVG üksikasjad"
+  },
+  "sectionContext": {
+    "message": "Kontekst"
+  },
+  "settingContextHint": {
+    "message": "Lähtefail, raamistik, eellased ja tekst"
+  },
+  "sectionSelectors": {
+    "message": "Selektorid"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- ja Playwrighti lokaatorid"
+  },
+  "settingsReset": {
+    "message": "Taasta vaikeväärtused"
+  },
+  "infoIntro": {
+    "message": "QuickInspect näitab, mida elemendi kohta teada on vaja, ilma DevToolsi avamata: <strong>selektorid</strong>, <strong>kastimudeli</strong>, <strong>arvutatud stiilid</strong>, <strong>ligipääsetavuse</strong>, <strong>atribuudid</strong>, <strong>sündmused</strong> ja <strong>lähtefaili</strong>, kust see pärineb."
+  },
+  "infoStep1": {
+    "message": "Hoia <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> all ja osuta elemendile, et seda uurida; lahtilaskmisel taastub leht. Teise klahvi saad valida põhivaate jaotises <strong>Allhoitav klahv</strong>."
+  },
+  "infoStep2": {
+    "message": "<strong>Klõpsa</strong> klahvi all hoides, et paneel kinnitada, ja lohista seda siis päisest. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> liiguvad vanemale või lapsele, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> naaberelementidele."
+  },
+  "infoStep3": {
+    "message": "Vajuta <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, et kopeerida selektor, XPath, Playwrighti lokaator, HTML või tekst."
+  },
+  "infoStep4": {
+    "message": "Kinnitatud paneelis <strong>klõpsa mis tahes väärtusel</strong>, et muuta stiile, kasti, atribuute või teksti. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> rakendab, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> tühistab ja <strong>reset</strong> võtab kõik tagasi. Muudatused jäävad lehele kuni uuesti laadimiseni."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> või <strong>Next.js</strong> arendusserveris vajuta <kbd class=\"kd-chip kd-font-mono\">O</kbd>, et avada elemendi lähtefail redaktoris."
+  },
+  "infoGithub": {
+    "message": "GitHubi hoidla"
+  },
+  "infoReport": {
+    "message": "Teata veast / soovist"
+  },
+  "infoCreatedBy": {
+    "message": "Autor:"
+  },
+  "footerSections": {
+    "message": "Selektorid · Kast · Stiilid · Ligipääsetavus · Sündmused"
+  },
+  "panelPinned": {
+    "message": "kinnitatud"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Võta kõik selle elemendi muudatused tagasi"
+  },
+  "panelCopy": {
+    "message": "kopeeri"
+  },
+  "panelOpen": {
+    "message": "ava"
+  },
+  "panelRemoveAttribute": {
+    "message": "Eemalda $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "väärtus"
+  },
+  "boxHint": {
+    "message": "üleval paremal all vasakul"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: üleval paremal all vasakul",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rida veerg"
+  },
+  "stylesHint": {
+    "message": "arvutatud"
+  },
+  "shadowHostHint": {
+    "message": "elemendi $HOST$ shadow rootis",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ veel",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ veel",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ kuulaja",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ kuulajat",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ laps",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ last",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ vaste",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ vastet",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unikaalne"
+  },
+  "noListeners": {
+    "message": "sellel elemendil pole kuulajaid"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonüümne"
+  },
+  "rowPosition": {
+    "message": "Asukoht"
+  },
+  "rowSize": {
+    "message": "Suurus"
+  },
+  "rowRole": {
+    "message": "Roll"
+  },
+  "rowName": {
+    "message": "Nimi"
+  },
+  "rowFocusable": {
+    "message": "Fookustatav"
+  },
+  "rowSource": {
+    "message": "Lähe"
+  },
+  "rowFramework": {
+    "message": "Raamistik"
+  },
+  "rowComponent": {
+    "message": "Komponent"
+  },
+  "rowText": {
+    "message": "Tekst"
+  },
+  "rowKind": {
+    "message": "Liik"
+  },
+  "rowNatural": {
+    "message": "Algsuurus"
+  },
+  "rowDuration": {
+    "message": "Kestus"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Roll"
+  },
+  "strategyLabel": {
+    "message": "Silt"
+  },
+  "strategyPlaceholder": {
+    "message": "Kohatäide"
+  },
+  "strategyAltText": {
+    "message": "Alt-tekst"
+  },
+  "strategyTitle": {
+    "message": "Pealkiri"
+  },
+  "strategyText": {
+    "message": "Tekst"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "jah"
+  },
+  "valueNo": {
+    "message": "ei"
+  },
+  "valueNone": {
+    "message": "puudub"
+  },
+  "valueEmpty": {
+    "message": "tühi"
+  },
+  "mediaLive": {
+    "message": "otse"
+  },
+  "addStyle": {
+    "message": "+ stiil"
+  },
+  "addStylePlaceholder": {
+    "message": "omadus: väärtus"
+  },
+  "addAttribute": {
+    "message": "+ atribuut"
+  },
+  "addAttributePlaceholder": {
+    "message": "nimi=\"väärtus\""
+  },
+  "kbdDrag": {
+    "message": "lohista"
+  },
+  "kbdClickValue": {
+    "message": "klõpsa väärtust"
+  },
+  "footPin": {
+    "message": "kinnita"
+  },
+  "footUnpin": {
+    "message": "vabasta"
+  },
+  "footMove": {
+    "message": "liiguta"
+  },
+  "footEdit": {
+    "message": "muuda"
+  },
+  "footClose": {
+    "message": "sulge"
+  },
+  "footParentChild": {
+    "message": "vanem / laps"
+  },
+  "footSibling": {
+    "message": "naaber"
+  },
+  "footOpenSource": {
+    "message": "ava lähe"
+  },
+  "actionSelector": {
+    "message": "selektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokaator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "tekst"
+  },
+  "toastEditsReset": {
+    "message": "Muudatused tagasi võetud"
+  },
+  "toastNoSource": {
+    "message": "Sellel elemendil pole lähteasukohta"
+  },
+  "toastNoDevServer": {
+    "message": "Pole arendusserverit redaktori avamiseks"
+  },
+  "toastOpened": {
+    "message": "Avatud redaktoris"
+  },
+  "toastNotOpened": {
+    "message": "Redaktor ei avanenud"
+  },
+  "toastNothingToCopy": {
+    "message": "Pole midagi kopeerida: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Kopeeritud: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kopeerimine ebaõnnestus: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

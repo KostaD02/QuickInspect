@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Κρατήστε το Alt και δείξτε ένα στοιχείο: επιλογείς, box model, στυλ, προσβασιμότητα και συμβάντα χωρίς DevTools."
+  },
+  "appTagline": {
+    "message": "Επιθεωρητής στοιχείων με hover"
+  },
+  "settingsOpenLabel": {
+    "message": "Ρυθμίσεις QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Ρυθμίσεις"
+  },
+  "settingsCloseLabel": {
+    "message": "Κλείσιμο ρυθμίσεων"
+  },
+  "closeTitle": {
+    "message": "Κλείσιμο"
+  },
+  "infoOpenLabel": {
+    "message": "Σχετικά με το QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Κλείσιμο πληροφοριών"
+  },
+  "enabledToggleLabel": {
+    "message": "Ενεργοποίηση ή απενεργοποίηση του QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Πλήκτρο κρατήματος"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Κρατήστε το πατημένο και δείξτε ένα στοιχείο. Αφήστε το για να επανέλθει η σελίδα."
+  },
+  "whileHoldingLabel": {
+    "message": "Ενώ το κρατάτε"
+  },
+  "kbdClick": {
+    "message": "κλικ"
+  },
+  "shortcutPin": {
+    "message": "Καρφίτσωμα πίνακα"
+  },
+  "shortcutClose": {
+    "message": "Κλείσιμο"
+  },
+  "shortcutParentChild": {
+    "message": "Γονέας / παιδί"
+  },
+  "shortcutSibling": {
+    "message": "Αδελφό"
+  },
+  "shortcutCopySelector": {
+    "message": "Αντιγραφή επιλογέα"
+  },
+  "shortcutCopyXpath": {
+    "message": "Αντιγραφή XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Αντιγραφή locator Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Αντιγραφή HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Αντιγραφή κειμένου"
+  },
+  "editorLabel": {
+    "message": "Επεξεργαστής"
+  },
+  "editorChecking": {
+    "message": "Έλεγχος της σελίδας"
+  },
+  "editorHint": {
+    "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">O</kbd> σε ένα στοιχείο με θέση πηγής για να το ανοίξετε στον επεξεργαστή σας."
+  },
+  "editorUnavailable": {
+    "message": "Μη διαθέσιμο σε αυτήν τη σελίδα"
+  },
+  "editorSources": {
+    "message": "Dev server $SERVER$, διαθέσιμες πηγές στοιχείων",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev server $SERVER$, χωρίς πηγές στοιχείων εδώ",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Αποθηκεύεται αυτόματα και εφαρμόζεται αμέσως στις ανοιχτές καρτέλες."
+  },
+  "settingsEditing": {
+    "message": "Επεξεργασία"
+  },
+  "settingAllowEdit": {
+    "message": "Να επιτρέπονται αλλαγές"
+  },
+  "settingAllowEditHint": {
+    "message": "Κάντε κλικ σε τιμές ενός καρφιτσωμένου πίνακα για να αλλάξετε στυλ, χαρακτηριστικά και κείμενο στη σελίδα"
+  },
+  "settingsPopup": {
+    "message": "Αναδυόμενο"
+  },
+  "settingEditorStatus": {
+    "message": "Διαθεσιμότητα επεξεργαστή"
+  },
+  "settingEditorStatusHint": {
+    "message": "Αν η σελίδα ανοίγει πηγές στον επεξεργαστή"
+  },
+  "settingsOverlay": {
+    "message": "Επικάλυψη"
+  },
+  "settingBoxModel": {
+    "message": "Επισήμανση box model"
+  },
+  "settingBoxModelHint": {
+    "message": "Ζώνες margin, border, padding και gap"
+  },
+  "settingsSections": {
+    "message": "Ενότητες πίνακα"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Θέση, μέγεθος, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Συμβάντα"
+  },
+  "settingEventsHint": {
+    "message": "Listeners, inline handlers και props του framework"
+  },
+  "sectionStyles": {
+    "message": "Στυλ"
+  },
+  "settingStylesHint": {
+    "message": "Οι υπολογισμένες τιμές που μετρούν"
+  },
+  "sectionAccessibility": {
+    "message": "Προσβασιμότητα"
+  },
+  "settingAccessibilityHint": {
+    "message": "Ρόλος, προσβάσιμο όνομα, εστίαση, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Χαρακτηριστικά"
+  },
+  "settingAttributesHint": {
+    "message": "Όλα τα χαρακτηριστικά του στοιχείου"
+  },
+  "sectionMedia": {
+    "message": "Πολυμέσα"
+  },
+  "settingMediaHint": {
+    "message": "Λεπτομέρειες εικόνας, βίντεο, canvas και SVG"
+  },
+  "sectionContext": {
+    "message": "Πλαίσιο"
+  },
+  "settingContextHint": {
+    "message": "Αρχείο πηγής, framework, πρόγονοι και κείμενο"
+  },
+  "sectionSelectors": {
+    "message": "Επιλογείς"
+  },
+  "settingSelectorsHint": {
+    "message": "Locators CSS, XPath και Playwright"
+  },
+  "settingsReset": {
+    "message": "Επαναφορά προεπιλογών"
+  },
+  "infoIntro": {
+    "message": "Το QuickInspect δείχνει ό,τι χρειάζεται να ξέρετε για κάθε στοιχείο χωρίς να ανοίξετε τα DevTools: <strong>επιλογείς</strong>, το <strong>box model</strong>, <strong>υπολογισμένα στυλ</strong>, <strong>προσβασιμότητα</strong>, <strong>χαρακτηριστικά</strong>, <strong>συμβάντα</strong> και το <strong>αρχείο πηγής</strong> από το οποίο προήλθε."
+  },
+  "infoStep1": {
+    "message": "Κρατήστε το <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> και δείξτε ένα στοιχείο για να το επιθεωρήσετε· αφήστε το για να επανέλθει η σελίδα. Επιλέξτε άλλο πλήκτρο στο <strong>Πλήκτρο κρατήματος</strong> της κύριας οθόνης."
+  },
+  "infoStep2": {
+    "message": "<strong>Κάντε κλικ</strong> ενώ κρατάτε το πλήκτρο για να καρφιτσώσετε τον πίνακα και σύρετέ τον από την κεφαλίδα του. Τα <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> πάνε στον γονέα ή στο παιδί, τα <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> στα αδελφά στοιχεία."
+  },
+  "infoStep3": {
+    "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> για να αντιγράψετε τον επιλογέα, το XPath, το locator Playwright, το HTML ή το κείμενο."
+  },
+  "infoStep4": {
+    "message": "Σε καρφιτσωμένο πίνακα, <strong>κάντε κλικ σε οποιαδήποτε τιμή</strong> για να επεξεργαστείτε στυλ, box, χαρακτηριστικά ή κείμενο. Το <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> εφαρμόζει, το <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ακυρώνει και το <strong>reset</strong> τα αναιρεί όλα. Οι αλλαγές μένουν στη σελίδα μέχρι την επαναφόρτωση."
+  },
+  "infoStep5": {
+    "message": "Σε dev server <strong>Vite</strong> ή <strong>Next.js</strong>, πατήστε <kbd class=\"kd-chip kd-font-mono\">O</kbd> για να ανοίξετε την πηγή του στοιχείου στον επεξεργαστή σας."
+  },
+  "infoGithub": {
+    "message": "Αποθετήριο GitHub"
+  },
+  "infoReport": {
+    "message": "Αναφορά προβλήματος / ιδέας"
+  },
+  "infoCreatedBy": {
+    "message": "Δημιουργήθηκε από"
+  },
+  "footerSections": {
+    "message": "Επιλογείς · Box · Στυλ · Προσβασιμότητα · Συμβάντα"
+  },
+  "panelPinned": {
+    "message": "καρφιτσωμένο"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Αναίρεση όλων των αλλαγών σε αυτό το στοιχείο"
+  },
+  "panelCopy": {
+    "message": "αντιγραφή"
+  },
+  "panelOpen": {
+    "message": "άνοιγμα"
+  },
+  "panelRemoveAttribute": {
+    "message": "Αφαίρεση $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "τιμή"
+  },
+  "boxHint": {
+    "message": "πάνω δεξιά κάτω αριστερά"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: πάνω δεξιά κάτω αριστερά",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: γραμμή στήλη"
+  },
+  "stylesHint": {
+    "message": "υπολογισμένα"
+  },
+  "shadowHostHint": {
+    "message": "μέσα στο shadow root του $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ ακόμη",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ ακόμη",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ παιδί",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ παιδιά",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ αντιστοιχία",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ αντιστοιχίες",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "μοναδικό"
+  },
+  "noListeners": {
+    "message": "δεν υπάρχουν listeners σε αυτό το στοιχείο"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "ανώνυμη"
+  },
+  "rowPosition": {
+    "message": "Θέση"
+  },
+  "rowSize": {
+    "message": "Μέγεθος"
+  },
+  "rowRole": {
+    "message": "Ρόλος"
+  },
+  "rowName": {
+    "message": "Όνομα"
+  },
+  "rowFocusable": {
+    "message": "Εστιάσιμο"
+  },
+  "rowSource": {
+    "message": "Πηγή"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Component"
+  },
+  "rowText": {
+    "message": "Κείμενο"
+  },
+  "rowKind": {
+    "message": "Είδος"
+  },
+  "rowNatural": {
+    "message": "Φυσικό μέγεθος"
+  },
+  "rowDuration": {
+    "message": "Διάρκεια"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Ρόλος"
+  },
+  "strategyLabel": {
+    "message": "Ετικέτα"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Κείμενο alt"
+  },
+  "strategyTitle": {
+    "message": "Τίτλος"
+  },
+  "strategyText": {
+    "message": "Κείμενο"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ναι"
+  },
+  "valueNo": {
+    "message": "όχι"
+  },
+  "valueNone": {
+    "message": "κανένα"
+  },
+  "valueEmpty": {
+    "message": "κενό"
+  },
+  "mediaLive": {
+    "message": "ζωντανά"
+  },
+  "addStyle": {
+    "message": "+ στυλ"
+  },
+  "addStylePlaceholder": {
+    "message": "ιδιότητα: τιμή"
+  },
+  "addAttribute": {
+    "message": "+ χαρακτηριστικό"
+  },
+  "addAttributePlaceholder": {
+    "message": "όνομα=\"τιμή\""
+  },
+  "kbdDrag": {
+    "message": "σύρσιμο"
+  },
+  "kbdClickValue": {
+    "message": "κλικ σε τιμή"
+  },
+  "footPin": {
+    "message": "καρφίτσωμα"
+  },
+  "footUnpin": {
+    "message": "ξεκαρφίτσωμα"
+  },
+  "footMove": {
+    "message": "μετακίνηση"
+  },
+  "footEdit": {
+    "message": "επεξεργασία"
+  },
+  "footClose": {
+    "message": "κλείσιμο"
+  },
+  "footParentChild": {
+    "message": "γονέας / παιδί"
+  },
+  "footSibling": {
+    "message": "αδελφό"
+  },
+  "footOpenSource": {
+    "message": "άνοιγμα πηγής"
+  },
+  "actionSelector": {
+    "message": "επιλογέας"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "κείμενο"
+  },
+  "toastEditsReset": {
+    "message": "Οι αλλαγές επαναφέρθηκαν"
+  },
+  "toastNoSource": {
+    "message": "Δεν υπάρχει θέση πηγής για αυτό το στοιχείο"
+  },
+  "toastNoDevServer": {
+    "message": "Δεν υπάρχει dev server για να ανοίξει ο επεξεργαστής"
+  },
+  "toastOpened": {
+    "message": "Άνοιξε στον επεξεργαστή"
+  },
+  "toastNotOpened": {
+    "message": "Ο επεξεργαστής δεν άνοιξε"
+  },
+  "toastNothingToCopy": {
+    "message": "Τίποτα για αντιγραφή: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Αντιγράφηκε: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Αποτυχία αντιγραφής: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

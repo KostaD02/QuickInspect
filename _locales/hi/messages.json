@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt दबाए रखें और किसी एलिमेंट पर होवर करें: सेलेक्टर, बॉक्स मॉडल, स्टाइल, एक्सेसिबिलिटी और इवेंट, DevTools खोले बिना।"
+  },
+  "appTagline": {
+    "message": "होवर पर एलिमेंट इंस्पेक्टर"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect सेटिंग"
+  },
+  "settingsOpenTitle": {
+    "message": "सेटिंग"
+  },
+  "settingsCloseLabel": {
+    "message": "सेटिंग बंद करें"
+  },
+  "closeTitle": {
+    "message": "बंद करें"
+  },
+  "infoOpenLabel": {
+    "message": "QuickInspect के बारे में"
+  },
+  "infoCloseLabel": {
+    "message": "जानकारी बंद करें"
+  },
+  "enabledToggleLabel": {
+    "message": "QuickInspect चालू या बंद करें"
+  },
+  "holdKeyLabel": {
+    "message": "दबाए रखने वाली कुंजी"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "इसे दबाए रखें और किसी एलिमेंट पर होवर करें। छोड़ने पर पेज पहले जैसा हो जाता है।"
+  },
+  "whileHoldingLabel": {
+    "message": "दबाए रखते समय"
+  },
+  "kbdClick": {
+    "message": "क्लिक"
+  },
+  "shortcutPin": {
+    "message": "पैनल पिन करें"
+  },
+  "shortcutClose": {
+    "message": "बंद करें"
+  },
+  "shortcutParentChild": {
+    "message": "पैरेंट / चाइल्ड"
+  },
+  "shortcutSibling": {
+    "message": "सिबलिंग"
+  },
+  "shortcutCopySelector": {
+    "message": "CSS सेलेक्टर कॉपी करें"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath कॉपी करें"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright लोकेटर कॉपी करें"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML कॉपी करें"
+  },
+  "shortcutCopyText": {
+    "message": "टेक्स्ट कॉपी करें"
+  },
+  "editorLabel": {
+    "message": "एडिटर"
+  },
+  "editorChecking": {
+    "message": "यह पेज जाँचा जा रहा है"
+  },
+  "editorHint": {
+    "message": "सोर्स लोकेशन वाले एलिमेंट पर <kbd class=\"kd-chip kd-font-mono\">O</kbd> दबाकर उसे अपने एडिटर में खोलें।"
+  },
+  "editorUnavailable": {
+    "message": "इस पेज पर उपलब्ध नहीं"
+  },
+  "editorSources": {
+    "message": "$SERVER$ डेव सर्वर, एलिमेंट सोर्स उपलब्ध",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ डेव सर्वर, यहाँ एलिमेंट सोर्स नहीं",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "अपने आप सहेजा जाता है और खुले टैब पर तुरंत लागू होता है।"
+  },
+  "settingsEditing": {
+    "message": "संपादन"
+  },
+  "settingAllowEdit": {
+    "message": "संपादन की अनुमति दें"
+  },
+  "settingAllowEditHint": {
+    "message": "पिन किए गए पैनल में वैल्यू पर क्लिक करके पेज के स्टाइल, एट्रिब्यूट और टेक्स्ट बदलें"
+  },
+  "settingsPopup": {
+    "message": "पॉपअप"
+  },
+  "settingEditorStatus": {
+    "message": "एडिटर की उपलब्धता"
+  },
+  "settingEditorStatusHint": {
+    "message": "क्या यह पेज आपके एडिटर में सोर्स खोल सकता है"
+  },
+  "settingsOverlay": {
+    "message": "ओवरले"
+  },
+  "settingBoxModel": {
+    "message": "बॉक्स मॉडल हाइलाइट"
+  },
+  "settingBoxModelHint": {
+    "message": "margin, border, padding और gap की पट्टियाँ"
+  },
+  "settingsSections": {
+    "message": "पैनल सेक्शन"
+  },
+  "sectionBox": {
+    "message": "बॉक्स"
+  },
+  "settingBoxHint": {
+    "message": "पोज़िशन, साइज़, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "इवेंट"
+  },
+  "settingEventsHint": {
+    "message": "लिसनर, इनलाइन हैंडलर और फ़्रेमवर्क प्रॉप्स"
+  },
+  "sectionStyles": {
+    "message": "स्टाइल"
+  },
+  "settingStylesHint": {
+    "message": "जो कंप्यूटेड वैल्यू मायने रखती हैं"
+  },
+  "sectionAccessibility": {
+    "message": "एक्सेसिबिलिटी"
+  },
+  "settingAccessibilityHint": {
+    "message": "रोल, एक्सेसिबल नाम, फ़ोकस योग्यता, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "एट्रिब्यूट"
+  },
+  "settingAttributesHint": {
+    "message": "एलिमेंट का हर एट्रिब्यूट"
+  },
+  "sectionMedia": {
+    "message": "मीडिया"
+  },
+  "settingMediaHint": {
+    "message": "इमेज, वीडियो, canvas और SVG का विवरण"
+  },
+  "sectionContext": {
+    "message": "संदर्भ"
+  },
+  "settingContextHint": {
+    "message": "सोर्स फ़ाइल, फ़्रेमवर्क, पूर्वज और टेक्स्ट"
+  },
+  "sectionSelectors": {
+    "message": "सेलेक्टर"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath और Playwright लोकेटर"
+  },
+  "settingsReset": {
+    "message": "डिफ़ॉल्ट पर रीसेट करें"
+  },
+  "infoIntro": {
+    "message": "QuickInspect किसी भी एलिमेंट के बारे में ज़रूरी जानकारी DevTools खोले बिना दिखाता है: <strong>सेलेक्टर</strong>, <strong>बॉक्स मॉडल</strong>, <strong>कंप्यूटेड स्टाइल</strong>, <strong>एक्सेसिबिलिटी</strong>, <strong>एट्रिब्यूट</strong>, <strong>इवेंट</strong> और वह <strong>सोर्स फ़ाइल</strong> जहाँ से यह आया।"
+  },
+  "infoStep1": {
+    "message": "<kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> दबाए रखें और किसी एलिमेंट पर होवर करके उसे जाँचें; छोड़ने पर पेज पहले जैसा हो जाता है। मुख्य स्क्रीन पर <strong>दबाए रखने वाली कुंजी</strong> में दूसरी कुंजी चुनें।"
+  },
+  "infoStep2": {
+    "message": "दबाए रखते हुए <strong>क्लिक</strong> करके पैनल पिन करें, फिर उसके हेडर से खींचकर हिलाएँ। पैरेंट या चाइल्ड के लिए <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> और सिबलिंग के लिए <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> इस्तेमाल करें।"
+  },
+  "infoStep3": {
+    "message": "सेलेक्टर, XPath, Playwright लोकेटर, HTML या टेक्स्ट कॉपी करने के लिए <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> दबाएँ।"
+  },
+  "infoStep4": {
+    "message": "पिन किए गए पैनल में <strong>किसी भी वैल्यू पर क्लिक</strong> करके स्टाइल, बॉक्स, एट्रिब्यूट या टेक्स्ट संपादित करें। <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> लागू करता है, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> रद्द करता है और <strong>reset</strong> सब वापस कर देता है। बदलाव पेज रीलोड होने तक रहते हैं।"
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> या <strong>Next.js</strong> डेव सर्वर पर <kbd class=\"kd-chip kd-font-mono\">O</kbd> दबाकर एलिमेंट का सोर्स अपने एडिटर में खोलें।"
+  },
+  "infoGithub": {
+    "message": "GitHub रिपॉज़िटरी"
+  },
+  "infoReport": {
+    "message": "समस्या / सुझाव बताएँ"
+  },
+  "infoCreatedBy": {
+    "message": "निर्माता:"
+  },
+  "footerSections": {
+    "message": "सेलेक्टर · बॉक्स · स्टाइल · एक्सेसिबिलिटी · इवेंट"
+  },
+  "panelPinned": {
+    "message": "पिन किया"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "इस एलिमेंट के सभी बदलाव वापस करें"
+  },
+  "panelCopy": {
+    "message": "कॉपी"
+  },
+  "panelOpen": {
+    "message": "खोलें"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ हटाएँ",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "वैल्यू"
+  },
+  "boxHint": {
+    "message": "ऊपर दाएँ नीचे बाएँ"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: ऊपर दाएँ नीचे बाएँ",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: पंक्ति स्तंभ"
+  },
+  "stylesHint": {
+    "message": "कंप्यूटेड"
+  },
+  "shadowHostHint": {
+    "message": "$HOST$ के shadow root के अंदर",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ और",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ और",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ लिसनर",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ लिसनर",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ चाइल्ड",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ चाइल्ड",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ मैच",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ मैच",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "यूनीक"
+  },
+  "noListeners": {
+    "message": "इस एलिमेंट पर कोई लिसनर नहीं"
+  },
+  "eventOriginInline": {
+    "message": "इनलाइन"
+  },
+  "eventAnonymous": {
+    "message": "अनाम"
+  },
+  "rowPosition": {
+    "message": "पोज़िशन"
+  },
+  "rowSize": {
+    "message": "साइज़"
+  },
+  "rowRole": {
+    "message": "रोल"
+  },
+  "rowName": {
+    "message": "नाम"
+  },
+  "rowFocusable": {
+    "message": "फ़ोकस योग्य"
+  },
+  "rowSource": {
+    "message": "सोर्स"
+  },
+  "rowFramework": {
+    "message": "फ़्रेमवर्क"
+  },
+  "rowComponent": {
+    "message": "कंपोनेंट"
+  },
+  "rowText": {
+    "message": "टेक्स्ट"
+  },
+  "rowKind": {
+    "message": "प्रकार"
+  },
+  "rowNatural": {
+    "message": "मूल साइज़"
+  },
+  "rowDuration": {
+    "message": "अवधि"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "रोल"
+  },
+  "strategyLabel": {
+    "message": "लेबल"
+  },
+  "strategyPlaceholder": {
+    "message": "प्लेसहोल्डर"
+  },
+  "strategyAltText": {
+    "message": "Alt टेक्स्ट"
+  },
+  "strategyTitle": {
+    "message": "टाइटल"
+  },
+  "strategyText": {
+    "message": "टेक्स्ट"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "हाँ"
+  },
+  "valueNo": {
+    "message": "नहीं"
+  },
+  "valueNone": {
+    "message": "कोई नहीं"
+  },
+  "valueEmpty": {
+    "message": "खाली"
+  },
+  "mediaLive": {
+    "message": "लाइव"
+  },
+  "addStyle": {
+    "message": "+ स्टाइल"
+  },
+  "addStylePlaceholder": {
+    "message": "प्रॉपर्टी: वैल्यू"
+  },
+  "addAttribute": {
+    "message": "+ एट्रिब्यूट"
+  },
+  "addAttributePlaceholder": {
+    "message": "नाम=\"वैल्यू\""
+  },
+  "kbdDrag": {
+    "message": "ड्रैग"
+  },
+  "kbdClickValue": {
+    "message": "वैल्यू पर क्लिक"
+  },
+  "footPin": {
+    "message": "पिन"
+  },
+  "footUnpin": {
+    "message": "अनपिन"
+  },
+  "footMove": {
+    "message": "हिलाएँ"
+  },
+  "footEdit": {
+    "message": "संपादित करें"
+  },
+  "footClose": {
+    "message": "बंद करें"
+  },
+  "footParentChild": {
+    "message": "पैरेंट / चाइल्ड"
+  },
+  "footSibling": {
+    "message": "सिबलिंग"
+  },
+  "footOpenSource": {
+    "message": "सोर्स खोलें"
+  },
+  "actionSelector": {
+    "message": "सेलेक्टर"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "लोकेटर"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "टेक्स्ट"
+  },
+  "toastEditsReset": {
+    "message": "बदलाव रीसेट किए गए"
+  },
+  "toastNoSource": {
+    "message": "इस एलिमेंट की कोई सोर्स लोकेशन नहीं"
+  },
+  "toastNoDevServer": {
+    "message": "एडिटर खोलने के लिए कोई डेव सर्वर नहीं"
+  },
+  "toastOpened": {
+    "message": "एडिटर में खोला गया"
+  },
+  "toastNotOpened": {
+    "message": "एडिटर नहीं खुला"
+  },
+  "toastNothingToCopy": {
+    "message": "कॉपी करने को कुछ नहीं: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "कॉपी किया गया: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "कॉपी नहीं हो सका: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

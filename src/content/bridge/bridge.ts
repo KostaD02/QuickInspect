@@ -150,12 +150,13 @@ function squash(value: string): string {
   return value.replace(/\s+/g, ' ').trim();
 }
 
+// ? an empty name is data for the isolated world, which words it in the UI language
 function describe(fn: unknown): { name: string; source: string } {
   if (typeof fn !== 'function') {
     const handler = (fn as { handleEvent?: unknown } | null)?.handleEvent;
     return typeof handler === 'function'
       ? { name: 'handleEvent', source: squash(String(handler)).slice(0, 160) }
-      : { name: 'object', source: '' };
+      : { name: '', source: '' };
   }
   let source = '';
   try {
@@ -164,7 +165,7 @@ function describe(fn: unknown): { name: string; source: string } {
     source = '';
   }
   if (source.includes('[native code]')) source = '';
-  return { name: fn.name || 'anonymous', source: source.slice(0, 160) };
+  return { name: fn.name, source: source.slice(0, 160) };
 }
 
 function entry(

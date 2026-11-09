@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Laikykite Alt ir užveskite ant elemento: selektoriai, box modelis, stiliai, prieinamumas ir įvykiai be DevTools."
+  },
+  "appTagline": {
+    "message": "Elementų inspektorius"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect nustatymai"
+  },
+  "settingsOpenTitle": {
+    "message": "Nustatymai"
+  },
+  "settingsCloseLabel": {
+    "message": "Uždaryti nustatymus"
+  },
+  "closeTitle": {
+    "message": "Uždaryti"
+  },
+  "infoOpenLabel": {
+    "message": "Apie QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Uždaryti informaciją"
+  },
+  "enabledToggleLabel": {
+    "message": "Įjungti arba išjungti QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Laikomas klavišas"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Laikykite jį ir užveskite ant elemento. Atleiskite, kad grąžintumėte puslapį."
+  },
+  "whileHoldingLabel": {
+    "message": "Laikant klavišą"
+  },
+  "kbdClick": {
+    "message": "spustelėk"
+  },
+  "shortcutPin": {
+    "message": "Prisegti"
+  },
+  "shortcutClose": {
+    "message": "Uždaryti"
+  },
+  "shortcutParentChild": {
+    "message": "Tėvas / vaikas"
+  },
+  "shortcutSibling": {
+    "message": "Gretimas"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopijuoti selektorių"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopijuoti XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopijuoti Playwright lokatorių"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopijuoti HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopijuoti tekstą"
+  },
+  "editorLabel": {
+    "message": "Redaktorius"
+  },
+  "editorChecking": {
+    "message": "Tikrinamas puslapis"
+  },
+  "editorHint": {
+    "message": "Paspauskite <kbd class=\"kd-chip kd-font-mono\">O</kbd> ant elemento su šaltinio vieta, kad atidarytumėte jį redaktoriuje."
+  },
+  "editorUnavailable": {
+    "message": "Šiame puslapyje nepasiekiama"
+  },
+  "editorSources": {
+    "message": "$SERVER$ kūrimo serveris, šaltiniai pasiekiami",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ kūrimo serveris, šaltinių čia nėra",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Įrašoma automatiškai ir iškart pritaikoma atidarytiems skirtukams."
+  },
+  "settingsEditing": {
+    "message": "Redagavimas"
+  },
+  "settingAllowEdit": {
+    "message": "Leisti redaguoti"
+  },
+  "settingAllowEditHint": {
+    "message": "Spustelėkite reikšmes prisegtame skydelyje, kad pakeistumėte puslapio stilius, atributus ir tekstą"
+  },
+  "settingsPopup": {
+    "message": "Iškylantysis langas"
+  },
+  "settingEditorStatus": {
+    "message": "Redaktoriaus pasiekiamumas"
+  },
+  "settingEditorStatusHint": {
+    "message": "Ar šis puslapis gali atidaryti šaltinius jūsų redaktoriuje"
+  },
+  "settingsOverlay": {
+    "message": "Perdanga"
+  },
+  "settingBoxModel": {
+    "message": "Paryškinti box modelį"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin, border, padding ir gap juostos"
+  },
+  "settingsSections": {
+    "message": "Skydelio skyriai"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Padėtis, dydis, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Įvykiai"
+  },
+  "settingEventsHint": {
+    "message": "Klausytojai, inline doroklės ir karkaso props"
+  },
+  "sectionStyles": {
+    "message": "Stiliai"
+  },
+  "settingStylesHint": {
+    "message": "Svarbios apskaičiuotos reikšmės"
+  },
+  "sectionAccessibility": {
+    "message": "Prieinamumas"
+  },
+  "settingAccessibilityHint": {
+    "message": "Vaidmuo, prieinamas vardas, fokusas, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atributai"
+  },
+  "settingAttributesHint": {
+    "message": "Visi elemento atributai"
+  },
+  "sectionMedia": {
+    "message": "Medija"
+  },
+  "settingMediaHint": {
+    "message": "Vaizdo, video, canvas ir SVG detalės"
+  },
+  "sectionContext": {
+    "message": "Kontekstas"
+  },
+  "settingContextHint": {
+    "message": "Šaltinio failas, karkasas, protėviai ir tekstas"
+  },
+  "sectionSelectors": {
+    "message": "Selektoriai"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath ir Playwright lokatoriai"
+  },
+  "settingsReset": {
+    "message": "Atkurti numatytuosius"
+  },
+  "infoIntro": {
+    "message": "QuickInspect parodo, ką reikia žinoti apie bet kurį elementą, neatidarius DevTools: <strong>selektorius</strong>, <strong>box modelį</strong>, <strong>apskaičiuotus stilius</strong>, <strong>prieinamumą</strong>, <strong>atributus</strong>, <strong>įvykius</strong> ir <strong>šaltinio failą</strong>, iš kurio jis kilęs."
+  },
+  "infoStep1": {
+    "message": "Laikykite <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> ir užveskite ant elemento, kad jį patikrintumėte; atleiskite, kad grąžintumėte puslapį. Kitą klavišą pasirinkite pagrindinio ekrano lauke <strong>Laikomas klavišas</strong>."
+  },
+  "infoStep2": {
+    "message": "<strong>Spustelėkite</strong> laikydami klavišą, kad prisegtumėte skydelį, tada vilkite jį už antraštės. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> pereina į tėvą arba vaiką, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> į gretimus elementus."
+  },
+  "infoStep3": {
+    "message": "Paspauskite <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, kad nukopijuotumėte selektorių, XPath, Playwright lokatorių, HTML arba tekstą."
+  },
+  "infoStep4": {
+    "message": "Prisegtame skydelyje <strong>spustelėkite bet kurią reikšmę</strong>, kad redaguotumėte stilius, box, atributus arba tekstą. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> pritaiko, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atšaukia, o <strong>reset</strong> viską anuliuoja. Pakeitimai puslapyje lieka iki perkrovimo."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> arba <strong>Next.js</strong> kūrimo serveryje paspauskite <kbd class=\"kd-chip kd-font-mono\">O</kbd>, kad atidarytumėte elemento šaltinį redaktoriuje."
+  },
+  "infoGithub": {
+    "message": "GitHub saugykla"
+  },
+  "infoReport": {
+    "message": "Pranešti apie klaidą / idėją"
+  },
+  "infoCreatedBy": {
+    "message": "Sukūrė"
+  },
+  "footerSections": {
+    "message": "Selektoriai · Box · Stiliai · Prieinamumas · Įvykiai"
+  },
+  "panelPinned": {
+    "message": "prisegta"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Anuliuoti visus šio elemento pakeitimus"
+  },
+  "panelCopy": {
+    "message": "kopijuoti"
+  },
+  "panelOpen": {
+    "message": "atidaryti"
+  },
+  "panelRemoveAttribute": {
+    "message": "Pašalinti $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "reikšmė"
+  },
+  "boxHint": {
+    "message": "viršus dešinė apačia kairė"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: viršus dešinė apačia kairė",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: eilutė stulpelis"
+  },
+  "stylesHint": {
+    "message": "apskaičiuota"
+  },
+  "shadowHostHint": {
+    "message": "elemento $HOST$ shadow root viduje",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ daugiau",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "+$COUNT$ daugiau",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ daugiau",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ klausytojas",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ klausytojai",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ klausytojų",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ vaikas",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ vaikai",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ vaikų",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ atitikmuo",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ atitikmenys",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ atitikmenų",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unikalus"
+  },
+  "noListeners": {
+    "message": "šis elementas neturi klausytojų"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anoniminė"
+  },
+  "rowPosition": {
+    "message": "Padėtis"
+  },
+  "rowSize": {
+    "message": "Dydis"
+  },
+  "rowRole": {
+    "message": "Vaidmuo"
+  },
+  "rowName": {
+    "message": "Pavadinimas"
+  },
+  "rowFocusable": {
+    "message": "Fokusuojamas"
+  },
+  "rowSource": {
+    "message": "Šaltinis"
+  },
+  "rowFramework": {
+    "message": "Karkasas"
+  },
+  "rowComponent": {
+    "message": "Komponentas"
+  },
+  "rowText": {
+    "message": "Tekstas"
+  },
+  "rowKind": {
+    "message": "Rūšis"
+  },
+  "rowNatural": {
+    "message": "Natūralus dydis"
+  },
+  "rowDuration": {
+    "message": "Trukmė"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Vaidmuo"
+  },
+  "strategyLabel": {
+    "message": "Etiketė"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt tekstas"
+  },
+  "strategyTitle": {
+    "message": "Pavadinimas"
+  },
+  "strategyText": {
+    "message": "Tekstas"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "taip"
+  },
+  "valueNo": {
+    "message": "ne"
+  },
+  "valueNone": {
+    "message": "nėra"
+  },
+  "valueEmpty": {
+    "message": "tuščia"
+  },
+  "mediaLive": {
+    "message": "tiesiogiai"
+  },
+  "addStyle": {
+    "message": "+ stilius"
+  },
+  "addStylePlaceholder": {
+    "message": "savybė: reikšmė"
+  },
+  "addAttribute": {
+    "message": "+ atributas"
+  },
+  "addAttributePlaceholder": {
+    "message": "pavadinimas=\"reikšmė\""
+  },
+  "kbdDrag": {
+    "message": "vilkti"
+  },
+  "kbdClickValue": {
+    "message": "spustelėti reikšmę"
+  },
+  "footPin": {
+    "message": "prisegti"
+  },
+  "footUnpin": {
+    "message": "atsegti"
+  },
+  "footMove": {
+    "message": "perkelti"
+  },
+  "footEdit": {
+    "message": "redaguoti"
+  },
+  "footClose": {
+    "message": "uždaryti"
+  },
+  "footParentChild": {
+    "message": "tėvas / vaikas"
+  },
+  "footSibling": {
+    "message": "gretimas"
+  },
+  "footOpenSource": {
+    "message": "atidaryti šaltinį"
+  },
+  "actionSelector": {
+    "message": "selektorius"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokatorius"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "tekstas"
+  },
+  "toastEditsReset": {
+    "message": "Pakeitimai anuliuoti"
+  },
+  "toastNoSource": {
+    "message": "Šis elementas neturi šaltinio vietos"
+  },
+  "toastNoDevServer": {
+    "message": "Nėra kūrimo serverio redaktoriui atidaryti"
+  },
+  "toastOpened": {
+    "message": "Atidaryta redaktoriuje"
+  },
+  "toastNotOpened": {
+    "message": "Redaktorius neatsidarė"
+  },
+  "toastNothingToCopy": {
+    "message": "Nėra ką kopijuoti: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Nukopijuota: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Nepavyko nukopijuoti: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

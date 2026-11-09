@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "החזיקו Alt ורחפו מעל אלמנט: סלקטורים, מודל הקופסה, סגנונות, נגישות ואירועים בלי לפתוח את DevTools."
+  },
+  "appTagline": {
+    "message": "בודק אלמנטים בריחוף"
+  },
+  "settingsOpenLabel": {
+    "message": "הגדרות QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "הגדרות"
+  },
+  "settingsCloseLabel": {
+    "message": "סגירת ההגדרות"
+  },
+  "closeTitle": {
+    "message": "סגירה"
+  },
+  "infoOpenLabel": {
+    "message": "אודות QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "סגירת המידע"
+  },
+  "enabledToggleLabel": {
+    "message": "הפעלה או כיבוי של QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "מקש להחזקה"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "החזיקו אותו ורחפו מעל אלמנט. שחררו כדי להחזיר את הדף."
+  },
+  "whileHoldingLabel": {
+    "message": "בזמן ההחזקה"
+  },
+  "kbdClick": {
+    "message": "לחיצה"
+  },
+  "shortcutPin": {
+    "message": "נעיצת הפאנל"
+  },
+  "shortcutClose": {
+    "message": "סגירה"
+  },
+  "shortcutParentChild": {
+    "message": "הורה / ילד"
+  },
+  "shortcutSibling": {
+    "message": "אלמנט אח"
+  },
+  "shortcutCopySelector": {
+    "message": "העתקת סלקטור CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "העתקת XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "העתקת locator של Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "העתקת HTML"
+  },
+  "shortcutCopyText": {
+    "message": "העתקת טקסט"
+  },
+  "editorLabel": {
+    "message": "עורך"
+  },
+  "editorChecking": {
+    "message": "בודק את הדף"
+  },
+  "editorHint": {
+    "message": "לחצו <kbd class=\"kd-chip kd-font-mono\">O</kbd> על אלמנט עם מיקום מקור כדי לפתוח אותו בעורך."
+  },
+  "editorUnavailable": {
+    "message": "לא זמין בדף הזה"
+  },
+  "editorSources": {
+    "message": "שרת פיתוח $SERVER$, מקורות האלמנטים זמינים",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "שרת פיתוח $SERVER$, אין כאן מקורות לאלמנטים",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "נשמר אוטומטית ומוחל מיד על כרטיסיות פתוחות."
+  },
+  "settingsEditing": {
+    "message": "עריכה"
+  },
+  "settingAllowEdit": {
+    "message": "לאפשר עריכות"
+  },
+  "settingAllowEditHint": {
+    "message": "לחצו על ערכים בפאנל נעוץ כדי לשנות סגנונות, מאפיינים וטקסט בדף"
+  },
+  "settingsPopup": {
+    "message": "חלון קופץ"
+  },
+  "settingEditorStatus": {
+    "message": "זמינות העורך"
+  },
+  "settingEditorStatusHint": {
+    "message": "האם הדף הזה יכול לפתוח מקורות בעורך שלכם"
+  },
+  "settingsOverlay": {
+    "message": "שכבת הדגשה"
+  },
+  "settingBoxModel": {
+    "message": "הדגשת מודל הקופסה"
+  },
+  "settingBoxModelHint": {
+    "message": "רצועות margin, border, padding ו-gap"
+  },
+  "settingsSections": {
+    "message": "מקטעי הפאנל"
+  },
+  "sectionBox": {
+    "message": "קופסה"
+  },
+  "settingBoxHint": {
+    "message": "מיקום, גודל, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "אירועים"
+  },
+  "settingEventsHint": {
+    "message": "מאזינים, מטפלים inline ו-props של framework"
+  },
+  "sectionStyles": {
+    "message": "סגנונות"
+  },
+  "settingStylesHint": {
+    "message": "הערכים המחושבים שחשובים"
+  },
+  "sectionAccessibility": {
+    "message": "נגישות"
+  },
+  "settingAccessibilityHint": {
+    "message": "תפקיד, שם נגיש, יכולת פוקוס, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "מאפיינים"
+  },
+  "settingAttributesHint": {
+    "message": "כל המאפיינים של האלמנט"
+  },
+  "sectionMedia": {
+    "message": "מדיה"
+  },
+  "settingMediaHint": {
+    "message": "פרטי תמונה, וידאו, canvas ו-SVG"
+  },
+  "sectionContext": {
+    "message": "הקשר"
+  },
+  "settingContextHint": {
+    "message": "קובץ מקור, framework, אבות וטקסט"
+  },
+  "sectionSelectors": {
+    "message": "סלקטורים"
+  },
+  "settingSelectorsHint": {
+    "message": "locators של CSS, XPath ו-Playwright"
+  },
+  "settingsReset": {
+    "message": "איפוס לברירות המחדל"
+  },
+  "infoIntro": {
+    "message": "QuickInspect מציג מה שצריך לדעת על כל אלמנט בלי לפתוח את DevTools: <strong>סלקטורים</strong>, <strong>מודל הקופסה</strong>, <strong>סגנונות מחושבים</strong>, <strong>נגישות</strong>, <strong>מאפיינים</strong>, <strong>אירועים</strong> ו<strong>קובץ המקור</strong> שממנו הוא הגיע."
+  },
+  "infoStep1": {
+    "message": "החזיקו <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> ורחפו מעל אלמנט כדי לבדוק אותו; שחררו כדי להחזיר את הדף. בחרו מקש אחר תחת <strong>מקש להחזקה</strong> במסך הראשי."
+  },
+  "infoStep2": {
+    "message": "<strong>לחצו</strong> בזמן ההחזקה כדי לנעוץ את הפאנל, ואז גררו אותו מהכותרת. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> עוברים להורה או לילד, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> לאלמנטים אחים."
+  },
+  "infoStep3": {
+    "message": "לחצו <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> כדי להעתיק את הסלקטור, ה-XPath, ה-locator של Playwright, ה-HTML או הטקסט."
+  },
+  "infoStep4": {
+    "message": "בפאנל נעוץ, <strong>לחצו על כל ערך</strong> כדי לערוך סגנונות, קופסה, מאפיינים או טקסט. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> מחיל, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> מבטל ו-<strong>reset</strong> מבטל הכול. העריכות נשארות בדף עד לטעינה מחדש."
+  },
+  "infoStep5": {
+    "message": "בשרת פיתוח של <strong>Vite</strong> או <strong>Next.js</strong>, לחצו <kbd class=\"kd-chip kd-font-mono\">O</kbd> כדי לפתוח את מקור האלמנט בעורך."
+  },
+  "infoGithub": {
+    "message": "מאגר GitHub"
+  },
+  "infoReport": {
+    "message": "דיווח על בעיה / רעיון"
+  },
+  "infoCreatedBy": {
+    "message": "נוצר על ידי"
+  },
+  "footerSections": {
+    "message": "סלקטורים · קופסה · סגנונות · נגישות · אירועים"
+  },
+  "panelPinned": {
+    "message": "נעוץ"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "ביטול כל העריכות באלמנט הזה"
+  },
+  "panelCopy": {
+    "message": "העתקה"
+  },
+  "panelOpen": {
+    "message": "פתיחה"
+  },
+  "panelRemoveAttribute": {
+    "message": "הסרת $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "ערך"
+  },
+  "boxHint": {
+    "message": "למעלה ימין למטה שמאל"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: למעלה ימין למטה שמאל",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: שורה עמודה"
+  },
+  "stylesHint": {
+    "message": "מחושבים"
+  },
+  "shadowHostHint": {
+    "message": "בתוך ה-shadow root של $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ נוסף",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_two": {
+    "message": "+$COUNT$ נוספים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ נוספים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ מאזין",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_two": {
+    "message": "$COUNT$ מאזינים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ מאזינים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ ילד",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_two": {
+    "message": "$COUNT$ ילדים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ ילדים",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ התאמה",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_two": {
+    "message": "$COUNT$ התאמות",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ התאמות",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "ייחודי"
+  },
+  "noListeners": {
+    "message": "אין מאזינים על האלמנט הזה"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "אנונימית"
+  },
+  "rowPosition": {
+    "message": "מיקום"
+  },
+  "rowSize": {
+    "message": "גודל"
+  },
+  "rowRole": {
+    "message": "תפקיד"
+  },
+  "rowName": {
+    "message": "שם"
+  },
+  "rowFocusable": {
+    "message": "ניתן לפוקוס"
+  },
+  "rowSource": {
+    "message": "מקור"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "רכיב"
+  },
+  "rowText": {
+    "message": "טקסט"
+  },
+  "rowKind": {
+    "message": "סוג"
+  },
+  "rowNatural": {
+    "message": "גודל טבעי"
+  },
+  "rowDuration": {
+    "message": "משך"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "תפקיד"
+  },
+  "strategyLabel": {
+    "message": "תווית"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "טקסט alt"
+  },
+  "strategyTitle": {
+    "message": "כותרת"
+  },
+  "strategyText": {
+    "message": "טקסט"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "כן"
+  },
+  "valueNo": {
+    "message": "לא"
+  },
+  "valueNone": {
+    "message": "אין"
+  },
+  "valueEmpty": {
+    "message": "ריק"
+  },
+  "mediaLive": {
+    "message": "שידור חי"
+  },
+  "addStyle": {
+    "message": "+ סגנון"
+  },
+  "addStylePlaceholder": {
+    "message": "תכונה: ערך"
+  },
+  "addAttribute": {
+    "message": "+ מאפיין"
+  },
+  "addAttributePlaceholder": {
+    "message": "שם=\"ערך\""
+  },
+  "kbdDrag": {
+    "message": "גרירה"
+  },
+  "kbdClickValue": {
+    "message": "לחיצה על ערך"
+  },
+  "footPin": {
+    "message": "נעיצה"
+  },
+  "footUnpin": {
+    "message": "שחרור"
+  },
+  "footMove": {
+    "message": "הזזה"
+  },
+  "footEdit": {
+    "message": "עריכה"
+  },
+  "footClose": {
+    "message": "סגירה"
+  },
+  "footParentChild": {
+    "message": "הורה / ילד"
+  },
+  "footSibling": {
+    "message": "אח"
+  },
+  "footOpenSource": {
+    "message": "פתיחת המקור"
+  },
+  "actionSelector": {
+    "message": "סלקטור"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "טקסט"
+  },
+  "toastEditsReset": {
+    "message": "העריכות אופסו"
+  },
+  "toastNoSource": {
+    "message": "אין מיקום מקור לאלמנט הזה"
+  },
+  "toastNoDevServer": {
+    "message": "אין שרת פיתוח כדי לפתוח את העורך"
+  },
+  "toastOpened": {
+    "message": "נפתח בעורך"
+  },
+  "toastNotOpened": {
+    "message": "העורך לא נפתח"
+  },
+  "toastNothingToCopy": {
+    "message": "אין מה להעתיק: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "הועתק: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "ההעתקה נכשלה: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

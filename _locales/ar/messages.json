@@ -1,0 +1,686 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "اضغط Alt مطوّلًا ومرّر فوق أي عنصر لرؤية المحدِّدات ونموذج الصندوق والأنماط وإمكانية الوصول والأحداث دون فتح DevTools."
+  },
+  "appTagline": {
+    "message": "فاحص العناصر عند التمرير"
+  },
+  "settingsOpenLabel": {
+    "message": "إعدادات QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "الإعدادات"
+  },
+  "settingsCloseLabel": {
+    "message": "إغلاق الإعدادات"
+  },
+  "closeTitle": {
+    "message": "إغلاق"
+  },
+  "infoOpenLabel": {
+    "message": "حول QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "إغلاق المعلومات"
+  },
+  "enabledToggleLabel": {
+    "message": "تشغيل QuickInspect أو إيقافه"
+  },
+  "holdKeyLabel": {
+    "message": "مفتاح الضغط المطوّل"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "اضغط عليه مطوّلًا ومرّر فوق أي عنصر. اتركه لتعود الصفحة كما كانت."
+  },
+  "whileHoldingLabel": {
+    "message": "أثناء الضغط المطوّل"
+  },
+  "kbdClick": {
+    "message": "نقرة"
+  },
+  "shortcutPin": {
+    "message": "تثبيت اللوحة"
+  },
+  "shortcutClose": {
+    "message": "إغلاق"
+  },
+  "shortcutParentChild": {
+    "message": "الأصل / الفرع"
+  },
+  "shortcutSibling": {
+    "message": "الشقيق"
+  },
+  "shortcutCopySelector": {
+    "message": "نسخ محدِّد CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "نسخ XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "نسخ محدِّد موقع Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "نسخ HTML"
+  },
+  "shortcutCopyText": {
+    "message": "نسخ النص"
+  },
+  "editorLabel": {
+    "message": "المحرّر"
+  },
+  "editorChecking": {
+    "message": "جارٍ فحص هذه الصفحة"
+  },
+  "editorHint": {
+    "message": "اضغط <kbd class=\"kd-chip kd-font-mono\">O</kbd> على عنصر له موقع مصدر لفتحه في محرّرك."
+  },
+  "editorUnavailable": {
+    "message": "غير متاح في هذه الصفحة"
+  },
+  "editorSources": {
+    "message": "خادم تطوير $SERVER$، مصادر العناصر متاحة",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "خادم تطوير $SERVER$، لا مصادر للعناصر هنا",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "يُحفظ تلقائيًا ويُطبَّق فورًا على علامات التبويب المفتوحة."
+  },
+  "settingsEditing": {
+    "message": "التحرير"
+  },
+  "settingAllowEdit": {
+    "message": "السماح بالتعديلات"
+  },
+  "settingAllowEditHint": {
+    "message": "انقر على القيم في لوحة مثبّتة لتغيير الأنماط والسمات والنص في الصفحة"
+  },
+  "settingsPopup": {
+    "message": "النافذة المنبثقة"
+  },
+  "settingEditorStatus": {
+    "message": "توفّر المحرّر"
+  },
+  "settingEditorStatusHint": {
+    "message": "هل يمكن لهذه الصفحة فتح المصادر في محرّرك"
+  },
+  "settingsOverlay": {
+    "message": "التراكب"
+  },
+  "settingBoxModel": {
+    "message": "إبراز نموذج الصندوق"
+  },
+  "settingBoxModelHint": {
+    "message": "أشرطة margin وborder وpadding وgap"
+  },
+  "settingsSections": {
+    "message": "أقسام اللوحة"
+  },
+  "sectionBox": {
+    "message": "الصندوق"
+  },
+  "settingBoxHint": {
+    "message": "الموضع، الحجم، margin، padding، border، gap"
+  },
+  "sectionEvents": {
+    "message": "الأحداث"
+  },
+  "settingEventsHint": {
+    "message": "المستمعات والمعالجات المضمّنة وخصائص إطار العمل"
+  },
+  "sectionStyles": {
+    "message": "الأنماط"
+  },
+  "settingStylesHint": {
+    "message": "القيم المحسوبة المهمّة"
+  },
+  "sectionAccessibility": {
+    "message": "إمكانية الوصول"
+  },
+  "settingAccessibilityHint": {
+    "message": "الدور، الاسم الوصولي، قابلية التركيز، ARIA"
+  },
+  "sectionAttributes": {
+    "message": "السمات"
+  },
+  "settingAttributesHint": {
+    "message": "كل سمة في العنصر"
+  },
+  "sectionMedia": {
+    "message": "الوسائط"
+  },
+  "settingMediaHint": {
+    "message": "تفاصيل الصور والفيديو وcanvas وSVG"
+  },
+  "sectionContext": {
+    "message": "السياق"
+  },
+  "settingContextHint": {
+    "message": "ملف المصدر وإطار العمل والأسلاف والنص"
+  },
+  "sectionSelectors": {
+    "message": "المحدِّدات"
+  },
+  "settingSelectorsHint": {
+    "message": "محدِّدات CSS وXPath وPlaywright"
+  },
+  "settingsReset": {
+    "message": "إعادة الضبط إلى الإعدادات الافتراضية"
+  },
+  "infoIntro": {
+    "message": "يعرض QuickInspect ما تحتاج معرفته عن أي عنصر دون فتح DevTools: <strong>المحدِّدات</strong> و<strong>نموذج الصندوق</strong> و<strong>الأنماط المحسوبة</strong> و<strong>إمكانية الوصول</strong> و<strong>السمات</strong> و<strong>الأحداث</strong> و<strong>ملف المصدر</strong> الذي جاء منه."
+  },
+  "infoStep1": {
+    "message": "اضغط <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> مطوّلًا ومرّر فوق أي عنصر لفحصه، واتركه لتعود الصفحة كما كانت. اختر مفتاحًا آخر من <strong>مفتاح الضغط المطوّل</strong> في الشاشة الرئيسية."
+  },
+  "infoStep2": {
+    "message": "<strong>انقر</strong> أثناء الضغط المطوّل لتثبيت اللوحة، ثم اسحبها من رأسها لتحريكها. استخدم <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> للأصل أو الفرع و<kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> للعناصر الشقيقة."
+  },
+  "infoStep3": {
+    "message": "اضغط <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> لنسخ المحدِّد أو XPath أو محدِّد موقع Playwright أو HTML أو النص."
+  },
+  "infoStep4": {
+    "message": "في لوحة مثبّتة، <strong>انقر على أي قيمة</strong> لتعديل الأنماط أو الصندوق أو السمات أو النص. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> يطبّق، و<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> يلغي، و<strong>reset</strong> يتراجع عن كل شيء. تبقى التعديلات في الصفحة حتى إعادة تحميلها."
+  },
+  "infoStep5": {
+    "message": "على خادم تطوير <strong>Vite</strong> أو <strong>Next.js</strong>، اضغط <kbd class=\"kd-chip kd-font-mono\">O</kbd> لفتح مصدر العنصر في محرّرك."
+  },
+  "infoGithub": {
+    "message": "مستودع GitHub"
+  },
+  "infoReport": {
+    "message": "الإبلاغ عن مشكلة / اقتراح ميزة"
+  },
+  "infoCreatedBy": {
+    "message": "من إنشاء"
+  },
+  "footerSections": {
+    "message": "المحدِّدات · الصندوق · الأنماط · إمكانية الوصول · الأحداث"
+  },
+  "panelPinned": {
+    "message": "مثبّتة"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "التراجع عن كل تعديل في هذا العنصر"
+  },
+  "panelCopy": {
+    "message": "نسخ"
+  },
+  "panelOpen": {
+    "message": "فتح"
+  },
+  "panelRemoveAttribute": {
+    "message": "إزالة $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "القيمة"
+  },
+  "boxHint": {
+    "message": "أعلى يمين أسفل يسار"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: أعلى يمين أسفل يسار",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: صف عمود"
+  },
+  "stylesHint": {
+    "message": "محسوبة"
+  },
+  "shadowHostHint": {
+    "message": "داخل shadow root الخاص بـ $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_zero": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_two": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_many": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ أخرى",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_zero": {
+    "message": "$COUNT$ مستمع",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ مستمع",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_two": {
+    "message": "$COUNT$ مستمعان",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ مستمعات",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_many": {
+    "message": "$COUNT$ مستمعًا",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ مستمع",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_zero": {
+    "message": "$COUNT$ عنصر فرعي",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ عنصر فرعي",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_two": {
+    "message": "$COUNT$ عنصران فرعيان",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ عناصر فرعية",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_many": {
+    "message": "$COUNT$ عنصرًا فرعيًا",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ عنصر فرعي",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_zero": {
+    "message": "$COUNT$ تطابق",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ تطابق",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_two": {
+    "message": "$COUNT$ تطابقان",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ تطابقات",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_many": {
+    "message": "$COUNT$ تطابقًا",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ تطابق",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "فريد"
+  },
+  "noListeners": {
+    "message": "لا مستمعات على هذا العنصر"
+  },
+  "eventOriginInline": {
+    "message": "مضمّن"
+  },
+  "eventAnonymous": {
+    "message": "مجهولة"
+  },
+  "rowPosition": {
+    "message": "الموضع"
+  },
+  "rowSize": {
+    "message": "الحجم"
+  },
+  "rowRole": {
+    "message": "الدور"
+  },
+  "rowName": {
+    "message": "الاسم"
+  },
+  "rowFocusable": {
+    "message": "قابل للتركيز"
+  },
+  "rowSource": {
+    "message": "المصدر"
+  },
+  "rowFramework": {
+    "message": "إطار العمل"
+  },
+  "rowComponent": {
+    "message": "المكوّن"
+  },
+  "rowText": {
+    "message": "النص"
+  },
+  "rowKind": {
+    "message": "النوع"
+  },
+  "rowNatural": {
+    "message": "الحجم الطبيعي"
+  },
+  "rowDuration": {
+    "message": "المدة"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "الدور"
+  },
+  "strategyLabel": {
+    "message": "التسمية"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "نص alt"
+  },
+  "strategyTitle": {
+    "message": "العنوان"
+  },
+  "strategyText": {
+    "message": "النص"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "نعم"
+  },
+  "valueNo": {
+    "message": "لا"
+  },
+  "valueNone": {
+    "message": "لا يوجد"
+  },
+  "valueEmpty": {
+    "message": "فارغ"
+  },
+  "mediaLive": {
+    "message": "بث مباشر"
+  },
+  "addStyle": {
+    "message": "+ نمط"
+  },
+  "addStylePlaceholder": {
+    "message": "الخاصية: القيمة"
+  },
+  "addAttribute": {
+    "message": "+ سمة"
+  },
+  "addAttributePlaceholder": {
+    "message": "الاسم=\"القيمة\""
+  },
+  "kbdDrag": {
+    "message": "سحب"
+  },
+  "kbdClickValue": {
+    "message": "نقر على قيمة"
+  },
+  "footPin": {
+    "message": "تثبيت"
+  },
+  "footUnpin": {
+    "message": "إلغاء التثبيت"
+  },
+  "footMove": {
+    "message": "تحريك"
+  },
+  "footEdit": {
+    "message": "تحرير"
+  },
+  "footClose": {
+    "message": "إغلاق"
+  },
+  "footParentChild": {
+    "message": "الأصل / الفرع"
+  },
+  "footSibling": {
+    "message": "الشقيق"
+  },
+  "footOpenSource": {
+    "message": "فتح المصدر"
+  },
+  "actionSelector": {
+    "message": "المحدِّد"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "محدِّد الموقع"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "النص"
+  },
+  "toastEditsReset": {
+    "message": "تم التراجع عن التعديلات"
+  },
+  "toastNoSource": {
+    "message": "لا موقع مصدر لهذا العنصر"
+  },
+  "toastNoDevServer": {
+    "message": "لا خادم تطوير لفتح المحرّر"
+  },
+  "toastOpened": {
+    "message": "تم الفتح في المحرّر"
+  },
+  "toastNotOpened": {
+    "message": "لم يُفتح المحرّر"
+  },
+  "toastNothingToCopy": {
+    "message": "لا شيء لنسخه: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "تم النسخ: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "تعذّر النسخ: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

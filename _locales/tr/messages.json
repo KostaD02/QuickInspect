@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt’a basılı tutup bir öğenin üzerine gelin: seçiciler, kutu modeli, stiller, erişilebilirlik ve olaylar, DevTools açmadan."
+  },
+  "appTagline": {
+    "message": "Üzerine gelince öğe denetleyici"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect ayarları"
+  },
+  "settingsOpenTitle": {
+    "message": "Ayarlar"
+  },
+  "settingsCloseLabel": {
+    "message": "Ayarları kapat"
+  },
+  "closeTitle": {
+    "message": "Kapat"
+  },
+  "infoOpenLabel": {
+    "message": "QuickInspect hakkında"
+  },
+  "infoCloseLabel": {
+    "message": "Bilgiyi kapat"
+  },
+  "enabledToggleLabel": {
+    "message": "QuickInspect’i aç veya kapat"
+  },
+  "holdKeyLabel": {
+    "message": "Basılı tutulacak tuş"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Basılı tutun ve bir öğenin üzerine gelin. Bırakınca sayfa eski haline döner."
+  },
+  "whileHoldingLabel": {
+    "message": "Basılı tutarken"
+  },
+  "kbdClick": {
+    "message": "tıklama"
+  },
+  "shortcutPin": {
+    "message": "Sabitle"
+  },
+  "shortcutClose": {
+    "message": "Kapat"
+  },
+  "shortcutParentChild": {
+    "message": "Üst / alt öğe"
+  },
+  "shortcutSibling": {
+    "message": "Kardeş öğe"
+  },
+  "shortcutCopySelector": {
+    "message": "CSS seçiciyi kopyala"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath’i kopyala"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright locator’ı kopyala"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML’yi kopyala"
+  },
+  "shortcutCopyText": {
+    "message": "Metni kopyala"
+  },
+  "editorLabel": {
+    "message": "Düzenleyici"
+  },
+  "editorChecking": {
+    "message": "Bu sayfa denetleniyor"
+  },
+  "editorHint": {
+    "message": "Kaynak konumu olan bir öğede <kbd class=\"kd-chip kd-font-mono\">O</kbd> tuşuna basarak onu düzenleyicinizde açın."
+  },
+  "editorUnavailable": {
+    "message": "Bu sayfada kullanılamıyor"
+  },
+  "editorSources": {
+    "message": "$SERVER$ dev sunucusu, öğe kaynakları mevcut",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ dev sunucusu, burada öğe kaynağı yok",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Otomatik kaydedilir ve açık sekmelere hemen uygulanır."
+  },
+  "settingsEditing": {
+    "message": "Düzenleme"
+  },
+  "settingAllowEdit": {
+    "message": "Düzenlemeye izin ver"
+  },
+  "settingAllowEditHint": {
+    "message": "Sayfadaki stilleri, öznitelikleri ve metni değiştirmek için sabitlenmiş paneldeki değerlere tıklayın"
+  },
+  "settingsPopup": {
+    "message": "Açılır pencere"
+  },
+  "settingEditorStatus": {
+    "message": "Düzenleyici kullanılabilirliği"
+  },
+  "settingEditorStatusHint": {
+    "message": "Bu sayfa kaynakları düzenleyicide açabilir mi"
+  },
+  "settingsOverlay": {
+    "message": "Kaplama"
+  },
+  "settingBoxModel": {
+    "message": "Kutu modeli vurgusu"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin, border, padding ve gap şeritleri"
+  },
+  "settingsSections": {
+    "message": "Panel bölümleri"
+  },
+  "sectionBox": {
+    "message": "Kutu"
+  },
+  "settingBoxHint": {
+    "message": "Konum, boyut, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Olaylar"
+  },
+  "settingEventsHint": {
+    "message": "Dinleyiciler, satır içi işleyiciler ve framework prop’ları"
+  },
+  "sectionStyles": {
+    "message": "Stiller"
+  },
+  "settingStylesHint": {
+    "message": "Önemli olan hesaplanmış değerler"
+  },
+  "sectionAccessibility": {
+    "message": "Erişilebilirlik"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rol, erişilebilir ad, odaklanabilirlik, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Öznitelikler"
+  },
+  "settingAttributesHint": {
+    "message": "Öğedeki tüm öznitelikler"
+  },
+  "sectionMedia": {
+    "message": "Medya"
+  },
+  "settingMediaHint": {
+    "message": "Görsel, video, canvas ve SVG ayrıntıları"
+  },
+  "sectionContext": {
+    "message": "Bağlam"
+  },
+  "settingContextHint": {
+    "message": "Kaynak dosya, framework, üst öğeler ve metin"
+  },
+  "sectionSelectors": {
+    "message": "Seçiciler"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath ve Playwright locator’ları"
+  },
+  "settingsReset": {
+    "message": "Varsayılanlara sıfırla"
+  },
+  "infoIntro": {
+    "message": "QuickInspect, DevTools açmadan bir öğe hakkında bilmeniz gerekenleri gösterir: <strong>seçiciler</strong>, <strong>kutu modeli</strong>, <strong>hesaplanmış stiller</strong>, <strong>erişilebilirlik</strong>, <strong>öznitelikler</strong>, <strong>olaylar</strong> ve geldiği <strong>kaynak dosya</strong>."
+  },
+  "infoStep1": {
+    "message": "<kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> tuşunu basılı tutup bir öğenin üzerine gelerek inceleyin; bırakınca sayfa eski haline döner. Ana ekrandaki <strong>Basılı tutulacak tuş</strong> alanından farklı bir tuş seçin."
+  },
+  "infoStep2": {
+    "message": "Basılı tutarken <strong>tıklayarak</strong> paneli sabitleyin, sonra başlığından sürükleyerek taşıyın. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> üst veya alt öğeye, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> kardeş öğelere gider."
+  },
+  "infoStep3": {
+    "message": "Seçiciyi, XPath’i, Playwright locator’ı, HTML’yi veya metni kopyalamak için <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> tuşlarına basın."
+  },
+  "infoStep4": {
+    "message": "Sabitlenmiş bir panelde stilleri, kutuyu, öznitelikleri veya metni düzenlemek için <strong>herhangi bir değere tıklayın</strong>. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uygular, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> iptal eder, <strong>reset</strong> hepsini geri alır. Düzenlemeler sayfa yenilenene kadar kalır."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> veya <strong>Next.js</strong> geliştirme sunucusunda <kbd class=\"kd-chip kd-font-mono\">O</kbd> tuşuna basarak öğenin kaynağını düzenleyicinizde açın."
+  },
+  "infoGithub": {
+    "message": "GitHub deposu"
+  },
+  "infoReport": {
+    "message": "Sorun / özellik bildir"
+  },
+  "infoCreatedBy": {
+    "message": "Geliştiren:"
+  },
+  "footerSections": {
+    "message": "Seçiciler · Kutu · Stiller · Erişilebilirlik · Olaylar"
+  },
+  "panelPinned": {
+    "message": "sabit"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Bu öğedeki tüm düzenlemeleri geri al"
+  },
+  "panelCopy": {
+    "message": "kopyala"
+  },
+  "panelOpen": {
+    "message": "aç"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ özniteliğini kaldır",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "değer"
+  },
+  "boxHint": {
+    "message": "üst sağ alt sol"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: üst sağ alt sol",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: satır sütun"
+  },
+  "stylesHint": {
+    "message": "hesaplanmış"
+  },
+  "shadowHostHint": {
+    "message": "$HOST$ shadow root’u içinde",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ daha",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ daha",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ dinleyici",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ dinleyici",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ alt öğe",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ alt öğe",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ eşleşme",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ eşleşme",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "benzersiz"
+  },
+  "noListeners": {
+    "message": "bu öğede dinleyici yok"
+  },
+  "eventOriginInline": {
+    "message": "satır içi"
+  },
+  "eventAnonymous": {
+    "message": "anonim"
+  },
+  "rowPosition": {
+    "message": "Konum"
+  },
+  "rowSize": {
+    "message": "Boyut"
+  },
+  "rowRole": {
+    "message": "Rol"
+  },
+  "rowName": {
+    "message": "Ad"
+  },
+  "rowFocusable": {
+    "message": "Odaklanabilir"
+  },
+  "rowSource": {
+    "message": "Kaynak"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Bileşen"
+  },
+  "rowText": {
+    "message": "Metin"
+  },
+  "rowKind": {
+    "message": "Tür"
+  },
+  "rowNatural": {
+    "message": "Doğal boyut"
+  },
+  "rowDuration": {
+    "message": "Süre"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Rol"
+  },
+  "strategyLabel": {
+    "message": "Etiket"
+  },
+  "strategyPlaceholder": {
+    "message": "Yer tutucu"
+  },
+  "strategyAltText": {
+    "message": "Alt metin"
+  },
+  "strategyTitle": {
+    "message": "Başlık"
+  },
+  "strategyText": {
+    "message": "Metin"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "evet"
+  },
+  "valueNo": {
+    "message": "hayır"
+  },
+  "valueNone": {
+    "message": "yok"
+  },
+  "valueEmpty": {
+    "message": "boş"
+  },
+  "mediaLive": {
+    "message": "canlı"
+  },
+  "addStyle": {
+    "message": "+ stil"
+  },
+  "addStylePlaceholder": {
+    "message": "özellik: değer"
+  },
+  "addAttribute": {
+    "message": "+ öznitelik"
+  },
+  "addAttributePlaceholder": {
+    "message": "ad=\"değer\""
+  },
+  "kbdDrag": {
+    "message": "sürükle"
+  },
+  "kbdClickValue": {
+    "message": "değere tıkla"
+  },
+  "footPin": {
+    "message": "sabitle"
+  },
+  "footUnpin": {
+    "message": "çöz"
+  },
+  "footMove": {
+    "message": "taşı"
+  },
+  "footEdit": {
+    "message": "düzenle"
+  },
+  "footClose": {
+    "message": "kapat"
+  },
+  "footParentChild": {
+    "message": "üst / alt öğe"
+  },
+  "footSibling": {
+    "message": "kardeş"
+  },
+  "footOpenSource": {
+    "message": "kaynağı aç"
+  },
+  "actionSelector": {
+    "message": "seçici"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "metin"
+  },
+  "toastEditsReset": {
+    "message": "Düzenlemeler geri alındı"
+  },
+  "toastNoSource": {
+    "message": "Bu öğe için kaynak konumu yok"
+  },
+  "toastNoDevServer": {
+    "message": "Düzenleyiciyi açacak geliştirme sunucusu yok"
+  },
+  "toastOpened": {
+    "message": "Düzenleyicide açıldı"
+  },
+  "toastNotOpened": {
+    "message": "Düzenleyici açılmadı"
+  },
+  "toastNothingToCopy": {
+    "message": "Kopyalanacak bir şey yok: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Kopyalandı: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kopyalanamadı: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

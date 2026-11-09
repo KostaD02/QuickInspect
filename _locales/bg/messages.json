@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Задръжте Alt и посочете елемент: селектори, боксов модел, стилове, достъпност и събития без отваряне на DevTools."
+  },
+  "appTagline": {
+    "message": "Инспектор на елементи"
+  },
+  "settingsOpenLabel": {
+    "message": "Настройки на QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Настройки"
+  },
+  "settingsCloseLabel": {
+    "message": "Затваряне на настройките"
+  },
+  "closeTitle": {
+    "message": "Затваряне"
+  },
+  "infoOpenLabel": {
+    "message": "За QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Затваряне на информацията"
+  },
+  "enabledToggleLabel": {
+    "message": "Включване или изключване на QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Клавиш за задържане"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Задръжте го и посочете елемент. Пуснете, за да върнете страницата."
+  },
+  "whileHoldingLabel": {
+    "message": "Докато задържате"
+  },
+  "kbdClick": {
+    "message": "клик"
+  },
+  "shortcutPin": {
+    "message": "Закачане"
+  },
+  "shortcutClose": {
+    "message": "Затваряне"
+  },
+  "shortcutParentChild": {
+    "message": "Родител / дете"
+  },
+  "shortcutSibling": {
+    "message": "Съсед"
+  },
+  "shortcutCopySelector": {
+    "message": "Копирай селектор"
+  },
+  "shortcutCopyXpath": {
+    "message": "Копирай XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Копирай Playwright локатор"
+  },
+  "shortcutCopyHtml": {
+    "message": "Копирай HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Копирай текста"
+  },
+  "editorLabel": {
+    "message": "Редактор"
+  },
+  "editorChecking": {
+    "message": "Проверка на страницата"
+  },
+  "editorHint": {
+    "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">O</kbd> върху елемент с известен източник, за да го отворите в редактора."
+  },
+  "editorUnavailable": {
+    "message": "Не е налично на тази страница"
+  },
+  "editorSources": {
+    "message": "Dev сървър $SERVER$, източници налични",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev сървър $SERVER$, без източници тук",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Запазва се автоматично и се прилага веднага към отворените раздели."
+  },
+  "settingsEditing": {
+    "message": "Редактиране"
+  },
+  "settingAllowEdit": {
+    "message": "Разрешаване на редакции"
+  },
+  "settingAllowEditHint": {
+    "message": "Щракнете върху стойности в закачен панел, за да промените стилове, атрибути и текст на страницата"
+  },
+  "settingsPopup": {
+    "message": "Изскачащ прозорец"
+  },
+  "settingEditorStatus": {
+    "message": "Наличност на редактора"
+  },
+  "settingEditorStatusHint": {
+    "message": "Дали тази страница отваря код в редактора"
+  },
+  "settingsOverlay": {
+    "message": "Наслагване"
+  },
+  "settingBoxModel": {
+    "message": "Осветяване на боксовия модел"
+  },
+  "settingBoxModelHint": {
+    "message": "Ленти за margin, border, padding и gap"
+  },
+  "settingsSections": {
+    "message": "Раздели на панела"
+  },
+  "sectionBox": {
+    "message": "Бокс"
+  },
+  "settingBoxHint": {
+    "message": "Позиция, размер, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Събития"
+  },
+  "settingEventsHint": {
+    "message": "Слушатели, inline обработчици и props на framework-а"
+  },
+  "sectionStyles": {
+    "message": "Стилове"
+  },
+  "settingStylesHint": {
+    "message": "Изчислените стойности, които имат значение"
+  },
+  "sectionAccessibility": {
+    "message": "Достъпност"
+  },
+  "settingAccessibilityHint": {
+    "message": "Роля, достъпно име, фокусируемост, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Атрибути"
+  },
+  "settingAttributesHint": {
+    "message": "Всички атрибути на елемента"
+  },
+  "sectionMedia": {
+    "message": "Медия"
+  },
+  "settingMediaHint": {
+    "message": "Подробности за изображение, видео, canvas и SVG"
+  },
+  "sectionContext": {
+    "message": "Контекст"
+  },
+  "settingContextHint": {
+    "message": "Изходен файл, framework, предци и текст"
+  },
+  "sectionSelectors": {
+    "message": "Селектори"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath и Playwright локатори"
+  },
+  "settingsReset": {
+    "message": "Възстановяване на настройките по подразбиране"
+  },
+  "infoIntro": {
+    "message": "QuickInspect показва нужното за всеки елемент без отваряне на DevTools: <strong>селектори</strong>, <strong>боксов модел</strong>, <strong>изчислени стилове</strong>, <strong>достъпност</strong>, <strong>атрибути</strong>, <strong>събития</strong> и <strong>изходния файл</strong>, от който идва."
+  },
+  "infoStep1": {
+    "message": "Задръжте <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> и посочете елемент, за да го разгледате; пуснете, за да върнете страницата. Изберете друг клавиш под <strong>Клавиш за задържане</strong> на основния екран."
+  },
+  "infoStep2": {
+    "message": "<strong>Щракнете</strong>, докато задържате, за да закачите панела, след това го влачете за заглавието. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> водят към родителя или детето, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> към съседните елементи."
+  },
+  "infoStep3": {
+    "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, за да копирате селектора, XPath, Playwright локатора, HTML или текста."
+  },
+  "infoStep4": {
+    "message": "В закачен панел <strong>щракнете върху стойност</strong>, за да редактирате стилове, бокс, атрибути или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> прилага, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказва, а <strong>reset</strong> отменя всичко. Редакциите остават на страницата до презареждане."
+  },
+  "infoStep5": {
+    "message": "На dev сървър <strong>Vite</strong> или <strong>Next.js</strong> натиснете <kbd class=\"kd-chip kd-font-mono\">O</kbd>, за да отворите източника на елемента в редактора."
+  },
+  "infoGithub": {
+    "message": "Хранилище в GitHub"
+  },
+  "infoReport": {
+    "message": "Докладване на проблем / идея"
+  },
+  "infoCreatedBy": {
+    "message": "Създадено от"
+  },
+  "footerSections": {
+    "message": "Селектори · Бокс · Стилове · Достъпност · Събития"
+  },
+  "panelPinned": {
+    "message": "закачено"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Отмяна на всички редакции на този елемент"
+  },
+  "panelCopy": {
+    "message": "копиране"
+  },
+  "panelOpen": {
+    "message": "отваряне"
+  },
+  "panelRemoveAttribute": {
+    "message": "Премахване на $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "стойност"
+  },
+  "boxHint": {
+    "message": "горе дясно долу ляво"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: горе дясно долу ляво",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: ред колона"
+  },
+  "stylesHint": {
+    "message": "изчислени"
+  },
+  "shadowHostHint": {
+    "message": "в shadow root на $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "още +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "още +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ слушател",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ слушатели",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ дете",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ деца",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ съвпадение",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ съвпадения",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "уникален"
+  },
+  "noListeners": {
+    "message": "няма слушатели на този елемент"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "анонимна"
+  },
+  "rowPosition": {
+    "message": "Позиция"
+  },
+  "rowSize": {
+    "message": "Размер"
+  },
+  "rowRole": {
+    "message": "Роля"
+  },
+  "rowName": {
+    "message": "Име"
+  },
+  "rowFocusable": {
+    "message": "Фокусируем"
+  },
+  "rowSource": {
+    "message": "Източник"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Компонент"
+  },
+  "rowText": {
+    "message": "Текст"
+  },
+  "rowKind": {
+    "message": "Вид"
+  },
+  "rowNatural": {
+    "message": "Естествен размер"
+  },
+  "rowDuration": {
+    "message": "Продължителност"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Роля"
+  },
+  "strategyLabel": {
+    "message": "Етикет"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt текст"
+  },
+  "strategyTitle": {
+    "message": "Заглавие"
+  },
+  "strategyText": {
+    "message": "Текст"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "да"
+  },
+  "valueNo": {
+    "message": "не"
+  },
+  "valueNone": {
+    "message": "няма"
+  },
+  "valueEmpty": {
+    "message": "празно"
+  },
+  "mediaLive": {
+    "message": "на живо"
+  },
+  "addStyle": {
+    "message": "+ стил"
+  },
+  "addStylePlaceholder": {
+    "message": "свойство: стойност"
+  },
+  "addAttribute": {
+    "message": "+ атрибут"
+  },
+  "addAttributePlaceholder": {
+    "message": "име=\"стойност\""
+  },
+  "kbdDrag": {
+    "message": "влачене"
+  },
+  "kbdClickValue": {
+    "message": "клик върху стойност"
+  },
+  "footPin": {
+    "message": "закачане"
+  },
+  "footUnpin": {
+    "message": "откачане"
+  },
+  "footMove": {
+    "message": "местене"
+  },
+  "footEdit": {
+    "message": "редактиране"
+  },
+  "footClose": {
+    "message": "затваряне"
+  },
+  "footParentChild": {
+    "message": "родител / дете"
+  },
+  "footSibling": {
+    "message": "съсед"
+  },
+  "footOpenSource": {
+    "message": "отваряне на източника"
+  },
+  "actionSelector": {
+    "message": "селектор"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "локатор"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "текст"
+  },
+  "toastEditsReset": {
+    "message": "Редакциите са отменени"
+  },
+  "toastNoSource": {
+    "message": "Този елемент няма известен източник"
+  },
+  "toastNoDevServer": {
+    "message": "Няма dev сървър за отваряне на редактора"
+  },
+  "toastOpened": {
+    "message": "Отворено в редактора"
+  },
+  "toastNotOpened": {
+    "message": "Редакторът не се отвори"
+  },
+  "toastNothingToCopy": {
+    "message": "Няма какво да се копира: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Копирано: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Копирането не успя: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

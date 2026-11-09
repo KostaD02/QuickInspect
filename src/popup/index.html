@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QuickInspect</title>
+    <title data-i18n="appName">QuickInspect</title>
   </head>
   <body class="kd-min-h-0">
     <div id="app" class="kd-d-flex kd-flex-column kd-gap-2 kd-px-3 kd-pb-3">
@@ -13,10 +13,11 @@
         <div class="kd-d-flex kd-flex-column kd-gap-1">
           <span
             class="kd-font-primary kd-fs-lg kd-fw-bold kd-lh-sm kd-text-bright"
+            data-i18n="appName"
             >QuickInspect</span
           >
           <span class="kd-d-flex kd-items-center kd-gap-2 kd-fs-micro">
-            <span>Hover element inspector</span>
+            <span data-i18n="appTagline">Hover element inspector</span>
             <span id="version" class="kd-font-mono kd-opacity-75">vX.X.X</span>
           </span>
         </div>
@@ -26,6 +27,7 @@
             class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
             style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
+            data-i18n-attr="aria-label:settingsOpenLabel;title:settingsOpenTitle"
             aria-label="QuickInspect settings"
             title="Settings"
           >
@@ -45,6 +47,7 @@
             class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
             style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
+            data-i18n-attr="aria-label:settingsCloseLabel;title:closeTitle"
             aria-label="Close settings"
             title="Close"
             hidden
@@ -66,6 +69,7 @@
             class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
             style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
+            data-i18n-attr="aria-label:infoOpenLabel;title:infoOpenLabel"
             aria-label="About QuickInspect"
             title="About QuickInspect"
           >
@@ -85,6 +89,7 @@
             class="kd-icon-link kd-bg-transparent kd-border-0 kd-cursor-pointer"
             style="--kd-icon-link-size: 16px; --kd-icon-link-padding: 0.375rem"
             type="button"
+            data-i18n-attr="aria-label:infoCloseLabel;title:closeTitle"
             aria-label="Close info"
             title="Close"
             hidden
@@ -104,12 +109,14 @@
           <label
             id="enabled-switch"
             class="kd-toggle kd-pos-relative"
+            data-i18n-attr="title:enabledToggleLabel"
             title="Turn QuickInspect on or off"
           >
             <input
               id="set-enabled"
               class="kd-toggle__input"
               type="checkbox"
+              data-i18n-attr="aria-label:enabledToggleLabel"
               aria-label="Turn QuickInspect on or off"
             />
             <span class="kd-toggle__track"
@@ -121,20 +128,27 @@
 
       <div id="shell" class="kd-d-flex kd-flex-column kd-gap-3">
         <div class="kd-field">
-          <label class="kd-field__label" for="set-modifier">Hold key</label>
+          <label
+            class="kd-field__label"
+            for="set-modifier"
+            data-i18n="holdKeyLabel"
+            >Hold key</label
+          >
           <select id="set-modifier" class="kd-field__input">
-            <option value="Alt">Alt / Option</option>
-            <option value="Control">Ctrl</option>
-            <option value="Shift">Shift</option>
-            <option value="Meta">Cmd / Win</option>
+            <option value="Alt" data-i18n="modifierAlt">Alt / Option</option>
+            <option value="Control" data-i18n="modifierControl">Ctrl</option>
+            <option value="Shift" data-i18n="modifierShift">Shift</option>
+            <option value="Meta" data-i18n="modifierMeta">Cmd / Win</option>
           </select>
-          <span class="kd-field__hint">
+          <span class="kd-field__hint" data-i18n="holdKeyHint">
             Hold it and hover any element. Release to put the page back.
           </span>
         </div>
 
         <div class="kd-field">
-          <span class="kd-field__label">While holding</span>
+          <span class="kd-field__label" data-i18n="whileHoldingLabel"
+            >While holding</span
+          >
           <div
             class="kd-card kd-card--surface kd-grid-auto kd-p-3"
             style="--kd-grid-min: 8rem; --kd-grid-gap: var(--kd-space-2)"
@@ -142,64 +156,82 @@
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
-              <kbd class="kd-chip kd-font-mono">click</kbd
-              ><span class="kd-text-ellipsis">Pin the panel</span>
+              <kbd class="kd-chip kd-font-mono" data-i18n="kbdClick">click</kbd
+              ><span class="kd-text-ellipsis" data-i18n="shortcutPin"
+                >Pin the panel</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">esc</kbd
-              ><span class="kd-text-ellipsis">Close</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutClose"
+                >Close</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">↑</kbd
               ><kbd class="kd-chip kd-font-mono">↓</kbd
-              ><span class="kd-text-ellipsis">Parent / child</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutParentChild"
+                >Parent / child</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">←</kbd
               ><kbd class="kd-chip kd-font-mono">→</kbd
-              ><span class="kd-text-ellipsis">Sibling</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutSibling"
+                >Sibling</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">S</kbd
-              ><span class="kd-text-ellipsis">Copy CSS selector</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopySelector"
+                >Copy CSS selector</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">X</kbd
-              ><span class="kd-text-ellipsis">Copy XPath</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyXpath"
+                >Copy XPath</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">L</kbd
-              ><span class="kd-text-ellipsis">Copy Playwright locator</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyLocator"
+                >Copy Playwright locator</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">H</kbd
-              ><span class="kd-text-ellipsis">Copy HTML</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyHtml"
+                >Copy HTML</span
+              >
             </div>
             <div
               class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
             >
               <kbd class="kd-chip kd-font-mono">T</kbd
-              ><span class="kd-text-ellipsis">Copy text</span>
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyText"
+                >Copy text</span
+              >
             </div>
           </div>
         </div>
 
         <div id="editor-group" class="kd-field">
-          <span class="kd-field__label">Editor</span>
+          <span class="kd-field__label" data-i18n="editorLabel">Editor</span>
           <div
             id="editor-status"
             class="kd-card kd-card--surface kd-flex-row kd-items-center kd-gap-2 kd-fs-xxs"
@@ -211,9 +243,11 @@
               aria-hidden="true"
               >●</span
             >
-            <span id="editor-label">Checking this page</span>
+            <span id="editor-label" data-i18n="editorChecking"
+              >Checking this page</span
+            >
           </div>
-          <span class="kd-field__hint">
+          <span class="kd-field__hint" data-i18n-html="editorHint">
             Press <kbd class="kd-chip kd-font-mono">O</kbd> on an element with a
             source location to open it in your editor.
           </span>
@@ -225,22 +259,25 @@
         class="kd-d-flex kd-flex-column kd-animate-fade-up"
         hidden
       >
-        <p class="kd-fs-xxxs">
+        <p class="kd-fs-xxxs" data-i18n="settingsNote">
           Saved automatically and applied to open tabs immediately.
         </p>
 
         <span
           class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          data-i18n="settingsEditing"
           >Editing</span
         >
         <label
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="settingAllowEdit"
               >Allow edits</span
             >
-            <span class="kd-fs-micro"
+            <span class="kd-fs-micro" data-i18n="settingAllowEditHint"
               >Click values in a pinned panel to change styles, attributes and
               text on the page</span
             >
@@ -259,16 +296,19 @@
 
         <span
           class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          data-i18n="settingsPopup"
           >Popup</span
         >
         <label
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="settingEditorStatus"
               >Editor availability</span
             >
-            <span class="kd-fs-micro"
+            <span class="kd-fs-micro" data-i18n="settingEditorStatusHint"
               >Whether this page can open sources in your editor</span
             >
           </span>
@@ -286,16 +326,19 @@
 
         <span
           class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          data-i18n="settingsOverlay"
           >Overlay</span
         >
         <label
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="settingBoxModel"
               >Box model highlight</span
             >
-            <span class="kd-fs-micro"
+            <span class="kd-fs-micro" data-i18n="settingBoxModelHint"
               >Margin, border, padding and gap bands</span
             >
           </span>
@@ -313,14 +356,19 @@
 
         <span
           class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          data-i18n="settingsSections"
           >Panel sections</span
         >
         <label
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Box</span>
-            <span class="kd-fs-micro"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionBox"
+              >Box</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingBoxHint"
               >Position, size, margin, padding, border, gap</span
             >
           </span>
@@ -335,8 +383,12 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Events</span>
-            <span class="kd-fs-micro"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionEvents"
+              >Events</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingEventsHint"
               >Listeners, inline handlers and framework props</span
             >
           </span>
@@ -355,8 +407,14 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Styles</span>
-            <span class="kd-fs-micro">Computed values that matter</span>
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionStyles"
+              >Styles</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingStylesHint"
+              >Computed values that matter</span
+            >
           </span>
           <span class="kd-toggle kd-pos-relative">
             <input
@@ -373,10 +431,12 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionAccessibility"
               >Accessibility</span
             >
-            <span class="kd-fs-micro"
+            <span class="kd-fs-micro" data-i18n="settingAccessibilityHint"
               >Role, accessible name, focusability, ARIA</span
             >
           </span>
@@ -395,10 +455,14 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionAttributes"
               >Attributes</span
             >
-            <span class="kd-fs-micro">Every attribute on the element</span>
+            <span class="kd-fs-micro" data-i18n="settingAttributesHint"
+              >Every attribute on the element</span
+            >
           </span>
           <span class="kd-toggle kd-pos-relative">
             <input
@@ -415,8 +479,12 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Media</span>
-            <span class="kd-fs-micro"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionMedia"
+              >Media</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingMediaHint"
               >Image, video, canvas and SVG details</span
             >
           </span>
@@ -435,8 +503,12 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Context</span>
-            <span class="kd-fs-micro"
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionContext"
+              >Context</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingContextHint"
               >Source file, framework, ancestors and text</span
             >
           </span>
@@ -455,8 +527,14 @@
           class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
         >
           <span class="kd-d-flex kd-flex-column kd-min-w-0">
-            <span class="kd-fs-xs kd-fw-medium kd-text-primary">Selectors</span>
-            <span class="kd-fs-micro">CSS, XPath and Playwright locators</span>
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="sectionSelectors"
+              >Selectors</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingSelectorsHint"
+              >CSS, XPath and Playwright locators</span
+            >
           </span>
           <span class="kd-toggle kd-pos-relative">
             <input
@@ -474,6 +552,7 @@
           id="reset-btn"
           class="kd-btn kd-btn--ghost kd-btn--sm kd-self-start kd-mt-3"
           type="button"
+          data-i18n="settingsReset"
         >
           Reset to defaults
         </button>
@@ -484,7 +563,10 @@
         class="kd-d-flex kd-flex-column kd-gap-3 kd-animate-fade-up"
         hidden
       >
-        <p class="kd-fs-xxs kd-lh-xxl kd-text-secondary">
+        <p
+          class="kd-fs-xxs kd-lh-xxl kd-text-secondary"
+          data-i18n-html="infoIntro"
+        >
           QuickInspect shows what you need to know about any element without
           opening DevTools: <strong>selectors</strong>, the
           <strong>box model</strong>, <strong>computed styles</strong>,
@@ -495,7 +577,7 @@
 
         <ul class="kd-list" style="margin-top: 0">
           <li>
-            <span
+            <span data-i18n-html="infoStep1"
               >Hold
               <kbd id="info-modifier" class="kd-chip kd-font-mono"
                 >Alt / Option</kbd
@@ -506,7 +588,7 @@
             >
           </li>
           <li>
-            <span
+            <span data-i18n-html="infoStep2"
               ><strong>Click</strong> while holding to pin the panel, then drag
               its header to move it. Use
               <kbd class="kd-chip kd-font-mono">↑</kbd>
@@ -516,7 +598,7 @@
             >
           </li>
           <li>
-            <span
+            <span data-i18n-html="infoStep3"
               >Press <kbd class="kd-chip kd-font-mono">S</kbd>
               <kbd class="kd-chip kd-font-mono">X</kbd>
               <kbd class="kd-chip kd-font-mono">L</kbd>
@@ -526,7 +608,7 @@
             >
           </li>
           <li>
-            <span
+            <span data-i18n-html="infoStep4"
               >In a pinned panel, <strong>click any value</strong> to edit
               styles, box, attributes or text.
               <kbd class="kd-chip kd-font-mono">Enter</kbd> applies,
@@ -536,7 +618,7 @@
             >
           </li>
           <li>
-            <span
+            <span data-i18n-html="infoStep5"
               >On a <strong>Vite</strong> or <strong>Next.js</strong> dev
               server, press <kbd class="kd-chip kd-font-mono">O</kbd> to open
               the element's source in your editor.</span
@@ -549,6 +631,7 @@
             href="https://github.com/KostaD02/QuickInspect"
             class="info-link"
             style="--link: #6e5494"
+            data-i18n="infoGithub"
             target="_blank"
             rel="noopener"
             >GitHub Repository</a
@@ -557,6 +640,7 @@
             href="https://github.com/KostaD02/QuickInspect/issues/new"
             class="info-link"
             style="--link: var(--kd-color-red)"
+            data-i18n="infoReport"
             target="_blank"
             rel="noopener"
             >Report Issue / Feature</a
@@ -564,7 +648,7 @@
         </div>
 
         <p class="kd-pt-2 kd-border-t-1 kd-fs-xxs kd-text-center">
-          Created by
+          <span data-i18n="infoCreatedBy">Created by</span>
           <a
             href="https://konstantinedatunishvili.com/"
             class="info-link"
@@ -575,7 +659,11 @@
         </p>
       </div>
 
-      <footer id="app-footer" class="kd-mt-2 kd-fs-micro kd-text-center">
+      <footer
+        id="app-footer"
+        class="kd-mt-2 kd-fs-micro kd-text-center"
+        data-i18n="footerSections"
+      >
         Selectors · Box · Styles · Accessibility · Events
       </footer>
     </div>
