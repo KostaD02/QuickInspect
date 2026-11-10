@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/KostaD02/QuickInspect/compare/v1.2.0...v1.3.0) (2026-11-10)
+
+### Features
+
+* i18n ([#18](https://github.com/KostaD02/QuickInspect/issues/18)) ([f503ce0](https://github.com/KostaD02/QuickInspect/commit/f503ce0c07333376aca41fa019514f502b8a10a5))
+
 ## [1.2.0](https://github.com/KostaD02/QuickInspect/compare/v1.1.1...v1.2.0) (2026-10-21)
 
 ### Features
