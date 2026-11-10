@@ -40,6 +40,6 @@ describe('format', () => {
 
   it('formats durations', () => {
     expect(formatDuration(65)).toBe('1:05');
-    expect(formatDuration(Infinity)).toBe('live');
+    expect(formatDuration(Infinity)).toBe('');
   });
 });

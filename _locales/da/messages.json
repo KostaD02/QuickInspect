@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Hold Alt nede og peg på et element for at se selektorer, boksmodel, stilarter, tilgængelighed og events uden DevTools."
+  },
+  "appTagline": {
+    "message": "Elementinspektør ved hover"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect-indstillinger"
+  },
+  "settingsOpenTitle": {
+    "message": "Indstillinger"
+  },
+  "settingsCloseLabel": {
+    "message": "Luk indstillinger"
+  },
+  "closeTitle": {
+    "message": "Luk"
+  },
+  "infoOpenLabel": {
+    "message": "Om QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Luk info"
+  },
+  "enabledToggleLabel": {
+    "message": "Slå QuickInspect til eller fra"
+  },
+  "holdKeyLabel": {
+    "message": "Holdetast"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Skift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Hold den nede og peg på et element. Slip for at gendanne siden."
+  },
+  "whileHoldingLabel": {
+    "message": "Mens du holder"
+  },
+  "kbdClick": {
+    "message": "klik"
+  },
+  "shortcutPin": {
+    "message": "Fastgør panelet"
+  },
+  "shortcutClose": {
+    "message": "Luk"
+  },
+  "shortcutParentChild": {
+    "message": "Forælder/barn"
+  },
+  "shortcutSibling": {
+    "message": "Søskende"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopiér CSS-selektor"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopiér XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopiér Playwright-locator"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopiér HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopiér tekst"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "Tjekker denne side"
+  },
+  "editorHint": {
+    "message": "Tryk på <kbd class=\"kd-chip kd-font-mono\">O</kbd> på et element med en kildeposition for at åbne det i din editor."
+  },
+  "editorUnavailable": {
+    "message": "Ikke tilgængelig på denne side"
+  },
+  "editorSources": {
+    "message": "$SERVER$-devserver, elementkilder tilgængelige",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$-devserver, ingen elementkilder her",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Gemmes automatisk og gælder straks for åbne faner."
+  },
+  "settingsEditing": {
+    "message": "Redigering"
+  },
+  "settingAllowEdit": {
+    "message": "Tillad redigering"
+  },
+  "settingAllowEditHint": {
+    "message": "Klik på værdier i et fastgjort panel for at ændre stilarter, attributter og tekst på siden"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Editor-tilgængelighed"
+  },
+  "settingEditorStatusHint": {
+    "message": "Om denne side kan åbne kilder i din editor"
+  },
+  "settingsOverlay": {
+    "message": "Overlay"
+  },
+  "settingBoxModel": {
+    "message": "Fremhæv boksmodel"
+  },
+  "settingBoxModelHint": {
+    "message": "Bånd for margin, border, padding og gap"
+  },
+  "settingsSections": {
+    "message": "Panelsektioner"
+  },
+  "sectionBox": {
+    "message": "Boks"
+  },
+  "settingBoxHint": {
+    "message": "Position, størrelse, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Events"
+  },
+  "settingEventsHint": {
+    "message": "Listeners, inline-handlers og framework-props"
+  },
+  "sectionStyles": {
+    "message": "Stilarter"
+  },
+  "settingStylesHint": {
+    "message": "De beregnede værdier, der betyder noget"
+  },
+  "sectionAccessibility": {
+    "message": "Tilgængelighed"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rolle, tilgængeligt navn, fokuserbarhed, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Attributter"
+  },
+  "settingAttributesHint": {
+    "message": "Alle attributter på elementet"
+  },
+  "sectionMedia": {
+    "message": "Medier"
+  },
+  "settingMediaHint": {
+    "message": "Detaljer om billede, video, canvas og SVG"
+  },
+  "sectionContext": {
+    "message": "Kontekst"
+  },
+  "settingContextHint": {
+    "message": "Kildefil, framework, forfædre og tekst"
+  },
+  "sectionSelectors": {
+    "message": "Selektorer"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- og Playwright-locators"
+  },
+  "settingsReset": {
+    "message": "Nulstil til standard"
+  },
+  "infoIntro": {
+    "message": "QuickInspect viser, hvad du skal vide om et element, uden at åbne DevTools: <strong>selektorer</strong>, <strong>boksmodellen</strong>, <strong>beregnede stilarter</strong>, <strong>tilgængelighed</strong>, <strong>attributter</strong>, <strong>events</strong> og den <strong>kildefil</strong>, det kommer fra."
+  },
+  "infoStep1": {
+    "message": "Hold <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> nede og peg på et element for at inspicere det; slip for at gendanne siden. Vælg en anden tast under <strong>Holdetast</strong> på hovedskærmen."
+  },
+  "infoStep2": {
+    "message": "<strong>Klik</strong>, mens du holder, for at fastgøre panelet, og træk det derefter i hovedet. Brug <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> til forælder eller barn og <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> til søskende."
+  },
+  "infoStep3": {
+    "message": "Tryk på <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> for at kopiere selektoren, XPath, Playwright-locatoren, HTML eller teksten."
+  },
+  "infoStep4": {
+    "message": "I et fastgjort panel kan du <strong>klikke på en værdi</strong> for at redigere stilarter, boks, attributter eller tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> anvender, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annullerer, og <strong>reset</strong> fortryder det hele. Ændringerne bliver på siden, indtil du genindlæser."
+  },
+  "infoStep5": {
+    "message": "På en <strong>Vite</strong>- eller <strong>Next.js</strong>-devserver kan du trykke på <kbd class=\"kd-chip kd-font-mono\">O</kbd> for at åbne elementets kilde i din editor."
+  },
+  "infoGithub": {
+    "message": "GitHub-repository"
+  },
+  "infoReport": {
+    "message": "Rapportér fejl / ønske"
+  },
+  "infoCreatedBy": {
+    "message": "Lavet af"
+  },
+  "footerSections": {
+    "message": "Selektorer · Boks · Stilarter · Tilgængelighed · Events"
+  },
+  "panelPinned": {
+    "message": "fastgjort"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Fortryd alle ændringer på dette element"
+  },
+  "panelCopy": {
+    "message": "kopiér"
+  },
+  "panelOpen": {
+    "message": "åbn"
+  },
+  "panelRemoveAttribute": {
+    "message": "Fjern $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "værdi"
+  },
+  "boxHint": {
+    "message": "top højre bund venstre"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: top højre bund venstre",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: række kolonne"
+  },
+  "stylesHint": {
+    "message": "beregnet"
+  },
+  "shadowHostHint": {
+    "message": "inde i shadow root for $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ mere",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ flere",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ barn",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ børn",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ match",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ matches",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unik"
+  },
+  "noListeners": {
+    "message": "ingen listeners på dette element"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonym"
+  },
+  "rowPosition": {
+    "message": "Position"
+  },
+  "rowSize": {
+    "message": "Størrelse"
+  },
+  "rowRole": {
+    "message": "Rolle"
+  },
+  "rowName": {
+    "message": "Navn"
+  },
+  "rowFocusable": {
+    "message": "Fokuserbar"
+  },
+  "rowSource": {
+    "message": "Kilde"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Komponent"
+  },
+  "rowText": {
+    "message": "Tekst"
+  },
+  "rowKind": {
+    "message": "Type"
+  },
+  "rowNatural": {
+    "message": "Naturlig"
+  },
+  "rowDuration": {
+    "message": "Varighed"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test-id"
+  },
+  "strategyRole": {
+    "message": "Rolle"
+  },
+  "strategyLabel": {
+    "message": "Label"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt-tekst"
+  },
+  "strategyTitle": {
+    "message": "Titel"
+  },
+  "strategyText": {
+    "message": "Tekst"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ja"
+  },
+  "valueNo": {
+    "message": "nej"
+  },
+  "valueNone": {
+    "message": "ingen"
+  },
+  "valueEmpty": {
+    "message": "tom"
+  },
+  "mediaLive": {
+    "message": "live"
+  },
+  "addStyle": {
+    "message": "+ stil"
+  },
+  "addStylePlaceholder": {
+    "message": "egenskab: værdi"
+  },
+  "addAttribute": {
+    "message": "+ attribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "navn=\"værdi\""
+  },
+  "kbdDrag": {
+    "message": "træk"
+  },
+  "kbdClickValue": {
+    "message": "klik på værdi"
+  },
+  "footPin": {
+    "message": "fastgør"
+  },
+  "footUnpin": {
+    "message": "frigør"
+  },
+  "footMove": {
+    "message": "flyt"
+  },
+  "footEdit": {
+    "message": "redigér"
+  },
+  "footClose": {
+    "message": "luk"
+  },
+  "footParentChild": {
+    "message": "forælder / barn"
+  },
+  "footSibling": {
+    "message": "søskende"
+  },
+  "footOpenSource": {
+    "message": "åbn kilde"
+  },
+  "actionSelector": {
+    "message": "selektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "tekst"
+  },
+  "toastEditsReset": {
+    "message": "Ændringer nulstillet"
+  },
+  "toastNoSource": {
+    "message": "Ingen kildeposition for dette element"
+  },
+  "toastNoDevServer": {
+    "message": "Ingen devserver til at åbne editoren"
+  },
+  "toastOpened": {
+    "message": "Åbnet i editoren"
+  },
+  "toastNotOpened": {
+    "message": "Editoren åbnede ikke"
+  },
+  "toastNothingToCopy": {
+    "message": "Intet at kopiere for $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$ kopieret",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kunne ikke kopiere $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

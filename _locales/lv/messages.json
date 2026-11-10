@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Turiet Alt un norādiet uz elementu: selektori, box modelis, stili, pieejamība un notikumi bez DevTools atvēršanas."
+  },
+  "appTagline": {
+    "message": "Elementu inspektors"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect iestatījumi"
+  },
+  "settingsOpenTitle": {
+    "message": "Iestatījumi"
+  },
+  "settingsCloseLabel": {
+    "message": "Aizvērt iestatījumus"
+  },
+  "closeTitle": {
+    "message": "Aizvērt"
+  },
+  "infoOpenLabel": {
+    "message": "Par QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Aizvērt informāciju"
+  },
+  "enabledToggleLabel": {
+    "message": "Ieslēgt vai izslēgt QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Turamais taustiņš"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Turiet to un norādiet uz elementu. Atlaidiet, lai atjaunotu lapu."
+  },
+  "whileHoldingLabel": {
+    "message": "Turot taustiņu"
+  },
+  "kbdClick": {
+    "message": "klikšķis"
+  },
+  "shortcutPin": {
+    "message": "Piespraust"
+  },
+  "shortcutClose": {
+    "message": "Aizvērt"
+  },
+  "shortcutParentChild": {
+    "message": "Vecāks / bērns"
+  },
+  "shortcutSibling": {
+    "message": "Blakus"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopēt CSS selektoru"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopēt XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopēt Playwright lokatoru"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopēt HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopēt tekstu"
+  },
+  "editorLabel": {
+    "message": "Redaktors"
+  },
+  "editorChecking": {
+    "message": "Pārbauda lapu"
+  },
+  "editorHint": {
+    "message": "Nospiediet <kbd class=\"kd-chip kd-font-mono\">O</kbd> uz elementa ar avota atrašanās vietu, lai atvērtu to redaktorā."
+  },
+  "editorUnavailable": {
+    "message": "Šajā lapā nav pieejams"
+  },
+  "editorSources": {
+    "message": "$SERVER$ izstrādes serveris, elementu avoti pieejami",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ izstrādes serveris, elementu avotu šeit nav",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Saglabā automātiski un uzreiz piemēro atvērtajām cilnēm."
+  },
+  "settingsEditing": {
+    "message": "Rediģēšana"
+  },
+  "settingAllowEdit": {
+    "message": "Atļaut labojumus"
+  },
+  "settingAllowEditHint": {
+    "message": "Noklikšķiniet uz vērtībām piespraustā panelī, lai mainītu lapas stilus, atribūtus un tekstu"
+  },
+  "settingsPopup": {
+    "message": "Uznirstošais logs"
+  },
+  "settingEditorStatus": {
+    "message": "Redaktora pieejamība"
+  },
+  "settingEditorStatusHint": {
+    "message": "Vai šī lapa var atvērt avotus jūsu redaktorā"
+  },
+  "settingsOverlay": {
+    "message": "Pārklājums"
+  },
+  "settingBoxModel": {
+    "message": "Izcelt box modeli"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin, border, padding un gap joslas"
+  },
+  "settingsSections": {
+    "message": "Paneļa sadaļas"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Pozīcija, izmērs, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Notikumi"
+  },
+  "settingEventsHint": {
+    "message": "Klausītāji, inline apstrādātāji un ietvara props"
+  },
+  "sectionStyles": {
+    "message": "Stili"
+  },
+  "settingStylesHint": {
+    "message": "Svarīgās aprēķinātās vērtības"
+  },
+  "sectionAccessibility": {
+    "message": "Pieejamība"
+  },
+  "settingAccessibilityHint": {
+    "message": "Loma, pieejamais nosaukums, fokusējamība, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atribūti"
+  },
+  "settingAttributesHint": {
+    "message": "Visi elementa atribūti"
+  },
+  "sectionMedia": {
+    "message": "Multivide"
+  },
+  "settingMediaHint": {
+    "message": "Attēla, video, canvas un SVG detaļas"
+  },
+  "sectionContext": {
+    "message": "Konteksts"
+  },
+  "settingContextHint": {
+    "message": "Avota fails, ietvars, priekšteči un teksts"
+  },
+  "sectionSelectors": {
+    "message": "Selektori"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath un Playwright lokatori"
+  },
+  "settingsReset": {
+    "message": "Atiestatīt uz noklusējumu"
+  },
+  "infoIntro": {
+    "message": "QuickInspect parāda, kas jāzina par jebkuru elementu, neatverot DevTools: <strong>selektorus</strong>, <strong>box modeli</strong>, <strong>aprēķinātos stilus</strong>, <strong>pieejamību</strong>, <strong>atribūtus</strong>, <strong>notikumus</strong> un <strong>avota failu</strong>, no kura tas nācis."
+  },
+  "infoStep1": {
+    "message": "Turiet <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> un norādiet uz elementu, lai to pārbaudītu; atlaidiet, lai atjaunotu lapu. Citu taustiņu izvēlieties galvenā ekrāna laukā <strong>Turamais taustiņš</strong>."
+  },
+  "infoStep2": {
+    "message": "<strong>Noklikšķiniet</strong>, turot taustiņu, lai piespraustu paneli, pēc tam velciet to aiz galvenes. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> pāriet uz vecāku vai bērnu, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> uz blakuselementiem."
+  },
+  "infoStep3": {
+    "message": "Nospiediet <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, lai kopētu selektoru, XPath, Playwright lokatoru, HTML vai tekstu."
+  },
+  "infoStep4": {
+    "message": "Piespraustā panelī <strong>noklikšķiniet uz jebkuras vērtības</strong>, lai rediģētu stilus, box, atribūtus vai tekstu. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> piemēro, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atceļ, bet <strong>reset</strong> atsauc visu. Labojumi lapā paliek līdz pārlādēšanai."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> vai <strong>Next.js</strong> izstrādes serverī nospiediet <kbd class=\"kd-chip kd-font-mono\">O</kbd>, lai atvērtu elementa avotu redaktorā."
+  },
+  "infoGithub": {
+    "message": "GitHub repozitorijs"
+  },
+  "infoReport": {
+    "message": "Ziņot par kļūdu / ideju"
+  },
+  "infoCreatedBy": {
+    "message": "Izveidoja"
+  },
+  "footerSections": {
+    "message": "Selektori · Box · Stili · Pieejamība · Notikumi"
+  },
+  "panelPinned": {
+    "message": "piesprausts"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Atsaukt visus šī elementa labojumus"
+  },
+  "panelCopy": {
+    "message": "kopēt"
+  },
+  "panelOpen": {
+    "message": "atvērt"
+  },
+  "panelRemoveAttribute": {
+    "message": "Noņemt $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "vērtība"
+  },
+  "boxHint": {
+    "message": "augša labā apakša kreisā"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: augša labā apakša kreisā",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rinda kolonna"
+  },
+  "stylesHint": {
+    "message": "aprēķināts"
+  },
+  "shadowHostHint": {
+    "message": "elementa $HOST$ shadow root iekšienē",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_zero": {
+    "message": "+$COUNT$ vēl",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ vēl",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ vēl",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_zero": {
+    "message": "$COUNT$ klausītāju",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ klausītājs",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ klausītāji",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_zero": {
+    "message": "$COUNT$ bērnu",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ bērns",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ bērni",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_zero": {
+    "message": "$COUNT$ atbilstību",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ atbilstība",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ atbilstības",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unikāls"
+  },
+  "noListeners": {
+    "message": "šim elementam nav klausītāju"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonīma"
+  },
+  "rowPosition": {
+    "message": "Pozīcija"
+  },
+  "rowSize": {
+    "message": "Izmērs"
+  },
+  "rowRole": {
+    "message": "Loma"
+  },
+  "rowName": {
+    "message": "Nosaukums"
+  },
+  "rowFocusable": {
+    "message": "Fokusējams"
+  },
+  "rowSource": {
+    "message": "Avots"
+  },
+  "rowFramework": {
+    "message": "Ietvars"
+  },
+  "rowComponent": {
+    "message": "Komponents"
+  },
+  "rowText": {
+    "message": "Teksts"
+  },
+  "rowKind": {
+    "message": "Veids"
+  },
+  "rowNatural": {
+    "message": "Dabiskais izmērs"
+  },
+  "rowDuration": {
+    "message": "Ilgums"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Loma"
+  },
+  "strategyLabel": {
+    "message": "Etiķete"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt teksts"
+  },
+  "strategyTitle": {
+    "message": "Virsraksts"
+  },
+  "strategyText": {
+    "message": "Teksts"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "jā"
+  },
+  "valueNo": {
+    "message": "nē"
+  },
+  "valueNone": {
+    "message": "nav"
+  },
+  "valueEmpty": {
+    "message": "tukšs"
+  },
+  "mediaLive": {
+    "message": "tiešraide"
+  },
+  "addStyle": {
+    "message": "+ stils"
+  },
+  "addStylePlaceholder": {
+    "message": "īpašība: vērtība"
+  },
+  "addAttribute": {
+    "message": "+ atribūts"
+  },
+  "addAttributePlaceholder": {
+    "message": "nosaukums=\"vērtība\""
+  },
+  "kbdDrag": {
+    "message": "vilkt"
+  },
+  "kbdClickValue": {
+    "message": "klikšķis uz vērtības"
+  },
+  "footPin": {
+    "message": "piespraust"
+  },
+  "footUnpin": {
+    "message": "atspraust"
+  },
+  "footMove": {
+    "message": "pārvietot"
+  },
+  "footEdit": {
+    "message": "rediģēt"
+  },
+  "footClose": {
+    "message": "aizvērt"
+  },
+  "footParentChild": {
+    "message": "vecāks / bērns"
+  },
+  "footSibling": {
+    "message": "blakus"
+  },
+  "footOpenSource": {
+    "message": "atvērt avotu"
+  },
+  "actionSelector": {
+    "message": "selektors"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokators"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "teksts"
+  },
+  "toastEditsReset": {
+    "message": "Labojumi atsaukti"
+  },
+  "toastNoSource": {
+    "message": "Šim elementam nav avota atrašanās vietas"
+  },
+  "toastNoDevServer": {
+    "message": "Nav izstrādes servera, lai atvērtu redaktoru"
+  },
+  "toastOpened": {
+    "message": "Atvērts redaktorā"
+  },
+  "toastNotOpened": {
+    "message": "Redaktors neatvērās"
+  },
+  "toastNothingToCopy": {
+    "message": "Nav ko kopēt: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Nokopēts: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Neizdevās nokopēt: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

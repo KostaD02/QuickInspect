@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Držite Alt i prijeđite mišem preko elementa: selektori, box model, stilovi, pristupačnost i događaji bez otvaranja DevToolsa."
+  },
+  "appTagline": {
+    "message": "Inspektor elemenata"
+  },
+  "settingsOpenLabel": {
+    "message": "Postavke QuickInspecta"
+  },
+  "settingsOpenTitle": {
+    "message": "Postavke"
+  },
+  "settingsCloseLabel": {
+    "message": "Zatvori postavke"
+  },
+  "closeTitle": {
+    "message": "Zatvori"
+  },
+  "infoOpenLabel": {
+    "message": "O QuickInspectu"
+  },
+  "infoCloseLabel": {
+    "message": "Zatvori informacije"
+  },
+  "enabledToggleLabel": {
+    "message": "Uključi ili isključi QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Tipka za držanje"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Držite je i prijeđite mišem preko elementa. Otpustite da vratite stranicu."
+  },
+  "whileHoldingLabel": {
+    "message": "Dok držite tipku"
+  },
+  "kbdClick": {
+    "message": "klik"
+  },
+  "shortcutPin": {
+    "message": "Prikvači ploču"
+  },
+  "shortcutClose": {
+    "message": "Zatvori"
+  },
+  "shortcutParentChild": {
+    "message": "Roditelj / dijete"
+  },
+  "shortcutSibling": {
+    "message": "Susjed"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopiraj CSS selektor"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopiraj XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopiraj Playwright lokator"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopiraj HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopiraj tekst"
+  },
+  "editorLabel": {
+    "message": "Uređivač"
+  },
+  "editorChecking": {
+    "message": "Provjera stranice"
+  },
+  "editorHint": {
+    "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">O</kbd> na elementu s poznatim izvorom da ga otvorite u uređivaču."
+  },
+  "editorUnavailable": {
+    "message": "Nije dostupno na ovoj stranici"
+  },
+  "editorSources": {
+    "message": "Dev poslužitelj $SERVER$, izvori dostupni",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev poslužitelj $SERVER$, nema izvora",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Sprema se automatski i odmah primjenjuje na otvorene kartice."
+  },
+  "settingsEditing": {
+    "message": "Uređivanje"
+  },
+  "settingAllowEdit": {
+    "message": "Dopusti uređivanje"
+  },
+  "settingAllowEditHint": {
+    "message": "Kliknite vrijednosti u prikvačenoj ploči da promijenite stilove, atribute i tekst na stranici"
+  },
+  "settingsPopup": {
+    "message": "Skočni prozor"
+  },
+  "settingEditorStatus": {
+    "message": "Dostupnost uređivača"
+  },
+  "settingEditorStatusHint": {
+    "message": "Može li ova stranica otvarati izvore u vašem uređivaču"
+  },
+  "settingsOverlay": {
+    "message": "Prekrivač"
+  },
+  "settingBoxModel": {
+    "message": "Isticanje box modela"
+  },
+  "settingBoxModelHint": {
+    "message": "Trake za margin, border, padding i gap"
+  },
+  "settingsSections": {
+    "message": "Odjeljci ploče"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Položaj, veličina, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Događaji"
+  },
+  "settingEventsHint": {
+    "message": "Listeneri, inline rukovatelji i props frameworka"
+  },
+  "sectionStyles": {
+    "message": "Stilovi"
+  },
+  "settingStylesHint": {
+    "message": "Izračunate vrijednosti koje su bitne"
+  },
+  "sectionAccessibility": {
+    "message": "Pristupačnost"
+  },
+  "settingAccessibilityHint": {
+    "message": "Uloga, pristupačno ime, fokusabilnost, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atributi"
+  },
+  "settingAttributesHint": {
+    "message": "Svi atributi elementa"
+  },
+  "sectionMedia": {
+    "message": "Mediji"
+  },
+  "settingMediaHint": {
+    "message": "Detalji o slici, videu, canvasu i SVG-u"
+  },
+  "sectionContext": {
+    "message": "Kontekst"
+  },
+  "settingContextHint": {
+    "message": "Izvorna datoteka, framework, preci i tekst"
+  },
+  "sectionSelectors": {
+    "message": "Selektori"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath i Playwright lokatori"
+  },
+  "settingsReset": {
+    "message": "Vrati zadano"
+  },
+  "infoIntro": {
+    "message": "QuickInspect pokazuje što trebate znati o bilo kojem elementu bez otvaranja DevToolsa: <strong>selektore</strong>, <strong>box model</strong>, <strong>izračunate stilove</strong>, <strong>pristupačnost</strong>, <strong>atribute</strong>, <strong>događaje</strong> i <strong>izvornu datoteku</strong> iz koje potječe."
+  },
+  "infoStep1": {
+    "message": "Držite <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> i prijeđite mišem preko elementa da ga pregledate; otpustite da vratite stranicu. Drugu tipku odaberite pod <strong>Tipka za držanje</strong> na glavnom zaslonu."
+  },
+  "infoStep2": {
+    "message": "<strong>Kliknite</strong> dok držite tipku da prikvačite ploču, a zatim je povucite za zaglavlje. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> vode na roditelja ili dijete, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> na susjedne elemente."
+  },
+  "infoStep3": {
+    "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> da kopirate selektor, XPath, Playwright lokator, HTML ili tekst."
+  },
+  "infoStep4": {
+    "message": "U prikvačenoj ploči <strong>kliknite bilo koju vrijednost</strong> da uredite stilove, box, atribute ili tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> primjenjuje, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> odustaje, a <strong>reset</strong> poništava sve. Izmjene ostaju na stranici do ponovnog učitavanja."
+  },
+  "infoStep5": {
+    "message": "Na <strong>Vite</strong> ili <strong>Next.js</strong> dev poslužitelju pritisnite <kbd class=\"kd-chip kd-font-mono\">O</kbd> da otvorite izvor elementa u uređivaču."
+  },
+  "infoGithub": {
+    "message": "GitHub repozitorij"
+  },
+  "infoReport": {
+    "message": "Prijavi grešku / ideju"
+  },
+  "infoCreatedBy": {
+    "message": "Autor:"
+  },
+  "footerSections": {
+    "message": "Selektori · Box · Stilovi · Pristupačnost · Događaji"
+  },
+  "panelPinned": {
+    "message": "prikvačeno"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Poništi sve izmjene na ovom elementu"
+  },
+  "panelCopy": {
+    "message": "kopiraj"
+  },
+  "panelOpen": {
+    "message": "otvori"
+  },
+  "panelRemoveAttribute": {
+    "message": "Ukloni $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "vrijednost"
+  },
+  "boxHint": {
+    "message": "gore desno dolje lijevo"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: gore desno dolje lijevo",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: redak stupac"
+  },
+  "stylesHint": {
+    "message": "izračunato"
+  },
+  "shadowHostHint": {
+    "message": "unutar shadow roota elementa $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ još",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "+$COUNT$ još",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ još",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ listenera",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listenera",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ dijete",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ djeteta",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ djece",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ podudaranje",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ podudaranja",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ podudaranja",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "jedinstven"
+  },
+  "noListeners": {
+    "message": "nema listenera na ovom elementu"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonimna"
+  },
+  "rowPosition": {
+    "message": "Položaj"
+  },
+  "rowSize": {
+    "message": "Veličina"
+  },
+  "rowRole": {
+    "message": "Uloga"
+  },
+  "rowName": {
+    "message": "Ime"
+  },
+  "rowFocusable": {
+    "message": "Fokusabilan"
+  },
+  "rowSource": {
+    "message": "Izvor"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Komponenta"
+  },
+  "rowText": {
+    "message": "Tekst"
+  },
+  "rowKind": {
+    "message": "Vrsta"
+  },
+  "rowNatural": {
+    "message": "Izvorna veličina"
+  },
+  "rowDuration": {
+    "message": "Trajanje"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Uloga"
+  },
+  "strategyLabel": {
+    "message": "Oznaka"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt tekst"
+  },
+  "strategyTitle": {
+    "message": "Naslov"
+  },
+  "strategyText": {
+    "message": "Tekst"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "da"
+  },
+  "valueNo": {
+    "message": "ne"
+  },
+  "valueNone": {
+    "message": "nema"
+  },
+  "valueEmpty": {
+    "message": "prazno"
+  },
+  "mediaLive": {
+    "message": "uživo"
+  },
+  "addStyle": {
+    "message": "+ stil"
+  },
+  "addStylePlaceholder": {
+    "message": "svojstvo: vrijednost"
+  },
+  "addAttribute": {
+    "message": "+ atribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "ime=\"vrijednost\""
+  },
+  "kbdDrag": {
+    "message": "povuci"
+  },
+  "kbdClickValue": {
+    "message": "klik na vrijednost"
+  },
+  "footPin": {
+    "message": "prikvači"
+  },
+  "footUnpin": {
+    "message": "otkvači"
+  },
+  "footMove": {
+    "message": "premjesti"
+  },
+  "footEdit": {
+    "message": "uredi"
+  },
+  "footClose": {
+    "message": "zatvori"
+  },
+  "footParentChild": {
+    "message": "roditelj / dijete"
+  },
+  "footSibling": {
+    "message": "susjed"
+  },
+  "footOpenSource": {
+    "message": "otvori izvor"
+  },
+  "actionSelector": {
+    "message": "selektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "lokator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "tekst"
+  },
+  "toastEditsReset": {
+    "message": "Izmjene poništene"
+  },
+  "toastNoSource": {
+    "message": "Ovaj element nema poznat izvor"
+  },
+  "toastNoDevServer": {
+    "message": "Nema dev poslužitelja za otvaranje uređivača"
+  },
+  "toastOpened": {
+    "message": "Otvoreno u uređivaču"
+  },
+  "toastNotOpened": {
+    "message": "Uređivač se nije otvorio"
+  },
+  "toastNothingToCopy": {
+    "message": "Nema što kopirati: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Kopirano: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kopiranje nije uspjelo: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "กด Alt ค้างแล้วชี้ที่องค์ประกอบเพื่อดูตัวเลือก กล่องโมเดล สไตล์ การเข้าถึง และอีเวนต์โดยไม่ต้องเปิด DevTools"
+  },
+  "appTagline": {
+    "message": "ตัวตรวจสอบองค์ประกอบเมื่อชี้เมาส์"
+  },
+  "settingsOpenLabel": {
+    "message": "การตั้งค่า QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "การตั้งค่า"
+  },
+  "settingsCloseLabel": {
+    "message": "ปิดการตั้งค่า"
+  },
+  "closeTitle": {
+    "message": "ปิด"
+  },
+  "infoOpenLabel": {
+    "message": "เกี่ยวกับ QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "ปิดข้อมูล"
+  },
+  "enabledToggleLabel": {
+    "message": "เปิดหรือปิด QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "ปุ่มที่กดค้าง"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "กดค้างไว้แล้วชี้ที่องค์ประกอบ ปล่อยเพื่อให้หน้ากลับเป็นเหมือนเดิม"
+  },
+  "whileHoldingLabel": {
+    "message": "ขณะกดค้าง"
+  },
+  "kbdClick": {
+    "message": "คลิก"
+  },
+  "shortcutPin": {
+    "message": "ปักหมุดแผง"
+  },
+  "shortcutClose": {
+    "message": "ปิด"
+  },
+  "shortcutParentChild": {
+    "message": "แม่ / ลูก"
+  },
+  "shortcutSibling": {
+    "message": "พี่น้อง"
+  },
+  "shortcutCopySelector": {
+    "message": "คัดลอกตัวเลือก CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "คัดลอก XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "คัดลอก locator ของ Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "คัดลอก HTML"
+  },
+  "shortcutCopyText": {
+    "message": "คัดลอกข้อความ"
+  },
+  "editorLabel": {
+    "message": "ตัวแก้ไข"
+  },
+  "editorChecking": {
+    "message": "กำลังตรวจสอบหน้านี้"
+  },
+  "editorHint": {
+    "message": "กด <kbd class=\"kd-chip kd-font-mono\">O</kbd> บนองค์ประกอบที่มีตำแหน่งซอร์สเพื่อเปิดในตัวแก้ไขของคุณ"
+  },
+  "editorUnavailable": {
+    "message": "ใช้ไม่ได้ในหน้านี้"
+  },
+  "editorSources": {
+    "message": "เซิร์ฟเวอร์พัฒนา $SERVER$ มีซอร์สขององค์ประกอบ",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "เซิร์ฟเวอร์พัฒนา $SERVER$ ไม่มีซอร์สขององค์ประกอบที่นี่",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "บันทึกอัตโนมัติและมีผลกับแท็บที่เปิดอยู่ทันที"
+  },
+  "settingsEditing": {
+    "message": "การแก้ไข"
+  },
+  "settingAllowEdit": {
+    "message": "อนุญาตให้แก้ไข"
+  },
+  "settingAllowEditHint": {
+    "message": "คลิกค่าในแผงที่ปักหมุดเพื่อเปลี่ยนสไตล์ แอตทริบิวต์ และข้อความในหน้า"
+  },
+  "settingsPopup": {
+    "message": "ป๊อปอัป"
+  },
+  "settingEditorStatus": {
+    "message": "ความพร้อมของตัวแก้ไข"
+  },
+  "settingEditorStatusHint": {
+    "message": "หน้านี้เปิดซอร์สในตัวแก้ไขของคุณได้หรือไม่"
+  },
+  "settingsOverlay": {
+    "message": "โอเวอร์เลย์"
+  },
+  "settingBoxModel": {
+    "message": "ไฮไลต์กล่องโมเดล"
+  },
+  "settingBoxModelHint": {
+    "message": "แถบ margin, border, padding และ gap"
+  },
+  "settingsSections": {
+    "message": "ส่วนของแผง"
+  },
+  "sectionBox": {
+    "message": "กล่อง"
+  },
+  "settingBoxHint": {
+    "message": "ตำแหน่ง ขนาด margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "อีเวนต์"
+  },
+  "settingEventsHint": {
+    "message": "ลิสเทนเนอร์ แฮนด์เลอร์แบบอินไลน์ และ props ของเฟรมเวิร์ก"
+  },
+  "sectionStyles": {
+    "message": "สไตล์"
+  },
+  "settingStylesHint": {
+    "message": "ค่าที่คำนวณแล้วซึ่งสำคัญ"
+  },
+  "sectionAccessibility": {
+    "message": "การเข้าถึง"
+  },
+  "settingAccessibilityHint": {
+    "message": "บทบาท ชื่อที่เข้าถึงได้ การโฟกัส ARIA"
+  },
+  "sectionAttributes": {
+    "message": "แอตทริบิวต์"
+  },
+  "settingAttributesHint": {
+    "message": "แอตทริบิวต์ทั้งหมดขององค์ประกอบ"
+  },
+  "sectionMedia": {
+    "message": "สื่อ"
+  },
+  "settingMediaHint": {
+    "message": "รายละเอียดรูปภาพ วิดีโอ canvas และ SVG"
+  },
+  "sectionContext": {
+    "message": "บริบท"
+  },
+  "settingContextHint": {
+    "message": "ไฟล์ซอร์ส เฟรมเวิร์ก บรรพบุรุษ และข้อความ"
+  },
+  "sectionSelectors": {
+    "message": "ตัวเลือก"
+  },
+  "settingSelectorsHint": {
+    "message": "locator แบบ CSS, XPath และ Playwright"
+  },
+  "settingsReset": {
+    "message": "รีเซ็ตเป็นค่าเริ่มต้น"
+  },
+  "infoIntro": {
+    "message": "QuickInspect แสดงสิ่งที่คุณต้องรู้เกี่ยวกับองค์ประกอบใดก็ได้โดยไม่ต้องเปิด DevTools: <strong>ตัวเลือก</strong> <strong>กล่องโมเดล</strong> <strong>สไตล์ที่คำนวณแล้ว</strong> <strong>การเข้าถึง</strong> <strong>แอตทริบิวต์</strong> <strong>อีเวนต์</strong> และ<strong>ไฟล์ซอร์ส</strong>ที่มันมาจาก"
+  },
+  "infoStep1": {
+    "message": "กด <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> ค้างแล้วชี้ที่องค์ประกอบเพื่อตรวจสอบ ปล่อยเพื่อให้หน้ากลับเป็นเหมือนเดิม เลือกปุ่มอื่นได้ที่ <strong>ปุ่มที่กดค้าง</strong> ในหน้าจอหลัก"
+  },
+  "infoStep2": {
+    "message": "<strong>คลิก</strong>ขณะกดค้างเพื่อปักหมุดแผง แล้วลากที่ส่วนหัวเพื่อย้าย ใช้ <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> สำหรับแม่หรือลูก และ <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> สำหรับพี่น้อง"
+  },
+  "infoStep3": {
+    "message": "กด <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> เพื่อคัดลอกตัวเลือก XPath, locator ของ Playwright, HTML หรือข้อความ"
+  },
+  "infoStep4": {
+    "message": "ในแผงที่ปักหมุด <strong>คลิกค่าใดก็ได้</strong>เพื่อแก้ไขสไตล์ กล่อง แอตทริบิวต์ หรือข้อความ <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ใช้ค่า <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ยกเลิก และ <strong>reset</strong> ย้อนกลับทั้งหมด การแก้ไขจะอยู่ในหน้าจนกว่าจะโหลดใหม่"
+  },
+  "infoStep5": {
+    "message": "บนเซิร์ฟเวอร์พัฒนา <strong>Vite</strong> หรือ <strong>Next.js</strong> กด <kbd class=\"kd-chip kd-font-mono\">O</kbd> เพื่อเปิดซอร์สขององค์ประกอบในตัวแก้ไขของคุณ"
+  },
+  "infoGithub": {
+    "message": "ที่เก็บ GitHub"
+  },
+  "infoReport": {
+    "message": "รายงานปัญหา / เสนอฟีเจอร์"
+  },
+  "infoCreatedBy": {
+    "message": "สร้างโดย"
+  },
+  "footerSections": {
+    "message": "ตัวเลือก · กล่อง · สไตล์ · การเข้าถึง · อีเวนต์"
+  },
+  "panelPinned": {
+    "message": "ปักหมุดแล้ว"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "ย้อนกลับการแก้ไขทั้งหมดขององค์ประกอบนี้"
+  },
+  "panelCopy": {
+    "message": "คัดลอก"
+  },
+  "panelOpen": {
+    "message": "เปิด"
+  },
+  "panelRemoveAttribute": {
+    "message": "ลบ $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "ค่า"
+  },
+  "boxHint": {
+    "message": "บน ขวา ล่าง ซ้าย"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: บน ขวา ล่าง ซ้าย",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: แถว คอลัมน์"
+  },
+  "stylesHint": {
+    "message": "คำนวณแล้ว"
+  },
+  "shadowHostHint": {
+    "message": "ภายใน shadow root ของ $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "อีก $COUNT$ รายการ",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ ลิสเทนเนอร์",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "ลูก $COUNT$ รายการ",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "ตรงกัน $COUNT$ รายการ",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "ไม่ซ้ำ"
+  },
+  "noListeners": {
+    "message": "ไม่มีลิสเทนเนอร์บนองค์ประกอบนี้"
+  },
+  "eventOriginInline": {
+    "message": "อินไลน์"
+  },
+  "eventAnonymous": {
+    "message": "ไม่ระบุชื่อ"
+  },
+  "rowPosition": {
+    "message": "ตำแหน่ง"
+  },
+  "rowSize": {
+    "message": "ขนาด"
+  },
+  "rowRole": {
+    "message": "บทบาท"
+  },
+  "rowName": {
+    "message": "ชื่อ"
+  },
+  "rowFocusable": {
+    "message": "โฟกัสได้"
+  },
+  "rowSource": {
+    "message": "ซอร์ส"
+  },
+  "rowFramework": {
+    "message": "เฟรมเวิร์ก"
+  },
+  "rowComponent": {
+    "message": "คอมโพเนนต์"
+  },
+  "rowText": {
+    "message": "ข้อความ"
+  },
+  "rowKind": {
+    "message": "ชนิด"
+  },
+  "rowNatural": {
+    "message": "ขนาดจริง"
+  },
+  "rowDuration": {
+    "message": "ความยาว"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "บทบาท"
+  },
+  "strategyLabel": {
+    "message": "ป้ายกำกับ"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "ข้อความ alt"
+  },
+  "strategyTitle": {
+    "message": "ชื่อเรื่อง"
+  },
+  "strategyText": {
+    "message": "ข้อความ"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ใช่"
+  },
+  "valueNo": {
+    "message": "ไม่"
+  },
+  "valueNone": {
+    "message": "ไม่มี"
+  },
+  "valueEmpty": {
+    "message": "ว่าง"
+  },
+  "mediaLive": {
+    "message": "สด"
+  },
+  "addStyle": {
+    "message": "+ สไตล์"
+  },
+  "addStylePlaceholder": {
+    "message": "พร็อพเพอร์ตี: ค่า"
+  },
+  "addAttribute": {
+    "message": "+ แอตทริบิวต์"
+  },
+  "addAttributePlaceholder": {
+    "message": "ชื่อ=\"ค่า\""
+  },
+  "kbdDrag": {
+    "message": "ลาก"
+  },
+  "kbdClickValue": {
+    "message": "คลิกค่า"
+  },
+  "footPin": {
+    "message": "ปักหมุด"
+  },
+  "footUnpin": {
+    "message": "เลิกปักหมุด"
+  },
+  "footMove": {
+    "message": "ย้าย"
+  },
+  "footEdit": {
+    "message": "แก้ไข"
+  },
+  "footClose": {
+    "message": "ปิด"
+  },
+  "footParentChild": {
+    "message": "แม่ / ลูก"
+  },
+  "footSibling": {
+    "message": "พี่น้อง"
+  },
+  "footOpenSource": {
+    "message": "เปิดซอร์ส"
+  },
+  "actionSelector": {
+    "message": "ตัวเลือก"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "ข้อความ"
+  },
+  "toastEditsReset": {
+    "message": "รีเซ็ตการแก้ไขแล้ว"
+  },
+  "toastNoSource": {
+    "message": "องค์ประกอบนี้ไม่มีตำแหน่งซอร์ส"
+  },
+  "toastNoDevServer": {
+    "message": "ไม่มีเซิร์ฟเวอร์พัฒนาสำหรับเปิดตัวแก้ไข"
+  },
+  "toastOpened": {
+    "message": "เปิดในตัวแก้ไขแล้ว"
+  },
+  "toastNotOpened": {
+    "message": "ตัวแก้ไขไม่เปิด"
+  },
+  "toastNothingToCopy": {
+    "message": "ไม่มีอะไรให้คัดลอก: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "คัดลอกแล้ว: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "คัดลอกไม่ได้: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

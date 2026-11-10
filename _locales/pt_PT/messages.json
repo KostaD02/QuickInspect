@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Mantenha Alt e passe o rato sobre um elemento: seletores, box model, estilos, acessibilidade e eventos sem abrir o DevTools."
+  },
+  "appTagline": {
+    "message": "Inspetor de elementos"
+  },
+  "settingsOpenLabel": {
+    "message": "Definições do QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Definições"
+  },
+  "settingsCloseLabel": {
+    "message": "Fechar definições"
+  },
+  "closeTitle": {
+    "message": "Fechar"
+  },
+  "infoOpenLabel": {
+    "message": "Sobre o QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Fechar informações"
+  },
+  "enabledToggleLabel": {
+    "message": "Ativar ou desativar o QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Tecla a manter premida"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Mantenha-a premida e passe o rato sobre um elemento. Solte para repor a página."
+  },
+  "whileHoldingLabel": {
+    "message": "Enquanto mantém premida"
+  },
+  "kbdClick": {
+    "message": "clique"
+  },
+  "shortcutPin": {
+    "message": "Fixar o painel"
+  },
+  "shortcutClose": {
+    "message": "Fechar"
+  },
+  "shortcutParentChild": {
+    "message": "Pai / filho"
+  },
+  "shortcutSibling": {
+    "message": "Irmão"
+  },
+  "shortcutCopySelector": {
+    "message": "Copiar seletor CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "Copiar XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Copiar locator do Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Copiar HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Copiar texto"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "A verificar esta página"
+  },
+  "editorHint": {
+    "message": "Prima <kbd class=\"kd-chip kd-font-mono\">O</kbd> num elemento com localização de origem para o abrir no seu editor."
+  },
+  "editorUnavailable": {
+    "message": "Indisponível nesta página"
+  },
+  "editorSources": {
+    "message": "Servidor dev $SERVER$, origens disponíveis",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Servidor dev $SERVER$, sem origens aqui",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Guardado automaticamente e aplicado de imediato aos separadores abertos."
+  },
+  "settingsEditing": {
+    "message": "Edição"
+  },
+  "settingAllowEdit": {
+    "message": "Permitir edições"
+  },
+  "settingAllowEditHint": {
+    "message": "Clique nos valores de um painel fixado para alterar estilos, atributos e texto na página"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Disponibilidade do editor"
+  },
+  "settingEditorStatusHint": {
+    "message": "Se esta página pode abrir origens no seu editor"
+  },
+  "settingsOverlay": {
+    "message": "Sobreposição"
+  },
+  "settingBoxModel": {
+    "message": "Destacar box model"
+  },
+  "settingBoxModelHint": {
+    "message": "Faixas de margin, border, padding e gap"
+  },
+  "settingsSections": {
+    "message": "Secções do painel"
+  },
+  "sectionBox": {
+    "message": "Caixa"
+  },
+  "settingBoxHint": {
+    "message": "Posição, tamanho, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Eventos"
+  },
+  "settingEventsHint": {
+    "message": "Listeners, handlers inline e props do framework"
+  },
+  "sectionStyles": {
+    "message": "Estilos"
+  },
+  "settingStylesHint": {
+    "message": "Os valores computados que importam"
+  },
+  "sectionAccessibility": {
+    "message": "Acessibilidade"
+  },
+  "settingAccessibilityHint": {
+    "message": "Papel, nome acessível, focalizabilidade, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atributos"
+  },
+  "settingAttributesHint": {
+    "message": "Todos os atributos do elemento"
+  },
+  "sectionMedia": {
+    "message": "Multimédia"
+  },
+  "settingMediaHint": {
+    "message": "Detalhes de imagem, vídeo, canvas e SVG"
+  },
+  "sectionContext": {
+    "message": "Contexto"
+  },
+  "settingContextHint": {
+    "message": "Ficheiro de origem, framework, antecessores e texto"
+  },
+  "sectionSelectors": {
+    "message": "Seletores"
+  },
+  "settingSelectorsHint": {
+    "message": "Locators CSS, XPath e Playwright"
+  },
+  "settingsReset": {
+    "message": "Repor predefinições"
+  },
+  "infoIntro": {
+    "message": "O QuickInspect mostra o que precisa de saber sobre qualquer elemento sem abrir o DevTools: <strong>seletores</strong>, o <strong>box model</strong>, <strong>estilos computados</strong>, <strong>acessibilidade</strong>, <strong>atributos</strong>, <strong>eventos</strong> e o <strong>ficheiro de origem</strong> de onde veio."
+  },
+  "infoStep1": {
+    "message": "Mantenha <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> premido e passe o rato sobre um elemento para o inspecionar; solte para repor a página. Escolha outra tecla em <strong>Tecla a manter premida</strong> no ecrã principal."
+  },
+  "infoStep2": {
+    "message": "<strong>Clique</strong> enquanto mantém a tecla premida para fixar o painel e depois arraste-o pelo cabeçalho. Use <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> para o pai ou o filho e <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> para os irmãos."
+  },
+  "infoStep3": {
+    "message": "Prima <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> para copiar o seletor, o XPath, o locator do Playwright, o HTML ou o texto."
+  },
+  "infoStep4": {
+    "message": "Num painel fixado, <strong>clique em qualquer valor</strong> para editar estilos, caixa, atributos ou texto. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancela e <strong>reset</strong> desfaz tudo. As edições ficam na página até recarregar."
+  },
+  "infoStep5": {
+    "message": "Num servidor de desenvolvimento <strong>Vite</strong> ou <strong>Next.js</strong>, prima <kbd class=\"kd-chip kd-font-mono\">O</kbd> para abrir a origem do elemento no seu editor."
+  },
+  "infoGithub": {
+    "message": "Repositório no GitHub"
+  },
+  "infoReport": {
+    "message": "Reportar um problema"
+  },
+  "infoCreatedBy": {
+    "message": "Criado por"
+  },
+  "footerSections": {
+    "message": "Seletores · Caixa · Estilos · Acessibilidade · Eventos"
+  },
+  "panelPinned": {
+    "message": "fixado"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Desfazer todas as edições deste elemento"
+  },
+  "panelCopy": {
+    "message": "copiar"
+  },
+  "panelOpen": {
+    "message": "abrir"
+  },
+  "panelRemoveAttribute": {
+    "message": "Remover $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "valor"
+  },
+  "boxHint": {
+    "message": "cima direita baixo esquerda"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: cima direita baixo esquerda",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: linha coluna"
+  },
+  "stylesHint": {
+    "message": "computados"
+  },
+  "shadowHostHint": {
+    "message": "dentro do shadow root de $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ mais",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ mais",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ filho",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ filhos",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ correspondência",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ correspondências",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "único"
+  },
+  "noListeners": {
+    "message": "nenhum listener neste elemento"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anónimo"
+  },
+  "rowPosition": {
+    "message": "Posição"
+  },
+  "rowSize": {
+    "message": "Tamanho"
+  },
+  "rowRole": {
+    "message": "Papel"
+  },
+  "rowName": {
+    "message": "Nome"
+  },
+  "rowFocusable": {
+    "message": "Focalizável"
+  },
+  "rowSource": {
+    "message": "Origem"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Componente"
+  },
+  "rowText": {
+    "message": "Texto"
+  },
+  "rowKind": {
+    "message": "Tipo"
+  },
+  "rowNatural": {
+    "message": "Natural"
+  },
+  "rowDuration": {
+    "message": "Duração"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Papel"
+  },
+  "strategyLabel": {
+    "message": "Rótulo"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Texto alt"
+  },
+  "strategyTitle": {
+    "message": "Título"
+  },
+  "strategyText": {
+    "message": "Texto"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "sim"
+  },
+  "valueNo": {
+    "message": "não"
+  },
+  "valueNone": {
+    "message": "nenhum"
+  },
+  "valueEmpty": {
+    "message": "vazio"
+  },
+  "mediaLive": {
+    "message": "em direto"
+  },
+  "addStyle": {
+    "message": "+ estilo"
+  },
+  "addStylePlaceholder": {
+    "message": "propriedade: valor"
+  },
+  "addAttribute": {
+    "message": "+ atributo"
+  },
+  "addAttributePlaceholder": {
+    "message": "nome=\"valor\""
+  },
+  "kbdDrag": {
+    "message": "arrastar"
+  },
+  "kbdClickValue": {
+    "message": "clicar no valor"
+  },
+  "footPin": {
+    "message": "fixar"
+  },
+  "footUnpin": {
+    "message": "soltar"
+  },
+  "footMove": {
+    "message": "mover"
+  },
+  "footEdit": {
+    "message": "editar"
+  },
+  "footClose": {
+    "message": "fechar"
+  },
+  "footParentChild": {
+    "message": "pai / filho"
+  },
+  "footSibling": {
+    "message": "irmão"
+  },
+  "footOpenSource": {
+    "message": "abrir origem"
+  },
+  "actionSelector": {
+    "message": "seletor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "texto"
+  },
+  "toastEditsReset": {
+    "message": "Edições desfeitas"
+  },
+  "toastNoSource": {
+    "message": "Sem localização de origem para este elemento"
+  },
+  "toastNoDevServer": {
+    "message": "Nenhum servidor de desenvolvimento para abrir o editor"
+  },
+  "toastOpened": {
+    "message": "Aberto no editor"
+  },
+  "toastNotOpened": {
+    "message": "O editor não abriu"
+  },
+  "toastNothingToCopy": {
+    "message": "Nada para copiar em $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$ copiado",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Não foi possível copiar $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

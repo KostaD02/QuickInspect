@@ -1,0 +1,614 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Утримуйте Alt і наведіть на елемент: селектори, блокова модель, стилі, доступність і події без відкриття DevTools."
+  },
+  "appTagline": {
+    "message": "Інспектор елементів при наведенні"
+  },
+  "settingsOpenLabel": {
+    "message": "Налаштування QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Налаштування"
+  },
+  "settingsCloseLabel": {
+    "message": "Закрити налаштування"
+  },
+  "closeTitle": {
+    "message": "Закрити"
+  },
+  "infoOpenLabel": {
+    "message": "Про QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Закрити довідку"
+  },
+  "enabledToggleLabel": {
+    "message": "Увімкнути або вимкнути QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Клавіша утримання"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Утримуйте її та наведіть на елемент. Відпустіть, щоб повернути сторінку."
+  },
+  "whileHoldingLabel": {
+    "message": "Поки клавішу утримано"
+  },
+  "kbdClick": {
+    "message": "клік"
+  },
+  "shortcutPin": {
+    "message": "Закріпити панель"
+  },
+  "shortcutClose": {
+    "message": "Закрити"
+  },
+  "shortcutParentChild": {
+    "message": "Батько/нащадок"
+  },
+  "shortcutSibling": {
+    "message": "Сусід"
+  },
+  "shortcutCopySelector": {
+    "message": "Копіювати селектор"
+  },
+  "shortcutCopyXpath": {
+    "message": "Копіювати XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Копіювати локатор Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Копіювати HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Копіювати текст"
+  },
+  "editorLabel": {
+    "message": "Редактор"
+  },
+  "editorChecking": {
+    "message": "Перевіряємо сторінку"
+  },
+  "editorHint": {
+    "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">O</kbd> на елементі з відомим джерелом, щоб відкрити його в редакторі."
+  },
+  "editorUnavailable": {
+    "message": "Недоступно на цій сторінці"
+  },
+  "editorSources": {
+    "message": "Dev-сервер $SERVER$, джерела елементів доступні",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev-сервер $SERVER$, джерел елементів тут немає",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Зберігається автоматично й одразу застосовується до відкритих вкладок."
+  },
+  "settingsEditing": {
+    "message": "Редагування"
+  },
+  "settingAllowEdit": {
+    "message": "Дозволити правки"
+  },
+  "settingAllowEditHint": {
+    "message": "Натискайте на значення в закріпленій панелі, щоб змінювати стилі, атрибути й текст на сторінці"
+  },
+  "settingsPopup": {
+    "message": "Спливне вікно"
+  },
+  "settingEditorStatus": {
+    "message": "Доступність редактора"
+  },
+  "settingEditorStatusHint": {
+    "message": "Чи може сторінка відкрити код у редакторі"
+  },
+  "settingsOverlay": {
+    "message": "Підсвічування"
+  },
+  "settingBoxModel": {
+    "message": "Підсвічувати блокову модель"
+  },
+  "settingBoxModelHint": {
+    "message": "Смуги margin, border, padding і gap"
+  },
+  "settingsSections": {
+    "message": "Розділи панелі"
+  },
+  "sectionBox": {
+    "message": "Блок"
+  },
+  "settingBoxHint": {
+    "message": "Позиція, розмір, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Події"
+  },
+  "settingEventsHint": {
+    "message": "Слухачі, inline-обробники та props фреймворку"
+  },
+  "sectionStyles": {
+    "message": "Стилі"
+  },
+  "settingStylesHint": {
+    "message": "Обчислені значення, які мають значення"
+  },
+  "sectionAccessibility": {
+    "message": "Доступність"
+  },
+  "settingAccessibilityHint": {
+    "message": "Роль, доступне ім’я, фокусованість, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Атрибути"
+  },
+  "settingAttributesHint": {
+    "message": "Усі атрибути елемента"
+  },
+  "sectionMedia": {
+    "message": "Медіа"
+  },
+  "settingMediaHint": {
+    "message": "Відомості про зображення, відео, canvas і SVG"
+  },
+  "sectionContext": {
+    "message": "Контекст"
+  },
+  "settingContextHint": {
+    "message": "Вихідний файл, фреймворк, предки й текст"
+  },
+  "sectionSelectors": {
+    "message": "Селектори"
+  },
+  "settingSelectorsHint": {
+    "message": "Локатори CSS, XPath і Playwright"
+  },
+  "settingsReset": {
+    "message": "Скинути налаштування"
+  },
+  "infoIntro": {
+    "message": "QuickInspect показує все потрібне про будь-який елемент без відкриття DevTools: <strong>селектори</strong>, <strong>блокову модель</strong>, <strong>обчислені стилі</strong>, <strong>доступність</strong>, <strong>атрибути</strong>, <strong>події</strong> та <strong>вихідний файл</strong>, з якого він походить."
+  },
+  "infoStep1": {
+    "message": "Утримуйте <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> і наведіть на елемент, щоб дослідити його; відпустіть, щоб повернути сторінку. Іншу клавішу можна вибрати в полі <strong>Клавіша утримання</strong> на головному екрані."
+  },
+  "infoStep2": {
+    "message": "<strong>Клацніть</strong>, утримуючи клавішу, щоб закріпити панель, а потім перетягуйте її за заголовок. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> переходять до батька або нащадка, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> — до сусідніх елементів."
+  },
+  "infoStep3": {
+    "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, щоб скопіювати селектор, XPath, локатор Playwright, HTML або текст."
+  },
+  "infoStep4": {
+    "message": "У закріпленій панелі <strong>натисніть на будь-яке значення</strong>, щоб змінити стилі, блок, атрибути або текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> застосовує, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> скасовує, а <strong>reset</strong> відкочує все. Правки лишаються на сторінці до перезавантаження."
+  },
+  "infoStep5": {
+    "message": "На dev-сервері <strong>Vite</strong> або <strong>Next.js</strong> натисніть <kbd class=\"kd-chip kd-font-mono\">O</kbd>, щоб відкрити джерело елемента в редакторі."
+  },
+  "infoGithub": {
+    "message": "Репозиторій на GitHub"
+  },
+  "infoReport": {
+    "message": "Повідомити про помилку / ідею"
+  },
+  "infoCreatedBy": {
+    "message": "Автор:"
+  },
+  "footerSections": {
+    "message": "Селектори · Блок · Стилі · Доступність · Події"
+  },
+  "panelPinned": {
+    "message": "закріплено"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Скасувати всі правки цього елемента"
+  },
+  "panelCopy": {
+    "message": "копіювати"
+  },
+  "panelOpen": {
+    "message": "відкрити"
+  },
+  "panelRemoveAttribute": {
+    "message": "Видалити $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "значення"
+  },
+  "boxHint": {
+    "message": "верх право низ ліво"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: верх право низ ліво",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: рядок стовпець"
+  },
+  "stylesHint": {
+    "message": "обчислені"
+  },
+  "shadowHostHint": {
+    "message": "усередині shadow root елемента $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "ще +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "ще +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_many": {
+    "message": "ще +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "ще +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ слухач",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ слухачі",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_many": {
+    "message": "$COUNT$ слухачів",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ слухача",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ нащадок",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ нащадки",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_many": {
+    "message": "$COUNT$ нащадків",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ нащадка",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ збіг",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ збіги",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_many": {
+    "message": "$COUNT$ збігів",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ збігу",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "унікальний"
+  },
+  "noListeners": {
+    "message": "на цьому елементі немає слухачів"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "анонімна"
+  },
+  "rowPosition": {
+    "message": "Позиція"
+  },
+  "rowSize": {
+    "message": "Розмір"
+  },
+  "rowRole": {
+    "message": "Роль"
+  },
+  "rowName": {
+    "message": "Ім’я"
+  },
+  "rowFocusable": {
+    "message": "Фокусований"
+  },
+  "rowSource": {
+    "message": "Джерело"
+  },
+  "rowFramework": {
+    "message": "Фреймворк"
+  },
+  "rowComponent": {
+    "message": "Компонент"
+  },
+  "rowText": {
+    "message": "Текст"
+  },
+  "rowKind": {
+    "message": "Тип"
+  },
+  "rowNatural": {
+    "message": "Вихідний розмір"
+  },
+  "rowDuration": {
+    "message": "Тривалість"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Роль"
+  },
+  "strategyLabel": {
+    "message": "Підпис"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt-текст"
+  },
+  "strategyTitle": {
+    "message": "Заголовок"
+  },
+  "strategyText": {
+    "message": "Текст"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "так"
+  },
+  "valueNo": {
+    "message": "ні"
+  },
+  "valueNone": {
+    "message": "немає"
+  },
+  "valueEmpty": {
+    "message": "порожньо"
+  },
+  "mediaLive": {
+    "message": "наживо"
+  },
+  "addStyle": {
+    "message": "+ стиль"
+  },
+  "addStylePlaceholder": {
+    "message": "властивість: значення"
+  },
+  "addAttribute": {
+    "message": "+ атрибут"
+  },
+  "addAttributePlaceholder": {
+    "message": "ім’я=\"значення\""
+  },
+  "kbdDrag": {
+    "message": "перетягнути"
+  },
+  "kbdClickValue": {
+    "message": "клік по значенню"
+  },
+  "footPin": {
+    "message": "закріпити"
+  },
+  "footUnpin": {
+    "message": "відкріпити"
+  },
+  "footMove": {
+    "message": "перемістити"
+  },
+  "footEdit": {
+    "message": "змінити"
+  },
+  "footClose": {
+    "message": "закрити"
+  },
+  "footParentChild": {
+    "message": "батько / нащадок"
+  },
+  "footSibling": {
+    "message": "сусід"
+  },
+  "footOpenSource": {
+    "message": "відкрити джерело"
+  },
+  "actionSelector": {
+    "message": "селектор"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "локатор"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "текст"
+  },
+  "toastEditsReset": {
+    "message": "Правки скинуто"
+  },
+  "toastNoSource": {
+    "message": "У цього елемента немає джерела"
+  },
+  "toastNoDevServer": {
+    "message": "Немає dev-сервера, щоб відкрити редактор"
+  },
+  "toastOpened": {
+    "message": "Відкрито в редакторі"
+  },
+  "toastNotOpened": {
+    "message": "Редактор не відкрився"
+  },
+  "toastNothingToCopy": {
+    "message": "Нічого копіювати: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Скопійовано: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Не вдалося скопіювати: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

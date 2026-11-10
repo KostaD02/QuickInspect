@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt را نگه دارید و روی عنصری بروید: انتخابگرها، مدل جعبه، استایل‌ها، دسترس‌پذیری و رویدادها بدون باز کردن DevTools."
+  },
+  "appTagline": {
+    "message": "بازرس عناصر با نگه داشتن ماوس"
+  },
+  "settingsOpenLabel": {
+    "message": "تنظیمات QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "تنظیمات"
+  },
+  "settingsCloseLabel": {
+    "message": "بستن تنظیمات"
+  },
+  "closeTitle": {
+    "message": "بستن"
+  },
+  "infoOpenLabel": {
+    "message": "دربارهٔ QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "بستن اطلاعات"
+  },
+  "enabledToggleLabel": {
+    "message": "روشن یا خاموش کردن QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "کلید نگه‌داشتن"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "آن را نگه دارید و روی عنصری بروید. رها کنید تا صفحه به حالت قبل برگردد."
+  },
+  "whileHoldingLabel": {
+    "message": "هنگام نگه داشتن"
+  },
+  "kbdClick": {
+    "message": "کلیک"
+  },
+  "shortcutPin": {
+    "message": "سنجاق کردن پنل"
+  },
+  "shortcutClose": {
+    "message": "بستن"
+  },
+  "shortcutParentChild": {
+    "message": "والد / فرزند"
+  },
+  "shortcutSibling": {
+    "message": "عنصر هم‌سطح"
+  },
+  "shortcutCopySelector": {
+    "message": "کپی انتخابگر CSS"
+  },
+  "shortcutCopyXpath": {
+    "message": "کپی XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "کپی مکان‌یاب Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "کپی HTML"
+  },
+  "shortcutCopyText": {
+    "message": "کپی متن"
+  },
+  "editorLabel": {
+    "message": "ویرایشگر"
+  },
+  "editorChecking": {
+    "message": "در حال بررسی این صفحه"
+  },
+  "editorHint": {
+    "message": "روی عنصری که موقعیت منبع دارد <kbd class=\"kd-chip kd-font-mono\">O</kbd> را بزنید تا در ویرایشگر باز شود."
+  },
+  "editorUnavailable": {
+    "message": "در این صفحه در دسترس نیست"
+  },
+  "editorSources": {
+    "message": "سرور توسعهٔ $SERVER$، منابع عناصر در دسترس است",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "سرور توسعهٔ $SERVER$، منبعی برای عناصر اینجا نیست",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "به‌صورت خودکار ذخیره و بلافاصله روی زبانه‌های باز اعمال می‌شود."
+  },
+  "settingsEditing": {
+    "message": "ویرایش"
+  },
+  "settingAllowEdit": {
+    "message": "اجازهٔ ویرایش"
+  },
+  "settingAllowEditHint": {
+    "message": "روی مقدارها در پنل سنجاق‌شده کلیک کنید تا استایل‌ها، ویژگی‌ها و متن صفحه را تغییر دهید"
+  },
+  "settingsPopup": {
+    "message": "پنجرهٔ بازشو"
+  },
+  "settingEditorStatus": {
+    "message": "در دسترس بودن ویرایشگر"
+  },
+  "settingEditorStatusHint": {
+    "message": "آیا این صفحه منابع را در ویرایشگر باز می‌کند"
+  },
+  "settingsOverlay": {
+    "message": "روکش"
+  },
+  "settingBoxModel": {
+    "message": "برجسته‌سازی مدل جعبه"
+  },
+  "settingBoxModelHint": {
+    "message": "نوارهای margin، border، padding و gap"
+  },
+  "settingsSections": {
+    "message": "بخش‌های پنل"
+  },
+  "sectionBox": {
+    "message": "جعبه"
+  },
+  "settingBoxHint": {
+    "message": "موقعیت، اندازه، margin، padding، border، gap"
+  },
+  "sectionEvents": {
+    "message": "رویدادها"
+  },
+  "settingEventsHint": {
+    "message": "شنونده‌ها، هندلرهای درون‌خطی و propهای فریم‌ورک"
+  },
+  "sectionStyles": {
+    "message": "استایل‌ها"
+  },
+  "settingStylesHint": {
+    "message": "مقدارهای محاسبه‌شدهٔ مهم"
+  },
+  "sectionAccessibility": {
+    "message": "دسترس‌پذیری"
+  },
+  "settingAccessibilityHint": {
+    "message": "نقش، نام دسترس‌پذیر، قابلیت فوکوس، ARIA"
+  },
+  "sectionAttributes": {
+    "message": "ویژگی‌ها"
+  },
+  "settingAttributesHint": {
+    "message": "همهٔ ویژگی‌های عنصر"
+  },
+  "sectionMedia": {
+    "message": "رسانه"
+  },
+  "settingMediaHint": {
+    "message": "جزئیات تصویر، ویدیو، canvas و SVG"
+  },
+  "sectionContext": {
+    "message": "زمینه"
+  },
+  "settingContextHint": {
+    "message": "فایل منبع، فریم‌ورک، اجداد و متن"
+  },
+  "sectionSelectors": {
+    "message": "انتخابگرها"
+  },
+  "settingSelectorsHint": {
+    "message": "مکان‌یاب‌های CSS، XPath و Playwright"
+  },
+  "settingsReset": {
+    "message": "بازنشانی به پیش‌فرض‌ها"
+  },
+  "infoIntro": {
+    "message": "QuickInspect هرآنچه را دربارهٔ یک عنصر لازم دارید بدون باز کردن DevTools نشان می‌دهد: <strong>انتخابگرها</strong>، <strong>مدل جعبه</strong>، <strong>استایل‌های محاسبه‌شده</strong>، <strong>دسترس‌پذیری</strong>، <strong>ویژگی‌ها</strong>، <strong>رویدادها</strong> و <strong>فایل منبعی</strong> که از آن آمده است."
+  },
+  "infoStep1": {
+    "message": "<kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> را نگه دارید و روی عنصری بروید تا بررسی شود؛ رها کنید تا صفحه برگردد. کلید دیگری را در <strong>کلید نگه‌داشتن</strong> در صفحهٔ اصلی انتخاب کنید."
+  },
+  "infoStep2": {
+    "message": "هنگام نگه داشتن <strong>کلیک کنید</strong> تا پنل سنجاق شود، سپس آن را از سربرگش بکشید. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> برای والد یا فرزند و <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> برای عناصر هم‌سطح."
+  },
+  "infoStep3": {
+    "message": "<kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> را بزنید تا انتخابگر، XPath، مکان‌یاب Playwright، HTML یا متن کپی شود."
+  },
+  "infoStep4": {
+    "message": "در پنل سنجاق‌شده <strong>روی هر مقداری کلیک کنید</strong> تا استایل‌ها، جعبه، ویژگی‌ها یا متن را ویرایش کنید. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> اعمال می‌کند، <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> لغو می‌کند و <strong>reset</strong> همه را برمی‌گرداند. ویرایش‌ها تا بارگذاری مجدد در صفحه می‌مانند."
+  },
+  "infoStep5": {
+    "message": "روی سرور توسعهٔ <strong>Vite</strong> یا <strong>Next.js</strong>، <kbd class=\"kd-chip kd-font-mono\">O</kbd> را بزنید تا منبع عنصر در ویرایشگر باز شود."
+  },
+  "infoGithub": {
+    "message": "مخزن GitHub"
+  },
+  "infoReport": {
+    "message": "گزارش مشکل / پیشنهاد"
+  },
+  "infoCreatedBy": {
+    "message": "ساختهٔ"
+  },
+  "footerSections": {
+    "message": "انتخابگرها · جعبه · استایل‌ها · دسترس‌پذیری · رویدادها"
+  },
+  "panelPinned": {
+    "message": "سنجاق‌شده"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "بازگرداندن همهٔ ویرایش‌های این عنصر"
+  },
+  "panelCopy": {
+    "message": "کپی"
+  },
+  "panelOpen": {
+    "message": "باز کردن"
+  },
+  "panelRemoveAttribute": {
+    "message": "حذف $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "مقدار"
+  },
+  "boxHint": {
+    "message": "بالا راست پایین چپ"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: بالا راست پایین چپ",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: سطر ستون"
+  },
+  "stylesHint": {
+    "message": "محاسبه‌شده"
+  },
+  "shadowHostHint": {
+    "message": "درون shadow root عنصر $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ مورد دیگر",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ مورد دیگر",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ شنونده",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ شنونده",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ فرزند",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ فرزند",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ تطابق",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ تطابق",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "یکتا"
+  },
+  "noListeners": {
+    "message": "این عنصر شنونده‌ای ندارد"
+  },
+  "eventOriginInline": {
+    "message": "درون‌خطی"
+  },
+  "eventAnonymous": {
+    "message": "بی‌نام"
+  },
+  "rowPosition": {
+    "message": "موقعیت"
+  },
+  "rowSize": {
+    "message": "اندازه"
+  },
+  "rowRole": {
+    "message": "نقش"
+  },
+  "rowName": {
+    "message": "نام"
+  },
+  "rowFocusable": {
+    "message": "قابل فوکوس"
+  },
+  "rowSource": {
+    "message": "منبع"
+  },
+  "rowFramework": {
+    "message": "فریم‌ورک"
+  },
+  "rowComponent": {
+    "message": "کامپوننت"
+  },
+  "rowText": {
+    "message": "متن"
+  },
+  "rowKind": {
+    "message": "نوع"
+  },
+  "rowNatural": {
+    "message": "اندازهٔ طبیعی"
+  },
+  "rowDuration": {
+    "message": "مدت"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "نقش"
+  },
+  "strategyLabel": {
+    "message": "برچسب"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "متن alt"
+  },
+  "strategyTitle": {
+    "message": "عنوان"
+  },
+  "strategyText": {
+    "message": "متن"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "بله"
+  },
+  "valueNo": {
+    "message": "خیر"
+  },
+  "valueNone": {
+    "message": "ندارد"
+  },
+  "valueEmpty": {
+    "message": "خالی"
+  },
+  "mediaLive": {
+    "message": "زنده"
+  },
+  "addStyle": {
+    "message": "+ استایل"
+  },
+  "addStylePlaceholder": {
+    "message": "خصوصیت: مقدار"
+  },
+  "addAttribute": {
+    "message": "+ ویژگی"
+  },
+  "addAttributePlaceholder": {
+    "message": "نام=\"مقدار\""
+  },
+  "kbdDrag": {
+    "message": "کشیدن"
+  },
+  "kbdClickValue": {
+    "message": "کلیک روی مقدار"
+  },
+  "footPin": {
+    "message": "سنجاق"
+  },
+  "footUnpin": {
+    "message": "برداشتن سنجاق"
+  },
+  "footMove": {
+    "message": "جابه‌جایی"
+  },
+  "footEdit": {
+    "message": "ویرایش"
+  },
+  "footClose": {
+    "message": "بستن"
+  },
+  "footParentChild": {
+    "message": "والد / فرزند"
+  },
+  "footSibling": {
+    "message": "هم‌سطح"
+  },
+  "footOpenSource": {
+    "message": "باز کردن منبع"
+  },
+  "actionSelector": {
+    "message": "انتخابگر"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "مکان‌یاب"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "متن"
+  },
+  "toastEditsReset": {
+    "message": "ویرایش‌ها بازگردانده شد"
+  },
+  "toastNoSource": {
+    "message": "این عنصر موقعیت منبع ندارد"
+  },
+  "toastNoDevServer": {
+    "message": "سرور توسعه‌ای برای باز کردن ویرایشگر نیست"
+  },
+  "toastOpened": {
+    "message": "در ویرایشگر باز شد"
+  },
+  "toastNotOpened": {
+    "message": "ویرایشگر باز نشد"
+  },
+  "toastNothingToCopy": {
+    "message": "چیزی برای کپی نیست: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "کپی شد: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "کپی نشد: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

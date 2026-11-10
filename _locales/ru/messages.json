@@ -1,0 +1,614 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Удерживайте Alt и наведите на элемент: селекторы, блочная модель, стили, доступность и события без открытия DevTools."
+  },
+  "appTagline": {
+    "message": "Инспектор элементов"
+  },
+  "settingsOpenLabel": {
+    "message": "Настройки QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Настройки"
+  },
+  "settingsCloseLabel": {
+    "message": "Закрыть настройки"
+  },
+  "closeTitle": {
+    "message": "Закрыть"
+  },
+  "infoOpenLabel": {
+    "message": "О QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Закрыть справку"
+  },
+  "enabledToggleLabel": {
+    "message": "Включить или выключить QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Удерживаемая клавиша"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Удерживайте её и наведите на элемент. Отпустите, чтобы вернуть страницу."
+  },
+  "whileHoldingLabel": {
+    "message": "Пока клавиша удерживается"
+  },
+  "kbdClick": {
+    "message": "клик"
+  },
+  "shortcutPin": {
+    "message": "Закрепить панель"
+  },
+  "shortcutClose": {
+    "message": "Закрыть"
+  },
+  "shortcutParentChild": {
+    "message": "Предок/потомок"
+  },
+  "shortcutSibling": {
+    "message": "Сосед"
+  },
+  "shortcutCopySelector": {
+    "message": "Копировать селектор"
+  },
+  "shortcutCopyXpath": {
+    "message": "Копировать XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Копировать локатор Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Копировать HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Копировать текст"
+  },
+  "editorLabel": {
+    "message": "Редактор"
+  },
+  "editorChecking": {
+    "message": "Проверяем страницу"
+  },
+  "editorHint": {
+    "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">O</kbd> на элементе с известным исходником, чтобы открыть его в редакторе."
+  },
+  "editorUnavailable": {
+    "message": "Недоступно на этой странице"
+  },
+  "editorSources": {
+    "message": "Dev-сервер $SERVER$, исходники элементов доступны",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Dev-сервер $SERVER$, исходников элементов здесь нет",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Сохраняется автоматически и сразу применяется к открытым вкладкам."
+  },
+  "settingsEditing": {
+    "message": "Редактирование"
+  },
+  "settingAllowEdit": {
+    "message": "Разрешить правки"
+  },
+  "settingAllowEditHint": {
+    "message": "Нажимайте на значения в закреплённой панели, чтобы менять стили, атрибуты и текст на странице"
+  },
+  "settingsPopup": {
+    "message": "Попап"
+  },
+  "settingEditorStatus": {
+    "message": "Доступность редактора"
+  },
+  "settingEditorStatusHint": {
+    "message": "Может ли страница открыть код в редакторе"
+  },
+  "settingsOverlay": {
+    "message": "Подсветка"
+  },
+  "settingBoxModel": {
+    "message": "Подсвечивать блочную модель"
+  },
+  "settingBoxModelHint": {
+    "message": "Полосы margin, border, padding и gap"
+  },
+  "settingsSections": {
+    "message": "Разделы панели"
+  },
+  "sectionBox": {
+    "message": "Блок"
+  },
+  "settingBoxHint": {
+    "message": "Позиция, размер, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "События"
+  },
+  "settingEventsHint": {
+    "message": "Слушатели, inline-обработчики и props фреймворка"
+  },
+  "sectionStyles": {
+    "message": "Стили"
+  },
+  "settingStylesHint": {
+    "message": "Вычисленные значения, которые важны"
+  },
+  "sectionAccessibility": {
+    "message": "Доступность"
+  },
+  "settingAccessibilityHint": {
+    "message": "Роль, доступное имя, фокусируемость, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Атрибуты"
+  },
+  "settingAttributesHint": {
+    "message": "Все атрибуты элемента"
+  },
+  "sectionMedia": {
+    "message": "Медиа"
+  },
+  "settingMediaHint": {
+    "message": "Сведения об изображениях, видео, canvas и SVG"
+  },
+  "sectionContext": {
+    "message": "Контекст"
+  },
+  "settingContextHint": {
+    "message": "Исходный файл, фреймворк, предки и текст"
+  },
+  "sectionSelectors": {
+    "message": "Селекторы"
+  },
+  "settingSelectorsHint": {
+    "message": "Локаторы CSS, XPath и Playwright"
+  },
+  "settingsReset": {
+    "message": "Сбросить настройки"
+  },
+  "infoIntro": {
+    "message": "QuickInspect показывает всё нужное о любом элементе без открытия DevTools: <strong>селекторы</strong>, <strong>блочную модель</strong>, <strong>вычисленные стили</strong>, <strong>доступность</strong>, <strong>атрибуты</strong>, <strong>события</strong> и <strong>исходный файл</strong>, из которого он пришёл."
+  },
+  "infoStep1": {
+    "message": "Удерживайте <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> и наведите на элемент, чтобы изучить его; отпустите, чтобы вернуть страницу. Другую клавишу можно выбрать в поле <strong>Удерживаемая клавиша</strong> на главном экране."
+  },
+  "infoStep2": {
+    "message": "<strong>Кликните</strong>, удерживая клавишу, чтобы закрепить панель, затем перетаскивайте её за заголовок. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> переходят к родителю или потомку, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> — к соседним элементам."
+  },
+  "infoStep3": {
+    "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, чтобы скопировать селектор, XPath, локатор Playwright, HTML или текст."
+  },
+  "infoStep4": {
+    "message": "В закреплённой панели <strong>нажмите на любое значение</strong>, чтобы изменить стили, блок, атрибуты или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> применяет, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отменяет, а <strong>reset</strong> откатывает всё. Правки остаются на странице до перезагрузки."
+  },
+  "infoStep5": {
+    "message": "На dev-сервере <strong>Vite</strong> или <strong>Next.js</strong> нажмите <kbd class=\"kd-chip kd-font-mono\">O</kbd>, чтобы открыть исходник элемента в редакторе."
+  },
+  "infoGithub": {
+    "message": "Репозиторий на GitHub"
+  },
+  "infoReport": {
+    "message": "Сообщить об ошибке / идее"
+  },
+  "infoCreatedBy": {
+    "message": "Автор:"
+  },
+  "footerSections": {
+    "message": "Селекторы · Блок · Стили · Доступность · События"
+  },
+  "panelPinned": {
+    "message": "закреплено"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Отменить все правки этого элемента"
+  },
+  "panelCopy": {
+    "message": "копировать"
+  },
+  "panelOpen": {
+    "message": "открыть"
+  },
+  "panelRemoveAttribute": {
+    "message": "Удалить $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "значение"
+  },
+  "boxHint": {
+    "message": "верх право низ лево"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: верх право низ лево",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: строка столбец"
+  },
+  "stylesHint": {
+    "message": "вычисленные"
+  },
+  "shadowHostHint": {
+    "message": "внутри shadow root элемента $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "ещё +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "ещё +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_many": {
+    "message": "ещё +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "ещё +$COUNT$",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ слушатель",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ слушателя",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_many": {
+    "message": "$COUNT$ слушателей",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ слушателя",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ потомок",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ потомка",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_many": {
+    "message": "$COUNT$ потомков",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ потомка",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ совпадение",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ совпадения",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_many": {
+    "message": "$COUNT$ совпадений",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ совпадения",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "уникальный"
+  },
+  "noListeners": {
+    "message": "на этом элементе нет слушателей"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "анонимная"
+  },
+  "rowPosition": {
+    "message": "Позиция"
+  },
+  "rowSize": {
+    "message": "Размер"
+  },
+  "rowRole": {
+    "message": "Роль"
+  },
+  "rowName": {
+    "message": "Имя"
+  },
+  "rowFocusable": {
+    "message": "Фокусируемый"
+  },
+  "rowSource": {
+    "message": "Источник"
+  },
+  "rowFramework": {
+    "message": "Фреймворк"
+  },
+  "rowComponent": {
+    "message": "Компонент"
+  },
+  "rowText": {
+    "message": "Текст"
+  },
+  "rowKind": {
+    "message": "Тип"
+  },
+  "rowNatural": {
+    "message": "Исходный размер"
+  },
+  "rowDuration": {
+    "message": "Длительность"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Роль"
+  },
+  "strategyLabel": {
+    "message": "Подпись"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt-текст"
+  },
+  "strategyTitle": {
+    "message": "Заголовок"
+  },
+  "strategyText": {
+    "message": "Текст"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "да"
+  },
+  "valueNo": {
+    "message": "нет"
+  },
+  "valueNone": {
+    "message": "нет"
+  },
+  "valueEmpty": {
+    "message": "пусто"
+  },
+  "mediaLive": {
+    "message": "прямой эфир"
+  },
+  "addStyle": {
+    "message": "+ стиль"
+  },
+  "addStylePlaceholder": {
+    "message": "свойство: значение"
+  },
+  "addAttribute": {
+    "message": "+ атрибут"
+  },
+  "addAttributePlaceholder": {
+    "message": "имя=\"значение\""
+  },
+  "kbdDrag": {
+    "message": "перетащить"
+  },
+  "kbdClickValue": {
+    "message": "клик по значению"
+  },
+  "footPin": {
+    "message": "закрепить"
+  },
+  "footUnpin": {
+    "message": "открепить"
+  },
+  "footMove": {
+    "message": "переместить"
+  },
+  "footEdit": {
+    "message": "изменить"
+  },
+  "footClose": {
+    "message": "закрыть"
+  },
+  "footParentChild": {
+    "message": "родитель / потомок"
+  },
+  "footSibling": {
+    "message": "сосед"
+  },
+  "footOpenSource": {
+    "message": "открыть исходник"
+  },
+  "actionSelector": {
+    "message": "селектор"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "локатор"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "текст"
+  },
+  "toastEditsReset": {
+    "message": "Правки сброшены"
+  },
+  "toastNoSource": {
+    "message": "У этого элемента нет исходника"
+  },
+  "toastNoDevServer": {
+    "message": "Нет dev-сервера, чтобы открыть редактор"
+  },
+  "toastOpened": {
+    "message": "Открыто в редакторе"
+  },
+  "toastNotOpened": {
+    "message": "Редактор не открылся"
+  },
+  "toastNothingToCopy": {
+    "message": "Нечего копировать: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Скопировано: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Не удалось скопировать: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

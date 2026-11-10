@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Mantén Alt i apunta a un element: selectors, model de caixa, estils, accessibilitat i esdeveniments sense obrir DevTools."
+  },
+  "appTagline": {
+    "message": "Inspector d’elements"
+  },
+  "settingsOpenLabel": {
+    "message": "Configuració del QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Configuració"
+  },
+  "settingsCloseLabel": {
+    "message": "Tanca la configuració"
+  },
+  "closeTitle": {
+    "message": "Tanca"
+  },
+  "infoOpenLabel": {
+    "message": "Quant al QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Tanca la informació"
+  },
+  "enabledToggleLabel": {
+    "message": "Activa o desactiva el QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Tecla a mantenir"
+  },
+  "modifierAlt": {
+    "message": "Alt / Opció"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Maj"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Mantén-la premuda i passa el cursor per sobre d’un element. Deixa-la anar per restaurar la pàgina."
+  },
+  "whileHoldingLabel": {
+    "message": "Mentre la mantens"
+  },
+  "kbdClick": {
+    "message": "clic"
+  },
+  "shortcutPin": {
+    "message": "Fixa el tauler"
+  },
+  "shortcutClose": {
+    "message": "Tanca"
+  },
+  "shortcutParentChild": {
+    "message": "Pare / fill"
+  },
+  "shortcutSibling": {
+    "message": "Germà"
+  },
+  "shortcutCopySelector": {
+    "message": "Copia el selector"
+  },
+  "shortcutCopyXpath": {
+    "message": "Copia l’XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Copia el locator de Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Copia l’HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Copia el text"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "S’està comprovant la pàgina"
+  },
+  "editorHint": {
+    "message": "Prem <kbd class=\"kd-chip kd-font-mono\">O</kbd> sobre un element amb ubicació d’origen per obrir-lo a l’editor."
+  },
+  "editorUnavailable": {
+    "message": "No disponible en aquesta pàgina"
+  },
+  "editorSources": {
+    "message": "Servidor dev $SERVER$, orígens disponibles",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Servidor dev $SERVER$, sense orígens aquí",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Es desa automàticament i s’aplica a l’instant a les pestanyes obertes."
+  },
+  "settingsEditing": {
+    "message": "Edició"
+  },
+  "settingAllowEdit": {
+    "message": "Permet les edicions"
+  },
+  "settingAllowEditHint": {
+    "message": "Fes clic als valors d’un tauler fixat per canviar estils, atributs i text de la pàgina"
+  },
+  "settingsPopup": {
+    "message": "Finestra emergent"
+  },
+  "settingEditorStatus": {
+    "message": "Disponibilitat de l’editor"
+  },
+  "settingEditorStatusHint": {
+    "message": "Si aquesta pàgina pot obrir orígens al teu editor"
+  },
+  "settingsOverlay": {
+    "message": "Superposició"
+  },
+  "settingBoxModel": {
+    "message": "Ressalta el model de caixa"
+  },
+  "settingBoxModelHint": {
+    "message": "Bandes de margin, border, padding i gap"
+  },
+  "settingsSections": {
+    "message": "Seccions del tauler"
+  },
+  "sectionBox": {
+    "message": "Caixa"
+  },
+  "settingBoxHint": {
+    "message": "Posició, mida, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Esdeveniments"
+  },
+  "settingEventsHint": {
+    "message": "Listeners, gestors inline i props del framework"
+  },
+  "sectionStyles": {
+    "message": "Estils"
+  },
+  "settingStylesHint": {
+    "message": "Els valors calculats que importen"
+  },
+  "sectionAccessibility": {
+    "message": "Accessibilitat"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rol, nom accessible, enfocabilitat, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atributs"
+  },
+  "settingAttributesHint": {
+    "message": "Tots els atributs de l’element"
+  },
+  "sectionMedia": {
+    "message": "Multimèdia"
+  },
+  "settingMediaHint": {
+    "message": "Detalls d’imatge, vídeo, canvas i SVG"
+  },
+  "sectionContext": {
+    "message": "Context"
+  },
+  "settingContextHint": {
+    "message": "Fitxer d’origen, framework, ancestres i text"
+  },
+  "sectionSelectors": {
+    "message": "Selectors"
+  },
+  "settingSelectorsHint": {
+    "message": "Locators CSS, XPath i Playwright"
+  },
+  "settingsReset": {
+    "message": "Restableix els valors per defecte"
+  },
+  "infoIntro": {
+    "message": "El QuickInspect mostra el que cal saber de qualsevol element sense obrir DevTools: <strong>selectors</strong>, el <strong>model de caixa</strong>, <strong>estils calculats</strong>, <strong>accessibilitat</strong>, <strong>atributs</strong>, <strong>esdeveniments</strong> i el <strong>fitxer d’origen</strong> d’on prové."
+  },
+  "infoStep1": {
+    "message": "Mantén <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> i passa el cursor per sobre d’un element per inspeccionar-lo; deixa-la anar per restaurar la pàgina. Tria una altra tecla a <strong>Tecla a mantenir</strong> de la pantalla principal."
+  },
+  "infoStep2": {
+    "message": "<strong>Fes clic</strong> mentre la mantens per fixar el tauler i arrossega’l per la capçalera per moure’l. Fes servir <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> per al pare o el fill i <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> per als germans."
+  },
+  "infoStep3": {
+    "message": "Prem <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> per copiar el selector, l’XPath, el locator de Playwright, l’HTML o el text."
+  },
+  "infoStep4": {
+    "message": "En un tauler fixat, <strong>fes clic a qualsevol valor</strong> per editar estils, caixa, atributs o text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancel·la i <strong>reset</strong> ho desfà tot. Les edicions es mantenen a la pàgina fins que la recarreguis."
+  },
+  "infoStep5": {
+    "message": "En un servidor de desenvolupament <strong>Vite</strong> o <strong>Next.js</strong>, prem <kbd class=\"kd-chip kd-font-mono\">O</kbd> per obrir l’origen de l’element al teu editor."
+  },
+  "infoGithub": {
+    "message": "Repositori GitHub"
+  },
+  "infoReport": {
+    "message": "Informa d’un problema"
+  },
+  "infoCreatedBy": {
+    "message": "Creat per"
+  },
+  "footerSections": {
+    "message": "Selectors · Caixa · Estils · Accessibilitat · Esdeveniments"
+  },
+  "panelPinned": {
+    "message": "fixat"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Desfés totes les edicions d’aquest element"
+  },
+  "panelCopy": {
+    "message": "copia"
+  },
+  "panelOpen": {
+    "message": "obre"
+  },
+  "panelRemoveAttribute": {
+    "message": "Elimina $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "valor"
+  },
+  "boxHint": {
+    "message": "dalt dreta baix esquerra"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: dalt dreta baix esquerra",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: fila columna"
+  },
+  "stylesHint": {
+    "message": "calculats"
+  },
+  "shadowHostHint": {
+    "message": "dins del shadow root de $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ més",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ més",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ fill",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ fills",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ coincidència",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ coincidències",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "únic"
+  },
+  "noListeners": {
+    "message": "cap listener en aquest element"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anònima"
+  },
+  "rowPosition": {
+    "message": "Posició"
+  },
+  "rowSize": {
+    "message": "Mida"
+  },
+  "rowRole": {
+    "message": "Rol"
+  },
+  "rowName": {
+    "message": "Nom"
+  },
+  "rowFocusable": {
+    "message": "Enfocable"
+  },
+  "rowSource": {
+    "message": "Origen"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Component"
+  },
+  "rowText": {
+    "message": "Text"
+  },
+  "rowKind": {
+    "message": "Tipus"
+  },
+  "rowNatural": {
+    "message": "Natural"
+  },
+  "rowDuration": {
+    "message": "Durada"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Rol"
+  },
+  "strategyLabel": {
+    "message": "Etiqueta"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Text alt"
+  },
+  "strategyTitle": {
+    "message": "Títol"
+  },
+  "strategyText": {
+    "message": "Text"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "sí"
+  },
+  "valueNo": {
+    "message": "no"
+  },
+  "valueNone": {
+    "message": "cap"
+  },
+  "valueEmpty": {
+    "message": "buit"
+  },
+  "mediaLive": {
+    "message": "en directe"
+  },
+  "addStyle": {
+    "message": "+ estil"
+  },
+  "addStylePlaceholder": {
+    "message": "propietat: valor"
+  },
+  "addAttribute": {
+    "message": "+ atribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "nom=\"valor\""
+  },
+  "kbdDrag": {
+    "message": "arrossega"
+  },
+  "kbdClickValue": {
+    "message": "clic al valor"
+  },
+  "footPin": {
+    "message": "fixa"
+  },
+  "footUnpin": {
+    "message": "allibera"
+  },
+  "footMove": {
+    "message": "mou"
+  },
+  "footEdit": {
+    "message": "edita"
+  },
+  "footClose": {
+    "message": "tanca"
+  },
+  "footParentChild": {
+    "message": "pare / fill"
+  },
+  "footSibling": {
+    "message": "germà"
+  },
+  "footOpenSource": {
+    "message": "obre l’origen"
+  },
+  "actionSelector": {
+    "message": "selector"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "text"
+  },
+  "toastEditsReset": {
+    "message": "Edicions restablertes"
+  },
+  "toastNoSource": {
+    "message": "Aquest element no té ubicació d’origen"
+  },
+  "toastNoDevServer": {
+    "message": "No hi ha servidor de desenvolupament per obrir l’editor"
+  },
+  "toastOpened": {
+    "message": "Obert a l’editor"
+  },
+  "toastNotOpened": {
+    "message": "L’editor no s’ha obert"
+  },
+  "toastNothingToCopy": {
+    "message": "No hi ha res a copiar: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Copiat: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "No s’ha pogut copiar: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

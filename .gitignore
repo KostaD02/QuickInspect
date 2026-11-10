@@ -5,6 +5,7 @@ node_modules
 dist
 release
 coverage
+tmp
 # Generated main-world bridge
 /bridge/
 

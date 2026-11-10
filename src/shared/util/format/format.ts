@@ -46,7 +46,7 @@ export function isTransparent(color: string): boolean {
 }
 
 export function formatDuration(seconds: number): string {
-  if (!Number.isFinite(seconds)) return 'live';
+  if (!Number.isFinite(seconds)) return '';
   const total = Math.round(seconds);
   const m = Math.floor(total / 60);
   const s = total % 60;

@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Håll ned Alt och peka på ett element för att se selektorer, boxmodell, stilar, tillgänglighet och events utan DevTools."
+  },
+  "appTagline": {
+    "message": "Elementinspektör vid hovring"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect-inställningar"
+  },
+  "settingsOpenTitle": {
+    "message": "Inställningar"
+  },
+  "settingsCloseLabel": {
+    "message": "Stäng inställningar"
+  },
+  "closeTitle": {
+    "message": "Stäng"
+  },
+  "infoOpenLabel": {
+    "message": "Om QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Stäng info"
+  },
+  "enabledToggleLabel": {
+    "message": "Slå på eller av QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Tangent att hålla ned"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Skift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Håll den nedtryckt och peka på ett element. Släpp för att återställa sidan."
+  },
+  "whileHoldingLabel": {
+    "message": "Medan du håller"
+  },
+  "kbdClick": {
+    "message": "klick"
+  },
+  "shortcutPin": {
+    "message": "Fäst panelen"
+  },
+  "shortcutClose": {
+    "message": "Stäng"
+  },
+  "shortcutParentChild": {
+    "message": "Förälder / barn"
+  },
+  "shortcutSibling": {
+    "message": "Syskon"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopiera CSS-selektor"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopiera XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopiera Playwright-locator"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopiera HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopiera text"
+  },
+  "editorLabel": {
+    "message": "Redigerare"
+  },
+  "editorChecking": {
+    "message": "Kontrollerar sidan"
+  },
+  "editorHint": {
+    "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">O</kbd> på ett element med källposition för att öppna det i din redigerare."
+  },
+  "editorUnavailable": {
+    "message": "Inte tillgängligt på den här sidan"
+  },
+  "editorSources": {
+    "message": "$SERVER$-devserver, elementkällor tillgängliga",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$-devserver, inga elementkällor här",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Sparas automatiskt och gäller direkt för öppna flikar."
+  },
+  "settingsEditing": {
+    "message": "Redigering"
+  },
+  "settingAllowEdit": {
+    "message": "Tillåt redigering"
+  },
+  "settingAllowEditHint": {
+    "message": "Klicka på värden i en fäst panel för att ändra stilar, attribut och text på sidan"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Redigerarens tillgänglighet"
+  },
+  "settingEditorStatusHint": {
+    "message": "Om den här sidan kan öppna källor i din redigerare"
+  },
+  "settingsOverlay": {
+    "message": "Överlägg"
+  },
+  "settingBoxModel": {
+    "message": "Markera boxmodell"
+  },
+  "settingBoxModelHint": {
+    "message": "Band för margin, border, padding och gap"
+  },
+  "settingsSections": {
+    "message": "Panelsektioner"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Position, storlek, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Events"
+  },
+  "settingEventsHint": {
+    "message": "Lyssnare, inline-hanterare och framework-props"
+  },
+  "sectionStyles": {
+    "message": "Stilar"
+  },
+  "settingStylesHint": {
+    "message": "De beräknade värden som spelar roll"
+  },
+  "sectionAccessibility": {
+    "message": "Tillgänglighet"
+  },
+  "settingAccessibilityHint": {
+    "message": "Roll, tillgängligt namn, fokuserbarhet, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Attribut"
+  },
+  "settingAttributesHint": {
+    "message": "Alla attribut på elementet"
+  },
+  "sectionMedia": {
+    "message": "Media"
+  },
+  "settingMediaHint": {
+    "message": "Detaljer om bild, video, canvas och SVG"
+  },
+  "sectionContext": {
+    "message": "Kontext"
+  },
+  "settingContextHint": {
+    "message": "Källfil, framework, förfäder och text"
+  },
+  "sectionSelectors": {
+    "message": "Selektorer"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- och Playwright-locators"
+  },
+  "settingsReset": {
+    "message": "Återställ standard"
+  },
+  "infoIntro": {
+    "message": "QuickInspect visar vad du behöver veta om ett element utan att öppna DevTools: <strong>selektorer</strong>, <strong>boxmodellen</strong>, <strong>beräknade stilar</strong>, <strong>tillgänglighet</strong>, <strong>attribut</strong>, <strong>events</strong> och <strong>källfilen</strong> det kommer från."
+  },
+  "infoStep1": {
+    "message": "Håll ned <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> och peka på ett element för att inspektera det; släpp för att återställa sidan. Välj en annan tangent under <strong>Tangent att hålla ned</strong> på huvudskärmen."
+  },
+  "infoStep2": {
+    "message": "<strong>Klicka</strong> medan du håller för att fästa panelen och dra den sedan i huvudet. Använd <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> för förälder eller barn och <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> för syskon."
+  },
+  "infoStep3": {
+    "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> för att kopiera selektorn, XPath, Playwright-locatorn, HTML eller texten."
+  },
+  "infoStep4": {
+    "message": "I en fäst panel kan du <strong>klicka på ett värde</strong> för att redigera stilar, box, attribut eller text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> tillämpar, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> avbryter och <strong>reset</strong> ångrar allt. Ändringarna finns kvar på sidan tills du laddar om."
+  },
+  "infoStep5": {
+    "message": "På en <strong>Vite</strong>- eller <strong>Next.js</strong>-devserver trycker du på <kbd class=\"kd-chip kd-font-mono\">O</kbd> för att öppna elementets källa i din redigerare."
+  },
+  "infoGithub": {
+    "message": "GitHub-repository"
+  },
+  "infoReport": {
+    "message": "Rapportera fel / önskemål"
+  },
+  "infoCreatedBy": {
+    "message": "Skapad av"
+  },
+  "footerSections": {
+    "message": "Selektorer · Box · Stilar · Tillgänglighet · Events"
+  },
+  "panelPinned": {
+    "message": "fäst"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Ångra alla ändringar på det här elementet"
+  },
+  "panelCopy": {
+    "message": "kopiera"
+  },
+  "panelOpen": {
+    "message": "öppna"
+  },
+  "panelRemoveAttribute": {
+    "message": "Ta bort $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "värde"
+  },
+  "boxHint": {
+    "message": "topp höger botten vänster"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: topp höger botten vänster",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rad kolumn"
+  },
+  "stylesHint": {
+    "message": "beräknade"
+  },
+  "shadowHostHint": {
+    "message": "i shadow root för $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ till",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ till",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ lyssnare",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ lyssnare",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ barn",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ barn",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ träff",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ träffar",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unik"
+  },
+  "noListeners": {
+    "message": "inga lyssnare på det här elementet"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonym"
+  },
+  "rowPosition": {
+    "message": "Position"
+  },
+  "rowSize": {
+    "message": "Storlek"
+  },
+  "rowRole": {
+    "message": "Roll"
+  },
+  "rowName": {
+    "message": "Namn"
+  },
+  "rowFocusable": {
+    "message": "Fokuserbart"
+  },
+  "rowSource": {
+    "message": "Källa"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Komponent"
+  },
+  "rowText": {
+    "message": "Text"
+  },
+  "rowKind": {
+    "message": "Typ"
+  },
+  "rowNatural": {
+    "message": "Naturlig"
+  },
+  "rowDuration": {
+    "message": "Längd"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test-id"
+  },
+  "strategyRole": {
+    "message": "Roll"
+  },
+  "strategyLabel": {
+    "message": "Etikett"
+  },
+  "strategyPlaceholder": {
+    "message": "Platshållare"
+  },
+  "strategyAltText": {
+    "message": "Alt-text"
+  },
+  "strategyTitle": {
+    "message": "Titel"
+  },
+  "strategyText": {
+    "message": "Text"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ja"
+  },
+  "valueNo": {
+    "message": "nej"
+  },
+  "valueNone": {
+    "message": "inget"
+  },
+  "valueEmpty": {
+    "message": "tom"
+  },
+  "mediaLive": {
+    "message": "live"
+  },
+  "addStyle": {
+    "message": "+ stil"
+  },
+  "addStylePlaceholder": {
+    "message": "egenskap: värde"
+  },
+  "addAttribute": {
+    "message": "+ attribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "namn=\"värde\""
+  },
+  "kbdDrag": {
+    "message": "dra"
+  },
+  "kbdClickValue": {
+    "message": "klicka på värde"
+  },
+  "footPin": {
+    "message": "fäst"
+  },
+  "footUnpin": {
+    "message": "lossa"
+  },
+  "footMove": {
+    "message": "flytta"
+  },
+  "footEdit": {
+    "message": "redigera"
+  },
+  "footClose": {
+    "message": "stäng"
+  },
+  "footParentChild": {
+    "message": "förälder / barn"
+  },
+  "footSibling": {
+    "message": "syskon"
+  },
+  "footOpenSource": {
+    "message": "öppna källa"
+  },
+  "actionSelector": {
+    "message": "selektor"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "text"
+  },
+  "toastEditsReset": {
+    "message": "Ändringar återställda"
+  },
+  "toastNoSource": {
+    "message": "Ingen källposition för det här elementet"
+  },
+  "toastNoDevServer": {
+    "message": "Ingen devserver för att öppna redigeraren"
+  },
+  "toastOpened": {
+    "message": "Öppnat i redigeraren"
+  },
+  "toastNotOpened": {
+    "message": "Redigeraren öppnades inte"
+  },
+  "toastNothingToCopy": {
+    "message": "Inget att kopiera för $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$ kopierad",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kunde inte kopiera $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

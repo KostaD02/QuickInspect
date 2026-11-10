@@ -1,0 +1,578 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Țineți Alt apăsat și treceți peste un element: selectori, box model, stiluri, accesibilitate și evenimente fără DevTools."
+  },
+  "appTagline": {
+    "message": "Inspector de elemente"
+  },
+  "settingsOpenLabel": {
+    "message": "Setări QuickInspect"
+  },
+  "settingsOpenTitle": {
+    "message": "Setări"
+  },
+  "settingsCloseLabel": {
+    "message": "Închide setările"
+  },
+  "closeTitle": {
+    "message": "Închide"
+  },
+  "infoOpenLabel": {
+    "message": "Despre QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Închide informațiile"
+  },
+  "enabledToggleLabel": {
+    "message": "Activează sau dezactivează QuickInspect"
+  },
+  "holdKeyLabel": {
+    "message": "Tasta de ținut apăsată"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Țineți-o apăsată și treceți peste un element. Eliberați pentru a readuce pagina."
+  },
+  "whileHoldingLabel": {
+    "message": "Cât timp țineți apăsat"
+  },
+  "kbdClick": {
+    "message": "clic"
+  },
+  "shortcutPin": {
+    "message": "Fixează panoul"
+  },
+  "shortcutClose": {
+    "message": "Închide"
+  },
+  "shortcutParentChild": {
+    "message": "Părinte / copil"
+  },
+  "shortcutSibling": {
+    "message": "Element frate"
+  },
+  "shortcutCopySelector": {
+    "message": "Copiază selectorul"
+  },
+  "shortcutCopyXpath": {
+    "message": "Copiază XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Copiază locatorul Playwright"
+  },
+  "shortcutCopyHtml": {
+    "message": "Copiază HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Copiază textul"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "Se verifică pagina"
+  },
+  "editorHint": {
+    "message": "Apăsați <kbd class=\"kd-chip kd-font-mono\">O</kbd> pe un element cu locație sursă pentru a-l deschide în editor."
+  },
+  "editorUnavailable": {
+    "message": "Indisponibil pe această pagină"
+  },
+  "editorSources": {
+    "message": "Server dev $SERVER$, surse disponibile",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "Server dev $SERVER$, fără surse aici",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Se salvează automat și se aplică imediat filelor deschise."
+  },
+  "settingsEditing": {
+    "message": "Editare"
+  },
+  "settingAllowEdit": {
+    "message": "Permite editarea"
+  },
+  "settingAllowEditHint": {
+    "message": "Dați clic pe valorile dintr-un panou fixat pentru a schimba stiluri, atribute și text în pagină"
+  },
+  "settingsPopup": {
+    "message": "Popup"
+  },
+  "settingEditorStatus": {
+    "message": "Disponibilitatea editorului"
+  },
+  "settingEditorStatusHint": {
+    "message": "Dacă pagina poate deschide surse în editor"
+  },
+  "settingsOverlay": {
+    "message": "Suprapunere"
+  },
+  "settingBoxModel": {
+    "message": "Evidențiere box model"
+  },
+  "settingBoxModelHint": {
+    "message": "Benzi pentru margin, border, padding și gap"
+  },
+  "settingsSections": {
+    "message": "Secțiunile panoului"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Poziție, dimensiune, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Evenimente"
+  },
+  "settingEventsHint": {
+    "message": "Listeneri, handleri inline și props de framework"
+  },
+  "sectionStyles": {
+    "message": "Stiluri"
+  },
+  "settingStylesHint": {
+    "message": "Valorile calculate care contează"
+  },
+  "sectionAccessibility": {
+    "message": "Accesibilitate"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rol, nume accesibil, focalizabilitate, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Atribute"
+  },
+  "settingAttributesHint": {
+    "message": "Toate atributele elementului"
+  },
+  "sectionMedia": {
+    "message": "Media"
+  },
+  "settingMediaHint": {
+    "message": "Detalii despre imagine, video, canvas și SVG"
+  },
+  "sectionContext": {
+    "message": "Context"
+  },
+  "settingContextHint": {
+    "message": "Fișier sursă, framework, strămoși și text"
+  },
+  "sectionSelectors": {
+    "message": "Selectori"
+  },
+  "settingSelectorsHint": {
+    "message": "Locatori CSS, XPath și Playwright"
+  },
+  "settingsReset": {
+    "message": "Resetează la valorile implicite"
+  },
+  "infoIntro": {
+    "message": "QuickInspect arată ce trebuie să știți despre orice element fără a deschide DevTools: <strong>selectorii</strong>, <strong>box model-ul</strong>, <strong>stilurile calculate</strong>, <strong>accesibilitatea</strong>, <strong>atributele</strong>, <strong>evenimentele</strong> și <strong>fișierul sursă</strong> din care provine."
+  },
+  "infoStep1": {
+    "message": "Țineți <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> apăsat și treceți peste un element pentru a-l inspecta; eliberați pentru a readuce pagina. Alegeți altă tastă la <strong>Tasta de ținut apăsată</strong> pe ecranul principal."
+  },
+  "infoStep2": {
+    "message": "<strong>Dați clic</strong> cât timp țineți apăsat pentru a fixa panoul, apoi trageți-l de antet. Folosiți <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> pentru părinte sau copil și <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> pentru elementele frate."
+  },
+  "infoStep3": {
+    "message": "Apăsați <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> pentru a copia selectorul, XPath, locatorul Playwright, HTML sau textul."
+  },
+  "infoStep4": {
+    "message": "Într-un panou fixat, <strong>dați clic pe orice valoare</strong> pentru a edita stiluri, box, atribute sau text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplică, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anulează, iar <strong>reset</strong> anulează tot. Modificările rămân în pagină până la reîncărcare."
+  },
+  "infoStep5": {
+    "message": "Pe un server de dezvoltare <strong>Vite</strong> sau <strong>Next.js</strong>, apăsați <kbd class=\"kd-chip kd-font-mono\">O</kbd> pentru a deschide sursa elementului în editor."
+  },
+  "infoGithub": {
+    "message": "Depozit GitHub"
+  },
+  "infoReport": {
+    "message": "Raportează o problemă / idee"
+  },
+  "infoCreatedBy": {
+    "message": "Creat de"
+  },
+  "footerSections": {
+    "message": "Selectori · Box · Stiluri · Accesibilitate · Evenimente"
+  },
+  "panelPinned": {
+    "message": "fixat"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Anulează toate modificările acestui element"
+  },
+  "panelCopy": {
+    "message": "copiază"
+  },
+  "panelOpen": {
+    "message": "deschide"
+  },
+  "panelRemoveAttribute": {
+    "message": "Elimină $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "valoare"
+  },
+  "boxHint": {
+    "message": "sus dreapta jos stânga"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: sus dreapta jos stânga",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rând coloană"
+  },
+  "stylesHint": {
+    "message": "calculate"
+  },
+  "shadowHostHint": {
+    "message": "în shadow root-ul lui $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ în plus",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_few": {
+    "message": "+$COUNT$ în plus",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ în plus",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_few": {
+    "message": "$COUNT$ listeneri",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ de listeneri",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ copil",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_few": {
+    "message": "$COUNT$ copii",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ de copii",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ potrivire",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_few": {
+    "message": "$COUNT$ potriviri",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ de potriviri",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unic"
+  },
+  "noListeners": {
+    "message": "niciun listener pe acest element"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anonimă"
+  },
+  "rowPosition": {
+    "message": "Poziție"
+  },
+  "rowSize": {
+    "message": "Dimensiune"
+  },
+  "rowRole": {
+    "message": "Rol"
+  },
+  "rowName": {
+    "message": "Nume"
+  },
+  "rowFocusable": {
+    "message": "Focalizabil"
+  },
+  "rowSource": {
+    "message": "Sursă"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Componentă"
+  },
+  "rowText": {
+    "message": "Text"
+  },
+  "rowKind": {
+    "message": "Tip"
+  },
+  "rowNatural": {
+    "message": "Naturală"
+  },
+  "rowDuration": {
+    "message": "Durată"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Rol"
+  },
+  "strategyLabel": {
+    "message": "Etichetă"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Text alt"
+  },
+  "strategyTitle": {
+    "message": "Titlu"
+  },
+  "strategyText": {
+    "message": "Text"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "da"
+  },
+  "valueNo": {
+    "message": "nu"
+  },
+  "valueNone": {
+    "message": "niciunul"
+  },
+  "valueEmpty": {
+    "message": "gol"
+  },
+  "mediaLive": {
+    "message": "live"
+  },
+  "addStyle": {
+    "message": "+ stil"
+  },
+  "addStylePlaceholder": {
+    "message": "proprietate: valoare"
+  },
+  "addAttribute": {
+    "message": "+ atribut"
+  },
+  "addAttributePlaceholder": {
+    "message": "nume=\"valoare\""
+  },
+  "kbdDrag": {
+    "message": "trage"
+  },
+  "kbdClickValue": {
+    "message": "clic pe valoare"
+  },
+  "footPin": {
+    "message": "fixează"
+  },
+  "footUnpin": {
+    "message": "eliberează"
+  },
+  "footMove": {
+    "message": "mută"
+  },
+  "footEdit": {
+    "message": "editează"
+  },
+  "footClose": {
+    "message": "închide"
+  },
+  "footParentChild": {
+    "message": "părinte / copil"
+  },
+  "footSibling": {
+    "message": "frate"
+  },
+  "footOpenSource": {
+    "message": "deschide sursa"
+  },
+  "actionSelector": {
+    "message": "selector"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "text"
+  },
+  "toastEditsReset": {
+    "message": "Modificări anulate"
+  },
+  "toastNoSource": {
+    "message": "Nicio locație sursă pentru acest element"
+  },
+  "toastNoDevServer": {
+    "message": "Niciun server de dezvoltare pentru a deschide editorul"
+  },
+  "toastOpened": {
+    "message": "Deschis în editor"
+  },
+  "toastNotOpened": {
+    "message": "Editorul nu s-a deschis"
+  },
+  "toastNothingToCopy": {
+    "message": "Nimic de copiat: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Copiat: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Nu s-a putut copia: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

@@ -3,9 +3,11 @@ import pkg from './package.json' with { type: 'json' };
 
 export default defineManifest({
   manifest_version: 3,
-  name: 'QuickInspect',
+  // ? __MSG_ keys resolve from _locales/<locale>/messages.json, see https://developer.chrome.com/docs/extensions/reference/api/i18n
+  name: '__MSG_appName__',
   version: pkg.version,
-  description: pkg.description,
+  description: '__MSG_appDescription__',
+  default_locale: 'en',
   // ? content_scripts with world: 'MAIN' need Chrome 111, and the bridge depends on it
   minimum_chrome_version: '111',
   icons: {
@@ -20,7 +22,7 @@ export default defineManifest({
       32: 'public/icons/icon-32.png',
     },
     default_popup: 'src/popup/index.html',
-    default_title: 'QuickInspect',
+    default_title: '__MSG_appName__',
   },
   content_scripts: [
     {

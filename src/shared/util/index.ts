@@ -4,6 +4,7 @@ export * from './dom/dom';
 export * from './events/events';
 export * from './format/format';
 export * from './gaps/gaps';
+export * from './i18n/i18n';
 export * from './inspect/inspect';
 export * from './locator/locator';
 export * from './logger/logger';

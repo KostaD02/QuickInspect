@@ -9,6 +9,11 @@ If you've noticed a bug or have a feature request, make one! It's generally best
 ## Project structure
 
 ```
+_locales/
+└── <code>/messages.json    # UI strings for one language; en carries the descriptions for translators
+scripts/
+├── i18n-report.ts          # pnpm i18n:report entry
+└── i18n/                   # Locale checks and the coverage report behind it
 src/
 ├── content/
 │   ├── main.ts             # Content script entry: loads settings, wires the inspector
@@ -46,6 +51,7 @@ src/
         ├── source/         # Source markers, dev server detection and open-in-editor
         ├── sourcemap/      # Maps Vite and Next.js client positions back to the original file
         ├── format/         # px, hex colors, truncation
+        ├── i18n/           # t(), plural(), localizePage() and the text direction
         ├── settings/       # Load, save, watch, normalise
         ├── clipboard/      # Clipboard writes
         └── logger/         # Prefixed console logging
@@ -108,8 +114,26 @@ We use formatting and linting rules to keep the codebase clean. Please ensure yo
   pnpm test
   ```
   _(Or `pnpm test:watch` for watch mode, and `pnpm test:coverage` for the 80% coverage threshold CI enforces)_
+- To check the locales and print the coverage table:
+  ```bash
+  pnpm i18n:report
+  ```
 
 Husky runs the format check, linter and tests before every commit.
+
+## Translations
+
+All user-facing text lives in `_locales/<code>/messages.json` and reaches the UI through `chrome.i18n`: `data-i18n` attributes in the popup HTML (`data-i18n-html` for markup, `data-i18n-attr` for attributes), filled by `localizePage()` before the controller runs, and `t()` / `plural()` from `src/shared/util` in TypeScript. English is the default locale and the only file with `description` fields, which tell translators where a string appears. The main-world bridge has no `chrome.i18n`, so it only reports data (function names, flags, framework names) and the panel words it in the isolated world.
+
+To add or fix a language:
+
+1. Copy `_locales/en/messages.json` to `_locales/<code>/messages.json`, using one of Chrome's [supported locale codes](https://developer.chrome.com/docs/extensions/reference/api/i18n#locales).
+2. Translate the `message` values. Keep the `$PLACEHOLDER$` tokens and the `<strong>` and `<kbd>` markup as they are, including the key letters inside `<kbd>`, and keep `appName` within 45 and `appDescription` within 132 characters, the limits Chrome puts on the manifest. Tag names, CSS property names and pixel values are not messages and stay untranslated.
+3. Messages that count things come in plural forms (`listeners_one`, `listeners_other`). Provide every form your language uses according to the [CLDR plural rules](https://cldr.unicode.org/index/cldr-spec/plural-rules): `other` is always required, Polish or Russian also need `few` and `many`, Arabic needs all six.
+4. Run `pnpm i18n:report`. It prints the coverage table, writes `tmp/i18n-report.md` and fails on missing plural forms, stray placeholders or markup that differs from English. CI runs the same script on every pull request and keeps the table in a sticky comment.
+5. Load the unpacked build in a browser whose UI language is the one you translated, or start Chrome with `--lang=<code>`, to see the result in place. `pnpm test` also checks every locale against English.
+
+Right-to-left languages (Arabic, Hebrew, Persian) flip the popup through `dir="rtl"` on the document and the panel through `dir` on its root element inside the closed shadow tree, both set from Chrome's `@@bidi_dir` message with a fallback on the UI language. `@kostad/brand` mirrors its components from that attribute on its own, so no RTL rules live in this repository; prefer logical properties (`margin-inline-start`, `text-align: end`) in any CSS added here. Selectors, code and page text sit in `<bdi>` elements inside the panel so they keep their own direction.
 
 ## Pull Requests
 

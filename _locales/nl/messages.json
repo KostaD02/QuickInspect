@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Houd Alt ingedrukt en beweeg over een element voor selectors, box model, stijlen, toegankelijkheid en events zonder DevTools."
+  },
+  "appTagline": {
+    "message": "Elementinspectie bij hover"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect-instellingen"
+  },
+  "settingsOpenTitle": {
+    "message": "Instellingen"
+  },
+  "settingsCloseLabel": {
+    "message": "Instellingen sluiten"
+  },
+  "closeTitle": {
+    "message": "Sluiten"
+  },
+  "infoOpenLabel": {
+    "message": "Over QuickInspect"
+  },
+  "infoCloseLabel": {
+    "message": "Info sluiten"
+  },
+  "enabledToggleLabel": {
+    "message": "QuickInspect in- of uitschakelen"
+  },
+  "holdKeyLabel": {
+    "message": "Vasthoudtoets"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Houd de toets ingedrukt en beweeg over een element. Laat los om de pagina te herstellen."
+  },
+  "whileHoldingLabel": {
+    "message": "Tijdens het vasthouden"
+  },
+  "kbdClick": {
+    "message": "klik"
+  },
+  "shortcutPin": {
+    "message": "Vastzetten"
+  },
+  "shortcutClose": {
+    "message": "Sluiten"
+  },
+  "shortcutParentChild": {
+    "message": "Ouder / kind"
+  },
+  "shortcutSibling": {
+    "message": "Buurelement"
+  },
+  "shortcutCopySelector": {
+    "message": "Selector kopiëren"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath kopiëren"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright-locator kopiëren"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML kopiëren"
+  },
+  "shortcutCopyText": {
+    "message": "Tekst kopiëren"
+  },
+  "editorLabel": {
+    "message": "Editor"
+  },
+  "editorChecking": {
+    "message": "Deze pagina wordt gecontroleerd"
+  },
+  "editorHint": {
+    "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">O</kbd> bij een element met een bronlocatie om het in je editor te openen."
+  },
+  "editorUnavailable": {
+    "message": "Niet beschikbaar op deze pagina"
+  },
+  "editorSources": {
+    "message": "$SERVER$-devserver, elementbronnen beschikbaar",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$-devserver, hier geen elementbronnen",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Wordt automatisch opgeslagen en direct toegepast op open tabbladen."
+  },
+  "settingsEditing": {
+    "message": "Bewerken"
+  },
+  "settingAllowEdit": {
+    "message": "Bewerken toestaan"
+  },
+  "settingAllowEditHint": {
+    "message": "Klik op waarden in een vastgezet paneel om stijlen, attributen en tekst op de pagina te wijzigen"
+  },
+  "settingsPopup": {
+    "message": "Pop-up"
+  },
+  "settingEditorStatus": {
+    "message": "Beschikbaarheid editor"
+  },
+  "settingEditorStatusHint": {
+    "message": "Of deze pagina bronnen in je editor kan openen"
+  },
+  "settingsOverlay": {
+    "message": "Overlay"
+  },
+  "settingBoxModel": {
+    "message": "Box model markeren"
+  },
+  "settingBoxModelHint": {
+    "message": "Banden voor margin, border, padding en gap"
+  },
+  "settingsSections": {
+    "message": "Paneelsecties"
+  },
+  "sectionBox": {
+    "message": "Box"
+  },
+  "settingBoxHint": {
+    "message": "Positie, grootte, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Events"
+  },
+  "settingEventsHint": {
+    "message": "Listeners, inline handlers en framework-props"
+  },
+  "sectionStyles": {
+    "message": "Stijlen"
+  },
+  "settingStylesHint": {
+    "message": "De berekende waarden die ertoe doen"
+  },
+  "sectionAccessibility": {
+    "message": "Toegankelijkheid"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rol, toegankelijke naam, focusbaarheid, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Attributen"
+  },
+  "settingAttributesHint": {
+    "message": "Elk attribuut van het element"
+  },
+  "sectionMedia": {
+    "message": "Media"
+  },
+  "settingMediaHint": {
+    "message": "Details van afbeelding, video, canvas en SVG"
+  },
+  "sectionContext": {
+    "message": "Context"
+  },
+  "settingContextHint": {
+    "message": "Bronbestand, framework, voorouders en tekst"
+  },
+  "sectionSelectors": {
+    "message": "Selectors"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- en Playwright-locators"
+  },
+  "settingsReset": {
+    "message": "Standaardwaarden herstellen"
+  },
+  "infoIntro": {
+    "message": "QuickInspect toont wat je over een element wilt weten zonder DevTools te openen: <strong>selectors</strong>, het <strong>box model</strong>, <strong>berekende stijlen</strong>, <strong>toegankelijkheid</strong>, <strong>attributen</strong>, <strong>events</strong> en het <strong>bronbestand</strong> waar het vandaan komt."
+  },
+  "infoStep1": {
+    "message": "Houd <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> ingedrukt en beweeg over een element om het te inspecteren; laat los om de pagina te herstellen. Kies een andere toets onder <strong>Vasthoudtoets</strong> op het hoofdscherm."
+  },
+  "infoStep2": {
+    "message": "<strong>Klik</strong> tijdens het vasthouden om het paneel vast te zetten en sleep het daarna aan de kop. Gebruik <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> voor ouder of kind en <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> voor buurelementen."
+  },
+  "infoStep3": {
+    "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> om de selector, XPath, Playwright-locator, HTML of tekst te kopiëren."
+  },
+  "infoStep4": {
+    "message": "<strong>Klik op een waarde</strong> in een vastgezet paneel om stijlen, box, attributen of tekst te bewerken. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> past toe, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annuleert en <strong>reset</strong> maakt alles ongedaan. Bewerkingen blijven in de pagina tot je herlaadt."
+  },
+  "infoStep5": {
+    "message": "Druk op een <strong>Vite</strong>- of <strong>Next.js</strong>-devserver op <kbd class=\"kd-chip kd-font-mono\">O</kbd> om de bron van het element in je editor te openen."
+  },
+  "infoGithub": {
+    "message": "GitHub-repository"
+  },
+  "infoReport": {
+    "message": "Probleem / functie melden"
+  },
+  "infoCreatedBy": {
+    "message": "Gemaakt door"
+  },
+  "footerSections": {
+    "message": "Selectors · Box · Stijlen · Toegankelijkheid · Events"
+  },
+  "panelPinned": {
+    "message": "vastgezet"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Alle bewerkingen van dit element ongedaan maken"
+  },
+  "panelCopy": {
+    "message": "kopieer"
+  },
+  "panelOpen": {
+    "message": "open"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ verwijderen",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "waarde"
+  },
+  "boxHint": {
+    "message": "boven rechts onder links"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: boven rechts onder links",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rij kolom"
+  },
+  "stylesHint": {
+    "message": "berekend"
+  },
+  "shadowHostHint": {
+    "message": "in de shadow root van $HOST$",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ meer",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ meer",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ kind",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ kinderen",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ match",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ matches",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "uniek"
+  },
+  "noListeners": {
+    "message": "geen listeners op dit element"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "anoniem"
+  },
+  "rowPosition": {
+    "message": "Positie"
+  },
+  "rowSize": {
+    "message": "Grootte"
+  },
+  "rowRole": {
+    "message": "Rol"
+  },
+  "rowName": {
+    "message": "Naam"
+  },
+  "rowFocusable": {
+    "message": "Focusbaar"
+  },
+  "rowSource": {
+    "message": "Bron"
+  },
+  "rowFramework": {
+    "message": "Framework"
+  },
+  "rowComponent": {
+    "message": "Component"
+  },
+  "rowText": {
+    "message": "Tekst"
+  },
+  "rowKind": {
+    "message": "Soort"
+  },
+  "rowNatural": {
+    "message": "Natuurlijk"
+  },
+  "rowDuration": {
+    "message": "Duur"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test-id"
+  },
+  "strategyRole": {
+    "message": "Rol"
+  },
+  "strategyLabel": {
+    "message": "Label"
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder"
+  },
+  "strategyAltText": {
+    "message": "Alt-tekst"
+  },
+  "strategyTitle": {
+    "message": "Titel"
+  },
+  "strategyText": {
+    "message": "Tekst"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "ja"
+  },
+  "valueNo": {
+    "message": "nee"
+  },
+  "valueNone": {
+    "message": "geen"
+  },
+  "valueEmpty": {
+    "message": "leeg"
+  },
+  "mediaLive": {
+    "message": "live"
+  },
+  "addStyle": {
+    "message": "+ stijl"
+  },
+  "addStylePlaceholder": {
+    "message": "eigenschap: waarde"
+  },
+  "addAttribute": {
+    "message": "+ attribuut"
+  },
+  "addAttributePlaceholder": {
+    "message": "naam=\"waarde\""
+  },
+  "kbdDrag": {
+    "message": "sleep"
+  },
+  "kbdClickValue": {
+    "message": "klik waarde"
+  },
+  "footPin": {
+    "message": "vastzetten"
+  },
+  "footUnpin": {
+    "message": "losmaken"
+  },
+  "footMove": {
+    "message": "verplaatsen"
+  },
+  "footEdit": {
+    "message": "bewerken"
+  },
+  "footClose": {
+    "message": "sluiten"
+  },
+  "footParentChild": {
+    "message": "ouder / kind"
+  },
+  "footSibling": {
+    "message": "buurelement"
+  },
+  "footOpenSource": {
+    "message": "bron openen"
+  },
+  "actionSelector": {
+    "message": "selector"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "locator"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "tekst"
+  },
+  "toastEditsReset": {
+    "message": "Bewerkingen hersteld"
+  },
+  "toastNoSource": {
+    "message": "Geen bronlocatie voor dit element"
+  },
+  "toastNoDevServer": {
+    "message": "Geen devserver om de editor te openen"
+  },
+  "toastOpened": {
+    "message": "Geopend in editor"
+  },
+  "toastNotOpened": {
+    "message": "Editor is niet geopend"
+  },
+  "toastNothingToCopy": {
+    "message": "Niets te kopiëren voor $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$ gekopieerd",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kon $WHAT$ niet kopiëren",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

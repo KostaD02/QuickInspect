@@ -1,0 +1,542 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Pidä Alt pohjassa ja osoita elementtiä: valitsimet, laatikkomalli, tyylit, saavutettavuus ja tapahtumat ilman DevToolsia."
+  },
+  "appTagline": {
+    "message": "Elementtitarkastin osoittamalla"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspectin asetukset"
+  },
+  "settingsOpenTitle": {
+    "message": "Asetukset"
+  },
+  "settingsCloseLabel": {
+    "message": "Sulje asetukset"
+  },
+  "closeTitle": {
+    "message": "Sulje"
+  },
+  "infoOpenLabel": {
+    "message": "Tietoja QuickInspectistä"
+  },
+  "infoCloseLabel": {
+    "message": "Sulje tiedot"
+  },
+  "enabledToggleLabel": {
+    "message": "Ota QuickInspect käyttöön tai pois käytöstä"
+  },
+  "holdKeyLabel": {
+    "message": "Pohjassa pidettävä näppäin"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Vaihto"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "Pidä sitä pohjassa ja osoita elementtiä. Vapauta palauttaaksesi sivun."
+  },
+  "whileHoldingLabel": {
+    "message": "Näppäintä pidettäessä"
+  },
+  "kbdClick": {
+    "message": "klikkaus"
+  },
+  "shortcutPin": {
+    "message": "Kiinnitä"
+  },
+  "shortcutClose": {
+    "message": "Sulje"
+  },
+  "shortcutParentChild": {
+    "message": "Emo / lapsi"
+  },
+  "shortcutSibling": {
+    "message": "Sisar"
+  },
+  "shortcutCopySelector": {
+    "message": "Kopioi CSS-valitsin"
+  },
+  "shortcutCopyXpath": {
+    "message": "Kopioi XPath"
+  },
+  "shortcutCopyLocator": {
+    "message": "Kopioi Playwright-paikannin"
+  },
+  "shortcutCopyHtml": {
+    "message": "Kopioi HTML"
+  },
+  "shortcutCopyText": {
+    "message": "Kopioi teksti"
+  },
+  "editorLabel": {
+    "message": "Editori"
+  },
+  "editorChecking": {
+    "message": "Tarkistetaan sivua"
+  },
+  "editorHint": {
+    "message": "Paina <kbd class=\"kd-chip kd-font-mono\">O</kbd> elementin päällä, jolla on lähdesijainti, avataksesi sen editorissa."
+  },
+  "editorUnavailable": {
+    "message": "Ei saatavilla tällä sivulla"
+  },
+  "editorSources": {
+    "message": "$SERVER$-kehityspalvelin, lähteet saatavilla",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$-kehityspalvelin, ei lähteitä",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Tallennetaan automaattisesti ja otetaan heti käyttöön avoimissa välilehdissä."
+  },
+  "settingsEditing": {
+    "message": "Muokkaus"
+  },
+  "settingAllowEdit": {
+    "message": "Salli muokkaukset"
+  },
+  "settingAllowEditHint": {
+    "message": "Klikkaa kiinnitetyn paneelin arvoja muuttaaksesi sivun tyylejä, attribuutteja ja tekstiä"
+  },
+  "settingsPopup": {
+    "message": "Ponnahdusikkuna"
+  },
+  "settingEditorStatus": {
+    "message": "Editorin saatavuus"
+  },
+  "settingEditorStatusHint": {
+    "message": "Voiko tämä sivu avata lähteitä editorissasi"
+  },
+  "settingsOverlay": {
+    "message": "Korostus"
+  },
+  "settingBoxModel": {
+    "message": "Laatikkomallin korostus"
+  },
+  "settingBoxModelHint": {
+    "message": "Margin-, border-, padding- ja gap-alueet"
+  },
+  "settingsSections": {
+    "message": "Paneelin osiot"
+  },
+  "sectionBox": {
+    "message": "Laatikko"
+  },
+  "settingBoxHint": {
+    "message": "Sijainti, koko, margin, padding, border, gap"
+  },
+  "sectionEvents": {
+    "message": "Tapahtumat"
+  },
+  "settingEventsHint": {
+    "message": "Kuuntelijat, inline-käsittelijät ja kehyksen propsit"
+  },
+  "sectionStyles": {
+    "message": "Tyylit"
+  },
+  "settingStylesHint": {
+    "message": "Lasketut arvot, joilla on merkitystä"
+  },
+  "sectionAccessibility": {
+    "message": "Saavutettavuus"
+  },
+  "settingAccessibilityHint": {
+    "message": "Rooli, saavutettava nimi, kohdistettavuus, ARIA"
+  },
+  "sectionAttributes": {
+    "message": "Attribuutit"
+  },
+  "settingAttributesHint": {
+    "message": "Elementin kaikki attribuutit"
+  },
+  "sectionMedia": {
+    "message": "Media"
+  },
+  "settingMediaHint": {
+    "message": "Kuvan, videon, canvasin ja SVG:n tiedot"
+  },
+  "sectionContext": {
+    "message": "Konteksti"
+  },
+  "settingContextHint": {
+    "message": "Lähdetiedosto, kehys, edeltäjät ja teksti"
+  },
+  "sectionSelectors": {
+    "message": "Valitsimet"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS-, XPath- ja Playwright-paikantimet"
+  },
+  "settingsReset": {
+    "message": "Palauta oletukset"
+  },
+  "infoIntro": {
+    "message": "QuickInspect näyttää, mitä elementistä pitää tietää, avaamatta DevToolsia: <strong>valitsimet</strong>, <strong>laatikkomallin</strong>, <strong>lasketut tyylit</strong>, <strong>saavutettavuuden</strong>, <strong>attribuutit</strong>, <strong>tapahtumat</strong> ja <strong>lähdetiedoston</strong>, josta se tulee."
+  },
+  "infoStep1": {
+    "message": "Pidä <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> pohjassa ja osoita elementtiä tarkastellaksesi sitä; vapauta palauttaaksesi sivun. Valitse toinen näppäin päänäkymän kohdasta <strong>Pohjassa pidettävä näppäin</strong>."
+  },
+  "infoStep2": {
+    "message": "<strong>Klikkaa</strong> näppäintä pitäen kiinnittääksesi paneelin ja siirrä sitä sitten otsikosta vetämällä. <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> siirtyvät vanhempaan tai lapseen, <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> sisarelementteihin."
+  },
+  "infoStep3": {
+    "message": "Paina <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> kopioidaksesi valitsimen, XPathin, Playwright-paikantimen, HTML:n tai tekstin."
+  },
+  "infoStep4": {
+    "message": "Kiinnitetyssä paneelissa <strong>klikkaa mitä tahansa arvoa</strong> muokataksesi tyylejä, laatikkoa, attribuutteja tai tekstiä. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ottaa käyttöön, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> peruu ja <strong>reset</strong> kumoaa kaiken. Muokkaukset säilyvät sivulla uudelleenlataukseen asti."
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong>- tai <strong>Next.js</strong>-kehityspalvelimella paina <kbd class=\"kd-chip kd-font-mono\">O</kbd> avataksesi elementin lähteen editorissa."
+  },
+  "infoGithub": {
+    "message": "GitHub-tietovarasto"
+  },
+  "infoReport": {
+    "message": "Ilmoita virheestä / toiveesta"
+  },
+  "infoCreatedBy": {
+    "message": "Tekijä:"
+  },
+  "footerSections": {
+    "message": "Valitsimet · Laatikko · Tyylit · Saavutettavuus · Tapahtumat"
+  },
+  "panelPinned": {
+    "message": "kiinnitetty"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "Kumoa kaikki tämän elementin muokkaukset"
+  },
+  "panelCopy": {
+    "message": "kopioi"
+  },
+  "panelOpen": {
+    "message": "avaa"
+  },
+  "panelRemoveAttribute": {
+    "message": "Poista $NAME$",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "arvo"
+  },
+  "boxHint": {
+    "message": "ylä oikea ala vasen"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: ylä oikea ala vasen",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: rivi sarake"
+  },
+  "stylesHint": {
+    "message": "lasketut"
+  },
+  "shadowHostHint": {
+    "message": "elementin $HOST$ shadow rootissa",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ lisää",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ lisää",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ kuuntelija",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ kuuntelijaa",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ lapsi",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ lasta",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ osuma",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ osumaa",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "yksilöllinen"
+  },
+  "noListeners": {
+    "message": "tällä elementillä ei ole kuuntelijoita"
+  },
+  "eventOriginInline": {
+    "message": "inline"
+  },
+  "eventAnonymous": {
+    "message": "nimetön"
+  },
+  "rowPosition": {
+    "message": "Sijainti"
+  },
+  "rowSize": {
+    "message": "Koko"
+  },
+  "rowRole": {
+    "message": "Rooli"
+  },
+  "rowName": {
+    "message": "Nimi"
+  },
+  "rowFocusable": {
+    "message": "Kohdistettava"
+  },
+  "rowSource": {
+    "message": "Lähde"
+  },
+  "rowFramework": {
+    "message": "Kehys"
+  },
+  "rowComponent": {
+    "message": "Komponentti"
+  },
+  "rowText": {
+    "message": "Teksti"
+  },
+  "rowKind": {
+    "message": "Laji"
+  },
+  "rowNatural": {
+    "message": "Alkuperäinen koko"
+  },
+  "rowDuration": {
+    "message": "Kesto"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "Rooli"
+  },
+  "strategyLabel": {
+    "message": "Nimiö"
+  },
+  "strategyPlaceholder": {
+    "message": "Paikkamerkki"
+  },
+  "strategyAltText": {
+    "message": "Alt-teksti"
+  },
+  "strategyTitle": {
+    "message": "Otsikko"
+  },
+  "strategyText": {
+    "message": "Teksti"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "kyllä"
+  },
+  "valueNo": {
+    "message": "ei"
+  },
+  "valueNone": {
+    "message": "ei mitään"
+  },
+  "valueEmpty": {
+    "message": "tyhjä"
+  },
+  "mediaLive": {
+    "message": "suora"
+  },
+  "addStyle": {
+    "message": "+ tyyli"
+  },
+  "addStylePlaceholder": {
+    "message": "ominaisuus: arvo"
+  },
+  "addAttribute": {
+    "message": "+ attribuutti"
+  },
+  "addAttributePlaceholder": {
+    "message": "nimi=\"arvo\""
+  },
+  "kbdDrag": {
+    "message": "vedä"
+  },
+  "kbdClickValue": {
+    "message": "klikkaa arvoa"
+  },
+  "footPin": {
+    "message": "kiinnitä"
+  },
+  "footUnpin": {
+    "message": "irrota"
+  },
+  "footMove": {
+    "message": "siirrä"
+  },
+  "footEdit": {
+    "message": "muokkaa"
+  },
+  "footClose": {
+    "message": "sulje"
+  },
+  "footParentChild": {
+    "message": "vanhempi / lapsi"
+  },
+  "footSibling": {
+    "message": "sisar"
+  },
+  "footOpenSource": {
+    "message": "avaa lähde"
+  },
+  "actionSelector": {
+    "message": "valitsin"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "paikannin"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "teksti"
+  },
+  "toastEditsReset": {
+    "message": "Muokkaukset kumottu"
+  },
+  "toastNoSource": {
+    "message": "Tällä elementillä ei ole lähdesijaintia"
+  },
+  "toastNoDevServer": {
+    "message": "Ei kehityspalvelinta editorin avaamiseen"
+  },
+  "toastOpened": {
+    "message": "Avattu editorissa"
+  },
+  "toastNotOpened": {
+    "message": "Editori ei avautunut"
+  },
+  "toastNothingToCopy": {
+    "message": "Ei kopioitavaa: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Kopioitu: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Kopiointi epäonnistui: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

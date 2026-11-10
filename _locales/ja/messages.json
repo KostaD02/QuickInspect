@@ -1,0 +1,506 @@
+{
+  "appName": {
+    "message": "QuickInspect"
+  },
+  "appDescription": {
+    "message": "Alt を押しながら要素にカーソルを合わせると、DevTools を開かずにセレクター、ボックスモデル、スタイル、アクセシビリティ、イベントを確認できます。"
+  },
+  "appTagline": {
+    "message": "ホバーで要素を検査"
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect の設定"
+  },
+  "settingsOpenTitle": {
+    "message": "設定"
+  },
+  "settingsCloseLabel": {
+    "message": "設定を閉じる"
+  },
+  "closeTitle": {
+    "message": "閉じる"
+  },
+  "infoOpenLabel": {
+    "message": "QuickInspect について"
+  },
+  "infoCloseLabel": {
+    "message": "情報を閉じる"
+  },
+  "enabledToggleLabel": {
+    "message": "QuickInspect のオン / オフ"
+  },
+  "holdKeyLabel": {
+    "message": "押し続けるキー"
+  },
+  "modifierAlt": {
+    "message": "Alt / Option"
+  },
+  "modifierControl": {
+    "message": "Ctrl"
+  },
+  "modifierShift": {
+    "message": "Shift"
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win"
+  },
+  "holdKeyHint": {
+    "message": "キーを押しながら要素にカーソルを合わせます。離すとページは元に戻ります。"
+  },
+  "whileHoldingLabel": {
+    "message": "押している間"
+  },
+  "kbdClick": {
+    "message": "クリック"
+  },
+  "shortcutPin": {
+    "message": "パネルを固定"
+  },
+  "shortcutClose": {
+    "message": "閉じる"
+  },
+  "shortcutParentChild": {
+    "message": "親 / 子"
+  },
+  "shortcutSibling": {
+    "message": "兄弟要素"
+  },
+  "shortcutCopySelector": {
+    "message": "CSS セレクターをコピー"
+  },
+  "shortcutCopyXpath": {
+    "message": "XPath をコピー"
+  },
+  "shortcutCopyLocator": {
+    "message": "Playwright ロケーターをコピー"
+  },
+  "shortcutCopyHtml": {
+    "message": "HTML をコピー"
+  },
+  "shortcutCopyText": {
+    "message": "テキストをコピー"
+  },
+  "editorLabel": {
+    "message": "エディター"
+  },
+  "editorChecking": {
+    "message": "このページを確認中"
+  },
+  "editorHint": {
+    "message": "ソースの場所がわかる要素の上で <kbd class=\"kd-chip kd-font-mono\">O</kbd> を押すと、エディターで開きます。"
+  },
+  "editorUnavailable": {
+    "message": "このページでは利用できません"
+  },
+  "editorSources": {
+    "message": "$SERVER$ 開発サーバー、要素のソースを利用可能",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ 開発サーバー、要素のソースはありません",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "自動的に保存され、開いているタブにすぐ適用されます。"
+  },
+  "settingsEditing": {
+    "message": "編集"
+  },
+  "settingAllowEdit": {
+    "message": "編集を許可"
+  },
+  "settingAllowEditHint": {
+    "message": "固定したパネルの値をクリックして、ページのスタイル、属性、テキストを変更します"
+  },
+  "settingsPopup": {
+    "message": "ポップアップ"
+  },
+  "settingEditorStatus": {
+    "message": "エディターの利用可否"
+  },
+  "settingEditorStatusHint": {
+    "message": "このページがソースをエディターで開けるかどうか"
+  },
+  "settingsOverlay": {
+    "message": "オーバーレイ"
+  },
+  "settingBoxModel": {
+    "message": "ボックスモデルの強調"
+  },
+  "settingBoxModelHint": {
+    "message": "margin、border、padding、gap の帯"
+  },
+  "settingsSections": {
+    "message": "パネルのセクション"
+  },
+  "sectionBox": {
+    "message": "ボックス"
+  },
+  "settingBoxHint": {
+    "message": "位置、サイズ、margin、padding、border、gap"
+  },
+  "sectionEvents": {
+    "message": "イベント"
+  },
+  "settingEventsHint": {
+    "message": "リスナー、インラインハンドラー、フレームワークの props"
+  },
+  "sectionStyles": {
+    "message": "スタイル"
+  },
+  "settingStylesHint": {
+    "message": "重要な算出値"
+  },
+  "sectionAccessibility": {
+    "message": "アクセシビリティ"
+  },
+  "settingAccessibilityHint": {
+    "message": "ロール、アクセシブルな名前、フォーカス可否、ARIA"
+  },
+  "sectionAttributes": {
+    "message": "属性"
+  },
+  "settingAttributesHint": {
+    "message": "要素のすべての属性"
+  },
+  "sectionMedia": {
+    "message": "メディア"
+  },
+  "settingMediaHint": {
+    "message": "画像、動画、canvas、SVG の詳細"
+  },
+  "sectionContext": {
+    "message": "コンテキスト"
+  },
+  "settingContextHint": {
+    "message": "ソースファイル、フレームワーク、祖先、テキスト"
+  },
+  "sectionSelectors": {
+    "message": "セレクター"
+  },
+  "settingSelectorsHint": {
+    "message": "CSS、XPath、Playwright のロケーター"
+  },
+  "settingsReset": {
+    "message": "既定値に戻す"
+  },
+  "infoIntro": {
+    "message": "QuickInspect は DevTools を開かずに、要素について知りたいことを表示します: <strong>セレクター</strong>、<strong>ボックスモデル</strong>、<strong>算出スタイル</strong>、<strong>アクセシビリティ</strong>、<strong>属性</strong>、<strong>イベント</strong>、そして要素の<strong>ソースファイル</strong>。"
+  },
+  "infoStep1": {
+    "message": "<kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> を押しながら要素にカーソルを合わせると検査でき、離すとページは元に戻ります。別のキーはメイン画面の<strong>押し続けるキー</strong>で選べます。"
+  },
+  "infoStep2": {
+    "message": "押しながら<strong>クリック</strong>するとパネルが固定され、ヘッダーをドラッグして移動できます。<kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> で親や子へ、<kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> で兄弟要素へ移動します。"
+  },
+  "infoStep3": {
+    "message": "<kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> を押すと、セレクター、XPath、Playwright ロケーター、HTML、テキストをコピーできます。"
+  },
+  "infoStep4": {
+    "message": "固定したパネルで<strong>値をクリック</strong>すると、スタイル、ボックス、属性、テキストを編集できます。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> で適用、<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> でキャンセル、<strong>reset</strong> ですべて元に戻ります。編集内容はページを再読み込みするまで残ります。"
+  },
+  "infoStep5": {
+    "message": "<strong>Vite</strong> や <strong>Next.js</strong> の開発サーバーでは、<kbd class=\"kd-chip kd-font-mono\">O</kbd> を押すと要素のソースをエディターで開けます。"
+  },
+  "infoGithub": {
+    "message": "GitHub リポジトリ"
+  },
+  "infoReport": {
+    "message": "問題 / 機能を報告"
+  },
+  "infoCreatedBy": {
+    "message": "作者:"
+  },
+  "footerSections": {
+    "message": "セレクター · ボックス · スタイル · アクセシビリティ · イベント"
+  },
+  "panelPinned": {
+    "message": "固定中"
+  },
+  "panelReset": {
+    "message": "reset"
+  },
+  "panelResetTitle": {
+    "message": "この要素へのすべての編集を元に戻す"
+  },
+  "panelCopy": {
+    "message": "コピー"
+  },
+  "panelOpen": {
+    "message": "開く"
+  },
+  "panelRemoveAttribute": {
+    "message": "$NAME$ を削除",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "値"
+  },
+  "boxHint": {
+    "message": "上 右 下 左"
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: 上 右 下 左",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: 行 列"
+  },
+  "stylesHint": {
+    "message": "算出値"
+  },
+  "shadowHostHint": {
+    "message": "$HOST$ の shadow root 内",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "他 $COUNT$ 件",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "リスナー $COUNT$ 件",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "子要素 $COUNT$ 個",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ 件一致",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "一意"
+  },
+  "noListeners": {
+    "message": "この要素にリスナーはありません"
+  },
+  "eventOriginInline": {
+    "message": "インライン"
+  },
+  "eventAnonymous": {
+    "message": "無名"
+  },
+  "rowPosition": {
+    "message": "位置"
+  },
+  "rowSize": {
+    "message": "サイズ"
+  },
+  "rowRole": {
+    "message": "ロール"
+  },
+  "rowName": {
+    "message": "名前"
+  },
+  "rowFocusable": {
+    "message": "フォーカス可"
+  },
+  "rowSource": {
+    "message": "ソース"
+  },
+  "rowFramework": {
+    "message": "フレームワーク"
+  },
+  "rowComponent": {
+    "message": "コンポーネント"
+  },
+  "rowText": {
+    "message": "テキスト"
+  },
+  "rowKind": {
+    "message": "種類"
+  },
+  "rowNatural": {
+    "message": "元のサイズ"
+  },
+  "rowDuration": {
+    "message": "長さ"
+  },
+  "rowAlt": {
+    "message": "Alt"
+  },
+  "strategyTestId": {
+    "message": "Test id"
+  },
+  "strategyRole": {
+    "message": "ロール"
+  },
+  "strategyLabel": {
+    "message": "ラベル"
+  },
+  "strategyPlaceholder": {
+    "message": "プレースホルダー"
+  },
+  "strategyAltText": {
+    "message": "alt テキスト"
+  },
+  "strategyTitle": {
+    "message": "タイトル"
+  },
+  "strategyText": {
+    "message": "テキスト"
+  },
+  "strategyCss": {
+    "message": "CSS"
+  },
+  "valueYes": {
+    "message": "はい"
+  },
+  "valueNo": {
+    "message": "いいえ"
+  },
+  "valueNone": {
+    "message": "なし"
+  },
+  "valueEmpty": {
+    "message": "空"
+  },
+  "mediaLive": {
+    "message": "ライブ"
+  },
+  "addStyle": {
+    "message": "+ スタイル"
+  },
+  "addStylePlaceholder": {
+    "message": "プロパティ: 値"
+  },
+  "addAttribute": {
+    "message": "+ 属性"
+  },
+  "addAttributePlaceholder": {
+    "message": "名前=\"値\""
+  },
+  "kbdDrag": {
+    "message": "ドラッグ"
+  },
+  "kbdClickValue": {
+    "message": "値をクリック"
+  },
+  "footPin": {
+    "message": "固定"
+  },
+  "footUnpin": {
+    "message": "固定解除"
+  },
+  "footMove": {
+    "message": "移動"
+  },
+  "footEdit": {
+    "message": "編集"
+  },
+  "footClose": {
+    "message": "閉じる"
+  },
+  "footParentChild": {
+    "message": "親 / 子"
+  },
+  "footSibling": {
+    "message": "兄弟"
+  },
+  "footOpenSource": {
+    "message": "ソースを開く"
+  },
+  "actionSelector": {
+    "message": "セレクター"
+  },
+  "actionXpath": {
+    "message": "XPath"
+  },
+  "actionLocator": {
+    "message": "ロケーター"
+  },
+  "actionHtml": {
+    "message": "HTML"
+  },
+  "actionText": {
+    "message": "テキスト"
+  },
+  "toastEditsReset": {
+    "message": "編集を元に戻しました"
+  },
+  "toastNoSource": {
+    "message": "この要素にソースの場所はありません"
+  },
+  "toastNoDevServer": {
+    "message": "エディターを開く開発サーバーがありません"
+  },
+  "toastOpened": {
+    "message": "エディターで開きました"
+  },
+  "toastNotOpened": {
+    "message": "エディターが開きませんでした"
+  },
+  "toastNothingToCopy": {
+    "message": "コピーするものがありません: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "$WHAT$をコピーしました",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "$WHAT$をコピーできませんでした",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

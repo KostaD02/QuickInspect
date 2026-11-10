@@ -1,0 +1,690 @@
+{
+  "appName": {
+    "message": "QuickInspect",
+    "description": "Extension name. A brand name, keep it as is in every language."
+  },
+  "appDescription": {
+    "message": "Hold Alt and hover any element to see its selectors, box model, styles, accessibility info and events without opening DevTools.",
+    "description": "Extension description shown in the browser and the store. Keep it under 132 characters. Alt is the key name, keep it."
+  },
+  "appTagline": {
+    "message": "Hover element inspector",
+    "description": "Short tagline under the name in the popup header."
+  },
+  "settingsOpenLabel": {
+    "message": "QuickInspect settings",
+    "description": "Accessible label of the gear button that opens the settings panel."
+  },
+  "settingsOpenTitle": {
+    "message": "Settings",
+    "description": "Tooltip of the gear button."
+  },
+  "settingsCloseLabel": {
+    "message": "Close settings",
+    "description": "Accessible label of the button that closes the settings panel."
+  },
+  "closeTitle": {
+    "message": "Close",
+    "description": "Tooltip of close buttons."
+  },
+  "infoOpenLabel": {
+    "message": "About QuickInspect",
+    "description": "Accessible label and tooltip of the info button."
+  },
+  "infoCloseLabel": {
+    "message": "Close info",
+    "description": "Accessible label of the button that closes the info panel."
+  },
+  "enabledToggleLabel": {
+    "message": "Turn QuickInspect on or off",
+    "description": "Tooltip and accessible label of the on/off switch in the popup header."
+  },
+  "holdKeyLabel": {
+    "message": "Hold key",
+    "description": "Label of the select that picks the key to hold while hovering."
+  },
+  "modifierAlt": {
+    "message": "Alt / Option",
+    "description": "Hold key option: the Alt key, called Option on Mac. Keep the key names."
+  },
+  "modifierControl": {
+    "message": "Ctrl",
+    "description": "Hold key option: the Control key. Keep the key name."
+  },
+  "modifierShift": {
+    "message": "Shift",
+    "description": "Hold key option: the Shift key. Keep the key name."
+  },
+  "modifierMeta": {
+    "message": "Cmd / Win",
+    "description": "Hold key option: the Command key on Mac, the Windows key elsewhere. Keep the key names."
+  },
+  "holdKeyHint": {
+    "message": "Hold it and hover any element. Release to put the page back.",
+    "description": "Hint under the hold key select."
+  },
+  "whileHoldingLabel": {
+    "message": "While holding",
+    "description": "Label above the grid of shortcuts that work while the key is held."
+  },
+  "kbdClick": {
+    "message": "click",
+    "description": "Shown in a key cap like a key name: a mouse click. Lower case, keep it short."
+  },
+  "shortcutPin": {
+    "message": "Pin the panel",
+    "description": "Shortcut description next to the click key cap in the popup."
+  },
+  "shortcutClose": {
+    "message": "Close",
+    "description": "Shortcut description next to the esc key cap in the popup."
+  },
+  "shortcutParentChild": {
+    "message": "Parent / child",
+    "description": "Shortcut description next to the up and down arrow key caps: move to the parent or child element."
+  },
+  "shortcutSibling": {
+    "message": "Sibling",
+    "description": "Shortcut description next to the left and right arrow key caps: move to the previous or next sibling element."
+  },
+  "shortcutCopySelector": {
+    "message": "Copy CSS selector",
+    "description": "Shortcut description next to the S key cap."
+  },
+  "shortcutCopyXpath": {
+    "message": "Copy XPath",
+    "description": "Shortcut description next to the X key cap. XPath is a technology name."
+  },
+  "shortcutCopyLocator": {
+    "message": "Copy Playwright locator",
+    "description": "Shortcut description next to the L key cap. Playwright is a product name."
+  },
+  "shortcutCopyHtml": {
+    "message": "Copy HTML",
+    "description": "Shortcut description next to the H key cap."
+  },
+  "shortcutCopyText": {
+    "message": "Copy text",
+    "description": "Shortcut description next to the T key cap."
+  },
+  "editorLabel": {
+    "message": "Editor",
+    "description": "Label of the box that tells whether the current page can open sources in the code editor."
+  },
+  "editorChecking": {
+    "message": "Checking this page",
+    "description": "Text of the editor box while the page is being checked."
+  },
+  "editorHint": {
+    "message": "Press <kbd class=\"kd-chip kd-font-mono\">O</kbd> on an element with a source location to open it in your editor.",
+    "description": "Hint under the editor box. HTML: keep the <kbd> tag and the letter O inside it."
+  },
+  "editorUnavailable": {
+    "message": "Not available on this page",
+    "description": "Editor box text when the page runs no dev server."
+  },
+  "editorSources": {
+    "message": "$SERVER$ dev server, element sources available",
+    "description": "Editor box text; SERVER is Vite or Next.js. Elements on the page know the file they were written in.",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "editorNoSources": {
+    "message": "$SERVER$ dev server, no element sources here",
+    "description": "Editor box text; SERVER is Vite or Next.js. The dev server runs but the elements carry no file locations.",
+    "placeholders": {
+      "SERVER": {
+        "content": "$1",
+        "example": "Vite"
+      }
+    }
+  },
+  "settingsNote": {
+    "message": "Saved automatically and applied to open tabs immediately.",
+    "description": "Note at the top of the settings panel."
+  },
+  "settingsEditing": {
+    "message": "Editing",
+    "description": "Settings section heading."
+  },
+  "settingAllowEdit": {
+    "message": "Allow edits",
+    "description": "Toggle label."
+  },
+  "settingAllowEditHint": {
+    "message": "Click values in a pinned panel to change styles, attributes and text on the page",
+    "description": "Hint under the allow edits toggle."
+  },
+  "settingsPopup": {
+    "message": "Popup",
+    "description": "Settings section heading for what the popup itself shows."
+  },
+  "settingEditorStatus": {
+    "message": "Editor availability",
+    "description": "Toggle label: show the editor box in the popup."
+  },
+  "settingEditorStatusHint": {
+    "message": "Whether this page can open sources in your editor",
+    "description": "Hint under the editor availability toggle."
+  },
+  "settingsOverlay": {
+    "message": "Overlay",
+    "description": "Settings section heading for the highlight drawn on the page."
+  },
+  "settingBoxModel": {
+    "message": "Box model highlight",
+    "description": "Toggle label."
+  },
+  "settingBoxModelHint": {
+    "message": "Margin, border, padding and gap bands",
+    "description": "Hint under the box model highlight toggle. Margin, border, padding and gap are CSS terms."
+  },
+  "settingsSections": {
+    "message": "Panel sections",
+    "description": "Settings section heading above the toggles for each section of the panel."
+  },
+  "sectionBox": {
+    "message": "Box",
+    "description": "Panel section title and its settings toggle: position, size and the box model."
+  },
+  "settingBoxHint": {
+    "message": "Position, size, margin, padding, border, gap",
+    "description": "Hint under the Box toggle. Margin, padding, border and gap are CSS terms."
+  },
+  "sectionEvents": {
+    "message": "Events",
+    "description": "Panel section title and its settings toggle: event listeners."
+  },
+  "settingEventsHint": {
+    "message": "Listeners, inline handlers and framework props",
+    "description": "Hint under the Events toggle."
+  },
+  "sectionStyles": {
+    "message": "Styles",
+    "description": "Panel section title and its settings toggle: computed CSS styles."
+  },
+  "settingStylesHint": {
+    "message": "Computed values that matter",
+    "description": "Hint under the Styles toggle."
+  },
+  "sectionAccessibility": {
+    "message": "Accessibility",
+    "description": "Panel section title and its settings toggle."
+  },
+  "settingAccessibilityHint": {
+    "message": "Role, accessible name, focusability, ARIA",
+    "description": "Hint under the Accessibility toggle. ARIA is a technology name."
+  },
+  "sectionAttributes": {
+    "message": "Attributes",
+    "description": "Panel section title and its settings toggle: HTML attributes."
+  },
+  "settingAttributesHint": {
+    "message": "Every attribute on the element",
+    "description": "Hint under the Attributes toggle."
+  },
+  "sectionMedia": {
+    "message": "Media",
+    "description": "Panel section title and its settings toggle: images, video, audio, canvas and SVG."
+  },
+  "settingMediaHint": {
+    "message": "Image, video, canvas and SVG details",
+    "description": "Hint under the Media toggle."
+  },
+  "sectionContext": {
+    "message": "Context",
+    "description": "Panel section title and its settings toggle: where the element sits and comes from."
+  },
+  "settingContextHint": {
+    "message": "Source file, framework, ancestors and text",
+    "description": "Hint under the Context toggle."
+  },
+  "sectionSelectors": {
+    "message": "Selectors",
+    "description": "Panel section title and its settings toggle."
+  },
+  "settingSelectorsHint": {
+    "message": "CSS, XPath and Playwright locators",
+    "description": "Hint under the Selectors toggle. CSS, XPath and Playwright are technology names."
+  },
+  "settingsReset": {
+    "message": "Reset to defaults",
+    "description": "Button that restores every setting."
+  },
+  "infoIntro": {
+    "message": "QuickInspect shows what you need to know about any element without opening DevTools: <strong>selectors</strong>, the <strong>box model</strong>, <strong>computed styles</strong>, <strong>accessibility</strong>, <strong>attributes</strong>, <strong>events</strong> and the <strong>source file</strong> it came from.",
+    "description": "Intro paragraph of the info panel. HTML: keep the seven <strong> tags. DevTools is the name of the browser developer tools."
+  },
+  "infoStep1": {
+    "message": "Hold <kbd id=\"info-modifier\" class=\"kd-chip kd-font-mono\"></kbd> and hover any element to inspect it, release to put the page back. Pick a different key under <strong>Hold key</strong> on the main screen.",
+    "description": "Info panel step. HTML: keep the empty <kbd> tag with its id, the extension fills it with the chosen key, and keep the <strong> tag. Use the same words as holdKeyLabel."
+  },
+  "infoStep2": {
+    "message": "<strong>Click</strong> while holding to pin the panel, then drag its header to move it. Use <kbd class=\"kd-chip kd-font-mono\">↑</kbd> <kbd class=\"kd-chip kd-font-mono\">↓</kbd> for the parent or child and <kbd class=\"kd-chip kd-font-mono\">←</kbd> <kbd class=\"kd-chip kd-font-mono\">→</kbd> for siblings.",
+    "description": "Info panel step. HTML: keep the <strong> tag and the four <kbd> tags with their arrows."
+  },
+  "infoStep3": {
+    "message": "Press <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> to copy the selector, XPath, Playwright locator, HTML or text.",
+    "description": "Info panel step. HTML: keep the five <kbd> tags and the letters inside them, they are the keys to press."
+  },
+  "infoStep4": {
+    "message": "In a pinned panel, <strong>click any value</strong> to edit styles, box, attributes or text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applies, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancels and <strong>reset</strong> undoes it all. Edits stay in the page until you reload.",
+    "description": "Info panel step. HTML: keep the two <strong> tags and the two <kbd> tags with the key names Enter and Esc. Use the same word as panelReset for reset."
+  },
+  "infoStep5": {
+    "message": "On a <strong>Vite</strong> or <strong>Next.js</strong> dev server, press <kbd class=\"kd-chip kd-font-mono\">O</kbd> to open the element's source in your editor.",
+    "description": "Info panel step. HTML: keep the two <strong> tags with the product names Vite and Next.js and the <kbd> tag with the letter O."
+  },
+  "infoGithub": {
+    "message": "GitHub Repository",
+    "description": "Link in the info panel."
+  },
+  "infoReport": {
+    "message": "Report Issue / Feature",
+    "description": "Link in the info panel that opens the issue templates."
+  },
+  "infoCreatedBy": {
+    "message": "Created by",
+    "description": "Label before the author link in the info panel."
+  },
+  "footerSections": {
+    "message": "Selectors · Box · Styles · Accessibility · Events",
+    "description": "Popup footer listing the panel sections. Must fit on one line of a 360px wide popup at a 10px font, so prefer short words. Keep the middle dots. Use the same words as the section titles."
+  },
+  "panelPinned": {
+    "message": "pinned",
+    "description": "Small upper-case tag in the panel header while the panel is pinned. Keep it short."
+  },
+  "panelReset": {
+    "message": "reset",
+    "description": "Button in the panel header that undoes every edit made to the element. Lower case, keep it short."
+  },
+  "panelResetTitle": {
+    "message": "Undo every edit on this element",
+    "description": "Tooltip of the reset button."
+  },
+  "panelCopy": {
+    "message": "copy",
+    "description": "Small button next to a selector that copies it. Lower case, keep it short."
+  },
+  "panelOpen": {
+    "message": "open",
+    "description": "Small button next to the source file that opens it in the editor. Lower case, keep it short."
+  },
+  "panelRemoveAttribute": {
+    "message": "Remove $NAME$",
+    "description": "Tooltip of the × button that removes an attribute; NAME is the attribute name.",
+    "placeholders": {
+      "NAME": {
+        "content": "$1",
+        "example": "data-id"
+      }
+    }
+  },
+  "editValue": {
+    "message": "value",
+    "description": "Accessible label of an edit field that has no other label."
+  },
+  "boxHint": {
+    "message": "top right bottom left",
+    "description": "Hint next to the Box section title: the order of the four values in each box model cell. Keep this order."
+  },
+  "boxEdgesPlaceholder": {
+    "message": "$PROPERTY$: top right bottom left",
+    "description": "Placeholder of the edit field for a box model cell; PROPERTY is the CSS property such as margin. Keep the order.",
+    "placeholders": {
+      "PROPERTY": {
+        "content": "$1",
+        "example": "margin"
+      }
+    }
+  },
+  "boxGapPlaceholder": {
+    "message": "gap: row column",
+    "description": "Placeholder of the edit field for the gap cell: the row gap, then the column gap. gap is the CSS property, keep it."
+  },
+  "stylesHint": {
+    "message": "computed",
+    "description": "Hint next to the Styles section title: these are computed values."
+  },
+  "shadowHostHint": {
+    "message": "inside shadow root of $HOST$",
+    "description": "Hint next to the Selectors section title when the element lives in a shadow root; HOST is the tag of the shadow host.",
+    "placeholders": {
+      "HOST": {
+        "content": "$1",
+        "example": "x-widget"
+      }
+    }
+  },
+  "attributesMore_one": {
+    "message": "+$COUNT$ more",
+    "description": "Hint next to the Attributes section title when more attributes exist than are shown, for a count of one; COUNT is the number of hidden attributes.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "attributesMore_other": {
+    "message": "+$COUNT$ more",
+    "description": "Hint next to the Attributes section title when more attributes exist than are shown; COUNT is the number of hidden attributes. Other plural forms may be added as attributesMore_few, attributesMore_many.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_one": {
+    "message": "$COUNT$ listener",
+    "description": "Hint next to the Events section title for a count of one; COUNT is the number of event listeners.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "listeners_other": {
+    "message": "$COUNT$ listeners",
+    "description": "Hint next to the Events section title; COUNT is the number of event listeners. Other plural forms may be added as listeners_few, listeners_many.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_one": {
+    "message": "$COUNT$ child",
+    "description": "Hint next to the Context section title for a count of one; COUNT is the number of child elements.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "children_other": {
+    "message": "$COUNT$ children",
+    "description": "Hint next to the Context section title; COUNT is the number of child elements. Other plural forms may be added as children_few, children_many.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_one": {
+    "message": "$COUNT$ match",
+    "description": "Badge after a Playwright locator for a count of one; COUNT is how many elements it matches.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorMatches_other": {
+    "message": "$COUNT$ matches",
+    "description": "Badge after a Playwright locator; COUNT is how many elements it matches. Other plural forms may be added as locatorMatches_few, locatorMatches_many.",
+    "placeholders": {
+      "COUNT": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "locatorUnique": {
+    "message": "unique",
+    "description": "Badge after a Playwright locator that matches exactly one element."
+  },
+  "noListeners": {
+    "message": "no listeners on this element",
+    "description": "Text of the Events section when the element has no event listeners."
+  },
+  "eventOriginInline": {
+    "message": "inline",
+    "description": "Badge on an event handler written as an HTML attribute such as onclick."
+  },
+  "eventAnonymous": {
+    "message": "anonymous",
+    "description": "Name shown for an event listener function without a name."
+  },
+  "rowPosition": {
+    "message": "Position",
+    "description": "Row label in the Box section: the x and y position on the page."
+  },
+  "rowSize": {
+    "message": "Size",
+    "description": "Row label in the Box section: width and height."
+  },
+  "rowRole": {
+    "message": "Role",
+    "description": "Row label in the Accessibility section: the ARIA role."
+  },
+  "rowName": {
+    "message": "Name",
+    "description": "Row label in the Accessibility section: the accessible name."
+  },
+  "rowFocusable": {
+    "message": "Focusable",
+    "description": "Row label in the Accessibility section: whether the element can receive keyboard focus."
+  },
+  "rowSource": {
+    "message": "Source",
+    "description": "Row label in the Context section for the source file, and in the Media section for the media URL."
+  },
+  "rowFramework": {
+    "message": "Framework",
+    "description": "Row label in the Context section: the JavaScript framework that rendered the element."
+  },
+  "rowComponent": {
+    "message": "Component",
+    "description": "Row label in the Context section: the framework component that owns the element."
+  },
+  "rowText": {
+    "message": "Text",
+    "description": "Row label in the Context section: the text content of the element."
+  },
+  "rowKind": {
+    "message": "Kind",
+    "description": "Row label in the Media section: image, video, audio, canvas or svg."
+  },
+  "rowNatural": {
+    "message": "Natural",
+    "description": "Row label in the Media section: the natural (intrinsic) width and height of an image or video."
+  },
+  "rowDuration": {
+    "message": "Duration",
+    "description": "Row label in the Media section: the length of a video or audio."
+  },
+  "rowAlt": {
+    "message": "Alt",
+    "description": "Row label in the Media section: the alternative text of an image. Refers to the alt attribute."
+  },
+  "strategyTestId": {
+    "message": "Test id",
+    "description": "Row label of a Playwright locator that uses the test id attribute (getByTestId)."
+  },
+  "strategyRole": {
+    "message": "Role",
+    "description": "Row label of a Playwright locator that uses the ARIA role (getByRole)."
+  },
+  "strategyLabel": {
+    "message": "Label",
+    "description": "Row label of a Playwright locator that uses the form label (getByLabel)."
+  },
+  "strategyPlaceholder": {
+    "message": "Placeholder",
+    "description": "Row label of a Playwright locator that uses the placeholder text (getByPlaceholder)."
+  },
+  "strategyAltText": {
+    "message": "Alt text",
+    "description": "Row label of a Playwright locator that uses the image alt text (getByAltText)."
+  },
+  "strategyTitle": {
+    "message": "Title",
+    "description": "Row label of a Playwright locator that uses the title attribute (getByTitle)."
+  },
+  "strategyText": {
+    "message": "Text",
+    "description": "Row label of a Playwright locator that uses the text content (getByText)."
+  },
+  "strategyCss": {
+    "message": "CSS",
+    "description": "Row label of a Playwright locator that uses a CSS selector (locator). CSS is a technology name."
+  },
+  "valueYes": {
+    "message": "yes",
+    "description": "Value of the Focusable row when the element can be focused."
+  },
+  "valueNo": {
+    "message": "no",
+    "description": "Value of the Focusable row when the element cannot be focused."
+  },
+  "valueNone": {
+    "message": "none",
+    "description": "Shown instead of a value when the element has no accessible name or a media element has no source."
+  },
+  "valueEmpty": {
+    "message": "empty",
+    "description": "Shown instead of a value when the text or alt text is empty."
+  },
+  "mediaLive": {
+    "message": "live",
+    "description": "Duration shown for a live media stream that has no end."
+  },
+  "addStyle": {
+    "message": "+ style",
+    "description": "Button in a pinned panel that adds a new CSS style. Keep the leading plus sign."
+  },
+  "addStylePlaceholder": {
+    "message": "property: value",
+    "description": "Placeholder of the field for a new style: a CSS property name, a colon, then its value."
+  },
+  "addAttribute": {
+    "message": "+ attribute",
+    "description": "Button in a pinned panel that adds a new HTML attribute. Keep the leading plus sign."
+  },
+  "addAttributePlaceholder": {
+    "message": "name=\"value\"",
+    "description": "Placeholder of the field for a new attribute: the attribute name and its value in quotes. Keep the quotes and the equals sign."
+  },
+  "kbdDrag": {
+    "message": "drag",
+    "description": "Shown in a key cap like a key name: dragging with the mouse. Lower case, keep it short."
+  },
+  "kbdClickValue": {
+    "message": "click value",
+    "description": "Shown in a key cap like a key name: clicking a value in the panel. Lower case, keep it short."
+  },
+  "footPin": {
+    "message": "pin",
+    "description": "Panel footer, next to the click key cap: a click pins the panel. Lower case, keep it short."
+  },
+  "footUnpin": {
+    "message": "unpin",
+    "description": "Panel footer, next to the click key cap while pinned: a click unpins the panel. Lower case, keep it short."
+  },
+  "footMove": {
+    "message": "move",
+    "description": "Panel footer, next to the drag key cap: dragging moves the panel. Lower case, keep it short."
+  },
+  "footEdit": {
+    "message": "edit",
+    "description": "Panel footer, next to the click value key cap. Lower case, keep it short."
+  },
+  "footClose": {
+    "message": "close",
+    "description": "Panel footer, next to the esc key cap. Lower case, keep it short."
+  },
+  "footParentChild": {
+    "message": "parent / child",
+    "description": "Panel footer, next to the up and down arrow key caps. Lower case, keep it short."
+  },
+  "footSibling": {
+    "message": "sibling",
+    "description": "Panel footer, next to the left and right arrow key caps. Lower case, keep it short."
+  },
+  "footOpenSource": {
+    "message": "open source",
+    "description": "Panel footer, next to the O key cap: open the source file in the editor. Lower case, keep it short."
+  },
+  "actionSelector": {
+    "message": "selector",
+    "description": "What the S key copies: the CSS selector. Lower case, used in the panel footer and in the toast \"Copied selector\"."
+  },
+  "actionXpath": {
+    "message": "XPath",
+    "description": "What the X key copies. XPath is a technology name, used in the panel footer and in the toast \"Copied XPath\"."
+  },
+  "actionLocator": {
+    "message": "locator",
+    "description": "What the L key copies: the best Playwright locator. Lower case, used in the panel footer and in the toast \"Copied locator\"."
+  },
+  "actionHtml": {
+    "message": "HTML",
+    "description": "What the H key copies: the outer HTML. Used in the panel footer and in the toast \"Copied HTML\"."
+  },
+  "actionText": {
+    "message": "text",
+    "description": "What the T key copies: the text content. Lower case, used in the panel footer and in the toast \"Copied text\"."
+  },
+  "toastEditsReset": {
+    "message": "Edits reset",
+    "description": "Toast after every edit on the element was undone."
+  },
+  "toastNoSource": {
+    "message": "No source location for this element",
+    "description": "Toast when O is pressed on an element without a source file."
+  },
+  "toastNoDevServer": {
+    "message": "No dev server to open the editor",
+    "description": "Toast when O is pressed on a page without a Vite or Next.js dev server."
+  },
+  "toastOpened": {
+    "message": "Opened in editor",
+    "description": "Toast after the dev server opened the source file in the editor."
+  },
+  "toastNotOpened": {
+    "message": "Editor did not open",
+    "description": "Toast when the dev server refused to open the source file."
+  },
+  "toastNothingToCopy": {
+    "message": "Nothing to copy for $WHAT$",
+    "description": "Toast when a copy key found nothing to copy; WHAT is one of actionSelector, actionXpath, actionLocator, actionHtml, actionText.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "Copied $WHAT$",
+    "description": "Toast after a copy; WHAT is one of actionSelector, actionXpath, actionLocator, actionHtml, actionText.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  },
+  "toastCopyFailed": {
+    "message": "Could not copy $WHAT$",
+    "description": "Toast when the clipboard write failed; WHAT is one of actionSelector, actionXpath, actionLocator, actionHtml, actionText.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "selector"
+      }
+    }
+  }
+}

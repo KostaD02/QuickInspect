@@ -32,7 +32,7 @@ describe('bridge', () => {
     const { listeners } = collectEvents(el);
     expect(listeners.map((l) => [l.type, l.name, l.flags])).toEqual([
       ['click', 'handleClick', []],
-      ['keydown', 'anonymous', ['capture', 'once', 'passive']],
+      ['keydown', '', ['capture', 'once', 'passive']],
       ['focus', 'handleEvent', []],
     ]);
     expect(listeners[0]?.source).toContain('function handleClick');
