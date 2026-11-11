@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "คัดลอกข้อความ"
   },
+  "shortcutCopyJson": {
+    "message": "คัดลอก JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "คัดลอก Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "คัดลอกภาพหน้าจอ"
+  },
   "editorLabel": {
     "message": "ตัวแก้ไข"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "ข้อความ"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ภาพหน้าจอ"
   },
   "toastEditsReset": {
     "message": "รีเซ็ตการแก้ไขแล้ว"

@@ -1056,6 +1056,7 @@ export class Panel {
           t(action.labelKey),
         ),
       ),
+      h('span', {}, h('kbd', { class: CLS.kbd }, 'C'), t('actionScreenshot')),
     ];
     this.foot.replaceChildren(...hints.filter((x): x is Node => !!x));
   }

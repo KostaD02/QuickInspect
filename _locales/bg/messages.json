@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Копирай текста"
   },
+  "shortcutCopyJson": {
+    "message": "Копирай JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Копирай Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Копирай екранната снимка"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "текст"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "екранна снимка"
   },
   "toastEditsReset": {
     "message": "Редакциите са отменени"

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "复制文本"
   },
+  "shortcutCopyJson": {
+    "message": "复制 JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "复制 Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "复制截图"
+  },
   "editorLabel": {
     "message": "编辑器"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "文本"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "截图"
   },
   "toastEditsReset": {
     "message": "已撤销编辑"

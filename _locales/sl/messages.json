@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopiraj besedilo"
   },
+  "shortcutCopyJson": {
+    "message": "Kopiraj JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopiraj Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopiraj posnetek zaslona"
+  },
   "editorLabel": {
     "message": "Urejevalnik"
   },
@@ -568,6 +577,15 @@
   },
   "actionText": {
     "message": "besedilo"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "posnetek zaslona"
   },
   "toastEditsReset": {
     "message": "Spremembe razveljavljene"

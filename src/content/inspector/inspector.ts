@@ -1,6 +1,8 @@
 import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
+  captureElement,
+  copyImage,
   copyText,
   deepElementFromPoint,
   formatSource,
@@ -163,6 +165,12 @@ export class Inspector {
     if (event.code === 'KeyO') {
       this.swallow(event);
       this.openSource();
+      return;
+    }
+
+    if (event.code === 'KeyC') {
+      this.swallow(event);
+      this.screenshot();
       return;
     }
 
@@ -475,6 +483,24 @@ export class Inspector {
     openInEditor(source, this.info.devServer).then((opened) => {
       this.toast.show(t(opened ? 'toastOpened' : 'toastNotOpened'), location);
     });
+  }
+
+  private screenshot(): void {
+    const target = this.current;
+    if (!target) return;
+    const label = t('actionScreenshot');
+    const rect = target.getBoundingClientRect();
+    this.host
+      .conceal(() => captureElement(rect))
+      .then((blob) => (blob ? copyImage(blob) : false))
+      .then((copied) => {
+        this.toast.show(
+          t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
+          copied
+            ? `${String(Math.round(rect.width))} × ${String(Math.round(rect.height))}`
+            : '',
+        );
+      });
   }
 
   private copy(action: CopyAction): void {

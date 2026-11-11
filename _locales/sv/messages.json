@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopiera text"
   },
+  "shortcutCopyJson": {
+    "message": "Kopiera JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopiera Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopiera skärmbild"
+  },
   "editorLabel": {
     "message": "Redigerare"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "text"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "skärmbild"
   },
   "toastEditsReset": {
     "message": "Ändringar återställda"

@@ -107,6 +107,18 @@
     "message": "Copy text",
     "description": "Shortcut description next to the T key cap."
   },
+  "shortcutCopyJson": {
+    "message": "Copy JSON",
+    "description": "Shortcut description next to the J key cap."
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Copy Markdown",
+    "description": "Shortcut description next to the M key cap."
+  },
+  "shortcutScreenshot": {
+    "message": "Copy screenshot",
+    "description": "Shortcut description next to the C key cap."
+  },
   "editorLabel": {
     "message": "Editor",
     "description": "Label of the box that tells whether the current page can open sources in the code editor."
@@ -636,6 +648,18 @@
   "actionText": {
     "message": "text",
     "description": "What the T key copies: the text content. Lower case, used in the panel footer and in the toast \"Copied text\"."
+  },
+  "actionJson": {
+    "message": "JSON",
+    "description": "What the J key copies: the whole element info as JSON. Used in the panel footer and in the toast \"Copied JSON\"."
+  },
+  "actionMarkdown": {
+    "message": "Markdown",
+    "description": "What the M key copies: the element info as Markdown. Used in the panel footer and in the toast \"Copied Markdown\"."
+  },
+  "actionScreenshot": {
+    "message": "screenshot",
+    "description": "What the C key copies: a screenshot of the element. Lower case, used in the panel footer and in the toast \"Copied screenshot\"."
   },
   "toastEditsReset": {
     "message": "Edits reset",

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "複製文字"
   },
+  "shortcutCopyJson": {
+    "message": "複製 JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "複製 Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "複製螢幕截圖"
+  },
   "editorLabel": {
     "message": "編輯器"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "文字"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "螢幕截圖"
   },
   "toastEditsReset": {
     "message": "已復原編輯"

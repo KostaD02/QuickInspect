@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopijuoti tekstą"
   },
+  "shortcutCopyJson": {
+    "message": "Kopijuoti JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopijuoti Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopijuoti ekrano kopiją"
+  },
   "editorLabel": {
     "message": "Redaktorius"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "tekstas"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ekrano kopija"
   },
   "toastEditsReset": {
     "message": "Pakeitimai anuliuoti"

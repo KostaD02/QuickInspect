@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "نسخ النص"
   },
+  "shortcutCopyJson": {
+    "message": "نسخ JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "نسخ Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "نسخ لقطة الشاشة"
+  },
   "editorLabel": {
     "message": "المحرّر"
   },
@@ -640,6 +649,15 @@
   },
   "actionText": {
     "message": "النص"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "لقطة الشاشة"
   },
   "toastEditsReset": {
     "message": "تم التراجع عن التعديلات"

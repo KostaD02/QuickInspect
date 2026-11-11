@@ -5,6 +5,10 @@ const info = {
   selector: '#a',
   xpath: '//*[@id="a"]',
   locators: [{ strategy: 'css', code: "page.locator('#a')", matches: 1 }],
+  box: { x: 0, y: 0, width: 1, height: 1, margin: {}, padding: {}, border: {} },
+  styles: [],
+  accessibility: { role: '', name: '', focusable: false, aria: [] },
+  attributes: [],
 } as unknown as ElementInfo;
 
 describe('actions', () => {
@@ -18,7 +22,9 @@ describe('actions', () => {
     el.id = 'a';
     el.textContent = ' hello ';
     const values = Object.fromEntries(
-      COPY_ACTIONS.map((a) => [a.id, a.value(info, el)]),
+      COPY_ACTIONS.filter((a) => a.id !== 'json' && a.id !== 'markdown').map(
+        (a) => [a.id, a.value(info, el)],
+      ),
     );
     expect(values).toEqual({
       selector: '#a',
@@ -30,5 +36,13 @@ describe('actions', () => {
     expect(actionByCode('KeyL')?.value({ ...info, locators: [] }, el)).toBe(
       '#a',
     );
+  });
+
+  it('copies the whole element info as JSON and Markdown', () => {
+    const el = document.createElement('div');
+    expect(JSON.parse(actionByCode('KeyJ')?.value(info, el) ?? '')).toEqual(
+      info,
+    );
+    expect(actionByCode('KeyM')?.value(info, el)).toContain('- Selector: `#a`');
   });
 });

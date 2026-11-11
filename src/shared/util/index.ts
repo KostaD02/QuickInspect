@@ -1,4 +1,5 @@
 export * from './a11y/a11y';
+export * from './capture/capture';
 export * from './clipboard/clipboard';
 export * from './dom/dom';
 export * from './events/events';
@@ -11,5 +12,6 @@ export * from './logger/logger';
 export * from './selector/selector';
 export * from './settings/settings';
 export * from './source/source';
+export * from './snapshot/snapshot';
 export * from './sourcemap/sourcemap';
 export * from './xpath/xpath';

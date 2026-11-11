@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopírovat text"
   },
+  "shortcutCopyJson": {
+    "message": "Kopírovat JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopírovat Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopírovat snímek obrazovky"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "text"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "snímek obrazovky"
   },
   "toastEditsReset": {
     "message": "Úpravy vráceny"

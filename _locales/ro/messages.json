@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Copiază textul"
   },
+  "shortcutCopyJson": {
+    "message": "Copiază JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Copiază Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Copiază captura de ecran"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "text"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "captură de ecran"
   },
   "toastEditsReset": {
     "message": "Modificări anulate"

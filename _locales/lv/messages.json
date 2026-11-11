@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopēt tekstu"
   },
+  "shortcutCopyJson": {
+    "message": "Kopēt JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopēt Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopēt ekrānuzņēmumu"
+  },
   "editorLabel": {
     "message": "Redaktors"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "teksts"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ekrānuzņēmums"
   },
   "toastEditsReset": {
     "message": "Labojumi atsaukti"

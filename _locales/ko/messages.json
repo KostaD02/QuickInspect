@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "텍스트 복사"
   },
+  "shortcutCopyJson": {
+    "message": "JSON 복사"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown 복사"
+  },
+  "shortcutScreenshot": {
+    "message": "스크린샷 복사"
+  },
   "editorLabel": {
     "message": "에디터"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "텍스트"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "스크린샷"
   },
   "toastEditsReset": {
     "message": "편집을 되돌렸습니다"

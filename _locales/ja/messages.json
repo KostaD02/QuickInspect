@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "テキストをコピー"
   },
+  "shortcutCopyJson": {
+    "message": "JSON をコピー"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown をコピー"
+  },
+  "shortcutScreenshot": {
+    "message": "スクリーンショットをコピー"
+  },
   "editorLabel": {
     "message": "エディター"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "テキスト"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "スクリーンショット"
   },
   "toastEditsReset": {
     "message": "編集を元に戻しました"

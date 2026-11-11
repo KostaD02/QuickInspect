@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Szöveg másolása"
   },
+  "shortcutCopyJson": {
+    "message": "JSON másolása"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown másolása"
+  },
+  "shortcutScreenshot": {
+    "message": "Képernyőkép másolása"
+  },
   "editorLabel": {
     "message": "Szerkesztő"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "szöveg"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "képernyőkép"
   },
   "toastEditsReset": {
     "message": "Módosítások visszavonva"

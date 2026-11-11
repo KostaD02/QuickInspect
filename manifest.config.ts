@@ -16,6 +16,10 @@ export default defineManifest({
     48: 'public/icons/icon-48.png',
     128: 'public/icons/icon-128.png',
   },
+  background: {
+    service_worker: 'src/background/main.ts',
+    type: 'module',
+  },
   action: {
     default_icon: {
       16: 'public/icons/icon-16.png',
@@ -40,4 +44,6 @@ export default defineManifest({
     },
   ],
   permissions: ['storage', 'clipboardWrite', 'scripting', 'activeTab'],
+  // ? captureVisibleTab wants <all_urls> or activeTab, and activeTab only arrives once the popup was opened on the tab
+  host_permissions: ['<all_urls>'],
 });

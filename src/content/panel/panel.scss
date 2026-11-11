@@ -18,6 +18,10 @@
   --kd-font-secondary: 'Poppins', system-ui, sans-serif;
 }
 
+:host([hidden]) {
+  visibility: hidden !important;
+}
+
 [hidden] {
   display: none !important;
 }

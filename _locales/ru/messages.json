@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Копировать текст"
   },
+  "shortcutCopyJson": {
+    "message": "Копировать JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Копировать Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Копировать скриншот"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -568,6 +577,15 @@
   },
   "actionText": {
     "message": "текст"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "скриншот"
   },
   "toastEditsReset": {
     "message": "Правки сброшены"

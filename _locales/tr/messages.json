@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Metni kopyala"
   },
+  "shortcutCopyJson": {
+    "message": "JSON’u kopyala"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown’ı kopyala"
+  },
+  "shortcutScreenshot": {
+    "message": "Ekran görüntüsünü kopyala"
+  },
   "editorLabel": {
     "message": "Düzenleyici"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "metin"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ekran görüntüsü"
   },
   "toastEditsReset": {
     "message": "Düzenlemeler geri alındı"

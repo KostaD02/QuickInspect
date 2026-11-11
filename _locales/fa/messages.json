@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "کپی متن"
   },
+  "shortcutCopyJson": {
+    "message": "کپی JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "کپی Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "کپی اسکرین‌شات"
+  },
   "editorLabel": {
     "message": "ویرایشگر"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "متن"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "اسکرین‌شات"
   },
   "toastEditsReset": {
     "message": "ویرایش‌ها بازگردانده شد"

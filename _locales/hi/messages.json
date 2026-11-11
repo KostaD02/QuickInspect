@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "टेक्स्ट कॉपी करें"
   },
+  "shortcutCopyJson": {
+    "message": "JSON कॉपी करें"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown कॉपी करें"
+  },
+  "shortcutScreenshot": {
+    "message": "स्क्रीनशॉट कॉपी करें"
+  },
   "editorLabel": {
     "message": "एडिटर"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "टेक्स्ट"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "स्क्रीनशॉट"
   },
   "toastEditsReset": {
     "message": "बदलाव रीसेट किए गए"

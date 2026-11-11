@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopiraj tekst"
   },
+  "shortcutCopyJson": {
+    "message": "Kopiraj JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopiraj Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopiraj snimku zaslona"
+  },
   "editorLabel": {
     "message": "Uređivač"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "tekst"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "snimka zaslona"
   },
   "toastEditsReset": {
     "message": "Izmjene poništene"

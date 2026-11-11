@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Αντιγραφή κειμένου"
   },
+  "shortcutCopyJson": {
+    "message": "Αντιγραφή JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Αντιγραφή Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Αντιγραφή στιγμιότυπου οθόνης"
+  },
   "editorLabel": {
     "message": "Επεξεργαστής"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "κείμενο"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "στιγμιότυπο οθόνης"
   },
   "toastEditsReset": {
     "message": "Οι αλλαγές επαναφέρθηκαν"

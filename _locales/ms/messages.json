@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Salin teks"
   },
+  "shortcutCopyJson": {
+    "message": "Salin JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Salin Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Salin tangkapan skrin"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "teks"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "tangkapan skrin"
   },
   "toastEditsReset": {
     "message": "Suntingan ditetapkan semula"

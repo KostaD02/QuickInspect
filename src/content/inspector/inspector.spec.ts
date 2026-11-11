@@ -163,6 +163,26 @@ describe('inspector', () => {
     key('keydown', { code: 'Escape', key: 'Escape' });
   });
 
+  it('hides itself for the C screenshot and reports a failed capture', async () => {
+    reopen();
+    hold();
+    const sendMessage = chrome.runtime.sendMessage as jest.Mock;
+    sendMessage.mockImplementationOnce(() => Promise.resolve(null));
+    button.getBoundingClientRect = () =>
+      ({ x: 10, y: 10, width: 50, height: 20 }) as DOMRect;
+    const event = key('keydown', { code: 'KeyC', key: 'c', altKey: true });
+    expect(event.defaultPrevented).toBe(true);
+    expect(host()!.hidden).toBe(true);
+    flush();
+    flush();
+    await settled();
+    expect(sendMessage).toHaveBeenCalled();
+    expect(host()!.hidden).toBe(false);
+    expect(host()!.shadowRoot!.querySelector('.toast')!.textContent).toBe(
+      'Could not copy screenshot',
+    );
+  });
+
   it('copies with letter keys and shows a toast', async () => {
     reopen();
     hold();

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Copier le texte"
   },
+  "shortcutCopyJson": {
+    "message": "Copier le JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Copier le Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Copier la capture d’écran"
+  },
   "editorLabel": {
     "message": "Éditeur"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "texte"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "capture d’écran"
   },
   "toastEditsReset": {
     "message": "Modifications annulées"

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Sao chép văn bản"
   },
+  "shortcutCopyJson": {
+    "message": "Sao chép JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Sao chép Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Sao chép ảnh chụp màn hình"
+  },
   "editorLabel": {
     "message": "Trình soạn thảo"
   },
@@ -460,6 +469,15 @@
   },
   "actionText": {
     "message": "văn bản"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ảnh chụp màn hình"
   },
   "toastEditsReset": {
     "message": "Đã đặt lại các chỉnh sửa"

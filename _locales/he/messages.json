@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "העתקת טקסט"
   },
+  "shortcutCopyJson": {
+    "message": "העתקת JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "העתקת Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "העתקת צילום מסך"
+  },
   "editorLabel": {
     "message": "עורך"
   },
@@ -532,6 +541,15 @@
   },
   "actionText": {
     "message": "טקסט"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "צילום מסך"
   },
   "toastEditsReset": {
     "message": "העריכות אופסו"

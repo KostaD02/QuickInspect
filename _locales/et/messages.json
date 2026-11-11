@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopeeri tekst"
   },
+  "shortcutCopyJson": {
+    "message": "Kopeeri JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopeeri Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Kopeeri ekraanipilt"
+  },
   "editorLabel": {
     "message": "Redaktor"
   },
@@ -496,6 +505,15 @@
   },
   "actionText": {
     "message": "tekst"
+  },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ekraanipilt"
   },
   "toastEditsReset": {
     "message": "Muudatused tagasi võetud"
