@@ -87,7 +87,7 @@
     "message": "Αντιγραφή Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Λήψη στιγμιότυπου οθόνης"
+    "message": "Λήψη στιγμιότυπου"
   },
   "editorLabel": {
     "message": "Επεξεργαστής"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Κάντε κλικ σε τιμές ενός καρφιτσωμένου πίνακα για να αλλάξετε στυλ, χαρακτηριστικά και κείμενο στη σελίδα"
+  },
+  "settingsScreenshot": {
+    "message": "Στιγμιότυπο οθόνης"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Λήψη στιγμιότυπων"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Αποθήκευση ως αρχείο PNG ή αντιγραφή στο πρόχειρο όταν είναι ανενεργό"
   },
   "settingsPopup": {
     "message": "Αναδυόμενο"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> για να αντιγράψετε τον επιλογέα, το XPath, το locator Playwright, το HTML ή το κείμενο."
+  },
+  "infoScreenshot": {
+    "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">C</kbd> για στιγμιότυπο του στοιχείου. Γίνεται λήψη ως PNG ή αντιγράφεται στο πρόχειρο· αλλάξτε το από το <strong>Λήψη στιγμιότυπων</strong> στις ρυθμίσεις."
   },
   "infoStep4": {
     "message": "Σε καρφιτσωμένο πίνακα, <strong>κάντε κλικ σε οποιαδήποτε τιμή</strong> για να επεξεργαστείτε στυλ, box, χαρακτηριστικά ή κείμενο. Το <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> εφαρμόζει, το <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ακυρώνει και το <strong>reset</strong> τα αναιρεί όλα. Οι αλλαγές μένουν στη σελίδα μέχρι την επαναφόρτωση."

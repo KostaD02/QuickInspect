@@ -87,7 +87,7 @@
     "message": "Markdown kopiëren"
   },
   "shortcutScreenshot": {
-    "message": "Schermafbeelding downloaden"
+    "message": "Schermafbeelding maken"
   },
   "editorLabel": {
     "message": "Editor"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Klik op waarden in een vastgezet paneel om stijlen, attributen en tekst op de pagina te wijzigen"
+  },
+  "settingsScreenshot": {
+    "message": "Schermafbeelding"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Schermafbeeldingen downloaden"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Opslaan als PNG-bestand, of naar het klembord kopiëren als dit uit staat"
   },
   "settingsPopup": {
     "message": "Pop-up"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> om de selector, XPath, Playwright-locator, HTML of tekst te kopiëren."
+  },
+  "infoScreenshot": {
+    "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">C</kbd> voor een schermafbeelding van het element. Die wordt als PNG gedownload of naar het klembord gekopieerd; wissel via <strong>Schermafbeeldingen downloaden</strong> in de instellingen."
   },
   "infoStep4": {
     "message": "<strong>Klik op een waarde</strong> in een vastgezet paneel om stijlen, box, attributen of tekst te bewerken. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> past toe, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annuleert en <strong>reset</strong> maakt alles ongedaan. Bewerkingen blijven in de pagina tot je herlaadt."

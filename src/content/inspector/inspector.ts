@@ -2,6 +2,7 @@ import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
   captureElement,
+  copyImage,
   copyText,
   deepElementFromPoint,
   downloadBlob,
@@ -490,15 +491,24 @@ export class Inspector {
     const target = this.current;
     if (!target) return;
     const label = t('actionScreenshot');
-    const name = fileName(this.info?.summary ?? '', 'png');
+    const name = fileName(this.info?.summary ?? '', new Date(), 'png');
+    const download = this.settings.downloadScreenshot;
     const rect = target.getBoundingClientRect();
     this.host
       .conceal(() => captureElement(rect))
-      .then((blob) => {
-        if (blob) downloadBlob(blob, name);
+      .then(async (blob) => {
+        if (!blob) return false;
+        if (!download) return copyImage(blob);
+        downloadBlob(blob, name);
+        return true;
+      })
+      .then((done) => {
+        const [ok, failed] = download
+          ? ['toastDownloaded', 'toastDownloadFailed']
+          : ['toastCopied', 'toastCopyFailed'];
         this.toast.show(
-          t(blob ? 'toastDownloaded' : 'toastDownloadFailed', [label]),
-          blob ? name : '',
+          t(done ? ok : failed, [label]),
+          done && download ? name : '',
         );
       });
   }

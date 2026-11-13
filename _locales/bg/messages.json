@@ -87,7 +87,7 @@
     "message": "Копирай Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Изтегли екранната снимка"
+    "message": "Направи екранна снимка"
   },
   "editorLabel": {
     "message": "Редактор"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Щракнете върху стойности в закачен панел, за да промените стилове, атрибути и текст на страницата"
+  },
+  "settingsScreenshot": {
+    "message": "Екранна снимка"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Изтегляне на снимките"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Запазване като PNG файл или копиране в клипборда, когато е изключено"
   },
   "settingsPopup": {
     "message": "Изскачащ прозорец"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, за да копирате селектора, XPath, Playwright локатора, HTML или текста."
+  },
+  "infoScreenshot": {
+    "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">C</kbd> за екранна снимка на елемента. Тя се изтегля като PNG или отива в клипборда; превключете от <strong>Изтегляне на снимките</strong> в настройките."
   },
   "infoStep4": {
     "message": "В закачен панел <strong>щракнете върху стойност</strong>, за да редактирате стилове, бокс, атрибути или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> прилага, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказва, а <strong>reset</strong> отменя всичко. Редакциите остават на страницата до презареждане."

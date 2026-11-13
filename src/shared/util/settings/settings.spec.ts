@@ -29,6 +29,10 @@ describe('settings', () => {
     ).toBe(false);
     expect(normaliseSettings({}).allowEdit).toBe(true);
     expect(normaliseSettings({ allowEdit: false }).allowEdit).toBe(false);
+    expect(normaliseSettings({}).downloadScreenshot).toBe(true);
+    expect(
+      normaliseSettings({ downloadScreenshot: false }).downloadScreenshot,
+    ).toBe(false);
     expect(
       normaliseSettings({ modifier: 'Hyper', showBox: 'yes' }),
     ).toMatchObject({

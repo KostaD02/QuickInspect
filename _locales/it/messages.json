@@ -87,7 +87,7 @@
     "message": "Copia Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Scarica screenshot"
+    "message": "Fai uno screenshot"
   },
   "editorLabel": {
     "message": "Editor"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Fai clic sui valori in un pannello fissato per cambiare stili, attributi e testo della pagina"
+  },
+  "settingsScreenshot": {
+    "message": "Screenshot"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Scarica gli screenshot"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Salva come file PNG, o copia negli appunti se disattivato"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Premi <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> per copiare il selettore, l’XPath, il locator Playwright, l’HTML o il testo."
+  },
+  "infoScreenshot": {
+    "message": "Premi <kbd class=\"kd-chip kd-font-mono\">C</kbd> per uno screenshot dell’elemento. Viene scaricato come PNG o copiato negli appunti; cambialo con <strong>Scarica gli screenshot</strong> nelle impostazioni."
   },
   "infoStep4": {
     "message": "In un pannello fissato, <strong>fai clic su un valore</strong> per modificare stili, box, attributi o testo. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annulla e <strong>reset</strong> annulla tutto. Le modifiche restano nella pagina fino al ricaricamento."

@@ -163,6 +163,25 @@ describe('inspector', () => {
     key('keydown', { code: 'Escape', key: 'Escape' });
   });
 
+  it('reports a failed screenshot copy when downloads are off', async () => {
+    reopen();
+    inspector.setSettings({ ...DEFAULT_SETTINGS, downloadScreenshot: false });
+    hold();
+    (chrome.runtime.sendMessage as jest.Mock).mockImplementationOnce(() =>
+      Promise.resolve(null),
+    );
+    button.getBoundingClientRect = () =>
+      ({ x: 10, y: 10, width: 50, height: 20 }) as DOMRect;
+    key('keydown', { code: 'KeyC', key: 'c', altKey: true });
+    flush();
+    flush();
+    await settled();
+    await settled();
+    expect(host()!.shadowRoot!.querySelector('.toast')!.textContent).toBe(
+      'Could not copy screenshot',
+    );
+  });
+
   it('hides itself for the C screenshot and reports a failed capture', async () => {
     reopen();
     hold();
@@ -175,6 +194,7 @@ describe('inspector', () => {
     expect(host()!.hidden).toBe(true);
     flush();
     flush();
+    await settled();
     await settled();
     expect(sendMessage).toHaveBeenCalled();
     expect(host()!.hidden).toBe(false);

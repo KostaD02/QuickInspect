@@ -87,7 +87,7 @@
     "message": "Markdown をコピー"
   },
   "shortcutScreenshot": {
-    "message": "スクリーンショットをダウンロード"
+    "message": "スクリーンショットを撮る"
   },
   "editorLabel": {
     "message": "エディター"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "固定したパネルの値をクリックして、ページのスタイル、属性、テキストを変更します"
+  },
+  "settingsScreenshot": {
+    "message": "スクリーンショット"
+  },
+  "settingDownloadScreenshot": {
+    "message": "スクリーンショットをダウンロード"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "PNG ファイルとして保存、オフのときはクリップボードにコピー"
   },
   "settingsPopup": {
     "message": "ポップアップ"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "<kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> を押すと、セレクター、XPath、Playwright ロケーター、HTML、テキストをコピーできます。"
+  },
+  "infoScreenshot": {
+    "message": "<kbd class=\"kd-chip kd-font-mono\">C</kbd> で要素のスクリーンショットを撮ります。PNG としてダウンロードするかクリップボードにコピーし、設定の <strong>スクリーンショットをダウンロード</strong> で切り替えられます。"
   },
   "infoStep4": {
     "message": "固定したパネルで<strong>値をクリック</strong>すると、スタイル、ボックス、属性、テキストを編集できます。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> で適用、<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> でキャンセル、<strong>reset</strong> ですべて元に戻ります。編集内容はページを再読み込みするまで残ります。"

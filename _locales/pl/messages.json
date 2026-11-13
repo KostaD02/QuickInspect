@@ -87,7 +87,7 @@
     "message": "Kopiuj Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Pobierz zrzut ekranu"
+    "message": "Zrób zrzut ekranu"
   },
   "editorLabel": {
     "message": "Edytor"
@@ -130,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Klikaj wartości w przypiętym panelu, aby zmieniać style, atrybuty i tekst na stronie"
+  },
+  "settingsScreenshot": {
+    "message": "Zrzut ekranu"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Pobieraj zrzuty ekranu"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Zapisz jako plik PNG albo, gdy wyłączone, skopiuj do schowka"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -214,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Naciśnij <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, aby skopiować selektor, XPath, lokator Playwright, HTML lub tekst."
+  },
+  "infoScreenshot": {
+    "message": "Naciśnij <kbd class=\"kd-chip kd-font-mono\">C</kbd>, aby zrobić zrzut elementu. Zostanie pobrany jako PNG lub skopiowany do schowka; zmień to opcją <strong>Pobieraj zrzuty ekranu</strong> w ustawieniach."
   },
   "infoStep4": {
     "message": "W przypiętym panelu <strong>kliknij dowolną wartość</strong>, aby edytować style, box, atrybuty lub tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> zatwierdza, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anuluje, a <strong>reset</strong> cofa wszystko. Zmiany zostają na stronie do jej przeładowania."

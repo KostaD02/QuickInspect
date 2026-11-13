@@ -116,8 +116,8 @@
     "description": "Shortcut description next to the M key cap."
   },
   "shortcutScreenshot": {
-    "message": "Download screenshot",
-    "description": "Shortcut description next to the C key cap."
+    "message": "Take a screenshot",
+    "description": "Shortcut description next to the C key cap; the screenshot is downloaded or copied, depending on a setting."
   },
   "editorLabel": {
     "message": "Editor",
@@ -170,6 +170,18 @@
   "settingAllowEditHint": {
     "message": "Click values in a pinned panel to change styles, attributes and text on the page",
     "description": "Hint under the allow edits toggle."
+  },
+  "settingsScreenshot": {
+    "message": "Screenshot",
+    "description": "Settings group heading for the C screenshot."
+  },
+  "settingDownloadScreenshot": {
+    "message": "Download screenshots",
+    "description": "Settings toggle: on downloads the C screenshot as a PNG file, off copies it to the clipboard."
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Save as a PNG file, or copy to the clipboard when off",
+    "description": "Hint under the Download screenshots toggle."
   },
   "settingsPopup": {
     "message": "Popup",
@@ -282,6 +294,10 @@
   "infoStep3": {
     "message": "Press <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> to copy the selector, XPath, Playwright locator, HTML or text.",
     "description": "Info panel step. HTML: keep the five <kbd> tags and the letters inside them, they are the keys to press."
+  },
+  "infoScreenshot": {
+    "message": "Press <kbd class=\"kd-chip kd-font-mono\">C</kbd> for a screenshot of the element. It downloads as a PNG or goes to the clipboard, switch it under <strong>Download screenshots</strong> in the settings.",
+    "description": "Info panel step about the C key; the <strong> holds the settingDownloadScreenshot name. Keep the markup."
   },
   "infoStep4": {
     "message": "In a pinned panel, <strong>click any value</strong> to edit styles, box, attributes or text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applies, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancels and <strong>reset</strong> undoes it all. Edits stay in the page until you reload.",

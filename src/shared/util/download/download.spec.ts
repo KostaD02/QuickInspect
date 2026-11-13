@@ -1,11 +1,26 @@
-import { downloadBlob, fileName } from './download';
+import { downloadBlob, fileName, timestamp } from './download';
 
 describe('download', () => {
-  it('turns the element summary into a safe file name', () => {
-    expect(fileName('button#go.primary', 'png')).toBe('button-go.primary.png');
-    expect(fileName('div[role="dialog"]', 'png')).toBe('div-role-dialog.png');
-    expect(fileName('#…', 'png')).toBe('element.png');
-    expect(fileName('a'.repeat(80), 'png')).toBe(`${'a'.repeat(60)}.png`);
+  const date = new Date(2026, 10, 13, 9, 5);
+
+  it('orders the date the way the locale writes it', () => {
+    expect(timestamp(date, 'en-US')).toBe('11-13-2026-09-05');
+    expect(timestamp(date, 'de')).toBe('13-11-2026-09-05');
+    expect(timestamp(date, 'ja')).toBe('2026-11-13-09-05');
+    expect(timestamp(date, 'ar')).toBe('13-11-2026-09-05');
+    expect(timestamp(date, 'not a locale')).toBe('13-11-2026-09-05');
+  });
+
+  it('names the file after the element and the time', () => {
+    expect(fileName('button#go.primary', date, 'png')).toBe(
+      'QuickInspect-button-go-primary-11-13-2026-09-05.png',
+    );
+    expect(fileName('#…', date, 'png')).toBe(
+      'QuickInspect-element-11-13-2026-09-05.png',
+    );
+    expect(fileName('a'.repeat(80), date, 'png')).toBe(
+      `QuickInspect-${'a'.repeat(60)}-11-13-2026-09-05.png`,
+    );
   });
 
   it('clicks a download link for the blob and frees the URL later', () => {
