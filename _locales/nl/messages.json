@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Schermafbeelding maken"
   },
+  "shortcutCompare": {
+    "message": "Elementen vergelijken"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Opslaan als PNG-bestand, of naar het klembord kopiëren als dit uit staat"
+  },
+  "settingsCompare": {
+    "message": "Vergelijking"
+  },
+  "settingDismissCompare": {
+    "message": "Na gebruik vergeten"
+  },
+  "settingDismissCompareHint": {
+    "message": "Vergeet het gemarkeerde element zodra je na een vergelijking een ander kiest; uit bewaart het om opnieuw te vergelijken"
   },
   "settingsPopup": {
     "message": "Pop-up"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">C</kbd> voor een schermafbeelding van het element. Die wordt als PNG gedownload of naar het klembord gekopieerd; wissel via <strong>Schermafbeeldingen downloaden</strong> in de instellingen."
   },
+  "infoCompare": {
+    "message": "Druk op <kbd class=\"kd-chip kd-font-mono\">D</kbd> bij een element en beweeg daarna over een ander of zet het vast om te zien waar box en stijlen verschillen. Druk nogmaals op <kbd class=\"kd-chip kd-font-mono\">D</kbd> bij het eerste om te stoppen. Klik in een vastgezet paneel op een voorouder onder <strong>Context</strong> om ernaartoe te gaan."
+  },
   "infoStep4": {
     "message": "<strong>Klik op een waarde</strong> in een vastgezet paneel om stijlen, box, attributen of tekst te bewerken. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> past toe, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annuleert en <strong>reset</strong> maakt alles ongedaan. Bewerkingen blijven in de pagina tot je herlaadt."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "berekend"
+  },
+  "sectionCompare": {
+    "message": "Vergelijking"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "geen verschillen"
   },
   "shadowHostHint": {
     "message": "in de shadow root van $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "bron openen"
   },
+  "footCompare": {
+    "message": "vergelijken"
+  },
   "actionSelector": {
     "message": "selector"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Vergelijken met"
+  },
+  "toastCompareCleared": {
+    "message": "Vergelijking gewist"
   }
 }

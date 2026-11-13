@@ -40,6 +40,7 @@ export class PopupController {
     showEditorStatus: this.input('set-show-editor-status'),
     allowEdit: this.input('set-allow-edit'),
     downloadScreenshot: this.input('set-download-screenshot'),
+    dismissCompare: this.input('set-dismiss-compare'),
   };
 
   private readonly domRefs = {

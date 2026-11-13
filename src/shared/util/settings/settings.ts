@@ -57,6 +57,10 @@ export function normaliseSettings(raw: unknown): LensSettings {
       stored.downloadScreenshot,
       DEFAULT_SETTINGS.downloadScreenshot,
     ),
+    dismissCompare: bool(
+      stored.dismissCompare,
+      DEFAULT_SETTINGS.dismissCompare,
+    ),
   };
 }
 

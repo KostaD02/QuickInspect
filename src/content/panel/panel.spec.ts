@@ -93,6 +93,7 @@ describe('panel', () => {
   let read: jest.Mock;
   let write: jest.Mock;
   let revert: jest.Mock;
+  let select: jest.Mock;
   let panel: Panel;
 
   beforeEach(() => {
@@ -103,12 +104,14 @@ describe('panel', () => {
     read = jest.fn(() => 'block');
     write = jest.fn(() => true);
     revert = jest.fn();
+    select = jest.fn();
     panel = new Panel(root, {
       copy: onCopy,
       open: onOpen,
       read,
       write,
       revert,
+      select,
     });
   });
 
@@ -390,6 +393,7 @@ describe('panel', () => {
       read,
       write,
       revert,
+      select,
     });
     mirrored.render(info, DEFAULT_SETTINGS);
     const node = root.querySelectorAll<HTMLElement>('.panel')[1]!;
@@ -443,6 +447,47 @@ describe('panel', () => {
 
     panel.render({ ...info, shadowHost: 'x-widget' }, DEFAULT_SETTINGS);
     expect(root.textContent).toContain('inside shadow root of x-widget');
+  });
+
+  it('puts a comparison first with the base value beside each difference', () => {
+    panel.render(info, DEFAULT_SETTINGS, {
+      compare: {
+        base: 'div#base',
+        rows: [
+          { property: 'display', value: 'flex', base: 'block' },
+          { property: 'gap', value: '', base: '4 4' },
+        ],
+      },
+    });
+    const section = root.querySelector('.body .section')!;
+    expect(section.querySelector('.section-title')?.textContent).toBe(
+      'Comparevs div#base',
+    );
+    const rows = Array.from(section.querySelectorAll('.row'), (row) =>
+      Array.from(row.children, (cell) => cell.textContent),
+    );
+    expect(rows).toEqual([
+      ['display', 'flex', 'block'],
+      ['gap', 'none', '4 4'],
+    ]);
+
+    panel.render(info, DEFAULT_SETTINGS, {
+      compare: { base: 'div#base', rows: [] },
+    });
+    expect(root.querySelector('.body .section')?.textContent).toContain(
+      'no differences',
+    );
+    panel.render(info, DEFAULT_SETTINGS);
+    expect(root.querySelector('.body')?.textContent).not.toContain('Compare');
+  });
+
+  it('jumps to an ancestor when its breadcrumb is clicked', () => {
+    panel.setPinned(true);
+    panel.render(info, DEFAULT_SETTINGS);
+    const crumbs = Array.from(root.querySelectorAll<HTMLElement>('.crumb'));
+    expect(crumbs.map((crumb) => crumb.textContent)).toEqual(['main', 'form']);
+    crumbs[0].click();
+    expect(select).toHaveBeenCalledWith(2);
   });
 
   it('dispatches copy actions from buttons and flashes them', () => {

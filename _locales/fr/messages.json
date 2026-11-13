@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Faire une capture"
   },
+  "shortcutCompare": {
+    "message": "Comparer des éléments"
+  },
   "editorLabel": {
     "message": "Éditeur"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Enregistrer en PNG, ou copier dans le presse-papiers si désactivé"
+  },
+  "settingsCompare": {
+    "message": "Comparaison"
+  },
+  "settingDismissCompare": {
+    "message": "Abandonner après usage"
+  },
+  "settingDismissCompareHint": {
+    "message": "Oublie l’élément marqué dès que vous en choisissez un autre après une comparaison ; désactivé, il reste pour comparer à nouveau"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Appuyez sur <kbd class=\"kd-chip kd-font-mono\">C</kbd> pour capturer l’élément. La capture est téléchargée en PNG ou copiée dans le presse-papiers ; changez-le avec <strong>Télécharger les captures</strong> dans les paramètres."
   },
+  "infoCompare": {
+    "message": "Appuyez sur <kbd class=\"kd-chip kd-font-mono\">D</kbd> sur un élément, puis survolez ou épinglez-en un autre pour voir où la boîte et les styles diffèrent. Appuyez de nouveau sur <kbd class=\"kd-chip kd-font-mono\">D</kbd> sur le premier pour arrêter. Dans un panneau épinglé, cliquez sur un ancêtre dans <strong>Contexte</strong> pour y aller."
+  },
   "infoStep4": {
     "message": "Dans un panneau épinglé, <strong>cliquez sur une valeur</strong> pour modifier les styles, la boîte, les attributs ou le texte. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applique, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annule et <strong>reset</strong> annule tout. Les modifications restent dans la page jusqu’au rechargement."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "calculés"
+  },
+  "sectionCompare": {
+    "message": "Comparaison"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "aucune différence"
   },
   "shadowHostHint": {
     "message": "dans le shadow root de $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "ouvrir la source"
   },
+  "footCompare": {
+    "message": "comparer"
+  },
   "actionSelector": {
     "message": "sélecteur"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Comparaison avec"
+  },
+  "toastCompareCleared": {
+    "message": "Comparaison effacée"
   }
 }

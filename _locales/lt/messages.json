@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Daryti ekrano kopiją"
   },
+  "shortcutCompare": {
+    "message": "Palyginti elementus"
+  },
   "editorLabel": {
     "message": "Redaktorius"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Išsaugoti PNG failu arba, kai išjungta, kopijuoti į iškarpinę"
+  },
+  "settingsCompare": {
+    "message": "Palyginimas"
+  },
+  "settingDismissCompare": {
+    "message": "Atmesti panaudojus"
+  },
+  "settingDismissCompareHint": {
+    "message": "Pamiršta pažymėtą elementą, kai po palyginimo pasirenkate kitą; išjungus jis lieka kitam palyginimui"
   },
   "settingsPopup": {
     "message": "Iškylantysis langas"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Paspauskite <kbd class=\"kd-chip kd-font-mono\">C</kbd>, kad padarytumėte elemento ekrano kopiją. Ji atsisiunčiama kaip PNG arba nukopijuojama į iškarpinę; perjunkite nustatymuose <strong>Atsisiųsti ekrano kopijas</strong>."
   },
+  "infoCompare": {
+    "message": "Paspauskite <kbd class=\"kd-chip kd-font-mono\">D</kbd> ant elemento, tada užveskite ant kito arba prisekite jį, kad matytumėte, kur skiriasi dėžutė ir stiliai. Norėdami baigti, dar kartą paspauskite <kbd class=\"kd-chip kd-font-mono\">D</kbd> ant pirmojo. Prisegtame skydelyje spustelėkite protėvį skiltyje <strong>Kontekstas</strong>, kad pereitumėte prie jo."
+  },
   "infoStep4": {
     "message": "Prisegtame skydelyje <strong>spustelėkite bet kurią reikšmę</strong>, kad redaguotumėte stilius, box, atributus arba tekstą. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> pritaiko, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atšaukia, o <strong>reset</strong> viską anuliuoja. Pakeitimai puslapyje lieka iki perkrovimo."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "apskaičiuota"
+  },
+  "sectionCompare": {
+    "message": "Palyginimas"
+  },
+  "compareHint": {
+    "message": "prieš $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "skirtumų nėra"
   },
   "shadowHostHint": {
     "message": "elemento $HOST$ shadow root viduje",
@@ -539,6 +569,9 @@
   "footOpenSource": {
     "message": "atidaryti šaltinį"
   },
+  "footCompare": {
+    "message": "palyginti"
+  },
   "actionSelector": {
     "message": "selektorius"
   },
@@ -622,5 +655,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Lyginama su"
+  },
+  "toastCompareCleared": {
+    "message": "Palyginimas išvalytas"
   }
 }

@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Snimi zaslon"
   },
+  "shortcutCompare": {
+    "message": "Usporedi elemente"
+  },
   "editorLabel": {
     "message": "Uređivač"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Spremi kao PNG datoteku ili, kad je isključeno, kopiraj u međuspremnik"
+  },
+  "settingsCompare": {
+    "message": "Usporedba"
+  },
+  "settingDismissCompare": {
+    "message": "Odbaci nakon upotrebe"
+  },
+  "settingDismissCompareHint": {
+    "message": "Zaboravlja označeni element kad nakon usporedbe odaberete drugi; isključeno ga čuva za novu usporedbu"
   },
   "settingsPopup": {
     "message": "Skočni prozor"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">C</kbd> za snimku elementa. Preuzima se kao PNG ili kopira u međuspremnik; promijenite to opcijom <strong>Preuzimaj snimke</strong> u postavkama."
   },
+  "infoCompare": {
+    "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">D</kbd> na elementu, zatim prijeđite mišem preko drugog ili ga prikvačite da vidite gdje se razlikuju okvir i stilovi. Ponovno pritisnite <kbd class=\"kd-chip kd-font-mono\">D</kbd> na prvom za prekid. U prikvačenoj ploči kliknite pretka u odjeljku <strong>Kontekst</strong> da biste prešli na njega."
+  },
   "infoStep4": {
     "message": "U prikvačenoj ploči <strong>kliknite bilo koju vrijednost</strong> da uredite stilove, box, atribute ili tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> primjenjuje, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> odustaje, a <strong>reset</strong> poništava sve. Izmjene ostaju na stranici do ponovnog učitavanja."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "izračunato"
+  },
+  "sectionCompare": {
+    "message": "Usporedba"
+  },
+  "compareHint": {
+    "message": "naspram $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "nema razlika"
   },
   "shadowHostHint": {
     "message": "unutar shadow roota elementa $HOST$",
@@ -539,6 +569,9 @@
   "footOpenSource": {
     "message": "otvori izvor"
   },
+  "footCompare": {
+    "message": "usporedi"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -622,5 +655,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Uspoređujem s"
+  },
+  "toastCompareCleared": {
+    "message": "Usporedba uklonjena"
   }
 }

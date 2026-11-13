@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Ambil tangkapan skrin"
   },
+  "shortcutCompare": {
+    "message": "Bandingkan elemen"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Simpan sebagai fail PNG, atau salin ke papan keratan apabila dimatikan"
+  },
+  "settingsCompare": {
+    "message": "Perbandingan"
+  },
+  "settingDismissCompare": {
+    "message": "Buang selepas guna"
+  },
+  "settingDismissCompareHint": {
+    "message": "Lupakan elemen bertanda apabila anda memilih elemen lain selepas perbandingan; dimatikan menyimpannya untuk dibanding semula"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Tekan <kbd class=\"kd-chip kd-font-mono\">C</kbd> untuk tangkapan skrin elemen. Ia dimuat turun sebagai PNG atau disalin ke papan keratan; tukar melalui <strong>Muat turun tangkapan skrin</strong> dalam tetapan."
   },
+  "infoCompare": {
+    "message": "Tekan <kbd class=\"kd-chip kd-font-mono\">D</kbd> pada elemen, kemudian tuding atau pin elemen lain untuk melihat perbezaan kotak dan gayanya. Tekan <kbd class=\"kd-chip kd-font-mono\">D</kbd> sekali lagi pada yang pertama untuk berhenti. Dalam panel yang dipin, klik leluhur di bawah <strong>Konteks</strong> untuk melompat ke situ."
+  },
   "infoStep4": {
     "message": "Dalam panel yang disemat, <strong>klik mana-mana nilai</strong> untuk menyunting gaya, box, atribut atau teks. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> menggunakan, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> membatalkan dan <strong>reset</strong> membuat asal semuanya. Suntingan kekal pada halaman sehingga dimuat semula."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "terhitung"
+  },
+  "sectionCompare": {
+    "message": "Perbandingan"
+  },
+  "compareHint": {
+    "message": "lwn $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "tiada perbezaan"
   },
   "shadowHostHint": {
     "message": "dalam shadow root $HOST$",
@@ -467,6 +497,9 @@
   "footOpenSource": {
     "message": "buka sumber"
   },
+  "footCompare": {
+    "message": "banding"
+  },
   "actionSelector": {
     "message": "pemilih"
   },
@@ -550,5 +583,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Membandingkan dengan"
+  },
+  "toastCompareCleared": {
+    "message": "Perbandingan dikosongkan"
   }
 }

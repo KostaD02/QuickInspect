@@ -2,6 +2,7 @@ import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
   captureElement,
+  compareElements,
   copyImage,
   copyText,
   deepElementFromPoint,
@@ -13,6 +14,7 @@ import {
   isOwnNode,
   mapToOriginal,
   openInEditor,
+  parentOf,
   resolveNextFrame,
   t,
   truncate,
@@ -28,7 +30,7 @@ import {
 } from '../edits/edits';
 import { LensHost } from '../host/host';
 import { Overlay } from '../overlay/overlay';
-import { Panel } from '../panel/panel';
+import { Comparison, Panel } from '../panel/panel';
 import { Toast } from '../toast/toast';
 
 type FrameWork = 'retarget' | 'refresh' | 'move';
@@ -67,6 +69,9 @@ export class Inspector {
     revert: () => {
       this.revert();
     },
+    select: (depth) => {
+      this.select(depth);
+    },
   });
 
   private settings: LensSettings = { ...DEFAULT_SETTINGS };
@@ -78,6 +83,9 @@ export class Inspector {
   private pointer = { x: -1, y: -1 };
   // ? the elements walked up from since the pin, so walking down retraces them before falling back to the first child
   private trail: Element[] = [];
+  private base: Element | null = null;
+  private baseSummary = '';
+  private compared: Element | null = null;
   private frame = 0;
   private readonly work = new Set<FrameWork>();
 
@@ -121,6 +129,7 @@ export class Inspector {
     this.settings = next;
     this.overlay.setBoxModel(next.showBoxModel);
     if (!next.enabled) {
+      this.base = null;
       this.close();
       return;
     }
@@ -167,6 +176,12 @@ export class Inspector {
     if (event.code === 'KeyO') {
       this.swallow(event);
       this.openSource();
+      return;
+    }
+
+    if (event.code === 'KeyD') {
+      this.swallow(event);
+      this.toggleBase();
       return;
     }
 
@@ -356,6 +371,7 @@ export class Inspector {
       return;
     }
     this.overlay.show(target, this.info.box, this.info.summary);
+    this.showBase();
   }
 
   private refresh(): void {
@@ -369,11 +385,72 @@ export class Inspector {
     this.info = inspectElement(target);
     this.resolveSource(target, this.info);
     this.overlay.show(target, this.info.box, this.info.summary);
+    this.showBase();
     this.panel.render(this.info, this.settings, {
       edited: hasEdits(target),
       keepScroll,
+      compare: this.comparison(target),
     });
     this.panel.show();
+  }
+
+  private comparison(target: Element): Comparison | null {
+    const base = this.base;
+    if (!base?.isConnected || base === target) return null;
+    return { base: this.baseSummary, rows: compareElements(target, base) };
+  }
+
+  private showBase(): void {
+    const base = this.base;
+    const outlined = base?.isConnected && base !== this.current;
+    this.overlay.showBase(outlined ? base.getBoundingClientRect() : null);
+  }
+
+  private toggleBase(): void {
+    const target = this.current;
+    if (!target || !this.info) return;
+    if (this.base === target) {
+      this.base = null;
+      this.toast.show(t('toastCompareCleared'));
+      this.refresh();
+      return;
+    }
+    this.base = target;
+    this.baseSummary = this.info.summary;
+    this.compared = null;
+    this.toast.show(t('toastCompareBase'), this.info.summary);
+    if (this.pinned) this.unpin();
+    else this.refresh();
+  }
+
+  // ? each step up is kept on the trail, so the down arrow walks back to where the click started
+  private select(depth: number): void {
+    let target = this.current;
+    for (let step = 0; target && step < depth; step += 1) {
+      const parent = parentOf(target);
+      if (!parent || parent === document.documentElement) break;
+      this.trail.push(target);
+      target = parent;
+    }
+    if (!target || target === this.current) return;
+    this.current = target;
+    this.chosen(target);
+    this.refresh();
+  }
+
+  // ? hovering compares freely; only picking a second element after a compared one dismisses the base
+  private chosen(target: Element | null): void {
+    if (!this.base || !target || target === this.base) return;
+    if (
+      this.settings.dismissCompare &&
+      this.compared &&
+      this.compared !== target
+    ) {
+      this.base = null;
+      this.compared = null;
+      return;
+    }
+    this.compared = target;
   }
 
   private write(field: EditField, value: string | null): boolean {
@@ -406,6 +483,7 @@ export class Inspector {
     }[direction];
     if (!next || next === document.documentElement || isOwnNode(next)) return;
     this.current = next;
+    this.chosen(next);
     if (!this.pinned) this.pin();
     if (direction === 'parent') this.trail.push(from);
     if (direction === 'child') {
@@ -419,6 +497,7 @@ export class Inspector {
     this.pinned = true;
     this.trail = [];
     this.panel.setPinned(true);
+    this.chosen(this.current);
     this.refresh();
   }
 
@@ -434,6 +513,7 @@ export class Inspector {
   }
 
   private close(): void {
+    if (this.settings.dismissCompare) this.base = null;
     this.pinned = false;
     this.setHolding(false);
     this.panel.setPinned(false);
@@ -467,6 +547,7 @@ export class Inspector {
       this.panel.render(info, this.settings, {
         edited: hasEdits(target),
         keepScroll: true,
+        compare: this.comparison(target),
       });
     });
   }

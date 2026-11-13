@@ -7,6 +7,7 @@ import {
 } from '@/shared/types';
 import {
   bestLocator,
+  CompareRow,
   formatDuration,
   formatSource,
   plural,
@@ -24,11 +25,18 @@ export interface PanelHandlers {
   read: (field: EditField) => string;
   write: (field: EditField, value: string | null) => boolean;
   revert: () => void;
+  select: (depth: number) => void;
+}
+
+export interface Comparison {
+  base: string;
+  rows: CompareRow[];
 }
 
 export interface RenderOptions {
   edited?: boolean;
   keepScroll?: boolean;
+  compare?: Comparison | null;
 }
 
 interface Editable {
@@ -105,6 +113,9 @@ const CLS = {
     'editable kd-d-inline-block kd-max-w-100 kd-cursor-text kd-radius-sm kd-transition-fast',
   edit: 'edit kd-field__input kd-w-100 kd-font-mono kd-fs-xxxs kd-py-1 kd-px-2',
   crumbs: 'crumbs kd-d-flex kd-flex-wrap kd-font-mono kd-fs-xxxs',
+  crumb: 'crumb kd-text-muted',
+  baseValue:
+    'base-value kd-font-mono kd-fs-xxxs kd-text-muted kd-break-break-all',
   sep: 'sep kd-text-muted kd-mx-1',
   current: 'current kd-text-bright kd-fw-semibold',
   foot: 'foot kd-d-flex kd-flex-wrap kd-gap-2 kd-px-3 kd-py-2 kd-bg-surface kd-border-t-1 kd-fs-micro kd-fw-medium kd-text-muted',
@@ -204,6 +215,10 @@ export class Panel {
     }
     if (id === 'revert') {
       this.handlers.revert();
+      return;
+    }
+    if (id === 'ancestor') {
+      this.handlers.select(Number(button?.dataset.depth));
       return;
     }
     if (id === 'remove' && button) {
@@ -500,6 +515,7 @@ export class Panel {
     this.head.replaceChildren(...Array.from(head.childNodes));
 
     const sections: Child[] = [];
+    if (options.compare) sections.push(this.compare(options.compare));
     if (settings.showBox) sections.push(this.box(info));
     if (settings.showEvents) sections.push(this.events(info));
     if (settings.showStyles) sections.push(this.styles(info.styles));
@@ -549,6 +565,27 @@ export class Panel {
         hint ? h('span', { class: CLS.hint }, hint) : null,
       ),
       ...rows,
+    );
+  }
+
+  private compare(compare: Comparison): HTMLElement {
+    const rows = compare.rows.map((row) =>
+      this.row(
+        row.property,
+        truncate(row.value || t('valueNone'), 90),
+        h(
+          'span',
+          { class: CLS.baseValue },
+          code(truncate(row.base || t('valueNone'), 40)),
+        ),
+      ),
+    );
+    return this.section(
+      t('sectionCompare'),
+      t('compareHint', [compare.base]),
+      ...(rows.length
+        ? rows
+        : [h('div', { class: CLS.muted }, t('compareSame'))]),
     );
   }
 
@@ -894,7 +931,15 @@ export class Panel {
     const separator = textDirection() === 'rtl' ? '‹' : '›';
     for (const ancestor of [...info.ancestors].reverse()) {
       crumbs.append(
-        h('span', { class: CLS.muted }, code(ancestor.summary)),
+        h(
+          'span',
+          {
+            class: CLS.crumb,
+            'data-action': 'ancestor',
+            'data-depth': ancestor.depth.toString(),
+          },
+          code(ancestor.summary),
+        ),
         h('span', { class: CLS.sep }, separator),
       );
     }
@@ -1057,6 +1102,7 @@ export class Panel {
         ),
       ),
       h('span', {}, h('kbd', { class: CLS.kbd }, 'C'), t('actionScreenshot')),
+      h('span', {}, h('kbd', { class: CLS.kbd }, 'D'), t('footCompare')),
     ];
     this.foot.replaceChildren(...hints.filter((x): x is Node => !!x));
   }

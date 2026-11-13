@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "स्क्रीनशॉट लें"
   },
+  "shortcutCompare": {
+    "message": "एलिमेंट की तुलना करें"
+  },
   "editorLabel": {
     "message": "एडिटर"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "PNG फ़ाइल के रूप में सहेजें, या बंद होने पर क्लिपबोर्ड पर कॉपी करें"
+  },
+  "settingsCompare": {
+    "message": "तुलना"
+  },
+  "settingDismissCompare": {
+    "message": "उपयोग के बाद हटाएँ"
+  },
+  "settingDismissCompareHint": {
+    "message": "तुलना के बाद दूसरा एलिमेंट चुनते ही चिह्नित एलिमेंट भूल जाएँ; बंद होने पर वह फिर से तुलना के लिए रहता है"
   },
   "settingsPopup": {
     "message": "पॉपअप"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "एलिमेंट का स्क्रीनशॉट लेने के लिए <kbd class=\"kd-chip kd-font-mono\">C</kbd> दबाएँ। यह PNG के रूप में डाउनलोड होता है या क्लिपबोर्ड पर जाता है; सेटिंग्स में <strong>स्क्रीनशॉट डाउनलोड करें</strong> से बदलें।"
   },
+  "infoCompare": {
+    "message": "किसी एलिमेंट पर <kbd class=\"kd-chip kd-font-mono\">D</kbd> दबाएँ, फिर दूसरे पर होवर करें या उसे पिन करें, ताकि बॉक्स और स्टाइल का अंतर दिखे। रोकने के लिए पहले पर फिर से <kbd class=\"kd-chip kd-font-mono\">D</kbd> दबाएँ। पिन किए पैनल में <strong>संदर्भ</strong> के अंदर किसी पूर्वज पर क्लिक करके उस पर जाएँ।"
+  },
   "infoStep4": {
     "message": "पिन किए गए पैनल में <strong>किसी भी वैल्यू पर क्लिक</strong> करके स्टाइल, बॉक्स, एट्रिब्यूट या टेक्स्ट संपादित करें। <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> लागू करता है, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> रद्द करता है और <strong>reset</strong> सब वापस कर देता है। बदलाव पेज रीलोड होने तक रहते हैं।"
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "कंप्यूटेड"
+  },
+  "sectionCompare": {
+    "message": "तुलना"
+  },
+  "compareHint": {
+    "message": "$BASE$ से तुलना",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "कोई अंतर नहीं"
   },
   "shadowHostHint": {
     "message": "$HOST$ के shadow root के अंदर",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "सोर्स खोलें"
   },
+  "footCompare": {
+    "message": "तुलना"
+  },
   "actionSelector": {
     "message": "सेलेक्टर"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "इससे तुलना:"
+  },
+  "toastCompareCleared": {
+    "message": "तुलना हटाई गई"
   }
 }

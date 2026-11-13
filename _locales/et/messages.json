@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Tee ekraanipilt"
   },
+  "shortcutCompare": {
+    "message": "Võrdle elemente"
+  },
   "editorLabel": {
     "message": "Redaktor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Salvesta PNG-failina või väljas olles kopeeri lõikelauale"
+  },
+  "settingsCompare": {
+    "message": "Võrdlus"
+  },
+  "settingDismissCompare": {
+    "message": "Loobu pärast kasutamist"
+  },
+  "settingDismissCompareHint": {
+    "message": "Unustab märgitud elemendi, kui valid pärast võrdlust teise; väljas hoiab selle uueks võrdluseks alles"
   },
   "settingsPopup": {
     "message": "Hüpikaken"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Vajuta <kbd class=\"kd-chip kd-font-mono\">C</kbd>, et teha elemendist ekraanipilt. See laaditakse alla PNG-na või kopeeritakse lõikelauale; vaheta seadetes valikuga <strong>Laadi ekraanipildid alla</strong>."
   },
+  "infoCompare": {
+    "message": "Vajuta elemendil <kbd class=\"kd-chip kd-font-mono\">D</kbd>, siis vii kursor teisele või kinnita see, et näha, kus kast ja stiilid erinevad. Lõpetamiseks vajuta esimesel uuesti <kbd class=\"kd-chip kd-font-mono\">D</kbd>. Kinnitatud paneelil klõpsa jaotises <strong>Kontekst</strong> eellasel, et sinna minna."
+  },
   "infoStep4": {
     "message": "Kinnitatud paneelis <strong>klõpsa mis tahes väärtusel</strong>, et muuta stiile, kasti, atribuute või teksti. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> rakendab, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> tühistab ja <strong>reset</strong> võtab kõik tagasi. Muudatused jäävad lehele kuni uuesti laadimiseni."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "arvutatud"
+  },
+  "sectionCompare": {
+    "message": "Võrdlus"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "erinevusi pole"
   },
   "shadowHostHint": {
     "message": "elemendi $HOST$ shadow rootis",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "ava lähe"
   },
+  "footCompare": {
+    "message": "võrdle"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Võrdlen elemendiga"
+  },
+  "toastCompareCleared": {
+    "message": "Võrdlus tühistatud"
   }
 }

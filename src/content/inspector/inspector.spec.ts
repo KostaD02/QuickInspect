@@ -246,6 +246,173 @@ describe('inspector', () => {
     document.head.innerHTML = '';
   });
 
+  it('compares the hovered element against the one marked with D', () => {
+    document.body.innerHTML =
+      '<main><p class="a" style="display: block">A</p><p class="b" style="display: flex">B</p></main>';
+    const a = document.querySelector('.a')!;
+    const b = document.querySelector('.b')!;
+    document.elementFromPoint = jest.fn(() => a);
+    reopen();
+    hold();
+    const shadow = host()!.shadowRoot!;
+    const compare = () =>
+      Array.from(shadow.querySelectorAll('.section-title')).find((title) =>
+        title.textContent.startsWith('Compare'),
+      );
+    const event = key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+    expect(event.defaultPrevented).toBe(true);
+    expect(shadow.querySelector('.toast')?.textContent).toBe(
+      'Comparing againstp.a',
+    );
+    expect(compare()).toBeUndefined();
+
+    document.elementFromPoint = jest.fn(() => b);
+    mouse('mousemove', { clientX: 20, clientY: 20 });
+    flush();
+    expect(compare()?.textContent).toBe('Comparevs p.a');
+    expect(shadow.querySelector('.overlay-base')?.hasAttribute('hidden')).toBe(
+      false,
+    );
+
+    document.elementFromPoint = jest.fn(() => a);
+    mouse('mousemove', { clientX: 10, clientY: 10 });
+    flush();
+    key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+    expect(shadow.querySelector('.toast')?.textContent).toBe(
+      'Comparison cleared',
+    );
+    document.elementFromPoint = jest.fn(() => b);
+    mouse('mousemove', { clientX: 20, clientY: 20 });
+    flush();
+    expect(compare()).toBeUndefined();
+  });
+
+  it.each([
+    [true, false],
+    [false, true],
+  ])(
+    'with dismiss-after-use %s, the third pick compares again: %s',
+    (dismissCompare, comparesThird) => {
+      document.body.innerHTML =
+        '<main><p class="a">A</p><p class="b">B</p><p class="c">C</p></main>';
+      const pick = (name: string) => {
+        const el = document.querySelector(`.${name}`)!;
+        document.elementFromPoint = jest.fn(() => el);
+        mouse('mousemove', { clientX: 10, clientY: 10 });
+        flush();
+      };
+      reopen();
+      inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare });
+      pick('a');
+      key('keydown', { key: 'Alt' });
+      flush();
+      key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+      const shadow = host()!.shadowRoot!;
+      const comparing = () =>
+        Array.from(shadow.querySelectorAll('.section-title')).some((title) =>
+          title.textContent.startsWith('Compare'),
+        );
+
+      pick('b');
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      flush();
+
+      pick('c');
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      expect(comparing()).toBe(comparesThird);
+      expect(
+        shadow.querySelector('.overlay-base')?.hasAttribute('hidden'),
+      ).toBe(!comparesThird);
+    },
+  );
+
+  it('keeps the marked element through Esc and outside clicks when dismiss-after-use is off', () => {
+    document.body.innerHTML =
+      '<main><p class="a">A</p><p class="b">B</p><p class="c">C</p></main>';
+    const pick = (name: string) => {
+      const el = document.querySelector(`.${name}`)!;
+      document.elementFromPoint = jest.fn(() => el);
+      mouse('mousemove', { clientX: 10, clientY: 10 });
+      flush();
+    };
+    reopen();
+    inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare: false });
+    const comparing = () =>
+      Array.from(
+        host()?.shadowRoot?.querySelectorAll('.section-title') ?? [],
+      ).some((title) => title.textContent.startsWith('Compare'));
+    const pin = (name: string) => {
+      key('keydown', { key: 'Alt' });
+      pick(name);
+      mouse('click', { altKey: true });
+      key('keyup', { key: 'Alt' });
+    };
+
+    key('keydown', { key: 'Alt' });
+    pick('a');
+    key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+    key('keyup', { key: 'Alt' });
+    pin('b');
+    expect(comparing()).toBe(true);
+    mouse('click');
+    pin('c');
+    expect(comparing()).toBe(true);
+    key('keydown', { code: 'Escape', key: 'Escape' });
+    pin('b');
+    expect(comparing()).toBe(true);
+
+    inspector.setSettings({ ...DEFAULT_SETTINGS, enabled: false });
+    inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare: false });
+    pin('c');
+    expect(comparing()).toBe(false);
+  });
+
+  it('unpins after marking a pinned element so the next one can be picked', () => {
+    reopen();
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    expect(host()!.shadowRoot!.querySelector('.panel.pinned')).not.toBeNull();
+    key('keydown', { code: 'KeyD', key: 'd' });
+    expect(
+      host()!.shadowRoot!.querySelector('.panel')?.hasAttribute('hidden'),
+    ).toBe(true);
+    hold();
+    key('keydown', { code: 'Escape', key: 'Escape' });
+    hold();
+    const titles = Array.from(
+      host()!.shadowRoot!.querySelectorAll('.section-title'),
+      (title) => title.textContent,
+    );
+    expect(titles.some((title) => title.startsWith('Compare'))).toBe(false);
+  });
+
+  it('jumps to an ancestor from the breadcrumbs and walks back down', () => {
+    document.body.innerHTML =
+      '<section><div class="b"><span class="c">C</span></div></section>';
+    const c = document.querySelector('.c')!;
+    document.elementFromPoint = jest.fn(() => c);
+    reopen();
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    const summary = () => shadow.querySelector('.head .summary')?.textContent;
+    const crumb = Array.from(
+      shadow.querySelectorAll<HTMLElement>('.crumb'),
+    ).find((node) => node.textContent === 'section')!;
+    crumb.click();
+    expect(summary()).toBe('section');
+    key('keydown', { code: 'ArrowDown', key: 'ArrowDown' });
+    expect(summary()).toBe('div.b');
+    key('keydown', { code: 'ArrowDown', key: 'ArrowDown' });
+    expect(summary()).toBe('span.c');
+  });
+
   it('navigates to the parent and child and pins while doing so', () => {
     hold();
     key('keydown', { code: 'ArrowUp', key: 'ArrowUp' });

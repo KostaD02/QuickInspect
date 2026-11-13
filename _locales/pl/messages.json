@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Zrób zrzut ekranu"
   },
+  "shortcutCompare": {
+    "message": "Porównaj elementy"
+  },
   "editorLabel": {
     "message": "Edytor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Zapisz jako plik PNG albo, gdy wyłączone, skopiuj do schowka"
+  },
+  "settingsCompare": {
+    "message": "Porównanie"
+  },
+  "settingDismissCompare": {
+    "message": "Odrzuć po użyciu"
+  },
+  "settingDismissCompareHint": {
+    "message": "Zapomina zaznaczony element, gdy po porównaniu wybierzesz inny; wyłączone zachowuje go do kolejnych porównań"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Naciśnij <kbd class=\"kd-chip kd-font-mono\">C</kbd>, aby zrobić zrzut elementu. Zostanie pobrany jako PNG lub skopiowany do schowka; zmień to opcją <strong>Pobieraj zrzuty ekranu</strong> w ustawieniach."
   },
+  "infoCompare": {
+    "message": "Naciśnij <kbd class=\"kd-chip kd-font-mono\">D</kbd> na elemencie, a potem najedź na inny lub go przypnij, aby zobaczyć, czym różnią się ramka i style. Naciśnij ponownie <kbd class=\"kd-chip kd-font-mono\">D</kbd> na pierwszym, aby zakończyć. W przypiętym panelu kliknij przodka w sekcji <strong>Kontekst</strong>, aby do niego przejść."
+  },
   "infoStep4": {
     "message": "W przypiętym panelu <strong>kliknij dowolną wartość</strong>, aby edytować style, box, atrybuty lub tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> zatwierdza, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anuluje, a <strong>reset</strong> cofa wszystko. Zmiany zostają na stronie do jej przeładowania."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "obliczone"
+  },
+  "sectionCompare": {
+    "message": "Porównanie"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "brak różnic"
   },
   "shadowHostHint": {
     "message": "w shadow root elementu $HOST$",
@@ -575,6 +605,9 @@
   "footOpenSource": {
     "message": "otwórz źródło"
   },
+  "footCompare": {
+    "message": "porównaj"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -658,5 +691,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Porównanie z"
+  },
+  "toastCompareCleared": {
+    "message": "Porównanie wyczyszczone"
   }
 }

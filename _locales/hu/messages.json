@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Képernyőkép készítése"
   },
+  "shortcutCompare": {
+    "message": "Elemek összehasonlítása"
+  },
   "editorLabel": {
     "message": "Szerkesztő"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Mentés PNG-fájlként, kikapcsolva másolás a vágólapra"
+  },
+  "settingsCompare": {
+    "message": "Összehasonlítás"
+  },
+  "settingDismissCompare": {
+    "message": "Elvetés használat után"
+  },
+  "settingDismissCompareHint": {
+    "message": "Elfelejti a megjelölt elemet, ha összehasonlítás után másikat választ; kikapcsolva megmarad újabb összehasonlításhoz"
   },
   "settingsPopup": {
     "message": "Felugró ablak"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Nyomja meg a <kbd class=\"kd-chip kd-font-mono\">C</kbd> gombot az elem képernyőképéhez. PNG-ként letöltődik vagy a vágólapra kerül; a beállításokban a <strong>Képernyőképek letöltése</strong> kapcsolóval váltható."
   },
+  "infoCompare": {
+    "message": "Nyomja meg a <kbd class=\"kd-chip kd-font-mono\">D</kbd> gombot egy elemen, majd vigye az egeret egy másikra vagy rögzítse, hogy lássa, miben tér el a doboz és a stílus. A leállításhoz nyomja meg újra a <kbd class=\"kd-chip kd-font-mono\">D</kbd> gombot az elsőn. Rögzített panelen a <strong>Kontextus</strong> részben egy ősre kattintva odaugorhat."
+  },
   "infoStep4": {
     "message": "Rögzített panelen <strong>kattintson bármelyik értékre</strong> a stílusok, a doboz, az attribútumok vagy a szöveg szerkesztéséhez. Az <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> alkalmaz, az <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> elvet, a <strong>reset</strong> mindent visszavon. A módosítások újratöltésig az oldalon maradnak."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "számított"
+  },
+  "sectionCompare": {
+    "message": "Összehasonlítás"
+  },
+  "compareHint": {
+    "message": "vs. $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "nincs eltérés"
   },
   "shadowHostHint": {
     "message": "a(z) $HOST$ shadow rootjában",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "forrás megnyitása"
   },
+  "footCompare": {
+    "message": "összevetés"
+  },
   "actionSelector": {
     "message": "szelektor"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Összehasonlítás ezzel:"
+  },
+  "toastCompareCleared": {
+    "message": "Összehasonlítás törölve"
   }
 }

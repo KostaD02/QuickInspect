@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "スクリーンショットを撮る"
   },
+  "shortcutCompare": {
+    "message": "要素を比較"
+  },
   "editorLabel": {
     "message": "エディター"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "PNG ファイルとして保存、オフのときはクリップボードにコピー"
+  },
+  "settingsCompare": {
+    "message": "比較"
+  },
+  "settingDismissCompare": {
+    "message": "使用後に解除"
+  },
+  "settingDismissCompareHint": {
+    "message": "比較の後に別の要素を選ぶとマークした要素を解除します。オフにすると再比較用に残ります"
   },
   "settingsPopup": {
     "message": "ポップアップ"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "<kbd class=\"kd-chip kd-font-mono\">C</kbd> で要素のスクリーンショットを撮ります。PNG としてダウンロードするかクリップボードにコピーし、設定の <strong>スクリーンショットをダウンロード</strong> で切り替えられます。"
   },
+  "infoCompare": {
+    "message": "要素で <kbd class=\"kd-chip kd-font-mono\">D</kbd> を押し、別の要素にホバーまたはピン留めすると、ボックスとスタイルの違いが表示されます。最初の要素でもう一度 <kbd class=\"kd-chip kd-font-mono\">D</kbd> を押すと終了します。ピン留めしたパネルでは <strong>コンテキスト</strong> の祖先をクリックするとそこへ移動します。"
+  },
   "infoStep4": {
     "message": "固定したパネルで<strong>値をクリック</strong>すると、スタイル、ボックス、属性、テキストを編集できます。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> で適用、<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> でキャンセル、<strong>reset</strong> ですべて元に戻ります。編集内容はページを再読み込みするまで残ります。"
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "算出値"
+  },
+  "sectionCompare": {
+    "message": "比較"
+  },
+  "compareHint": {
+    "message": "$BASE$ と比較",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "差分なし"
   },
   "shadowHostHint": {
     "message": "$HOST$ の shadow root 内",
@@ -467,6 +497,9 @@
   "footOpenSource": {
     "message": "ソースを開く"
   },
+  "footCompare": {
+    "message": "比較"
+  },
   "actionSelector": {
     "message": "セレクター"
   },
@@ -550,5 +583,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "比較対象"
+  },
+  "toastCompareCleared": {
+    "message": "比較を解除しました"
   }
 }

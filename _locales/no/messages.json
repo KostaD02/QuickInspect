@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Ta skjermbilde"
   },
+  "shortcutCompare": {
+    "message": "Sammenlign elementer"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Lagre som PNG-fil, eller kopier til utklippstavlen når av"
+  },
+  "settingsCompare": {
+    "message": "Sammenligning"
+  },
+  "settingDismissCompare": {
+    "message": "Forkast etter bruk"
+  },
+  "settingDismissCompareHint": {
+    "message": "Glem det markerte elementet når du velger et annet etter en sammenligning; av beholder det til ny sammenligning"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Trykk <kbd class=\"kd-chip kd-font-mono\">C</kbd> for et skjermbilde av elementet. Det lastes ned som PNG eller kopieres til utklippstavlen; bytt under <strong>Last ned skjermbilder</strong> i innstillingene."
   },
+  "infoCompare": {
+    "message": "Trykk <kbd class=\"kd-chip kd-font-mono\">D</kbd> på et element, og hold deretter over eller fest et annet for å se hvor boks og stiler er forskjellige. Trykk <kbd class=\"kd-chip kd-font-mono\">D</kbd> på det første igjen for å stoppe. I et festet panel kan du klikke på en forelder under <strong>Kontekst</strong> for å gå dit."
+  },
   "infoStep4": {
     "message": "I et festet panel kan du <strong>klikke på en verdi</strong> for å redigere stiler, boks, attributter eller tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> bruker, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> avbryter og <strong>reset</strong> angrer alt. Endringene blir på siden til du laster inn på nytt."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "beregnet"
+  },
+  "sectionCompare": {
+    "message": "Sammenligning"
+  },
+  "compareHint": {
+    "message": "mot $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "ingen forskjeller"
   },
   "shadowHostHint": {
     "message": "i shadow root til $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "åpne kilde"
   },
+  "footCompare": {
+    "message": "sammenlign"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Sammenligner med"
+  },
+  "toastCompareCleared": {
+    "message": "Sammenligning fjernet"
   }
 }

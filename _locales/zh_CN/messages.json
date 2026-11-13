@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "截图"
   },
+  "shortcutCompare": {
+    "message": "比较元素"
+  },
   "editorLabel": {
     "message": "编辑器"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "保存为 PNG 文件，关闭时复制到剪贴板"
+  },
+  "settingsCompare": {
+    "message": "比较"
+  },
+  "settingDismissCompare": {
+    "message": "用后清除"
+  },
+  "settingDismissCompareHint": {
+    "message": "对比后选择其他元素时清除已标记的元素；关闭则保留以便再次对比"
   },
   "settingsPopup": {
     "message": "弹出窗口"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "按 <kbd class=\"kd-chip kd-font-mono\">C</kbd> 截取元素。截图会下载为 PNG 或复制到剪贴板，可在设置中的<strong>下载截图</strong>切换。"
   },
+  "infoCompare": {
+    "message": "在元素上按 <kbd class=\"kd-chip kd-font-mono\">D</kbd>，再悬停或固定另一个元素，即可查看盒模型和样式的差异。在第一个元素上再按一次 <kbd class=\"kd-chip kd-font-mono\">D</kbd> 即可停止。在固定的面板中，点击<strong>上下文</strong>里的祖先元素可跳转到它。"
+  },
   "infoStep4": {
     "message": "在已固定的面板中<strong>点击任意值</strong>即可编辑样式、盒模型、属性或文本。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 应用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 撤销全部。编辑会保留在页面上，直到重新加载。"
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "计算值"
+  },
+  "sectionCompare": {
+    "message": "比较"
+  },
+  "compareHint": {
+    "message": "对比 $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "没有差异"
   },
   "shadowHostHint": {
     "message": "位于 $HOST$ 的 shadow root 内",
@@ -467,6 +497,9 @@
   "footOpenSource": {
     "message": "打开源码"
   },
+  "footCompare": {
+    "message": "比较"
+  },
   "actionSelector": {
     "message": "选择器"
   },
@@ -550,5 +583,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "正在对比"
+  },
+  "toastCompareCleared": {
+    "message": "已清除对比"
   }
 }

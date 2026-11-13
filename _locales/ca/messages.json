@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Fes una captura"
   },
+  "shortcutCompare": {
+    "message": "Compara elements"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Desa-les com a PNG, o copia-les al porta-retalls si està desactivat"
+  },
+  "settingsCompare": {
+    "message": "Comparació"
+  },
+  "settingDismissCompare": {
+    "message": "Descarta després d’usar"
+  },
+  "settingDismissCompareHint": {
+    "message": "Oblida l’element marcat quan en tries un altre després d’una comparació; desactivat el conserva per tornar a comparar"
   },
   "settingsPopup": {
     "message": "Finestra emergent"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Prem <kbd class=\"kd-chip kd-font-mono\">C</kbd> per fer una captura de l’element. Es baixa com a PNG o va al porta-retalls; canvia-ho a <strong>Baixa les captures</strong> a la configuració."
   },
+  "infoCompare": {
+    "message": "Prem <kbd class=\"kd-chip kd-font-mono\">D</kbd> sobre un element i després passa per sobre o fixa’n un altre per veure on difereixen la caixa i els estils. Torna a prémer <kbd class=\"kd-chip kd-font-mono\">D</kbd> sobre el primer per aturar-ho. En un panell fixat, fes clic a un avantpassat a <strong>Context</strong> per anar-hi."
+  },
   "infoStep4": {
     "message": "En un tauler fixat, <strong>fes clic a qualsevol valor</strong> per editar estils, caixa, atributs o text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancel·la i <strong>reset</strong> ho desfà tot. Les edicions es mantenen a la pàgina fins que la recarreguis."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "calculats"
+  },
+  "sectionCompare": {
+    "message": "Comparació"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "cap diferència"
   },
   "shadowHostHint": {
     "message": "dins del shadow root de $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "obre l’origen"
   },
+  "footCompare": {
+    "message": "compara"
+  },
   "actionSelector": {
     "message": "selector"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Comparant amb"
+  },
+  "toastCompareCleared": {
+    "message": "Comparació esborrada"
   }
 }

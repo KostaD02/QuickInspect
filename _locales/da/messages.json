@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Tag et skærmbillede"
   },
+  "shortcutCompare": {
+    "message": "Sammenlign elementer"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Gem som PNG-fil, eller kopiér til udklipsholderen når slået fra"
+  },
+  "settingsCompare": {
+    "message": "Sammenligning"
+  },
+  "settingDismissCompare": {
+    "message": "Ryd efter brug"
+  },
+  "settingDismissCompareHint": {
+    "message": "Glem det markerede element, når du vælger et andet efter en sammenligning; slået fra beholdes det til ny sammenligning"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Tryk på <kbd class=\"kd-chip kd-font-mono\">C</kbd> for et skærmbillede af elementet. Det downloades som PNG eller kopieres til udklipsholderen; skift under <strong>Download skærmbilleder</strong> i indstillingerne."
   },
+  "infoCompare": {
+    "message": "Tryk på <kbd class=\"kd-chip kd-font-mono\">D</kbd> på et element, og hold derefter over eller fastgør et andet for at se, hvor boks og styles er forskellige. Tryk på <kbd class=\"kd-chip kd-font-mono\">D</kbd> på det første igen for at stoppe. I et fastgjort panel kan du klikke på en forælder under <strong>Kontekst</strong> for at gå til den."
+  },
   "infoStep4": {
     "message": "I et fastgjort panel kan du <strong>klikke på en værdi</strong> for at redigere stilarter, boks, attributter eller tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> anvender, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annullerer, og <strong>reset</strong> fortryder det hele. Ændringerne bliver på siden, indtil du genindlæser."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "beregnet"
+  },
+  "sectionCompare": {
+    "message": "Sammenligning"
+  },
+  "compareHint": {
+    "message": "mod $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "ingen forskelle"
   },
   "shadowHostHint": {
     "message": "inde i shadow root for $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "åbn kilde"
   },
+  "footCompare": {
+    "message": "sammenlign"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Sammenligner med"
+  },
+  "toastCompareCleared": {
+    "message": "Sammenligning ryddet"
   }
 }

@@ -30,6 +30,10 @@ describe('settings', () => {
     expect(normaliseSettings({}).allowEdit).toBe(true);
     expect(normaliseSettings({ allowEdit: false }).allowEdit).toBe(false);
     expect(normaliseSettings({}).downloadScreenshot).toBe(true);
+    expect(normaliseSettings({}).dismissCompare).toBe(true);
+    expect(normaliseSettings({ dismissCompare: false }).dismissCompare).toBe(
+      false,
+    );
     expect(
       normaliseSettings({ downloadScreenshot: false }).downloadScreenshot,
     ).toBe(false);

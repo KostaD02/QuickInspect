@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "گرفتن اسکرین‌شات"
   },
+  "shortcutCompare": {
+    "message": "مقایسهٔ عناصر"
+  },
   "editorLabel": {
     "message": "ویرایشگر"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "ذخیره به‌صورت فایل PNG، یا کپی در کلیپ‌بورد وقتی خاموش است"
+  },
+  "settingsCompare": {
+    "message": "مقایسه"
+  },
+  "settingDismissCompare": {
+    "message": "حذف پس از استفاده"
+  },
+  "settingDismissCompareHint": {
+    "message": "عنصر علامت‌خورده پس از مقایسه با انتخاب عنصر دیگر فراموش می‌شود؛ خاموش آن را برای مقایسهٔ دوباره نگه می‌دارد"
   },
   "settingsPopup": {
     "message": "پنجرهٔ بازشو"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "برای اسکرین‌شات از عنصر <kbd class=\"kd-chip kd-font-mono\">C</kbd> را بزنید. به‌صورت PNG دانلود یا در کلیپ‌بورد کپی می‌شود؛ از <strong>دانلود اسکرین‌شات‌ها</strong> در تنظیمات آن را تغییر دهید."
   },
+  "infoCompare": {
+    "message": "روی یک عنصر <kbd class=\"kd-chip kd-font-mono\">D</kbd> را بزنید، سپس روی عنصر دیگری بروید یا آن را سنجاق کنید تا تفاوت جعبه و سبک‌ها را ببینید. برای توقف، دوباره روی اولی <kbd class=\"kd-chip kd-font-mono\">D</kbd> را بزنید. در پنل سنجاق‌شده، روی یک والد در <strong>زمینه</strong> کلیک کنید تا به آن بروید."
+  },
   "infoStep4": {
     "message": "در پنل سنجاق‌شده <strong>روی هر مقداری کلیک کنید</strong> تا استایل‌ها، جعبه، ویژگی‌ها یا متن را ویرایش کنید. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> اعمال می‌کند، <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> لغو می‌کند و <strong>reset</strong> همه را برمی‌گرداند. ویرایش‌ها تا بارگذاری مجدد در صفحه می‌مانند."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "محاسبه‌شده"
+  },
+  "sectionCompare": {
+    "message": "مقایسه"
+  },
+  "compareHint": {
+    "message": "در برابر $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "بدون تفاوت"
   },
   "shadowHostHint": {
     "message": "درون shadow root عنصر $HOST$",
@@ -503,6 +533,9 @@
   "footOpenSource": {
     "message": "باز کردن منبع"
   },
+  "footCompare": {
+    "message": "مقایسه"
+  },
   "actionSelector": {
     "message": "انتخابگر"
   },
@@ -586,5 +619,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "مقایسه با"
+  },
+  "toastCompareCleared": {
+    "message": "مقایسه پاک شد"
   }
 }

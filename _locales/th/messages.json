@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "จับภาพหน้าจอ"
   },
+  "shortcutCompare": {
+    "message": "เปรียบเทียบองค์ประกอบ"
+  },
   "editorLabel": {
     "message": "ตัวแก้ไข"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "บันทึกเป็นไฟล์ PNG หรือคัดลอกไปยังคลิปบอร์ดเมื่อปิด"
+  },
+  "settingsCompare": {
+    "message": "เปรียบเทียบ"
+  },
+  "settingDismissCompare": {
+    "message": "ยกเลิกหลังใช้"
+  },
+  "settingDismissCompareHint": {
+    "message": "ลืมองค์ประกอบที่ทำเครื่องหมายไว้เมื่อเลือกองค์ประกอบอื่นหลังเปรียบเทียบ ปิดไว้จะเก็บไว้เทียบอีกครั้ง"
   },
   "settingsPopup": {
     "message": "ป๊อปอัป"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "กด <kbd class=\"kd-chip kd-font-mono\">C</kbd> เพื่อจับภาพองค์ประกอบ ภาพจะถูกดาวน์โหลดเป็น PNG หรือคัดลอกไปยังคลิปบอร์ด สลับได้ที่ <strong>ดาวน์โหลดภาพหน้าจอ</strong> ในการตั้งค่า"
   },
+  "infoCompare": {
+    "message": "กด <kbd class=\"kd-chip kd-font-mono\">D</kbd> บนองค์ประกอบ แล้ววางเมาส์หรือปักหมุดอีกองค์ประกอบเพื่อดูว่ากล่องและสไตล์ต่างกันตรงไหน กด <kbd class=\"kd-chip kd-font-mono\">D</kbd> บนองค์ประกอบแรกอีกครั้งเพื่อหยุด ในแผงที่ปักหมุดไว้ คลิกบรรพบุรุษใน <strong>บริบท</strong> เพื่อไปที่องค์ประกอบนั้น"
+  },
   "infoStep4": {
     "message": "ในแผงที่ปักหมุด <strong>คลิกค่าใดก็ได้</strong>เพื่อแก้ไขสไตล์ กล่อง แอตทริบิวต์ หรือข้อความ <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ใช้ค่า <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ยกเลิก และ <strong>reset</strong> ย้อนกลับทั้งหมด การแก้ไขจะอยู่ในหน้าจนกว่าจะโหลดใหม่"
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "คำนวณแล้ว"
+  },
+  "sectionCompare": {
+    "message": "เปรียบเทียบ"
+  },
+  "compareHint": {
+    "message": "เทียบกับ $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "ไม่มีความต่าง"
   },
   "shadowHostHint": {
     "message": "ภายใน shadow root ของ $HOST$",
@@ -467,6 +497,9 @@
   "footOpenSource": {
     "message": "เปิดซอร์ส"
   },
+  "footCompare": {
+    "message": "เปรียบเทียบ"
+  },
   "actionSelector": {
     "message": "ตัวเลือก"
   },
@@ -550,5 +583,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "กำลังเทียบกับ"
+  },
+  "toastCompareCleared": {
+    "message": "ล้างการเปรียบเทียบแล้ว"
   }
 }

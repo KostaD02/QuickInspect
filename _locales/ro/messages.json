@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Fă o captură"
   },
+  "shortcutCompare": {
+    "message": "Compară elemente"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -139,6 +142,15 @@
   },
   "settingDownloadScreenshotHint": {
     "message": "Salvează ca fișier PNG sau, când e dezactivat, copiază în clipboard"
+  },
+  "settingsCompare": {
+    "message": "Comparație"
+  },
+  "settingDismissCompare": {
+    "message": "Renunță după folosire"
+  },
+  "settingDismissCompareHint": {
+    "message": "Uită elementul marcat după ce alegi altul în urma unei comparații; dezactivat îl păstrează pentru o nouă comparație"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -227,6 +239,9 @@
   "infoScreenshot": {
     "message": "Apasă <kbd class=\"kd-chip kd-font-mono\">C</kbd> pentru o captură a elementului. Se descarcă drept PNG sau se copiază în clipboard; comută din <strong>Descarcă capturile</strong> în setări."
   },
+  "infoCompare": {
+    "message": "Apasă <kbd class=\"kd-chip kd-font-mono\">D</kbd> pe un element, apoi treci peste altul sau fixează-l ca să vezi unde diferă caseta și stilurile. Apasă din nou <kbd class=\"kd-chip kd-font-mono\">D</kbd> pe primul ca să oprești. Într-un panou fixat, dă clic pe un strămoș din <strong>Context</strong> ca să ajungi la el."
+  },
   "infoStep4": {
     "message": "Într-un panou fixat, <strong>dați clic pe orice valoare</strong> pentru a edita stiluri, box, atribute sau text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplică, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anulează, iar <strong>reset</strong> anulează tot. Modificările rămân în pagină până la reîncărcare."
   },
@@ -289,6 +304,21 @@
   },
   "stylesHint": {
     "message": "calculate"
+  },
+  "sectionCompare": {
+    "message": "Comparație"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "nicio diferență"
   },
   "shadowHostHint": {
     "message": "în shadow root-ul lui $HOST$",
@@ -539,6 +569,9 @@
   "footOpenSource": {
     "message": "deschide sursa"
   },
+  "footCompare": {
+    "message": "compară"
+  },
   "actionSelector": {
     "message": "selector"
   },
@@ -622,5 +655,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Se compară cu"
+  },
+  "toastCompareCleared": {
+    "message": "Comparație ștearsă"
   }
 }
