@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Capturar o ecrã"
   },
+  "shortcutCompare": {
+    "message": "Comparar elementos"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Prima <kbd class=\"kd-chip kd-font-mono\">C</kbd> para capturar o elemento. A imagem é transferida como PNG ou copiada para a área de transferência; altere em <strong>Transferir capturas</strong> nas definições."
   },
+  "infoCompare": {
+    "message": "Prima <kbd class=\"kd-chip kd-font-mono\">D</kbd> num elemento e depois passe o cursor sobre outro ou fixe-o para ver onde a caixa e os estilos diferem. Prima <kbd class=\"kd-chip kd-font-mono\">D</kbd> no primeiro novamente para parar. Num painel fixado, clique num antecessor em <strong>Contexto</strong> para ir até ele."
+  },
   "infoStep4": {
     "message": "Num painel fixado, <strong>clique em qualquer valor</strong> para editar estilos, caixa, atributos ou texto. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancela e <strong>reset</strong> desfaz tudo. As edições ficam na página até recarregar."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "computados"
+  },
+  "sectionCompare": {
+    "message": "Comparação"
+  },
+  "compareHint": {
+    "message": "vs. $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "sem diferenças"
   },
   "shadowHostHint": {
     "message": "dentro do shadow root de $HOST$",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "abrir origem"
   },
+  "footCompare": {
+    "message": "comparar"
+  },
   "actionSelector": {
     "message": "seletor"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "A comparar com"
+  },
+  "toastCompareCleared": {
+    "message": "Comparação removida"
   }
 }

@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "스크린샷 찍기"
   },
+  "shortcutCompare": {
+    "message": "요소 비교"
+  },
   "editorLabel": {
     "message": "에디터"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "<kbd class=\"kd-chip kd-font-mono\">C</kbd>를 눌러 요소의 스크린샷을 찍습니다. PNG로 다운로드되거나 클립보드에 복사되며, 설정의 <strong>스크린샷 다운로드</strong>에서 바꿀 수 있습니다."
   },
+  "infoCompare": {
+    "message": "요소에서 <kbd class=\"kd-chip kd-font-mono\">D</kbd>를 누른 뒤 다른 요소에 마우스를 올리거나 고정하면 박스와 스타일의 차이가 보입니다. 첫 요소에서 <kbd class=\"kd-chip kd-font-mono\">D</kbd>를 다시 누르면 멈춥니다. 고정된 패널에서는 <strong>컨텍스트</strong>의 상위 요소를 클릭해 이동할 수 있습니다."
+  },
   "infoStep4": {
     "message": "고정된 패널에서 <strong>값을 클릭</strong>해 스타일, 박스, 속성, 텍스트를 편집합니다. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd>는 적용, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd>는 취소, <strong>reset</strong>은 모두 되돌립니다. 편집 내용은 페이지를 새로 고칠 때까지 유지됩니다."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "계산됨"
+  },
+  "sectionCompare": {
+    "message": "비교"
+  },
+  "compareHint": {
+    "message": "$BASE$ 대비",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "차이 없음"
   },
   "shadowHostHint": {
     "message": "$HOST$의 shadow root 내부",
@@ -467,6 +488,9 @@
   "footOpenSource": {
     "message": "소스 열기"
   },
+  "footCompare": {
+    "message": "비교"
+  },
   "actionSelector": {
     "message": "선택자"
   },
@@ -550,5 +574,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "비교 대상"
+  },
+  "toastCompareCleared": {
+    "message": "비교 해제됨"
   }
 }

@@ -62,6 +62,12 @@
   outline-offset: -1px;
 }
 
+.overlay-base {
+  z-index: 2147483645;
+  outline: 2px dashed var(--kd-warning);
+  outline-offset: -1px;
+}
+
 .overlay-label {
   transform: translateY(calc(-100% - 4px));
 
@@ -93,6 +99,15 @@
 
   &.dragging .head {
     cursor: grabbing;
+  }
+
+  &.pinned .crumb {
+    cursor: pointer;
+  }
+
+  &.pinned .crumb:hover {
+    color: var(--kd-text-bright);
+    text-decoration: underline;
   }
 
   &.can-edit .editable:hover {
@@ -146,6 +161,10 @@
   width: 10px;
   height: 10px;
   vertical-align: -1px;
+}
+
+.base-value {
+  max-width: 130px;
 }
 
 .copy.done {

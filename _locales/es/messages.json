@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Hacer captura"
   },
+  "shortcutCompare": {
+    "message": "Comparar elementos"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Pulsa <kbd class=\"kd-chip kd-font-mono\">C</kbd> para capturar el elemento. Se descarga como PNG o va al portapapeles; cámbialo en <strong>Descargar capturas</strong> en la configuración."
   },
+  "infoCompare": {
+    "message": "Pulsa <kbd class=\"kd-chip kd-font-mono\">D</kbd> sobre un elemento y luego pasa el cursor sobre otro o fíjalo para ver en qué difieren la caja y los estilos. Vuelve a pulsar <kbd class=\"kd-chip kd-font-mono\">D</kbd> sobre el primero para terminar. En un panel fijado, haz clic en un ancestro de <strong>Contexto</strong> para ir a él."
+  },
   "infoStep4": {
     "message": "En un panel fijado, <strong>haz clic en cualquier valor</strong> para editar estilos, caja, atributos o texto. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancela y <strong>reset</strong> lo deshace todo. Las ediciones permanecen en la página hasta que la recargues."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "calculados"
+  },
+  "sectionCompare": {
+    "message": "Comparación"
+  },
+  "compareHint": {
+    "message": "vs. $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "sin diferencias"
   },
   "shadowHostHint": {
     "message": "dentro del shadow root de $HOST$",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "abrir origen"
   },
+  "footCompare": {
+    "message": "comparar"
+  },
   "actionSelector": {
     "message": "selector"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Comparando con"
+  },
+  "toastCompareCleared": {
+    "message": "Comparación borrada"
   }
 }

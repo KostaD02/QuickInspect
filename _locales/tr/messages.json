@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Ekran görüntüsü al"
   },
+  "shortcutCompare": {
+    "message": "Öğeleri karşılaştır"
+  },
   "editorLabel": {
     "message": "Düzenleyici"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Öğenin ekran görüntüsü için <kbd class=\"kd-chip kd-font-mono\">C</kbd> tuşuna basın. PNG olarak indirilir veya panoya kopyalanır; ayarlardaki <strong>Ekran görüntülerini indir</strong> ile değiştirin."
   },
+  "infoCompare": {
+    "message": "Bir öğede <kbd class=\"kd-chip kd-font-mono\">D</kbd> tuşuna basın, ardından kutu ve stillerin nerede farklı olduğunu görmek için başka bir öğenin üzerine gelin veya onu sabitleyin. Durdurmak için ilk öğede yeniden <kbd class=\"kd-chip kd-font-mono\">D</kbd> tuşuna basın. Sabitlenmiş panelde <strong>Bağlam</strong> altındaki bir üst öğeye tıklayarak ona geçin."
+  },
   "infoStep4": {
     "message": "Sabitlenmiş bir panelde stilleri, kutuyu, öznitelikleri veya metni düzenlemek için <strong>herhangi bir değere tıklayın</strong>. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uygular, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> iptal eder, <strong>reset</strong> hepsini geri alır. Düzenlemeler sayfa yenilenene kadar kalır."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "hesaplanmış"
+  },
+  "sectionCompare": {
+    "message": "Karşılaştırma"
+  },
+  "compareHint": {
+    "message": "$BASE$ ile",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "fark yok"
   },
   "shadowHostHint": {
     "message": "$HOST$ shadow root’u içinde",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "kaynağı aç"
   },
+  "footCompare": {
+    "message": "karşılaştır"
+  },
   "actionSelector": {
     "message": "seçici"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Karşılaştırılan:"
+  },
+  "toastCompareCleared": {
+    "message": "Karşılaştırma temizlendi"
   }
 }

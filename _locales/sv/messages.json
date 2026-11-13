@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Ta en skärmbild"
   },
+  "shortcutCompare": {
+    "message": "Jämför element"
+  },
   "editorLabel": {
     "message": "Redigerare"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">C</kbd> för en skärmbild av elementet. Den laddas ned som PNG eller kopieras till urklipp; växla under <strong>Ladda ned skärmbilder</strong> i inställningarna."
   },
+  "infoCompare": {
+    "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">D</kbd> på ett element och hovra sedan över eller fäst ett annat för att se var box och stilar skiljer sig. Tryck på <kbd class=\"kd-chip kd-font-mono\">D</kbd> på det första igen för att sluta. I en fäst panel klickar du på en förälder under <strong>Kontext</strong> för att gå dit."
+  },
   "infoStep4": {
     "message": "I en fäst panel kan du <strong>klicka på ett värde</strong> för att redigera stilar, box, attribut eller text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> tillämpar, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> avbryter och <strong>reset</strong> ångrar allt. Ändringarna finns kvar på sidan tills du laddar om."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "beräknade"
+  },
+  "sectionCompare": {
+    "message": "Jämförelse"
+  },
+  "compareHint": {
+    "message": "mot $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "inga skillnader"
   },
   "shadowHostHint": {
     "message": "i shadow root för $HOST$",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "öppna källa"
   },
+  "footCompare": {
+    "message": "jämför"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Jämför med"
+  },
+  "toastCompareCleared": {
+    "message": "Jämförelsen rensad"
   }
 }

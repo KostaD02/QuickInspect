@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Направи снимак екрана"
   },
+  "shortcutCompare": {
+    "message": "Упореди елементе"
+  },
   "editorLabel": {
     "message": "Уређивач"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Притисните <kbd class=\"kd-chip kd-font-mono\">C</kbd> за снимак елемента. Преузима се као PNG или копира у оставу; промените то опцијом <strong>Преузимај снимке</strong> у подешавањима."
   },
+  "infoCompare": {
+    "message": "Притисните <kbd class=\"kd-chip kd-font-mono\">D</kbd> на елементу, затим пређите мишем преко другог или га закачите да видите где се разликују оквир и стилови. Поново притисните <kbd class=\"kd-chip kd-font-mono\">D</kbd> на првом да прекинете. У закаченом панелу кликните на претка у одељку <strong>Контекст</strong> да пређете на њега."
+  },
   "infoStep4": {
     "message": "У закаченом панелу <strong>кликните било коју вредност</strong> да уредите стилове, box, атрибуте или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> примењује, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказује, а <strong>reset</strong> поништава све. Измене остају на страници до поновног учитавања."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "израчунато"
+  },
+  "sectionCompare": {
+    "message": "Поређење"
+  },
+  "compareHint": {
+    "message": "наспрам $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "нема разлика"
   },
   "shadowHostHint": {
     "message": "унутар shadow root-а елемента $HOST$",
@@ -539,6 +560,9 @@
   "footOpenSource": {
     "message": "отвори извор"
   },
+  "footCompare": {
+    "message": "упореди"
+  },
   "actionSelector": {
     "message": "селектор"
   },
@@ -622,5 +646,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Поређење са"
+  },
+  "toastCompareCleared": {
+    "message": "Поређење уклоњено"
   }
 }

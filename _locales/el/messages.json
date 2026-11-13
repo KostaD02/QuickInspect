@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Λήψη στιγμιότυπου"
   },
+  "shortcutCompare": {
+    "message": "Σύγκριση στοιχείων"
+  },
   "editorLabel": {
     "message": "Επεξεργαστής"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">C</kbd> για στιγμιότυπο του στοιχείου. Γίνεται λήψη ως PNG ή αντιγράφεται στο πρόχειρο· αλλάξτε το από το <strong>Λήψη στιγμιότυπων</strong> στις ρυθμίσεις."
   },
+  "infoCompare": {
+    "message": "Πατήστε <kbd class=\"kd-chip kd-font-mono\">D</kbd> σε ένα στοιχείο και μετά περάστε πάνω από άλλο ή καρφιτσώστε το για να δείτε πού διαφέρουν το πλαίσιο και τα στυλ. Πατήστε ξανά <kbd class=\"kd-chip kd-font-mono\">D</kbd> στο πρώτο για διακοπή. Σε καρφιτσωμένο πάνελ, κάντε κλικ σε έναν πρόγονο στο <strong>Πλαίσιο</strong> για να μεταβείτε σε αυτόν."
+  },
   "infoStep4": {
     "message": "Σε καρφιτσωμένο πίνακα, <strong>κάντε κλικ σε οποιαδήποτε τιμή</strong> για να επεξεργαστείτε στυλ, box, χαρακτηριστικά ή κείμενο. Το <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> εφαρμόζει, το <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ακυρώνει και το <strong>reset</strong> τα αναιρεί όλα. Οι αλλαγές μένουν στη σελίδα μέχρι την επαναφόρτωση."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "υπολογισμένα"
+  },
+  "sectionCompare": {
+    "message": "Σύγκριση"
+  },
+  "compareHint": {
+    "message": "έναντι $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "καμία διαφορά"
   },
   "shadowHostHint": {
     "message": "μέσα στο shadow root του $HOST$",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "άνοιγμα πηγής"
   },
+  "footCompare": {
+    "message": "σύγκριση"
+  },
   "actionSelector": {
     "message": "επιλογέας"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Σύγκριση με"
+  },
+  "toastCompareCleared": {
+    "message": "Η σύγκριση καταργήθηκε"
   }
 }

@@ -11,6 +11,7 @@ export class Overlay {
   private readonly label: HTMLDivElement;
   private readonly labelText: HTMLSpanElement;
   private readonly labelDims: HTMLSpanElement;
+  private readonly base: HTMLDivElement;
   private showBoxModel = true;
 
   constructor(root: ParentNode) {
@@ -41,6 +42,18 @@ export class Overlay {
       this.label,
     );
     root.appendChild(this.element);
+
+    this.base = document.createElement('div');
+    this.base.className =
+      'overlay-base kd-pos-fixed kd-top-0 kd-left-0 kd-radius-sm kd-pointer-none';
+    this.base.hidden = true;
+    root.appendChild(this.base);
+  }
+
+  showBase(rect: DOMRect | null): void {
+    this.base.hidden = !rect;
+    if (rect)
+      this.place(this.base, rect.left, rect.top, rect.width, rect.height);
   }
 
   setBoxModel(enabled: boolean): void {
@@ -99,6 +112,7 @@ export class Overlay {
 
   hide(): void {
     this.element.hidden = true;
+    this.base.hidden = true;
   }
 
   // ? gap boxes are reused between elements and the spares hidden

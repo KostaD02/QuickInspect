@@ -119,6 +119,10 @@
     "message": "Take a screenshot",
     "description": "Shortcut description next to the C key cap; the screenshot is downloaded or copied, depending on a setting."
   },
+  "shortcutCompare": {
+    "message": "Compare elements",
+    "description": "Shortcut description next to the D key cap: mark an element and compare others against it."
+  },
   "editorLabel": {
     "message": "Editor",
     "description": "Label of the box that tells whether the current page can open sources in the code editor."
@@ -299,6 +303,10 @@
     "message": "Press <kbd class=\"kd-chip kd-font-mono\">C</kbd> for a screenshot of the element. It downloads as a PNG or goes to the clipboard, switch it under <strong>Download screenshots</strong> in the settings.",
     "description": "Info panel step about the C key; the <strong> holds the settingDownloadScreenshot name. Keep the markup."
   },
+  "infoCompare": {
+    "message": "Press <kbd class=\"kd-chip kd-font-mono\">D</kbd> on an element, then hover or pin another to see where their box and styles differ. Press <kbd class=\"kd-chip kd-font-mono\">D</kbd> on the first one again to stop. In a pinned panel, click an ancestor under <strong>Context</strong> to jump to it.",
+    "description": "Info panel step about the D key and clickable ancestors; the <strong> holds the sectionContext name. Keep the markup."
+  },
   "infoStep4": {
     "message": "In a pinned panel, <strong>click any value</strong> to edit styles, box, attributes or text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applies, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancels and <strong>reset</strong> undoes it all. Edits stay in the page until you reload.",
     "description": "Info panel step. HTML: keep the two <strong> tags and the two <kbd> tags with the key names Enter and Esc. Use the same word as panelReset for reset."
@@ -378,6 +386,24 @@
   "stylesHint": {
     "message": "computed",
     "description": "Hint next to the Styles section title: these are computed values."
+  },
+  "sectionCompare": {
+    "message": "Compare",
+    "description": "Panel section title listing where the inspected element differs from the marked one."
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "description": "Hint beside the Compare title; BASE is the marked element, like div#card.",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "no differences",
+    "description": "Shown in the Compare section when no box or style value differs."
   },
   "shadowHostHint": {
     "message": "inside shadow root of $HOST$",
@@ -645,6 +671,10 @@
     "message": "open source",
     "description": "Panel footer, next to the O key cap: open the source file in the editor. Lower case, keep it short."
   },
+  "footCompare": {
+    "message": "compare",
+    "description": "Panel footer hint next to the D key cap."
+  },
   "actionSelector": {
     "message": "selector",
     "description": "What the S key copies: the CSS selector. Lower case, used in the panel footer and in the toast \"Copied selector\"."
@@ -746,5 +776,13 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Comparing against",
+    "description": "Toast after D marks an element for comparison; the element follows as detail."
+  },
+  "toastCompareCleared": {
+    "message": "Comparison cleared",
+    "description": "Toast after D on the marked element stops the comparison."
   }
 }

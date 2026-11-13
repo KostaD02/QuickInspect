@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "التقاط لقطة شاشة"
   },
+  "shortcutCompare": {
+    "message": "مقارنة العناصر"
+  },
   "editorLabel": {
     "message": "المحرّر"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "اضغط <kbd class=\"kd-chip kd-font-mono\">C</kbd> لالتقاط صورة للعنصر. تُنزَّل كملف PNG أو تُنسخ إلى الحافظة، ويمكنك التبديل من <strong>تنزيل لقطات الشاشة</strong> في الإعدادات."
   },
+  "infoCompare": {
+    "message": "اضغط <kbd class=\"kd-chip kd-font-mono\">D</kbd> على عنصر، ثم مرّر فوق عنصر آخر أو ثبّته لترى اختلاف الصندوق والأنماط. اضغط <kbd class=\"kd-chip kd-font-mono\">D</kbd> على الأول مرة أخرى للإيقاف. في اللوحة المثبتة، انقر على عنصر أب ضمن <strong>السياق</strong> للانتقال إليه."
+  },
   "infoStep4": {
     "message": "في لوحة مثبّتة، <strong>انقر على أي قيمة</strong> لتعديل الأنماط أو الصندوق أو السمات أو النص. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> يطبّق، و<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> يلغي، و<strong>reset</strong> يتراجع عن كل شيء. تبقى التعديلات في الصفحة حتى إعادة تحميلها."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "محسوبة"
+  },
+  "sectionCompare": {
+    "message": "مقارنة"
+  },
+  "compareHint": {
+    "message": "مقابل $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "لا اختلافات"
   },
   "shadowHostHint": {
     "message": "داخل shadow root الخاص بـ $HOST$",
@@ -647,6 +668,9 @@
   "footOpenSource": {
     "message": "فتح المصدر"
   },
+  "footCompare": {
+    "message": "مقارنة"
+  },
   "actionSelector": {
     "message": "المحدِّد"
   },
@@ -730,5 +754,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "المقارنة مع"
+  },
+  "toastCompareCleared": {
+    "message": "أُلغيت المقارنة"
   }
 }

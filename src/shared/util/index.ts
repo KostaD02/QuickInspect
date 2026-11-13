@@ -1,6 +1,7 @@
 export * from './a11y/a11y';
 export * from './capture/capture';
 export * from './clipboard/clipboard';
+export * from './compare/compare';
 export * from './dom/dom';
 export * from './download/download';
 export * from './events/events';

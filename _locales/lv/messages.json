@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Uzņemt ekrānuzņēmumu"
   },
+  "shortcutCompare": {
+    "message": "Salīdzināt elementus"
+  },
   "editorLabel": {
     "message": "Redaktors"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Nospiediet <kbd class=\"kd-chip kd-font-mono\">C</kbd>, lai uzņemtu elementa ekrānuzņēmumu. Tas tiek lejupielādēts kā PNG vai nokopēts starpliktuvē; pārslēdziet iestatījumos ar <strong>Lejupielādēt ekrānuzņēmumus</strong>."
   },
+  "infoCompare": {
+    "message": "Nospiediet <kbd class=\"kd-chip kd-font-mono\">D</kbd> uz elementa, tad novietojiet kursoru uz cita vai piespraudiet to, lai redzētu, kur atšķiras kaste un stili. Lai beigtu, vēlreiz nospiediet <kbd class=\"kd-chip kd-font-mono\">D</kbd> uz pirmā. Piespraustā panelī noklikšķiniet uz priekšteča sadaļā <strong>Konteksts</strong>, lai pārietu uz to."
+  },
   "infoStep4": {
     "message": "Piespraustā panelī <strong>noklikšķiniet uz jebkuras vērtības</strong>, lai rediģētu stilus, box, atribūtus vai tekstu. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> piemēro, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atceļ, bet <strong>reset</strong> atsauc visu. Labojumi lapā paliek līdz pārlādēšanai."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "aprēķināts"
+  },
+  "sectionCompare": {
+    "message": "Salīdzinājums"
+  },
+  "compareHint": {
+    "message": "pret $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "nav atšķirību"
   },
   "shadowHostHint": {
     "message": "elementa $HOST$ shadow root iekšienē",
@@ -539,6 +560,9 @@
   "footOpenSource": {
     "message": "atvērt avotu"
   },
+  "footCompare": {
+    "message": "salīdzināt"
+  },
   "actionSelector": {
     "message": "selektors"
   },
@@ -622,5 +646,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Salīdzina ar"
+  },
+  "toastCompareCleared": {
+    "message": "Salīdzinājums notīrīts"
   }
 }

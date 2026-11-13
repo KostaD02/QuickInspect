@@ -35,7 +35,8 @@ QuickInspect is a Chrome extension that shows the useful 80% of DevTools element
 - **Events** - listeners registered with `addEventListener` (with capture, once and passive flags), inline `on*` handlers, React props, Vue invokers and jQuery handlers
 - **Source** - on a dev server the Context section shows where the element was written and `O` opens that line in your editor. Reads the markers Qwik, Astro and code-inspector-plugin stamp on elements, the template positions Nuxt DevTools records for Vue, a Vue component's file, Svelte's dev metadata, React's debug source or owner stack, then calls the Vite or Next.js open-in-editor endpoint. Production builds carry none of this, so the row only appears in development
 - **Copy anything** - one key per payload while hovering: `S` selector, `X` XPath, `L` best Playwright locator, `H` outer HTML, `T` text, `J` the whole panel as JSON, `M` as Markdown, and `C` takes a screenshot of the element, downloaded as a PNG or copied to the clipboard
-- **Pin and navigate** - click to pin the panel so it becomes scrollable, clickable and draggable by its head, `↑` / `↓` to walk to the parent or child (down retraces the way up), `←` / `→` to step between siblings of a pinned element, `Esc` to close
+- **Pin and navigate** - click to pin the panel so it becomes scrollable, clickable and draggable by its head, `↑` / `↓` to walk to the parent or child (down retraces the way up), `←` / `→` to step between siblings of a pinned element, click an ancestor in Context to jump to it, `Esc` to close
+- **Compare** - press `D` on an element, then hover or pin another: a Compare section lists every box and style value that differs, with the marked element's value beside it and a dashed outline around it. `D` on the marked element again stops comparing
 - **Edit in place** - in a pinned panel, click a value to change it on the page: computed styles, width and height, margin, padding and border width, attributes, `role`, `aria-*`, media sources and the text of leaf elements. `+ style` and `+ attribute` add new ones, `×` removes an attribute and `reset` undoes every edit on the element. Edits only live in the page and are gone on reload
 - **Shadow DOM aware** - hit testing descends into open shadow roots, selectors are scoped to the element's root, and locator counts pierce shadow roots like Playwright does
 - **Main-world bridge** - a tiny script injected at `document_start` wraps `addEventListener` so listeners can be listed without the debugger API; nothing else runs in the page world
@@ -73,6 +74,7 @@ To load the production bundle by hand instead:
 | `H` / `T`       | Copy outer HTML / text content                            |
 | `J` / `M`       | Copy the element info as JSON / Markdown                  |
 | `C`             | Screenshot the element (download or clipboard)            |
+| `D`             | Mark the element to compare others against it             |
 | `O`             | Open the element's source in the editor (dev server only) |
 
 Keys pressed while typing in a text field go to the field unless the hold key is down. With `Shift` as the hold key, text fields are left alone completely so capital letters still type.

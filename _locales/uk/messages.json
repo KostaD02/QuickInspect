@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Зробити знімок екрана"
   },
+  "shortcutCompare": {
+    "message": "Порівняти елементи"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">C</kbd>, щоб зробити знімок елемента. Він завантажується як PNG або копіюється в буфер обміну; перемикається параметром <strong>Завантажувати знімки</strong> у налаштуваннях."
   },
+  "infoCompare": {
+    "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">D</kbd> на елементі, потім наведіть курсор на інший або закріпіть його, щоб побачити відмінності в блоці та стилях. Натисніть <kbd class=\"kd-chip kd-font-mono\">D</kbd> на першому ще раз, щоб завершити. У закріпленій панелі клацніть предка в розділі <strong>Контекст</strong>, щоб перейти до нього."
+  },
   "infoStep4": {
     "message": "У закріпленій панелі <strong>натисніть на будь-яке значення</strong>, щоб змінити стилі, блок, атрибути або текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> застосовує, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> скасовує, а <strong>reset</strong> відкочує все. Правки лишаються на сторінці до перезавантаження."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "обчислені"
+  },
+  "sectionCompare": {
+    "message": "Порівняння"
+  },
+  "compareHint": {
+    "message": "з $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "відмінностей немає"
   },
   "shadowHostHint": {
     "message": "усередині shadow root елемента $HOST$",
@@ -575,6 +596,9 @@
   "footOpenSource": {
     "message": "відкрити джерело"
   },
+  "footCompare": {
+    "message": "порівняти"
+  },
   "actionSelector": {
     "message": "селектор"
   },
@@ -658,5 +682,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Порівняння з"
+  },
+  "toastCompareCleared": {
+    "message": "Порівняння скинуто"
   }
 }

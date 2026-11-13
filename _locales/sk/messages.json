@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Urobiť snímku"
   },
+  "shortcutCompare": {
+    "message": "Porovnať prvky"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Stlačte <kbd class=\"kd-chip kd-font-mono\">C</kbd> pre snímku prvku. Stiahne sa ako PNG alebo sa skopíruje do schránky; prepnete to voľbou <strong>Sťahovať snímky</strong> v nastaveniach."
   },
+  "infoCompare": {
+    "message": "Stlačte <kbd class=\"kd-chip kd-font-mono\">D</kbd> na prvku, potom prejdite na iný alebo ho pripnite a uvidíte, kde sa líši box a štýly. Ďalším stlačením <kbd class=\"kd-chip kd-font-mono\">D</kbd> na prvom porovnanie ukončíte. V pripnutom paneli kliknite na predka v sekcii <strong>Kontext</strong> a prejdete naň."
+  },
   "infoStep4": {
     "message": "V pripnutom paneli <strong>kliknite na ľubovoľnú hodnotu</strong> a upravte štýly, box, atribúty alebo text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> potvrdí, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> zruší a <strong>reset</strong> vráti všetko späť. Úpravy zostanú na stránke do jej obnovenia."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "vypočítané"
+  },
+  "sectionCompare": {
+    "message": "Porovnanie"
+  },
+  "compareHint": {
+    "message": "vs $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "žiadne rozdiely"
   },
   "shadowHostHint": {
     "message": "vnútri shadow rootu prvku $HOST$",
@@ -539,6 +560,9 @@
   "footOpenSource": {
     "message": "otvoriť zdroj"
   },
+  "footCompare": {
+    "message": "porovnať"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -622,5 +646,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Porovnávam s"
+  },
+  "toastCompareCleared": {
+    "message": "Porovnanie zrušené"
   }
 }

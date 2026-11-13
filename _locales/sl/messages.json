@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Zajemi zaslon"
   },
+  "shortcutCompare": {
+    "message": "Primerjaj elemente"
+  },
   "editorLabel": {
     "message": "Urejevalnik"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">C</kbd> za posnetek elementa. Prenese se kot PNG ali kopira v odložišče; preklopite z možnostjo <strong>Prenašaj posnetke</strong> v nastavitvah."
   },
+  "infoCompare": {
+    "message": "Pritisnite <kbd class=\"kd-chip kd-font-mono\">D</kbd> na elementu, nato se premaknite na drugega ali ga pripnite, da vidite, kje se razlikujeta okvir in slogi. Za konec znova pritisnite <kbd class=\"kd-chip kd-font-mono\">D</kbd> na prvem. V pripeti plošči kliknite prednika v razdelku <strong>Kontekst</strong>, da skočite nanj."
+  },
   "infoStep4": {
     "message": "V pripeti plošči <strong>kliknite katerokoli vrednost</strong>, da uredite sloge, box, atribute ali besedilo. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uveljavi, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> prekliče, <strong>reset</strong> pa razveljavi vse. Spremembe ostanejo na strani do ponovnega nalaganja."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "izračunano"
+  },
+  "sectionCompare": {
+    "message": "Primerjava"
+  },
+  "compareHint": {
+    "message": "proti $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "ni razlik"
   },
   "shadowHostHint": {
     "message": "v shadow rootu elementa $HOST$",
@@ -575,6 +596,9 @@
   "footOpenSource": {
     "message": "odpri vir"
   },
+  "footCompare": {
+    "message": "primerjaj"
+  },
   "actionSelector": {
     "message": "selektor"
   },
@@ -658,5 +682,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Primerjava z"
+  },
+  "toastCompareCleared": {
+    "message": "Primerjava počiščena"
   }
 }

@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Сделать скриншот"
   },
+  "shortcutCompare": {
+    "message": "Сравнить элементы"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">C</kbd>, чтобы сделать скриншот элемента. Он скачивается как PNG или копируется в буфер обмена; переключается параметром <strong>Скачивать скриншоты</strong> в настройках."
   },
+  "infoCompare": {
+    "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">D</kbd> на элементе, затем наведите курсор на другой или закрепите его, чтобы увидеть различия в блоке и стилях. Нажмите <kbd class=\"kd-chip kd-font-mono\">D</kbd> на первом ещё раз, чтобы закончить. В закреплённой панели щёлкните по предку в разделе <strong>Контекст</strong>, чтобы перейти к нему."
+  },
   "infoStep4": {
     "message": "В закреплённой панели <strong>нажмите на любое значение</strong>, чтобы изменить стили, блок, атрибуты или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> применяет, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отменяет, а <strong>reset</strong> откатывает всё. Правки остаются на странице до перезагрузки."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "вычисленные"
+  },
+  "sectionCompare": {
+    "message": "Сравнение"
+  },
+  "compareHint": {
+    "message": "с $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "различий нет"
   },
   "shadowHostHint": {
     "message": "внутри shadow root элемента $HOST$",
@@ -575,6 +596,9 @@
   "footOpenSource": {
     "message": "открыть исходник"
   },
+  "footCompare": {
+    "message": "сравнить"
+  },
   "actionSelector": {
     "message": "селектор"
   },
@@ -658,5 +682,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Сравнение с"
+  },
+  "toastCompareCleared": {
+    "message": "Сравнение сброшено"
   }
 }

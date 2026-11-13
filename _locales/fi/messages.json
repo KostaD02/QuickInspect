@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Ota kuvakaappaus"
   },
+  "shortcutCompare": {
+    "message": "Vertaa elementtejä"
+  },
   "editorLabel": {
     "message": "Editori"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Paina <kbd class=\"kd-chip kd-font-mono\">C</kbd> ottaaksesi kuvakaappauksen elementistä. Se ladataan PNG-tiedostona tai kopioidaan leikepöydälle; vaihda asetuksista kohdasta <strong>Lataa kuvakaappaukset</strong>."
   },
+  "infoCompare": {
+    "message": "Paina <kbd class=\"kd-chip kd-font-mono\">D</kbd> elementin kohdalla ja vie sitten osoitin toisen päälle tai kiinnitä se nähdäksesi, missä laatikko ja tyylit eroavat. Lopeta painamalla <kbd class=\"kd-chip kd-font-mono\">D</kbd> uudelleen ensimmäisen kohdalla. Kiinnitetyssä paneelissa voit siirtyä esivanhempaan napsauttamalla sitä kohdassa <strong>Konteksti</strong>."
+  },
   "infoStep4": {
     "message": "Kiinnitetyssä paneelissa <strong>klikkaa mitä tahansa arvoa</strong> muokataksesi tyylejä, laatikkoa, attribuutteja tai tekstiä. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ottaa käyttöön, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> peruu ja <strong>reset</strong> kumoaa kaiken. Muokkaukset säilyvät sivulla uudelleenlataukseen asti."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "lasketut"
+  },
+  "sectionCompare": {
+    "message": "Vertailu"
+  },
+  "compareHint": {
+    "message": "vs. $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "ei eroja"
   },
   "shadowHostHint": {
     "message": "elementin $HOST$ shadow rootissa",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "avaa lähde"
   },
+  "footCompare": {
+    "message": "vertaa"
+  },
   "actionSelector": {
     "message": "valitsin"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Verrataan kohteeseen"
+  },
+  "toastCompareCleared": {
+    "message": "Vertailu poistettu"
   }
 }

@@ -102,7 +102,7 @@ export function getBox(el: Element, style: CSSStyleDeclaration): BoxInfo {
   };
 }
 
-function entry(property: string, value: string): StyleEntry {
+export function styleEntry(property: string, value: string): StyleEntry {
   if (COLOR_PROPERTY.test(property) && value.startsWith('rgb')) {
     return { property, value: toHex(value), color: value };
   }
@@ -116,20 +116,20 @@ export function getStyles(
   const result: StyleEntry[] = [];
 
   for (const property of ALWAYS) {
-    result.push(entry(property, style.getPropertyValue(property)));
+    result.push(styleEntry(property, style.getPropertyValue(property)));
   }
 
   for (const [property, defaults] of Object.entries(WHEN_NOT)) {
     const value = style.getPropertyValue(property);
     if (!value || defaults.includes(value)) continue;
     if (property === 'background-color' && isTransparent(value)) continue;
-    result.push(entry(property, value));
+    result.push(styleEntry(property, value));
   }
 
   const borderWidth =
     parseFloat(style.getPropertyValue('border-top-width')) || 0;
   if (borderWidth > 0) {
-    result.push(entry('border', style.getPropertyValue('border-top')));
+    result.push(styleEntry('border', style.getPropertyValue('border-top')));
   }
 
   const display = style.getPropertyValue('display');
@@ -139,7 +139,7 @@ export function getStyles(
       ? FLEX
       : [];
   for (const property of layout) {
-    result.push(entry(property, style.getPropertyValue(property)));
+    result.push(styleEntry(property, style.getPropertyValue(property)));
   }
 
   const parentDisplay = el.parentElement
@@ -149,7 +149,7 @@ export function getStyles(
     for (const property of CHILD) {
       const value = style.getPropertyValue(property);
       if (value && !(CHILD_DEFAULTS[property] ?? []).includes(value)) {
-        result.push(entry(property, value));
+        result.push(styleEntry(property, value));
       }
     }
   }

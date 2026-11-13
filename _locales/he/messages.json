@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "צילום מסך"
   },
+  "shortcutCompare": {
+    "message": "השוואת רכיבים"
+  },
   "editorLabel": {
     "message": "עורך"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "לחצו על <kbd class=\"kd-chip kd-font-mono\">C</kbd> לצילום מסך של הרכיב. הוא יורד כקובץ PNG או מועתק ללוח; אפשר להחליף ב־<strong>הורדת צילומי מסך</strong> בהגדרות."
   },
+  "infoCompare": {
+    "message": "לחצו על <kbd class=\"kd-chip kd-font-mono\">D</kbd> ברכיב, ואז רחפו מעל רכיב אחר או הצמידו אותו כדי לראות במה שונים התיבה והסגנונות. לחצו שוב על <kbd class=\"kd-chip kd-font-mono\">D</kbd> ברכיב הראשון כדי להפסיק. בחלונית מוצמדת, לחצו על רכיב הורה תחת <strong>הקשר</strong> כדי לעבור אליו."
+  },
   "infoStep4": {
     "message": "בפאנל נעוץ, <strong>לחצו על כל ערך</strong> כדי לערוך סגנונות, קופסה, מאפיינים או טקסט. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> מחיל, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> מבטל ו-<strong>reset</strong> מבטל הכול. העריכות נשארות בדף עד לטעינה מחדש."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "מחושבים"
+  },
+  "sectionCompare": {
+    "message": "השוואה"
+  },
+  "compareHint": {
+    "message": "מול $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "אין הבדלים"
   },
   "shadowHostHint": {
     "message": "בתוך ה-shadow root של $HOST$",
@@ -539,6 +560,9 @@
   "footOpenSource": {
     "message": "פתיחת המקור"
   },
+  "footCompare": {
+    "message": "השוואה"
+  },
   "actionSelector": {
     "message": "סלקטור"
   },
@@ -622,5 +646,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "משווה מול"
+  },
+  "toastCompareCleared": {
+    "message": "ההשוואה בוטלה"
   }
 }

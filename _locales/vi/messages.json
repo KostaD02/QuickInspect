@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Chụp màn hình"
   },
+  "shortcutCompare": {
+    "message": "So sánh phần tử"
+  },
   "editorLabel": {
     "message": "Trình soạn thảo"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Nhấn <kbd class=\"kd-chip kd-font-mono\">C</kbd> để chụp phần tử. Ảnh được tải xuống dạng PNG hoặc sao chép vào bảng nhớ tạm; đổi bằng <strong>Tải xuống ảnh chụp</strong> trong cài đặt."
   },
+  "infoCompare": {
+    "message": "Nhấn <kbd class=\"kd-chip kd-font-mono\">D</kbd> trên một phần tử, sau đó di chuột hoặc ghim phần tử khác để xem hộp và kiểu khác nhau ở đâu. Nhấn <kbd class=\"kd-chip kd-font-mono\">D</kbd> trên phần tử đầu tiên lần nữa để dừng. Trong bảng đã ghim, nhấp vào phần tử tổ tiên trong <strong>Ngữ cảnh</strong> để chuyển đến nó."
+  },
   "infoStep4": {
     "message": "Trong bảng đã ghim, <strong>nhấp vào bất kỳ giá trị nào</strong> để chỉnh sửa kiểu, box, thuộc tính hoặc văn bản. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> áp dụng, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> hủy và <strong>reset</strong> hoàn tác tất cả. Các chỉnh sửa giữ nguyên trên trang cho đến khi tải lại."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "đã tính"
+  },
+  "sectionCompare": {
+    "message": "So sánh"
+  },
+  "compareHint": {
+    "message": "so với $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "không có khác biệt"
   },
   "shadowHostHint": {
     "message": "bên trong shadow root của $HOST$",
@@ -467,6 +488,9 @@
   "footOpenSource": {
     "message": "mở nguồn"
   },
+  "footCompare": {
+    "message": "so sánh"
+  },
   "actionSelector": {
     "message": "bộ chọn"
   },
@@ -550,5 +574,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Đang so sánh với"
+  },
+  "toastCompareCleared": {
+    "message": "Đã xóa so sánh"
   }
 }

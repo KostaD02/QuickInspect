@@ -89,6 +89,9 @@
   "shortcutScreenshot": {
     "message": "Направи екранна снимка"
   },
+  "shortcutCompare": {
+    "message": "Сравни елементи"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -227,6 +230,9 @@
   "infoScreenshot": {
     "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">C</kbd> за екранна снимка на елемента. Тя се изтегля като PNG или отива в клипборда; превключете от <strong>Изтегляне на снимките</strong> в настройките."
   },
+  "infoCompare": {
+    "message": "Натиснете <kbd class=\"kd-chip kd-font-mono\">D</kbd> върху елемент, после посочете или закачете друг, за да видите разликите в кутията и стиловете. Натиснете <kbd class=\"kd-chip kd-font-mono\">D</kbd> върху първия отново, за да спрете. В закачен панел щракнете върху предшественик в <strong>Контекст</strong>, за да отидете на него."
+  },
   "infoStep4": {
     "message": "В закачен панел <strong>щракнете върху стойност</strong>, за да редактирате стилове, бокс, атрибути или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> прилага, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказва, а <strong>reset</strong> отменя всичко. Редакциите остават на страницата до презареждане."
   },
@@ -289,6 +295,21 @@
   },
   "stylesHint": {
     "message": "изчислени"
+  },
+  "sectionCompare": {
+    "message": "Сравнение"
+  },
+  "compareHint": {
+    "message": "спрямо $BASE$",
+    "placeholders": {
+      "BASE": {
+        "content": "$1",
+        "example": "div#card"
+      }
+    }
+  },
+  "compareSame": {
+    "message": "няма разлики"
   },
   "shadowHostHint": {
     "message": "в shadow root на $HOST$",
@@ -503,6 +524,9 @@
   "footOpenSource": {
     "message": "отваряне на източника"
   },
+  "footCompare": {
+    "message": "сравни"
+  },
   "actionSelector": {
     "message": "селектор"
   },
@@ -586,5 +610,11 @@
         "example": "screenshot"
       }
     }
+  },
+  "toastCompareBase": {
+    "message": "Сравнение с"
+  },
+  "toastCompareCleared": {
+    "message": "Сравнението е изчистено"
   }
 }
