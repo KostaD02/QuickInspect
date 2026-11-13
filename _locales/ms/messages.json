@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klik nilai dalam panel yang disemat untuk menukar gaya, atribut dan teks pada halaman"
   },
+  "settingPersistEdits": {
+    "message": "Simpan suntingan"
+  },
+  "settingPersistEditsHint": {
+    "message": "Simpan suntingan bagi setiap tapak dan gunakan semula apabila halaman dimuatkan"
+  },
   "settingsScreenshot": {
     "message": "Tangkapan skrin"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Dalam panel yang disemat, <strong>klik mana-mana nilai</strong> untuk menyunting gaya, box, atribut atau teks. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> menggunakan, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> membatalkan dan <strong>reset</strong> membuat asal semuanya. Suntingan kekal pada halaman sehingga dimuat semula."
   },
+  "infoPersist": {
+    "message": "Hidupkan <strong>Simpan suntingan</strong> dalam tetapan supaya suntingan digunakan semula apabila halaman dimuatkan. <strong>css</strong> dalam panel yang dipin menyalin semua suntingan halaman sebagai CSS."
+  },
   "infoStep5": {
     "message": "Pada pelayan dev <strong>Vite</strong> atau <strong>Next.js</strong>, tekan <kbd class=\"kd-chip kd-font-mono\">O</kbd> untuk membuka sumber elemen dalam editor anda."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Buat asal semua suntingan pada elemen ini"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Salin semua suntingan pada halaman ini sebagai CSS"
   },
   "panelCopy": {
     "message": "salin"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "tangkapan skrin"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Suntingan ditetapkan semula"

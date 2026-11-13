@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klikáním na hodnoty v připnutém panelu měňte styly, atributy a text na stránce"
   },
+  "settingPersistEdits": {
+    "message": "Uchovat úpravy"
+  },
+  "settingPersistEditsHint": {
+    "message": "Ukládá úpravy pro každý web a po načtení stránky je znovu použije"
+  },
   "settingsScreenshot": {
     "message": "Snímek obrazovky"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "V připnutém panelu <strong>klikněte na libovolnou hodnotu</strong> a upravte styly, box, atributy nebo text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> potvrdí, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> zruší a <strong>reset</strong> vrátí vše zpět. Úpravy zůstanou na stránce do jejího obnovení."
   },
+  "infoPersist": {
+    "message": "Zapněte v nastavení <strong>Uchovat úpravy</strong> a úpravy se po načtení stránky použijí znovu. <strong>css</strong> v připnutém panelu zkopíruje všechny úpravy stránky jako CSS."
+  },
   "infoStep5": {
     "message": "Na dev serveru <strong>Vite</strong> nebo <strong>Next.js</strong> stiskněte <kbd class=\"kd-chip kd-font-mono\">O</kbd> a otevřete zdroj prvku v editoru."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Vrátit zpět všechny úpravy tohoto prvku"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Zkopírovat všechny úpravy na této stránce jako CSS"
   },
   "panelCopy": {
     "message": "kopírovat"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "snímek obrazovky"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Úpravy vráceny"

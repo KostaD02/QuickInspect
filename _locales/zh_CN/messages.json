@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "点击已固定面板中的值，即可更改页面上的样式、属性和文本"
   },
+  "settingPersistEdits": {
+    "message": "保留编辑"
+  },
+  "settingPersistEditsHint": {
+    "message": "按站点保存编辑，并在页面加载时重新应用"
+  },
   "settingsScreenshot": {
     "message": "截图"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "在已固定的面板中<strong>点击任意值</strong>即可编辑样式、盒模型、属性或文本。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 应用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 撤销全部。编辑会保留在页面上，直到重新加载。"
   },
+  "infoPersist": {
+    "message": "在设置中开启<strong>保留编辑</strong>，页面加载时会重新应用你的编辑。在固定的面板中，<strong>css</strong> 会将页面上的所有编辑复制为 CSS。"
+  },
   "infoStep5": {
     "message": "在 <strong>Vite</strong> 或 <strong>Next.js</strong> 开发服务器上，按 <kbd class=\"kd-chip kd-font-mono\">O</kbd> 可在编辑器中打开元素的源码。"
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "撤销对此元素的所有编辑"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "将此页面的所有编辑复制为 CSS"
   },
   "panelCopy": {
     "message": "复制"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "截图"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "已撤销编辑"

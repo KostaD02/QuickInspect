@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Fai clic sui valori in un pannello fissato per cambiare stili, attributi e testo della pagina"
   },
+  "settingPersistEdits": {
+    "message": "Mantieni le modifiche"
+  },
+  "settingPersistEditsHint": {
+    "message": "Salva le modifiche per ogni sito e le riapplica al caricamento della pagina"
+  },
   "settingsScreenshot": {
     "message": "Screenshot"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "In un pannello fissato, <strong>fai clic su un valore</strong> per modificare stili, box, attributi o testo. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annulla e <strong>reset</strong> annulla tutto. Le modifiche restano nella pagina fino al ricaricamento."
   },
+  "infoPersist": {
+    "message": "Attiva <strong>Mantieni le modifiche</strong> nelle impostazioni per riapplicare le modifiche al caricamento della pagina. <strong>css</strong> in un pannello fissato copia tutte le modifiche della pagina come CSS."
+  },
   "infoStep5": {
     "message": "Su un server di sviluppo <strong>Vite</strong> o <strong>Next.js</strong>, premi <kbd class=\"kd-chip kd-font-mono\">O</kbd> per aprire la sorgente dell’elemento nel tuo editor."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Annulla tutte le modifiche a questo elemento"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Copia tutte le modifiche di questa pagina come CSS"
   },
   "panelCopy": {
     "message": "copia"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "screenshot"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Modifiche annullate"

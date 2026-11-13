@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klik nilai di panel yang disematkan untuk mengubah gaya, atribut, dan teks di halaman"
   },
+  "settingPersistEdits": {
+    "message": "Simpan perubahan"
+  },
+  "settingPersistEditsHint": {
+    "message": "Simpan perubahan per situs dan terapkan lagi saat halaman dimuat"
+  },
   "settingsScreenshot": {
     "message": "Tangkapan layar"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Di panel yang disematkan, <strong>klik nilai mana pun</strong> untuk menyunting gaya, box, atribut, atau teks. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> menerapkan, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> membatalkan, dan <strong>reset</strong> mengembalikan semuanya. Perubahan tetap ada di halaman sampai dimuat ulang."
   },
+  "infoPersist": {
+    "message": "Aktifkan <strong>Simpan perubahan</strong> di setelan agar perubahan diterapkan lagi saat halaman dimuat. <strong>css</strong> di panel yang disematkan menyalin semua perubahan halaman sebagai CSS."
+  },
   "infoStep5": {
     "message": "Di dev server <strong>Vite</strong> atau <strong>Next.js</strong>, tekan <kbd class=\"kd-chip kd-font-mono\">O</kbd> untuk membuka sumber elemen di editor Anda."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Urungkan semua perubahan pada elemen ini"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Salin semua perubahan di halaman ini sebagai CSS"
   },
   "panelCopy": {
     "message": "salin"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "tangkapan layar"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Perubahan direset"

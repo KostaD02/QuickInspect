@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "לחצו על ערכים בפאנל נעוץ כדי לשנות סגנונות, מאפיינים וטקסט בדף"
   },
+  "settingPersistEdits": {
+    "message": "שמירת עריכות"
+  },
+  "settingPersistEditsHint": {
+    "message": "שומר עריכות לכל אתר ומחיל אותן שוב בטעינת הדף"
+  },
   "settingsScreenshot": {
     "message": "צילום מסך"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "בפאנל נעוץ, <strong>לחצו על כל ערך</strong> כדי לערוך סגנונות, קופסה, מאפיינים או טקסט. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> מחיל, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> מבטל ו-<strong>reset</strong> מבטל הכול. העריכות נשארות בדף עד לטעינה מחדש."
   },
+  "infoPersist": {
+    "message": "הפעילו את <strong>שמירת עריכות</strong> בהגדרות כדי שהעריכות יוחלו שוב בטעינת הדף. <strong>css</strong> בחלונית מוצמדת מעתיק את כל העריכות בדף כ־CSS."
+  },
   "infoStep5": {
     "message": "בשרת פיתוח של <strong>Vite</strong> או <strong>Next.js</strong>, לחצו <kbd class=\"kd-chip kd-font-mono\">O</kbd> כדי לפתוח את מקור האלמנט בעורך."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "ביטול כל העריכות באלמנט הזה"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "העתקת כל העריכות בדף הזה כ־CSS"
   },
   "panelCopy": {
     "message": "העתקה"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "צילום מסך"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "העריכות אופסו"

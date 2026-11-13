@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Kliknite vrednosti v pripeti plošči, da spremenite sloge, atribute in besedilo na strani"
   },
+  "settingPersistEdits": {
+    "message": "Ohrani spremembe"
+  },
+  "settingPersistEditsHint": {
+    "message": "Shrani spremembe za vsako spletno mesto in jih znova uporabi ob nalaganju strani"
+  },
   "settingsScreenshot": {
     "message": "Posnetek zaslona"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "V pripeti plošči <strong>kliknite katerokoli vrednost</strong>, da uredite sloge, box, atribute ali besedilo. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uveljavi, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> prekliče, <strong>reset</strong> pa razveljavi vse. Spremembe ostanejo na strani do ponovnega nalaganja."
   },
+  "infoPersist": {
+    "message": "V nastavitvah vklopite <strong>Ohrani spremembe</strong>, da se spremembe ob nalaganju strani znova uporabijo. <strong>css</strong> v pripeti plošči kopira vse spremembe strani kot CSS."
+  },
   "infoStep5": {
     "message": "Na razvojnem strežniku <strong>Vite</strong> ali <strong>Next.js</strong> pritisnite <kbd class=\"kd-chip kd-font-mono\">O</kbd>, da odprete vir elementa v urejevalniku."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Razveljavi vse spremembe tega elementa"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopiraj vse spremembe na tej strani kot CSS"
   },
   "panelCopy": {
     "message": "kopiraj"
@@ -631,6 +646,9 @@
   },
   "actionScreenshot": {
     "message": "posnetek zaslona"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Spremembe razveljavljene"

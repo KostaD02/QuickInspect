@@ -582,6 +582,67 @@ describe('inspector', () => {
     );
   });
 
+  it('copies every edit on the page as CSS and saves edits when kept', async () => {
+    (chrome.storage.local.get as jest.Mock).mockResolvedValue({});
+    (chrome.storage.local.set as jest.Mock).mockResolvedValue(undefined);
+    reopen();
+    inspector.setSettings({ ...DEFAULT_SETTINGS, persistEdits: true });
+    await settled();
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    shadow.querySelector<HTMLElement>('[data-action="css"]')?.click();
+    expect(shadow.querySelector('[data-action="css"]')).toBeNull();
+
+    const row = Array.from(shadow.querySelectorAll('.row')).find(
+      (el) => el.querySelector('.key')?.textContent === 'display',
+    )!;
+    row.querySelector<HTMLElement>('.editable')!.click();
+    const field = shadow.querySelector<HTMLInputElement>('input.edit')!;
+    field.value = 'flex';
+    field.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
+    );
+    await settled();
+    expect(chrome.storage.local.set).toHaveBeenLastCalledWith({
+      'QUICKINSPECT_EDITS:http://localhost': [
+        expect.objectContaining({
+          selector: '#go',
+          styles: { display: 'flex' },
+        }),
+      ],
+    });
+
+    shadow.querySelector<HTMLElement>('[data-action="css"]')!.click();
+    expect(writeText).toHaveBeenCalledWith('#go {\n  display: flex;\n}');
+    await settled();
+    expect(shadow.querySelector('.toast')?.textContent).toContain('Copied CSS');
+    shadow.querySelector<HTMLElement>('[data-action="revert"]')!.click();
+  });
+
+  it('says there is nothing to copy when the edits hold no styles', () => {
+    reopen();
+    hold();
+    mouse('click', { altKey: true });
+    key('keyup', { key: 'Alt' });
+    const shadow = host()!.shadowRoot!;
+    const row = Array.from(shadow.querySelectorAll('.row')).find(
+      (el) => el.querySelector('.key')?.textContent === 'Text',
+    )!;
+    row.querySelector<HTMLElement>('.editable')!.click();
+    const field = shadow.querySelector<HTMLInputElement>('input.edit')!;
+    field.value = 'Went';
+    field.dispatchEvent(
+      new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }),
+    );
+    shadow.querySelector<HTMLElement>('[data-action="css"]')!.click();
+    expect(shadow.querySelector('.toast')?.textContent).toBe(
+      'Nothing to copy for CSS',
+    );
+    shadow.querySelector<HTMLElement>('[data-action="revert"]')!.click();
+  });
+
   it('respects a different modifier', () => {
     inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Control' });
     key('keydown', { key: 'Alt' });

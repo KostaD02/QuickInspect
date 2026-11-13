@@ -175,6 +175,14 @@
     "message": "Click values in a pinned panel to change styles, attributes and text on the page",
     "description": "Hint under the allow edits toggle."
   },
+  "settingPersistEdits": {
+    "message": "Keep edits",
+    "description": "Settings toggle: save in-place edits per site and reapply them on load."
+  },
+  "settingPersistEditsHint": {
+    "message": "Save edits for each site and apply them again when the page loads",
+    "description": "Hint under the Keep edits toggle."
+  },
   "settingsScreenshot": {
     "message": "Screenshot",
     "description": "Settings group heading for the C screenshot."
@@ -323,6 +331,10 @@
     "message": "In a pinned panel, <strong>click any value</strong> to edit styles, box, attributes or text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applies, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancels and <strong>reset</strong> undoes it all. Edits stay in the page until you reload.",
     "description": "Info panel step. HTML: keep the two <strong> tags and the two <kbd> tags with the key names Enter and Esc. Use the same word as panelReset for reset."
   },
+  "infoPersist": {
+    "message": "Turn on <strong>Keep edits</strong> in the settings to apply your edits again when the page loads. <strong>css</strong> in a pinned panel copies every edit on the page as CSS.",
+    "description": "Info panel step about saved edits; the first <strong> holds settingPersistEdits, the second panelCopyCss. Keep the markup."
+  },
   "infoStep5": {
     "message": "On a <strong>Vite</strong> or <strong>Next.js</strong> dev server, press <kbd class=\"kd-chip kd-font-mono\">O</kbd> to open the element's source in your editor.",
     "description": "Info panel step. HTML: keep the two <strong> tags with the product names Vite and Next.js and the <kbd> tag with the letter O."
@@ -354,6 +366,14 @@
   "panelResetTitle": {
     "message": "Undo every edit on this element",
     "description": "Tooltip of the reset button."
+  },
+  "panelCopyCss": {
+    "message": "css",
+    "description": "Button in the panel head of an edited element; copies every edit on the page as CSS. Short, lower case like \"reset\"."
+  },
+  "panelCopyCssTitle": {
+    "message": "Copy every edit on this page as CSS",
+    "description": "Tooltip of the css button."
   },
   "panelCopy": {
     "message": "copy",
@@ -718,6 +738,10 @@
   "actionScreenshot": {
     "message": "screenshot",
     "description": "What the C key copies: a screenshot of the element. Lower case, used in the panel footer and in the toast \"Copied screenshot\"."
+  },
+  "actionCss": {
+    "message": "CSS",
+    "description": "What the css button copies, used in the toasts \"Copied CSS\" and \"Nothing to copy for CSS\"."
   },
   "toastEditsReset": {
     "message": "Edits reset",

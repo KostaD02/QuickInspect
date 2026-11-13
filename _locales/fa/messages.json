@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "روی مقدارها در پنل سنجاق‌شده کلیک کنید تا استایل‌ها، ویژگی‌ها و متن صفحه را تغییر دهید"
   },
+  "settingPersistEdits": {
+    "message": "نگه‌داشتن ویرایش‌ها"
+  },
+  "settingPersistEditsHint": {
+    "message": "ویرایش‌ها را برای هر سایت ذخیره و هنگام بارگذاری صفحه دوباره اعمال می‌کند"
+  },
   "settingsScreenshot": {
     "message": "اسکرین‌شات"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "در پنل سنجاق‌شده <strong>روی هر مقداری کلیک کنید</strong> تا استایل‌ها، جعبه، ویژگی‌ها یا متن را ویرایش کنید. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> اعمال می‌کند، <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> لغو می‌کند و <strong>reset</strong> همه را برمی‌گرداند. ویرایش‌ها تا بارگذاری مجدد در صفحه می‌مانند."
   },
+  "infoPersist": {
+    "message": "<strong>نگه‌داشتن ویرایش‌ها</strong> را در تنظیمات روشن کنید تا ویرایش‌ها هنگام بارگذاری صفحه دوباره اعمال شوند. <strong>css</strong> در پنل سنجاق‌شده همهٔ ویرایش‌های صفحه را به‌صورت CSS کپی می‌کند."
+  },
   "infoStep5": {
     "message": "روی سرور توسعهٔ <strong>Vite</strong> یا <strong>Next.js</strong>، <kbd class=\"kd-chip kd-font-mono\">O</kbd> را بزنید تا منبع عنصر در ویرایشگر باز شود."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "بازگرداندن همهٔ ویرایش‌های این عنصر"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "کپی همهٔ ویرایش‌های این صفحه به‌صورت CSS"
   },
   "panelCopy": {
     "message": "کپی"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "اسکرین‌شات"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "ویرایش‌ها بازگردانده شد"

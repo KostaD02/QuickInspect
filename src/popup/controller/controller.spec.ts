@@ -15,6 +15,7 @@ const ids = [
   'set-show-events',
   'set-show-editor-status',
   'set-allow-edit',
+  'set-persist-edits',
   'set-download-screenshot',
   'set-dismiss-compare',
 ];

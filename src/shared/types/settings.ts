@@ -16,6 +16,7 @@ export interface LensSettings {
   showEvents: boolean;
   showEditorStatus: boolean;
   allowEdit: boolean;
+  persistEdits: boolean;
   downloadScreenshot: boolean;
   dismissCompare: boolean;
 }

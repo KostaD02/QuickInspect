@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klik op waarden in een vastgezet paneel om stijlen, attributen en tekst op de pagina te wijzigen"
   },
+  "settingPersistEdits": {
+    "message": "Wijzigingen bewaren"
+  },
+  "settingPersistEditsHint": {
+    "message": "Bewaart wijzigingen per site en past ze opnieuw toe als de pagina laadt"
+  },
   "settingsScreenshot": {
     "message": "Schermafbeelding"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "<strong>Klik op een waarde</strong> in een vastgezet paneel om stijlen, box, attributen of tekst te bewerken. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> past toe, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annuleert en <strong>reset</strong> maakt alles ongedaan. Bewerkingen blijven in de pagina tot je herlaadt."
   },
+  "infoPersist": {
+    "message": "Zet <strong>Wijzigingen bewaren</strong> aan in de instellingen om je wijzigingen opnieuw toe te passen als de pagina laadt. <strong>css</strong> in een vastgezet paneel kopieert alle wijzigingen op de pagina als CSS."
+  },
   "infoStep5": {
     "message": "Druk op een <strong>Vite</strong>- of <strong>Next.js</strong>-devserver op <kbd class=\"kd-chip kd-font-mono\">O</kbd> om de bron van het element in je editor te openen."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Alle bewerkingen van dit element ongedaan maken"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Alle wijzigingen op deze pagina als CSS kopiëren"
   },
   "panelCopy": {
     "message": "kopieer"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "schermafbeelding"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Bewerkingen hersteld"

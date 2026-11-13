@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klikkaa kiinnitetyn paneelin arvoja muuttaaksesi sivun tyylejä, attribuutteja ja tekstiä"
   },
+  "settingPersistEdits": {
+    "message": "Säilytä muokkaukset"
+  },
+  "settingPersistEditsHint": {
+    "message": "Tallentaa muokkaukset sivustoittain ja käyttää ne uudelleen, kun sivu latautuu"
+  },
   "settingsScreenshot": {
     "message": "Kuvakaappaus"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Kiinnitetyssä paneelissa <strong>klikkaa mitä tahansa arvoa</strong> muokataksesi tyylejä, laatikkoa, attribuutteja tai tekstiä. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ottaa käyttöön, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> peruu ja <strong>reset</strong> kumoaa kaiken. Muokkaukset säilyvät sivulla uudelleenlataukseen asti."
   },
+  "infoPersist": {
+    "message": "Ota asetuksista käyttöön <strong>Säilytä muokkaukset</strong>, niin muokkaukset palautuvat, kun sivu latautuu. <strong>css</strong> kiinnitetyssä paneelissa kopioi kaikki sivun muokkaukset CSS:nä."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong>- tai <strong>Next.js</strong>-kehityspalvelimella paina <kbd class=\"kd-chip kd-font-mono\">O</kbd> avataksesi elementin lähteen editorissa."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Kumoa kaikki tämän elementin muokkaukset"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopioi kaikki tämän sivun muokkaukset CSS:nä"
   },
   "panelCopy": {
     "message": "kopioi"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "kuvakaappaus"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Muokkaukset kumottu"

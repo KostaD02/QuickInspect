@@ -22,6 +22,9 @@ import {
 } from '@/shared/util';
 import { actionByCode, CopyAction } from '../actions/actions';
 import {
+  deltaToCss,
+  editDelta,
+  editedElements,
   EditField,
   hasEdits,
   readField,
@@ -29,6 +32,7 @@ import {
   writeField,
 } from '../edits/edits';
 import { LensHost } from '../host/host';
+import { SavedEdits } from '../saved/saved';
 import { Overlay } from '../overlay/overlay';
 import { Comparison, Panel } from '../panel/panel';
 import { Toast } from '../toast/toast';
@@ -57,6 +61,7 @@ export class Inspector {
   private readonly host = new LensHost();
   private readonly overlay = new Overlay(this.host.root);
   private readonly toast = new Toast(this.host.root);
+  private readonly saved = new SavedEdits();
   private readonly panel = new Panel(this.host.root, {
     copy: (action) => {
       this.copy(action);
@@ -68,6 +73,9 @@ export class Inspector {
     write: (field, value) => this.write(field, value),
     revert: () => {
       this.revert();
+    },
+    copyCss: () => {
+      this.copyCss();
     },
     select: (depth) => {
       this.select(depth);
@@ -122,12 +130,14 @@ export class Inspector {
     window.removeEventListener('resize', this.onResize);
     window.removeEventListener('blur', this.onBlur);
     this.close();
+    this.saved.setEnabled(false);
     this.host.unmount();
   }
 
   setSettings(next: LensSettings): void {
     this.settings = next;
     this.overlay.setBoxModel(next.showBoxModel);
+    this.saved.setEnabled(next.enabled && next.persistEdits);
     if (!next.enabled) {
       this.base = null;
       this.close();
@@ -456,8 +466,12 @@ export class Inspector {
   private write(field: EditField, value: string | null): boolean {
     const target = this.current;
     if (!target || !this.pinned || !this.settings.allowEdit) return false;
+    this.saved.selectorOf(target);
     const written = writeField(target, field, value);
-    if (written) this.refresh();
+    if (written) {
+      this.saved.remember(target);
+      this.refresh();
+    }
     return written;
   }
 
@@ -465,6 +479,7 @@ export class Inspector {
     const target = this.current;
     if (!target) return;
     revertEdits(target);
+    this.saved.remember(target);
     this.refresh();
     this.toast.show(t('toastEditsReset'), this.info?.summary ?? '');
   }
@@ -565,6 +580,27 @@ export class Inspector {
     }
     openInEditor(source, this.info.devServer).then((opened) => {
       this.toast.show(t(opened ? 'toastOpened' : 'toastNotOpened'), location);
+    });
+  }
+
+  private copyCss(): void {
+    const css = editedElements()
+      .map((el) => {
+        const delta = editDelta(el);
+        return delta ? deltaToCss(this.saved.selectorOf(el), delta) : '';
+      })
+      .filter(Boolean)
+      .join('\n\n');
+    const label = t('actionCss');
+    if (!css) {
+      this.toast.show(t('toastNothingToCopy', [label]));
+      return;
+    }
+    copyText(css).then((copied) => {
+      this.toast.show(
+        t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
+        copied ? truncate(css.replace(/\s+/g, ' '), 100) : '',
+      );
     });
   }
 

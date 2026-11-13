@@ -25,6 +25,7 @@ export interface PanelHandlers {
   read: (field: EditField) => string;
   write: (field: EditField, value: string | null) => boolean;
   revert: () => void;
+  copyCss: () => void;
   select: (depth: number) => void;
 }
 
@@ -215,6 +216,10 @@ export class Panel {
     }
     if (id === 'revert') {
       this.handlers.revert();
+      return;
+    }
+    if (id === 'css') {
+      this.handlers.copyCss();
       return;
     }
     if (id === 'ancestor') {
@@ -508,6 +513,18 @@ export class Panel {
               title: t('panelResetTitle'),
             },
             t('panelReset'),
+          )
+        : null,
+      options.edited
+        ? h(
+            'button',
+            {
+              class: CLS.copy,
+              type: 'button',
+              'data-action': 'css',
+              title: t('panelCopyCssTitle'),
+            },
+            t('panelCopyCss'),
           )
         : null,
       this.pinned ? h('span', { class: CLS.pin }, t('panelPinned')) : null,

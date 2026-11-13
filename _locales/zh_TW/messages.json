@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "點擊已釘選面板中的值，即可更改頁面上的樣式、屬性和文字"
   },
+  "settingPersistEdits": {
+    "message": "保留編輯"
+  },
+  "settingPersistEditsHint": {
+    "message": "依網站儲存編輯，並在頁面載入時重新套用"
+  },
   "settingsScreenshot": {
     "message": "螢幕截圖"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "在已釘選的面板中<strong>點擊任一值</strong>即可編輯樣式、盒模型、屬性或文字。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 套用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 復原全部。編輯會保留在頁面上，直到重新載入。"
   },
+  "infoPersist": {
+    "message": "在設定中開啟<strong>保留編輯</strong>，頁面載入時會重新套用你的編輯。在固定的面板中，<strong>css</strong> 會將頁面上的所有編輯複製為 CSS。"
+  },
   "infoStep5": {
     "message": "在 <strong>Vite</strong> 或 <strong>Next.js</strong> 開發伺服器上，按 <kbd class=\"kd-chip kd-font-mono\">O</kbd> 可在編輯器中開啟元素的原始碼。"
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "復原對此元素的所有編輯"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "將此頁面的所有編輯複製為 CSS"
   },
   "panelCopy": {
     "message": "複製"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "螢幕截圖"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "已復原編輯"

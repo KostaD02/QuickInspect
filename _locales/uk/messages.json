@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Натискайте на значення в закріпленій панелі, щоб змінювати стилі, атрибути й текст на сторінці"
   },
+  "settingPersistEdits": {
+    "message": "Зберігати правки"
+  },
+  "settingPersistEditsHint": {
+    "message": "Зберігає правки для кожного сайту й застосовує їх знову під час завантаження сторінки"
+  },
   "settingsScreenshot": {
     "message": "Знімок екрана"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "У закріпленій панелі <strong>натисніть на будь-яке значення</strong>, щоб змінити стилі, блок, атрибути або текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> застосовує, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> скасовує, а <strong>reset</strong> відкочує все. Правки лишаються на сторінці до перезавантаження."
   },
+  "infoPersist": {
+    "message": "Увімкніть <strong>Зберігати правки</strong> у налаштуваннях, щоб правки застосовувалися знову під час завантаження сторінки. <strong>css</strong> у закріпленій панелі копіює всі правки сторінки як CSS."
+  },
   "infoStep5": {
     "message": "На dev-сервері <strong>Vite</strong> або <strong>Next.js</strong> натисніть <kbd class=\"kd-chip kd-font-mono\">O</kbd>, щоб відкрити джерело елемента в редакторі."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Скасувати всі правки цього елемента"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Скопіювати всі правки на цій сторінці як CSS"
   },
   "panelCopy": {
     "message": "копіювати"
@@ -631,6 +646,9 @@
   },
   "actionScreenshot": {
     "message": "знімок екрана"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Правки скинуто"

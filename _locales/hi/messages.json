@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "पिन किए गए पैनल में वैल्यू पर क्लिक करके पेज के स्टाइल, एट्रिब्यूट और टेक्स्ट बदलें"
   },
+  "settingPersistEdits": {
+    "message": "बदलाव रखें"
+  },
+  "settingPersistEditsHint": {
+    "message": "हर साइट के बदलाव सहेजें और पेज लोड होने पर उन्हें फिर से लागू करें"
+  },
   "settingsScreenshot": {
     "message": "स्क्रीनशॉट"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "पिन किए गए पैनल में <strong>किसी भी वैल्यू पर क्लिक</strong> करके स्टाइल, बॉक्स, एट्रिब्यूट या टेक्स्ट संपादित करें। <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> लागू करता है, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> रद्द करता है और <strong>reset</strong> सब वापस कर देता है। बदलाव पेज रीलोड होने तक रहते हैं।"
   },
+  "infoPersist": {
+    "message": "सेटिंग्स में <strong>बदलाव रखें</strong> चालू करें, ताकि पेज लोड होने पर आपके बदलाव फिर से लागू हों। पिन किए पैनल में <strong>css</strong> पेज के सभी बदलाव CSS के रूप में कॉपी करता है।"
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> या <strong>Next.js</strong> डेव सर्वर पर <kbd class=\"kd-chip kd-font-mono\">O</kbd> दबाकर एलिमेंट का सोर्स अपने एडिटर में खोलें।"
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "इस एलिमेंट के सभी बदलाव वापस करें"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "इस पेज के सभी बदलाव CSS के रूप में कॉपी करें"
   },
   "panelCopy": {
     "message": "कॉपी"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "स्क्रीनशॉट"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "बदलाव रीसेट किए गए"

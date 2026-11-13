@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klõpsa kinnitatud paneeli väärtustel, et muuta lehe stiile, atribuute ja teksti"
   },
+  "settingPersistEdits": {
+    "message": "Säilita muudatused"
+  },
+  "settingPersistEditsHint": {
+    "message": "Salvestab muudatused iga saidi kohta ja rakendab need lehe laadimisel uuesti"
+  },
   "settingsScreenshot": {
     "message": "Ekraanipilt"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Kinnitatud paneelis <strong>klõpsa mis tahes väärtusel</strong>, et muuta stiile, kasti, atribuute või teksti. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> rakendab, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> tühistab ja <strong>reset</strong> võtab kõik tagasi. Muudatused jäävad lehele kuni uuesti laadimiseni."
   },
+  "infoPersist": {
+    "message": "Lülita seadetes sisse <strong>Säilita muudatused</strong>, et muudatused rakenduksid lehe laadimisel uuesti. <strong>css</strong> kinnitatud paneelil kopeerib kõik lehe muudatused CSS-ina."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> või <strong>Next.js</strong> arendusserveris vajuta <kbd class=\"kd-chip kd-font-mono\">O</kbd>, et avada elemendi lähtefail redaktoris."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Võta kõik selle elemendi muudatused tagasi"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopeeri kõik selle lehe muudatused CSS-ina"
   },
   "panelCopy": {
     "message": "kopeeri"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "ekraanipilt"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Muudatused tagasi võetud"
