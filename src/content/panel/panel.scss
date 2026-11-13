@@ -18,8 +18,9 @@
   --kd-font-secondary: 'Poppins', system-ui, sans-serif;
 }
 
+// ? opacity, since values with a transition keep visibility through it and leak into the screenshot
 :host([hidden]) {
-  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 [hidden] {
