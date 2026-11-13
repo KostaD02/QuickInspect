@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Сачувај као PNG датотеку или, када је искључено, копирај у оставу"
   },
+  "settingsCompare": {
+    "message": "Поређење"
+  },
+  "settingDismissCompare": {
+    "message": "Одбаци после употребе"
+  },
+  "settingDismissCompareHint": {
+    "message": "Заборавља означени елемент када после поређења изаберете други; искључено га чува за ново поређење"
+  },
   "settingsPopup": {
     "message": "Искачући прозор"
   },

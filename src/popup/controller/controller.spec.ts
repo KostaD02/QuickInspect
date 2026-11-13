@@ -16,6 +16,7 @@ const ids = [
   'set-show-editor-status',
   'set-allow-edit',
   'set-download-screenshot',
+  'set-dismiss-compare',
 ];
 
 describe('popup controller', () => {

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Сохранять как PNG-файл, а если выключено, копировать в буфер обмена"
   },
+  "settingsCompare": {
+    "message": "Сравнение"
+  },
+  "settingDismissCompare": {
+    "message": "Сбрасывать после использования"
+  },
+  "settingDismissCompareHint": {
+    "message": "Забывает отмеченный элемент, когда после сравнения вы выбираете другой; если выключено, он остаётся для новых сравнений"
+  },
   "settingsPopup": {
     "message": "Попап"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Simpan sebagai fail PNG, atau salin ke papan keratan apabila dimatikan"
   },
+  "settingsCompare": {
+    "message": "Perbandingan"
+  },
+  "settingDismissCompare": {
+    "message": "Buang selepas guna"
+  },
+  "settingDismissCompareHint": {
+    "message": "Lupakan elemen bertanda apabila anda memilih elemen lain selepas perbandingan; dimatikan menyimpannya untuk dibanding semula"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

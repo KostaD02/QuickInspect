@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Salvesta PNG-failina või väljas olles kopeeri lõikelauale"
   },
+  "settingsCompare": {
+    "message": "Võrdlus"
+  },
+  "settingDismissCompare": {
+    "message": "Loobu pärast kasutamist"
+  },
+  "settingDismissCompareHint": {
+    "message": "Unustab märgitud elemendi, kui valid pärast võrdlust teise; väljas hoiab selle uueks võrdluseks alles"
+  },
   "settingsPopup": {
     "message": "Hüpikaken"
   },

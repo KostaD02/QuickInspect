@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Saglabāt kā PNG failu vai, ja izslēgts, kopēt starpliktuvē"
   },
+  "settingsCompare": {
+    "message": "Salīdzinājums"
+  },
+  "settingDismissCompare": {
+    "message": "Atmest pēc lietošanas"
+  },
+  "settingDismissCompareHint": {
+    "message": "Aizmirst atzīmēto elementu, kad pēc salīdzināšanas izvēlaties citu; izslēgts to patur atkārtotai salīdzināšanai"
+  },
   "settingsPopup": {
     "message": "Uznirstošais logs"
   },

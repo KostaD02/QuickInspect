@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Mentés PNG-fájlként, kikapcsolva másolás a vágólapra"
   },
+  "settingsCompare": {
+    "message": "Összehasonlítás"
+  },
+  "settingDismissCompare": {
+    "message": "Elvetés használat után"
+  },
+  "settingDismissCompareHint": {
+    "message": "Elfelejti a megjelölt elemet, ha összehasonlítás után másikat választ; kikapcsolva megmarad újabb összehasonlításhoz"
+  },
   "settingsPopup": {
     "message": "Felugró ablak"
   },

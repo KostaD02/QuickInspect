@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Lưu thành tệp PNG, hoặc sao chép vào bảng nhớ tạm khi tắt"
   },
+  "settingsCompare": {
+    "message": "So sánh"
+  },
+  "settingDismissCompare": {
+    "message": "Bỏ sau khi dùng"
+  },
+  "settingDismissCompareHint": {
+    "message": "Quên phần tử đã đánh dấu khi bạn chọn phần tử khác sau một lần so sánh; tắt sẽ giữ lại để so sánh tiếp"
+  },
   "settingsPopup": {
     "message": "Cửa sổ bật lên"
   },

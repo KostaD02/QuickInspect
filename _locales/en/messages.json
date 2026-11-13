@@ -187,6 +187,18 @@
     "message": "Save as a PNG file, or copy to the clipboard when off",
     "description": "Hint under the Download screenshots toggle."
   },
+  "settingsCompare": {
+    "message": "Compare",
+    "description": "Settings group heading for the D comparison."
+  },
+  "settingDismissCompare": {
+    "message": "Dismiss after use",
+    "description": "Settings toggle: on forgets the element marked with D once another element is picked after a comparison."
+  },
+  "settingDismissCompareHint": {
+    "message": "Forget the marked element once you pick another after a comparison; off keeps it to compare again",
+    "description": "Hint under the Dismiss after use toggle."
+  },
   "settingsPopup": {
     "message": "Popup",
     "description": "Settings section heading for what the popup itself shows."

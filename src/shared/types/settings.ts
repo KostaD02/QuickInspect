@@ -17,6 +17,7 @@ export interface LensSettings {
   showEditorStatus: boolean;
   allowEdit: boolean;
   downloadScreenshot: boolean;
+  dismissCompare: boolean;
 }
 
 export type LensSettingKey = keyof LensSettings;

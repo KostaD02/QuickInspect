@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "PNG dosyası olarak kaydet, kapalıyken panoya kopyala"
   },
+  "settingsCompare": {
+    "message": "Karşılaştırma"
+  },
+  "settingDismissCompare": {
+    "message": "Kullanımdan sonra bırak"
+  },
+  "settingDismissCompareHint": {
+    "message": "Karşılaştırmadan sonra başka bir öğe seçince işaretli öğeyi unutur; kapalıyken yeniden karşılaştırmak için saklar"
+  },
   "settingsPopup": {
     "message": "Açılır pencere"
   },

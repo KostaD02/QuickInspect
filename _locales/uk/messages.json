@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Зберігати як PNG-файл, а якщо вимкнено, копіювати в буфер обміну"
   },
+  "settingsCompare": {
+    "message": "Порівняння"
+  },
+  "settingDismissCompare": {
+    "message": "Скидати після використання"
+  },
+  "settingDismissCompareHint": {
+    "message": "Забуває позначений елемент, коли після порівняння ви обираєте інший; якщо вимкнено, він лишається для нових порівнянь"
+  },
   "settingsPopup": {
     "message": "Спливне вікно"
   },

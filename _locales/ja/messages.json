@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "PNG ファイルとして保存、オフのときはクリップボードにコピー"
   },
+  "settingsCompare": {
+    "message": "比較"
+  },
+  "settingDismissCompare": {
+    "message": "使用後に解除"
+  },
+  "settingDismissCompareHint": {
+    "message": "比較の後に別の要素を選ぶとマークした要素を解除します。オフにすると再比較用に残ります"
+  },
   "settingsPopup": {
     "message": "ポップアップ"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Zapisz jako plik PNG albo, gdy wyłączone, skopiuj do schowka"
   },
+  "settingsCompare": {
+    "message": "Porównanie"
+  },
+  "settingDismissCompare": {
+    "message": "Odrzuć po użyciu"
+  },
+  "settingDismissCompareHint": {
+    "message": "Zapomina zaznaczony element, gdy po porównaniu wybierzesz inny; wyłączone zachowuje go do kolejnych porównań"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

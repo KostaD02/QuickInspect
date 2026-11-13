@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Išsaugoti PNG failu arba, kai išjungta, kopijuoti į iškarpinę"
   },
+  "settingsCompare": {
+    "message": "Palyginimas"
+  },
+  "settingDismissCompare": {
+    "message": "Atmesti panaudojus"
+  },
+  "settingDismissCompareHint": {
+    "message": "Pamiršta pažymėtą elementą, kai po palyginimo pasirenkate kitą; išjungus jis lieka kitam palyginimui"
+  },
   "settingsPopup": {
     "message": "Iškylantysis langas"
   },

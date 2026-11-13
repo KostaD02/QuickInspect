@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Spara som PNG-fil, eller kopiera till urklipp när avstängt"
   },
+  "settingsCompare": {
+    "message": "Jämförelse"
+  },
+  "settingDismissCompare": {
+    "message": "Släpp efter användning"
+  },
+  "settingDismissCompareHint": {
+    "message": "Glömmer det markerade elementet när du väljer ett annat efter en jämförelse; av behåller det för ny jämförelse"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

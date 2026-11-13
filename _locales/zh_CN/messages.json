@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "保存为 PNG 文件，关闭时复制到剪贴板"
   },
+  "settingsCompare": {
+    "message": "比较"
+  },
+  "settingDismissCompare": {
+    "message": "用后清除"
+  },
+  "settingDismissCompareHint": {
+    "message": "对比后选择其他元素时清除已标记的元素；关闭则保留以便再次对比"
+  },
   "settingsPopup": {
     "message": "弹出窗口"
   },

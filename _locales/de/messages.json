@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Als PNG-Datei speichern, ausgeschaltet in die Zwischenablage kopieren"
   },
+  "settingsCompare": {
+    "message": "Vergleich"
+  },
+  "settingDismissCompare": {
+    "message": "Nach Gebrauch verwerfen"
+  },
+  "settingDismissCompareHint": {
+    "message": "Vergisst das markierte Element, sobald du nach einem Vergleich ein weiteres wählst; aus behält es für weitere Vergleiche"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

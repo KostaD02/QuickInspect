@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "บันทึกเป็นไฟล์ PNG หรือคัดลอกไปยังคลิปบอร์ดเมื่อปิด"
   },
+  "settingsCompare": {
+    "message": "เปรียบเทียบ"
+  },
+  "settingDismissCompare": {
+    "message": "ยกเลิกหลังใช้"
+  },
+  "settingDismissCompareHint": {
+    "message": "ลืมองค์ประกอบที่ทำเครื่องหมายไว้เมื่อเลือกองค์ประกอบอื่นหลังเปรียบเทียบ ปิดไว้จะเก็บไว้เทียบอีกครั้ง"
+  },
   "settingsPopup": {
     "message": "ป๊อปอัป"
   },

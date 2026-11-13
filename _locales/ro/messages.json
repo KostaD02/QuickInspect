@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Salvează ca fișier PNG sau, când e dezactivat, copiază în clipboard"
   },
+  "settingsCompare": {
+    "message": "Comparație"
+  },
+  "settingDismissCompare": {
+    "message": "Renunță după folosire"
+  },
+  "settingDismissCompareHint": {
+    "message": "Uită elementul marcat după ce alegi altul în urma unei comparații; dezactivat îl păstrează pentru o nouă comparație"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

@@ -15,6 +15,7 @@ export const DEFAULT_SETTINGS: LensSettings = {
   showEditorStatus: true,
   allowEdit: true,
   downloadScreenshot: true,
+  dismissCompare: true,
 };
 
 export const MODIFIER_KEYS = ['Alt', 'Control', 'Shift', 'Meta'] as const;

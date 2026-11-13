@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Shrani kot datoteko PNG ali, ko je izklopljeno, kopiraj v odložišče"
   },
+  "settingsCompare": {
+    "message": "Primerjava"
+  },
+  "settingDismissCompare": {
+    "message": "Opusti po uporabi"
+  },
+  "settingDismissCompareHint": {
+    "message": "Pozabi označeni element, ko po primerjavi izberete drugega; izklopljeno ga ohrani za novo primerjavo"
+  },
   "settingsPopup": {
     "message": "Pojavno okno"
   },

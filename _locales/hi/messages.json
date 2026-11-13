@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "PNG फ़ाइल के रूप में सहेजें, या बंद होने पर क्लिपबोर्ड पर कॉपी करें"
   },
+  "settingsCompare": {
+    "message": "तुलना"
+  },
+  "settingDismissCompare": {
+    "message": "उपयोग के बाद हटाएँ"
+  },
+  "settingDismissCompareHint": {
+    "message": "तुलना के बाद दूसरा एलिमेंट चुनते ही चिह्नित एलिमेंट भूल जाएँ; बंद होने पर वह फिर से तुलना के लिए रहता है"
+  },
   "settingsPopup": {
     "message": "पॉपअप"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Uložiť ako súbor PNG, alebo keď je vypnuté, skopírovať do schránky"
   },
+  "settingsCompare": {
+    "message": "Porovnanie"
+  },
+  "settingDismissCompare": {
+    "message": "Po použití zrušiť"
+  },
+  "settingDismissCompareHint": {
+    "message": "Zabudne označený prvok, keď po porovnaní vyberiete iný; vypnuté ho ponechá na ďalšie porovnanie"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

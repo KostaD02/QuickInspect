@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Desa-les com a PNG, o copia-les al porta-retalls si està desactivat"
   },
+  "settingsCompare": {
+    "message": "Comparació"
+  },
+  "settingDismissCompare": {
+    "message": "Descarta després d’usar"
+  },
+  "settingDismissCompareHint": {
+    "message": "Oblida l’element marcat quan en tries un altre després d’una comparació; desactivat el conserva per tornar a comparar"
+  },
   "settingsPopup": {
     "message": "Finestra emergent"
   },

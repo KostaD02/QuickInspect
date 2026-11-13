@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "שמירה כקובץ PNG, או העתקה ללוח כשכבוי"
   },
+  "settingsCompare": {
+    "message": "השוואה"
+  },
+  "settingDismissCompare": {
+    "message": "ביטול אחרי שימוש"
+  },
+  "settingDismissCompareHint": {
+    "message": "שוכח את הרכיב המסומן כשבוחרים רכיב אחר אחרי השוואה; כבוי שומר אותו להשוואה נוספת"
+  },
   "settingsPopup": {
     "message": "חלון קופץ"
   },

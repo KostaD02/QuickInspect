@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Запазване като PNG файл или копиране в клипборда, когато е изключено"
   },
+  "settingsCompare": {
+    "message": "Сравнение"
+  },
+  "settingDismissCompare": {
+    "message": "Изчистване след употреба"
+  },
+  "settingDismissCompareHint": {
+    "message": "Забравя маркирания елемент, щом изберете друг след сравнение; изключено го пази за ново сравнение"
+  },
   "settingsPopup": {
     "message": "Изскачащ прозорец"
   },

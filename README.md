@@ -83,15 +83,16 @@ Keys pressed while typing in a text field go to the field unless the hold key is
 
 Open the popup from the toolbar icon. The pill toggles the extension on and off, the key picker sets the hold key, and the gear opens the rest of the settings. Changes are saved to `chrome.storage.local` and applied to open tabs immediately.
 
-| Setting                  | Default | Effect                                                                               |
-| ------------------------ | ------- | ------------------------------------------------------------------------------------ |
-| **Enabled**              | On      | Master switch                                                                        |
-| **Hold key**             | Alt     | `Alt`, `Ctrl`, `Shift` or `Cmd`/`Win`                                                |
-| **Allow edits**          | On      | Click values in a pinned panel to change styles, attributes and text                 |
-| **Download screenshots** | On      | `C` saves `QuickInspect-<element>-<date>-<time>.png`; off copies it to the clipboard |
-| **Editor availability**  | On      | Show in the popup whether the current page can open sources in your editor           |
-| **Box model highlight**  | On      | Margin, border, padding and gap bands around the hovered element                     |
-| **Panel sections**       | All on  | Toggle Box, Events, Styles, Accessibility, Attributes, Media, Context, Selectors     |
+| Setting                  | Default | Effect                                                                                                     |
+| ------------------------ | ------- | ---------------------------------------------------------------------------------------------------------- |
+| **Enabled**              | On      | Master switch                                                                                              |
+| **Hold key**             | Alt     | `Alt`, `Ctrl`, `Shift` or `Cmd`/`Win`                                                                      |
+| **Allow edits**          | On      | Click values in a pinned panel to change styles, attributes and text                                       |
+| **Dismiss after use**    | On      | Forget the element marked with `D` once you pick another after a comparison; off keeps it to compare again |
+| **Download screenshots** | On      | `C` saves `QuickInspect-<element>-<date>-<time>.png`; off copies it to the clipboard                       |
+| **Editor availability**  | On      | Show in the popup whether the current page can open sources in your editor                                 |
+| **Box model highlight**  | On      | Margin, border, padding and gap bands around the hovered element                                           |
+| **Panel sections**       | All on  | Toggle Box, Events, Styles, Accessibility, Attributes, Media, Context, Selectors                           |
 
 ## Languages
 

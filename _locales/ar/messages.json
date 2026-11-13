@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "حفظها كملف PNG، أو نسخها إلى الحافظة عند الإيقاف"
   },
+  "settingsCompare": {
+    "message": "مقارنة"
+  },
+  "settingDismissCompare": {
+    "message": "الإلغاء بعد الاستخدام"
+  },
+  "settingDismissCompareHint": {
+    "message": "نسيان العنصر المحدد عند اختيار عنصر آخر بعد المقارنة؛ الإيقاف يُبقيه للمقارنة مجددًا"
+  },
   "settingsPopup": {
     "message": "النافذة المنبثقة"
   },

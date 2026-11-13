@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Salva come file PNG, o copia negli appunti se disattivato"
   },
+  "settingsCompare": {
+    "message": "Confronto"
+  },
+  "settingDismissCompare": {
+    "message": "Annulla dopo l’uso"
+  },
+  "settingDismissCompareHint": {
+    "message": "Dimentica l’elemento segnato quando ne scegli un altro dopo un confronto; disattivato lo conserva per confrontare ancora"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

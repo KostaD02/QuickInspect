@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "ذخیره به‌صورت فایل PNG، یا کپی در کلیپ‌بورد وقتی خاموش است"
   },
+  "settingsCompare": {
+    "message": "مقایسه"
+  },
+  "settingDismissCompare": {
+    "message": "حذف پس از استفاده"
+  },
+  "settingDismissCompareHint": {
+    "message": "عنصر علامت‌خورده پس از مقایسه با انتخاب عنصر دیگر فراموش می‌شود؛ خاموش آن را برای مقایسهٔ دوباره نگه می‌دارد"
+  },
   "settingsPopup": {
     "message": "پنجرهٔ بازشو"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Tallenna PNG-tiedostona tai pois päältä kopioi leikepöydälle"
   },
+  "settingsCompare": {
+    "message": "Vertailu"
+  },
+  "settingDismissCompare": {
+    "message": "Hylkää käytön jälkeen"
+  },
+  "settingDismissCompareHint": {
+    "message": "Unohtaa merkityn elementin, kun valitset vertailun jälkeen toisen; pois päältä se säilyy uutta vertailua varten"
+  },
   "settingsPopup": {
     "message": "Ponnahdusikkuna"
   },

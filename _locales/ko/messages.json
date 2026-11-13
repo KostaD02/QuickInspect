@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "PNG 파일로 저장하고, 끄면 클립보드에 복사"
   },
+  "settingsCompare": {
+    "message": "비교"
+  },
+  "settingDismissCompare": {
+    "message": "사용 후 해제"
+  },
+  "settingDismissCompareHint": {
+    "message": "비교 후 다른 요소를 고르면 표시한 요소를 해제합니다. 끄면 다시 비교할 수 있도록 유지합니다"
+  },
   "settingsPopup": {
     "message": "팝업"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Enregistrer en PNG, ou copier dans le presse-papiers si désactivé"
   },
+  "settingsCompare": {
+    "message": "Comparaison"
+  },
+  "settingDismissCompare": {
+    "message": "Abandonner après usage"
+  },
+  "settingDismissCompareHint": {
+    "message": "Oublie l’élément marqué dès que vous en choisissez un autre après une comparaison ; désactivé, il reste pour comparer à nouveau"
+  },
   "settingsPopup": {
     "message": "Popup"
   },

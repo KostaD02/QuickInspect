@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Αποθήκευση ως αρχείο PNG ή αντιγραφή στο πρόχειρο όταν είναι ανενεργό"
   },
+  "settingsCompare": {
+    "message": "Σύγκριση"
+  },
+  "settingDismissCompare": {
+    "message": "Απόρριψη μετά τη χρήση"
+  },
+  "settingDismissCompareHint": {
+    "message": "Ξεχνά το επισημασμένο στοιχείο μόλις επιλέξετε άλλο μετά από σύγκριση· ανενεργό το κρατά για νέα σύγκριση"
+  },
   "settingsPopup": {
     "message": "Αναδυόμενο"
   },

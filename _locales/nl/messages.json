@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Opslaan als PNG-bestand, of naar het klembord kopiëren als dit uit staat"
   },
+  "settingsCompare": {
+    "message": "Vergelijking"
+  },
+  "settingDismissCompare": {
+    "message": "Na gebruik vergeten"
+  },
+  "settingDismissCompareHint": {
+    "message": "Vergeet het gemarkeerde element zodra je na een vergelijking een ander kiest; uit bewaart het om opnieuw te vergelijken"
+  },
   "settingsPopup": {
     "message": "Pop-up"
   },

@@ -143,6 +143,15 @@
   "settingDownloadScreenshotHint": {
     "message": "Spremi kao PNG datoteku ili, kad je isključeno, kopiraj u međuspremnik"
   },
+  "settingsCompare": {
+    "message": "Usporedba"
+  },
+  "settingDismissCompare": {
+    "message": "Odbaci nakon upotrebe"
+  },
+  "settingDismissCompareHint": {
+    "message": "Zaboravlja označeni element kad nakon usporedbe odaberete drugi; isključeno ga čuva za novu usporedbu"
+  },
   "settingsPopup": {
     "message": "Skočni prozor"
   },

@@ -287,6 +287,49 @@ describe('inspector', () => {
     expect(compare()).toBeUndefined();
   });
 
+  it.each([
+    [true, false],
+    [false, true],
+  ])(
+    'with dismiss-after-use %s, the third pick compares again: %s',
+    (dismissCompare, comparesThird) => {
+      document.body.innerHTML =
+        '<main><p class="a">A</p><p class="b">B</p><p class="c">C</p></main>';
+      const pick = (name: string) => {
+        const el = document.querySelector(`.${name}`)!;
+        document.elementFromPoint = jest.fn(() => el);
+        mouse('mousemove', { clientX: 10, clientY: 10 });
+        flush();
+      };
+      reopen();
+      inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare });
+      pick('a');
+      key('keydown', { key: 'Alt' });
+      flush();
+      key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+      const shadow = host()!.shadowRoot!;
+      const comparing = () =>
+        Array.from(shadow.querySelectorAll('.section-title')).some((title) =>
+          title.textContent.startsWith('Compare'),
+        );
+
+      pick('b');
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      flush();
+
+      pick('c');
+      expect(comparing()).toBe(true);
+      mouse('click', { altKey: true });
+      expect(comparing()).toBe(comparesThird);
+      expect(
+        shadow.querySelector('.overlay-base')?.hasAttribute('hidden'),
+      ).toBe(!comparesThird);
+    },
+  );
+
   it('unpins after marking a pinned element so the next one can be picked', () => {
     reopen();
     hold();

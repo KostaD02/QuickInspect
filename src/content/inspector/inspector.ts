@@ -85,6 +85,7 @@ export class Inspector {
   private trail: Element[] = [];
   private base: Element | null = null;
   private baseSummary = '';
+  private compared: Element | null = null;
   private frame = 0;
   private readonly work = new Set<FrameWork>();
 
@@ -415,6 +416,7 @@ export class Inspector {
     }
     this.base = target;
     this.baseSummary = this.info.summary;
+    this.compared = null;
     this.toast.show(t('toastCompareBase'), this.info.summary);
     if (this.pinned) this.unpin();
     else this.refresh();
@@ -431,7 +433,23 @@ export class Inspector {
     }
     if (!target || target === this.current) return;
     this.current = target;
+    this.chosen(target);
     this.refresh();
+  }
+
+  // ? hovering compares freely; only picking a second element after a compared one dismisses the base
+  private chosen(target: Element | null): void {
+    if (!this.base || !target || target === this.base) return;
+    if (
+      this.settings.dismissCompare &&
+      this.compared &&
+      this.compared !== target
+    ) {
+      this.base = null;
+      this.compared = null;
+      return;
+    }
+    this.compared = target;
   }
 
   private write(field: EditField, value: string | null): boolean {
@@ -464,6 +482,7 @@ export class Inspector {
     }[direction];
     if (!next || next === document.documentElement || isOwnNode(next)) return;
     this.current = next;
+    this.chosen(next);
     if (!this.pinned) this.pin();
     if (direction === 'parent') this.trail.push(from);
     if (direction === 'child') {
@@ -477,6 +496,7 @@ export class Inspector {
     this.pinned = true;
     this.trail = [];
     this.panel.setPinned(true);
+    this.chosen(this.current);
     this.refresh();
   }
 
