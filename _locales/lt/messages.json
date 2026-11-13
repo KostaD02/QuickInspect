@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Sukūrė"
   },
+  "reviewTitle": {
+    "message": "Patinka QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Trumpas atsiliepimas Chrome Web Store padeda kitiems kūrėjams jį rasti."
+  },
+  "reviewRate": {
+    "message": "Įvertinti"
+  },
+  "reviewLater": {
+    "message": "Vėliau"
+  },
+  "reviewNever": {
+    "message": "Daugiau nebeklausti"
+  },
   "footerSections": {
     "message": "Selektoriai · Box · Stiliai · Prieinamumas · Įvykiai"
   },

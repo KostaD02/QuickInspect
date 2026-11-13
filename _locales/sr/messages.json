@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Аутор:"
   },
+  "reviewTitle": {
+    "message": "Да ли вам се свиђа QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Кратка рецензија у Chrome Web Store-у помаже другим програмерима да га пронађу."
+  },
+  "reviewRate": {
+    "message": "Напишите рецензију"
+  },
+  "reviewLater": {
+    "message": "Касније"
+  },
+  "reviewNever": {
+    "message": "Не питај поново"
+  },
   "footerSections": {
     "message": "Селектори · Box · Стилови · Приступачност · Догађаји"
   },

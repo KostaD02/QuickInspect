@@ -11,6 +11,7 @@ export * from './i18n/i18n';
 export * from './inspect/inspect';
 export * from './locator/locator';
 export * from './logger/logger';
+export * from './review/review';
 export * from './selector/selector';
 export * from './settings/settings';
 export * from './source/source';

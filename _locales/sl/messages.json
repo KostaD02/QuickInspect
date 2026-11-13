@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Ustvaril:"
   },
+  "reviewTitle": {
+    "message": "Vam je QuickInspect všeč?"
+  },
+  "reviewText": {
+    "message": "Kratka ocena v Chrome Web Store pomaga drugim razvijalcem, da ga najdejo."
+  },
+  "reviewRate": {
+    "message": "Napišite oceno"
+  },
+  "reviewLater": {
+    "message": "Pozneje"
+  },
+  "reviewNever": {
+    "message": "Ne sprašuj več"
+  },
   "footerSections": {
     "message": "Selektorji · Box · Slogi · Dostopnost · Dogodki"
   },

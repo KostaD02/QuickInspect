@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Tekijä:"
   },
+  "reviewTitle": {
+    "message": "Pidätkö QuickInspectistä?"
+  },
+  "reviewText": {
+    "message": "Lyhyt arvostelu Chrome Web Storessa auttaa muita kehittäjiä löytämään sen."
+  },
+  "reviewRate": {
+    "message": "Kirjoita arvostelu"
+  },
+  "reviewLater": {
+    "message": "Myöhemmin"
+  },
+  "reviewNever": {
+    "message": "Älä kysy uudelleen"
+  },
   "footerSections": {
     "message": "Valitsimet · Laatikko · Tyylit · Saavutettavuus · Tapahtumat"
   },

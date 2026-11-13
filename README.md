@@ -148,13 +148,13 @@ Copied selectors, XPath, locators, HTML and text are the page's own data and sta
 
 ## Permissions
 
-| Permission       | Reason                                                                                          |
-| ---------------- | ----------------------------------------------------------------------------------------------- |
-| `storage`        | Persist settings                                                                                |
-| `clipboardWrite` | Copy selectors, locators, HTML and text from the panel                                          |
-| `scripting`      | Start QuickInspect in a tab that was already open before the extension was installed or updated |
-| `activeTab`      | Access the current tab when you open the popup, so QuickInspect can start there                 |
-| `<all_urls>`     | Capture the visible tab for the `C` screenshot                                                  |
+| Permission       | Reason                                                                                                         |
+| ---------------- | -------------------------------------------------------------------------------------------------------------- |
+| `storage`        | Persist settings, edits kept with **Keep edits**, and the count of actions behind the one-time review reminder |
+| `clipboardWrite` | Copy selectors, locators, HTML and text from the panel                                                         |
+| `scripting`      | Start QuickInspect in a tab that was already open before the extension was installed or updated                |
+| `activeTab`      | Access the current tab when you open the popup, so QuickInspect can start there                                |
+| `<all_urls>`     | Capture the visible tab for the `C` screenshot                                                                 |
 
 The content scripts are registered for every `http`, `https` and `file` page so the hold key works anywhere, which Chrome lists as access to all sites. `file://` pages also need **Allow access to file URLs** on the extension's details page.
 

@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Автор:"
   },
+  "reviewTitle": {
+    "message": "Нравится QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Короткий отзыв в Интернет-магазине Chrome поможет другим разработчикам найти его."
+  },
+  "reviewRate": {
+    "message": "Оставить отзыв"
+  },
+  "reviewLater": {
+    "message": "Позже"
+  },
+  "reviewNever": {
+    "message": "Больше не спрашивать"
+  },
   "footerSections": {
     "message": "Селекторы · Блок · Стили · Доступность · События"
   },

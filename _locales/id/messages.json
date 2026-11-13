@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Dibuat oleh"
   },
+  "reviewTitle": {
+    "message": "Suka QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Ulasan singkat di Chrome Web Store membantu developer lain menemukannya."
+  },
+  "reviewRate": {
+    "message": "Tulis ulasan"
+  },
+  "reviewLater": {
+    "message": "Nanti"
+  },
+  "reviewNever": {
+    "message": "Jangan tanya lagi"
+  },
   "footerSections": {
     "message": "Selector · Box · Gaya · Aksesibilitas · Event"
   },

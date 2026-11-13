@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "作者:"
   },
+  "reviewTitle": {
+    "message": "QuickInspect はいかがですか？"
+  },
+  "reviewText": {
+    "message": "Chrome ウェブストアで短いレビューをいただけると、ほかの開発者が見つけやすくなります。"
+  },
+  "reviewRate": {
+    "message": "レビューを書く"
+  },
+  "reviewLater": {
+    "message": "あとで"
+  },
+  "reviewNever": {
+    "message": "今後表示しない"
+  },
   "footerSections": {
     "message": "セレクター · ボックス · スタイル · アクセシビリティ · イベント"
   },

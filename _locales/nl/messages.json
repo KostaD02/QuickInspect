@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Gemaakt door"
   },
+  "reviewTitle": {
+    "message": "Bevalt QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Een korte review in de Chrome Web Store helpt andere ontwikkelaars het te vinden."
+  },
+  "reviewRate": {
+    "message": "Review schrijven"
+  },
+  "reviewLater": {
+    "message": "Later"
+  },
+  "reviewNever": {
+    "message": "Niet meer vragen"
+  },
   "footerSections": {
     "message": "Selectors · Box · Stijlen · Toegankelijkheid · Events"
   },

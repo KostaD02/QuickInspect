@@ -18,6 +18,7 @@ import {
   resolveNextFrame,
   t,
   truncate,
+  usageCounter,
   viteBase,
 } from '@/shared/util';
 import { actionByCode, CopyAction } from '../actions/actions';
@@ -62,6 +63,7 @@ export class Inspector {
   private readonly overlay = new Overlay(this.host.root);
   private readonly toast = new Toast(this.host.root);
   private readonly saved = new SavedEdits();
+  private readonly usage = usageCounter();
   private readonly panel = new Panel(this.host.root, {
     copy: (action) => {
       this.copy(action);
@@ -427,6 +429,7 @@ export class Inspector {
     }
     this.base = target;
     this.baseSummary = this.info.summary;
+    this.usage.count();
     this.compared = null;
     this.toast.show(t('toastCompareBase'), this.info.summary);
     if (this.pinned) this.unpin();
@@ -469,6 +472,7 @@ export class Inspector {
     this.saved.selectorOf(target);
     const written = writeField(target, field, value);
     if (written) {
+      this.usage.count();
       this.saved.remember(target);
       this.refresh();
     }
@@ -509,6 +513,7 @@ export class Inspector {
   }
 
   private pin(): void {
+    this.usage.count();
     this.pinned = true;
     this.trail = [];
     this.panel.setPinned(true);
@@ -579,6 +584,7 @@ export class Inspector {
       return;
     }
     openInEditor(source, this.info.devServer).then((opened) => {
+      if (opened) this.usage.count();
       this.toast.show(t(opened ? 'toastOpened' : 'toastNotOpened'), location);
     });
   }
@@ -597,6 +603,7 @@ export class Inspector {
       return;
     }
     copyText(css).then((copied) => {
+      if (copied) this.usage.count();
       this.toast.show(
         t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
         copied ? truncate(css.replace(/\s+/g, ' '), 100) : '',
@@ -620,6 +627,7 @@ export class Inspector {
         return true;
       })
       .then((done) => {
+        if (done) this.usage.count();
         const [ok, failed] = download
           ? ['toastDownloaded', 'toastDownloadFailed']
           : ['toastCopied', 'toastCopyFailed'];
@@ -643,7 +651,10 @@ export class Inspector {
         t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
         copied ? truncate(value.replace(/\s+/g, ' '), 100) : '',
       );
-      if (copied) this.panel.flash(action);
+      if (copied) {
+        this.usage.count();
+        this.panel.flash(action);
+      }
     });
   }
 }
