@@ -227,6 +227,30 @@
                 >Copy text</span
               >
             </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">J</kbd
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyJson"
+                >Copy JSON</span
+              >
+            </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">M</kbd
+              ><span class="kd-text-ellipsis" data-i18n="shortcutCopyMarkdown"
+                >Copy Markdown</span
+              >
+            </div>
+            <div
+              class="kd-d-flex kd-items-center kd-gap-1 kd-min-w-0 kd-fs-xxxs"
+            >
+              <kbd class="kd-chip kd-font-mono">C</kbd
+              ><span class="kd-text-ellipsis" data-i18n="shortcutScreenshot"
+                >Take a screenshot</span
+              >
+            </div>
           </div>
         </div>
 
@@ -285,6 +309,36 @@
           <span class="kd-toggle kd-pos-relative">
             <input
               id="set-allow-edit"
+              class="kd-toggle__input"
+              type="checkbox"
+            />
+            <span class="kd-toggle__track"
+              ><span class="kd-toggle__thumb"></span
+            ></span>
+          </span>
+        </label>
+
+        <span
+          class="kd-mt-3 kd-fs-micro kd-fw-bold kd-text-uppercase kd-text-accent"
+          data-i18n="settingsScreenshot"
+          >Screenshot</span
+        >
+        <label
+          class="kd-d-flex kd-items-center kd-justify-between kd-gap-3 kd-py-2 kd-border-b-1 kd-cursor-pointer"
+        >
+          <span class="kd-d-flex kd-flex-column kd-min-w-0">
+            <span
+              class="kd-fs-xs kd-fw-medium kd-text-primary"
+              data-i18n="settingDownloadScreenshot"
+              >Download screenshots</span
+            >
+            <span class="kd-fs-micro" data-i18n="settingDownloadScreenshotHint"
+              >Save as a PNG file, or copy to the clipboard when off</span
+            >
+          </span>
+          <span class="kd-toggle kd-pos-relative">
+            <input
+              id="set-download-screenshot"
               class="kd-toggle__input"
               type="checkbox"
             />
@@ -605,6 +659,14 @@
               <kbd class="kd-chip kd-font-mono">H</kbd>
               <kbd class="kd-chip kd-font-mono">T</kbd> to copy the selector,
               XPath, Playwright locator, HTML or text.</span
+            >
+          </li>
+          <li>
+            <span data-i18n-html="infoScreenshot"
+              >Press <kbd class="kd-chip kd-font-mono">C</kbd> for a screenshot
+              of the element. It downloads as a PNG or goes to the clipboard,
+              switch it under <strong>Download screenshots</strong> in the
+              settings.</span
             >
           </li>
           <li>

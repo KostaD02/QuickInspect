@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Копирај текст"
   },
+  "shortcutCopyJson": {
+    "message": "Копирај JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Копирај Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Направи снимак екрана"
+  },
   "editorLabel": {
     "message": "Уређивач"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Кликните вредности у закаченом панелу да промените стилове, атрибуте и текст на страници"
+  },
+  "settingsScreenshot": {
+    "message": "Снимак екрана"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Преузимај снимке"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Сачувај као PNG датотеку или, када је искључено, копирај у оставу"
   },
   "settingsPopup": {
     "message": "Искачући прозор"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Притисните <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> да копирате селектор, XPath, Playwright локатор, HTML или текст."
+  },
+  "infoScreenshot": {
+    "message": "Притисните <kbd class=\"kd-chip kd-font-mono\">C</kbd> за снимак елемента. Преузима се као PNG или копира у оставу; промените то опцијом <strong>Преузимај снимке</strong> у подешавањима."
   },
   "infoStep4": {
     "message": "У закаченом панелу <strong>кликните било коју вредност</strong> да уредите стилове, box, атрибуте или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> примењује, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказује, а <strong>reset</strong> поништава све. Измене остају на страници до поновног учитавања."
@@ -533,6 +554,15 @@
   "actionText": {
     "message": "текст"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "снимак екрана"
+  },
   "toastEditsReset": {
     "message": "Измене поништене"
   },
@@ -572,6 +602,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Преузето: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Преузимање није успело: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

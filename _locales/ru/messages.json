@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Копировать текст"
   },
+  "shortcutCopyJson": {
+    "message": "Копировать JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Копировать Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Сделать скриншот"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Нажимайте на значения в закреплённой панели, чтобы менять стили, атрибуты и текст на странице"
+  },
+  "settingsScreenshot": {
+    "message": "Скриншот"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Скачивать скриншоты"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Сохранять как PNG-файл, а если выключено, копировать в буфер обмена"
   },
   "settingsPopup": {
     "message": "Попап"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, чтобы скопировать селектор, XPath, локатор Playwright, HTML или текст."
+  },
+  "infoScreenshot": {
+    "message": "Нажмите <kbd class=\"kd-chip kd-font-mono\">C</kbd>, чтобы сделать скриншот элемента. Он скачивается как PNG или копируется в буфер обмена; переключается параметром <strong>Скачивать скриншоты</strong> в настройках."
   },
   "infoStep4": {
     "message": "В закреплённой панели <strong>нажмите на любое значение</strong>, чтобы изменить стили, блок, атрибуты или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> применяет, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отменяет, а <strong>reset</strong> откатывает всё. Правки остаются на странице до перезагрузки."
@@ -569,6 +590,15 @@
   "actionText": {
     "message": "текст"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "скриншот"
+  },
   "toastEditsReset": {
     "message": "Правки сброшены"
   },
@@ -608,6 +638,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Скачано: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Не удалось скачать: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopírovať text"
   },
+  "shortcutCopyJson": {
+    "message": "Kopírovať JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopírovať Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Urobiť snímku"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Klikaním na hodnoty v pripnutom paneli meňte štýly, atribúty a text na stránke"
+  },
+  "settingsScreenshot": {
+    "message": "Snímka obrazovky"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Sťahovať snímky"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Uložiť ako súbor PNG, alebo keď je vypnuté, skopírovať do schránky"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Stlačením <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> skopírujete selektor, XPath, lokátor Playwright, HTML alebo text."
+  },
+  "infoScreenshot": {
+    "message": "Stlačte <kbd class=\"kd-chip kd-font-mono\">C</kbd> pre snímku prvku. Stiahne sa ako PNG alebo sa skopíruje do schránky; prepnete to voľbou <strong>Sťahovať snímky</strong> v nastaveniach."
   },
   "infoStep4": {
     "message": "V pripnutom paneli <strong>kliknite na ľubovoľnú hodnotu</strong> a upravte štýly, box, atribúty alebo text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> potvrdí, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> zruší a <strong>reset</strong> vráti všetko späť. Úpravy zostanú na stránke do jej obnovenia."
@@ -533,6 +554,15 @@
   "actionText": {
     "message": "text"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "snímka obrazovky"
+  },
   "toastEditsReset": {
     "message": "Úpravy vrátené"
   },
@@ -572,6 +602,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Stiahnuté: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Nepodarilo sa stiahnuť: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

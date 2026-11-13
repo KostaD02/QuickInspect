@@ -53,6 +53,10 @@ export function normaliseSettings(raw: unknown): LensSettings {
       DEFAULT_SETTINGS.showEditorStatus,
     ),
     allowEdit: bool(stored.allowEdit, DEFAULT_SETTINGS.allowEdit),
+    downloadScreenshot: bool(
+      stored.downloadScreenshot,
+      DEFAULT_SETTINGS.downloadScreenshot,
+    ),
   };
 }
 

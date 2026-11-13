@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "复制文本"
   },
+  "shortcutCopyJson": {
+    "message": "复制 JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "复制 Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "截图"
+  },
   "editorLabel": {
     "message": "编辑器"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "点击已固定面板中的值，即可更改页面上的样式、属性和文本"
+  },
+  "settingsScreenshot": {
+    "message": "截图"
+  },
+  "settingDownloadScreenshot": {
+    "message": "下载截图"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "保存为 PNG 文件，关闭时复制到剪贴板"
   },
   "settingsPopup": {
     "message": "弹出窗口"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "按 <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> 可复制选择器、XPath、Playwright 定位器、HTML 或文本。"
+  },
+  "infoScreenshot": {
+    "message": "按 <kbd class=\"kd-chip kd-font-mono\">C</kbd> 截取元素。截图会下载为 PNG 或复制到剪贴板，可在设置中的<strong>下载截图</strong>切换。"
   },
   "infoStep4": {
     "message": "在已固定的面板中<strong>点击任意值</strong>即可编辑样式、盒模型、属性或文本。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 应用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 撤销全部。编辑会保留在页面上，直到重新加载。"
@@ -461,6 +482,15 @@
   "actionText": {
     "message": "文本"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "截图"
+  },
   "toastEditsReset": {
     "message": "已撤销编辑"
   },
@@ -500,6 +530,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "已下载$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "无法下载$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

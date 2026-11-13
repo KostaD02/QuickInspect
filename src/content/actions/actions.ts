@@ -1,8 +1,8 @@
 import { ElementInfo } from '@/shared/types';
-import { bestLocator } from '@/shared/util';
+import { bestLocator, toJson, toMarkdown } from '@/shared/util';
 
 export interface CopyAction {
-  id: 'selector' | 'xpath' | 'locator' | 'html' | 'text';
+  id: 'selector' | 'xpath' | 'locator' | 'html' | 'text' | 'json' | 'markdown';
   code: string;
   key: string;
   labelKey: string;
@@ -44,6 +44,20 @@ export const COPY_ACTIONS: readonly CopyAction[] = [
     key: 'T',
     labelKey: 'actionText',
     value: (_, el) => el.textContent.trim(),
+  },
+  {
+    id: 'json',
+    code: 'KeyJ',
+    key: 'J',
+    labelKey: 'actionJson',
+    value: (info) => toJson(info),
+  },
+  {
+    id: 'markdown',
+    code: 'KeyM',
+    key: 'M',
+    labelKey: 'actionMarkdown',
+    value: (info) => toMarkdown(info),
   },
 ];
 

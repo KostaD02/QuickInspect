@@ -23,4 +23,21 @@ export class LensHost {
   unmount(): void {
     this.element.remove();
   }
+
+  // ? two frames so the hidden overlay and panel are gone from the screen before the capture
+  async conceal<T>(work: () => Promise<T>): Promise<T> {
+    this.element.hidden = true;
+    await new Promise<void>((resolve) => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          resolve();
+        });
+      });
+    });
+    try {
+      return await work();
+    } finally {
+      this.element.hidden = false;
+    }
+  }
 }

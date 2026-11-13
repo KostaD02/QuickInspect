@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Копіювати текст"
   },
+  "shortcutCopyJson": {
+    "message": "Копіювати JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Копіювати Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Зробити знімок екрана"
+  },
   "editorLabel": {
     "message": "Редактор"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Натискайте на значення в закріпленій панелі, щоб змінювати стилі, атрибути й текст на сторінці"
+  },
+  "settingsScreenshot": {
+    "message": "Знімок екрана"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Завантажувати знімки"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Зберігати як PNG-файл, а якщо вимкнено, копіювати в буфер обміну"
   },
   "settingsPopup": {
     "message": "Спливне вікно"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>, щоб скопіювати селектор, XPath, локатор Playwright, HTML або текст."
+  },
+  "infoScreenshot": {
+    "message": "Натисніть <kbd class=\"kd-chip kd-font-mono\">C</kbd>, щоб зробити знімок елемента. Він завантажується як PNG або копіюється в буфер обміну; перемикається параметром <strong>Завантажувати знімки</strong> у налаштуваннях."
   },
   "infoStep4": {
     "message": "У закріпленій панелі <strong>натисніть на будь-яке значення</strong>, щоб змінити стилі, блок, атрибути або текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> застосовує, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> скасовує, а <strong>reset</strong> відкочує все. Правки лишаються на сторінці до перезавантаження."
@@ -569,6 +590,15 @@
   "actionText": {
     "message": "текст"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "знімок екрана"
+  },
   "toastEditsReset": {
     "message": "Правки скинуто"
   },
@@ -608,6 +638,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Завантажено: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Не вдалося завантажити: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

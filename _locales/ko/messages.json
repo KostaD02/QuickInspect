@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "텍스트 복사"
   },
+  "shortcutCopyJson": {
+    "message": "JSON 복사"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown 복사"
+  },
+  "shortcutScreenshot": {
+    "message": "스크린샷 찍기"
+  },
   "editorLabel": {
     "message": "에디터"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "고정된 패널의 값을 클릭해 페이지의 스타일, 속성, 텍스트를 변경합니다"
+  },
+  "settingsScreenshot": {
+    "message": "스크린샷"
+  },
+  "settingDownloadScreenshot": {
+    "message": "스크린샷 다운로드"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "PNG 파일로 저장하고, 끄면 클립보드에 복사"
   },
   "settingsPopup": {
     "message": "팝업"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "<kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd>를 누르면 선택자, XPath, Playwright 로케이터, HTML, 텍스트를 복사합니다."
+  },
+  "infoScreenshot": {
+    "message": "<kbd class=\"kd-chip kd-font-mono\">C</kbd>를 눌러 요소의 스크린샷을 찍습니다. PNG로 다운로드되거나 클립보드에 복사되며, 설정의 <strong>스크린샷 다운로드</strong>에서 바꿀 수 있습니다."
   },
   "infoStep4": {
     "message": "고정된 패널에서 <strong>값을 클릭</strong>해 스타일, 박스, 속성, 텍스트를 편집합니다. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd>는 적용, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd>는 취소, <strong>reset</strong>은 모두 되돌립니다. 편집 내용은 페이지를 새로 고칠 때까지 유지됩니다."
@@ -461,6 +482,15 @@
   "actionText": {
     "message": "텍스트"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "스크린샷"
+  },
   "toastEditsReset": {
     "message": "편집을 되돌렸습니다"
   },
@@ -500,6 +530,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "다운로드됨: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "다운로드 실패: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopiera text"
   },
+  "shortcutCopyJson": {
+    "message": "Kopiera JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopiera Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Ta en skärmbild"
+  },
   "editorLabel": {
     "message": "Redigerare"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Klicka på värden i en fäst panel för att ändra stilar, attribut och text på sidan"
+  },
+  "settingsScreenshot": {
+    "message": "Skärmbild"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Ladda ned skärmbilder"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Spara som PNG-fil, eller kopiera till urklipp när avstängt"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> för att kopiera selektorn, XPath, Playwright-locatorn, HTML eller texten."
+  },
+  "infoScreenshot": {
+    "message": "Tryck på <kbd class=\"kd-chip kd-font-mono\">C</kbd> för en skärmbild av elementet. Den laddas ned som PNG eller kopieras till urklipp; växla under <strong>Ladda ned skärmbilder</strong> i inställningarna."
   },
   "infoStep4": {
     "message": "I en fäst panel kan du <strong>klicka på ett värde</strong> för att redigera stilar, box, attribut eller text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> tillämpar, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> avbryter och <strong>reset</strong> ångrar allt. Ändringarna finns kvar på sidan tills du laddar om."
@@ -497,6 +518,15 @@
   "actionText": {
     "message": "text"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "skärmbild"
+  },
   "toastEditsReset": {
     "message": "Ändringar återställda"
   },
@@ -536,6 +566,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Nedladdad: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Kunde inte ladda ned: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

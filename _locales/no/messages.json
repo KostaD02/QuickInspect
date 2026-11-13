@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Kopier tekst"
   },
+  "shortcutCopyJson": {
+    "message": "Kopier JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Kopier Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Ta skjermbilde"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Klikk på verdier i et festet panel for å endre stiler, attributter og tekst på siden"
+  },
+  "settingsScreenshot": {
+    "message": "Skjermbilde"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Last ned skjermbilder"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Lagre som PNG-fil, eller kopier til utklippstavlen når av"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Trykk <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> for å kopiere selektoren, XPath, Playwright-locatoren, HTML eller teksten."
+  },
+  "infoScreenshot": {
+    "message": "Trykk <kbd class=\"kd-chip kd-font-mono\">C</kbd> for et skjermbilde av elementet. Det lastes ned som PNG eller kopieres til utklippstavlen; bytt under <strong>Last ned skjermbilder</strong> i innstillingene."
   },
   "infoStep4": {
     "message": "I et festet panel kan du <strong>klikke på en verdi</strong> for å redigere stiler, boks, attributter eller tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> bruker, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> avbryter og <strong>reset</strong> angrer alt. Endringene blir på siden til du laster inn på nytt."
@@ -497,6 +518,15 @@
   "actionText": {
     "message": "tekst"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "skjermbilde"
+  },
   "toastEditsReset": {
     "message": "Endringer tilbakestilt"
   },
@@ -536,6 +566,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Lastet ned: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Kunne ikke laste ned: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

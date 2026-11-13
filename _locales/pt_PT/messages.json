@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Copiar texto"
   },
+  "shortcutCopyJson": {
+    "message": "Copiar JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Copiar Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "Capturar o ecrã"
+  },
   "editorLabel": {
     "message": "Editor"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Clique nos valores de um painel fixado para alterar estilos, atributos e texto na página"
+  },
+  "settingsScreenshot": {
+    "message": "Captura de ecrã"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Transferir capturas"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Guardar como ficheiro PNG ou, se desativado, copiar para a área de transferência"
   },
   "settingsPopup": {
     "message": "Popup"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Prima <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> para copiar o seletor, o XPath, o locator do Playwright, o HTML ou o texto."
+  },
+  "infoScreenshot": {
+    "message": "Prima <kbd class=\"kd-chip kd-font-mono\">C</kbd> para capturar o elemento. A imagem é transferida como PNG ou copiada para a área de transferência; altere em <strong>Transferir capturas</strong> nas definições."
   },
   "infoStep4": {
     "message": "Num painel fixado, <strong>clique em qualquer valor</strong> para editar estilos, caixa, atributos ou texto. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancela e <strong>reset</strong> desfaz tudo. As edições ficam na página até recarregar."
@@ -497,6 +518,15 @@
   "actionText": {
     "message": "texto"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "captura de ecrã"
+  },
   "toastEditsReset": {
     "message": "Edições desfeitas"
   },
@@ -536,6 +566,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Transferido: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Não foi possível transferir: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

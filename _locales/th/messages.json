@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "คัดลอกข้อความ"
   },
+  "shortcutCopyJson": {
+    "message": "คัดลอก JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "คัดลอก Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "จับภาพหน้าจอ"
+  },
   "editorLabel": {
     "message": "ตัวแก้ไข"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "คลิกค่าในแผงที่ปักหมุดเพื่อเปลี่ยนสไตล์ แอตทริบิวต์ และข้อความในหน้า"
+  },
+  "settingsScreenshot": {
+    "message": "ภาพหน้าจอ"
+  },
+  "settingDownloadScreenshot": {
+    "message": "ดาวน์โหลดภาพหน้าจอ"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "บันทึกเป็นไฟล์ PNG หรือคัดลอกไปยังคลิปบอร์ดเมื่อปิด"
   },
   "settingsPopup": {
     "message": "ป๊อปอัป"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "กด <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> เพื่อคัดลอกตัวเลือก XPath, locator ของ Playwright, HTML หรือข้อความ"
+  },
+  "infoScreenshot": {
+    "message": "กด <kbd class=\"kd-chip kd-font-mono\">C</kbd> เพื่อจับภาพองค์ประกอบ ภาพจะถูกดาวน์โหลดเป็น PNG หรือคัดลอกไปยังคลิปบอร์ด สลับได้ที่ <strong>ดาวน์โหลดภาพหน้าจอ</strong> ในการตั้งค่า"
   },
   "infoStep4": {
     "message": "ในแผงที่ปักหมุด <strong>คลิกค่าใดก็ได้</strong>เพื่อแก้ไขสไตล์ กล่อง แอตทริบิวต์ หรือข้อความ <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ใช้ค่า <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ยกเลิก และ <strong>reset</strong> ย้อนกลับทั้งหมด การแก้ไขจะอยู่ในหน้าจนกว่าจะโหลดใหม่"
@@ -461,6 +482,15 @@
   "actionText": {
     "message": "ข้อความ"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ภาพหน้าจอ"
+  },
   "toastEditsReset": {
     "message": "รีเซ็ตการแก้ไขแล้ว"
   },
@@ -500,6 +530,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "ดาวน์โหลดแล้ว: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "ดาวน์โหลดไม่สำเร็จ: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

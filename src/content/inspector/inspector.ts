@@ -1,8 +1,12 @@
 import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
+  captureElement,
+  copyImage,
   copyText,
   deepElementFromPoint,
+  downloadBlob,
+  fileName,
   formatSource,
   inspectElement,
   isEditable,
@@ -163,6 +167,12 @@ export class Inspector {
     if (event.code === 'KeyO') {
       this.swallow(event);
       this.openSource();
+      return;
+    }
+
+    if (event.code === 'KeyC') {
+      this.swallow(event);
+      this.screenshot();
       return;
     }
 
@@ -475,6 +485,32 @@ export class Inspector {
     openInEditor(source, this.info.devServer).then((opened) => {
       this.toast.show(t(opened ? 'toastOpened' : 'toastNotOpened'), location);
     });
+  }
+
+  private screenshot(): void {
+    const target = this.current;
+    if (!target) return;
+    const label = t('actionScreenshot');
+    const name = fileName(this.info?.summary ?? '', new Date(), 'png');
+    const download = this.settings.downloadScreenshot;
+    const rect = target.getBoundingClientRect();
+    this.host
+      .conceal(() => captureElement(rect))
+      .then(async (blob) => {
+        if (!blob) return false;
+        if (!download) return copyImage(blob);
+        downloadBlob(blob, name);
+        return true;
+      })
+      .then((done) => {
+        const [ok, failed] = download
+          ? ['toastDownloaded', 'toastDownloadFailed']
+          : ['toastCopied', 'toastCopyFailed'];
+        this.toast.show(
+          t(done ? ok : failed, [label]),
+          done && download ? name : '',
+        );
+      });
   }
 
   private copy(action: CopyAction): void {

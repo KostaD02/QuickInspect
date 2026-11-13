@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Metni kopyala"
   },
+  "shortcutCopyJson": {
+    "message": "JSON’u kopyala"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown’ı kopyala"
+  },
+  "shortcutScreenshot": {
+    "message": "Ekran görüntüsü al"
+  },
   "editorLabel": {
     "message": "Düzenleyici"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Sayfadaki stilleri, öznitelikleri ve metni değiştirmek için sabitlenmiş paneldeki değerlere tıklayın"
+  },
+  "settingsScreenshot": {
+    "message": "Ekran görüntüsü"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Ekran görüntülerini indir"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "PNG dosyası olarak kaydet, kapalıyken panoya kopyala"
   },
   "settingsPopup": {
     "message": "Açılır pencere"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Seçiciyi, XPath’i, Playwright locator’ı, HTML’yi veya metni kopyalamak için <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> tuşlarına basın."
+  },
+  "infoScreenshot": {
+    "message": "Öğenin ekran görüntüsü için <kbd class=\"kd-chip kd-font-mono\">C</kbd> tuşuna basın. PNG olarak indirilir veya panoya kopyalanır; ayarlardaki <strong>Ekran görüntülerini indir</strong> ile değiştirin."
   },
   "infoStep4": {
     "message": "Sabitlenmiş bir panelde stilleri, kutuyu, öznitelikleri veya metni düzenlemek için <strong>herhangi bir değere tıklayın</strong>. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uygular, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> iptal eder, <strong>reset</strong> hepsini geri alır. Düzenlemeler sayfa yenilenene kadar kalır."
@@ -497,6 +518,15 @@
   "actionText": {
     "message": "metin"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "ekran görüntüsü"
+  },
   "toastEditsReset": {
     "message": "Düzenlemeler geri alındı"
   },
@@ -536,6 +566,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "İndirildi: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "İndirilemedi: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

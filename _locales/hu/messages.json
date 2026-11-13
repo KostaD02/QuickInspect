@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "Szöveg másolása"
   },
+  "shortcutCopyJson": {
+    "message": "JSON másolása"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Markdown másolása"
+  },
+  "shortcutScreenshot": {
+    "message": "Képernyőkép készítése"
+  },
   "editorLabel": {
     "message": "Szerkesztő"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "Kattintson a rögzített panel értékeire a stílusok, attribútumok és szövegek módosításához az oldalon"
+  },
+  "settingsScreenshot": {
+    "message": "Képernyőkép"
+  },
+  "settingDownloadScreenshot": {
+    "message": "Képernyőképek letöltése"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Mentés PNG-fájlként, kikapcsolva másolás a vágólapra"
   },
   "settingsPopup": {
     "message": "Felugró ablak"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "Nyomja meg az <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> billentyűt a szelektor, az XPath, a Playwright-lokátor, a HTML vagy a szöveg másolásához."
+  },
+  "infoScreenshot": {
+    "message": "Nyomja meg a <kbd class=\"kd-chip kd-font-mono\">C</kbd> gombot az elem képernyőképéhez. PNG-ként letöltődik vagy a vágólapra kerül; a beállításokban a <strong>Képernyőképek letöltése</strong> kapcsolóval váltható."
   },
   "infoStep4": {
     "message": "Rögzített panelen <strong>kattintson bármelyik értékre</strong> a stílusok, a doboz, az attribútumok vagy a szöveg szerkesztéséhez. Az <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> alkalmaz, az <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> elvet, a <strong>reset</strong> mindent visszavon. A módosítások újratöltésig az oldalon maradnak."
@@ -497,6 +518,15 @@
   "actionText": {
     "message": "szöveg"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "képernyőkép"
+  },
   "toastEditsReset": {
     "message": "Módosítások visszavonva"
   },
@@ -536,6 +566,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Letöltve: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Nem sikerült letölteni: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

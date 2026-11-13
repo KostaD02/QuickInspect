@@ -107,6 +107,18 @@
     "message": "Copy text",
     "description": "Shortcut description next to the T key cap."
   },
+  "shortcutCopyJson": {
+    "message": "Copy JSON",
+    "description": "Shortcut description next to the J key cap."
+  },
+  "shortcutCopyMarkdown": {
+    "message": "Copy Markdown",
+    "description": "Shortcut description next to the M key cap."
+  },
+  "shortcutScreenshot": {
+    "message": "Take a screenshot",
+    "description": "Shortcut description next to the C key cap; the screenshot is downloaded or copied, depending on a setting."
+  },
   "editorLabel": {
     "message": "Editor",
     "description": "Label of the box that tells whether the current page can open sources in the code editor."
@@ -158,6 +170,18 @@
   "settingAllowEditHint": {
     "message": "Click values in a pinned panel to change styles, attributes and text on the page",
     "description": "Hint under the allow edits toggle."
+  },
+  "settingsScreenshot": {
+    "message": "Screenshot",
+    "description": "Settings group heading for the C screenshot."
+  },
+  "settingDownloadScreenshot": {
+    "message": "Download screenshots",
+    "description": "Settings toggle: on downloads the C screenshot as a PNG file, off copies it to the clipboard."
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "Save as a PNG file, or copy to the clipboard when off",
+    "description": "Hint under the Download screenshots toggle."
   },
   "settingsPopup": {
     "message": "Popup",
@@ -270,6 +294,10 @@
   "infoStep3": {
     "message": "Press <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> to copy the selector, XPath, Playwright locator, HTML or text.",
     "description": "Info panel step. HTML: keep the five <kbd> tags and the letters inside them, they are the keys to press."
+  },
+  "infoScreenshot": {
+    "message": "Press <kbd class=\"kd-chip kd-font-mono\">C</kbd> for a screenshot of the element. It downloads as a PNG or goes to the clipboard, switch it under <strong>Download screenshots</strong> in the settings.",
+    "description": "Info panel step about the C key; the <strong> holds the settingDownloadScreenshot name. Keep the markup."
   },
   "infoStep4": {
     "message": "In a pinned panel, <strong>click any value</strong> to edit styles, box, attributes or text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> applies, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancels and <strong>reset</strong> undoes it all. Edits stay in the page until you reload.",
@@ -637,6 +665,18 @@
     "message": "text",
     "description": "What the T key copies: the text content. Lower case, used in the panel footer and in the toast \"Copied text\"."
   },
+  "actionJson": {
+    "message": "JSON",
+    "description": "What the J key copies: the whole element info as JSON. Used in the panel footer and in the toast \"Copied JSON\"."
+  },
+  "actionMarkdown": {
+    "message": "Markdown",
+    "description": "What the M key copies: the element info as Markdown. Used in the panel footer and in the toast \"Copied Markdown\"."
+  },
+  "actionScreenshot": {
+    "message": "screenshot",
+    "description": "What the C key copies: a screenshot of the element. Lower case, used in the panel footer and in the toast \"Copied screenshot\"."
+  },
   "toastEditsReset": {
     "message": "Edits reset",
     "description": "Toast after every edit on the element was undone."
@@ -684,6 +724,26 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Downloaded $WHAT$",
+    "description": "Toast after the C key saved a screenshot of the element; WHAT is actionScreenshot. The file name follows as detail.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Could not download $WHAT$",
+    "description": "Toast when the screenshot could not be captured or saved; WHAT is actionScreenshot.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

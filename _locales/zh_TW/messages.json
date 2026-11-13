@@ -80,6 +80,15 @@
   "shortcutCopyText": {
     "message": "複製文字"
   },
+  "shortcutCopyJson": {
+    "message": "複製 JSON"
+  },
+  "shortcutCopyMarkdown": {
+    "message": "複製 Markdown"
+  },
+  "shortcutScreenshot": {
+    "message": "擷取螢幕畫面"
+  },
   "editorLabel": {
     "message": "編輯器"
   },
@@ -121,6 +130,15 @@
   },
   "settingAllowEditHint": {
     "message": "點擊已釘選面板中的值，即可更改頁面上的樣式、屬性和文字"
+  },
+  "settingsScreenshot": {
+    "message": "螢幕截圖"
+  },
+  "settingDownloadScreenshot": {
+    "message": "下載螢幕截圖"
+  },
+  "settingDownloadScreenshotHint": {
+    "message": "儲存為 PNG 檔案，關閉時複製到剪貼簿"
   },
   "settingsPopup": {
     "message": "彈出視窗"
@@ -205,6 +223,9 @@
   },
   "infoStep3": {
     "message": "按 <kbd class=\"kd-chip kd-font-mono\">S</kbd> <kbd class=\"kd-chip kd-font-mono\">X</kbd> <kbd class=\"kd-chip kd-font-mono\">L</kbd> <kbd class=\"kd-chip kd-font-mono\">H</kbd> <kbd class=\"kd-chip kd-font-mono\">T</kbd> 可複製選擇器、XPath、Playwright 定位器、HTML 或文字。"
+  },
+  "infoScreenshot": {
+    "message": "按 <kbd class=\"kd-chip kd-font-mono\">C</kbd> 擷取元素畫面。截圖會下載為 PNG 或複製到剪貼簿，可在設定中的<strong>下載螢幕截圖</strong>切換。"
   },
   "infoStep4": {
     "message": "在已釘選的面板中<strong>點擊任一值</strong>即可編輯樣式、盒模型、屬性或文字。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> 套用，<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> 取消，<strong>reset</strong> 復原全部。編輯會保留在頁面上，直到重新載入。"
@@ -461,6 +482,15 @@
   "actionText": {
     "message": "文字"
   },
+  "actionJson": {
+    "message": "JSON"
+  },
+  "actionMarkdown": {
+    "message": "Markdown"
+  },
+  "actionScreenshot": {
+    "message": "螢幕截圖"
+  },
   "toastEditsReset": {
     "message": "已復原編輯"
   },
@@ -500,6 +530,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "已下載$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "無法下載$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }
