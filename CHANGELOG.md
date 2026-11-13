@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.0](https://github.com/KostaD02/QuickInspect/compare/v1.3.0...v1.4.0) (2026-11-13)
+
+### Features
+
+* compare elements and jump to ancestors ([#25](https://github.com/KostaD02/QuickInspect/issues/25)) ([6c506ff](https://github.com/KostaD02/QuickInspect/commit/6c506ff4eea38021176edde7cfaffaa72227b036))
+* copy json, markdown and screenshot ([#23](https://github.com/KostaD02/QuickInspect/issues/23)) ([ac7b172](https://github.com/KostaD02/QuickInspect/commit/ac7b172b18ae1477a78b196fc3c8231f8c325f0f))
+* keep edits per site and copy them as css ([#26](https://github.com/KostaD02/QuickInspect/issues/26)) ([d1ddd7e](https://github.com/KostaD02/QuickInspect/commit/d1ddd7e36dbcbba8ccbbc174354d46d1f16bccfa))
+* usage-based review reminder ([#27](https://github.com/KostaD02/QuickInspect/issues/27)) ([6942346](https://github.com/KostaD02/QuickInspect/commit/6942346473847351b74c4075dea8e3b725c1da20))
+
 ## [1.3.0](https://github.com/KostaD02/QuickInspect/compare/v1.2.0...v1.3.0) (2026-11-10)
 
 ### Features
