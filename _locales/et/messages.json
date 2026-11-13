@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Autor:"
   },
+  "reviewTitle": {
+    "message": "Kas QuickInspect meeldib?"
+  },
+  "reviewText": {
+    "message": "Lühike arvustus Chrome Web Store’is aitab teistel arendajatel selle üles leida."
+  },
+  "reviewRate": {
+    "message": "Kirjuta arvustus"
+  },
+  "reviewLater": {
+    "message": "Hiljem"
+  },
+  "reviewNever": {
+    "message": "Ära enam küsi"
+  },
   "footerSections": {
     "message": "Selektorid · Kast · Stiilid · Ligipääsetavus · Sündmused"
   },

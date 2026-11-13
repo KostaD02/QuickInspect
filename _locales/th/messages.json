@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "สร้างโดย"
   },
+  "reviewTitle": {
+    "message": "ชอบ QuickInspect ไหม"
+  },
+  "reviewText": {
+    "message": "รีวิวสั้น ๆ ใน Chrome Web Store ช่วยให้นักพัฒนาคนอื่นค้นพบได้"
+  },
+  "reviewRate": {
+    "message": "เขียนรีวิว"
+  },
+  "reviewLater": {
+    "message": "ไว้ทีหลัง"
+  },
+  "reviewNever": {
+    "message": "ไม่ต้องถามอีก"
+  },
   "footerSections": {
     "message": "ตัวเลือก · กล่อง · สไตล์ · การเข้าถึง · อีเวนต์"
   },

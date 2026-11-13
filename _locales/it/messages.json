@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Creato da"
   },
+  "reviewTitle": {
+    "message": "Ti piace QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Una breve recensione sul Chrome Web Store aiuta altri sviluppatori a trovarlo."
+  },
+  "reviewRate": {
+    "message": "Scrivi una recensione"
+  },
+  "reviewLater": {
+    "message": "Più tardi"
+  },
+  "reviewNever": {
+    "message": "Non chiedere più"
+  },
   "footerSections": {
     "message": "Selettori · Box · Stili · Accessibilità · Eventi"
   },

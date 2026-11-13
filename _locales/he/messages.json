@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "נוצר על ידי"
   },
+  "reviewTitle": {
+    "message": "נהנים מ־QuickInspect?"
+  },
+  "reviewText": {
+    "message": "ביקורת קצרה ב־Chrome Web Store עוזרת למפתחים אחרים למצוא אותו."
+  },
+  "reviewRate": {
+    "message": "כתיבת ביקורת"
+  },
+  "reviewLater": {
+    "message": "אחר כך"
+  },
+  "reviewNever": {
+    "message": "לא לשאול שוב"
+  },
   "footerSections": {
     "message": "סלקטורים · קופסה · סגנונות · נגישות · אירועים"
   },

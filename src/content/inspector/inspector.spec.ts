@@ -643,6 +643,32 @@ describe('inspector', () => {
     shadow.querySelector<HTMLElement>('[data-action="revert"]')!.click();
   });
 
+  it('counts deliberate actions for the review reminder, not hovering', async () => {
+    (chrome.storage.local.get as jest.Mock).mockResolvedValue({
+      QUICKINSPECT_REVIEW: { uses: 4, status: 'pending', askAt: 20 },
+    });
+    (chrome.storage.local.set as jest.Mock)
+      .mockReset()
+      .mockResolvedValue(undefined);
+    reopen();
+    hold();
+    mouse('mousemove', { clientX: 12, clientY: 12 });
+    flush();
+    jest.advanceTimersByTime(1000);
+    await settled();
+    expect(chrome.storage.local.set).not.toHaveBeenCalled();
+
+    mouse('click', { altKey: true });
+    key('keydown', { code: 'KeyS', key: 's', altKey: true });
+    await settled();
+    jest.advanceTimersByTime(1000);
+    await settled();
+    await settled();
+    expect(chrome.storage.local.set).toHaveBeenCalledWith({
+      QUICKINSPECT_REVIEW: { uses: 6, status: 'pending', askAt: 20 },
+    });
+  });
+
   it('respects a different modifier', () => {
     inspector.setSettings({ ...DEFAULT_SETTINGS, modifier: 'Control' });
     key('keydown', { key: 'Alt' });

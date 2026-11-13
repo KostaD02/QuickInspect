@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Autor:"
   },
+  "reviewTitle": {
+    "message": "Líbí se vám QuickInspect?"
+  },
+  "reviewText": {
+    "message": "Krátká recenze v Chrome Web Store pomůže dalším vývojářům ho najít."
+  },
+  "reviewRate": {
+    "message": "Napsat recenzi"
+  },
+  "reviewLater": {
+    "message": "Později"
+  },
+  "reviewNever": {
+    "message": "Už se neptat"
+  },
   "footerSections": {
     "message": "Selektory · Box · Styly · Přístupnost · Události"
   },

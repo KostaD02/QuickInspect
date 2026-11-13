@@ -7,6 +7,8 @@ import '@kostad/brand/css';
 import './style.css';
 import { localizePage } from '@/shared/util';
 import { PopupController } from './controller/controller';
+import { initReview } from './review/review';
 
 localizePage();
 new PopupController().init();
+void initReview();

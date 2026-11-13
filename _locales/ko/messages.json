@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "만든 사람:"
   },
+  "reviewTitle": {
+    "message": "QuickInspect가 마음에 드시나요?"
+  },
+  "reviewText": {
+    "message": "Chrome 웹 스토어에 짧은 리뷰를 남기면 다른 개발자가 찾는 데 도움이 됩니다."
+  },
+  "reviewRate": {
+    "message": "리뷰 남기기"
+  },
+  "reviewLater": {
+    "message": "나중에"
+  },
+  "reviewNever": {
+    "message": "다시 묻지 않기"
+  },
   "footerSections": {
     "message": "선택자 · 박스 · 스타일 · 접근성 · 이벤트"
   },

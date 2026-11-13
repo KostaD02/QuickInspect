@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "Laget av"
   },
+  "reviewTitle": {
+    "message": "Liker du QuickInspect?"
+  },
+  "reviewText": {
+    "message": "En kort anmeldelse i Chrome Web Store hjelper andre utviklere med å finne det."
+  },
+  "reviewRate": {
+    "message": "Skriv en anmeldelse"
+  },
+  "reviewLater": {
+    "message": "Senere"
+  },
+  "reviewNever": {
+    "message": "Ikke spør igjen"
+  },
   "footerSections": {
     "message": "Selektorer · Boks · Stiler · Tilgjengelighet · Events"
   },

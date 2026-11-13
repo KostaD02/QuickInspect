@@ -351,6 +351,26 @@
     "message": "Created by",
     "description": "Label before the author link in the info panel."
   },
+  "reviewTitle": {
+    "message": "Enjoying QuickInspect?",
+    "description": "Heading of the popup card that asks for a Chrome Web Store review after the extension has been used for a while."
+  },
+  "reviewText": {
+    "message": "A short review on the Chrome Web Store helps other developers find it.",
+    "description": "Body of the review card. Use the Chrome Web Store name Chrome shows in this language."
+  },
+  "reviewRate": {
+    "message": "Leave a review",
+    "description": "Review card button that opens the Chrome Web Store review page."
+  },
+  "reviewLater": {
+    "message": "Later",
+    "description": "Tooltip and label of the close button on the review card; it hides the card and asks again after more use."
+  },
+  "reviewNever": {
+    "message": "Don't ask again",
+    "description": "Review card button that hides the card for good."
+  },
   "footerSections": {
     "message": "Selectors · Box · Styles · Accessibility · Events",
     "description": "Popup footer listing the panel sections. Must fit on one line of a 360px wide popup at a 10px font, so prefer short words. Keep the middle dots. Use the same words as the section titles."

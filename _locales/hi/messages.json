@@ -266,6 +266,21 @@
   "infoCreatedBy": {
     "message": "निर्माता:"
   },
+  "reviewTitle": {
+    "message": "QuickInspect पसंद आ रहा है?"
+  },
+  "reviewText": {
+    "message": "Chrome Web Store पर एक छोटी समीक्षा दूसरे डेवलपर्स को इसे खोजने में मदद करती है।"
+  },
+  "reviewRate": {
+    "message": "समीक्षा लिखें"
+  },
+  "reviewLater": {
+    "message": "बाद में"
+  },
+  "reviewNever": {
+    "message": "फिर न पूछें"
+  },
   "footerSections": {
     "message": "सेलेक्टर · बॉक्स · स्टाइल · एक्सेसिबिलिटी · इवेंट"
   },

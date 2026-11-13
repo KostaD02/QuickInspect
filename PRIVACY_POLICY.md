@@ -1,6 +1,6 @@
 # Privacy Policy — QuickInspect
 
-**Last updated:** October 18, 2026
+**Last updated:** November 13, 2026
 
 ## Overview
 
@@ -15,7 +15,7 @@ QuickInspect is a browser extension that shows an element's selectors, Playwrigh
 - No browsing history or visited URLs
 - No page content is stored or sent anywhere; it is only read to show the panel
 - No keystrokes or form values; key presses are only checked for the hold key and shortcuts, never recorded
-- No analytics, telemetry, or crash reporting
+- No analytics, telemetry, or crash reporting; the one counter it keeps (below) never leaves your device
 - No account registration or login of any kind
 
 ---
@@ -32,13 +32,14 @@ To list event listeners, a small script in each page keeps a record of the liste
 
 All processing happens entirely on your device:
 
-| What                                        | Where it stays                                                                             |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Settings (on/off, hold key, panel sections) | `chrome.storage.local` on your device only                                                 |
-| Details of the inspected element            | In memory in the tab while the panel is showing; never written to disk or sent to a server |
-| Event listener records                      | In memory in the page; never leave the tab                                                 |
-| Copied selectors, locators, HTML and text   | Your clipboard, only when you press a copy key or button                                   |
-| Edits made to styles, attributes or text    | Only in the page you edited; gone on reload                                                |
+| What                                                                   | Where it stays                                                                                                                                                                          |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Settings (on/off, hold key, panel sections)                            | `chrome.storage.local` on your device only                                                                                                                                              |
+| Details of the inspected element                                       | In memory in the tab while the panel is showing; never written to disk or sent to a server                                                                                              |
+| Event listener records                                                 | In memory in the page; never leave the tab                                                                                                                                              |
+| Copied selectors, locators, HTML, text, JSON, Markdown and screenshots | Your clipboard, or your downloads folder for screenshots, only when you press a copy key or button; a screenshot is taken of the visible tab and cropped on your device                 |
+| Edits made to styles, attributes or text                               | Only in the page you edited and gone on reload; with **Keep edits** on, the site, page path, element selector and edited values are kept in `chrome.storage.local` until you reset them |
+| Review reminder                                                        | `chrome.storage.local`: a count of actions such as pins and copies, and your answer to the review prompt; no page, site or content                                                      |
 
 The extension communicates solely through the browser's own extension APIs (`chrome.storage`, `chrome.runtime`, `chrome.tabs`, `chrome.scripting`). No external servers, APIs, or third-party services are contacted.
 
