@@ -11,7 +11,7 @@ export interface ReviewState {
 
 export const REVIEW_URL =
   'https://chromewebstore.google.com/detail/quickinspect/hgbhpnaeebhlnfmocmfgekfklcnmadno/reviews';
-export const REVIEW_THRESHOLD = 20;
+export const REVIEW_THRESHOLD = 50;
 export const REVIEW_SNOOZE = 40;
 
 const STATUSES: readonly ReviewStatus[] = [

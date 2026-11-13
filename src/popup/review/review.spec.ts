@@ -35,7 +35,7 @@ describe('review card', () => {
   });
 
   it('opens the store review page and remembers the review', async () => {
-    get.mockResolvedValue({ [REVIEW_STORAGE_KEY]: { uses: 30 } });
+    get.mockResolvedValue({ [REVIEW_STORAGE_KEY]: { uses: 60 } });
     await initReview();
     expect(card().hidden).toBe(false);
     press('review-rate');
@@ -51,7 +51,7 @@ describe('review card', () => {
     ['review-later', 'later'],
     ['review-never', 'never'],
   ])('%s hides the card and stores %s', async (id, status) => {
-    get.mockResolvedValue({ [REVIEW_STORAGE_KEY]: { uses: 30 } });
+    get.mockResolvedValue({ [REVIEW_STORAGE_KEY]: { uses: 60 } });
     await initReview();
     press(id);
     expect(card().hidden).toBe(true);
