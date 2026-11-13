@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klikaj wartości w przypiętym panelu, aby zmieniać style, atrybuty i tekst na stronie"
   },
+  "settingPersistEdits": {
+    "message": "Zachowaj zmiany"
+  },
+  "settingPersistEditsHint": {
+    "message": "Zapisuje zmiany dla każdej witryny i stosuje je ponownie po załadowaniu strony"
+  },
   "settingsScreenshot": {
     "message": "Zrzut ekranu"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "W przypiętym panelu <strong>kliknij dowolną wartość</strong>, aby edytować style, box, atrybuty lub tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> zatwierdza, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anuluje, a <strong>reset</strong> cofa wszystko. Zmiany zostają na stronie do jej przeładowania."
   },
+  "infoPersist": {
+    "message": "Włącz <strong>Zachowaj zmiany</strong> w ustawieniach, aby zmiany były stosowane ponownie po załadowaniu strony. <strong>css</strong> w przypiętym panelu kopiuje wszystkie zmiany na stronie jako CSS."
+  },
   "infoStep5": {
     "message": "Na serwerze deweloperskim <strong>Vite</strong> lub <strong>Next.js</strong> naciśnij <kbd class=\"kd-chip kd-font-mono\">O</kbd>, aby otworzyć źródło elementu w edytorze."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Cofnij wszystkie zmiany w tym elemencie"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopiuj wszystkie zmiany na tej stronie jako CSS"
   },
   "panelCopy": {
     "message": "kopiuj"
@@ -631,6 +646,9 @@
   },
   "actionScreenshot": {
     "message": "zrzut ekranu"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Zmiany cofnięte"

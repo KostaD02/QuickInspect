@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Sayfadaki stilleri, öznitelikleri ve metni değiştirmek için sabitlenmiş paneldeki değerlere tıklayın"
   },
+  "settingPersistEdits": {
+    "message": "Düzenlemeleri sakla"
+  },
+  "settingPersistEditsHint": {
+    "message": "Düzenlemeleri her site için kaydeder ve sayfa yüklendiğinde yeniden uygular"
+  },
   "settingsScreenshot": {
     "message": "Ekran görüntüsü"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Sabitlenmiş bir panelde stilleri, kutuyu, öznitelikleri veya metni düzenlemek için <strong>herhangi bir değere tıklayın</strong>. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> uygular, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> iptal eder, <strong>reset</strong> hepsini geri alır. Düzenlemeler sayfa yenilenene kadar kalır."
   },
+  "infoPersist": {
+    "message": "Düzenlemelerin sayfa yüklendiğinde yeniden uygulanması için ayarlarda <strong>Düzenlemeleri sakla</strong> seçeneğini açın. Sabitlenmiş paneldeki <strong>css</strong> sayfadaki tüm düzenlemeleri CSS olarak kopyalar."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> veya <strong>Next.js</strong> geliştirme sunucusunda <kbd class=\"kd-chip kd-font-mono\">O</kbd> tuşuna basarak öğenin kaynağını düzenleyicinizde açın."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Bu öğedeki tüm düzenlemeleri geri al"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Bu sayfadaki tüm düzenlemeleri CSS olarak kopyala"
   },
   "panelCopy": {
     "message": "kopyala"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "ekran görüntüsü"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Düzenlemeler geri alındı"

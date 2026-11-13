@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Кликните вредности у закаченом панелу да промените стилове, атрибуте и текст на страници"
   },
+  "settingPersistEdits": {
+    "message": "Задржи измене"
+  },
+  "settingPersistEditsHint": {
+    "message": "Чува измене за сваки сајт и поново их примењује при учитавању странице"
+  },
   "settingsScreenshot": {
     "message": "Снимак екрана"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "У закаченом панелу <strong>кликните било коју вредност</strong> да уредите стилове, box, атрибуте или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> примењује, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказује, а <strong>reset</strong> поништава све. Измене остају на страници до поновног учитавања."
   },
+  "infoPersist": {
+    "message": "Укључите <strong>Задржи измене</strong> у подешавањима да би се измене поново примениле при учитавању странице. <strong>css</strong> у закаченом панелу копира све измене странице као CSS."
+  },
   "infoStep5": {
     "message": "На <strong>Vite</strong> или <strong>Next.js</strong> dev серверу притисните <kbd class=\"kd-chip kd-font-mono\">O</kbd> да отворите извор елемента у уређивачу."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Поништи све измене на овом елементу"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Копирај све измене на овој страници као CSS"
   },
   "panelCopy": {
     "message": "копирај"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "снимак екрана"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Измене поништене"

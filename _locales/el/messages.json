@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Κάντε κλικ σε τιμές ενός καρφιτσωμένου πίνακα για να αλλάξετε στυλ, χαρακτηριστικά και κείμενο στη σελίδα"
   },
+  "settingPersistEdits": {
+    "message": "Διατήρηση αλλαγών"
+  },
+  "settingPersistEditsHint": {
+    "message": "Αποθηκεύει τις αλλαγές ανά ιστότοπο και τις εφαρμόζει ξανά όταν φορτώνει η σελίδα"
+  },
   "settingsScreenshot": {
     "message": "Στιγμιότυπο οθόνης"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Σε καρφιτσωμένο πίνακα, <strong>κάντε κλικ σε οποιαδήποτε τιμή</strong> για να επεξεργαστείτε στυλ, box, χαρακτηριστικά ή κείμενο. Το <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> εφαρμόζει, το <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ακυρώνει και το <strong>reset</strong> τα αναιρεί όλα. Οι αλλαγές μένουν στη σελίδα μέχρι την επαναφόρτωση."
   },
+  "infoPersist": {
+    "message": "Ενεργοποιήστε το <strong>Διατήρηση αλλαγών</strong> στις ρυθμίσεις για να εφαρμόζονται ξανά οι αλλαγές σας όταν φορτώνει η σελίδα. Το <strong>css</strong> σε καρφιτσωμένο πάνελ αντιγράφει όλες τις αλλαγές της σελίδας ως CSS."
+  },
   "infoStep5": {
     "message": "Σε dev server <strong>Vite</strong> ή <strong>Next.js</strong>, πατήστε <kbd class=\"kd-chip kd-font-mono\">O</kbd> για να ανοίξετε την πηγή του στοιχείου στον επεξεργαστή σας."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Αναίρεση όλων των αλλαγών σε αυτό το στοιχείο"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Αντιγραφή όλων των αλλαγών της σελίδας ως CSS"
   },
   "panelCopy": {
     "message": "αντιγραφή"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "στιγμιότυπο οθόνης"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Οι αλλαγές επαναφέρθηκαν"

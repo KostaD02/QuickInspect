@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Щракнете върху стойности в закачен панел, за да промените стилове, атрибути и текст на страницата"
   },
+  "settingPersistEdits": {
+    "message": "Запазване на редакциите"
+  },
+  "settingPersistEditsHint": {
+    "message": "Запазва редакциите за всеки сайт и ги прилага отново при зареждане на страницата"
+  },
   "settingsScreenshot": {
     "message": "Екранна снимка"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "В закачен панел <strong>щракнете върху стойност</strong>, за да редактирате стилове, бокс, атрибути или текст. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> прилага, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> отказва, а <strong>reset</strong> отменя всичко. Редакциите остават на страницата до презареждане."
   },
+  "infoPersist": {
+    "message": "Включете <strong>Запазване на редакциите</strong> в настройките, за да се прилагат редакциите отново при зареждане на страницата. <strong>css</strong> в закачен панел копира всички редакции на страницата като CSS."
+  },
   "infoStep5": {
     "message": "На dev сървър <strong>Vite</strong> или <strong>Next.js</strong> натиснете <kbd class=\"kd-chip kd-font-mono\">O</kbd>, за да отворите източника на елемента в редактора."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Отмяна на всички редакции на този елемент"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Копира всички редакции на тази страница като CSS"
   },
   "panelCopy": {
     "message": "копиране"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "екранна снимка"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Редакциите са отменени"

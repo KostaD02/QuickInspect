@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Kattintson a rögzített panel értékeire a stílusok, attribútumok és szövegek módosításához az oldalon"
   },
+  "settingPersistEdits": {
+    "message": "Módosítások megőrzése"
+  },
+  "settingPersistEditsHint": {
+    "message": "Webhelyenként menti a módosításokat, és az oldal betöltésekor újra alkalmazza őket"
+  },
   "settingsScreenshot": {
     "message": "Képernyőkép"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Rögzített panelen <strong>kattintson bármelyik értékre</strong> a stílusok, a doboz, az attribútumok vagy a szöveg szerkesztéséhez. Az <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> alkalmaz, az <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> elvet, a <strong>reset</strong> mindent visszavon. A módosítások újratöltésig az oldalon maradnak."
   },
+  "infoPersist": {
+    "message": "Kapcsolja be a beállításokban a <strong>Módosítások megőrzése</strong> lehetőséget, hogy a módosítások az oldal betöltésekor újra érvényesüljenek. A rögzített panel <strong>css</strong> gombja az oldal összes módosítását CSS-ként másolja."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> vagy <strong>Next.js</strong> fejlesztői szerveren az <kbd class=\"kd-chip kd-font-mono\">O</kbd> billentyű megnyitja az elem forrását a szerkesztőben."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Az elem összes módosításának visszavonása"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Az oldal összes módosításának másolása CSS-ként"
   },
   "panelCopy": {
     "message": "másolás"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "képernyőkép"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Módosítások visszavonva"

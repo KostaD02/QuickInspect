@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Spustelėkite reikšmes prisegtame skydelyje, kad pakeistumėte puslapio stilius, atributus ir tekstą"
   },
+  "settingPersistEdits": {
+    "message": "Išsaugoti pakeitimus"
+  },
+  "settingPersistEditsHint": {
+    "message": "Išsaugo kiekvienos svetainės pakeitimus ir pritaiko juos iš naujo įkėlus puslapį"
+  },
   "settingsScreenshot": {
     "message": "Ekrano kopija"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Prisegtame skydelyje <strong>spustelėkite bet kurią reikšmę</strong>, kad redaguotumėte stilius, box, atributus arba tekstą. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> pritaiko, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atšaukia, o <strong>reset</strong> viską anuliuoja. Pakeitimai puslapyje lieka iki perkrovimo."
   },
+  "infoPersist": {
+    "message": "Nustatymuose įjunkite <strong>Išsaugoti pakeitimus</strong>, kad įkėlus puslapį pakeitimai būtų pritaikyti iš naujo. <strong>css</strong> prisegtame skydelyje nukopijuoja visus puslapio pakeitimus kaip CSS."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> arba <strong>Next.js</strong> kūrimo serveryje paspauskite <kbd class=\"kd-chip kd-font-mono\">O</kbd>, kad atidarytumėte elemento šaltinį redaktoriuje."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Anuliuoti visus šio elemento pakeitimus"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopijuoti visus šio puslapio pakeitimus kaip CSS"
   },
   "panelCopy": {
     "message": "kopijuoti"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "ekrano kopija"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Pakeitimai anuliuoti"

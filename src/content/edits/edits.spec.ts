@@ -1,4 +1,8 @@
 import {
+  applyDelta,
+  deltaToCss,
+  editDelta,
+  editedElements,
   hasEdits,
   readField,
   revertEdits,
@@ -155,5 +159,71 @@ describe('edits', () => {
     revertEdits(parent);
     expect(parent.title).toBe('t');
     expect(parent.innerHTML).toBe('<b>x</b>');
+  });
+
+  it('describes the net change of an element against its original state', () => {
+    const el = make(
+      '<p id="a" class="x" title="t" style="color: red; margin-top: 0px">old</p>',
+    );
+    expect(editDelta(el)).toBeNull();
+    writeField(el, { kind: 'style', property: 'color' }, 'blue');
+    writeField(el, { kind: 'new-style' }, 'padding-top: 4px !important');
+    writeField(el, { kind: 'style', property: 'margin-top' }, null);
+    writeField(el, { kind: 'attribute', name: 'title' }, null);
+    writeField(el, { kind: 'new-attribute' }, 'data-x="1"');
+    writeField(el, { kind: 'attribute', name: 'class' }, 'y');
+    writeField(el, { kind: 'text' }, 'new');
+    expect(editedElements()).toEqual([el]);
+    expect(editDelta(el)).toEqual({
+      styles: {
+        color: 'blue',
+        'padding-top': '4px !important',
+        'margin-top': '',
+      },
+      attributes: { title: null, 'data-x': '1', class: 'y' },
+      text: 'new',
+    });
+    writeField(el, { kind: 'style', property: 'color' }, 'red');
+    expect(editDelta(el)?.styles.color).toBeUndefined();
+    revertEdits(el);
+    expect(editDelta(el)).toBeNull();
+    expect(editedElements()).toEqual([]);
+  });
+
+  it('replays a delta on a fresh element so reset still restores it', () => {
+    const el = make('<p class="x" title="t" style="margin: 2px">old</p>');
+    applyDelta(el, {
+      styles: {
+        color: 'blue',
+        'margin-top': '',
+        'font-weight': '700 !important',
+      },
+      attributes: { title: null, 'data-x': '1' },
+      text: 'new',
+    });
+    expect(el.style.color).toBe('blue');
+    expect(el.style.marginTop).toBe('');
+    expect(el.style.getPropertyPriority('font-weight')).toBe('important');
+    expect(el.hasAttribute('title')).toBe(false);
+    expect(el.getAttribute('data-x')).toBe('1');
+    expect(el.textContent).toBe('new');
+    expect(hasEdits(el)).toBe(true);
+    revertEdits(el);
+    expect(el.getAttribute('title')).toBe('t');
+    expect(el.getAttribute('style')).toBe('margin: 2px');
+    expect(el.hasAttribute('data-x')).toBe(false);
+    expect(el.textContent).toBe('old');
+  });
+
+  it('writes the style part of a delta as a CSS rule', () => {
+    expect(
+      deltaToCss('#a', {
+        styles: { color: 'blue', margin: '', padding: '4px !important' },
+        attributes: { title: null },
+      }),
+    ).toBe('#a {\n  color: blue;\n  padding: 4px !important;\n}');
+    expect(deltaToCss('#a', { styles: {}, attributes: { title: 'x' } })).toBe(
+      '',
+    );
   });
 });

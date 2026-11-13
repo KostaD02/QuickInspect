@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Clique nos valores de um painel fixado para alterar estilos, atributos e texto na página"
   },
+  "settingPersistEdits": {
+    "message": "Manter edições"
+  },
+  "settingPersistEditsHint": {
+    "message": "Salva as edições de cada site e as aplica de novo quando a página carrega"
+  },
   "settingsScreenshot": {
     "message": "Captura de tela"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Em um painel fixado, <strong>clique em qualquer valor</strong> para editar estilos, caixa, atributos ou texto. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplica, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> cancela e <strong>reset</strong> desfaz tudo. As edições ficam na página até você recarregar."
   },
+  "infoPersist": {
+    "message": "Ative <strong>Manter edições</strong> nas configurações para aplicar suas edições de novo quando a página carregar. <strong>css</strong> em um painel fixado copia todas as edições da página como CSS."
+  },
   "infoStep5": {
     "message": "Em um servidor de desenvolvimento <strong>Vite</strong> ou <strong>Next.js</strong>, pressione <kbd class=\"kd-chip kd-font-mono\">O</kbd> para abrir a origem do elemento no seu editor."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Desfazer todas as edições deste elemento"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Copiar todas as edições desta página como CSS"
   },
   "panelCopy": {
     "message": "copiar"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "captura de tela"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Edições desfeitas"

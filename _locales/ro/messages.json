@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Dați clic pe valorile dintr-un panou fixat pentru a schimba stiluri, atribute și text în pagină"
   },
+  "settingPersistEdits": {
+    "message": "Păstrează modificările"
+  },
+  "settingPersistEditsHint": {
+    "message": "Salvează modificările pentru fiecare site și le aplică din nou la încărcarea paginii"
+  },
   "settingsScreenshot": {
     "message": "Captură de ecran"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Într-un panou fixat, <strong>dați clic pe orice valoare</strong> pentru a edita stiluri, box, atribute sau text. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> aplică, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> anulează, iar <strong>reset</strong> anulează tot. Modificările rămân în pagină până la reîncărcare."
   },
+  "infoPersist": {
+    "message": "Activează <strong>Păstrează modificările</strong> în setări ca modificările să fie aplicate din nou la încărcarea paginii. <strong>css</strong> într-un panou fixat copiază toate modificările paginii ca CSS."
+  },
   "infoStep5": {
     "message": "Pe un server de dezvoltare <strong>Vite</strong> sau <strong>Next.js</strong>, apăsați <kbd class=\"kd-chip kd-font-mono\">O</kbd> pentru a deschide sursa elementului în editor."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Anulează toate modificările acestui element"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Copiază toate modificările de pe această pagină ca CSS"
   },
   "panelCopy": {
     "message": "copiază"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "captură de ecran"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Modificări anulate"

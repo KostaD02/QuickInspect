@@ -14,6 +14,7 @@ export const DEFAULT_SETTINGS: LensSettings = {
   showEvents: true,
   showEditorStatus: true,
   allowEdit: true,
+  persistEdits: false,
   downloadScreenshot: true,
   dismissCompare: true,
 };

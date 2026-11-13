@@ -93,6 +93,7 @@ describe('panel', () => {
   let read: jest.Mock;
   let write: jest.Mock;
   let revert: jest.Mock;
+  let copyCss: jest.Mock;
   let select: jest.Mock;
   let panel: Panel;
 
@@ -104,6 +105,7 @@ describe('panel', () => {
     read = jest.fn(() => 'block');
     write = jest.fn(() => true);
     revert = jest.fn();
+    copyCss = jest.fn();
     select = jest.fn();
     panel = new Panel(root, {
       copy: onCopy,
@@ -111,6 +113,7 @@ describe('panel', () => {
       read,
       write,
       revert,
+      copyCss,
       select,
     });
   });
@@ -393,6 +396,7 @@ describe('panel', () => {
       read,
       write,
       revert,
+      copyCss,
       select,
     });
     mirrored.render(info, DEFAULT_SETTINGS);

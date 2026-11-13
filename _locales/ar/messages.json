@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "انقر على القيم في لوحة مثبّتة لتغيير الأنماط والسمات والنص في الصفحة"
   },
+  "settingPersistEdits": {
+    "message": "الاحتفاظ بالتعديلات"
+  },
+  "settingPersistEditsHint": {
+    "message": "حفظ التعديلات لكل موقع وتطبيقها مجددًا عند تحميل الصفحة"
+  },
   "settingsScreenshot": {
     "message": "لقطة الشاشة"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "في لوحة مثبّتة، <strong>انقر على أي قيمة</strong> لتعديل الأنماط أو الصندوق أو السمات أو النص. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> يطبّق، و<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> يلغي، و<strong>reset</strong> يتراجع عن كل شيء. تبقى التعديلات في الصفحة حتى إعادة تحميلها."
   },
+  "infoPersist": {
+    "message": "فعّل <strong>الاحتفاظ بالتعديلات</strong> في الإعدادات لتُطبَّق تعديلاتك مجددًا عند تحميل الصفحة. يقوم <strong>css</strong> في اللوحة المثبتة بنسخ كل تعديلات الصفحة بصيغة CSS."
+  },
   "infoStep5": {
     "message": "على خادم تطوير <strong>Vite</strong> أو <strong>Next.js</strong>، اضغط <kbd class=\"kd-chip kd-font-mono\">O</kbd> لفتح مصدر العنصر في محرّرك."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "التراجع عن كل تعديل في هذا العنصر"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "نسخ كل تعديلات هذه الصفحة بصيغة CSS"
   },
   "panelCopy": {
     "message": "نسخ"
@@ -703,6 +718,9 @@
   },
   "actionScreenshot": {
     "message": "لقطة الشاشة"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "تم التراجع عن التعديلات"

@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "固定したパネルの値をクリックして、ページのスタイル、属性、テキストを変更します"
   },
+  "settingPersistEdits": {
+    "message": "編集を保持"
+  },
+  "settingPersistEditsHint": {
+    "message": "サイトごとに編集を保存し、ページの読み込み時に再適用します"
+  },
   "settingsScreenshot": {
     "message": "スクリーンショット"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "固定したパネルで<strong>値をクリック</strong>すると、スタイル、ボックス、属性、テキストを編集できます。<kbd class=\"kd-chip kd-font-mono\">Enter</kbd> で適用、<kbd class=\"kd-chip kd-font-mono\">Esc</kbd> でキャンセル、<strong>reset</strong> ですべて元に戻ります。編集内容はページを再読み込みするまで残ります。"
   },
+  "infoPersist": {
+    "message": "設定で <strong>編集を保持</strong> をオンにすると、ページの読み込み時に編集が再適用されます。ピン留めしたパネルの <strong>css</strong> はページのすべての編集を CSS としてコピーします。"
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> や <strong>Next.js</strong> の開発サーバーでは、<kbd class=\"kd-chip kd-font-mono\">O</kbd> を押すと要素のソースをエディターで開けます。"
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "この要素へのすべての編集を元に戻す"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "このページのすべての編集を CSS としてコピー"
   },
   "panelCopy": {
     "message": "コピー"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "スクリーンショット"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "編集を元に戻しました"

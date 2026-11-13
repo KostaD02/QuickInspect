@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Noklikšķiniet uz vērtībām piespraustā panelī, lai mainītu lapas stilus, atribūtus un tekstu"
   },
+  "settingPersistEdits": {
+    "message": "Saglabāt izmaiņas"
+  },
+  "settingPersistEditsHint": {
+    "message": "Saglabā izmaiņas katrai vietnei un lietot tās atkārtoti, kad lapa ielādējas"
+  },
   "settingsScreenshot": {
     "message": "Ekrānuzņēmums"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Piespraustā panelī <strong>noklikšķiniet uz jebkuras vērtības</strong>, lai rediģētu stilus, box, atribūtus vai tekstu. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> piemēro, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> atceļ, bet <strong>reset</strong> atsauc visu. Labojumi lapā paliek līdz pārlādēšanai."
   },
+  "infoPersist": {
+    "message": "Ieslēdziet iestatījumos <strong>Saglabāt izmaiņas</strong>, lai izmaiņas tiktu lietotas atkārtoti, kad lapa ielādējas. <strong>css</strong> piespraustā panelī kopē visas lapas izmaiņas kā CSS."
+  },
   "infoStep5": {
     "message": "<strong>Vite</strong> vai <strong>Next.js</strong> izstrādes serverī nospiediet <kbd class=\"kd-chip kd-font-mono\">O</kbd>, lai atvērtu elementa avotu redaktorā."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Atsaukt visus šī elementa labojumus"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopēt visas šīs lapas izmaiņas kā CSS"
   },
   "panelCopy": {
     "message": "kopēt"
@@ -595,6 +610,9 @@
   },
   "actionScreenshot": {
     "message": "ekrānuzņēmums"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Labojumi atsaukti"

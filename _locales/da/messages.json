@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Klik på værdier i et fastgjort panel for at ændre stilarter, attributter og tekst på siden"
   },
+  "settingPersistEdits": {
+    "message": "Behold ændringer"
+  },
+  "settingPersistEditsHint": {
+    "message": "Gem ændringer for hvert websted, og anvend dem igen, når siden indlæses"
+  },
   "settingsScreenshot": {
     "message": "Skærmbillede"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "I et fastgjort panel kan du <strong>klikke på en værdi</strong> for at redigere stilarter, boks, attributter eller tekst. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> anvender, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> annullerer, og <strong>reset</strong> fortryder det hele. Ændringerne bliver på siden, indtil du genindlæser."
   },
+  "infoPersist": {
+    "message": "Slå <strong>Behold ændringer</strong> til i indstillingerne for at anvende dine ændringer igen, når siden indlæses. <strong>css</strong> i et fastgjort panel kopierer alle ændringer på siden som CSS."
+  },
   "infoStep5": {
     "message": "På en <strong>Vite</strong>- eller <strong>Next.js</strong>-devserver kan du trykke på <kbd class=\"kd-chip kd-font-mono\">O</kbd> for at åbne elementets kilde i din editor."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Fortryd alle ændringer på dette element"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Kopiér alle ændringer på denne side som CSS"
   },
   "panelCopy": {
     "message": "kopiér"
@@ -559,6 +574,9 @@
   },
   "actionScreenshot": {
     "message": "skærmbillede"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Ændringer nulstillet"

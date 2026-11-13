@@ -53,6 +53,7 @@ export function normaliseSettings(raw: unknown): LensSettings {
       DEFAULT_SETTINGS.showEditorStatus,
     ),
     allowEdit: bool(stored.allowEdit, DEFAULT_SETTINGS.allowEdit),
+    persistEdits: bool(stored.persistEdits, DEFAULT_SETTINGS.persistEdits),
     downloadScreenshot: bool(
       stored.downloadScreenshot,
       DEFAULT_SETTINGS.downloadScreenshot,

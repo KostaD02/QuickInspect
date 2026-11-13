@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "คลิกค่าในแผงที่ปักหมุดเพื่อเปลี่ยนสไตล์ แอตทริบิวต์ และข้อความในหน้า"
   },
+  "settingPersistEdits": {
+    "message": "เก็บการแก้ไข"
+  },
+  "settingPersistEditsHint": {
+    "message": "บันทึกการแก้ไขแยกตามเว็บไซต์และนำกลับมาใช้เมื่อโหลดหน้า"
+  },
   "settingsScreenshot": {
     "message": "ภาพหน้าจอ"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "ในแผงที่ปักหมุด <strong>คลิกค่าใดก็ได้</strong>เพื่อแก้ไขสไตล์ กล่อง แอตทริบิวต์ หรือข้อความ <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> ใช้ค่า <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> ยกเลิก และ <strong>reset</strong> ย้อนกลับทั้งหมด การแก้ไขจะอยู่ในหน้าจนกว่าจะโหลดใหม่"
   },
+  "infoPersist": {
+    "message": "เปิด <strong>เก็บการแก้ไข</strong> ในการตั้งค่าเพื่อนำการแก้ไขกลับมาใช้เมื่อโหลดหน้า <strong>css</strong> ในแผงที่ปักหมุดจะคัดลอกการแก้ไขทั้งหมดในหน้าเป็น CSS"
+  },
   "infoStep5": {
     "message": "บนเซิร์ฟเวอร์พัฒนา <strong>Vite</strong> หรือ <strong>Next.js</strong> กด <kbd class=\"kd-chip kd-font-mono\">O</kbd> เพื่อเปิดซอร์สขององค์ประกอบในตัวแก้ไขของคุณ"
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "ย้อนกลับการแก้ไขทั้งหมดขององค์ประกอบนี้"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "คัดลอกการแก้ไขทั้งหมดในหน้านี้เป็น CSS"
   },
   "panelCopy": {
     "message": "คัดลอก"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "ภาพหน้าจอ"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "รีเซ็ตการแก้ไขแล้ว"

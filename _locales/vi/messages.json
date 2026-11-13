@@ -134,6 +134,12 @@
   "settingAllowEditHint": {
     "message": "Nhấp vào giá trị trong bảng đã ghim để thay đổi kiểu, thuộc tính và văn bản trên trang"
   },
+  "settingPersistEdits": {
+    "message": "Giữ chỉnh sửa"
+  },
+  "settingPersistEditsHint": {
+    "message": "Lưu chỉnh sửa theo từng trang web và áp dụng lại khi trang tải"
+  },
   "settingsScreenshot": {
     "message": "Ảnh chụp màn hình"
   },
@@ -245,6 +251,9 @@
   "infoStep4": {
     "message": "Trong bảng đã ghim, <strong>nhấp vào bất kỳ giá trị nào</strong> để chỉnh sửa kiểu, box, thuộc tính hoặc văn bản. <kbd class=\"kd-chip kd-font-mono\">Enter</kbd> áp dụng, <kbd class=\"kd-chip kd-font-mono\">Esc</kbd> hủy và <strong>reset</strong> hoàn tác tất cả. Các chỉnh sửa giữ nguyên trên trang cho đến khi tải lại."
   },
+  "infoPersist": {
+    "message": "Bật <strong>Giữ chỉnh sửa</strong> trong cài đặt để áp dụng lại chỉnh sửa khi trang tải. <strong>css</strong> trong bảng đã ghim sao chép mọi chỉnh sửa trên trang dưới dạng CSS."
+  },
   "infoStep5": {
     "message": "Trên máy chủ dev <strong>Vite</strong> hoặc <strong>Next.js</strong>, nhấn <kbd class=\"kd-chip kd-font-mono\">O</kbd> để mở nguồn của phần tử trong trình soạn thảo của bạn."
   },
@@ -268,6 +277,12 @@
   },
   "panelResetTitle": {
     "message": "Hoàn tác mọi chỉnh sửa trên phần tử này"
+  },
+  "panelCopyCss": {
+    "message": "css"
+  },
+  "panelCopyCssTitle": {
+    "message": "Sao chép mọi chỉnh sửa trên trang này dưới dạng CSS"
   },
   "panelCopy": {
     "message": "sao chép"
@@ -523,6 +538,9 @@
   },
   "actionScreenshot": {
     "message": "ảnh chụp màn hình"
+  },
+  "actionCss": {
+    "message": "CSS"
   },
   "toastEditsReset": {
     "message": "Đã đặt lại các chỉnh sửa"

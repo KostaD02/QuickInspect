@@ -31,6 +31,8 @@ describe('settings', () => {
     expect(normaliseSettings({ allowEdit: false }).allowEdit).toBe(false);
     expect(normaliseSettings({}).downloadScreenshot).toBe(true);
     expect(normaliseSettings({}).dismissCompare).toBe(true);
+    expect(normaliseSettings({}).persistEdits).toBe(false);
+    expect(normaliseSettings({ persistEdits: true }).persistEdits).toBe(true);
     expect(normaliseSettings({ dismissCompare: false }).dismissCompare).toBe(
       false,
     );

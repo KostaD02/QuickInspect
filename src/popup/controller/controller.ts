@@ -39,6 +39,7 @@ export class PopupController {
     showEvents: this.input('set-show-events'),
     showEditorStatus: this.input('set-show-editor-status'),
     allowEdit: this.input('set-allow-edit'),
+    persistEdits: this.input('set-persist-edits'),
     downloadScreenshot: this.input('set-download-screenshot'),
     dismissCompare: this.input('set-dismiss-compare'),
   };
