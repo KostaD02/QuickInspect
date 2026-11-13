@@ -330,6 +330,47 @@ describe('inspector', () => {
     },
   );
 
+  it('keeps the marked element through Esc and outside clicks when dismiss-after-use is off', () => {
+    document.body.innerHTML =
+      '<main><p class="a">A</p><p class="b">B</p><p class="c">C</p></main>';
+    const pick = (name: string) => {
+      const el = document.querySelector(`.${name}`)!;
+      document.elementFromPoint = jest.fn(() => el);
+      mouse('mousemove', { clientX: 10, clientY: 10 });
+      flush();
+    };
+    reopen();
+    inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare: false });
+    const comparing = () =>
+      Array.from(
+        host()?.shadowRoot?.querySelectorAll('.section-title') ?? [],
+      ).some((title) => title.textContent.startsWith('Compare'));
+    const pin = (name: string) => {
+      key('keydown', { key: 'Alt' });
+      pick(name);
+      mouse('click', { altKey: true });
+      key('keyup', { key: 'Alt' });
+    };
+
+    key('keydown', { key: 'Alt' });
+    pick('a');
+    key('keydown', { code: 'KeyD', key: 'd', altKey: true });
+    key('keyup', { key: 'Alt' });
+    pin('b');
+    expect(comparing()).toBe(true);
+    mouse('click');
+    pin('c');
+    expect(comparing()).toBe(true);
+    key('keydown', { code: 'Escape', key: 'Escape' });
+    pin('b');
+    expect(comparing()).toBe(true);
+
+    inspector.setSettings({ ...DEFAULT_SETTINGS, enabled: false });
+    inspector.setSettings({ ...DEFAULT_SETTINGS, dismissCompare: false });
+    pin('c');
+    expect(comparing()).toBe(false);
+  });
+
   it('unpins after marking a pinned element so the next one can be picked', () => {
     reopen();
     hold();

@@ -129,6 +129,7 @@ export class Inspector {
     this.settings = next;
     this.overlay.setBoxModel(next.showBoxModel);
     if (!next.enabled) {
+      this.base = null;
       this.close();
       return;
     }
@@ -512,7 +513,7 @@ export class Inspector {
   }
 
   private close(): void {
-    this.base = null;
+    if (this.settings.dismissCompare) this.base = null;
     this.pinned = false;
     this.setHolding(false);
     this.panel.setPinned(false);
