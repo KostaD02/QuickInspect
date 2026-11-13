@@ -87,7 +87,7 @@
     "message": "複製 Markdown"
   },
   "shortcutScreenshot": {
-    "message": "複製螢幕截圖"
+    "message": "下載螢幕截圖"
   },
   "editorLabel": {
     "message": "編輯器"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "已下載$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "無法下載$WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

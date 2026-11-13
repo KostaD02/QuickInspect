@@ -87,7 +87,7 @@
     "message": "Kopírovat Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopírovat snímek obrazovky"
+    "message": "Stáhnout snímek obrazovky"
   },
   "editorLabel": {
     "message": "Editor"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Staženo: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Nelze stáhnout: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

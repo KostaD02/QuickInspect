@@ -87,7 +87,7 @@
     "message": "Markdown をコピー"
   },
   "shortcutScreenshot": {
-    "message": "スクリーンショットをコピー"
+    "message": "スクリーンショットをダウンロード"
   },
   "editorLabel": {
     "message": "エディター"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "$WHAT$をダウンロードしました",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "$WHAT$をダウンロードできませんでした",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

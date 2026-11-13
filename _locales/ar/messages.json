@@ -87,7 +87,7 @@
     "message": "نسخ Markdown"
   },
   "shortcutScreenshot": {
-    "message": "نسخ لقطة الشاشة"
+    "message": "تنزيل لقطة الشاشة"
   },
   "editorLabel": {
     "message": "المحرّر"
@@ -698,6 +698,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "تم التنزيل: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "تعذّر التنزيل: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

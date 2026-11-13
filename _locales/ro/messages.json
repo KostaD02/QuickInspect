@@ -87,7 +87,7 @@
     "message": "Copiază Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Copiază captura de ecran"
+    "message": "Descarcă captura de ecran"
   },
   "editorLabel": {
     "message": "Editor"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Descărcat: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Nu s-a putut descărca: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

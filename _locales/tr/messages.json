@@ -87,7 +87,7 @@
     "message": "Markdown’ı kopyala"
   },
   "shortcutScreenshot": {
-    "message": "Ekran görüntüsünü kopyala"
+    "message": "Ekran görüntüsünü indir"
   },
   "editorLabel": {
     "message": "Düzenleyici"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "İndirildi: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "İndirilemedi: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

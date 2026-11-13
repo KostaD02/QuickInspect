@@ -87,7 +87,7 @@
     "message": "Sao chép Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Sao chép ảnh chụp màn hình"
+    "message": "Tải xuống ảnh chụp màn hình"
   },
   "editorLabel": {
     "message": "Trình soạn thảo"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Đã tải xuống: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Không thể tải xuống: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

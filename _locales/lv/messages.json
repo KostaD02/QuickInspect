@@ -87,7 +87,7 @@
     "message": "Kopēt Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopēt ekrānuzņēmumu"
+    "message": "Lejupielādēt ekrānuzņēmumu"
   },
   "editorLabel": {
     "message": "Redaktors"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Lejupielādēts: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Neizdevās lejupielādēt: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

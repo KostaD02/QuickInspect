@@ -87,7 +87,7 @@
     "message": "คัดลอก Markdown"
   },
   "shortcutScreenshot": {
-    "message": "คัดลอกภาพหน้าจอ"
+    "message": "ดาวน์โหลดภาพหน้าจอ"
   },
   "editorLabel": {
     "message": "ตัวแก้ไข"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "ดาวน์โหลดแล้ว: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "ดาวน์โหลดไม่สำเร็จ: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

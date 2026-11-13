@@ -87,7 +87,7 @@
     "message": "העתקת Markdown"
   },
   "shortcutScreenshot": {
-    "message": "העתקת צילום מסך"
+    "message": "הורדת צילום מסך"
   },
   "editorLabel": {
     "message": "עורך"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "הורד: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "ההורדה נכשלה: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

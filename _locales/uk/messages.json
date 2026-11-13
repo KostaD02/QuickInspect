@@ -87,7 +87,7 @@
     "message": "Копіювати Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Копіювати знімок екрана"
+    "message": "Завантажити знімок екрана"
   },
   "editorLabel": {
     "message": "Редактор"
@@ -626,6 +626,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Завантажено: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Не вдалося завантажити: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

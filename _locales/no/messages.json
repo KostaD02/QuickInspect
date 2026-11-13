@@ -87,7 +87,7 @@
     "message": "Kopier Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopier skjermbilde"
+    "message": "Last ned skjermbilde"
   },
   "editorLabel": {
     "message": "Editor"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Lastet ned: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Kunne ikke laste ned: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

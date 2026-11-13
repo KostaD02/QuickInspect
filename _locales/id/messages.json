@@ -87,7 +87,7 @@
     "message": "Salin Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Salin tangkapan layar"
+    "message": "Unduh tangkapan layar"
   },
   "editorLabel": {
     "message": "Editor"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Diunduh: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Gagal mengunduh: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

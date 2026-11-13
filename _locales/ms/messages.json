@@ -87,7 +87,7 @@
     "message": "Salin Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Salin tangkapan skrin"
+    "message": "Muat turun tangkapan skrin"
   },
   "editorLabel": {
     "message": "Editor"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Dimuat turun: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Gagal memuat turun: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

@@ -87,7 +87,7 @@
     "message": "Copiar Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Copiar captura de tela"
+    "message": "Baixar captura de tela"
   },
   "editorLabel": {
     "message": "Editor"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Baixado: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Não foi possível baixar: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

@@ -179,7 +179,7 @@ describe('inspector', () => {
     expect(sendMessage).toHaveBeenCalled();
     expect(host()!.hidden).toBe(false);
     expect(host()!.shadowRoot!.querySelector('.toast')!.textContent).toBe(
-      'Could not copy screenshot',
+      'Could not download screenshot',
     );
   });
 

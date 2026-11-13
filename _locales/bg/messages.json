@@ -87,7 +87,7 @@
     "message": "Копирай Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Копирай екранната снимка"
+    "message": "Изтегли екранната снимка"
   },
   "editorLabel": {
     "message": "Редактор"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Изтеглено: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Неуспешно изтегляне: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

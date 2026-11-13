@@ -116,7 +116,7 @@
     "description": "Shortcut description next to the M key cap."
   },
   "shortcutScreenshot": {
-    "message": "Copy screenshot",
+    "message": "Download screenshot",
     "description": "Shortcut description next to the C key cap."
   },
   "editorLabel": {
@@ -708,6 +708,26 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Downloaded $WHAT$",
+    "description": "Toast after the C key saved a screenshot of the element; WHAT is actionScreenshot. The file name follows as detail.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Could not download $WHAT$",
+    "description": "Toast when the screenshot could not be captured or saved; WHAT is actionScreenshot.",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

@@ -87,7 +87,7 @@
     "message": "Markdown 복사"
   },
   "shortcutScreenshot": {
-    "message": "스크린샷 복사"
+    "message": "스크린샷 다운로드"
   },
   "editorLabel": {
     "message": "에디터"
@@ -518,6 +518,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "다운로드됨: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "다운로드 실패: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

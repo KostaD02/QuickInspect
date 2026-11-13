@@ -87,7 +87,7 @@
     "message": "کپی Markdown"
   },
   "shortcutScreenshot": {
-    "message": "کپی اسکرین‌شات"
+    "message": "دانلود اسکرین‌شات"
   },
   "editorLabel": {
     "message": "ویرایشگر"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "دانلود شد: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "دانلود نشد: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

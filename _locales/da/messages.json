@@ -87,7 +87,7 @@
     "message": "Kopiér Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopiér skærmbillede"
+    "message": "Download skærmbillede"
   },
   "editorLabel": {
     "message": "Editor"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Downloadet: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Kunne ikke downloade: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

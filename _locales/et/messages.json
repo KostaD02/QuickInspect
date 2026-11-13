@@ -87,7 +87,7 @@
     "message": "Kopeeri Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopeeri ekraanipilt"
+    "message": "Laadi ekraanipilt alla"
   },
   "editorLabel": {
     "message": "Redaktor"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Alla laaditud: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Allalaadimine ebaõnnestus: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

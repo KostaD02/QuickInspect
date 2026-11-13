@@ -87,7 +87,7 @@
     "message": "Markdown कॉपी करें"
   },
   "shortcutScreenshot": {
-    "message": "स्क्रीनशॉट कॉपी करें"
+    "message": "स्क्रीनशॉट डाउनलोड करें"
   },
   "editorLabel": {
     "message": "एडिटर"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "डाउनलोड हुआ: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "डाउनलोड नहीं हो सका: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

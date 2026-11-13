@@ -87,7 +87,7 @@
     "message": "Αντιγραφή Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Αντιγραφή στιγμιότυπου οθόνης"
+    "message": "Λήψη στιγμιότυπου οθόνης"
   },
   "editorLabel": {
     "message": "Επεξεργαστής"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Λήφθηκε: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Αποτυχία λήψης: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

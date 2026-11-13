@@ -87,7 +87,7 @@
     "message": "Kopijuoti Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopijuoti ekrano kopiją"
+    "message": "Atsisiųsti ekrano kopiją"
   },
   "editorLabel": {
     "message": "Redaktorius"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Atsisiųsta: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Nepavyko atsisiųsti: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

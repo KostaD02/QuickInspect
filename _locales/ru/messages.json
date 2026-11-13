@@ -87,7 +87,7 @@
     "message": "Копировать Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Копировать скриншот"
+    "message": "Скачать скриншот"
   },
   "editorLabel": {
     "message": "Редактор"
@@ -626,6 +626,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Скачано: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Не удалось скачать: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

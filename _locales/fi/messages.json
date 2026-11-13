@@ -87,7 +87,7 @@
     "message": "Kopioi Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopioi kuvakaappaus"
+    "message": "Lataa kuvakaappaus"
   },
   "editorLabel": {
     "message": "Editori"
@@ -554,6 +554,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Ladattu: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Lataus epäonnistui: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }

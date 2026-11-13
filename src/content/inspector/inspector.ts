@@ -2,9 +2,10 @@ import { DEFAULT_SETTINGS } from '@/shared/consts';
 import { ElementInfo, LensSettings, ModifierKey } from '@/shared/types';
 import {
   captureElement,
-  copyImage,
   copyText,
   deepElementFromPoint,
+  downloadBlob,
+  fileName,
   formatSource,
   inspectElement,
   isEditable,
@@ -489,16 +490,15 @@ export class Inspector {
     const target = this.current;
     if (!target) return;
     const label = t('actionScreenshot');
+    const name = fileName(this.info?.summary ?? '', 'png');
     const rect = target.getBoundingClientRect();
     this.host
       .conceal(() => captureElement(rect))
-      .then((blob) => (blob ? copyImage(blob) : false))
-      .then((copied) => {
+      .then((blob) => {
+        if (blob) downloadBlob(blob, name);
         this.toast.show(
-          t(copied ? 'toastCopied' : 'toastCopyFailed', [label]),
-          copied
-            ? `${String(Math.round(rect.width))} × ${String(Math.round(rect.height))}`
-            : '',
+          t(blob ? 'toastDownloaded' : 'toastDownloadFailed', [label]),
+          blob ? name : '',
         );
       });
   }

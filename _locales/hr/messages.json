@@ -87,7 +87,7 @@
     "message": "Kopiraj Markdown"
   },
   "shortcutScreenshot": {
-    "message": "Kopiraj snimku zaslona"
+    "message": "Preuzmi snimku zaslona"
   },
   "editorLabel": {
     "message": "Uređivač"
@@ -590,6 +590,24 @@
       "WHAT": {
         "content": "$1",
         "example": "selector"
+      }
+    }
+  },
+  "toastDownloaded": {
+    "message": "Preuzeto: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
+      }
+    }
+  },
+  "toastDownloadFailed": {
+    "message": "Preuzimanje nije uspjelo: $WHAT$",
+    "placeholders": {
+      "WHAT": {
+        "content": "$1",
+        "example": "screenshot"
       }
     }
   }
